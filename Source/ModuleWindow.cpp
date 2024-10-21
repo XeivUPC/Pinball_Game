@@ -23,10 +23,12 @@ bool ModuleWindow::Init()
 	bool resizable = WIN_RESIZABLE;
 	bool vsync = VSYNC;
 
-	width = SCREEN_WIDTH;
-	height = SCREEN_HEIGHT;
+	width = SCREEN_WIDTH * SCREEN_SIZE;
+	height = SCREEN_HEIGHT * SCREEN_SIZE;
 
 	if (fullscreen == true) flags |= FLAG_FULLSCREEN_MODE;
+
+	
 
 	if (borderless == true) flags |= FLAG_WINDOW_UNDECORATED;
 
@@ -38,7 +40,6 @@ bool ModuleWindow::Init()
 
     SetConfigFlags(flags);
 	InitWindow(width, height, TITLE);
-
 	return ret;
 }
 

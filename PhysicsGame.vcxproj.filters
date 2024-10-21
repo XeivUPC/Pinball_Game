@@ -31,6 +31,9 @@
     <ClCompile Include="Source\LevelSelectionGameScene.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Source\AnimationSystem.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/p2Point.h">
@@ -66,6 +69,9 @@
     <ClInclude Include="Source\LevelSelectionGameScene.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="Source\AnimationSystem.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Headers">
@@ -79,6 +85,9 @@
     </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{f178a4e3-b18b-452d-ab38-f4e8d406bd49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{1c34d40a-030b-4fe8-bd7a-cffe66f4b3ef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
