@@ -31,8 +31,13 @@
     <ClCompile Include="Source\AnimationSystem.cpp">
       <Filter>Sources\Utils</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Source\ModuleTexture.cpp">
       <Filter>Sources\Utils</Filter>
+=======
+    <ClCompile Include="Source\CreditsScene.cpp">
+      <Filter>Sources</Filter>
+>>>>>>> parent of f8b5e62 (Revert "CreditsScene Init")
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +74,11 @@
     <ClInclude Include="Source\AnimationSystem.h">
       <Filter>Sources\Utils</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Source\ModuleTexture.h">
+=======
+    <ClInclude Include="Source\CreditsScene.h">
+>>>>>>> parent of f8b5e62 (Revert "CreditsScene Init")
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
