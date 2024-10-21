@@ -1,6 +1,7 @@
 #pragma once
 #include <unordered_map>
 #include "Module.h"
+#include <string>
 
 class ModuleTexture : public Module
 {
@@ -10,13 +11,13 @@ public:
 
     bool CleanUp();
 
-    Texture2D* GetTexture(const char* textureID);
-    void CreateTexture(const char* path, const char* textureID);
-    void DeleteTexture(const char* textureID);
+    Texture2D* GetTexture(std::string textureID);
+    void CreateTexture(std::string path, std::string textureID);
+    void DeleteTexture(std::string textureID);
 private:
 
-    bool IsTextureLoaded(const char* textureID);
-    std::unordered_map<const char*, Texture2D> textureData;
+    bool IsTextureLoaded(std::string textureID);
+    std::unordered_map<std::string, Texture2D> textureData;
 
 };
 
