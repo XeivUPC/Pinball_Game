@@ -10,6 +10,7 @@ class ModuleRender;
 class ModuleAudio;
 class ModulePhysics;
 class ModuleGame;
+class ModuleTexture;
 
 class Application
 {
@@ -20,6 +21,7 @@ public:
 	ModuleAudio* audio;
 	ModulePhysics* physics;
 	ModuleGame* scene_intro;
+	ModuleTexture* texture;
 
 private:
 
