@@ -1,9 +1,16 @@
-#include "TextureManager.hpp"
+#include "ModuleTexture.h"
 
-TextureManager::TextureManager() {
+ModuleTexture::ModuleTexture(Application* app, bool start_enabled) : Module(app, start_enabled) {
 
 }
-Texture2D* TextureManager::GetTexture(const char* textureID)
+
+ModuleTexture::~ModuleTexture()
+{
+
+}
+
+
+Texture2D* ModuleTexture::GetTexture(std::string textureID)
 {
 	if (!IsTextureLoaded(textureID))
 	{
@@ -13,7 +20,7 @@ Texture2D* TextureManager::GetTexture(const char* textureID)
     return &textureData[textureID];
 }
 
-void TextureManager::CreateTexture(const char* path, const char* textureID)
+void ModuleTexture::CreateTexture(std::string path, std::string textureID)
 {
 	if (IsTextureLoaded(textureID))
 	{
@@ -22,10 +29,10 @@ void TextureManager::CreateTexture(const char* path, const char* textureID)
 	}
 
 
-	textureData[textureID] = LoadTexture(path);
+	textureData[textureID] = LoadTexture(path.c_str());
 }
 
-void TextureManager::DeleteTexture(const char* textureID)
+void ModuleTexture::DeleteTexture(std::string textureID)
 {
 	if (!IsTextureLoaded(textureID))
 	{
@@ -36,16 +43,16 @@ void TextureManager::DeleteTexture(const char* textureID)
 	textureData.erase(textureID);
 }
 
-TextureManager::~TextureManager()
-{
+bool ModuleTexture::CleanUp() {
 	for (; textureData.size() != 0;)
 	{
 		DeleteTexture(textureData.begin()->first);
 	}
 	textureData.clear();
+	return true;
 }
 
-bool TextureManager::IsTextureLoaded(const char* textureID)
+bool ModuleTexture::IsTextureLoaded(std::string textureID)
 {
     return textureData.find(textureID) != textureData.end();
 }
