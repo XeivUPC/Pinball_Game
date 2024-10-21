@@ -6,7 +6,7 @@
 #include "ModulePhysics.h"
 #include "ModuleTexture.h"
 #include "ModuleGame.h"
-#include "LevelSelectionGameScene.h"
+#include "ModuleLevelSelection.h"
 
 #include "Application.h"
 
@@ -16,8 +16,7 @@ Application::Application()
 	renderer = new ModuleRender(this);
 	audio = new ModuleAudio(this, true);
 	physics = new ModulePhysics(this);
-	scene_intro = new ModuleGame(this);
-	level_selection = new LevelSelectionGameScene(this);
+	level_selection = new ModuleLevelSelection(this);
 	texture = new ModuleTexture(this);
 
 	// The order of calls is very important!
@@ -31,11 +30,15 @@ Application::Application()
 	AddModule(texture);
 	
 	// Scenes
-	AddModule(scene_intro);
 	AddModule(level_selection);
 
 	// Rendering happens at the end
 	AddModule(renderer);
+
+
+	///SetScenes
+
+	//level_selection->Disable();
 }
 
 Application::~Application()

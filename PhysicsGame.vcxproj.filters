@@ -2,36 +2,102 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Source/Application.cpp" />
-    <ClCompile Include="Source/Log.cpp" />
     <ClCompile Include="Source/Main.cpp" />
-    <ClCompile Include="Source/ModuleAudio.cpp" />
-    <ClCompile Include="Source/ModulePhysics.cpp" />
-    <ClCompile Include="Source/ModuleRender.cpp" />
-    <ClCompile Include="Source/ModuleWindow.cpp" />
-    <ClCompile Include="Source\AnimationSystem.cpp" />
-    <ClCompile Include="Source\CreditsScene.cpp" />
-    <ClCompile Include="Source\ModuleGame.cpp" />
-    <ClCompile Include="Source\ModuleTexture.cpp" />
-    <ClCompile Include="Source\Timer.cpp" />
-    <ClCompile Include="Source\LevelSelectionGameScene.cpp" />
+    <ClCompile Include="Source\ModuleLevelSelection.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source/ModuleAudio.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGame.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source/ModulePhysics.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source/ModuleRender.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleTexture.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source/ModuleWindow.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="UserPreferences.cpp">
+      <Filter>Saving&amp;Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AnimationSystem.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CreditsScene.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source/Log.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Timer.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
     <ClInclude Include="Source/Globals.h" />
-    <ClInclude Include="Source/ModulePhysics.h" />
-    <ClInclude Include="Source/Module.h" />
-    <ClInclude Include="Source/ModuleAudio.h" />
-    <ClInclude Include="Source/ModuleRender.h" />
-    <ClInclude Include="Source/ModuleWindow.h" />
-    <ClInclude Include="Source/p2Point.h" />
-    <ClInclude Include="Source\AnimationSystem.h" />
-    <ClInclude Include="Source\CreditsScene.h" />
-    <ClInclude Include="Source\ModuleGame.h" />
-    <ClInclude Include="Source\ModuleTexture.h" />
-    <ClInclude Include="Source\Timer.h" />
-    <ClInclude Include="Source\LevelSelectionGameScene.h" />
+    <ClInclude Include="Source\ModuleLevelSelection.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/Module.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/ModuleAudio.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleGame.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/ModulePhysics.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/ModuleRender.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleTexture.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/ModuleWindow.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="UserPreferences.h">
+      <Filter>Saving&amp;Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AnimationSystem.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CreditsScene.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Timer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/p2Point.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{356ac984-0a85-4ac1-b9ff-e4840aff66b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Scenes %28ModuleGame%29">
+      <UniqueIdentifier>{6efed187-946c-4a1a-9719-ba0a4d78149c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Saving&amp;Settings">
+      <UniqueIdentifier>{3bd8f597-8e13-4911-bc97-8c8712c556b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{7ff14ab1-7b05-465f-8926-685df6f9b282}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

@@ -14,19 +14,19 @@ enum Language
 	Italian
 };
 
-class LevelSelectionGameScene : public ModuleGame
+class ModuleLevelSelection : public ModuleGame
 {
 private:
 	Language selectedLanguage;
-	Texture2D levelSelectionTexture;
-	Texture2D levelSelectionFrameTexture;
+	Texture2D* levelSelectionTexture;
+	Texture2D* levelSelectionFrameTexture;
 	KeyboardKey toLeftButton;
 	KeyboardKey toRightButton;
 	Vector2 markSelectionPosition;
 	Animator* anim;
 public:
-	LevelSelectionGameScene(Application* app, bool start_enabled=true);
-	~LevelSelectionGameScene();
+	ModuleLevelSelection(Application* app, bool start_enabled=true);
+	~ModuleLevelSelection();
 	bool Start();
 	update_status Update();
 	bool CleanUp();
