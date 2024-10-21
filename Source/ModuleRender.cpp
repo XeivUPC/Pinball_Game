@@ -68,7 +68,7 @@ bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* sectio
 {
 	bool ret = true;
 
-	float scale = 1.0f;
+	float scale =SCREEN_SIZE;
     Vector2 position = { (float)x, (float)y };
     Rectangle rect = { 0.f, 0.f, (float)texture.width, (float)texture.height };
 
