@@ -21,6 +21,7 @@ bool LevelSelectionGameScene::Start()
 	anim->AddAnimation(animDefault);
 	anim->SetSpeed(0.1);
 	anim->SelectAnimation("Default", true);
+	markSelectionPosition = { 3,5.5f };
 	return true;
 }
 
@@ -29,11 +30,11 @@ update_status LevelSelectionGameScene::Update()
 	anim->Update();
 	if(IsKeyDown(toLeftButton))
 	{
-		markSelectionPosition.x = 2;
+		markSelectionPosition.x = 3;
 	}
 	else if(IsKeyDown(toRightButton))
 	{
-		markSelectionPosition.x = 8;
+		markSelectionPosition.x = 21;
 	}
 	DrawTexturePro(levelSelectionTexture, { 0,(float)selectedLanguage * 144,160,144 }, {0, 0, SCREEN_SIZE*SCREEN_WIDTH, SCREEN_SIZE*SCREEN_HEIGHT}, { 0, 0 },0, WHITE);
 	anim->Animate(markSelectionPosition.x * SCREEN_SIZE, markSelectionPosition.y * SCREEN_SIZE, true);
