@@ -10,16 +10,12 @@ private:
 
 	float opacity;
 
-	Texture2D* texture_credits_EU;
-	Texture2D* texture_credits_NA;
-	Texture2D* texture_credits_JAPAN;
-
 	Texture2D* texture_credits;
 
 	enum class language {
+		JAPAN,
 		NA,
-		EU,
-		JAPAN
+		EU
 	};
 public:
 
