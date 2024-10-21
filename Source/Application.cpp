@@ -6,7 +6,7 @@
 #include "ModulePhysics.h"
 #include "ModuleTexture.h"
 #include "ModuleGame.h"
-
+#include "CreditsScene.h"
 #include "Application.h"
 
 Application::Application()
@@ -15,7 +15,7 @@ Application::Application()
 	renderer = new ModuleRender(this);
 	audio = new ModuleAudio(this, true);
 	physics = new ModulePhysics(this);
-	scene_intro = new ModuleGame(this);
+	scene_intro = new CreditsScene(this);
 	texture = new ModuleTexture(this);
 
 	// The order of calls is very important!

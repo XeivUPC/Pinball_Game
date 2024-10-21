@@ -20,17 +20,19 @@ bool CreditsScene::Start()
 	texture_credits = App->texture->GetTexture("texture_credits");
 
 	delay.Start();
-	float opacity = 255;
+	int opacity = 255;
 
 	return ret;
 }
 
 update_status CreditsScene::Update()
 {
-
+	
 	if (delay.ReadSec() < 3)
 	{
-		DrawRectangle(0, 0, SCREEN_HEIGHT, SCREEN_WIDTH, WHITE);
+		Color color = {255,255,255,opacity };
+		DrawRectangle(0, 0, SCREEN_HEIGHT, SCREEN_WIDTH,color);
+		opacity--;
 	}
 	else if (delay.ReadSec() < 6) {
 		Rectangle rect = { 0,144 * (int)language,160,144 };

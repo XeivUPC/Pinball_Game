@@ -8,7 +8,7 @@ private:
 
 	Timer delay;
 
-	float opacity;
+	int opacity;
 
 	Texture2D* texture_credits;
 
