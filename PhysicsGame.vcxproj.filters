@@ -28,8 +28,8 @@
     <ClCompile Include="Source\ModuleGame.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Source\AnimationSystem.cpp">
-      <Filter>Sources\Utils</Filter>
+    <ClCompile Include="Source\LevelSelectionGameScene.cpp">
+      <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,8 +63,8 @@
     <ClInclude Include="Source\ModuleGame.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Source\AnimationSystem.h">
-      <Filter>Sources\Utils</Filter>
+    <ClInclude Include="Source\LevelSelectionGameScene.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,8 +77,8 @@
     <Filter Include="Headers\Containers">
       <UniqueIdentifier>{39bd4360-6afc-44b3-8ba5-578b26392b24}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\Utils">
-      <UniqueIdentifier>{4dd25bf3-225f-486e-9e42-bf542ccdb58b}</UniqueIdentifier>
+    <Filter Include="Game">
+      <UniqueIdentifier>{f178a4e3-b18b-452d-ab38-f4e8d406bd49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
