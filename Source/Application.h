@@ -10,7 +10,12 @@ class ModuleRender;
 class ModuleAudio;
 class ModulePhysics;
 class ModuleTexture;
+class ModuleUserPreferences;
+
 class ModuleLevelSelection;
+class ModuleCredits;
+class ModuleMainMenu;
+
 
 class Application
 {
@@ -20,8 +25,17 @@ public:
 	ModuleWindow* window;
 	ModuleAudio* audio;
 	ModulePhysics* physics;
-	ModuleLevelSelection* level_selection;
+	ModuleUserPreferences* userPreferences;
+
+	ModuleLevelSelection* scene_levelSelection;
+	ModuleCredits* scene_credits;
+	ModuleMainMenu* scene_mainMenu;
+
 	ModuleTexture* texture;
+
+
+
+
 
 private:
 

@@ -31,6 +31,7 @@ public:
 	void AddSprite(Sprite sprite);
 	void AddSprite(Sprite sprite, int extraData);
 	AnimationData(const char* n, std::vector<Sprite> s);
+	AnimationData(const char* n);
 	AnimationData();
 	~AnimationData();
 
