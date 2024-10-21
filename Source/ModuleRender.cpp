@@ -64,23 +64,19 @@ void ModuleRender::SetBackgroundColor(Color color)
 }
 
 // Draw to screen
-bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* section, double angle, int pivot_x, int pivot_y) const
+bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* section, Color tint, double angle, float pivot_x, float pivot_y) const
 {
 	bool ret = true;
 
-	float scale =SCREEN_SIZE;
+	float scale = SCREEN_SIZE;
+
     Vector2 position = { (float)x, (float)y };
-    Rectangle rect = { 0.f, 0.f, (float)texture.width, (float)texture.height };
 
-    if (section != NULL) rect = *section;
+    position.x = (x-pivot_x) * scale + camera.x;
+    position.y = (y-pivot_y) * scale + camera.y;
 
-    position.x = (float)(x-pivot_x) * scale + camera.x;
-    position.y = (float)(y-pivot_y) * scale + camera.y;
 
-	rect.width *= scale;
-	rect.height *= scale;
-
-    DrawTextureRec(texture, rect, position, WHITE);
+    DrawTexturePro(texture, *section, {x*scale, y*scale, section->width*scale, section->height * scale }, {pivot_x,pivot_y},angle, tint);
 
 	return ret;
 }

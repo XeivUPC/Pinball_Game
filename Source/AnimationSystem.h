@@ -31,6 +31,7 @@ public:
 	void AddSprite(Sprite sprite);
 	void AddSprite(Sprite sprite, int extraData);
 	AnimationData(const char* n, std::vector<Sprite> s);
+	AnimationData(const char* n);
 	AnimationData();
 	~AnimationData();
 
@@ -59,7 +60,6 @@ private:
 public:
 	Animator(Application* App);
 	~Animator();
-	Animator(std::vector<AnimationData> anims, float s);
 	void AddAnimation(AnimationData anim);
 	void SelectAnimation(const char* animName, bool l);
 	void SetSpeed(float s);

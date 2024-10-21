@@ -5,8 +5,14 @@
 #include "ModuleAudio.h"
 #include "ModulePhysics.h"
 #include "ModuleTexture.h"
-#include "ModuleGame.h"
-#include "CreditsScene.h"
+#include "ModuleUserPreferences.h"
+
+
+#include "ModuleLevelSelection.h"
+#include "ModuleCredits.h"
+#include "ModuleMainMenu.h"
+
+
 #include "Application.h"
 
 Application::Application()
@@ -15,8 +21,14 @@ Application::Application()
 	renderer = new ModuleRender(this);
 	audio = new ModuleAudio(this, true);
 	physics = new ModulePhysics(this);
-	scene_intro = new CreditsScene(this);
+	userPreferences = new ModuleUserPreferences(this);
+
+	scene_credits = new ModuleCredits(this);
+	scene_levelSelection = new ModuleLevelSelection(this, false);
+	scene_mainMenu = new ModuleMainMenu(this, false);
+
 	texture = new ModuleTexture(this);
+
 
 	// The order of calls is very important!
 	// Modules will Init() Start() and Update in this order
@@ -27,12 +39,20 @@ Application::Application()
 	AddModule(physics);
 	AddModule(audio);
 	AddModule(texture);
+	AddModule(userPreferences);
 	
 	// Scenes
-	AddModule(scene_intro);
+	AddModule(scene_levelSelection);
+	AddModule(scene_credits);
+	AddModule(scene_mainMenu);
 
 	// Rendering happens at the end
 	AddModule(renderer);
+
+
+	///SetScenes
+
+	scene_levelSelection->Disable();
 }
 
 Application::~Application()

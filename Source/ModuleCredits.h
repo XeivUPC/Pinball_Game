@@ -3,29 +3,25 @@
 #include "Timer.h"
 #include "ModuleGame.h"
 
-class CreditsScene : public ModuleGame {
+class ModuleCredits : public ModuleGame {
 private:
 
 	Timer delay;
 
-	int opacity;
+	float colorFadeOpacity=255;
+	float backgroundOpacity =255;
 
 	Texture2D* texture_credits;
 
-	enum class language {
-		JAPAN,
-		NA,
-		EU
-	};
 public:
 
-	CreditsScene(Application* app, bool start_enabled = true);
-	~CreditsScene();
+	ModuleCredits(Application* app, bool start_enabled = true);
+	~ModuleCredits();
 
 	bool Start();
 	update_status Update();
 	bool CleanUp();
 
-	language language;
+	int language;
 
 };

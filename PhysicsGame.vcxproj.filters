@@ -1,102 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Source/Application.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source/Log.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source/Main.cpp">
-      <Filter>Sources</Filter>
+    <ClCompile Include="Source/Application.cpp" />
+    <ClCompile Include="Source/Main.cpp" />
+    <ClCompile Include="Source\ModuleLevelSelection.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
     <ClCompile Include="Source/ModuleAudio.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source/ModulePhysics.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source/ModuleRender.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source/ModuleWindow.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Timer.cpp">
-      <Filter>Sources</Filter>
+      <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleGame.cpp">
-      <Filter>Sources</Filter>
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source/ModulePhysics.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source/ModuleRender.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleTexture.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source/ModuleWindow.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="Source\AnimationSystem.cpp">
-      <Filter>Sources\Utils</Filter>
+      <Filter>Utils</Filter>
     </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="Source\ModuleTexture.cpp">
-      <Filter>Sources\Utils</Filter>
-=======
-    <ClCompile Include="Source\CreditsScene.cpp">
-      <Filter>Sources</Filter>
->>>>>>> parent of f8b5e62 (Revert "CreditsScene Init")
+    <ClCompile Include="Source\ModuleCredits.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source/Log.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Timer.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleUserPreferences.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleMainMenu.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source/p2Point.h">
-      <Filter>Headers\Containers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/Application.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/Globals.h">
-      <Filter>Headers</Filter>
+    <ClInclude Include="Source/Application.h" />
+    <ClInclude Include="Source/Globals.h" />
+    <ClInclude Include="Source\ModuleLevelSelection.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
     <ClInclude Include="Source/Module.h">
-      <Filter>Headers</Filter>
+      <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source/ModuleAudio.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/ModulePhysics.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/ModuleRender.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/ModuleWindow.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Timer.h">
-      <Filter>Headers</Filter>
+      <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleGame.h">
-      <Filter>Headers</Filter>
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/ModulePhysics.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/ModuleRender.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleTexture.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/ModuleWindow.h">
+      <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source\AnimationSystem.h">
-      <Filter>Sources\Utils</Filter>
+      <Filter>Utils</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="Source\ModuleTexture.h">
-=======
-    <ClInclude Include="Source\CreditsScene.h">
->>>>>>> parent of f8b5e62 (Revert "CreditsScene Init")
-      <Filter>Headers</Filter>
+    <ClInclude Include="Source\ModuleCredits.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Headers">
-      <UniqueIdentifier>{d82c32f1-eea9-456f-981b-a7e64f40f8d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources">
-      <UniqueIdentifier>{8fd46c61-4dab-4d27-8542-1af6dd78d6d0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Headers\Containers">
-      <UniqueIdentifier>{39bd4360-6afc-44b3-8ba5-578b26392b24}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Sources\Utils">
-      <UniqueIdentifier>{4dd25bf3-225f-486e-9e42-bf542ccdb58b}</UniqueIdentifier>
-    </Filter>
+    <ClInclude Include="Source\Timer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source/p2Point.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleUserPreferences.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleMainMenu.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{356ac984-0a85-4ac1-b9ff-e4840aff66b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Scenes %28ModuleGame%29">
+      <UniqueIdentifier>{6efed187-946c-4a1a-9719-ba0a4d78149c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{7ff14ab1-7b05-465f-8926-685df6f9b282}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
