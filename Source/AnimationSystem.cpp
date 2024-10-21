@@ -115,7 +115,7 @@ void Animator::Update()
 	if (!isPlaying)
 		return;
 
-	if (timer.ReadSec() <= speed)
+	if (timer.ReadSec() >= speed)
 	{
 		timer.Start();
 		Next();
