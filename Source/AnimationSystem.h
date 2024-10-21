@@ -6,6 +6,8 @@
 #include "raylib.h"
 #include "Timer.h"
 
+class Application;
+
 struct Sprite
 {
 	Texture2D* texture;
@@ -52,8 +54,10 @@ private:
 
 	Timer timer;
 
+	Application* App;
+
 public:
-	Animator();
+	Animator(Application* App);
 	~Animator();
 	Animator(std::vector<AnimationData> anims, float s);
 	void AddAnimation(AnimationData anim);

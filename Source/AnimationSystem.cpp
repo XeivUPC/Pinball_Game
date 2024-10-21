@@ -1,4 +1,6 @@
 #include "AnimationSystem.h"
+#include "Application.h"
+#include "ModuleRender.h"
 
 
 Rectangle AnimationData::GetSpriteRect(int spriteIndex)
@@ -68,9 +70,9 @@ void Animator::Next()
 	}
 }
 
-Animator::Animator()
+Animator::Animator(Application* App)
 {
-
+	this->App = App;
 }
 
 Animator::~Animator()
@@ -126,8 +128,8 @@ void Animator::Animate(int x, int y, bool flip)
 		return;
 	Rectangle rect = animations[currentAnimation].GetSpriteRect(currentSprite);
 
-	DrawTextureRec(*animations[currentAnimation].sprites[currentSprite].texture, rect, { (float)x,(float)y }, WHITE);
-	//Engine::GetInstance().render->DrawTexture(animations[currentAnimation].sprites[currentSprite].texture, x, y, flip, &rect);
+	App->renderer->Draw(*animations[currentAnimation].sprites[currentSprite].texture,x,y, &rect);
+	
 }
 
 void Animator::SetIfPlaying(bool isPlaying)
