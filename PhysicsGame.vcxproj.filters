@@ -31,6 +31,9 @@
     <ClCompile Include="Source\AnimationSystem.cpp">
       <Filter>Sources\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CreditsScene.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/p2Point.h">
@@ -65,6 +68,9 @@
     </ClInclude>
     <ClInclude Include="Source\AnimationSystem.h">
       <Filter>Sources\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CreditsScene.h">
+      <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
