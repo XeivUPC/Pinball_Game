@@ -28,6 +28,9 @@
     <ClCompile Include="Source\ModuleGame.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
+    <ClCompile Include="Source\AnimationSystem.cpp">
+      <Filter>Sources\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/p2Point.h">
@@ -60,6 +63,9 @@
     <ClInclude Include="Source\ModuleGame.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Source\AnimationSystem.h">
+      <Filter>Sources\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Headers">
@@ -70,6 +76,9 @@
     </Filter>
     <Filter Include="Headers\Containers">
       <UniqueIdentifier>{39bd4360-6afc-44b3-8ba5-578b26392b24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Utils">
+      <UniqueIdentifier>{4dd25bf3-225f-486e-9e42-bf542ccdb58b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

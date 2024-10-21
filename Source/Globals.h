@@ -17,6 +17,11 @@ void log(const char file[], int line, const char* format, ...);
 #define MAX( a, b ) ( ((a) > (b)) ? (a) : (b) )
 #define TO_BOOL( a )  ( (a != 0) ? true : false )
 
+#define PIXEL_X_METER 16.f
+#define METERS_X_PIXEL 1.f/PIXEL_X_METER
+
+#define METERS_TO_PIXELS(m) (PIXEL_X_METER * (m))
+#define PIXELS_TO_METERS(p) (METERS_X_PIXEL * (p))
 
 typedef unsigned int uint;
 typedef unsigned __int32 uint32;
