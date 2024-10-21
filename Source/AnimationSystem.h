@@ -59,7 +59,6 @@ private:
 public:
 	Animator(Application* App);
 	~Animator();
-	Animator(std::vector<AnimationData> anims, float s);
 	void AddAnimation(AnimationData anim);
 	void SelectAnimation(const char* animName, bool l);
 	void SetSpeed(float s);

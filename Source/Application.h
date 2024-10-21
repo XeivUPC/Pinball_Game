@@ -11,6 +11,7 @@ class ModuleAudio;
 class ModulePhysics;
 class ModuleGame;
 class ModuleTexture;
+class LevelSelectionGameScene;
 
 class Application
 {
@@ -21,6 +22,7 @@ public:
 	ModuleAudio* audio;
 	ModulePhysics* physics;
 	ModuleGame* scene_intro;
+	LevelSelectionGameScene* level_selection;
 	ModuleTexture* texture;
 
 private:

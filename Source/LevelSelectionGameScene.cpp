@@ -11,7 +11,7 @@ bool LevelSelectionGameScene::Start()
 	toLeftButton = KEY_A;
 	toRightButton = KEY_D;
 	selectedLanguage = Spanish;
-	anim = new Animator();
+	anim = new Animator(App);
 	levelSelectionTexture = LoadTexture("Assets/LevelSelection.png");
 	levelSelectionFrameTexture = LoadTexture("Assets/LevelSelection_Frame.png");
 	Sprite s1{ &levelSelectionFrameTexture, {0, 0}, {64,88}};

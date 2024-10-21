@@ -80,15 +80,6 @@ Animator::~Animator()
 	animations.clear();
 }
 
-Animator::Animator(std::vector<AnimationData> anims, float s)
-{
-	for (int i = 0; i < anims.size(); i++)
-	{
-		AddAnimation(anims[i]);
-	}
-	speed = s;
-}
-
 void Animator::AddAnimation(AnimationData anim)
 {
 	animations[anim.name] = anim;
