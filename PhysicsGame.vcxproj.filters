@@ -42,6 +42,9 @@
     <ClCompile Include="Source\ModuleMainMenu.cpp">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleLanguageSelect.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -86,6 +89,9 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleMainMenu.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleLanguageSelect.h">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
   </ItemGroup>
