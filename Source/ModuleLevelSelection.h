@@ -1,29 +1,22 @@
 #pragma once
-#include "ModuleGame.h"
+#include "ModuleScene.h"
 #include "raylib.h"
 #include "Globals.h"
 #include "AnimationSystem.h"
+#include "ModuleUserPreferences.h"
 
-enum Language
-{
-	Japanese,
-	English,
-	French,
-	German,
-	Spanish,
-	Italian
-};
-
-class ModuleLevelSelection : public ModuleGame
+class ModuleLevelSelection : public ModuleScene
 {
 private:
-	Language selectedLanguage;
+	int selectedLanguage;
 	Texture2D* levelSelectionTexture;
 	Texture2D* levelSelectionFrameTexture;
-	KeyboardKey toLeftButton;
-	KeyboardKey toRightButton;
+
 	Vector2 markSelectionPosition;
-	Animator* anim;
+	Animator* animator;
+
+
+	int audioSelectId;
 public:
 	ModuleLevelSelection(Application* app, bool start_enabled=true);
 	~ModuleLevelSelection();

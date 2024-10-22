@@ -3,6 +3,7 @@
 #include "ModuleRender.h"
 
 
+
 Rectangle AnimationData::GetSpriteRect(int spriteIndex)
 {
 	Rectangle spriteRect = Rectangle();
@@ -43,6 +44,10 @@ AnimationData::AnimationData(const char* n, std::vector<Sprite> s)
 	sprites = s;
 }
 
+AnimationData::AnimationData(const char* n)
+{
+	name = n;
+}
 AnimationData::AnimationData()
 {
 }
