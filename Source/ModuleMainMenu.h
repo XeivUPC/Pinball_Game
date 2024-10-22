@@ -1,7 +1,6 @@
 #include "ModuleScene.h"
 #include "AnimationSystem.h"
 #include "Timer.h"
-#include "ModuleUserPreferences.h"
 
 
 class ModuleMainMenu : public ModuleScene {

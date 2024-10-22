@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{746CC4C3-787F-4B0E-AA66-E388FE3FF4F6}</ProjectGuid>
-    <RootNamespace>PhysicsGame</RootNamespace>
-    <ProjectName>PhysicsGame</ProjectName>
+    <RootNamespace>PokemonPinball</RootNamespace>
+    <ProjectName>PokemonPinball</ProjectName>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -191,10 +191,12 @@
     <ClInclude Include="Source\AnimationSystem.h" />
     <ClInclude Include="Source\Counter.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
+    <ClInclude Include="Source\ModuleKeybinds.h" />
     <ClInclude Include="Source\ModuleLanguageSelect.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h" />
     <ClInclude Include="Source\ModuleScene.h" />
     <ClInclude Include="Source\ModuleMainMenu.h" />
+    <ClInclude Include="Source\ModuleSettings.h" />
     <ClInclude Include="Source\ModuleTexture.h" />
     <ClInclude Include="Source\Timer.h" />
     <ClInclude Include="Source\ModuleUserPreferences.h" />
@@ -210,10 +212,12 @@
     <ClCompile Include="Source\AnimationSystem.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
+    <ClCompile Include="Source\ModuleKeybinds.cpp" />
     <ClCompile Include="Source\ModuleLanguageSelect.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp" />
     <ClCompile Include="Source\ModuleScene.cpp" />
     <ClCompile Include="Source\ModuleMainMenu.cpp" />
+    <ClCompile Include="Source\ModuleSettings.cpp" />
     <ClCompile Include="Source\ModuleTexture.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
     <ClCompile Include="Source\ModuleUserPreferences.cpp" />

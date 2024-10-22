@@ -1,9 +1,11 @@
 #include "ModuleMainMenu.h"
+#include "ModuleSettings.h"
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "ModuleAudio.h"
 #include "ModuleLevelSelection.h"
+#include "ModuleUserPreferences.h"
 
 
 ModuleMainMenu::ModuleMainMenu(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -124,6 +126,8 @@ update_status ModuleMainMenu::Update()
 			break;
 		case 2:
 			//Go to options
+			StartFadeIn(App->scene_settings, WHITE, 0.3f);
+			App->audio->StopMusic();
 			App->audio->PlayFx(audioSelectId);
 			break;
 		}

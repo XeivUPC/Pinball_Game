@@ -12,6 +12,8 @@
 #include "ModuleCredits.h"
 #include "ModuleMainMenu.h"
 #include "ModuleLanguageSelect.h"
+#include "ModuleSettings.h"
+#include "ModuleKeybinds.h"
 
 
 #include "Application.h"
@@ -28,6 +30,8 @@ Application::Application()
 	scene_credits = new ModuleCredits(this, false);
 	scene_levelSelection = new ModuleLevelSelection(this, false);
 	scene_mainMenu = new ModuleMainMenu(this, false);
+	scene_settings = new ModuleSettings(this, false);
+	scene_keybinds = new ModuleKeybinds(this, false);
 
 	texture = new ModuleTexture(this);
 
@@ -48,6 +52,8 @@ Application::Application()
 	AddModule(scene_credits);
 	AddModule(scene_mainMenu);
 	AddModule(scene_languageSelect);
+	AddModule(scene_settings);
+	AddModule(scene_keybinds);
 
 	// Rendering happens at the end
 	AddModule(renderer);
