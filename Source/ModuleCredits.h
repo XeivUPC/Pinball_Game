@@ -1,16 +1,12 @@
 #include "Globals.h"
 #include "raylib.h"
 #include "Timer.h"
-#include "ModuleGame.h"
+#include "ModuleScene.h"
 
-class ModuleCredits : public ModuleGame {
+class ModuleCredits : public ModuleScene {
 private:
 
 	Timer delay;
-
-	float colorFadeOpacity=255;
-	float backgroundOpacity =255;
-
 	Texture2D* texture_credits;
 
 public:

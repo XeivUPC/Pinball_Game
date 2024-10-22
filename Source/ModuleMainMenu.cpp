@@ -2,13 +2,12 @@
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
+#include "ModuleAudio.h"
 #include "ModuleLevelSelection.h"
 
 
-ModuleMainMenu::ModuleMainMenu(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
+ModuleMainMenu::ModuleMainMenu(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
 {
-
-
 }
 
 ModuleMainMenu::~ModuleMainMenu()
@@ -56,6 +55,12 @@ bool ModuleMainMenu::Start()
 	background_animator->SetSpeed(0.1);
 
 	blinkTimer.Start();
+
+	App->audio->PlayMusic("Assets/Music/Tiitle_Screen.wav", 0.3f);
+
+	audioSelectId = App->audio->LoadFx("Assets/SFX/Select.ogg");
+
+	StartFadeOut(WHITE, 0.3f);
 
 	return ret;
 }
@@ -105,20 +110,23 @@ update_status ModuleMainMenu::Update()
 		switch (currentButton) {
 		case 0:		
 			//Go to game
-			Disable();
-			App->scene_levelSelection->Enable();
+			StartFadeIn(App->scene_levelSelection, WHITE, 0.3f);
+			App->audio->StopMusic();
+			App->audio->PlayFx(audioSelectId);		
 			break;
 		case 1:
 			//Go to pokedex
-
+			App->audio->PlayFx(audioSelectId);
 			break;
 		case 2:
 			//Go to options
-
+			App->audio->PlayFx(audioSelectId);
 			break;
 		}
 	}
 	pokeball_animator->Animate(6, 99 + 12 * currentButton , false);
+
+	ModuleScene::FadeUpdate();
 	
 	return UPDATE_CONTINUE;
 	
@@ -126,6 +134,15 @@ update_status ModuleMainMenu::Update()
 
 bool ModuleMainMenu::CleanUp()
 {
+	if (background_animator != nullptr) {
+		delete background_animator;
+		background_animator = nullptr;
+	}
+	if (pokeball_animator != nullptr) {
+		delete pokeball_animator;
+		pokeball_animator = nullptr;
+	}
+
 	LOG("Unloading Intro scene");
 	return true;
 }

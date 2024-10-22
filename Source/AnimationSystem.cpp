@@ -3,6 +3,7 @@
 #include "ModuleRender.h"
 
 
+
 Rectangle AnimationData::GetSpriteRect(int spriteIndex)
 {
 	Rectangle spriteRect = Rectangle();

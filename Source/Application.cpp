@@ -83,7 +83,8 @@ bool Application::Init()
 	for (auto it = list_modules.begin(); it != list_modules.end() && ret; ++it)
 	{
 		Module* module = *it;
-		ret = module->Start();
+		if(module->IsEnabled())
+			ret = module->Start();
 	}
 	
 	return ret;

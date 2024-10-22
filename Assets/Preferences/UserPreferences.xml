@@ -1,0 +1,14 @@
+<!-- Config file for the game -->
+<config>
+	<language value ="1"/>
+	
+	<keyBinds>
+		<left value ="65"/>
+		<right value ="68"/>
+		<up value ="87"/>
+		<down value ="83"/>
+		
+		<select value ="257"/>
+		<return value ="259"/>
+	</keyBinds>
+</config>
