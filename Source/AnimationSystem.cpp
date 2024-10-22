@@ -11,7 +11,7 @@ Rectangle AnimationData::GetSpriteRect(int spriteIndex)
 	spriteRect.width = sprites[spriteIndex].size.x;
 	spriteRect.height = sprites[spriteIndex].size.y;
 
-	spriteRect.x = sprites[spriteIndex].index.x * spriteRect.width*-1;
+	spriteRect.x = sprites[spriteIndex].index.x * spriteRect.width;
 	spriteRect.y = sprites[spriteIndex].index.y * spriteRect.height;
 	return spriteRect;
 }
