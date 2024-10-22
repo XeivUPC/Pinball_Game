@@ -124,7 +124,7 @@ void Animator::Animate(int x, int y, bool flip)
 		return;
 	Rectangle rect = animations[currentAnimation].GetSpriteRect(currentSprite);
 
-	App->renderer->Draw(*animations[currentAnimation].sprites[currentSprite].texture,x,y, &rect);
+	App->renderer->Draw(*animations[currentAnimation].sprites[currentSprite].texture,x,y, &rect, flip);
 	
 }
 
