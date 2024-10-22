@@ -48,6 +48,9 @@
     <ClCompile Include="Source\Counter.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleDebug.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -99,6 +102,9 @@
     </ClInclude>
     <ClInclude Include="Source\Counter.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleDebug.h">
+      <Filter>Modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

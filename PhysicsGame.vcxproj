@@ -191,6 +191,7 @@
     <ClInclude Include="Source\AnimationSystem.h" />
     <ClInclude Include="Source\Counter.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
+    <ClInclude Include="Source\ModuleDebug.h" />
     <ClInclude Include="Source\ModuleLanguageSelect.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h" />
     <ClInclude Include="Source\ModuleScene.h" />
@@ -210,6 +211,7 @@
     <ClCompile Include="Source\AnimationSystem.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
+    <ClCompile Include="Source\ModuleDebug.cpp" />
     <ClCompile Include="Source\ModuleLanguageSelect.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp" />
     <ClCompile Include="Source\ModuleScene.cpp" />
