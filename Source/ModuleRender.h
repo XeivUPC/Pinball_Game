@@ -17,7 +17,7 @@ public:
 	bool CleanUp();
 
     void SetBackgroundColor(Color color);
-	bool Draw(Texture2D texture, int x, int y, const Rectangle* section = NULL, bool flip = false, Color tint = WHITE,double angle = 0, float pivot_x = 0, float pivot_y = 0) const;
+	bool Draw(Texture2D texture, int x, int y, const Rectangle* section = NULL, Color tint = WHITE, bool flip = false ,double angle = 0, float pivot_x = 0, float pivot_y = 0) const;
     bool DrawText(const char* text, int x, int y, Font font, int spacing, Color tint) const;
 
 public:

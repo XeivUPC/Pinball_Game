@@ -64,7 +64,7 @@ void ModuleRender::SetBackgroundColor(Color color)
 }
 
 // Draw to screen
-bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* section, bool flip, Color tint, double angle, float pivot_x, float pivot_y) const
+bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* section, Color tint,bool flip, double angle, float pivot_x, float pivot_y) const
 {
 	bool ret = true;
 
