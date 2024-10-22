@@ -11,7 +11,7 @@ Rectangle AnimationData::GetSpriteRect(int spriteIndex)
 	spriteRect.width = sprites[spriteIndex].size.x;
 	spriteRect.height = sprites[spriteIndex].size.y;
 
-	spriteRect.x = sprites[spriteIndex].index.x * spriteRect.width;
+	spriteRect.x = sprites[spriteIndex].index.x * spriteRect.width*-1;
 	spriteRect.y = sprites[spriteIndex].index.y * spriteRect.height;
 	return spriteRect;
 }
@@ -123,6 +123,9 @@ void Animator::Animate(int x, int y, bool flip)
 	if (!canDraw)
 		return;
 	Rectangle rect = animations[currentAnimation].GetSpriteRect(currentSprite);
+
+	if(flip)
+		rect.width *= -1;
 
 	App->renderer->Draw(*animations[currentAnimation].sprites[currentSprite].texture,x,y, &rect, WHITE, flip);
 	

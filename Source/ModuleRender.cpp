@@ -68,14 +68,14 @@ bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* sectio
 {
 	bool ret = true;
 
+    float flipValue = flip ? -1 : 1;
+
 	float scale = SCREEN_SIZE;
 
     Vector2 position = { (float)x, (float)y };
 
     position.x = (x-pivot_x) * scale + camera.x;
     position.y = (y-pivot_y) * scale + camera.y;
-
-    int flipValue = flip ? -1 : 1;
 
 
     DrawTexturePro(texture, *section, {x*scale, y*scale, section->width*scale * flipValue, section->height * scale }, {pivot_x,pivot_y},angle, tint);
