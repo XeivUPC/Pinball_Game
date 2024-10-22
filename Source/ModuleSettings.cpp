@@ -263,6 +263,7 @@ bool ModuleSettings::CleanUp()
 
 void ModuleSettings::SetPokemonAnimations()
 {
+	pikachu_animator->SelectAnimation("Idle", true);
 	if (selectedVibration == 2)
 		psyduck_animator->SelectAnimation("Idle", true);
 	else {
@@ -274,11 +275,13 @@ void ModuleSettings::SetPokemonAnimations()
 			psyduck_animator->SelectAnimation("Move", true);
 			psyduck_animator->SetSpeed(0.07f);
 		}
-	}
 
-	if (selectedLanguage == 0)
-		pikachu_animator->SelectAnimation("MoveJapan", false);
-	else
-		pikachu_animator->SelectAnimation("MoveInternational", false);
+		if (selectedLanguage == 0)
+			pikachu_animator->SelectAnimation("MoveJapan", false);
+		else
+			pikachu_animator->SelectAnimation("MoveInternational", false);
+	}
+	
+	
 
 }

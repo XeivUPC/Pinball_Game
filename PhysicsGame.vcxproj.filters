@@ -54,6 +54,9 @@
     <ClCompile Include="Source\ModuleKeybinds.cpp">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleHighScore.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -110,6 +113,9 @@
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleKeybinds.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHighScore.h">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
   </ItemGroup>
