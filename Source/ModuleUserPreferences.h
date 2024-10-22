@@ -1,8 +1,11 @@
 #pragma once
-#include "ModuleGame.h"
+#include "Module.h"
 #include <unordered_map>
+#include "pugixml.hpp"
 
-class ModuleUserPreferences : public ModuleGame
+using namespace pugi;
+
+class ModuleUserPreferences : public Module
 {
 public:
 	
@@ -10,6 +13,7 @@ public:
 	enum VirtualButton
 	{
 		SELECT,
+		RETURN,
 		UP,
 		DOWN,
 		LEFT,
@@ -33,14 +37,23 @@ public:
 	bool CleanUp();
 
 	AppLanguage GetLanguage();
+	int GetMusicVolume();
+	int GetSfxVolume();
 	void ChangeLanguage(AppLanguage language);
 	int GetKeyValue(VirtualButton button);
 private:
 
+
 	void LoadUserPreferences();
 	void SaveUserPreferences();
 
+	void LoadConfigFile();
+	xml_document preferencesFile;
+
+	int musicVolume=100;
+	int sfxVolume=100;
+
 	AppLanguage language;
-	std::unordered_map<VirtualButton, int> keyMap;
+	std::unordered_map<VirtualButton, int> keyBinds;
 };
 

@@ -1,10 +1,10 @@
-#include "ModuleGame.h"
+#include "ModuleScene.h"
 #include "AnimationSystem.h"
 #include "Timer.h"
 #include "ModuleUserPreferences.h"
 
 
-class ModuleMainMenu : public ModuleGame {
+class ModuleMainMenu : public ModuleScene {
 private:
 
 	int currentButton = 0;
@@ -17,7 +17,10 @@ private:
 
 	Timer blinkTimer;
 
-	ModuleUserPreferences::AppLanguage selectedLanguage;
+	int selectedLanguage;
+
+	int audioSelectId;
+
 
 public:
 

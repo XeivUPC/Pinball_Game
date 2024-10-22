@@ -10,6 +10,7 @@ ModuleAudio::ModuleAudio(Application* app, bool start_enabled) : Module(app, sta
 {
 	fx_count = 0;
 	music = Music{ 0 };
+
 }
 
 // Destructor
@@ -26,7 +27,16 @@ bool ModuleAudio::Init()
 
     InitAudioDevice();
 
+	SetMasterVolume(0.2f);
+
 	return ret;
+}
+
+
+update_status ModuleAudio::Update()
+{
+	UpdateMusicStream(music);
+	return UPDATE_CONTINUE;
 }
 
 // Called before quitting
@@ -70,6 +80,11 @@ bool ModuleAudio::PlayMusic(const char* path, float fade_time)
 	return ret;
 }
 
+void ModuleAudio::StopMusic()
+{
+	StopMusicStream(music);
+}
+
 // Load WAV
 unsigned int ModuleAudio::LoadFx(const char* path)
 {
@@ -102,8 +117,10 @@ bool ModuleAudio::PlayFx(unsigned int id, int repeat)
 	}
 
 	bool ret = false;
-
-	if(id < fx_count) PlaySound(fx[id]);
+	id -= 1;
+	if (id < fx_count) {
+		PlaySound(fx[id]);
+	}
 
 	return ret;
 }

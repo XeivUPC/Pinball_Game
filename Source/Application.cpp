@@ -11,6 +11,7 @@
 #include "ModuleLevelSelection.h"
 #include "ModuleCredits.h"
 #include "ModuleMainMenu.h"
+#include "ModuleLanguageSelect.h"
 
 
 #include "Application.h"
@@ -23,7 +24,8 @@ Application::Application()
 	physics = new ModulePhysics(this);
 	userPreferences = new ModuleUserPreferences(this);
 
-	scene_credits = new ModuleCredits(this);
+	scene_languageSelect = new ModuleLanguageSelect(this);
+	scene_credits = new ModuleCredits(this, false);
 	scene_levelSelection = new ModuleLevelSelection(this, false);
 	scene_mainMenu = new ModuleMainMenu(this, false);
 
@@ -40,19 +42,15 @@ Application::Application()
 	AddModule(audio);
 	AddModule(texture);
 	AddModule(userPreferences);
-	
+
 	// Scenes
 	AddModule(scene_levelSelection);
 	AddModule(scene_credits);
 	AddModule(scene_mainMenu);
+	AddModule(scene_languageSelect);
 
 	// Rendering happens at the end
 	AddModule(renderer);
-
-
-	///SetScenes
-
-	scene_levelSelection->Disable();
 }
 
 Application::~Application()
@@ -83,7 +81,8 @@ bool Application::Init()
 	for (auto it = list_modules.begin(); it != list_modules.end() && ret; ++it)
 	{
 		Module* module = *it;
-		ret = module->Start();
+		if(module->IsEnabled())
+			ret = module->Start();
 	}
 	
 	return ret;

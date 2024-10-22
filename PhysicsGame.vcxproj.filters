@@ -9,7 +9,7 @@
     <ClCompile Include="Source/ModuleAudio.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleGame.cpp">
+    <ClCompile Include="Source\ModuleScene.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="Source/ModulePhysics.cpp">
@@ -42,6 +42,12 @@
     <ClCompile Include="Source\ModuleMainMenu.cpp">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleLanguageSelect.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Counter.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -55,7 +61,7 @@
     <ClInclude Include="Source/ModuleAudio.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ModuleGame.h">
+    <ClInclude Include="Source\ModuleScene.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source/ModulePhysics.h">
@@ -88,6 +94,12 @@
     <ClInclude Include="Source\ModuleMainMenu.h">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ModuleLanguageSelect.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Counter.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -102,5 +114,13 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{7ff14ab1-7b05-465f-8926-685df6f9b282}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Assets\Preferences\UserPreferences.xml">
+      <Filter>Config</Filter>
+    </Xml>
   </ItemGroup>
 </Project>
