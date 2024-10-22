@@ -102,7 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ShowIncludes>false</ShowIncludes>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)\Source\external\pugixml-1.14\src;$(SolutionDir)\Source\external\box2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)Source\external\box2d\include%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -145,7 +145,7 @@
       <UseFullPaths>false</UseFullPaths>
       <ShowIncludes>false</ShowIncludes>
       <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)\Source\external\pugixml-1.14\src;$(SolutionDir)\Source\external\box2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)Source\external\box2d\include%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -189,13 +189,13 @@
     <ClInclude Include="Source/ModuleWindow.h" />
     <ClInclude Include="Source/p2Point.h" />
     <ClInclude Include="Source\AnimationSystem.h" />
-    <ClInclude Include="Source\ModuleCredits.h" />
+    <ClInclude Include="Source\Counter.h" />
+    <ClInclude Include="Source\CreditsScene.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h" />
-    <ClInclude Include="Source\ModuleScene.h" />
-    <ClInclude Include="Source\ModuleMainMenu.h" />
+    <ClInclude Include="Source\ModuleGame.h" />
     <ClInclude Include="Source\ModuleTexture.h" />
     <ClInclude Include="Source\Timer.h" />
-    <ClInclude Include="Source\ModuleUserPreferences.h" />
+    <ClInclude Include="UserPreferences.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source/Application.cpp" />
@@ -206,13 +206,13 @@
     <ClCompile Include="Source/ModuleRender.cpp" />
     <ClCompile Include="Source/ModuleWindow.cpp" />
     <ClCompile Include="Source\AnimationSystem.cpp" />
-    <ClCompile Include="Source\ModuleCredits.cpp" />
+    <ClCompile Include="Source\Counter.cpp" />
+    <ClCompile Include="Source\CreditsScene.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp" />
-    <ClCompile Include="Source\ModuleScene.cpp" />
-    <ClCompile Include="Source\ModuleMainMenu.cpp" />
+    <ClCompile Include="Source\ModuleGame.cpp" />
     <ClCompile Include="Source\ModuleTexture.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
-    <ClCompile Include="Source\ModuleUserPreferences.cpp" />
+    <ClCompile Include="UserPreferences.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(SolutionDir)raylib.vcxproj">
@@ -221,15 +221,9 @@
     <ProjectReference Include="box2d.vcxproj">
       <Project>{920f0b3f-ef11-4e35-b122-add482acdf15}</Project>
     </ProjectReference>
-    <ProjectReference Include="Source\external\pugixml-1.14\scripts\pugixml_vs2022.vcxproj">
-      <Project>{07cf01c0-b887-499d-ad9c-799cb6a9fe64}</Project>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="Assets\Preferences\UserPreferences.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
