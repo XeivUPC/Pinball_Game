@@ -232,8 +232,6 @@ update_status ModuleSettings::Update()
 		Rectangle rectArrow = { 0, 0,64,16 };
 		App->renderer->Draw(*arrow_texture, 87, 20 + 16 * currentButton, &rectArrow, WHITE);
 	}
-
-	printf("%f\n", psyduck_animator->GetCurrentAnimationSprite().index.x);
 	pokeball_animator->Animate(6, 18 + 16 * currentButton, false);
 
 	pikachu_animator->Animate(120,80, false);
