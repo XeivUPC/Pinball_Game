@@ -9,9 +9,6 @@
     <ClCompile Include="Source/ModuleAudio.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleGame.cpp">
-      <Filter>Modules</Filter>
-    </ClCompile>
     <ClCompile Include="Source/ModulePhysics.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -24,14 +21,8 @@
     <ClCompile Include="Source/ModuleWindow.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="UserPreferences.cpp">
-      <Filter>Saving&amp;Settings</Filter>
-    </ClCompile>
     <ClCompile Include="Source\AnimationSystem.cpp">
       <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CreditsScene.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
     <ClCompile Include="Source/Log.cpp">
       <Filter>Utils</Filter>
@@ -48,6 +39,16 @@
     <ClCompile Include="Source\Counter.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleCredits.cpp" />
+    <ClCompile Include="Source\ModuleScene.cpp" />
+    <ClCompile Include="Source\ModuleMainMenu.cpp" />
+    <ClCompile Include="Source\ModuleUserPreferences.cpp" />
+    <ClCompile Include="Source\UI.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleText.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -59,9 +60,6 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source/ModuleAudio.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleGame.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source/ModulePhysics.h">
@@ -76,14 +74,8 @@
     <ClInclude Include="Source/ModuleWindow.h">
       <Filter>Modules</Filter>
     </ClInclude>
-    <ClInclude Include="UserPreferences.h">
-      <Filter>Saving&amp;Settings</Filter>
-    </ClInclude>
     <ClInclude Include="Source\AnimationSystem.h">
       <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CreditsScene.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\Timer.h">
       <Filter>Utils</Filter>
@@ -98,6 +90,16 @@
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\Counter.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleCredits.h" />
+    <ClInclude Include="Source\ModuleScene.h" />
+    <ClInclude Include="Source\ModuleMainMenu.h" />
+    <ClInclude Include="Source\ModuleUserPreferences.h" />
+    <ClInclude Include="Source\UI.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleText.h">
       <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
@@ -117,5 +119,8 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{7ff14ab1-7b05-465f-8926-685df6f9b282}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="Assets\Preferences\UserPreferences.xml" />
   </ItemGroup>
 </Project>

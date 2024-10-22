@@ -7,7 +7,7 @@
 
 ModuleLanguageSelect::ModuleLanguageSelect(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
 {
-
+	
 
 }
 
@@ -58,9 +58,8 @@ update_status ModuleLanguageSelect::Update()
 		App->userPreferences->ChangeLanguage((ModuleUserPreferences::AppLanguage)currentButton);
 		StartFadeIn(App->scene_credits, WHITE, 0.3f);
 	}
-
 	ModuleScene::FadeUpdate();
-
+	
 	return UPDATE_CONTINUE;
 }
 

@@ -196,8 +196,10 @@
     <ClInclude Include="Source\ModuleScene.h" />
     <ClInclude Include="Source\ModuleMainMenu.h" />
     <ClInclude Include="Source\ModuleTexture.h" />
+    <ClInclude Include="Source\ModuleText.h" />
     <ClInclude Include="Source\Timer.h" />
     <ClInclude Include="Source\ModuleUserPreferences.h" />
+    <ClInclude Include="Source\UI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source/Application.cpp" />
@@ -215,8 +217,10 @@
     <ClCompile Include="Source\ModuleScene.cpp" />
     <ClCompile Include="Source\ModuleMainMenu.cpp" />
     <ClCompile Include="Source\ModuleTexture.cpp" />
+    <ClCompile Include="Source\ModuleText.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
     <ClCompile Include="Source\ModuleUserPreferences.cpp" />
+    <ClCompile Include="Source\UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(SolutionDir)raylib.vcxproj">

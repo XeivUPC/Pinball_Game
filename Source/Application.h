@@ -10,6 +10,7 @@ class ModuleRender;
 class ModuleAudio;
 class ModulePhysics;
 class ModuleTexture;
+class ModuleText;
 class ModuleUserPreferences;
 
 class ModuleLevelSelection;
@@ -34,6 +35,7 @@ public:
 	ModuleLanguageSelect* scene_languageSelect;
 
 	ModuleTexture* texture;
+	ModuleText* text;
 
 
 
