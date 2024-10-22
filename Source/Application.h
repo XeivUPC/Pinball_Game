@@ -15,6 +15,7 @@ class ModuleUserPreferences;
 class ModuleLevelSelection;
 class ModuleCredits;
 class ModuleMainMenu;
+class ModuleLanguageSelect;
 
 
 class Application
@@ -30,6 +31,7 @@ public:
 	ModuleLevelSelection* scene_levelSelection;
 	ModuleCredits* scene_credits;
 	ModuleMainMenu* scene_mainMenu;
+	ModuleLanguageSelect* scene_languageSelect;
 
 	ModuleTexture* texture;
 
