@@ -10,6 +10,7 @@ class ModuleRender;
 class ModuleAudio;
 class ModulePhysics;
 class ModuleTexture;
+class ModuleText;
 class ModuleUserPreferences;
 
 class ModuleLevelSelection;
@@ -40,7 +41,7 @@ public:
 	ModuleHighScore* scene_highScore;
 
 	ModuleTexture* texture;
-
+	ModuleText* text;
 
 
 

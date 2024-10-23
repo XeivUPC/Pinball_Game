@@ -57,6 +57,12 @@
     <ClCompile Include="Source\ModuleHighScore.cpp">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleText.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UI.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -117,6 +123,12 @@
     </ClInclude>
     <ClInclude Include="Source\ModuleHighScore.h">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleText.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\UI.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
