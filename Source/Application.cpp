@@ -53,13 +53,13 @@ Application::Application()
 	AddModule(text);
 
 	// Scenes
-	AddModule(scene_levelSelection);
+	AddModule(scene_languageSelect);
 	AddModule(scene_credits);
 	AddModule(scene_mainMenu);
-	AddModule(scene_languageSelect);
+	AddModule(scene_levelSelection);
+	AddModule(scene_highScore);
 	AddModule(scene_settings);
 	AddModule(scene_keybinds);
-	AddModule(scene_highScore);
 
 	// Rendering happens at the end
 	AddModule(renderer);
