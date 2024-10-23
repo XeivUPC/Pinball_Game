@@ -1,7 +1,6 @@
 #include "ModuleScene.h"
 #include "AnimationSystem.h"
 #include "Timer.h"
-#include "ModuleUserPreferences.h"
 
 
 class ModuleMainMenu : public ModuleScene {
@@ -20,6 +19,10 @@ private:
 	int selectedLanguage;
 
 	int audioSelectId;
+
+
+	Timer scrollMenuTimer;
+	float scrollMenuTimeMS=0.2f;
 
 
 public:

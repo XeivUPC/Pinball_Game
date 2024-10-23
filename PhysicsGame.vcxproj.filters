@@ -48,8 +48,20 @@
     <ClCompile Include="Source\Counter.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleDebug.cpp">
+    <ClCompile Include="Source\ModuleSettings.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleKeybinds.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleHighScore.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleText.cpp">
       <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UI.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,8 +115,20 @@
     <ClInclude Include="Source\Counter.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ModuleDebug.h">
+    <ClInclude Include="Source\ModuleSettings.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleKeybinds.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHighScore.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleText.h">
       <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\UI.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +146,9 @@
     </Filter>
     <Filter Include="Config">
       <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UIs">
+      <UniqueIdentifier>{28ee3c68-574a-47a4-b59d-e59b83ad5827}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,11 @@
 #include "ModuleMainMenu.h"
+#include "ModuleSettings.h"
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "ModuleAudio.h"
 #include "ModuleLevelSelection.h"
+#include "ModuleUserPreferences.h"
 
 
 ModuleMainMenu::ModuleMainMenu(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -71,17 +73,22 @@ bool ModuleMainMenu::Start()
 
 update_status ModuleMainMenu::Update()
 {
+	if (scrollMenuTimer.ReadSec() > scrollMenuTimeMS) {
+		if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) {
+			if (currentButton > 0) {
+				currentButton--;
+			}
+			scrollMenuTimer.Start();
+		}
+		else if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
+			if (currentButton < 2) {
+				currentButton++;
+			}
+			scrollMenuTimer.Start();
+		}
+	}
 
-	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) {
-		if (currentButton > 0) {
-			currentButton--;
-		}
-	}
-	else if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
-		if (currentButton < 2) {
-			currentButton++;
-		}
-	}
+	
 
 
 	pokeball_animator->Update();
@@ -124,6 +131,8 @@ update_status ModuleMainMenu::Update()
 			break;
 		case 2:
 			//Go to options
+			StartFadeIn(App->scene_settings, WHITE, 0.3f);
+			App->audio->StopMusic();
 			App->audio->PlayFx(audioSelectId);
 			break;
 		}
