@@ -27,6 +27,8 @@ bool ModuleHighScore::Start()
 
 	//versionColor = /* Get the version's color of the game that scored a high score (example blue) */ 1;
 
+	incoming_score = 999999;
+
 	selectedLanguage = App->userPreferences->GetLanguage();
 
 	if (selectedLanguage > 0) {
@@ -74,11 +76,27 @@ bool ModuleHighScore::Start()
 update_status ModuleHighScore::Update()
 {
 
-	/*if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-		scores[FIRST].score = 777777777;
-		scores[FIRST].name = "???";
+	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
+		std::string s = std::to_string(incoming_score);
+		scores[FIRST].score = s.c_str();
+		scores[FIRST].name = "ALP";
 		SaveHighScore();
-	}*/
+	}
+	
+
+	if (incoming_score > 999999999999) {
+		incoming_score = 999999999999;
+		times_num_offset = 3;
+	}
+	else if (incoming_score > 99999999999) {
+		times_num_offset = 3;
+	}
+	else if (incoming_score > 9999999999) {
+		times_num_offset = 2;
+	}
+	else if (incoming_score > 999999999) {
+		times_num_offset = 1;
+	}
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
 		//Return
@@ -102,11 +120,11 @@ update_status ModuleHighScore::Update()
 		arrowTimer.Start();
 	}
 
-	App->text_highScoreNum->Write(scores[FIRST].score, 80, 16, versionColor, 1);
-	App->text_highScoreNum->Write(scores[SECOND].score, 80, 16 + 24 * 1, versionColor, 2);
-	App->text_highScoreNum->Write(scores[THIRD].score, 80, 16 + 24 * 2, versionColor, 3);
-	App->text_highScoreNum->Write(scores[FOURTH].score, 80, 16 + 24 * 3, versionColor, 4);
-	App->text_highScoreNum->Write(scores[FIFTH].score, 80, 16 + 24 * 4, versionColor, 5);
+	App->text_highScoreNum->Write(scores[FIRST].score, 80 - 16 * times_num_offset, 16, versionColor, 1);
+	App->text_highScoreNum->Write(scores[SECOND].score, 80 /*16 * times_num_offset*/, 16 + 24 * 1, versionColor, 2);
+	App->text_highScoreNum->Write(scores[THIRD].score, 80 /*- 16 * times_num_offset*/, 16 + 24 * 2, versionColor, 3);
+	App->text_highScoreNum->Write(scores[FOURTH].score, 80 /*- 16 * times_num_offset*/, 16 + 24 * 3, versionColor, 4);
+	App->text_highScoreNum->Write(scores[FIFTH].score, 80 /*- 16 * times_num_offset*/, 16 + 24 * 4, versionColor, 5);
 
 	App->text_highScoreName->Write(scores[FIRST].name, 24, 16, versionColor);
 	App->text_highScoreName->Write(scores[SECOND].name, 24, 16 + 24 * 1, versionColor);
