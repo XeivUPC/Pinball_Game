@@ -73,17 +73,22 @@ bool ModuleMainMenu::Start()
 
 update_status ModuleMainMenu::Update()
 {
+	if (scrollMenuTimer.ReadSec() > scrollMenuTimeMS) {
+		if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) {
+			if (currentButton > 0) {
+				currentButton--;
+			}
+			scrollMenuTimer.Start();
+		}
+		else if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
+			if (currentButton < 2) {
+				currentButton++;
+			}
+			scrollMenuTimer.Start();
+		}
+	}
 
-	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) {
-		if (currentButton > 0) {
-			currentButton--;
-		}
-	}
-	else if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
-		if (currentButton < 2) {
-			currentButton++;
-		}
-	}
+	
 
 
 	pokeball_animator->Update();

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config>
-	<language value="3" />
-	<vibration value="1" />
+	<language value="4" />
+	<vibration value="0" />
 	<keyBinds>
 		<left value="65" />
 		<right value="68" />

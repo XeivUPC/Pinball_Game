@@ -21,6 +21,10 @@ private:
 	int audioSelectId;
 
 
+	Timer scrollMenuTimer;
+	float scrollMenuTimeMS=0.2f;
+
+
 public:
 
 	ModuleMainMenu(Application* app, bool start_enabled = true);
