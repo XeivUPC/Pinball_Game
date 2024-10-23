@@ -20,8 +20,8 @@ public:
 	};
 
 	struct Score {
-		int score;
-		string_t name;
+		const char* score;
+		const char* name;
 	};
 
 	ModuleHighScore(Application* app, bool start_enabled = true);

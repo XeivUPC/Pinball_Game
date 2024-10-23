@@ -11,6 +11,7 @@ class ModuleAudio;
 class ModulePhysics;
 class ModuleTexture;
 class ModuleText;
+class ModuleHSNum;
 class ModuleUserPreferences;
 
 class ModuleLevelSelection;
@@ -42,6 +43,7 @@ public:
 
 	ModuleTexture* texture;
 	ModuleText* text;
+	ModuleHSNum* text_highScoreNum;
 
 
 

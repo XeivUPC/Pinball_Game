@@ -7,6 +7,7 @@
 #include "ModuleTexture.h"
 #include "ModuleUserPreferences.h"
 #include "ModuleText.h"
+#include "ModuleHSNum.h"
 
 
 #include "ModuleLevelSelection.h"
@@ -28,6 +29,7 @@ Application::Application()
 	physics = new ModulePhysics(this);
 	userPreferences = new ModuleUserPreferences(this);
 	text = new ModuleText(this);
+	text_highScoreNum = new ModuleHSNum(this);
 
 	scene_languageSelect = new ModuleLanguageSelect(this);
 	scene_credits = new ModuleCredits(this, false);
@@ -51,6 +53,7 @@ Application::Application()
 	AddModule(texture);
 	AddModule(userPreferences);
 	AddModule(text);
+	AddModule(text_highScoreNum);
 
 	// Scenes
 	AddModule(scene_languageSelect);

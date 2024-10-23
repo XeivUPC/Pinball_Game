@@ -10,7 +10,7 @@ private:
 	Vector2 size;
 	Vector2 count;
 	std::vector<int> charReferences;
-	Rectangle* GetCharRect(char c, int color, bool coma);
+	Rectangle* GetCharRect(char c, int color, int position, bool coma);
 public:
 	ModuleHSNum(Application* app, bool start_enabled = true);
 
@@ -26,5 +26,14 @@ public:
 
 	bool CleanUp()override;
 	void OnCollision(PhysBody* bodyA, PhysBody* bodyB)override;
-	void Write(const char* text, int x, int y, int color, bool coma);
+	/// <summary>
+	/// For color: Red = 0, Blue 1 \ For position: 1 to 5
+	/// </summary>
+	/// <param name="text"></param>
+	/// <param name="x"></param>
+	/// <param name="y"></param>
+	/// <param name="color"></param>
+	/// <param name="position"></param>
+	/// <param name="coma"></param>
+	void Write(const char* text, int x, int y, int color, int position);
 };

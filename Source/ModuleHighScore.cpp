@@ -6,6 +6,7 @@
 #include "ModuleAudio.h"
 #include "ModuleLevelSelection.h"
 #include "ModuleMainMenu.h"
+#include "ModuleHSNum.h"
 
 
 
@@ -79,7 +80,7 @@ update_status ModuleHighScore::Update()
 	}*/
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
-		///Return
+		//Return
 		//App->audio->PlayFx(audioSelectId);
 		StartFadeIn(App->scene_mainMenu, WHITE, 0.3f);
 	}
@@ -100,7 +101,14 @@ update_status ModuleHighScore::Update()
 		arrowTimer.Start();
 	}
 
+	App->text_highScoreNum->Write(scores[FIRST].score, 80, 16, versionColor, 1);
+	App->text_highScoreNum->Write(scores[SECOND].score, 80, 16 + 24 * 1, versionColor, 2);
+	App->text_highScoreNum->Write(scores[THIRD].score, 80, 16 + 24 * 2, versionColor, 3);
+	App->text_highScoreNum->Write(scores[FOURTH].score, 80, 16 + 24 * 3, versionColor, 4);
+	App->text_highScoreNum->Write(scores[FIFTH].score, 80, 16 + 24 * 4, versionColor, 5);
+
 	arrow_animator->Animate(141 - (141*versionColor), 126, versionColor);
+
 
 	ModuleScene::FadeUpdate();
 
@@ -123,15 +131,15 @@ void ModuleHighScore::LoadHighScore()
 {
 	xml_node positionNode = highScoreFile.child("highscore").child("positions");
 
-	scores[FIRST].score = positionNode.child("first").attribute("score").as_int();
+	scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
 	scores[FIRST].name = positionNode.child("first").attribute("name").as_string();
-	scores[SECOND].score = positionNode.child("second").attribute("score").as_int();
+	scores[SECOND].score = positionNode.child("second").attribute("score").as_string();
 	scores[SECOND].name = positionNode.child("second").attribute("name").as_string();
-	scores[THIRD].score = positionNode.child("third").attribute("score").as_int();
+	scores[THIRD].score = positionNode.child("third").attribute("score").as_string();
 	scores[THIRD].name = positionNode.child("third").attribute("name").as_string();
-	scores[FOURTH].score = positionNode.child("fourth").attribute("score").as_int();
+	scores[FOURTH].score = positionNode.child("fourth").attribute("score").as_string();
 	scores[FOURTH].name = positionNode.child("fourth").attribute("name").as_string();
-	scores[FIFTH].score = positionNode.child("fifth").attribute("score").as_int();
+	scores[FIFTH].score = positionNode.child("fifth").attribute("score").as_string();
 	scores[FIFTH].name = positionNode.child("fifth").attribute("name").as_string();
 	
 }
@@ -141,15 +149,15 @@ void ModuleHighScore::SaveHighScore()
 	xml_node positionNode = highScoreFile.child("highscore").child("positions");
 
 	positionNode.child("first").attribute("score").set_value(scores[FIRST].score);
-	positionNode.child("first").attribute("name").set_value(scores[FIRST].name.c_str());
+	positionNode.child("first").attribute("name").set_value(scores[FIRST].name);
 	positionNode.child("second").attribute("score").set_value(scores[SECOND].score);
-	positionNode.child("second").attribute("name").set_value(scores[SECOND].name.c_str());
+	positionNode.child("second").attribute("name").set_value(scores[SECOND].name);
 	positionNode.child("third").attribute("score").set_value(scores[THIRD].score);
-	positionNode.child("third").attribute("name").set_value(scores[THIRD].name.c_str());
+	positionNode.child("third").attribute("name").set_value(scores[THIRD].name);
 	positionNode.child("fourth").attribute("score").set_value(scores[FOURTH].score);
-	positionNode.child("fourth").attribute("name").set_value(scores[FOURTH].name.c_str());
+	positionNode.child("fourth").attribute("name").set_value(scores[FOURTH].name);
 	positionNode.child("fifth").attribute("score").set_value(scores[FIFTH].score);
-	positionNode.child("fifth").attribute("name").set_value(scores[FIFTH].name.c_str());
+	positionNode.child("fifth").attribute("name").set_value(scores[FIFTH].name);
 
 	SaveConfigFile();
 }
