@@ -19,6 +19,11 @@ public:
 		FIFTH,
 	};
 
+	struct Score {
+		int score;
+		string_t name;
+	};
+
 	ModuleHighScore(Application* app, bool start_enabled = true);
 	~ModuleHighScore();
 
@@ -31,7 +36,7 @@ public:
 	/// </summary>
 	/// <param name="id"></param>
 	void SetVersionColor(int id) {
-		if (id < 2) versionColor = id;
+		if (id < 2 && id > -1) versionColor = id;
 	}
 
 private:
@@ -53,7 +58,8 @@ private:
 	void SaveHighScore();
 
 	void LoadHighScoreFile();
+	void SaveConfigFile();
 	xml_document highScoreFile;
 
-	std::unordered_map<Position, int> scores;
+	std::unordered_map<Position, Score> scores;
 };
