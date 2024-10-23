@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModuleAudio.h"
 #include "ModuleLevelSelection.h"
+#include "ModuleMainMenu.h"
 
 
 
@@ -22,7 +23,7 @@ bool ModuleHighScore::Start()
 	LOG("Loading Intro assets");
 	bool ret = true;
 
-	versionColor = /* Get the version's color of the game that scored a high score (example blue) */ 1;
+	//versionColor = /* Get the version's color of the game that scored a high score (example blue) */ 1;
 
 	selectedLanguage = App->userPreferences->GetLanguage();
 
@@ -68,6 +69,11 @@ bool ModuleHighScore::Start()
 update_status ModuleHighScore::Update()
 {
 
+	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
+		///Load Level
+		App->audio->PlayFx(audioSelectId);
+		StartFadeIn(App->scene_mainMenu, WHITE, 0.3f);
+	}
 
 	Rectangle rectBackground = { 0 + 160 * versionColor,0 + 144 * selectedLanguage,160 + 160 * versionColor,144 + 144 * selectedLanguage };
 

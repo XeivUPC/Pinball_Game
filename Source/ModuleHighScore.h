@@ -26,6 +26,14 @@ public:
 	update_status Update();
 	bool CleanUp();
 
+	/// <summary>
+	/// Sets the version's color to Red = 0 or Blue = 1
+	/// </summary>
+	/// <param name="id"></param>
+	void SetVersionColor(int id) {
+		if (id < 2) versionColor = id;
+	}
+
 private:
 
 	Texture* arrow_texture;
@@ -36,7 +44,7 @@ private:
 	Timer arrowTimer;
 
 	int selectedLanguage;
-	int versionColor;
+	int versionColor = 0;
 	// Red = 0, Blue = 1
 
 	int audioSelectId;

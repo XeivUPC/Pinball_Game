@@ -18,6 +18,7 @@ class ModuleMainMenu;
 class ModuleLanguageSelect;
 class ModuleSettings;
 class ModuleKeybinds;
+class ModuleHighScore;
 
 
 class Application
@@ -36,6 +37,7 @@ public:
 	ModuleLanguageSelect* scene_languageSelect;
 	ModuleSettings* scene_settings;
 	ModuleKeybinds* scene_keybinds;
+	ModuleHighScore* scene_highScore;
 
 	ModuleTexture* texture;
 
