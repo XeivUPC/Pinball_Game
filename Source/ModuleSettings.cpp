@@ -110,7 +110,9 @@ bool ModuleSettings::Start()
 
 	
 	App->audio->PlayMusic("Assets/Music/Options_Screen.wav", 0.3f);
-	audioSelectId = App->audio->LoadFx("Assets/SFX/Select.ogg");
+
+	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
+	audioMoveId = App->audio->LoadFx("Assets/SFX/Menu_Option_Move.ogg");
 
 	StartFadeOut(WHITE, 0.3f);
 
@@ -135,12 +137,14 @@ update_status ModuleSettings::Update()
 					currentButton--;
 				}
 				scrollMenuTimer.Start();
+				App->audio->PlayFx(audioMoveId);
 			}
 			else if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
 				if (currentButton < 2) {
 					currentButton++;
 				}
 				scrollMenuTimer.Start();
+				App->audio->PlayFx(audioMoveId);
 			}
 		}
 	}
@@ -149,6 +153,7 @@ update_status ModuleSettings::Update()
 
 		if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT)))
 		{
+			App->audio->PlayFx(audioMoveId);
 			switch (currentButton) {
 				case 0:
 					subCurrentButton = (int)App->userPreferences->PreviousVibration();
@@ -167,6 +172,7 @@ update_status ModuleSettings::Update()
 		}
 		else if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)))
 		{
+			App->audio->PlayFx(audioMoveId);
 			switch (currentButton) {
 				case 0:
 					subCurrentButton = (int)App->userPreferences->NextVibration();
@@ -212,6 +218,7 @@ update_status ModuleSettings::Update()
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN))) {
 		///Go Back
+		App->audio->PlayFx(audioSelectId);
 		if (selected) {
 			
 			selected = false;

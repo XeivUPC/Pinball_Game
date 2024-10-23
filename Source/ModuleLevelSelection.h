@@ -15,8 +15,9 @@ private:
 	Vector2 markSelectionPosition;
 	Animator* animator;
 
-
 	int audioSelectId;
+	int audioMoveId;
+
 public:
 	ModuleLevelSelection(Application* app, bool start_enabled=true);
 	~ModuleLevelSelection();

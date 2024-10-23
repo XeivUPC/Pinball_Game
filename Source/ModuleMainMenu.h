@@ -19,6 +19,8 @@ private:
 	int selectedLanguage;
 
 	int audioSelectId;
+	int audioMoveId;
+	int audioStartGameId;
 
 
 	Timer scrollMenuTimer;

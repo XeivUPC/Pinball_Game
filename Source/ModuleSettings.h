@@ -29,6 +29,7 @@ private:
 
 
 	int audioSelectId;
+	int audioMoveId;
 
 
 	Timer scrollMenuTimer;
