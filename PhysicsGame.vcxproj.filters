@@ -63,6 +63,18 @@
     <ClCompile Include="Source\UI.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Source\HighScoreUINum.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\HighScoreUIName.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleHSName.cpp">
+      <Filter>Modules\Texts %28ModuleTexts%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleHSNum.cpp">
+      <Filter>Modules\Texts %28ModuleTexts%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -130,6 +142,18 @@
     <ClInclude Include="Source\UI.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Source\HighScoreUINum.h">
+      <Filter>UIs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HighScoreUIName.h">
+      <Filter>UIs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHSName.h">
+      <Filter>Modules\Texts %28ModuleTexts%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHSNum.h">
+      <Filter>Modules\Texts %28ModuleTexts%29</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -149,6 +173,9 @@
     </Filter>
     <Filter Include="UIs">
       <UniqueIdentifier>{28ee3c68-574a-47a4-b59d-e59b83ad5827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Texts %28ModuleTexts%29">
+      <UniqueIdentifier>{d4740138-6f12-429a-b8c8-3784a56086d6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

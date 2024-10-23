@@ -197,6 +197,8 @@
     <ClInclude Include="Source\HighScoreUINum.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleHighScore.h" />
+    <ClInclude Include="Source\ModuleHSName.h" />
+    <ClInclude Include="Source\ModuleHSNum.h" />
     <ClInclude Include="Source\ModuleKeybinds.h" />
     <ClInclude Include="Source\ModuleLanguageSelect.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h" />
@@ -223,6 +225,8 @@
     <ClCompile Include="Source\HighScoreUINum.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
     <ClCompile Include="Source\ModuleHighScore.cpp" />
+    <ClCompile Include="Source\ModuleHSName.cpp" />
+    <ClCompile Include="Source\ModuleHSNum.cpp" />
     <ClCompile Include="Source\ModuleKeybinds.cpp" />
     <ClCompile Include="Source\ModuleLanguageSelect.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp" />
