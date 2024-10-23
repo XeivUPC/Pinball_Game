@@ -14,6 +14,7 @@
 #include "ModuleLanguageSelect.h"
 #include "ModuleSettings.h"
 #include "ModuleKeybinds.h"
+#include "ModuleHighScore.h"
 
 
 #include "Application.h"
@@ -32,6 +33,7 @@ Application::Application()
 	scene_mainMenu = new ModuleMainMenu(this, false);
 	scene_settings = new ModuleSettings(this, false);
 	scene_keybinds = new ModuleKeybinds(this, false);
+	scene_highScore = new ModuleHighScore(this, false);
 
 	texture = new ModuleTexture(this);
 
@@ -54,6 +56,7 @@ Application::Application()
 	AddModule(scene_languageSelect);
 	AddModule(scene_settings);
 	AddModule(scene_keybinds);
+	AddModule(scene_highScore);
 
 	// Rendering happens at the end
 	AddModule(renderer);
