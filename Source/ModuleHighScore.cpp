@@ -7,6 +7,7 @@
 #include "ModuleLevelSelection.h"
 #include "ModuleMainMenu.h"
 #include "ModuleHSNum.h"
+#include "ModuleHSName.h"
 
 
 
@@ -107,7 +108,13 @@ update_status ModuleHighScore::Update()
 	App->text_highScoreNum->Write(scores[FOURTH].score, 80, 16 + 24 * 3, versionColor, 4);
 	App->text_highScoreNum->Write(scores[FIFTH].score, 80, 16 + 24 * 4, versionColor, 5);
 
-	arrow_animator->Animate(141 - (141*versionColor), 126, versionColor);
+	App->text_highScoreName->Write(scores[FIRST].name, 24, 16, versionColor);
+	App->text_highScoreName->Write(scores[SECOND].name, 24, 16 + 24 * 1, versionColor);
+	App->text_highScoreName->Write(scores[THIRD].name, 24, 16 + 24 * 2, versionColor);
+	App->text_highScoreName->Write(scores[FOURTH].name, 24, 16 + 24 * 3, versionColor);
+	App->text_highScoreName->Write(scores[FIFTH].name, 24, 16 + 24 * 4, versionColor);
+
+	arrow_animator->Animate(141 - (141*versionColor), 125, versionColor);
 
 
 	ModuleScene::FadeUpdate();

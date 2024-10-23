@@ -193,8 +193,6 @@
     <ClInclude Include="Source/p2Point.h" />
     <ClInclude Include="Source\AnimationSystem.h" />
     <ClInclude Include="Source\Counter.h" />
-    <ClInclude Include="Source\HighScoreUIName.h" />
-    <ClInclude Include="Source\HighScoreUINum.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleHighScore.h" />
     <ClInclude Include="Source\ModuleHSName.h" />
@@ -221,8 +219,6 @@
     <ClCompile Include="Source/ModuleWindow.cpp" />
     <ClCompile Include="Source\AnimationSystem.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
-    <ClCompile Include="Source\HighScoreUIName.cpp" />
-    <ClCompile Include="Source\HighScoreUINum.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
     <ClCompile Include="Source\ModuleHighScore.cpp" />
     <ClCompile Include="Source\ModuleHSName.cpp" />

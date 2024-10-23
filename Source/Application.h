@@ -12,6 +12,7 @@ class ModulePhysics;
 class ModuleTexture;
 class ModuleText;
 class ModuleHSNum;
+class ModuleHSName;
 class ModuleUserPreferences;
 
 class ModuleLevelSelection;
@@ -44,6 +45,7 @@ public:
 	ModuleTexture* texture;
 	ModuleText* text;
 	ModuleHSNum* text_highScoreNum;
+	ModuleHSName* text_highScoreName;
 
 
 
