@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <unordered_map>
+#include <string>
 
 #include "raylib.h"
 #include "Timer.h"
@@ -21,7 +22,7 @@ class AnimationData
 {
 	friend class Animator;
 private:
-	const char* name = "";
+	std::string name = "";
 	std::vector <Sprite> sprites;
 protected:
 	Rectangle GetSpriteRect(int spriteIndex);
@@ -30,8 +31,8 @@ protected:
 public:
 	void AddSprite(Sprite sprite);
 	void AddSprite(Sprite sprite, int extraData);
-	AnimationData(const char* n, std::vector<Sprite> s);
-	AnimationData(const char* n);
+	AnimationData(std::string n, std::vector<Sprite> s);
+	AnimationData(std::string n);
 	AnimationData();
 	~AnimationData();
 
@@ -42,9 +43,9 @@ class Animator
 private:
 	void Next();
 
-	std::unordered_map<const char*, AnimationData> animations;
+	std::unordered_map<std::string, AnimationData> animations;
 
-	const char* currentAnimation = "";
+	std::string currentAnimation = "";
 	int currentSprite = 0;
 
 	bool loop = false;
@@ -61,7 +62,7 @@ public:
 	Animator(Application* App);
 	~Animator();
 	void AddAnimation(AnimationData anim);
-	void SelectAnimation(const char* animName, bool l);
+	void SelectAnimation(std::string animName, bool l);
 	void SetSpeed(float s);
 	void Update();
 	void Animate(int x, int y, bool flip);

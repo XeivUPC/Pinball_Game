@@ -232,8 +232,6 @@ update_status ModuleSettings::Update()
 		Rectangle rectArrow = { 0, 0,64,16 };
 		App->renderer->Draw(*arrow_texture, 87, 20 + 16 * currentButton, &rectArrow, WHITE);
 	}
-
-
 	pokeball_animator->Animate(6, 18 + 16 * currentButton, false);
 
 	pikachu_animator->Animate(120,80, false);
@@ -264,6 +262,7 @@ bool ModuleSettings::CleanUp()
 void ModuleSettings::SetPokemonAnimations()
 {
 	pikachu_animator->SelectAnimation("Idle", true);
+
 	if (selectedVibration == 2)
 		psyduck_animator->SelectAnimation("Idle", true);
 	else {
@@ -281,7 +280,7 @@ void ModuleSettings::SetPokemonAnimations()
 		else
 			pikachu_animator->SelectAnimation("MoveInternational", false);
 	}
-	
+
 	
 
 }

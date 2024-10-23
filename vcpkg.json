@@ -1,0 +1,7 @@
+{
+  "dependencies": [
+    "box2d",
+    "pugixml",
+    "raylib"
+  ]
+}

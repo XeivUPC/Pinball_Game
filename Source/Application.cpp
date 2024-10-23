@@ -6,6 +6,7 @@
 #include "ModulePhysics.h"
 #include "ModuleTexture.h"
 #include "ModuleUserPreferences.h"
+#include "ModuleText.h"
 
 
 #include "ModuleLevelSelection.h"
@@ -26,6 +27,7 @@ Application::Application()
 	audio = new ModuleAudio(this, true);
 	physics = new ModulePhysics(this);
 	userPreferences = new ModuleUserPreferences(this);
+	text = new ModuleText(this);
 
 	scene_languageSelect = new ModuleLanguageSelect(this);
 	scene_credits = new ModuleCredits(this, false);
@@ -48,6 +50,7 @@ Application::Application()
 	AddModule(audio);
 	AddModule(texture);
 	AddModule(userPreferences);
+	AddModule(text);
 
 	// Scenes
 	AddModule(scene_levelSelection);
