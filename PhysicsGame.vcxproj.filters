@@ -63,6 +63,12 @@
     <ClCompile Include="Source\UI.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Source\HighScoreUINum.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\HighScoreUIName.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -130,6 +136,12 @@
     <ClInclude Include="Source\UI.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Source\HighScoreUINum.h">
+      <Filter>UIs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HighScoreUIName.h">
+      <Filter>UIs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -146,6 +158,9 @@
     </Filter>
     <Filter Include="Config">
       <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UIs">
+      <UniqueIdentifier>{7231448f-f34c-42eb-80e7-fd157e15e919}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
