@@ -9,6 +9,7 @@
 #include "ModuleHSNum.h"
 #include "ModuleHSName.h"
 
+#include "cmath"
 
 
 ModuleHighScore::ModuleHighScore(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -27,7 +28,7 @@ bool ModuleHighScore::Start()
 
 	//versionColor = /* Get the version's color of the game that scored a high score (example blue) */ 1;
 
-	incoming_score = 999999;
+	incoming_score = 999999999999;
 
 	selectedLanguage = App->userPreferences->GetLanguage();
 
@@ -56,9 +57,6 @@ bool ModuleHighScore::Start()
 	arrow_animator->AddAnimation(arrowAnim);
 	arrow_animator->SetSpeed(0.1);
 
-
-
-
 	arrowTimer.Start();
 
 	//App->audio->PlayMusic("Assets/Music/Tiitle_Screen.wav", 0.3f);
@@ -75,28 +73,6 @@ bool ModuleHighScore::Start()
 
 update_status ModuleHighScore::Update()
 {
-
-	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-		std::string s = std::to_string(incoming_score);
-		scores[FIRST].score = s.c_str();
-		scores[FIRST].name = "ALP";
-		SaveHighScore();
-	}
-	
-
-	if (incoming_score > 999999999999) {
-		incoming_score = 999999999999;
-		times_num_offset = 3;
-	}
-	else if (incoming_score > 99999999999) {
-		times_num_offset = 3;
-	}
-	else if (incoming_score > 9999999999) {
-		times_num_offset = 2;
-	}
-	else if (incoming_score > 999999999) {
-		times_num_offset = 1;
-	}
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
 		//Return
@@ -120,17 +96,17 @@ update_status ModuleHighScore::Update()
 		arrowTimer.Start();
 	}
 
-	App->text_highScoreNum->Write(scores[FIRST].score, 80 - 16 * times_num_offset, 16, versionColor, 1);
-	App->text_highScoreNum->Write(scores[SECOND].score, 80 /*16 * times_num_offset*/, 16 + 24 * 1, versionColor, 2);
-	App->text_highScoreNum->Write(scores[THIRD].score, 80 /*- 16 * times_num_offset*/, 16 + 24 * 2, versionColor, 3);
-	App->text_highScoreNum->Write(scores[FOURTH].score, 80 /*- 16 * times_num_offset*/, 16 + 24 * 3, versionColor, 4);
-	App->text_highScoreNum->Write(scores[FIFTH].score, 80 /*- 16 * times_num_offset*/, 16 + 24 * 4, versionColor, 5);
+	App->text_highScoreNum->Write(scores[FIRST].score.c_str(), 153 - scores[FIRST].score.length() * 8, 16, versionColor, 1);
+	App->text_highScoreNum->Write(scores[SECOND].score.c_str(), 153 - scores[SECOND].score.length() * 8, 16 + 24 * 1, versionColor, 2);
+	App->text_highScoreNum->Write(scores[THIRD].score.c_str(), 153 - scores[THIRD].score.length() * 8, 16 + 24 * 2, versionColor, 3);
+	App->text_highScoreNum->Write(scores[FOURTH].score.c_str(), 153 - scores[FOURTH].score.length() * 8, 16 + 24 * 3, versionColor, 4);
+	App->text_highScoreNum->Write(scores[FIFTH].score.c_str(), 153 - scores[FIFTH].score.length() * 8, 16 + 24 * 4, versionColor, 5);
 
-	App->text_highScoreName->Write(scores[FIRST].name, 24, 16, versionColor);
-	App->text_highScoreName->Write(scores[SECOND].name, 24, 16 + 24 * 1, versionColor);
-	App->text_highScoreName->Write(scores[THIRD].name, 24, 16 + 24 * 2, versionColor);
-	App->text_highScoreName->Write(scores[FOURTH].name, 24, 16 + 24 * 3, versionColor);
-	App->text_highScoreName->Write(scores[FIFTH].name, 24, 16 + 24 * 4, versionColor);
+	App->text_highScoreName->Write(scores[FIRST].name.c_str(), 24, 16, versionColor);
+	App->text_highScoreName->Write(scores[SECOND].name.c_str(), 24, 16 + 24 * 1, versionColor);
+	App->text_highScoreName->Write(scores[THIRD].name.c_str(), 24, 16 + 24 * 2, versionColor);
+	App->text_highScoreName->Write(scores[FOURTH].name.c_str(), 24, 16 + 24 * 3, versionColor);
+	App->text_highScoreName->Write(scores[FIFTH].name.c_str(), 24, 16 + 24 * 4, versionColor);
 
 	arrow_animator->Animate(141 - (141*versionColor), 125, versionColor);
 
@@ -173,16 +149,16 @@ void ModuleHighScore::SaveHighScore()
 {
 	xml_node positionNode = highScoreFile.child("highscore").child("positions");
 
-	positionNode.child("first").attribute("score").set_value(scores[FIRST].score);
-	positionNode.child("first").attribute("name").set_value(scores[FIRST].name);
-	positionNode.child("second").attribute("score").set_value(scores[SECOND].score);
-	positionNode.child("second").attribute("name").set_value(scores[SECOND].name);
-	positionNode.child("third").attribute("score").set_value(scores[THIRD].score);
-	positionNode.child("third").attribute("name").set_value(scores[THIRD].name);
-	positionNode.child("fourth").attribute("score").set_value(scores[FOURTH].score);
-	positionNode.child("fourth").attribute("name").set_value(scores[FOURTH].name);
-	positionNode.child("fifth").attribute("score").set_value(scores[FIFTH].score);
-	positionNode.child("fifth").attribute("name").set_value(scores[FIFTH].name);
+	positionNode.child("first").attribute("score").set_value(scores[FIRST].score.c_str());
+	positionNode.child("first").attribute("name").set_value(scores[FIRST].name.c_str());
+	positionNode.child("second").attribute("score").set_value(scores[SECOND].score.c_str());
+	positionNode.child("second").attribute("name").set_value(scores[SECOND].name.c_str());
+	positionNode.child("third").attribute("score").set_value(scores[THIRD].score.c_str());
+	positionNode.child("third").attribute("name").set_value(scores[THIRD].name.c_str());
+	positionNode.child("fourth").attribute("score").set_value(scores[FOURTH].score.c_str());
+	positionNode.child("fourth").attribute("name").set_value(scores[FOURTH].name.c_str());
+	positionNode.child("fifth").attribute("score").set_value(scores[FIFTH].score.c_str());
+	positionNode.child("fifth").attribute("name").set_value(scores[FIFTH].name.c_str());
 
 	SaveConfigFile();
 }
