@@ -6,8 +6,8 @@
 HighScoreUIName::HighScoreUIName(Application* App) : UI(App)
 {
 	this->App = App;
-	App->texture->CreateTexture("Assets/Font.png", "UI");
-	UITexture = App->texture->GetTexture("UI");
+	App->texture->CreateTexture("Assets/high_score_letters.png", "HighScoreUIName");
+	UITexture = App->texture->GetTexture("HighScoreUIName");
 }
 
 HighScoreUIName::~HighScoreUIName()
@@ -17,5 +17,5 @@ HighScoreUIName::~HighScoreUIName()
 void HighScoreUIName::Update() const
 {
 	if (!enabled) return;
-	App->text->Write("HOLA", 0, 0);
+	App->text->Write("HighScoreUIName", 0, 0);
 }
