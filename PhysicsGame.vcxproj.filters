@@ -147,6 +147,9 @@
     <Filter Include="Config">
       <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UIs">
+      <UniqueIdentifier>{28ee3c68-574a-47a4-b59d-e59b83ad5827}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Assets\Preferences\UserPreferences.xml">

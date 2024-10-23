@@ -129,14 +129,18 @@ update_status ModuleSettings::Update()
 		pikachu_animator->SelectAnimation("Idle", true);
 		psyduck_animator->SelectAnimation("Idle", true);
 
-		if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) {
-			if (currentButton > 0) {
-				currentButton--;
+		if (scrollMenuTimer.ReadSec() > scrollMenuTimeMS) {
+			if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) {
+				if (currentButton > 0) {
+					currentButton--;
+				}
+				scrollMenuTimer.Start();
 			}
-		}
-		else if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
-			if (currentButton < 2) {
-				currentButton++;
+			else if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
+				if (currentButton < 2) {
+					currentButton++;
+				}
+				scrollMenuTimer.Start();
 			}
 		}
 	}
