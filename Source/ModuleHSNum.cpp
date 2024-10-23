@@ -84,7 +84,7 @@ void ModuleHSNum::Write(const char* text, int x, int y, int color, int position)
 	bool coma = false;
 	while (text[i] != '\0')
 	{
-		if ((length - i - 1) % 3 == 0 && i != 0) {
+		if ((length - i - 1) % 3 == 0 && (length - i - 1) != 0) {
 			coma = true;
 		}
 		Rectangle* letter = GetCharRect(text[i], color, position, coma);
