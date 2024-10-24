@@ -10,6 +10,8 @@
 #include "ModuleHSName.h"
 
 #include "cmath"
+#include <sstream>
+#include <iostream>
 
 
 ModuleHighScore::ModuleHighScore(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -27,8 +29,6 @@ bool ModuleHighScore::Start()
 	bool ret = true;
 
 	//versionColor = /* Get the version's color of the game that scored a high score (example blue) */ 1;
-
-	incoming_score = 999999999999;
 
 	selectedLanguage = App->userPreferences->GetLanguage();
 
@@ -133,7 +133,13 @@ bool ModuleHighScore::CleanUp()
 
 void ModuleHighScore::LoadHighScore()
 {
-	xml_node positionNode = highScoreFile.child("highscore").child("positions");
+	xml_node positionNode;
+	if (versionColor == 0) {
+		positionNode = highScoreFile.child("highscore").child("positions").child("red");
+	}
+	else {
+		positionNode = highScoreFile.child("highscore").child("positions").child("blue");
+	}
 
 	scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
 	scores[FIRST].name = positionNode.child("first").attribute("name").as_string();
@@ -150,7 +156,13 @@ void ModuleHighScore::LoadHighScore()
 
 void ModuleHighScore::SaveHighScore()
 {
-	xml_node positionNode = highScoreFile.child("highscore").child("positions");
+	xml_node positionNode;
+	if (versionColor == 0) {
+		positionNode = highScoreFile.child("highscore").child("positions").child("red");
+	}
+	else {
+		positionNode = highScoreFile.child("highscore").child("positions").child("blue");
+	}
 
 	positionNode.child("first").attribute("score").set_value(scores[FIRST].score.c_str());
 	positionNode.child("first").attribute("name").set_value(scores[FIRST].name.c_str());
@@ -186,10 +198,23 @@ void ModuleHighScore::SaveConfigFile()
 
 void ModuleHighScore::TryToInsertHighScore(double points)
 {
-	xml_node positionNode = highScoreFile.child("highscore").child("positions");
+	xml_node positionNode;
+	if (versionColor == 0) {
+		positionNode = highScoreFile.child("highscore").child("positions").child("red");
+	}
+	else {
+		positionNode = highScoreFile.child("highscore").child("positions").child("blue");
+	}
+
+	std::stringstream ss;
+	ss << static_cast<long long>(points);
+
+	std::string points_str = ss.str();  // Convertimos el stream a string
+
+	std::cout << points_str << std::endl;
 
 	if (points > positionNode.child("first").attribute("score").as_int()) {
-		scores[FIRST].score = points;
+		scores[FIRST].score = points_str;
 		scores[FIRST].name = "WIP";
 		scores[SECOND].score = positionNode.child("first").attribute("score").as_string();
 		scores[SECOND].name = positionNode.child("first").attribute("name").as_string();
@@ -203,7 +228,7 @@ void ModuleHighScore::TryToInsertHighScore(double points)
 	else if (points > positionNode.child("second").attribute("score").as_int()) {
 		scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
 		scores[FIRST].name = positionNode.child("first").attribute("name").as_string();
-		scores[SECOND].score = points;
+		scores[SECOND].score = points_str;
 		scores[SECOND].name = "WIP";
 		scores[THIRD].score = positionNode.child("second").attribute("score").as_string();
 		scores[THIRD].name = positionNode.child("second").attribute("name").as_string();
@@ -217,7 +242,7 @@ void ModuleHighScore::TryToInsertHighScore(double points)
 		scores[FIRST].name = positionNode.child("first").attribute("name").as_string();
 		scores[SECOND].score = positionNode.child("second").attribute("score").as_string();
 		scores[SECOND].name = positionNode.child("second").attribute("name").as_string();
-		scores[THIRD].score = points;
+		scores[THIRD].score = points_str;
 		scores[THIRD].name = "WIP";
 		scores[FOURTH].score = positionNode.child("third").attribute("score").as_string();
 		scores[FOURTH].name = positionNode.child("third").attribute("name").as_string();
@@ -231,7 +256,7 @@ void ModuleHighScore::TryToInsertHighScore(double points)
 		scores[SECOND].name = positionNode.child("second").attribute("name").as_string();
 		scores[THIRD].score = positionNode.child("third").attribute("score").as_string();
 		scores[THIRD].name = positionNode.child("third").attribute("name").as_string();
-		scores[FOURTH].score = points;
+		scores[FOURTH].score = points_str;
 		scores[FOURTH].name = "WIP";
 		scores[FIFTH].score = positionNode.child("fourth").attribute("score").as_string();
 		scores[FIFTH].name = positionNode.child("fourth").attribute("name").as_string();
@@ -245,7 +270,7 @@ void ModuleHighScore::TryToInsertHighScore(double points)
 		scores[THIRD].name = positionNode.child("third").attribute("name").as_string();
 		scores[FOURTH].score = positionNode.child("fourth").attribute("score").as_string();
 		scores[FOURTH].name = positionNode.child("fourth").attribute("name").as_string();
-		scores[FIFTH].score = points;
+		scores[FIFTH].score = points_str;
 		scores[FIFTH].name = "WIP";
 	}
 	else {
