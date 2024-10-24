@@ -59,9 +59,9 @@ bool ModuleHighScore::Start()
 
 	arrowTimer.Start();
 
-	//App->audio->PlayMusic("Assets/Music/Tiitle_Screen.wav", 0.3f);
+	App->audio->PlayMusic("Assets/Music/HighScore_Screen.wav", 0.3f);
 
-	//audioSelectId = App->audio->LoadFx("Assets/SFX/Select.ogg");
+	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
 
 	LoadHighScoreFile();
 	LoadHighScore();

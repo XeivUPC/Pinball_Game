@@ -196,6 +196,7 @@
     <ClInclude Include="Source\GameUI.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleGame.h" />
+    <ClInclude Include="Source\ModuleGameUIText.h" />
     <ClInclude Include="Source\ModuleHighScore.h" />
     <ClInclude Include="Source\ModuleHSName.h" />
     <ClInclude Include="Source\ModuleHSNum.h" />
@@ -224,6 +225,7 @@
     <ClCompile Include="Source\GameUI.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
     <ClCompile Include="Source\ModuleGame.cpp" />
+    <ClCompile Include="Source\ModuleGameUIText.cpp" />
     <ClCompile Include="Source\ModuleHighScore.cpp" />
     <ClCompile Include="Source\ModuleHSName.cpp" />
     <ClCompile Include="Source\ModuleHSNum.cpp" />
