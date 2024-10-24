@@ -20,8 +20,8 @@ public:
 	};
 
 	struct Score {
-		int score;
-		string_t name;
+		std::string score;
+		std::string name;
 	};
 
 	ModuleHighScore(Application* app, bool start_enabled = true);
@@ -62,4 +62,9 @@ private:
 	xml_document highScoreFile;
 
 	std::unordered_map<Position, Score> scores;
+
+	int times_num_offset = 0;
+	double incoming_score = 999999999999;
+
+	void TryToInsertHighScore(double points);
 };
