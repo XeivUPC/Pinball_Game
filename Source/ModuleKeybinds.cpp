@@ -2,6 +2,7 @@
 #include "ModuleSettings.h"
 #include "Application.h"
 #include "ModuleTexture.h"
+#include "ModuleAudio.h"
 #include "ModuleRender.h"
 #include "ModuleUserPreferences.h"
 
@@ -21,6 +22,7 @@ bool ModuleKeybinds::Start()
     App->texture->CreateTexture("Assets/keybinds_menu_background.png", "keybinds_menu_background");
     background_texture = App->texture->GetTexture("keybinds_menu_background");
 
+    audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
 
     StartFadeOut(WHITE, 0.3f);
     return true;
@@ -31,8 +33,7 @@ update_status ModuleKeybinds::Update()
 
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN))) {
         StartFadeIn(App->scene_settings, WHITE, 0.3f);
-        //App->audio->PlayFx(audioSelectId);
-
+        App->audio->PlayFx(audioSelectId);
     }
 
 

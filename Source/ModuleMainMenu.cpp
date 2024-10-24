@@ -64,7 +64,10 @@ bool ModuleMainMenu::Start()
 
 	App->audio->PlayMusic("Assets/Music/Tiitle_Screen.wav", 0.3f);
 
-	audioSelectId = App->audio->LoadFx("Assets/SFX/Select.ogg");
+
+	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
+	audioMoveId = App->audio->LoadFx("Assets/SFX/Menu_Option_Move.ogg");
+	audioStartGameId = App->audio->LoadFx("Assets/SFX/Menu_Option_StartGame.ogg");
 
 	StartFadeOut(WHITE, 0.3f);
 
@@ -78,12 +81,14 @@ update_status ModuleMainMenu::Update()
 			if (currentButton > 0) {
 				currentButton--;
 			}
+			App->audio->PlayFx(audioMoveId);
 			scrollMenuTimer.Start();
 		}
 		else if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
 			if (currentButton < 2) {
 				currentButton++;
 			}
+			App->audio->PlayFx(audioMoveId);
 			scrollMenuTimer.Start();
 		}
 	}
@@ -123,7 +128,7 @@ update_status ModuleMainMenu::Update()
 			//Go to game
 			StartFadeIn(App->scene_levelSelection, WHITE, 0.3f);
 			App->audio->StopMusic();
-			App->audio->PlayFx(audioSelectId);		
+			App->audio->PlayFx(audioStartGameId);
 			break;
 		case 1:
 			//Go to pokedex

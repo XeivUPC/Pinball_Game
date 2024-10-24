@@ -59,9 +59,9 @@ bool ModuleHighScore::Start()
 
 	arrowTimer.Start();
 
-	//App->audio->PlayMusic("Assets/Music/Tiitle_Screen.wav", 0.3f);
+	App->audio->PlayMusic("Assets/Music/HighScore_Screen.wav", 0.3f);
 
-	//audioSelectId = App->audio->LoadFx("Assets/SFX/Select.ogg");
+	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
 
 	LoadHighScoreFile();
 	LoadHighScore();
@@ -75,8 +75,8 @@ update_status ModuleHighScore::Update()
 {
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
-		//Return
-		//App->audio->PlayFx(audioSelectId);
+		///Return
+		App->audio->PlayFx(audioSelectId);
 		StartFadeIn(App->scene_mainMenu, WHITE, 0.3f);
 	}
 

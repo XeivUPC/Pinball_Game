@@ -4,6 +4,7 @@
 #include "ModuleTexture.h"
 #include "ModuleAudio.h"
 #include "ModuleHighScore.h"
+#include "ModuleGame.h"
 
 
 ModuleLevelSelection::ModuleLevelSelection(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -37,7 +38,8 @@ bool ModuleLevelSelection::Start()
 	App->audio->PlayMusic("Assets/Music/Field_Select.wav",0.3f);
 
 
-	audioSelectId = App->audio->LoadFx("Assets/SFX/Select.ogg");
+	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
+	audioMoveId = App->audio->LoadFx("Assets/SFX/Level_Selection_Move.ogg");
 
 	StartFadeOut(WHITE, 0.3f);
 	return true;
@@ -48,17 +50,22 @@ update_status ModuleLevelSelection::Update()
 	animator->Update();
 	if(IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT)))
 	{
+		if(markSelectionPosition.x!=3)
+			App->audio->PlayFx(audioMoveId);
 		markSelectionPosition.x = 3;
 	}
 	else if(IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)))
 	{
+		if (markSelectionPosition.x != 21)
+			App->audio->PlayFx(audioMoveId);
 		markSelectionPosition.x = 21;
 	}
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
 		///Load Level
 		App->audio->PlayFx(audioSelectId);
-		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
+		StartFadeIn(App->scene_game, WHITE, 0.3f);
+
 		if (markSelectionPosition.x < 10) {
 			App->scene_highScore->SetVersionColor(0);
 		}
@@ -69,8 +76,9 @@ update_status ModuleLevelSelection::Update()
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN))) {
 		///Go Back
 		StartFadeIn(App->scene_mainMenu, WHITE, 0.3f);
+
 		App->audio->StopMusic();
-		//App->audio->PlayFx(audioSelectId);
+		App->audio->PlayFx(audioSelectId);
 	}
 
 

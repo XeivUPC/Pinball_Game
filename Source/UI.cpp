@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "ModuleText.h"
 #include "ModuleTexture.h"
+#include "ModuleRender.h"
 
 UI::UI(Application* App)
 {
@@ -19,7 +20,7 @@ void UI::ChangeVisibility()
 	enabled = !enabled;
 }
 
-void UI::Update() const
+void UI::Render() const
 {
 	if (!enabled) return;
 	App->text->Write("HOLA", 0, 0);

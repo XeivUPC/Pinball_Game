@@ -68,6 +68,11 @@
     </ClCompile>
     <ClCompile Include="Source\ModuleHSNum.cpp">
       <Filter>Modules\Texts %28ModuleTexts%29</Filter>
+    <ClCompile Include="Source\ModuleGame.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameUI.cpp">
+      <Filter>UIs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +146,11 @@
     </ClInclude>
     <ClInclude Include="Source\ModuleHSNum.h">
       <Filter>Modules\Texts %28ModuleTexts%29</Filter>
+    <ClInclude Include="Source\ModuleGame.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameUI.h">
+      <Filter>UIs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,13 +5,15 @@ class Application;
 
 class UI
 {
-private:
+protected:
 	Application* App;
+
+private:
 	Texture* UITexture;
 	bool enabled = true;
 public:
 	UI(Application* App);
 	~UI();
 	void ChangeVisibility();
-	void Update()const;
+	void Render()const;
 };
