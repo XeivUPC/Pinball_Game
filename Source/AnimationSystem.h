@@ -54,6 +54,8 @@ private:
 	bool isPlaying=true;
 	bool canDraw=true;
 
+	bool animationFinished = false;
+
 	Timer timer;
 
 	Application* App;
@@ -63,6 +65,7 @@ public:
 	~Animator();
 	void AddAnimation(AnimationData anim);
 	void SelectAnimation(std::string animName, bool l);
+	bool HasAnimationFinished();
 	void SetSpeed(float s);
 	void Update();
 	void Animate(int x, int y, bool flip);

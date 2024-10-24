@@ -69,10 +69,13 @@ void ModuleScene::StartFadeOut(Color color, float time)
 
 void ModuleScene::FadeUpdate()
 {
+	EndMode2D();
 	if (doingFadeIn)
 		FadeIn();
 	if (doingFadeOut)
 		FadeOut();
+	BeginMode2D(App->renderer->camera);
+	
 }
 
 void ModuleScene::FadeIn()
