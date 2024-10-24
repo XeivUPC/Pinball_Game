@@ -199,6 +199,7 @@
     <ClInclude Include="Source\ModuleKeybinds.h" />
     <ClInclude Include="Source\ModuleLanguageSelect.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h" />
+    <ClInclude Include="Source\ModuleSaveGame.h" />
     <ClInclude Include="Source\ModuleScene.h" />
     <ClInclude Include="Source\ModuleMainMenu.h" />
     <ClInclude Include="Source\ModuleSettings.h" />
@@ -224,6 +225,7 @@
     <ClCompile Include="Source\ModuleKeybinds.cpp" />
     <ClCompile Include="Source\ModuleLanguageSelect.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp" />
+    <ClCompile Include="Source\ModuleSaveGame.cpp" />
     <ClCompile Include="Source\ModuleScene.cpp" />
     <ClCompile Include="Source\ModuleMainMenu.cpp" />
     <ClCompile Include="Source\ModuleSettings.cpp" />
