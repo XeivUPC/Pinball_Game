@@ -75,8 +75,8 @@ update_status ModuleHighScore::Update()
 {
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
-		///Return
-		App->audio->PlayFx(audioSelectId);
+		//Return
+		//App->audio->PlayFx(audioSelectId);
 		StartFadeIn(App->scene_mainMenu, WHITE, 0.3f);
 	}
 

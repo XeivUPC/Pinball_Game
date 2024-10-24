@@ -62,7 +62,7 @@ bool ModuleMainMenu::Start()
 
 	blinkTimer.Start();
 
-	App->audio->PlayMusic("Assets/Music/Tiitle_Screen.wav", 0.3f);
+	App->audio->PlayMusic("Assets/Music/Title_Screen.wav", 0.3f);
 
 
 	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");

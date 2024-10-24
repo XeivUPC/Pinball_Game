@@ -9,6 +9,8 @@
 #include "ModuleText.h"
 #include "ModuleHSNum.h"
 #include "ModuleHSName.h"
+#include "ModuleGameUIText.h"
+
 
 
 #include "ModuleLevelSelection.h"
@@ -33,6 +35,7 @@ Application::Application()
 	text = new ModuleText(this);
 	text_highScoreNum = new ModuleHSNum(this);
 	text_highScoreName = new ModuleHSName(this);
+	text_gameUIText = new ModuleGameUIText(this);
 
 	scene_languageSelect = new ModuleLanguageSelect(this);
 	scene_credits = new ModuleCredits(this, false);
@@ -59,6 +62,7 @@ Application::Application()
 	AddModule(text);
 	AddModule(text_highScoreNum);
 	AddModule(text_highScoreName);
+	AddModule(text_gameUIText);
 
 	// Scenes
 	AddModule(scene_languageSelect);

@@ -13,6 +13,9 @@ class ModuleTexture;
 class ModuleText;
 class ModuleHSNum;
 class ModuleHSName;
+class ModuleGameUIText;
+
+
 class ModuleUserPreferences;
 
 class ModuleLevelSelection;
@@ -48,6 +51,7 @@ public:
 	ModuleText* text;
 	ModuleHSNum* text_highScoreNum;
 	ModuleHSName* text_highScoreName;
+	ModuleGameUIText* text_gameUIText;
 
 
 
