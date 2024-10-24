@@ -6,7 +6,7 @@ private:
 	int selectedLanguage;
 
 	Texture* background_texture;
-	
+	int audioSelectId;
 
 public:
 

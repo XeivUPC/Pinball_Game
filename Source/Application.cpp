@@ -16,6 +16,7 @@
 #include "ModuleSettings.h"
 #include "ModuleKeybinds.h"
 #include "ModuleHighScore.h"
+#include "ModuleGame.h"
 
 
 #include "Application.h"
@@ -36,6 +37,7 @@ Application::Application()
 	scene_settings = new ModuleSettings(this, false);
 	scene_keybinds = new ModuleKeybinds(this, false);
 	scene_highScore = new ModuleHighScore(this, false);
+	scene_game = new ModuleGame(this, false);
 
 	texture = new ModuleTexture(this);
 
@@ -60,6 +62,7 @@ Application::Application()
 	AddModule(scene_highScore);
 	AddModule(scene_settings);
 	AddModule(scene_keybinds);
+	AddModule(scene_game);
 
 	// Rendering happens at the end
 	AddModule(renderer);
