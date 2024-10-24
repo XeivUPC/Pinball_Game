@@ -64,6 +64,9 @@ bool ModuleHighScore::Start()
 	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
 
 	LoadHighScoreFile();
+
+	TryToInsertHighScore(incoming_score);
+
 	LoadHighScore();
 
 	StartFadeOut(WHITE, 0.3f);
@@ -179,4 +182,74 @@ void ModuleHighScore::LoadHighScoreFile()
 void ModuleHighScore::SaveConfigFile()
 {
 	highScoreFile.save_file("Assets/Preferences/HighScore.xml");
+}
+
+void ModuleHighScore::TryToInsertHighScore(double points)
+{
+	xml_node positionNode = highScoreFile.child("highscore").child("positions");
+
+	if (points > positionNode.child("first").attribute("score").as_int()) {
+		scores[FIRST].score = points;
+		scores[FIRST].name = "WIP";
+		scores[SECOND].score = positionNode.child("first").attribute("score").as_string();
+		scores[SECOND].name = positionNode.child("first").attribute("name").as_string();
+		scores[THIRD].score = positionNode.child("second").attribute("score").as_string();
+		scores[THIRD].name = positionNode.child("second").attribute("name").as_string();
+		scores[FOURTH].score = positionNode.child("third").attribute("score").as_string();
+		scores[FOURTH].name = positionNode.child("third").attribute("name").as_string();
+		scores[FIFTH].score = positionNode.child("fourth").attribute("score").as_string();
+		scores[FIFTH].name = positionNode.child("fourth").attribute("name").as_string();
+	}
+	else if (points > positionNode.child("second").attribute("score").as_int()) {
+		scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
+		scores[FIRST].name = positionNode.child("first").attribute("name").as_string();
+		scores[SECOND].score = points;
+		scores[SECOND].name = "WIP";
+		scores[THIRD].score = positionNode.child("second").attribute("score").as_string();
+		scores[THIRD].name = positionNode.child("second").attribute("name").as_string();
+		scores[FOURTH].score = positionNode.child("third").attribute("score").as_string();
+		scores[FOURTH].name = positionNode.child("third").attribute("name").as_string();
+		scores[FIFTH].score = positionNode.child("fourth").attribute("score").as_string();
+		scores[FIFTH].name = positionNode.child("fourth").attribute("name").as_string();
+	}
+	else if (points > positionNode.child("third").attribute("score").as_int()) {
+		scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
+		scores[FIRST].name = positionNode.child("first").attribute("name").as_string();
+		scores[SECOND].score = positionNode.child("second").attribute("score").as_string();
+		scores[SECOND].name = positionNode.child("second").attribute("name").as_string();
+		scores[THIRD].score = points;
+		scores[THIRD].name = "WIP";
+		scores[FOURTH].score = positionNode.child("third").attribute("score").as_string();
+		scores[FOURTH].name = positionNode.child("third").attribute("name").as_string();
+		scores[FIFTH].score = positionNode.child("fourth").attribute("score").as_string();
+		scores[FIFTH].name = positionNode.child("fourth").attribute("name").as_string();
+	}
+	else if (points > positionNode.child("fourth").attribute("score").as_int()) {
+		scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
+		scores[FIRST].name = positionNode.child("first").attribute("name").as_string();
+		scores[SECOND].score = positionNode.child("second").attribute("score").as_string();
+		scores[SECOND].name = positionNode.child("second").attribute("name").as_string();
+		scores[THIRD].score = positionNode.child("third").attribute("score").as_string();
+		scores[THIRD].name = positionNode.child("third").attribute("name").as_string();
+		scores[FOURTH].score = points;
+		scores[FOURTH].name = "WIP";
+		scores[FIFTH].score = positionNode.child("fourth").attribute("score").as_string();
+		scores[FIFTH].name = positionNode.child("fourth").attribute("name").as_string();
+	}
+	else if (points > positionNode.child("fifth").attribute("score").as_int()) {
+		scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
+		scores[FIRST].name = positionNode.child("first").attribute("name").as_string();
+		scores[SECOND].score = positionNode.child("second").attribute("score").as_string();
+		scores[SECOND].name = positionNode.child("second").attribute("name").as_string();
+		scores[THIRD].score = positionNode.child("third").attribute("score").as_string();
+		scores[THIRD].name = positionNode.child("third").attribute("name").as_string();
+		scores[FOURTH].score = positionNode.child("fourth").attribute("score").as_string();
+		scores[FOURTH].name = positionNode.child("fourth").attribute("name").as_string();
+		scores[FIFTH].score = points;
+		scores[FIFTH].name = "WIP";
+	}
+	else {
+		LoadHighScore();
+	}
+	SaveHighScore();
 }
