@@ -37,6 +37,7 @@ bool ModuleGame::Start()
 	paddleClick.AddSprite(Sprite{ paddle_texture,{0, 0}, {24,24} });
 	paddleClick.AddSprite(Sprite{ paddle_texture,{1, 0}, {24,24} });
 	paddleClick.AddSprite(Sprite{ paddle_texture,{2, 0}, {24,24} });
+	paddleClick.AddSprite(Sprite{ paddle_texture,{2, 0}, {24,24} });
 
 	paddleLeft_animator->AddAnimation(paddleIdle);
 	paddleLeft_animator->AddAnimation(paddleClick);
