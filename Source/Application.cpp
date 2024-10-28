@@ -37,9 +37,9 @@ Application::Application()
 	text_highScoreName = new ModuleHSName(this);
 	text_gameUIText = new ModuleGameUIText(this);
 
-	scene_languageSelect = new ModuleLanguageSelect(this);
+	scene_languageSelect = new ModuleLanguageSelect(this, false);
 	scene_credits = new ModuleCredits(this, false);
-	scene_levelSelection = new ModuleLevelSelection(this, false);
+	scene_levelSelection = new ModuleLevelSelection(this);
 	scene_mainMenu = new ModuleMainMenu(this, false);
 	scene_settings = new ModuleSettings(this, false);
 	scene_keybinds = new ModuleKeybinds(this, false);
