@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "ModuleAudio.h"
 #include "ModuleLevelSelection.h"
+#include "ModulePokedex.h"
 #include "ModuleUserPreferences.h"
 
 
@@ -132,6 +133,8 @@ update_status ModuleMainMenu::Update()
 			break;
 		case 1:
 			//Go to pokedex
+			StartFadeIn(App->scene_pokedex, WHITE, 0.3f);
+			App->audio->StopMusic();
 			App->audio->PlayFx(audioSelectId);
 			break;
 		case 2:

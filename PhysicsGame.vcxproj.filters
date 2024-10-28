@@ -78,6 +78,9 @@
     <ClCompile Include="Source\ModuleHSNum.cpp">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModulePokedex.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -160,6 +163,12 @@
     <ClInclude Include="Source\ModuleHSName.h">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Pokemon.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModulePokedex.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -186,6 +195,9 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Assets\Preferences\UserPreferences.xml">
+      <Filter>Config</Filter>
+    </Xml>
+    <Xml Include="Assets\Pokedex\Pokedex.xml">
       <Filter>Config</Filter>
     </Xml>
   </ItemGroup>

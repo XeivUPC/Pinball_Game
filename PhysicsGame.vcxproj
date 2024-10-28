@@ -203,11 +203,13 @@
     <ClInclude Include="Source\ModuleKeybinds.h" />
     <ClInclude Include="Source\ModuleLanguageSelect.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h" />
+    <ClInclude Include="Source\ModulePokedex.h" />
     <ClInclude Include="Source\ModuleScene.h" />
     <ClInclude Include="Source\ModuleMainMenu.h" />
     <ClInclude Include="Source\ModuleSettings.h" />
     <ClInclude Include="Source\ModuleText.h" />
     <ClInclude Include="Source\ModuleTexture.h" />
+    <ClInclude Include="Source\Pokemon.h" />
     <ClInclude Include="Source\Timer.h" />
     <ClInclude Include="Source\ModuleUserPreferences.h" />
     <ClInclude Include="Source\UI.h" />
@@ -232,6 +234,7 @@
     <ClCompile Include="Source\ModuleKeybinds.cpp" />
     <ClCompile Include="Source\ModuleLanguageSelect.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp" />
+    <ClCompile Include="Source\ModulePokedex.cpp" />
     <ClCompile Include="Source\ModuleScene.cpp" />
     <ClCompile Include="Source\ModuleMainMenu.cpp" />
     <ClCompile Include="Source\ModuleSettings.cpp" />
@@ -245,6 +248,7 @@
     <ResourceCompile Include="Source\resources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Xml Include="Assets\Pokedex\Pokedex.xml" />
     <Xml Include="Assets\Preferences\UserPreferences.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

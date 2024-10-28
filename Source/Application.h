@@ -24,6 +24,7 @@ class ModuleMainMenu;
 class ModuleLanguageSelect;
 class ModuleSettings;
 class ModuleKeybinds;
+class ModulePokedex;
 class ModuleHighScore;
 class ModuleGame;
 
@@ -45,6 +46,7 @@ public:
 	ModuleSettings* scene_settings;
 	ModuleKeybinds* scene_keybinds;
 	ModuleHighScore* scene_highScore;
+	ModulePokedex* scene_pokedex;
 	ModuleGame* scene_game;
 
 	ModuleTexture* texture;

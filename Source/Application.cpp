@@ -15,6 +15,7 @@
 
 #include "ModuleLevelSelection.h"
 #include "ModuleCredits.h"
+#include "ModulePokedex.h"
 #include "ModuleMainMenu.h"
 #include "ModuleLanguageSelect.h"
 #include "ModuleSettings.h"
@@ -41,6 +42,7 @@ Application::Application()
 	scene_credits = new ModuleCredits(this, false);
 	scene_levelSelection = new ModuleLevelSelection(this, false);
 	scene_mainMenu = new ModuleMainMenu(this, false);
+	scene_pokedex = new ModulePokedex(this, false);
 	scene_settings = new ModuleSettings(this, false);
 	scene_keybinds = new ModuleKeybinds(this, false);
 	scene_highScore = new ModuleHighScore(this, false);
@@ -69,6 +71,7 @@ Application::Application()
 	AddModule(scene_credits);
 	AddModule(scene_mainMenu);
 	AddModule(scene_levelSelection);
+	AddModule(scene_pokedex);
 	AddModule(scene_highScore);
 	AddModule(scene_settings);
 	AddModule(scene_keybinds);
