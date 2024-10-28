@@ -24,6 +24,11 @@ bool ModuleUserPreferences::CleanUp()
 	return true;
 }
 
+ModuleUserPreferences::Vibration ModuleUserPreferences::GetVibration()
+{
+	return vibration;
+}
+
 ModuleUserPreferences::AppLanguage ModuleUserPreferences::GetLanguage()
 {
 	return language;
@@ -46,6 +51,81 @@ void ModuleUserPreferences::ChangeLanguage(AppLanguage language)
 	SaveUserPreferences();
 }
 
+ModuleUserPreferences::AppLanguage ModuleUserPreferences::NextLanguage()
+{
+	int maxLimit = (int)NONE;
+	int minLimit = 0;
+
+	int current = (int)language;
+	current++;
+	if (current >= maxLimit)
+		current = minLimit;
+	if (current < minLimit)
+		current = maxLimit-1;
+
+	ChangeLanguage((AppLanguage)current);
+
+	return language;
+}
+
+ModuleUserPreferences::AppLanguage ModuleUserPreferences::PreviousLanguage()
+{
+	int maxLimit = (int)NONE;
+	int minLimit = 0;
+
+	int current = (int)language;
+	current--;
+	if (current >= maxLimit)
+		current = minLimit;
+	if (current < minLimit)
+		current = maxLimit - 1;
+
+	ChangeLanguage((AppLanguage)current);
+
+	return language;
+}
+
+void ModuleUserPreferences::ChangeVibration(Vibration vibration)
+{
+	this->vibration = vibration;
+
+	SaveUserPreferences();
+}
+
+ModuleUserPreferences::Vibration ModuleUserPreferences::NextVibration()
+{
+	int maxLimit = (int)(Off)+1;
+	int minLimit = 0;
+
+	int current = (int)vibration;
+	current++;
+	if (current >= maxLimit)
+		current = minLimit;
+	if (current < minLimit)
+		current = maxLimit - 1;
+
+	ChangeVibration((Vibration)current);
+
+	return vibration;
+}
+
+ModuleUserPreferences::Vibration ModuleUserPreferences::PreviousVibration()
+{
+	int maxLimit = (int)Off +1;
+	int minLimit = 0;
+
+	int current = (int)vibration;
+	current--;
+	if (current >= maxLimit)
+		current = minLimit;
+	if (current < minLimit)
+		current = maxLimit - 1;
+
+	ChangeVibration((Vibration)current);
+
+	return vibration;
+}
+
 int ModuleUserPreferences::GetKeyValue(VirtualButton button)
 {
 	if (keyBinds.count(button) == 0)
@@ -66,6 +146,7 @@ void ModuleUserPreferences::LoadUserPreferences()
 	keyBinds[RETURN] = keybindsNode.child("return").attribute("value").as_int();
 
 	language = (AppLanguage)preferencesFile.child("config").child("language").attribute("value").as_int();
+	vibration = (Vibration)preferencesFile.child("config").child("vibration").attribute("value").as_int();
 }
 
 void ModuleUserPreferences::SaveUserPreferences()
@@ -80,7 +161,13 @@ void ModuleUserPreferences::SaveUserPreferences()
 	keybindsNode.child("select").attribute("value").set_value(keyBinds[SELECT]);
 	keybindsNode.child("return").attribute("value").set_value(keyBinds[RETURN]);
 
-	preferencesFile.child("config").child("language").attribute("value").set_value((int)language);
+	int languageIndex = (int)language;
+	preferencesFile.child("config").child("language").attribute("value").set_value(languageIndex);
+
+	int vibrationIndex = (int)vibration;
+	preferencesFile.child("config").child("vibration").attribute("value").set_value(vibrationIndex);
+
+	SaveConfigFile();
 
 }
 
@@ -96,4 +183,9 @@ void ModuleUserPreferences::LoadConfigFile()
 		LOG("Error loading config.xml: %s", result.description());
 	}
 
+}
+
+void ModuleUserPreferences::SaveConfigFile()
+{
+	preferencesFile.save_file("Assets/Preferences/UserPreferences.xml");
 }

@@ -38,13 +38,13 @@ void AnimationData::AddSprite(Sprite sprite, int extraData)
 	sprites.push_back(sprite);
 }
 
-AnimationData::AnimationData(const char* n, std::vector<Sprite> s)
+AnimationData::AnimationData(std::string n, std::vector<Sprite> s)
 {
 	name = n;
 	sprites = s;
 }
 
-AnimationData::AnimationData(const char* n)
+AnimationData::AnimationData(std::string n)
 {
 	name = n;
 }
@@ -70,6 +70,7 @@ void Animator::Next()
 		}
 		else
 		{
+			animationFinished = true;
 			currentSprite = animations[currentAnimation].sprites.size() - 1;
 		}
 	}
@@ -90,14 +91,23 @@ void Animator::AddAnimation(AnimationData anim)
 	animations[anim.name] = anim;
 }
 
-void Animator::SelectAnimation(const char* animName, bool l)
+void Animator::SelectAnimation(std::string animName, bool l)
 {
 	if (currentAnimation == animName)
 		return;
-
+	animationFinished = false;
 	currentAnimation = animName;
 	loop = l;
 	currentSprite = 0;
+}
+
+bool Animator::HasAnimationFinished()
+{
+	if (loop)
+		return false;
+	else {
+		return animationFinished;
+	}
 }
 
 
@@ -124,7 +134,10 @@ void Animator::Animate(int x, int y, bool flip)
 		return;
 	Rectangle rect = animations[currentAnimation].GetSpriteRect(currentSprite);
 
-	App->renderer->Draw(*animations[currentAnimation].sprites[currentSprite].texture,x,y, &rect);
+	if(flip)
+		rect.width *= -1;
+
+	App->renderer->Draw(*animations[currentAnimation].sprites[currentSprite].texture,x,y, &rect, WHITE, flip);
 	
 }
 
@@ -150,7 +163,7 @@ bool Animator::CanDraw()
 
 const char* Animator::GetCurrentAnimationName()
 {
-	return currentAnimation;
+	return currentAnimation.c_str();
 }
 
 AnimationData Animator::GetCurrentAnimation()

@@ -7,12 +7,20 @@
 #include "ModuleTexture.h"
 #include "ModuleUserPreferences.h"
 #include "ModuleText.h"
+#include "ModuleHSNum.h"
+#include "ModuleHSName.h"
+#include "ModuleGameUIText.h"
+
 
 
 #include "ModuleLevelSelection.h"
 #include "ModuleCredits.h"
 #include "ModuleMainMenu.h"
 #include "ModuleLanguageSelect.h"
+#include "ModuleSettings.h"
+#include "ModuleKeybinds.h"
+#include "ModuleHighScore.h"
+#include "ModuleGame.h"
 
 
 #include "Application.h"
@@ -25,11 +33,18 @@ Application::Application()
 	physics = new ModulePhysics(this);
 	userPreferences = new ModuleUserPreferences(this);
 	text = new ModuleText(this);
+	text_highScoreNum = new ModuleHSNum(this);
+	text_highScoreName = new ModuleHSName(this);
+	text_gameUIText = new ModuleGameUIText(this);
 
 	scene_languageSelect = new ModuleLanguageSelect(this);
 	scene_credits = new ModuleCredits(this, false);
 	scene_levelSelection = new ModuleLevelSelection(this, false);
 	scene_mainMenu = new ModuleMainMenu(this, false);
+	scene_settings = new ModuleSettings(this, false);
+	scene_keybinds = new ModuleKeybinds(this, false);
+	scene_highScore = new ModuleHighScore(this, false);
+	scene_game = new ModuleGame(this, false);
 
 	texture = new ModuleTexture(this);
 
@@ -44,16 +59,23 @@ Application::Application()
 	AddModule(audio);
 	AddModule(texture);
 	AddModule(userPreferences);
+	AddModule(text);
+	AddModule(text_highScoreNum);
+	AddModule(text_highScoreName);
+	AddModule(text_gameUIText);
 
 	// Scenes
-	AddModule(scene_levelSelection);
+	AddModule(scene_languageSelect);
 	AddModule(scene_credits);
 	AddModule(scene_mainMenu);
-	AddModule(scene_languageSelect);
+	AddModule(scene_levelSelection);
+	AddModule(scene_highScore);
+	AddModule(scene_settings);
+	AddModule(scene_keybinds);
+	AddModule(scene_game);
 
 	// Rendering happens at the end
 	AddModule(renderer);
-	AddModule(text);
 }
 
 Application::~Application()

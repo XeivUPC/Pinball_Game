@@ -51,6 +51,7 @@ void ModuleScene::StartFadeIn(ModuleScene* target, Color color, float time)
 	doingFadeIn = true;
 	doingFadeOut = false;
 	fadeTimer.Start();
+	FadeIn();
 }
 
 void ModuleScene::StartFadeOut(Color color, float time)
@@ -63,26 +64,32 @@ void ModuleScene::StartFadeOut(Color color, float time)
 	doingFadeOut = true;
 	doingFadeIn = false;
 	fadeTimer.Start();
+	FadeOut();
 }
 
 void ModuleScene::FadeUpdate()
 {
+	EndMode2D();
 	if (doingFadeIn)
 		FadeIn();
 	if (doingFadeOut)
 		FadeOut();
+	BeginMode2D(App->renderer->camera);
+	
 }
 
 void ModuleScene::FadeIn()
 {
 	if (fadeTimer.ReadSec()>= fadeTime) {
-		Disable();
 		doingFadeIn = false;
 		if(fadeTarget!=nullptr)
 			fadeTarget->Enable();
+		Disable();
 	}
 	else {
 		int opacity = 255 * (fadeTimer.ReadSec() / fadeTime);
+		if (opacity > 255)
+			opacity = 255;
 		Color color = { fadeColor.r,fadeColor.g,fadeColor.b,opacity };
 		DrawRectangle(0, 0, SCREEN_WIDTH * SCREEN_SIZE, SCREEN_HEIGHT * SCREEN_SIZE, color);
 	}
@@ -93,6 +100,8 @@ void ModuleScene::FadeOut()
 	if (fadeTimer.ReadSec() < fadeTime) {
 		
 		int opacity = 255 - 255 * (fadeTimer.ReadSec() / fadeTime);	
+		if (opacity< 0)
+			opacity = 0;
 		Color color = { fadeColor.r,fadeColor.g,fadeColor.b,opacity };
 		DrawRectangle(0, 0, SCREEN_WIDTH * SCREEN_SIZE, SCREEN_HEIGHT * SCREEN_SIZE, color);
 	}

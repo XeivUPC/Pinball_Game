@@ -9,6 +9,9 @@
     <ClCompile Include="Source/ModuleAudio.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleScene.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
     <ClCompile Include="Source/ModulePhysics.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
@@ -24,14 +27,20 @@
     <ClCompile Include="Source\AnimationSystem.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleCredits.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
     <ClCompile Include="Source/Log.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Source\Timer.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Counter.cpp">
-      <Filter>Utils</Filter>
+    <ClCompile Include="Source\ModuleUserPreferences.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleMainMenu.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleLanguageSelect.cpp">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
@@ -39,15 +48,35 @@
     <ClCompile Include="Source\Counter.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleCredits.cpp" />
-    <ClCompile Include="Source\ModuleScene.cpp" />
-    <ClCompile Include="Source\ModuleMainMenu.cpp" />
-    <ClCompile Include="Source\ModuleUserPreferences.cpp" />
+    <ClCompile Include="Source\ModuleSettings.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleKeybinds.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleHighScore.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleText.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
     <ClCompile Include="Source\UI.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleText.cpp">
-      <Filter>Utils</Filter>
+    <ClCompile Include="Source\ModuleGame.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameUI.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGameUIText.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleHSName.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleHSNum.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +89,9 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source/ModuleAudio.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleScene.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source/ModulePhysics.h">
@@ -77,14 +109,20 @@
     <ClInclude Include="Source\AnimationSystem.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ModuleCredits.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Timer.h">
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Source/p2Point.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Counter.h">
-      <Filter>Utils</Filter>
+    <ClInclude Include="Source\ModuleUserPreferences.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleMainMenu.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleLanguageSelect.h">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
@@ -92,15 +130,35 @@
     <ClInclude Include="Source\Counter.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ModuleCredits.h" />
-    <ClInclude Include="Source\ModuleScene.h" />
-    <ClInclude Include="Source\ModuleMainMenu.h" />
-    <ClInclude Include="Source\ModuleUserPreferences.h" />
+    <ClInclude Include="Source\ModuleSettings.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleKeybinds.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHighScore.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleText.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
     <ClInclude Include="Source\UI.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ModuleText.h">
-      <Filter>Utils</Filter>
+    <ClInclude Include="Source\ModuleGame.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameUI.h">
+      <Filter>UIs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHSNum.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleGameUIText.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHSName.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,14 +171,22 @@
     <Filter Include="Modules\Scenes %28ModuleGame%29">
       <UniqueIdentifier>{6efed187-946c-4a1a-9719-ba0a4d78149c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Saving&amp;Settings">
-      <UniqueIdentifier>{3bd8f597-8e13-4911-bc97-8c8712c556b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{7ff14ab1-7b05-465f-8926-685df6f9b282}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UIs">
+      <UniqueIdentifier>{28ee3c68-574a-47a4-b59d-e59b83ad5827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Texts %28ModuleText%29">
+      <UniqueIdentifier>{82bcc1a0-42ae-4ca8-8bb8-9b85a7332a86}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="Assets\Preferences\UserPreferences.xml" />
+    <Xml Include="Assets\Preferences\UserPreferences.xml">
+      <Filter>Config</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

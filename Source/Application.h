@@ -11,12 +11,21 @@ class ModuleAudio;
 class ModulePhysics;
 class ModuleTexture;
 class ModuleText;
+class ModuleHSNum;
+class ModuleHSName;
+class ModuleGameUIText;
+
+
 class ModuleUserPreferences;
 
 class ModuleLevelSelection;
 class ModuleCredits;
 class ModuleMainMenu;
 class ModuleLanguageSelect;
+class ModuleSettings;
+class ModuleKeybinds;
+class ModuleHighScore;
+class ModuleGame;
 
 
 class Application
@@ -33,10 +42,16 @@ public:
 	ModuleCredits* scene_credits;
 	ModuleMainMenu* scene_mainMenu;
 	ModuleLanguageSelect* scene_languageSelect;
+	ModuleSettings* scene_settings;
+	ModuleKeybinds* scene_keybinds;
+	ModuleHighScore* scene_highScore;
+	ModuleGame* scene_game;
 
 	ModuleTexture* texture;
 	ModuleText* text;
-
+	ModuleHSNum* text_highScoreNum;
+	ModuleHSName* text_highScoreName;
+	ModuleGameUIText* text_gameUIText;
 
 
 

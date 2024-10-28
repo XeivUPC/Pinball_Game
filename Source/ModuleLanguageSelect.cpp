@@ -28,7 +28,12 @@ bool ModuleLanguageSelect::Start()
 	App->texture->CreateTexture("Assets/language_select_arrow.png", "language_select_arrow");
 	arrow_texture = App->texture->GetTexture("language_select_arrow");
 
-	StartFadeOut(WHITE, 0.3f);
+
+	int selectedLanguage = App->userPreferences->GetLanguage();
+	if (selectedLanguage != 6) {
+		App->scene_credits->Enable();
+		Disable();
+	}
 
 	return ret;
 }

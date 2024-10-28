@@ -1,9 +1,11 @@
 #include "ModuleMainMenu.h"
+#include "ModuleSettings.h"
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "ModuleAudio.h"
 #include "ModuleLevelSelection.h"
+#include "ModuleUserPreferences.h"
 
 
 ModuleMainMenu::ModuleMainMenu(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -60,9 +62,12 @@ bool ModuleMainMenu::Start()
 
 	blinkTimer.Start();
 
-	App->audio->PlayMusic("Assets/Music/Tiitle_Screen.wav", 0.3f);
+	App->audio->PlayMusic("Assets/Music/Title_Screen.wav", 0.3f);
 
-	audioSelectId = App->audio->LoadFx("Assets/SFX/Select.ogg");
+
+	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
+	audioMoveId = App->audio->LoadFx("Assets/SFX/Menu_Option_Move.ogg");
+	audioStartGameId = App->audio->LoadFx("Assets/SFX/Menu_Option_StartGame.ogg");
 
 	StartFadeOut(WHITE, 0.3f);
 
@@ -71,17 +76,24 @@ bool ModuleMainMenu::Start()
 
 update_status ModuleMainMenu::Update()
 {
+	if (scrollMenuTimer.ReadSec() > scrollMenuTimeMS) {
+		if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) {
+			if (currentButton > 0) {
+				currentButton--;
+			}
+			App->audio->PlayFx(audioMoveId);
+			scrollMenuTimer.Start();
+		}
+		else if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
+			if (currentButton < 2) {
+				currentButton++;
+			}
+			App->audio->PlayFx(audioMoveId);
+			scrollMenuTimer.Start();
+		}
+	}
 
-	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) {
-		if (currentButton > 0) {
-			currentButton--;
-		}
-	}
-	else if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
-		if (currentButton < 2) {
-			currentButton++;
-		}
-	}
+	
 
 
 	pokeball_animator->Update();
@@ -116,7 +128,7 @@ update_status ModuleMainMenu::Update()
 			//Go to game
 			StartFadeIn(App->scene_levelSelection, WHITE, 0.3f);
 			App->audio->StopMusic();
-			App->audio->PlayFx(audioSelectId);		
+			App->audio->PlayFx(audioStartGameId);
 			break;
 		case 1:
 			//Go to pokedex
@@ -124,6 +136,8 @@ update_status ModuleMainMenu::Update()
 			break;
 		case 2:
 			//Go to options
+			StartFadeIn(App->scene_settings, WHITE, 0.3f);
+			App->audio->StopMusic();
 			App->audio->PlayFx(audioSelectId);
 			break;
 		}

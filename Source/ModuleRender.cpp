@@ -6,7 +6,7 @@
 
 ModuleRender::ModuleRender(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
-    background = RAYWHITE;
+    background = BLACK;
 }
 
 // Destructor
@@ -22,21 +22,29 @@ bool ModuleRender::Init()
 	return ret;
 }
 
+bool ModuleRender::Start()
+{
+    camera = { 0 };
+    camera.target = { 0.0f, 0.0f }; // Objetivo a seguir
+    camera.offset = { 0.0f, 0.0f };// Centra la cámara
+    camera.rotation = 0.0f; // Sin rotación
+    camera.zoom = 1.0f; // Zoom por defecto (sin zoom)
+    return true;
+}
+
 // PreUpdate: clear buffer
 update_status ModuleRender::PreUpdate()
 {
+    ClearBackground(background);
+    BeginDrawing();
+    BeginMode2D(camera);
 	return UPDATE_CONTINUE;
 }
 
 // Update: debug camera
 update_status ModuleRender::Update()
 {
-    ClearBackground(background);
-
-    // NOTE: This function setups render batching system for
-    // maximum performance, all consecutive Draw() calls are
-    // not processed until EndDrawing() is called
-    BeginDrawing();
+    
 
 	return UPDATE_CONTINUE;
 }
@@ -45,8 +53,9 @@ update_status ModuleRender::Update()
 update_status ModuleRender::PostUpdate()
 {
     // Draw everything in our batch!
-    DrawFPS(10, 10);
 
+    EndMode2D();
+    DrawFPS(10, 10);
     EndDrawing();
 
 	return UPDATE_CONTINUE;
@@ -64,19 +73,20 @@ void ModuleRender::SetBackgroundColor(Color color)
 }
 
 // Draw to screen
-bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* section, Color tint, double angle, float pivot_x, float pivot_y) const
+bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* section, Color tint,bool flip, double angle, float pivot_x, float pivot_y) const
 {
 	bool ret = true;
+
+    float flipValue = flip ? -1 : 1;
 
 	float scale = SCREEN_SIZE;
 
     Vector2 position = { (float)x, (float)y };
 
-    position.x = (x-pivot_x) * scale + camera.x;
-    position.y = (y-pivot_y) * scale + camera.y;
+    position.x = (x-pivot_x) * scale;
+    position.y = (y-pivot_y) * scale;
 
-
-    DrawTexturePro(texture, *section, {x*scale, y*scale, section->width*scale, section->height * scale }, {pivot_x,pivot_y},angle, tint);
+    DrawTexturePro(texture, *section, {x*scale, y*scale, section->width*scale * flipValue, section->height * scale }, {pivot_x,pivot_y},angle, tint);
 
 	return ret;
 }
@@ -89,5 +99,21 @@ bool ModuleRender::DrawText(const char * text, int x, int y, Font font, int spac
 
     DrawTextEx(font, text, position, (float)font.baseSize, (float)spacing, tint);
 
+    return ret;
+}
+
+bool ModuleRender::DrawRect(int x, int y, int width, int height, Color color)
+{
+    bool ret = true;
+
+    float scale = SCREEN_SIZE;
+    Vector2 position = { (float)x, (float)y };
+
+    position.x = (x) * scale;
+    position.y = (y) * scale;
+
+    Rectangle rect = { position.x, position.y, width * scale, height * scale };
+
+    DrawRectangle(rect.x,rect.y, rect.width, rect.height, color);
     return ret;
 }
