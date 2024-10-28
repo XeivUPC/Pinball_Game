@@ -15,7 +15,6 @@ private:
 	int audioMoveId;
 	Texture2D* pokedexSpritesheet;
 	Texture2D* pokedexSlot;
-	Rectangle* rect;
 	xml_document _data;
 	float slots_offset = 0;
 	int option = 0;

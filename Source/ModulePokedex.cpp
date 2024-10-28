@@ -44,10 +44,12 @@ update_status ModulePokedex::Update()
         App->audio->StopMusic();
         App->audio->PlayFx(audioSelectId);
     }
+    for (size_t i = 0; i < pokemon_list.size(); i++)
+    {
+        Rectangle rect = { 0 , 0 + 15 * selectedLanguage, 124 ,15 };
+        App->renderer->Draw(*pokedexSlot, 10, 56 + slots_offset + 15 * i, &rect, WHITE);
+    }
     
-    /*Rectangle rect = { 0 , 0 + 15 * selectedLanguage, 124 ,15 };
-    App->renderer->Draw(*pokedexSlot, 0, 56 + slots_offset * pokemonIdNode.attribute("value").as_int(), &rect, WHITE);*/
-
     Rectangle rect = {160 , 0, 160 ,144 };
     App->renderer->Draw(*pokedexSpritesheet, 0, 0, &rect, WHITE);
     rect = { 0, (float)(0 + 53 * selectedLanguage), 160, 53 };
@@ -58,7 +60,6 @@ update_status ModulePokedex::Update()
 
 bool ModulePokedex::CleanUp()
 {
-    delete rect;
     return true;
 }
 
@@ -73,7 +74,6 @@ void ModulePokedex::LoadConfigFile()
     {
         LOG("Error loading config.xml: %s", result.description());
     }
-
 }
 
 void ModulePokedex::SaveConfigFile()

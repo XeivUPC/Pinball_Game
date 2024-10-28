@@ -120,12 +120,7 @@ bool ModuleGameUIText::Start()
 	charReferences.push_back(197);
 	charReferences.push_back(64);
 	charReferences.push_back(32);
-
-
-
-
     return true;
-	
 }
 
 
