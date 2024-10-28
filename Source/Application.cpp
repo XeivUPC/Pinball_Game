@@ -7,6 +7,10 @@
 #include "ModuleTexture.h"
 #include "ModuleUserPreferences.h"
 #include "ModuleText.h"
+#include "ModuleHSNum.h"
+#include "ModuleHSName.h"
+#include "ModuleGameUIText.h"
+
 
 
 #include "ModuleLevelSelection.h"
@@ -29,10 +33,13 @@ Application::Application()
 	physics = new ModulePhysics(this);
 	userPreferences = new ModuleUserPreferences(this);
 	text = new ModuleText(this);
+	text_highScoreNum = new ModuleHSNum(this);
+	text_highScoreName = new ModuleHSName(this);
+	text_gameUIText = new ModuleGameUIText(this);
 
-	scene_languageSelect = new ModuleLanguageSelect(this);
+	scene_languageSelect = new ModuleLanguageSelect(this, false);
 	scene_credits = new ModuleCredits(this, false);
-	scene_levelSelection = new ModuleLevelSelection(this, false);
+	scene_levelSelection = new ModuleLevelSelection(this);
 	scene_mainMenu = new ModuleMainMenu(this, false);
 	scene_settings = new ModuleSettings(this, false);
 	scene_keybinds = new ModuleKeybinds(this, false);
@@ -53,6 +60,9 @@ Application::Application()
 	AddModule(texture);
 	AddModule(userPreferences);
 	AddModule(text);
+	AddModule(text_highScoreNum);
+	AddModule(text_highScoreName);
+	AddModule(text_gameUIText);
 
 	// Scenes
 	AddModule(scene_languageSelect);

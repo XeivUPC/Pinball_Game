@@ -66,8 +66,17 @@
     <ClCompile Include="Source\ModuleGame.cpp">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleSaveGame.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    <ClCompile Include="Source\GameUI.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGameUIText.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleHSName.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleHSNum.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,8 +148,17 @@
     <ClInclude Include="Source\ModuleGame.h">
       <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ModuleSaveGame.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+    <ClInclude Include="Source\GameUI.h">
+      <Filter>UIs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHSNum.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleGameUIText.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHSName.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +179,9 @@
     </Filter>
     <Filter Include="UIs">
       <UniqueIdentifier>{28ee3c68-574a-47a4-b59d-e59b83ad5827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Texts %28ModuleText%29">
+      <UniqueIdentifier>{82bcc1a0-42ae-4ca8-8bb8-9b85a7332a86}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

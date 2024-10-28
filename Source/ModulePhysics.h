@@ -18,11 +18,11 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 
+	b2World* world;
 	
 
 private:
 
 	bool debug;
-	b2World* world;
 	
 };

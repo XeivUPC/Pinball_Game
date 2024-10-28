@@ -193,9 +193,13 @@
     <ClInclude Include="Source/p2Point.h" />
     <ClInclude Include="Source\AnimationSystem.h" />
     <ClInclude Include="Source\Counter.h" />
+    <ClInclude Include="Source\GameUI.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleGame.h" />
+    <ClInclude Include="Source\ModuleGameUIText.h" />
     <ClInclude Include="Source\ModuleHighScore.h" />
+    <ClInclude Include="Source\ModuleHSName.h" />
+    <ClInclude Include="Source\ModuleHSNum.h" />
     <ClInclude Include="Source\ModuleKeybinds.h" />
     <ClInclude Include="Source\ModuleLanguageSelect.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h" />
@@ -219,9 +223,13 @@
     <ClCompile Include="Source/ModuleWindow.cpp" />
     <ClCompile Include="Source\AnimationSystem.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
+    <ClCompile Include="Source\GameUI.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
     <ClCompile Include="Source\ModuleGame.cpp" />
+    <ClCompile Include="Source\ModuleGameUIText.cpp" />
     <ClCompile Include="Source\ModuleHighScore.cpp" />
+    <ClCompile Include="Source\ModuleHSName.cpp" />
+    <ClCompile Include="Source\ModuleHSNum.cpp" />
     <ClCompile Include="Source\ModuleKeybinds.cpp" />
     <ClCompile Include="Source\ModuleLanguageSelect.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp" />

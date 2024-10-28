@@ -1,26 +1,20 @@
-#include "UI.h"
+#include "HighScoreUINum.h"
 #include "Application.h"
 #include "ModuleText.h"
 #include "ModuleTexture.h"
-#include "ModuleRender.h"
 
-UI::UI(Application* App)
+HighScoreUINum::HighScoreUINum(Application* App) : UI (App)
 {
 	this->App = App;
 	App->texture->CreateTexture("Assets/Font.png", "UI");
 	UITexture = App->texture->GetTexture("UI");
 }
 
-UI::~UI()
+HighScoreUINum::~HighScoreUINum()
 {
 }
 
-void UI::ChangeVisibility()
-{
-	enabled = !enabled;
-}
-
-void UI::Render() const
+void HighScoreUINum::Update() const
 {
 	if (!enabled) return;
 	App->text->Write("HOLA", 0, 0);

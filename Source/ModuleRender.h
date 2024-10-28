@@ -11,6 +11,7 @@ public:
 	~ModuleRender();
 
 	bool Init();
+	bool Start();
 	update_status PreUpdate();
 	update_status Update();
 	update_status PostUpdate();
@@ -20,8 +21,10 @@ public:
 	bool Draw(Texture2D texture, int x, int y, const Rectangle* section = NULL, Color tint = WHITE, bool flip=false,double angle = 0, float pivot_x = 0, float pivot_y = 0) const;
     bool DrawText(const char* text, int x, int y, Font font, int spacing, Color tint) const;
 
+	bool DrawRect(int x, int y, int width, int height, Color color = WHITE);
+
 public:
 
 	Color background;
-    Rectangle camera;
+    Camera2D camera;
 };
