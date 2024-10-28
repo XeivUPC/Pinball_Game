@@ -70,6 +70,7 @@ void Animator::Next()
 		}
 		else
 		{
+			animationFinished = true;
 			currentSprite = animations[currentAnimation].sprites.size() - 1;
 		}
 	}
@@ -94,10 +95,19 @@ void Animator::SelectAnimation(std::string animName, bool l)
 {
 	if (currentAnimation == animName)
 		return;
-
+	animationFinished = false;
 	currentAnimation = animName;
 	loop = l;
 	currentSprite = 0;
+}
+
+bool Animator::HasAnimationFinished()
+{
+	if (loop)
+		return false;
+	else {
+		return animationFinished;
+	}
 }
 
 
