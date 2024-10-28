@@ -71,7 +71,9 @@ bool ModuleHighScore::Start()
 
 	StartFadeOut(WHITE, 0.3f);
 
-	std::string savedName(3, current_char);
+	std::string savedName(1, current_char);
+
+	ChangeName(savedName);
 
 	return ret;
 }
@@ -80,7 +82,6 @@ update_status ModuleHighScore::Update()
 {
 	if (score_was_inserted) {
 
-		App->text_highScoreName->Write(savedName.c_str(), 24, 16 + 24 * score_position, versionColor);
 		if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
 			current_char++;
 			if (current_char == 112) {
@@ -321,19 +322,19 @@ void ModuleHighScore::ChangeName(std::string name)
 	switch (score_position)
 	{
 	case 1:
-		scores[FIRST].name = "";
+		scores[FIRST].name = name;
 		break;
 	case 2:
-		scores[SECOND].name = "";
+		scores[SECOND].name = name;
 		break;
 	case 3:
-		scores[THIRD].name = "";
+		scores[THIRD].name = name;
 		break;
 	case 4:
-		scores[FOURTH].name = "";
+		scores[FOURTH].name = name;
 		break;
 	case 5:
-		scores[FIFTH].name = "";
+		scores[FIFTH].name = name;
 		break;
 	default:
 		break;
