@@ -67,4 +67,10 @@ private:
 	double incoming_score = 999999999999;
 
 	void TryToInsertHighScore(double points);
+	void ChangeName(std::string name);
+	bool score_was_inserted = true;
+	int score_position;
+	int current_char_pos = 0;
+	char current_char = 65;
+	std::string savedName;
 };

@@ -71,13 +71,44 @@ bool ModuleHighScore::Start()
 
 	StartFadeOut(WHITE, 0.3f);
 
+	std::string savedName(3, current_char);
+
 	return ret;
 }
 
 update_status ModuleHighScore::Update()
 {
+	if (score_was_inserted) {
 
-	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
+		App->text_highScoreName->Write(savedName.c_str(), 24, 16 + 24 * score_position, versionColor);
+		if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
+			current_char++;
+			if (current_char == 112) {
+				current_char == 65;
+			}
+			savedName[current_char_pos] = current_char;
+			ChangeName(savedName);
+		}
+		if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+			current_char--;
+			if (current_char == 64) {
+				current_char == 111;
+			}
+			savedName[current_char_pos] = current_char;
+			ChangeName(savedName);
+		}
+		if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
+			savedName += current_char;
+			ChangeName(savedName);
+			current_char_pos++;
+			if (current_char_pos == 3) {
+				score_was_inserted = false;
+			}
+		}
+	}
+
+
+	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT)) && !score_was_inserted) {
 		//Return
 		//App->audio->PlayFx(audioSelectId);
 		StartFadeIn(App->scene_mainMenu, WHITE, 0.3f);
@@ -215,7 +246,7 @@ void ModuleHighScore::TryToInsertHighScore(double points)
 
 	if (points > positionNode.child("first").attribute("score").as_int()) {
 		scores[FIRST].score = points_str;
-		scores[FIRST].name = "WIP";
+		scores[FIRST].name = " ";
 		scores[SECOND].score = positionNode.child("first").attribute("score").as_string();
 		scores[SECOND].name = positionNode.child("first").attribute("name").as_string();
 		scores[THIRD].score = positionNode.child("second").attribute("score").as_string();
@@ -224,18 +255,20 @@ void ModuleHighScore::TryToInsertHighScore(double points)
 		scores[FOURTH].name = positionNode.child("third").attribute("name").as_string();
 		scores[FIFTH].score = positionNode.child("fourth").attribute("score").as_string();
 		scores[FIFTH].name = positionNode.child("fourth").attribute("name").as_string();
+		score_position = 1;
 	}
 	else if (points > positionNode.child("second").attribute("score").as_int()) {
 		scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
 		scores[FIRST].name = positionNode.child("first").attribute("name").as_string();
 		scores[SECOND].score = points_str;
-		scores[SECOND].name = "WIP";
+		scores[SECOND].name = "";
 		scores[THIRD].score = positionNode.child("second").attribute("score").as_string();
 		scores[THIRD].name = positionNode.child("second").attribute("name").as_string();
 		scores[FOURTH].score = positionNode.child("third").attribute("score").as_string();
 		scores[FOURTH].name = positionNode.child("third").attribute("name").as_string();
 		scores[FIFTH].score = positionNode.child("fourth").attribute("score").as_string();
 		scores[FIFTH].name = positionNode.child("fourth").attribute("name").as_string();
+		score_position = 2;
 	}
 	else if (points > positionNode.child("third").attribute("score").as_int()) {
 		scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
@@ -243,11 +276,12 @@ void ModuleHighScore::TryToInsertHighScore(double points)
 		scores[SECOND].score = positionNode.child("second").attribute("score").as_string();
 		scores[SECOND].name = positionNode.child("second").attribute("name").as_string();
 		scores[THIRD].score = points_str;
-		scores[THIRD].name = "WIP";
+		scores[THIRD].name = "";
 		scores[FOURTH].score = positionNode.child("third").attribute("score").as_string();
 		scores[FOURTH].name = positionNode.child("third").attribute("name").as_string();
 		scores[FIFTH].score = positionNode.child("fourth").attribute("score").as_string();
 		scores[FIFTH].name = positionNode.child("fourth").attribute("name").as_string();
+		score_position = 3;
 	}
 	else if (points > positionNode.child("fourth").attribute("score").as_int()) {
 		scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
@@ -257,9 +291,10 @@ void ModuleHighScore::TryToInsertHighScore(double points)
 		scores[THIRD].score = positionNode.child("third").attribute("score").as_string();
 		scores[THIRD].name = positionNode.child("third").attribute("name").as_string();
 		scores[FOURTH].score = points_str;
-		scores[FOURTH].name = "WIP";
+		scores[FOURTH].name = "";
 		scores[FIFTH].score = positionNode.child("fourth").attribute("score").as_string();
 		scores[FIFTH].name = positionNode.child("fourth").attribute("name").as_string();
+		score_position = 4;
 	}
 	else if (points > positionNode.child("fifth").attribute("score").as_int()) {
 		scores[FIRST].score = positionNode.child("first").attribute("score").as_string();
@@ -271,10 +306,37 @@ void ModuleHighScore::TryToInsertHighScore(double points)
 		scores[FOURTH].score = positionNode.child("fourth").attribute("score").as_string();
 		scores[FOURTH].name = positionNode.child("fourth").attribute("name").as_string();
 		scores[FIFTH].score = points_str;
-		scores[FIFTH].name = "WIP";
+		scores[FIFTH].name = "";
+		score_position = 5;
 	}
 	else {
 		LoadHighScore();
+		score_was_inserted = false;
+	}
+	SaveHighScore();
+}
+
+void ModuleHighScore::ChangeName(std::string name)
+{
+	switch (score_position)
+	{
+	case 1:
+		scores[FIRST].name = "";
+		break;
+	case 2:
+		scores[SECOND].name = "";
+		break;
+	case 3:
+		scores[THIRD].name = "";
+		break;
+	case 4:
+		scores[FOURTH].name = "";
+		break;
+	case 5:
+		scores[FIFTH].name = "";
+		break;
+	default:
+		break;
 	}
 	SaveHighScore();
 }
