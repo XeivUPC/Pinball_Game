@@ -76,6 +76,24 @@ void Animator::Next()
 	}
 }
 
+void Animator::Previous()
+{
+	if (currentSprite > 0)
+		currentSprite--;
+	else
+	{
+		if (loop)
+		{
+			currentSprite = animations[currentAnimation].sprites.size() - 1;
+		}
+		else
+		{
+			animationFinished = true;
+			currentSprite = 0;
+		}
+	}
+}
+
 Animator::Animator(Application* App)
 {
 	this->App = App;
@@ -120,12 +138,22 @@ void Animator::Update()
 {
 	if (!isPlaying)
 		return;
+		if (timer.ReadSec() >= speed)
+		{
+			timer.Start();
+			if (animationDirection==1) {
+				Next();	
+			}
+			else {
+				Previous();
+			}
+		}
 
-	if (timer.ReadSec() >= speed)
-	{
-		timer.Start();
-		Next();
-	}
+}
+
+void Animator::SetDirection(int direction)
+{
+	this->animationDirection = direction;
 }
 
 void Animator::Animate(int x, int y, bool flip)

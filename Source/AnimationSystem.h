@@ -42,6 +42,7 @@ class Animator
 {
 private:
 	void Next();
+	void Previous();
 
 	std::unordered_map<std::string, AnimationData> animations;
 
@@ -50,6 +51,7 @@ private:
 
 	bool loop = false;
 	float speed = 1;
+	int animationDirection = 1;
 
 	bool isPlaying=true;
 	bool canDraw=true;
@@ -68,6 +70,7 @@ public:
 	bool HasAnimationFinished();
 	void SetSpeed(float s);
 	void Update();
+	void SetDirection(int direction);
 	void Animate(int x, int y, bool flip);
 
 	void SetIfPlaying(bool isPlaying);

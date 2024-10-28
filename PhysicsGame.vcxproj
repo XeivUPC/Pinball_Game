@@ -192,10 +192,11 @@
     <ClInclude Include="Source/ModuleWindow.h" />
     <ClInclude Include="Source/p2Point.h" />
     <ClInclude Include="Source\AnimationSystem.h" />
+    <ClInclude Include="Source\Box2DFactory.h" />
     <ClInclude Include="Source\Counter.h" />
     <ClInclude Include="Source\GameUI.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
-    <ClInclude Include="Source\ModuleGame.h" />
+    <ClInclude Include="Source\ModuleGameRedMap.h" />
     <ClInclude Include="Source\ModuleGameUIText.h" />
     <ClInclude Include="Source\ModuleHighScore.h" />
     <ClInclude Include="Source\ModuleHSName.h" />
@@ -221,10 +222,11 @@
     <ClCompile Include="Source/ModuleRender.cpp" />
     <ClCompile Include="Source/ModuleWindow.cpp" />
     <ClCompile Include="Source\AnimationSystem.cpp" />
+    <ClCompile Include="Source\Box2DFactory.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
     <ClCompile Include="Source\GameUI.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
-    <ClCompile Include="Source\ModuleGame.cpp" />
+    <ClCompile Include="Source\ModuleGameRedMap.cpp" />
     <ClCompile Include="Source\ModuleGameUIText.cpp" />
     <ClCompile Include="Source\ModuleHighScore.cpp" />
     <ClCompile Include="Source\ModuleHSName.cpp" />

@@ -10,9 +10,15 @@ class GameUI;
 
 using namespace pugi;
 
-class ModuleGame : public ModuleScene {
+class ModuleGameRedMap : public ModuleScene {
 private:
 	Texture* map_texture;
+
+	Texture* pokeball_texture;
+	Animator* pokeball_animator;
+
+	int pokeballAnimMaxSpeed=80;
+
 
 	Texture* paddle_texture;
 	Animator* paddleLeft_animator;
@@ -23,6 +29,9 @@ private:
 
 	b2Body* ballBody;
 	std::vector<b2Body*> objectsBodies;
+
+	b2Body* dittoCollider1;
+	b2Body* dittoCollider2;
 
 	GameUI* UI;
 
@@ -44,8 +53,8 @@ private:
 	std::string mapPath = "Assets/MapData/";
 
 public:
-	ModuleGame(Application* app, bool start_enabled = true);
-	~ModuleGame();
+	ModuleGameRedMap(Application* app, bool start_enabled = true);
+	~ModuleGameRedMap();
 
 	bool Start();
 	update_status Update();
