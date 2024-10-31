@@ -47,6 +47,7 @@ private:
 	Texture* background_texture;
 
 	Timer arrowTimer;
+	Timer textTimer;
 
 	int selectedLanguage;
 	int versionColor = 0;
@@ -64,7 +65,18 @@ private:
 	std::unordered_map<Position, Score> scores;
 
 	int times_num_offset = 0;
-	double incoming_score = 999999999999;
+
+	//provisional, when game returns a score, erase this
+	double incoming_score = 300000000;
 
 	void TryToInsertHighScore(double points);
+	void ChangeName(std::string name);
+
+	void DrawText();
+
+	bool score_was_inserted = true;
+	int score_position;
+	int current_char_pos = 0;
+	char current_char = 65;
+	std::string savedName;
 };
