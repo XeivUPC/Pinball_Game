@@ -4,18 +4,11 @@
 #include "Application.h"
 
 
-Rectangle* ModuleGamePokedexJapanese::GetCharRect(char c)
+Rectangle* ModuleGamePokedexJapanese::GetCharRect(int index)
 {
 	Rectangle* rect = new Rectangle{ 0,0,0,0 };
-	for (int i = 0; i < charReferences.size(); i++)
-	{
-		if ((int)c == charReferences[i])
-		{
-			rect->x = i % (int)count.x * size.x;
-			rect->y = i / (int)count.x * size.y;
-			break;
-		}
-	}
+	rect->x = (int)((index % (int)count.x)*size.x);
+	rect->y = (int)((index / (int)count.x)*size.y);
 	rect->width = size.x;
 	rect->height = size.y;
 	return rect;
@@ -36,173 +29,12 @@ bool ModuleGamePokedexJapanese::Init()
 
 bool ModuleGamePokedexJapanese::Start()
 {
-	App->texture->CreateTexture("Assets/game_letters&nums.png", "game_letters&nums");
-	fontTexture = App->texture->GetTexture("game_letters&nums");
+	App->texture->CreateTexture("Assets/pokedex-japanese.png", "font-japanese");
+	fontTexture = App->texture->GetTexture("font-japanese");
 	size = Vector2{ 8,16 };
 	int widht, height;
 	count.x = fontTexture->width / size.x;
 	count.y = fontTexture->height / size.y;
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
-	charReferences.push_back(65);
     return true;
 }
 
@@ -214,13 +46,22 @@ bool ModuleGamePokedexJapanese::CleanUp()
 }
 
 
-void ModuleGamePokedexJapanese::Write(const char* text, int x, int y)
+void ModuleGamePokedexJapanese::Write(const char* text, int x, int y, Color color)
 {
 	int i = 0;
 	while (text[i] != '\0')
 	{
-		Rectangle* letter = GetCharRect(text[i]);
-		App->renderer->Draw(*fontTexture, (x + size.x * i), y, letter, WHITE);
+		int t = 0;
+		int number = 0;
+		while (text[t] != ',')
+		{
+			number += text[t] - 48;
+			number *= 10;
+			t++;
+		}
+		number /= 10;
+		Rectangle* letter = GetCharRect(number);
+		App->renderer->Draw(*fontTexture, (x + size.x * i), y, letter, color);
 		i++;
 	}
 }

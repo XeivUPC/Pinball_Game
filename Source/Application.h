@@ -14,7 +14,8 @@ class ModuleText;
 class ModuleHSNum;
 class ModuleHSName;
 class ModuleGameUIText;
-
+class ModuleGamePokedexJapanese;
+class ModuleGamePokedexWorldWide;
 
 class ModuleUserPreferences;
 
@@ -54,9 +55,8 @@ public:
 	ModuleHSNum* text_highScoreNum;
 	ModuleHSName* text_highScoreName;
 	ModuleGameUIText* text_gameUIText;
-
-
-
+	ModuleGamePokedexJapanese* text_pokedex_japanese;
+	ModuleGamePokedexWorldWide* text_pokedex_worldwide;
 
 private:
 

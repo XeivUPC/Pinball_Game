@@ -10,8 +10,8 @@
 #include "ModuleHSNum.h"
 #include "ModuleHSName.h"
 #include "ModuleGameUIText.h"
-
-
+#include "ModuleGamePokedexJapanese.h"
+#include "ModuleGamePokedexWorldwide.h"
 
 #include "ModuleLevelSelection.h"
 #include "ModuleCredits.h"
@@ -22,7 +22,6 @@
 #include "ModuleKeybinds.h"
 #include "ModuleHighScore.h"
 #include "ModuleGame.h"
-
 
 #include "Application.h"
 
@@ -37,6 +36,8 @@ Application::Application()
 	text_highScoreNum = new ModuleHSNum(this);
 	text_highScoreName = new ModuleHSName(this);
 	text_gameUIText = new ModuleGameUIText(this);
+	text_pokedex_japanese = new ModuleGamePokedexJapanese(this);
+	text_pokedex_worldwide = new ModuleGamePokedexWorldWide(this);
 
 	scene_languageSelect = new ModuleLanguageSelect(this);
 	scene_credits = new ModuleCredits(this, false);
@@ -64,6 +65,8 @@ Application::Application()
 	AddModule(text);
 	AddModule(text_highScoreNum);
 	AddModule(text_highScoreName);
+	AddModule(text_pokedex_japanese);
+	AddModule(text_pokedex_worldwide);
 	AddModule(text_gameUIText);
 
 	// Scenes

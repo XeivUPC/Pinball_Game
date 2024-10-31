@@ -4,6 +4,8 @@
 #include "Application.h"
 #include "ModuleAudio.h"
 #include "ModuleUserPreferences.h"
+#include "ModuleGamePokedexJapanese.h"
+#include "ModuleGamePokedexWorldwide.h"
 #include "ModuleMainMenu.h"
 
 ModulePokedex::ModulePokedex(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -48,6 +50,41 @@ update_status ModulePokedex::Update()
     {
         Rectangle rect = { 0 , 0 + 15 * selectedLanguage, 124 ,15 };
         App->renderer->Draw(*pokedexSlot, 10, 56 + slots_offset + 15 * i, &rect, WHITE);
+        App->text_pokedex_worldwide->Write(std::to_string(i+1).c_str(), 80, 51 + slots_offset + 15 * i, BLACK);
+        if ((i+1) < 100)
+        {
+            App->text_pokedex_worldwide->Write(std::to_string(0).c_str(), 72, 51 + slots_offset + 15 * i, BLACK);
+            if((i+1) < 10)
+                App->text_pokedex_worldwide->Write(std::to_string(0).c_str(), 64, 51 + slots_offset + 15 * i, BLACK);
+        }
+        
+    }
+    for (size_t i = 0; i < pokemon_list.size(); i++)
+    {
+        if (pokemon_list.at(i).captured)
+        {
+            switch (selectedLanguage)
+            {
+            case 0:
+                App->text_pokedex_japanese->Write(pokemon_list[i].Names.at(0).c_str(), 48, 60 + slots_offset + 15 * i, BLACK);
+                break;
+            case 1:
+                App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(1).c_str(), 48, 60 + slots_offset + 15 * i, BLACK);
+                break;
+            case 2:
+                App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(2).c_str(), 48, 60 + slots_offset + 15 * i, BLACK);
+                break;
+            case 3:
+                App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(3).c_str(), 48, 60 + slots_offset + 15 * i, BLACK);
+                break;
+            case 4:
+                App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(4).c_str(), 48, 60 + slots_offset + 15 * i, BLACK);
+                break;
+            case 5:
+                App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(5).c_str(), 48, 60 + slots_offset + 15 * i, BLACK);
+                break;
+            }
+        }
     }
     
     Rectangle rect = {160 , 0, 160 ,144 };

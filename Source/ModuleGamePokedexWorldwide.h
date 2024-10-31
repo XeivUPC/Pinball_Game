@@ -22,5 +22,5 @@ public:
 
 	bool CleanUp()override;
 
-	void Write(const char* text, int x, int y);
+	void Write(const char* text, int x, int y, Color color = WHITE);
 };

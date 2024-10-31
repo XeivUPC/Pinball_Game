@@ -78,14 +78,14 @@
     <ClCompile Include="Source\ModuleHSNum.cpp">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModulePokedex.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Source\ModuleGamePokedexJapanese.cpp">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleGamePokedexWorldwide.cpp">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModulePokedex.cpp">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -172,14 +172,14 @@
     <ClInclude Include="Source\Pokemon.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ModulePokedex.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
     <ClInclude Include="Source\ModuleGamePokedexJapanese.h">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleGamePokedexWorldwide.h">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModulePokedex.h">
+      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

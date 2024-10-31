@@ -19,6 +19,7 @@ enum SPAWN_LOCATION
 
 class Pokemon
 {
+public:
 	int ID;
 	bool discovered, captured;
 	float weight, height;
@@ -27,7 +28,6 @@ class Pokemon
 	std::vector<std::string> Names;
 	std::vector<int> RedMapLocations;
 	std::vector<int> BlueMapLocations;
-public:
 	Pokemon(int ID, bool discovered, bool captured, float weight, float height, int preevolutionIndex, int overworldIndex, const std::vector<std::string>& Names, const std::vector<int>& RedMapLocations, const std::vector<int>& BlueMapLocations)
 		: ID(ID), discovered(discovered), captured(captured), weight(weight), height(height), preevolutionIndex(preevolutionIndex), overworldIndex(overworldIndex), Names(Names), RedMapLocations(RedMapLocations), BlueMapLocations(BlueMapLocations)
 	{
