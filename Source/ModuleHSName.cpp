@@ -74,6 +74,7 @@ bool ModuleHSName::Start()
 	charReferences.push_back(92);
 	charReferences.push_back(93);
 	charReferences.push_back(94);
+	charReferences.push_back(95);
 	charReferences.push_back(96);
 	charReferences.push_back(97);
 	charReferences.push_back(98);
@@ -91,7 +92,6 @@ bool ModuleHSName::Start()
 	charReferences.push_back(108);
 	charReferences.push_back(109);
 	charReferences.push_back(110);
-	charReferences.push_back(111);
 
 	return true;
 }
