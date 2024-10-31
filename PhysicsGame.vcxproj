@@ -196,6 +196,8 @@
     <ClInclude Include="Source\GameUI.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleGame.h" />
+    <ClInclude Include="Source\ModuleGamePokedexJapanese.h" />
+    <ClInclude Include="Source\ModuleGamePokedexWorldwide.h" />
     <ClInclude Include="Source\ModuleGameUIText.h" />
     <ClInclude Include="Source\ModuleHighScore.h" />
     <ClInclude Include="Source\ModuleHSName.h" />
@@ -227,6 +229,8 @@
     <ClCompile Include="Source\GameUI.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
     <ClCompile Include="Source\ModuleGame.cpp" />
+    <ClCompile Include="Source\ModuleGamePokedexJapanese.cpp" />
+    <ClCompile Include="Source\ModuleGamePokedexWorldwide.cpp" />
     <ClCompile Include="Source\ModuleGameUIText.cpp" />
     <ClCompile Include="Source\ModuleHighScore.cpp" />
     <ClCompile Include="Source\ModuleHSName.cpp" />
