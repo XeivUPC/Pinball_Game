@@ -193,9 +193,14 @@
     <ClInclude Include="Source/p2Point.h" />
     <ClInclude Include="Source\AnimationSystem.h" />
     <ClInclude Include="Source\Box2DFactory.h" />
+    <ClInclude Include="Source\Bumper.h" />
+    <ClInclude Include="Source\CollisionSensor.h" />
+    <ClInclude Include="Source\CollisionsManager.h" />
     <ClInclude Include="Source\Counter.h" />
+    <ClInclude Include="Source\Flipper.h" />
     <ClInclude Include="Source\GameUI.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
+    <ClInclude Include="Source\ModuleGame.h" />
     <ClInclude Include="Source\ModuleGameRedMap.h" />
     <ClInclude Include="Source\ModuleGameUIText.h" />
     <ClInclude Include="Source\ModuleHighScore.h" />
@@ -209,6 +214,7 @@
     <ClInclude Include="Source\ModuleSettings.h" />
     <ClInclude Include="Source\ModuleText.h" />
     <ClInclude Include="Source\ModuleTexture.h" />
+    <ClInclude Include="Source\PokeBall.h" />
     <ClInclude Include="Source\Timer.h" />
     <ClInclude Include="Source\ModuleUserPreferences.h" />
     <ClInclude Include="Source\UI.h" />
@@ -223,9 +229,14 @@
     <ClCompile Include="Source/ModuleWindow.cpp" />
     <ClCompile Include="Source\AnimationSystem.cpp" />
     <ClCompile Include="Source\Box2DFactory.cpp" />
+    <ClCompile Include="Source\Bumper.cpp" />
+    <ClCompile Include="Source\CollisionSensor.cpp" />
+    <ClCompile Include="Source\CollisionsManager.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
+    <ClCompile Include="Source\Flipper.cpp" />
     <ClCompile Include="Source\GameUI.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
+    <ClCompile Include="Source\ModuleGame.cpp" />
     <ClCompile Include="Source\ModuleGameRedMap.cpp" />
     <ClCompile Include="Source\ModuleGameUIText.cpp" />
     <ClCompile Include="Source\ModuleHighScore.cpp" />
@@ -239,6 +250,7 @@
     <ClCompile Include="Source\ModuleSettings.cpp" />
     <ClCompile Include="Source\ModuleText.cpp" />
     <ClCompile Include="Source\ModuleTexture.cpp" />
+    <ClCompile Include="Source\PokeBall.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
     <ClCompile Include="Source\ModuleUserPreferences.cpp" />
     <ClCompile Include="Source\UI.cpp" />
@@ -247,6 +259,7 @@
     <ResourceCompile Include="Source\resources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Xml Include="Assets\Preferences\HighScore.xml" />
     <Xml Include="Assets\Preferences\UserPreferences.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

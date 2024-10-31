@@ -6,13 +6,12 @@
 #include "ModuleAudio.h"
 #include "ModuleUserPreferences.h"
 #include "ModuleKeybinds.h"
-#include "GameUI.h"
 #include "Box2DFactory.h"
 #include <sstream>
 
 #include "ModuleHighScore.h"
 
-ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
+ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
 
 	
@@ -27,49 +26,6 @@ bool ModuleGameRedMap::Start()
 	App->texture->CreateTexture("Assets/map_redMap.png", "map_redMap");
 	map_texture = App->texture->GetTexture("map_redMap");	
 	
-	App->texture->CreateTexture("Assets/pokebal_defaultSize.png", "pokebal_defaultSize");
-	pokeball_texture = App->texture->GetTexture("pokebal_defaultSize");
-
-	App->texture->CreateTexture("Assets/map_paddle.png", "map_paddle");
-	paddle_texture = App->texture->GetTexture("map_paddle");
-
-	paddleLeft_animator = new Animator(App);
-	paddleRight_animator = new Animator(App);
-
-	AnimationData paddleIdle = AnimationData("Paddle_Idle");
-	paddleIdle.AddSprite(Sprite{ paddle_texture,{2, 0}, {24,24} });
-
-	AnimationData paddleClick = AnimationData("Paddle_Click");
-	paddleClick.AddSprite(Sprite{ paddle_texture,{2, 0}, {24,24} });
-	paddleClick.AddSprite(Sprite{ paddle_texture,{1, 0}, {24,24} });
-	paddleClick.AddSprite(Sprite{ paddle_texture,{0, 0}, {24,24} });
-
-	paddleLeft_animator->AddAnimation(paddleIdle);
-	paddleLeft_animator->AddAnimation(paddleClick);
-	paddleLeft_animator->SetSpeed(0.02);
-	paddleLeft_animator->SelectAnimation("Paddle_Idle", true);
-
-	paddleRight_animator->AddAnimation(paddleIdle);
-	paddleRight_animator->AddAnimation(paddleClick);
-	paddleRight_animator->SetSpeed(0.02);
-	paddleRight_animator->SelectAnimation("Paddle_Idle", true);
-
-
-	pokeball_animator = new Animator(App);
-	AnimationData pokeballMove = AnimationData("Pokeball_Anim");
-	pokeballMove.AddSprite(Sprite{ pokeball_texture,{0, 0}, {16,16} });
-	pokeballMove.AddSprite(Sprite{ pokeball_texture,{1, 0}, {16,16} });
-	pokeballMove.AddSprite(Sprite{ pokeball_texture,{2, 0}, {16,16} });
-	pokeballMove.AddSprite(Sprite{ pokeball_texture,{3, 0}, {16,16} });
-	pokeballMove.AddSprite(Sprite{ pokeball_texture,{4, 0}, {16,16} });
-	pokeballMove.AddSprite(Sprite{ pokeball_texture,{5, 0}, {16,16} });
-	pokeballMove.AddSprite(Sprite{ pokeball_texture,{6, 0}, {16,16} });
-	pokeballMove.AddSprite(Sprite{ pokeball_texture,{7, 0}, {16,16} });
-
-	pokeball_animator->SetSpeed(0);
-	pokeball_animator->AddAnimation(pokeballMove);
-	pokeball_animator->SelectAnimation("Pokeball_Anim", true);
-
 
 	UI = new GameUI(App);
 
@@ -77,10 +33,9 @@ bool ModuleGameRedMap::Start()
 
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
-	CreateBall();
-
-	CreatePaddles();
-
+	pokeBall = new PokeBall(this);
+	leftFlipper = new Flipper(this, 40000, 0.15 * b2_pi, -0.15f * b2_pi, { 13.9,64.4 }, {51,245}, false);
+	rightFlipper = new Flipper(this, 40000, 0.15 * b2_pi, -0.15f * b2_pi, { 26.1,64.4 }, { 85,245 }, true);
 	return true;
 }
 
@@ -96,11 +51,11 @@ update_status ModuleGameRedMap::Update()
 	
 
 	if (IsKeyPressed(KEY_P)) {
-		ballBody->ApplyLinearImpulseToCenter({ 0,-400 }, true);
+		pokeBall->ApplyForce({ 0,-400 });
 	}
 
 	if (IsKeyPressed(KEY_R)) {
-		ballBody->SetTransform({ 43, 68 },0);
+		pokeBall->SetPosition({ 43, 68 });
 	}
 
 	
@@ -109,26 +64,10 @@ update_status ModuleGameRedMap::Update()
 	Rectangle rectBackground = { 0,0,191,278 };
 	App->renderer->Draw(*map_texture, 0, 0, &rectBackground, WHITE);
 
-	paddleLeft_animator->Update();
-	paddleLeft_animator->Animate(51,245,false);
 
-	paddleRight_animator->Update();
-	paddleRight_animator->Animate(160-75, 245,true);
-
-
-	float pokeballSpeed = std::sqrt(ballBody->GetLinearVelocity().x * ballBody->GetLinearVelocity().x + ballBody->GetLinearVelocity().y * ballBody->GetLinearVelocity().y);
-	pokeballSpeed = (pokeballAnimMaxSpeed / pokeballSpeed) / 100;
-
-	if(ballBody->GetLinearVelocity().x <0)
-		pokeball_animator->SetDirection(1);
-	else
-		pokeball_animator->SetDirection(-1);
-
-	pokeball_animator->SetSpeed(pokeballSpeed);
-
-
-	pokeball_animator->Update();
-	pokeball_animator->Animate(ballBody->GetPosition().x * SCREEN_SIZE -8, ballBody->GetPosition().y * SCREEN_SIZE-8, true);
+	leftFlipper->Update();
+	rightFlipper->Update();
+	pokeBall->Update();
 
 	UI->Render();
 
@@ -142,14 +81,14 @@ update_status ModuleGameRedMap::Update()
 void ModuleGameRedMap::RepositionCamera()
 {
 
-	if (ballBody->GetPosition().x > 160/ SCREEN_SIZE) {
+	if (pokeBall->GetPosition().x > 160/ SCREEN_SIZE) {
 		App->renderer->camera.offset.x = -31 * SCREEN_SIZE;
 	}
 	else {
 		App->renderer->camera.offset.x = 0;
 	}
 
-	if (ballBody->GetPosition().y > 135/SCREEN_SIZE) {
+	if (pokeBall->GetPosition().y > 135/SCREEN_SIZE) {
 		App->renderer->camera.offset.y = -135 * SCREEN_SIZE;
 	}
 	else{
@@ -160,29 +99,29 @@ void ModuleGameRedMap::RepositionCamera()
 void ModuleGameRedMap::MovePaddles()
 {
 
-	if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
-		/// Trigger Left Paddle
-		paddleLeft_animator->SelectAnimation("Paddle_Click", false);
-		leftPaddleJoint->SetMotorSpeed(40000.0f);
-	}else
-	{
-		leftPaddleJoint->SetMotorSpeed(-40000.0f);
-		paddleLeft_animator->SelectAnimation("Paddle_Idle", true);
-	}
+	//if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+	//	/// Trigger Left Paddle
+	//	paddleLeft_animator->SelectAnimation("Paddle_Click", false);
+	//	leftPaddleJoint->SetMotorSpeed(40000.0f);
+	//}else
+	//{
+	//	leftPaddleJoint->SetMotorSpeed(-40000.0f);
+	//	paddleLeft_animator->SelectAnimation("Paddle_Idle", true);
+	//}
 
-	if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-		/// Trigger Right Paddle
-		rightPaddleJoint->SetMotorSpeed(-40000.0f);
-		paddleRight_animator->SelectAnimation("Paddle_Click", false);
-		
-	}
-	else
-	{
-		rightPaddleJoint->SetMotorSpeed(40000.0f);
-		paddleRight_animator->SelectAnimation("Paddle_Idle", true);
-	}
+	//if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
+	//	/// Trigger Right Paddle
+	//	rightPaddleJoint->SetMotorSpeed(-40000.0f);
+	//	paddleRight_animator->SelectAnimation("Paddle_Click", false);
+	//	
+	//}
+	//else
+	//{
+	//	rightPaddleJoint->SetMotorSpeed(40000.0f);
+	//	paddleRight_animator->SelectAnimation("Paddle_Idle", true);
+	//}
 
-	
+	//
 }
 
 bool ModuleGameRedMap::CleanUp()
@@ -193,6 +132,18 @@ bool ModuleGameRedMap::CleanUp()
 	}
 	objectsBodies.clear();
 
+	if (pokeBall != nullptr) {
+		delete pokeBall;
+		pokeBall = nullptr;
+	}
+	if (leftFlipper != nullptr) {
+		delete leftFlipper;
+		leftFlipper = nullptr;
+	}
+	if (rightFlipper != nullptr) {
+		delete rightFlipper;
+		rightFlipper = nullptr;
+	}
 
 	App->renderer->camera.offset = { 0,0 };
 	return true;
@@ -293,90 +244,4 @@ void ModuleGameRedMap::LoadMap(std::string path)
 			}
 		}
 	}
-}
-
-void ModuleGameRedMap::CreateBall()
-{
-	ballBody = Box2DFactory::GetInstance().CreateCircle(App->physics->world, { 43,68 }, 1.3f);
-	ballBody->GetFixtureList()[0].SetRestitution(0.5f);
-	ballBody->GetFixtureList()[0].SetFriction(0);
-	ballBody->GetFixtureList()[0].SetDensity(100);
-
-	ballBody->SetBullet(true);
-
-	objectsBodies.emplace_back(ballBody);
-}
-
-void ModuleGameRedMap::CreatePaddles()
-{
-	b2MassData paddleMassData;
-	b2Body* bodyA = Box2DFactory::GetInstance().CreateBox(App->physics->world, { 13.9,64.4 }, 5.2f,1);
-	bodyA->GetFixtureList()[0].SetDensity(100000000);
-	bodyA->SetType(b2_dynamicBody); 
-
-	b2Body* bodyB = Box2DFactory::GetInstance().CreateCircle(App->physics->world, { 13.9,64.4 },0.2);
-	bodyB->SetType(b2_staticBody);
-
-	b2RevoluteJointDef jointDef;
-	b2Vec2 offset = bodyA->GetWorldCenter();
-
-	jointDef.bodyA = bodyA;
-	jointDef.bodyB = bodyB;
-
-	jointDef.localAnchorA.Set(-2.55, 0);
-	jointDef.localAnchorB.Set(0.0f, 0.0f);
-
-	jointDef.collideConnected = false;
-	jointDef.enableLimit = true;
-	jointDef.lowerAngle = -0.15f * b2_pi; // -90 degrees
-	jointDef.upperAngle = 0.15 * b2_pi; // 45 degrees
-
-	jointDef.enableMotor = true;
-	jointDef.maxMotorTorque = 40000.0f;
-	jointDef.motorSpeed = 0.0f;
-
-	leftPaddleJoint = (b2RevoluteJoint*)App->physics->world->CreateJoint(&jointDef);
-
-	leftPaddleJoint->EnableMotor(true);
-
-	objectsBodies.emplace_back(bodyA);
-	objectsBodies.emplace_back(bodyB);
-
-
-
-	paddleMassData;
-	bodyA = Box2DFactory::GetInstance().CreateBox(App->physics->world, { 26.1,64.4 }, 5.2f, 1);
-	bodyA->GetFixtureList()[0].SetDensity(100000000);
-	bodyA->SetType(b2_dynamicBody);
-
-
-	bodyB = Box2DFactory::GetInstance().CreateCircle(App->physics->world, { 26.1,64.4 }, 0.2);
-	bodyB->SetType(b2_staticBody);
-
-	jointDef;
-	offset = bodyA->GetWorldCenter();
-
-	jointDef.bodyA = bodyA;
-	jointDef.bodyB = bodyB;
-
-
-	jointDef.localAnchorA.Set(2.55, 0);
-	jointDef.localAnchorB.Set(0.0f, 0.0f);
-
-	jointDef.collideConnected = false;
-	jointDef.enableLimit = true;
-	jointDef.lowerAngle = -0.15f * b2_pi; // -90 degrees
-	jointDef.upperAngle = 0.15 * b2_pi; // 45 degrees
-
-	jointDef.enableMotor = true;
-	jointDef.maxMotorTorque = 40000.0f;
-	jointDef.motorSpeed = 0.0f;
-
-	rightPaddleJoint = (b2RevoluteJoint*)App->physics->world->CreateJoint(&jointDef);
-
-	rightPaddleJoint->EnableMotor(true);
-
-	objectsBodies.emplace_back(bodyA);
-	objectsBodies.emplace_back(bodyB);
-
 }

@@ -162,7 +162,7 @@ bool ModuleHighScore::CleanUp()
 		delete arrow_animator;
 		arrow_animator = nullptr;
 	}
-
+	highScoreFile.reset();
 	LOG("Unloading High Score scene");
 	return true;
 }

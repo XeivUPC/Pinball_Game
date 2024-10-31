@@ -1,48 +1,30 @@
 #pragma once
-#include "ModuleScene.h"
-#include "AnimationSystem.h"
-#include "box2D/box2d.h"
-#include <vector>
-#include "pugixml.hpp"
 
-class GameUI;
+#include "AnimationSystem.h"
+#include "ModuleGame.h"
+#include "GameUI.h"
+#include "PokeBall.h"
+#include "Flipper.h"
+
 
 
 using namespace pugi;
 
-class ModuleGameRedMap : public ModuleScene {
+class ModuleGameRedMap : public ModuleGame {
 private:
-	Texture* map_texture;
 
-	Texture* pokeball_texture;
-	Animator* pokeball_animator;
+	PokeBall* pokeBall = nullptr;
+	Flipper* leftFlipper = nullptr;
+	Flipper* rightFlipper = nullptr;
+	GameUI* UI;
 
-	int pokeballAnimMaxSpeed=80;
-
-
-	Texture* paddle_texture;
-	Animator* paddleLeft_animator;
-	Animator* paddleRight_animator;
-
-	b2RevoluteJoint* leftPaddleJoint;
-	b2RevoluteJoint* rightPaddleJoint;
-
-	b2Body* ballBody;
-	std::vector<b2Body*> objectsBodies;
 
 	b2Body* dittoCollider1;
 	b2Body* dittoCollider2;
 
-	GameUI* UI;
-
-	pugi::xml_document mapFileXML;
-
-
+	
 	//Create
 	void LoadMap(std::string path);
-	void CreateBall();
-	void CreatePaddles();
-
 
 	//Controls
 

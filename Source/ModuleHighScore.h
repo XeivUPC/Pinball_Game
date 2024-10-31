@@ -67,7 +67,7 @@ private:
 	int times_num_offset = 0;
 
 	//provisional, when game returns a score, erase this
-	double incoming_score = 300000000;
+	double incoming_score = 0;
 
 	void TryToInsertHighScore(double points);
 	void ChangeName(std::string name);
