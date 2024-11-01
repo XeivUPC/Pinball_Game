@@ -34,15 +34,15 @@ bool ModuleGameRedMap::Start()
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
 	pokeBall = new PokeBall(this);
-	leftFlipper = new Flipper(this, 40000, 0.15 * b2_pi, -0.15f * b2_pi, { 13.9,64.4 }, {51,245}, false);
-	rightFlipper = new Flipper(this, 40000, 0.15 * b2_pi, -0.15f * b2_pi, { 26.1,64.4 }, { 85,245 }, true);
+	leftFlipper = new Flipper(this, -40000, { 13.9,64.4 } , { -0.15 * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
+	rightFlipper = new Flipper(this, 40000, { 26.1,64.4 }, { -0.15 * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
+
 	return true;
 }
 
 update_status ModuleGameRedMap::Update()
 {
 	RepositionCamera();
-	MovePaddles();
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
@@ -94,34 +94,6 @@ void ModuleGameRedMap::RepositionCamera()
 	else{
 		App->renderer->camera.offset.y = 0;
 	}
-}
-
-void ModuleGameRedMap::MovePaddles()
-{
-
-	//if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
-	//	/// Trigger Left Paddle
-	//	paddleLeft_animator->SelectAnimation("Paddle_Click", false);
-	//	leftPaddleJoint->SetMotorSpeed(40000.0f);
-	//}else
-	//{
-	//	leftPaddleJoint->SetMotorSpeed(-40000.0f);
-	//	paddleLeft_animator->SelectAnimation("Paddle_Idle", true);
-	//}
-
-	//if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-	//	/// Trigger Right Paddle
-	//	rightPaddleJoint->SetMotorSpeed(-40000.0f);
-	//	paddleRight_animator->SelectAnimation("Paddle_Click", false);
-	//	
-	//}
-	//else
-	//{
-	//	rightPaddleJoint->SetMotorSpeed(40000.0f);
-	//	paddleRight_animator->SelectAnimation("Paddle_Idle", true);
-	//}
-
-	//
 }
 
 bool ModuleGameRedMap::CleanUp()

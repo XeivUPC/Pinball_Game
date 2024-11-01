@@ -30,8 +30,6 @@ private:
 
 	void RepositionCamera();
 
-	void MovePaddles();
-
 	std::string mapPath = "Assets/MapData/";
 
 public:
