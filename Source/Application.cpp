@@ -21,6 +21,7 @@
 #include "ModuleKeybinds.h"
 #include "ModuleHighScore.h"
 #include "ModuleGameRedMap.h"
+#include "ModuleGameBlueMap.h"
 
 
 #include "Application.h"
@@ -45,6 +46,7 @@ Application::Application()
 	scene_keybinds = new ModuleKeybinds(this, false);
 	scene_highScore = new ModuleHighScore(this, false);
 	scene_game_redMap = new ModuleGameRedMap(this, false);
+	scene_game_blueMap = new ModuleGameBlueMap(this, false);
 
 	texture = new ModuleTexture(this);
 
@@ -73,6 +75,7 @@ Application::Application()
 	AddModule(scene_settings);
 	AddModule(scene_keybinds);
 	AddModule(scene_game_redMap);
+	AddModule(scene_game_blueMap);
 
 	// Rendering happens at the end
 	AddModule(renderer);

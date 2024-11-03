@@ -199,8 +199,10 @@
     <ClInclude Include="Source\Counter.h" />
     <ClInclude Include="Source\Flipper.h" />
     <ClInclude Include="Source\GameUI.h" />
+    <ClInclude Include="Source\MapObject.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleGame.h" />
+    <ClInclude Include="Source\ModuleGameBlueMap.h" />
     <ClInclude Include="Source\ModuleGameRedMap.h" />
     <ClInclude Include="Source\ModuleGameUIText.h" />
     <ClInclude Include="Source\ModuleHighScore.h" />
@@ -235,8 +237,10 @@
     <ClCompile Include="Source\Counter.cpp" />
     <ClCompile Include="Source\Flipper.cpp" />
     <ClCompile Include="Source\GameUI.cpp" />
+    <ClCompile Include="Source\MapObject.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
     <ClCompile Include="Source\ModuleGame.cpp" />
+    <ClCompile Include="Source\ModuleGameBlueMap.cpp" />
     <ClCompile Include="Source\ModuleGameRedMap.cpp" />
     <ClCompile Include="Source\ModuleGameUIText.cpp" />
     <ClCompile Include="Source\ModuleHighScore.cpp" />

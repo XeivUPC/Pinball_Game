@@ -2,21 +2,21 @@
 #include "Application.h"
 #include "ModulePhysics.h"
 #include "ModuleTexture.h"
-#include "AnimationSystem.h"
 #include <math.h>
-
-PokeBall::PokeBall(ModuleGame* gameAt)
+ 
+PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 position,float maxSpeed) : MapObject(gameAt)
 {
-	this->gameAt = gameAt;
-
-
+	gameAt->AddObject(this);
+	this->maxSpeed = maxSpeed;
 	gameAt->App->texture->CreateTexture("Assets/pokebal_defaultSize.png", "pokebal_defaultSize");
 	pokeball_texture = gameAt->App->texture->GetTexture("pokebal_defaultSize");
 
-	body = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, { 43,68 }, 1.3f);
+	body = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, position, 1.3f);
 	body->GetFixtureList()[0].SetRestitution(0.5f);
 	body->GetFixtureList()[0].SetFriction(0);
-	body->GetFixtureList()[0].SetDensity(100);
+	body->GetFixtureList()[0].SetDensity(10);
+
+	body->ResetMassData();
 
 	body->SetBullet(true);
 
@@ -35,11 +35,12 @@ PokeBall::PokeBall(ModuleGame* gameAt)
 	pokeball_animator->SetSpeed(0);
 	pokeball_animator->AddAnimation(pokeballMove);
 	pokeball_animator->SelectAnimation("Pokeball_Anim", true);
+
 }
 
 PokeBall::~PokeBall()
 {
-	gameAt->App->physics->world->DestroyBody(body);
+
 }
 
 update_status PokeBall::Update()
@@ -49,6 +50,13 @@ update_status PokeBall::Update()
 
 	float pokeballSpeed = sqrt(xVel * xVel + yVel * yVel);
 	pokeballSpeed = (pokeballAnimMaxSpeed / pokeballSpeed) / 100;
+
+
+	b2Vec2 velocity = body->GetLinearVelocity();
+	if (velocity.Length() > maxSpeed) {
+		velocity.Normalize();  
+		body->SetLinearVelocity({ velocity.x * maxSpeed, velocity.y* maxSpeed });
+	}
 
 	if (xVel < 0)
 		pokeball_animator->SetDirection(1);
@@ -72,7 +80,18 @@ void PokeBall::SetPosition(b2Vec2 position)
 	body->SetTransform(position,0);
 }
 
+void PokeBall::SetVelocity(b2Vec2 velocity)
+{
+	body->SetLinearVelocity(velocity);
+}
+
 b2Vec2 PokeBall::GetPosition()
 {
 	return body->GetPosition();
+}
+
+bool PokeBall::CleanUp()
+{
+	gameAt->App->physics->world->DestroyBody(body);
+	return true;
 }

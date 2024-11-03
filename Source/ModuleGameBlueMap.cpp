@@ -1,4 +1,4 @@
-#include "ModuleGameRedMap.h"
+#include "ModuleGameBlueMap.h"
 #include "ModulePhysics.h"
 #include "Application.h"
 #include "ModuleRender.h"
@@ -11,36 +11,36 @@
 
 #include "ModuleHighScore.h"
 
-ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
+ModuleGameBlueMap::ModuleGameBlueMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
 
 	
 }
 
-ModuleGameRedMap::~ModuleGameRedMap()
+ModuleGameBlueMap::~ModuleGameBlueMap()
 {
 }
 
-bool ModuleGameRedMap::Start()
+bool ModuleGameBlueMap::Start()
 {
-	App->texture->CreateTexture("Assets/map_redMap.png", "map_redMap");
-	map_texture = App->texture->GetTexture("map_redMap");	
+	App->texture->CreateTexture("Assets/map_blueMap.png", "map_blueMap");
+	map_texture = App->texture->GetTexture("map_blueMap");	
 	
 
 	UI = new GameUI(App);
 
 	StartFadeOut(WHITE, 0.3f);
 
-	LoadMap("Assets/MapData/red_map_data.tmx");
+	LoadMap("Assets/MapData/blue_map_data.tmx");
 
-	pokeBall = new PokeBall(this, ballSpawn,70);
+	pokeBall = new PokeBall(this, ballSpawn, 70);
 	leftFlipper = new Flipper(this, -40000, { 13.9,64.4 } , { -0.15 * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1,64.4 }, { -0.15 * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
 	return true;
 }
 
-update_status ModuleGameRedMap::Update()
+update_status ModuleGameBlueMap::Update()
 {
 	RepositionCamera(pokeBall->GetPosition());
 
@@ -82,7 +82,7 @@ update_status ModuleGameRedMap::Update()
 
 
 
-bool ModuleGameRedMap::CleanUp()
+bool ModuleGameBlueMap::CleanUp()
 {
 	for (const auto& colliderBody : simpoleCollidersBodies) {
 		if(colliderBody !=nullptr)
@@ -103,7 +103,7 @@ bool ModuleGameRedMap::CleanUp()
 	return true;
 }
 
-void ModuleGameRedMap::LoadMap(std::string path)
+void ModuleGameBlueMap::LoadMap(std::string path)
 {
 	pugi::xml_parse_result result = mapFileXML.load_file(path.c_str());
 
@@ -136,7 +136,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 			b2FixtureDef chainFixtureDef;
 			chainFixtureDef.shape = &chainShape;
 			chainFixtureDef.density = 1.0f;
-			chainFixtureDef.restitution = 0.2f;
+			chainFixtureDef.restitution = 0.5f;
 			chainFixtureDef.friction = 0.3f;
 
 			b2BodyDef bd;

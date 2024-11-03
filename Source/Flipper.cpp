@@ -5,9 +5,9 @@
 #include "AnimationSystem.h"
 
 
-Flipper::Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleRange, ModuleUserPreferences::VirtualButton activationKey, bool flipped)
+Flipper::Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleRange, ModuleUserPreferences::VirtualButton activationKey, bool flipped) : MapObject(gameAt)
 {
-	this->gameAt = gameAt;
+	gameAt->AddObject(this);
 
 	this->power = power;
 	this->flipped = flipped;
@@ -36,8 +36,13 @@ Flipper::Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleR
 	////
 
 	b2MassData paddleMassData;
-	body = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, position, 5.2f, 1);
-	body->GetFixtureList()[0].SetDensity(100000000);
+	body = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, position, 4.8f, 1);
+	body->GetFixtureList()[0].SetDensity(10000);
+	body->GetFixtureList()[0].SetRestitution(0);
+
+	this->power *= body->GetFixtureList()[0].GetDensity();
+
+	body->ResetMassData();
 	body->SetType(b2_dynamicBody);
 
 	anchorBody = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, position, 0.2);
@@ -49,7 +54,7 @@ Flipper::Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleR
 	jointDef.bodyA = body;
 	jointDef.bodyB = anchorBody;
 
-	jointDef.localAnchorA.Set(flipped ? 2.55f : -2.55f, 0);
+	jointDef.localAnchorA.Set(flipped ? 2.4f : -2.4f, 0);
 	jointDef.localAnchorB.Set(0.0f, 0.0f);
 
 	jointDef.collideConnected = false;
@@ -58,7 +63,7 @@ Flipper::Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleR
 	jointDef.upperAngle = angleRange.y;
 
 	jointDef.enableMotor = true;
-	jointDef.maxMotorTorque = abs(power);
+	jointDef.maxMotorTorque = abs(this->power);
 	jointDef.motorSpeed = 0.0f;
 
 	flipperJoint = (b2RevoluteJoint*)gameAt->App->physics->world->CreateJoint(&jointDef);
@@ -76,8 +81,14 @@ Flipper::Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleR
 
 Flipper::~Flipper()
 {
+	
+}
+
+bool Flipper::CleanUp()
+{
 	gameAt->App->physics->world->DestroyBody(body);
 	gameAt->App->physics->world->DestroyBody(anchorBody);
+	return true;
 }
 
 update_status Flipper::Update()

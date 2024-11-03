@@ -10,7 +10,7 @@
 
 using namespace pugi;
 
-class ModuleGameRedMap : public ModuleGame {
+class ModuleGameBlueMap : public ModuleGame {
 private:
 
 	PokeBall* pokeBall = nullptr;
@@ -30,8 +30,8 @@ private:
 	std::string mapPath = "Assets/MapData/";
 
 public:
-	ModuleGameRedMap(Application* app, bool start_enabled = true);
-	~ModuleGameRedMap();
+	ModuleGameBlueMap(Application* app, bool start_enabled = true);
+	~ModuleGameBlueMap();
 
 	bool Start();
 	update_status Update();

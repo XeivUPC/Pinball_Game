@@ -1,4 +1,9 @@
 #include "ModuleGame.h"
+#include "Application.h"
+#include "ModulePhysics.h"
+#include "ModuleRender.h"
+#include "MapObject.h"
+#include <sstream>
 
 
 ModuleGame::ModuleGame(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -7,4 +12,64 @@ ModuleGame::ModuleGame(Application* app, bool start_enabled) : ModuleScene(app, 
 
 ModuleGame::~ModuleGame()
 {
+}
+
+bool ModuleGame::Start()
+{
+	return true;
+}
+
+update_status ModuleGame::Update()
+{
+	return UPDATE_CONTINUE;
+}
+
+bool ModuleGame::CleanUp()
+{
+	return true;
+}
+
+void ModuleGame::AddObject(MapObject* object)
+{
+	mapObjects.emplace_back(object);
+}
+
+void ModuleGame::FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector)
+{
+	std::stringstream ss(stringData);
+	std::string vectorValue;
+
+	vector.clear();
+
+	while (std::getline(ss, vectorValue, ' ')) {
+		std::stringstream ss_vectorValue(vectorValue);
+
+		std::string x_str, y_str;
+
+		std::getline(ss_vectorValue, x_str, ',');
+		std::getline(ss_vectorValue, y_str);
+
+		float x_poly = std::stof(x_str);
+		float y_poly = std::stof(y_str);
+
+
+		vector.push_back(b2Vec2(x_poly / SCREEN_SIZE, y_poly / SCREEN_SIZE));
+	}
+}
+
+void ModuleGame::RepositionCamera(b2Vec2 positionToTrack)
+{
+	if (positionToTrack.x > 160 / SCREEN_SIZE) {
+		App->renderer->camera.offset.x = -31 * SCREEN_SIZE;
+	}
+	else {
+		App->renderer->camera.offset.x = 0;
+	}
+
+	if (positionToTrack.y > 135 / SCREEN_SIZE) {
+		App->renderer->camera.offset.y = -135 * SCREEN_SIZE;
+	}
+	else {
+		App->renderer->camera.offset.y = 0;
+	}
 }

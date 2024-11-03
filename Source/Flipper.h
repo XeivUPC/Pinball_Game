@@ -3,19 +3,18 @@
 #include "Box2DFactory.h"
 #include "box2D/box2d.h"
 #include "raylib.h"
-#include "ModuleGame.h"
+#include "MapObject.h"
 #include "ModuleUserPreferences.h"
+#include "AnimationSystem.h"
 
-class Animator;
-class ModuleGame;
-
-class Flipper
+class Flipper : public MapObject
 {
 public:
 	Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleRange, ModuleUserPreferences::VirtualButton activationKey, bool flipped);
 	~Flipper();
 
 	update_status Update();
+	bool CleanUp() override;
 
 private:
 
@@ -28,7 +27,7 @@ private:
 	bool flipped=false;
 	ModuleUserPreferences::VirtualButton activationKey;
 
-	ModuleGame* gameAt;
+	
 
 	b2Body* body;
 	b2Body* anchorBody;
