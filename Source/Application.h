@@ -25,7 +25,8 @@ class ModuleLanguageSelect;
 class ModuleSettings;
 class ModuleKeybinds;
 class ModuleHighScore;
-class ModuleGame;
+class ModuleGameRedMap;
+class ModuleGameBlueMap;
 
 
 class Application
@@ -45,7 +46,8 @@ public:
 	ModuleSettings* scene_settings;
 	ModuleKeybinds* scene_keybinds;
 	ModuleHighScore* scene_highScore;
-	ModuleGame* scene_game;
+	ModuleGameRedMap* scene_game_redMap;
+	ModuleGameBlueMap* scene_game_blueMap;
 
 	ModuleTexture* texture;
 	ModuleText* text;

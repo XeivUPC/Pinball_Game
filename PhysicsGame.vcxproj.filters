@@ -4,7 +4,7 @@
     <ClCompile Include="Source/Application.cpp" />
     <ClCompile Include="Source/Main.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
     <ClCompile Include="Source/ModuleAudio.cpp">
       <Filter>Modules</Filter>
@@ -28,7 +28,7 @@
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleCredits.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
     <ClCompile Include="Source/Log.cpp">
       <Filter>Utils</Filter>
@@ -40,31 +40,28 @@
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleMainMenu.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleLanguageSelect.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\Counter.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleSettings.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleKeybinds.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleHighScore.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleText.cpp">
       <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="Source\UI.cpp">
       <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModuleGame.cpp">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\GameUI.cpp">
       <Filter>UIs</Filter>
@@ -78,12 +75,42 @@
     <ClCompile Include="Source\ModuleHSNum.cpp">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CollisionsManager.cpp">
+      <Filter>Systems\CollisionDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CollisionSensor.cpp">
+      <Filter>Systems\CollisionDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Box2DFactory.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PokeBall.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Bumper.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Flipper.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGame.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGameRedMap.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapObject.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGameBlueMap.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
     <ClInclude Include="Source/Globals.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClInclude>
     <ClInclude Include="Source/Module.h">
       <Filter>Modules</Filter>
@@ -110,7 +137,7 @@
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleCredits.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\Timer.h">
       <Filter>Utils</Filter>
@@ -122,31 +149,28 @@
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleMainMenu.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleLanguageSelect.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\Counter.h">
       <Filter>Utils</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleSettings.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleKeybinds.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleHighScore.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\ModuleText.h">
       <Filter>Modules</Filter>
     </ClInclude>
     <ClInclude Include="Source\UI.h">
       <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleGame.h">
-      <Filter>Modules\Scenes %28ModuleGame%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\GameUI.h">
       <Filter>UIs</Filter>
@@ -160,6 +184,36 @@
     <ClInclude Include="Source\ModuleHSName.h">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CollisionsManager.h">
+      <Filter>Systems\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CollisionSensor.h">
+      <Filter>Systems\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Box2DFactory.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PokeBall.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Bumper.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Flipper.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleGameRedMap.h">
+      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleGame.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapObject.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleGameBlueMap.h">
+      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -167,9 +221,6 @@
   <ItemGroup>
     <Filter Include="Modules">
       <UniqueIdentifier>{356ac984-0a85-4ac1-b9ff-e4840aff66b1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Modules\Scenes %28ModuleGame%29">
-      <UniqueIdentifier>{6efed187-946c-4a1a-9719-ba0a4d78149c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{7ff14ab1-7b05-465f-8926-685df6f9b282}</UniqueIdentifier>
@@ -183,9 +234,27 @@
     <Filter Include="Modules\Texts %28ModuleText%29">
       <UniqueIdentifier>{82bcc1a0-42ae-4ca8-8bb8-9b85a7332a86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{ddb2548e-c802-431c-aaed-079d9b98c3b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{aecd7db6-b9e2-4734-ad3a-ca6e60936bca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\CollisionDetection">
+      <UniqueIdentifier>{82404a92-0a2c-4f3b-a8da-45bf449f7211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Scenes %28ModuleScene%29">
+      <UniqueIdentifier>{6efed187-946c-4a1a-9719-ba0a4d78149c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29">
+      <UniqueIdentifier>{4d301850-cc45-4254-852d-232089800dd6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Assets\Preferences\UserPreferences.xml">
+      <Filter>Config</Filter>
+    </Xml>
+    <Xml Include="Assets\Preferences\HighScore.xml">
       <Filter>Config</Filter>
     </Xml>
   </ItemGroup>

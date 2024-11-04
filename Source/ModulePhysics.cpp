@@ -23,7 +23,7 @@ bool ModulePhysics::Start()
 {
 	LOG("Creating Physics 2D environment");
 
-	b2Vec2 gravity = {0,8.f};
+	b2Vec2 gravity = {0,30};
 	world = new b2World(gravity);
 
 	//b2BodyDef circleDef;

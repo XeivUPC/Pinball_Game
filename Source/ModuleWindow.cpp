@@ -40,6 +40,8 @@ bool ModuleWindow::Init()
 
     SetConfigFlags(flags);
 	InitWindow(width, height, TITLE);
+
+	SetTargetFPS(60);
 	return ret;
 }
 

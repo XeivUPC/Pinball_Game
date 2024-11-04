@@ -20,7 +20,8 @@
 #include "ModuleSettings.h"
 #include "ModuleKeybinds.h"
 #include "ModuleHighScore.h"
-#include "ModuleGame.h"
+#include "ModuleGameRedMap.h"
+#include "ModuleGameBlueMap.h"
 
 
 #include "Application.h"
@@ -37,14 +38,15 @@ Application::Application()
 	text_highScoreName = new ModuleHSName(this);
 	text_gameUIText = new ModuleGameUIText(this);
 
-	scene_languageSelect = new ModuleLanguageSelect(this, false);
+	scene_languageSelect = new ModuleLanguageSelect(this,false);
 	scene_credits = new ModuleCredits(this, false);
 	scene_levelSelection = new ModuleLevelSelection(this);
 	scene_mainMenu = new ModuleMainMenu(this, false);
 	scene_settings = new ModuleSettings(this, false);
 	scene_keybinds = new ModuleKeybinds(this, false);
 	scene_highScore = new ModuleHighScore(this, false);
-	scene_game = new ModuleGame(this, false);
+	scene_game_redMap = new ModuleGameRedMap(this, false);
+	scene_game_blueMap = new ModuleGameBlueMap(this, false);
 
 	texture = new ModuleTexture(this);
 
@@ -72,7 +74,8 @@ Application::Application()
 	AddModule(scene_highScore);
 	AddModule(scene_settings);
 	AddModule(scene_keybinds);
-	AddModule(scene_game);
+	AddModule(scene_game_redMap);
+	AddModule(scene_game_blueMap);
 
 	// Rendering happens at the end
 	AddModule(renderer);

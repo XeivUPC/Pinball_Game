@@ -57,6 +57,7 @@ bool ModuleGameUIText::Start()
 	charReferences.push_back(77);
 	charReferences.push_back(78);
 	charReferences.push_back(79);
+	charReferences.push_back(80);
 	charReferences.push_back(81);
 	charReferences.push_back(82);
 	charReferences.push_back(83);
@@ -67,9 +68,8 @@ bool ModuleGameUIText::Start()
 	charReferences.push_back(88);
 	charReferences.push_back(89);
 	charReferences.push_back(90);
-	charReferences.push_back(136);
+	charReferences.push_back(234);
 	charReferences.push_back(39);
-	charReferences.push_back(46);
 	charReferences.push_back(46);
 	charReferences.push_back(58);
 	charReferences.push_back(33);
@@ -108,7 +108,7 @@ bool ModuleGameUIText::Start()
 	charReferences.push_back(56);
 	charReferences.push_back(57);
 
-	charReferences.push_back(239);
+	charReferences.push_back(96);
 	charReferences.push_back(39);
 
 	charReferences.push_back(2192);

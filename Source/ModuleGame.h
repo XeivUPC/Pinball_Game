@@ -1,54 +1,39 @@
 #pragma once
 #include "ModuleScene.h"
-#include "AnimationSystem.h"
-#include "box2D/box2d.h"
 #include <vector>
 #include "pugixml.hpp"
-
-class GameUI;
-
-
-using namespace pugi;
-
-class ModuleGame : public ModuleScene {
-private:
-	Texture* map_texture;
-
-	Texture* paddle_texture;
-	Animator* paddleLeft_animator;
-	Animator* paddleRight_animator;
-
-	b2RevoluteJoint* leftPaddleJoint;
-	b2RevoluteJoint* rightPaddleJoint;
-
-	b2Body* ballBody;
-	std::vector<b2Body*> objectsBodies;
-
-	GameUI* UI;
-
-	pugi::xml_document mapFileXML;
+#include "box2D/box2d.h"
 
 
-	//Create
-	void LoadMap(std::string path);
-	void CreateBall();
-	void CreatePaddles();
+class MapObject;
 
-
-	//Controls
-
-	void RepositionCamera();
-
-	void MovePaddles();
-
-	std::string mapPath = "Assets/MapData/";
-
+class ModuleGame : public ModuleScene
+{
 public:
 	ModuleGame(Application* app, bool start_enabled = true);
-	~ModuleGame();
+	virtual ~ModuleGame();
 
-	bool Start();
-	update_status Update();
-	bool CleanUp();
+	virtual void LoadMap(std::string path) = 0;
+	void AddObject(MapObject* object);
+
+	virtual bool Start();
+	virtual update_status Update();
+	virtual bool CleanUp();
+
+
+private:
+
+protected:
+	Texture* map_texture;
+
+	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
+	void RepositionCamera(b2Vec2 positionToTrack);
+
+	std::vector<b2Body*> simpoleCollidersBodies;
+	std::vector<MapObject*> mapObjects;
+	pugi::xml_document mapFileXML;
+
+	b2Vec2 ballSpawn;
+
 };
 

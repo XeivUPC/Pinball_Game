@@ -68,29 +68,30 @@ bool ModuleHSName::Start()
 	charReferences.push_back(89);
 	charReferences.push_back(90);
 
+	// From here on the characters wont match the sprites but this is to make the traversal through all characters easier
 	// 0 to 9
-	charReferences.push_back(48);
-	charReferences.push_back(49);
-	charReferences.push_back(50);
-	charReferences.push_back(51);
-	charReferences.push_back(52);
-	charReferences.push_back(53);
-	charReferences.push_back(54);
-	charReferences.push_back(55);
-	charReferences.push_back(56);
-	charReferences.push_back(57);
+	charReferences.push_back(91);
+	charReferences.push_back(92);
+	charReferences.push_back(93);
+	charReferences.push_back(94);
+	charReferences.push_back(95);
+	charReferences.push_back(96);
+	charReferences.push_back(97);
+	charReferences.push_back(98);
+	charReferences.push_back(99);
+	charReferences.push_back(100);
+	charReferences.push_back(101);
 
 	// Others
-	charReferences.push_back(33);
-	charReferences.push_back(63);
-	charReferences.push_back(47);
-	charReferences.push_back(45);
-	charReferences.push_back(183);
-	charReferences.push_back(46);
-	charReferences.push_back(39);
-	charReferences.push_back(38);
-	charReferences.push_back(35); // 35 is # but game character does not exist
-	charReferences.push_back(42);
+	charReferences.push_back(102);
+	charReferences.push_back(103);
+	charReferences.push_back(104);
+	charReferences.push_back(105);
+	charReferences.push_back(106);
+	charReferences.push_back(107);
+	charReferences.push_back(108);
+	charReferences.push_back(109);
+	charReferences.push_back(110);
 
 	return true;
 }

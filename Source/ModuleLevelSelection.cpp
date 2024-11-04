@@ -4,7 +4,8 @@
 #include "ModuleTexture.h"
 #include "ModuleAudio.h"
 #include "ModuleHighScore.h"
-#include "ModuleGame.h"
+#include "ModuleGameRedMap.h"
+#include "ModuleGameBlueMap.h"
 
 
 ModuleLevelSelection::ModuleLevelSelection(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -64,13 +65,14 @@ update_status ModuleLevelSelection::Update()
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
 		///Load Level
 		App->audio->PlayFx(audioSelectId);
-		StartFadeIn(App->scene_game, WHITE, 0.3f);
 
 		if (markSelectionPosition.x < 10) {
 			App->scene_highScore->SetVersionColor(0);
+			StartFadeIn(App->scene_game_redMap, WHITE, 0.3f);
 		}
 		else {
 			App->scene_highScore->SetVersionColor(1);
+			StartFadeIn(App->scene_game_blueMap, WHITE, 0.3f);
 		}
 	}
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN))) {
