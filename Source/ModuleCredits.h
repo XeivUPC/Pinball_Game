@@ -7,7 +7,7 @@ class ModuleCredits : public ModuleScene {
 private:
 
 	Timer delay;
-	Texture2D* texture_credits;
+	Texture2D* texture_credits=nullptr;
 
 public:
 
@@ -18,6 +18,6 @@ public:
 	update_status Update();
 	bool CleanUp();
 
-	int language;
+	int language=-1;
 
 };

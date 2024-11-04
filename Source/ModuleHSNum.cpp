@@ -39,16 +39,16 @@ bool ModuleHSNum::Start()
 	int widht=0, height =0;
 	count.x = fontTexture->width / size.x;
 	count.y = fontTexture->height / size.y;
-	charReferences.push_back(48);
-	charReferences.push_back(49);
-	charReferences.push_back(50);
-	charReferences.push_back(51);
-	charReferences.push_back(52);
-	charReferences.push_back(53);
-	charReferences.push_back(54);
-	charReferences.push_back(55);
-	charReferences.push_back(56);
-	charReferences.push_back(57);
+	charReferences.push_back('0');
+	charReferences.push_back('1');
+	charReferences.push_back('2');
+	charReferences.push_back('3');
+	charReferences.push_back('4');
+	charReferences.push_back('5');
+	charReferences.push_back('6');
+	charReferences.push_back('7');
+	charReferences.push_back('8');
+	charReferences.push_back('9');
 	return true;
 }
 
