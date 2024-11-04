@@ -11,8 +11,13 @@ class ModulePokedex : public ModuleScene
 private:
 	std::vector<Pokemon> pokemon_list;
 	int selectedLanguage;
+	int localSelection = 0;
+	int selectedPokemon = 0;
 	int audioSelectId;
 	int audioMoveId;
+	float factor = 0;
+	Timer lerpTimer;
+	float lerpTime = 2.f;
 	Texture2D* pokedexSpritesheet;
 	Texture2D* pokedexSlot;
 	xml_document _data;
@@ -30,4 +35,5 @@ public:
 	void SaveConfigFile();
 	void LoadPokedex();
 	void SavePokedex();
+
 };

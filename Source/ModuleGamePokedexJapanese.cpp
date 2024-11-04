@@ -1,4 +1,4 @@
-#include "ModuleGamePokedexJapanese.h"
+﻿#include "ModuleGamePokedexJapanese.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "Application.h"
@@ -49,19 +49,20 @@ bool ModuleGamePokedexJapanese::CleanUp()
 void ModuleGamePokedexJapanese::Write(const char* text, int x, int y, Color color)
 {
 	int i = 0;
-	while (text[i] != '\0')
+	int t = 0;
+	while ((text[i] > 47 && text[i] < 58) && text[i] != ',')
 	{
-		int t = 0;
 		int number = 0;
-		while (text[t] != ',')
+		while ((text[i] > 47 && text[i] < 58) && text[i] != ',')
 		{
-			number += text[t] - 48;
+			number += text[i] - 48;
 			number *= 10;
-			t++;
+			i++;
 		}
 		number /= 10;
 		Rectangle* letter = GetCharRect(number);
-		App->renderer->Draw(*fontTexture, (x + size.x * i), y, letter, color);
+		App->renderer->Draw(*fontTexture, (x + size.x * t), y+1, letter, color);
 		i++;
+		t++;
 	}
 }

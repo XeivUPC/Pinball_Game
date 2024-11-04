@@ -46,6 +46,37 @@ update_status ModulePokedex::Update()
         App->audio->StopMusic();
         App->audio->PlayFx(audioSelectId);
     }
+    factor += lerpTimer.ReadSec() / lerpTime;
+    int direction = 0;
+    if (factor > 1)
+        factor = 0;
+    if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP)))
+    {
+        if (localSelection == 0 && factor < 1)
+        {
+            lerpTimer.Start();
+            direction = 1;
+        }
+        else
+            localSelection--;
+    }
+    else if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN)))
+    {
+        if (localSelection == 4 && factor < 1)
+        {
+            lerpTimer.Start();
+            direction = -1;
+        }
+        else
+            localSelection++;
+    }
+    else
+    {
+        direction = 0;
+    }
+        
+    slots_offset += 15 * lerpTimer.ReadSec() * direction;
+    printf("%f\n", factor);
     for (size_t i = 0; i < pokemon_list.size(); i++)
     {
         Rectangle rect = { 0 , 0 + 15 * selectedLanguage, 124 ,15 };
