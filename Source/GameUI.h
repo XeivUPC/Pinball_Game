@@ -10,6 +10,6 @@ public:
 	void Render()const;
 
 private:
-	std::string FormatNumberWithOnlyComas(int number) const;
+	std::string FormatNumberWithOnlyComas(long long int number) const;
 };
 

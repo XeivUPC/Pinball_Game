@@ -1,7 +1,10 @@
 #pragma once
 
 #include "Box2DFactory.h"
+#pragma warning(disable:)
 #include "box2D/box2d.h"
+#pragma warning(default:)
+
 #include "raylib.h"
 #include "MapObject.h"
 #include "ModuleUserPreferences.h"

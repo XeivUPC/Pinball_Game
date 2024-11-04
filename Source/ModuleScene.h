@@ -34,12 +34,12 @@ private:
 	void FadeOut();
 
 	Timer fadeTimer;
-	float fadeTime;
+	float fadeTime=-1;
 
-	ModuleScene* fadeTarget;
+	ModuleScene* fadeTarget = nullptr;
 
 	bool doingFadeIn = false;
 	bool doingFadeOut = false;
 
-	Color fadeColor;
+	Color fadeColor = WHITE;
 };

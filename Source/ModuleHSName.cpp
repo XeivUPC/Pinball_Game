@@ -6,7 +6,7 @@
 Rectangle* ModuleHSName::GetCharRect(char c, int color)
 {
 	Rectangle* rect = new Rectangle{ 0,0,0,0 };
-	for (int i = 0; i < charReferences.size(); i++)
+	for (size_t i = 0; i < charReferences.size(); i++)
 	{
 		if ((int)c == charReferences[i])
 		{
@@ -36,7 +36,7 @@ bool ModuleHSName::Start()
 	App->texture->CreateTexture("Assets/high_score_letters.png", "hs_font_name");
 	fontTexture = App->texture->GetTexture("hs_font_name");
 	size = Vector2{ 8,16 };
-	int widht, height;
+	int widht=0, height=0;
 	count.x = fontTexture->width / size.x;
 	count.y = fontTexture->height / size.y;
 
@@ -127,7 +127,7 @@ void ModuleHSName::Write(const char* text, int x, int y, int color)
 	while (text[i] != '\0')
 	{
 		Rectangle* letter = GetCharRect(text[i], color);
-		App->renderer->Draw(*fontTexture, (x + size.x * i), y, letter, WHITE);
+		App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)y, letter, WHITE);
 		i++;
 	}
 }

@@ -36,7 +36,7 @@ bool ModuleCredits::Start()
 
 update_status ModuleCredits::Update()
 {
-	Rectangle rect = { 160 * (int)language,144,160,144 };
+	Rectangle rect = { 160.0f * (int)language,144,160,144 };
 	App->renderer->Draw(*texture_credits, 0, 0, &rect);
 	
 	if (delay.ReadSec() > 5) {	

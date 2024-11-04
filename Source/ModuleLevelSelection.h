@@ -8,15 +8,15 @@
 class ModuleLevelSelection : public ModuleScene
 {
 private:
-	int selectedLanguage;
-	Texture2D* levelSelectionTexture;
-	Texture2D* levelSelectionFrameTexture;
+	int selectedLanguage = -1;
+	Texture2D* levelSelectionTexture=nullptr;
+	Texture2D* levelSelectionFrameTexture=nullptr;
 
-	Vector2 markSelectionPosition;
-	Animator* animator;
+	Vector2 markSelectionPosition = {0,0};
+	Animator* animator = nullptr;
 
-	int audioSelectId;
-	int audioMoveId;
+	int audioSelectId=-1;
+	int audioMoveId =-1;
 
 public:
 	ModuleLevelSelection(Application* app, bool start_enabled=true);

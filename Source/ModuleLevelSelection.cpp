@@ -31,7 +31,7 @@ bool ModuleLevelSelection::Start()
 	animDefault.AddSprite(Sprite{ levelSelectionFrameTexture,{2, 0}, {64,88} });
 	animator->AddAnimation(animDefault);
 
-	animator->SetSpeed(0.1);
+	animator->SetSpeed(0.1f);
 	animator->SelectAnimation("Active", true);
 
 	markSelectionPosition = { 3, 5.5f };
@@ -85,7 +85,7 @@ update_status ModuleLevelSelection::Update()
 
 
 	DrawTexturePro(*levelSelectionTexture, { 0,(float)selectedLanguage * 144,160,144 }, {0, 0, SCREEN_SIZE*SCREEN_WIDTH, SCREEN_SIZE*SCREEN_HEIGHT}, { 0, 0 },0, WHITE);
-	animator->Animate(markSelectionPosition.x * SCREEN_SIZE, markSelectionPosition.y * SCREEN_SIZE, false);
+	animator->Animate((int)(markSelectionPosition.x * SCREEN_SIZE), (int)(markSelectionPosition.y * SCREEN_SIZE), false);
 
 	ModuleScene::FadeUpdate();
 	return UPDATE_CONTINUE;

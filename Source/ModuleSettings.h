@@ -9,27 +9,27 @@ private:
 
 	bool selected = false;
 
-	Texture* arrow_texture;
+	Texture* arrow_texture=nullptr;
 
-	Texture* vibrationType_texture;
+	Texture* vibrationType_texture = nullptr;
 
-	Texture* pokeball_texture;
-	Animator* pokeball_animator;
+	Texture* pokeball_texture = nullptr;
+	Animator* pokeball_animator = nullptr;
 
-	Texture* psyduck_texture;
-	Animator* psyduck_animator;
+	Texture* psyduck_texture = nullptr;
+	Animator* psyduck_animator = nullptr;
 
-	Texture* pikachu_texture;
-	Animator* pikachu_animator;
+	Texture* pikachu_texture = nullptr;
+	Animator* pikachu_animator = nullptr;
 
-	Texture* background_texture;
+	Texture* background_texture = nullptr;
 
-	int selectedLanguage;
-	int selectedVibration;
+	int selectedLanguage=-1;
+	int selectedVibration=-1;
 
 
-	int audioSelectId;
-	int audioMoveId;
+	int audioSelectId=-1;
+	int audioMoveId=-1;
 
 
 	Timer scrollMenuTimer;

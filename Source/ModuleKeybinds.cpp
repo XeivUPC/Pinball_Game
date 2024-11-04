@@ -37,7 +37,7 @@ update_status ModuleKeybinds::Update()
     }
 
 
-    Rectangle rectBackground = { 0,selectedLanguage * 144,160,144 };
+    Rectangle rectBackground = { 0,selectedLanguage * 144.0f,160,144 };
     App->renderer->Draw(*background_texture, 0, 0, &rectBackground, WHITE);
 
 

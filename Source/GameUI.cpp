@@ -32,13 +32,13 @@ void GameUI::Render() const
 
 }
 
-std::string GameUI::FormatNumberWithOnlyComas(int number) const
+std::string GameUI::FormatNumberWithOnlyComas(long long int number) const
 {
     std::string numStr = std::to_string(number);
     std::string result;
 
     
-    for (int i = 0; i < numStr.length()-1; i++) {
+    for (size_t i = 0; i < numStr.length()-1; i++) {
         if((i+1)%3 == 0)
             result = result + "`";
         else

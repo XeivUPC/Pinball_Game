@@ -41,19 +41,19 @@ public:
 
 private:
 
-	Texture* arrow_texture;
-	Animator* arrow_animator;
+	Texture* arrow_texture = nullptr;
+	Animator* arrow_animator = nullptr;
 
-	Texture* background_texture;
+	Texture* background_texture = nullptr;
 
 	Timer arrowTimer;
 	Timer textTimer;
 
-	int selectedLanguage;
+	int selectedLanguage=-1;
 	int versionColor = 0;
 	// Red = 0, Blue = 1
 
-	int audioSelectId;
+	int audioSelectId=-1;
 
 	void LoadHighScore();
 	void SaveHighScore();
@@ -75,7 +75,7 @@ private:
 	void DrawText();
 
 	bool score_was_inserted = true;
-	int score_position;
+	int score_position=-1;
 	int current_char_pos = 0;
 	char current_char = 65;
 	std::string savedName;

@@ -8,19 +8,19 @@ private:
 
 	int currentButton = 0;
 
-	Texture* pokeball_texture;
-	Animator* pokeball_animator;
+	Texture* pokeball_texture = nullptr;
+	Animator* pokeball_animator = nullptr;
 
-	Texture* background_texture;
-	Animator* background_animator;
+	Texture* background_texture = nullptr;
+	Animator* background_animator = nullptr;
 
 	Timer blinkTimer;
 
-	int selectedLanguage;
+	int selectedLanguage=-1;
 
-	int audioSelectId;
-	int audioMoveId;
-	int audioStartGameId;
+	int audioSelectId=-1;
+	int audioMoveId=-1;
+	int audioStartGameId=-1;
 
 
 	Timer scrollMenuTimer;

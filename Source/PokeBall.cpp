@@ -66,7 +66,7 @@ update_status PokeBall::Update()
 	pokeball_animator->SetSpeed(pokeballSpeed);
 
 	pokeball_animator->Update();
-	pokeball_animator->Animate(body->GetPosition().x * SCREEN_SIZE - 8, body->GetPosition().y * SCREEN_SIZE - 8, true);
+	pokeball_animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE - 8), (int)(body->GetPosition().y * SCREEN_SIZE - 8), true);
 	return UPDATE_CONTINUE;
 }
 
