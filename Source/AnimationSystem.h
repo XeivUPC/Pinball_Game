@@ -79,7 +79,7 @@ public:
 	void SetIfCanDraw(bool canDraw);
 	bool CanDraw();
 
-	const char* GetCurrentAnimationName();
+	std::string GetCurrentAnimationName();
 	AnimationData GetCurrentAnimation();
 	Sprite GetCurrentAnimationSprite();
 };

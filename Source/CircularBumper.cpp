@@ -2,6 +2,7 @@
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include <random>
 
 CircularBumper::CircularBumper(ModuleGame* gameAt, b2Vec2 position, float radius, float restitution, int variant) : Bumper (gameAt, position, restitution)
 {
@@ -27,16 +28,28 @@ CircularBumper::CircularBumper(ModuleGame* gameAt, b2Vec2 position, float radius
 	animator = new Animator(gameAt->App);
 
 	AnimationData circularIdle = AnimationData("Circular_Idle");
-	circularIdle.AddSprite(Sprite{ texture,{0, (float)variant}, {16,16} });
+	circularIdle.AddSprite(Sprite{ texture,{0, (float)variant}, {18,18} });
 
 	AnimationData circularHit = AnimationData("Circular_Hit");
-	circularHit.AddSprite(Sprite{ texture,{1, (float)variant}, {16,16} });
+	circularHit.AddSprite(Sprite{ texture,{1, (float)variant}, {18,18} });
+
+
+	AnimationData circularShake = AnimationData("Circular_Shake");
+	circularShake.AddSprite(Sprite{ texture,{2, (float)variant}, {18,18} });
+	circularShake.AddSprite(Sprite{ texture,{3, (float)variant}, {18,18} });
+	circularShake.AddSprite(Sprite{ texture,{4, (float)variant}, {18,18} });
+	circularShake.AddSprite(Sprite{ texture,{5, (float)variant}, {18,18} });
+	circularShake.AddSprite(Sprite{ texture,{6, (float)variant}, {18,18} });
+	circularShake.AddSprite(Sprite{ texture,{3, (float)variant}, {18,18} });
+	circularShake.AddSprite(Sprite{ texture,{2, (float)variant}, {18,18} });
 
 	animator->AddAnimation(circularIdle);
 	animator->AddAnimation(circularHit);
-	animator->SetSpeed(0.5f);
+	animator->AddAnimation(circularShake);
+	animator->SetSpeed(0.25f);
 	animator->SelectAnimation("Circular_Idle", true);
 
+	SetShakeTime();
 }
 
 CircularBumper::~CircularBumper()
@@ -45,13 +58,29 @@ CircularBumper::~CircularBumper()
 
 update_status CircularBumper::Update()
 {
-	Bumper::Update();
 	if (animator->HasAnimationFinished()) {
+		if (gettingHit) {
+			gettingHit = false;
+		}
 		animator->SelectAnimation("Circular_Idle", true);
+	}
+	Bumper::Update();
+
+
+	if (!gettingHit && shake_time <= shake_timer.ReadSec()) {
+		animator->SelectAnimation("Circular_Shake", false);
+		shake_timer.Start();
+	}
+
+	if (animator->GetCurrentAnimationName() == "Circular_Shake") {
+		animator->SetSpeed(0.05f);
+	}
+	else {
+		animator->SetSpeed(0.25f);
 	}
 
 	animator->Update();
-	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE - 8), (int)(body->GetPosition().y * SCREEN_SIZE - 8), true);
+	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE - 9), (int)(body->GetPosition().y * SCREEN_SIZE - 9), true);
 	return UPDATE_CONTINUE;
 }
 
@@ -68,4 +97,14 @@ void CircularBumper::OnHit()
 	animator->SelectAnimation("Circular_Idle", true);
 	animator->SelectAnimation("Circular_Hit", false);
 
+	gettingHit = true;
+}
+
+void CircularBumper::SetShakeTime()
+{
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_real_distribution<float> distribution(shake_time_min, shake_time_max);
+
+	shake_time = distribution(gen);
 }

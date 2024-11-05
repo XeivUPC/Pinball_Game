@@ -3,6 +3,7 @@
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "AnimationSystem.h"
+#include "Timer.h"
 
 class CircularBumper : public Bumper {
 public:
@@ -19,8 +20,16 @@ protected:
 private:
 	int variant = -1;
 
-	Texture* texture;
-	Animator* animator;
-	
+	Texture* texture = nullptr;
+	Animator* animator = nullptr;
+
+	Timer shake_timer;
+	float shake_time = 1.5f;
+	float shake_time_min = 1.f;
+	float shake_time_max = 1.5f;
+
+	void SetShakeTime();
+
+	bool gettingHit = false;
 };
 

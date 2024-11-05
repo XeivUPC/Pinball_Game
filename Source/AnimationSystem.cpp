@@ -117,6 +117,7 @@ void Animator::SelectAnimation(std::string animName, bool l)
 	currentAnimation = animName;
 	loop = l;
 	currentSprite = 0;
+	timer.Start();
 }
 
 bool Animator::HasAnimationFinished()
@@ -189,9 +190,9 @@ bool Animator::CanDraw()
 	return canDraw;
 }
 
-const char* Animator::GetCurrentAnimationName()
+std::string Animator::GetCurrentAnimationName()
 {
-	return currentAnimation.c_str();
+	return currentAnimation;
 }
 
 AnimationData Animator::GetCurrentAnimation()

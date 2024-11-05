@@ -28,6 +28,8 @@ bool ModulePhysics::Start()
 	b2Vec2 gravity = {0,40};
 	world = new b2World(gravity);
 
+	world->SetContactListener(collisionsManager);
+
 	return true;
 }
 
