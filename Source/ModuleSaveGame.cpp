@@ -41,12 +41,15 @@ update_status ModuleSaveGame::Update()
 	Rectangle rect = { 0,(144 / 6) * (int)selectedLanguage,56,(144 / 6) };
 	App->renderer->Draw(*background_texture, 0, 0, &rect);
 
+	Rectangle rect1 = { 0,0,8,8 };
+
 	if (scrollSaveTimer.ReadSec() > scrollSaveTimeMS) {
 		if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) {
 			if (currentButton > 0) {
 				currentButton--;
 			}
 			App->audio->PlayFx(audioMoveId);
+			App->renderer->Draw(*select_arrow, 0, 0, &rect1);//Set to correct pos
 			scrollSaveTimer.Start();
 		}
 		else if (IsKeyDown(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
@@ -54,10 +57,11 @@ update_status ModuleSaveGame::Update()
 				currentButton++;
 			}
 			App->audio->PlayFx(audioMoveId);
+			App->renderer->Draw(*select_arrow, 0, 0, &rect1);//Set to correct pos 
 			scrollSaveTimer.Start();
 		}
 	}
-
+	
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
 
 		switch (currentButton) {
@@ -69,20 +73,14 @@ update_status ModuleSaveGame::Update()
 			break;
 		case 1:
 			//Continue last game
-			StartFadeIn(App->scene_levelSelection, WHITE, 0.3f);
+			StartFadeIn(App->scene_levelSelection, WHITE, 0.3f);//Change to LoadGame()
 			App->audio->StopMusic();
 			App->audio->PlayFx(audioStartGameId);
 			break;
 		}
 	}
+
 	return UPDATE_CONTINUE;
-}
-
-bool ModuleSaveGame::CleanUp()
-{
-	LOG("Unloading SaveGame scene");
-
-	return true;
 }
 
 void ModuleSaveGame::LoadGame()
@@ -91,4 +89,20 @@ void ModuleSaveGame::LoadGame()
 
 void ModuleSaveGame::SaveGame()
 {
+}
+
+bool ModuleSaveGame::CleanUp()
+{
+	if (background_animator != nullptr) {
+		delete background_animator;
+		background_animator = nullptr;
+	}
+	if (select_arrow_animator != nullptr) {
+		delete select_arrow_animator;
+		select_arrow_animator = nullptr;
+	}
+
+	LOG("Unloading SaveGame scene");
+
+	return true;
 }

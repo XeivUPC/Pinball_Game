@@ -15,8 +15,6 @@ private:
 	Texture* background_texture = nullptr;
 	Animator* background_animator = nullptr;
 
-	Timer blinkTimer;
-
 	int selectedLanguage;
 
 	int audioSelectId;
