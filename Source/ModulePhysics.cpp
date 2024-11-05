@@ -12,6 +12,8 @@
 ModulePhysics::ModulePhysics(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
 	debug = true;
+
+	collisionsManager = new CollisionsManager();
 }
 
 // Destructor
@@ -134,6 +136,8 @@ update_status ModulePhysics::PostUpdate()
 bool ModulePhysics::CleanUp()
 {
 	LOG("Destroying physics world");
+
+	delete collisionsManager;
 
 	// Delete the whole physics world!
 	delete world;

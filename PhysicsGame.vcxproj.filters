@@ -105,6 +105,9 @@
     <ClCompile Include="Source\ModuleGameBlueMap.cpp">
       <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CircularBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -214,6 +217,9 @@
     <ClInclude Include="Source\ModuleGameBlueMap.h">
       <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CircularBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -248,6 +254,9 @@
     </Filter>
     <Filter Include="Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29">
       <UniqueIdentifier>{4d301850-cc45-4254-852d-232089800dd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Bumpers %28Objects%29">
+      <UniqueIdentifier>{f482764a-2278-486a-8dad-efc9aaf69e16}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

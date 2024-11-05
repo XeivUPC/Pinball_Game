@@ -1,6 +1,6 @@
 #include "Bumper.h"
 
-Bumper::Bumper(ModuleGame* gameAt, b2Vec2 position, int restitution) : MapObject(gameAt)
+Bumper::Bumper(ModuleGame* gameAt, b2Vec2 position, float restitution) : MapObject(gameAt)
 {
 	this->restitution = restitution;
 	this->position = position;
@@ -16,7 +16,7 @@ update_status Bumper::Update()
 	if (sensor.OnTriggerEnter()) {
 		OnHit();
 	}
-	return UPDATE_CONTINUE;
+	return UPDATE_CONTINUE;	
 }
 
 bool Bumper::CleanUp()

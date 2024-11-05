@@ -5,10 +5,6 @@ CollisionsManager::CollisionsManager()
 {
 }
 
-CollisionsManager& CollisionsManager::GetInstance() {
-    static CollisionsManager instance; // Guaranteed to be destroyed and instantiated on first use
-    return instance;
-}
 CollisionsManager::~CollisionsManager()
 {
    

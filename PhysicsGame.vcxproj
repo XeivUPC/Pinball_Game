@@ -194,6 +194,7 @@
     <ClInclude Include="Source\AnimationSystem.h" />
     <ClInclude Include="Source\Box2DFactory.h" />
     <ClInclude Include="Source\Bumper.h" />
+    <ClInclude Include="Source\CircularBumper.h" />
     <ClInclude Include="Source\CollisionSensor.h" />
     <ClInclude Include="Source\CollisionsManager.h" />
     <ClInclude Include="Source\Counter.h" />
@@ -232,6 +233,7 @@
     <ClCompile Include="Source\AnimationSystem.cpp" />
     <ClCompile Include="Source\Box2DFactory.cpp" />
     <ClCompile Include="Source\Bumper.cpp" />
+    <ClCompile Include="Source\CircularBumper.cpp" />
     <ClCompile Include="Source\CollisionSensor.cpp" />
     <ClCompile Include="Source\CollisionsManager.cpp" />
     <ClCompile Include="Source\Counter.cpp" />

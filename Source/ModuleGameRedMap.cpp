@@ -7,6 +7,7 @@
 #include "ModuleUserPreferences.h"
 #include "ModuleKeybinds.h"
 #include "Box2DFactory.h"
+#include "CircularBumper.h"
 
 
 #include "ModuleHighScore.h"
@@ -61,7 +62,6 @@ update_status ModuleGameRedMap::Update()
 	}
 
 	
-	
 
 	Rectangle rectBackground = { 0,0,191,278 };
 	App->renderer->Draw(*map_texture, 0, 0, &rectBackground, WHITE);
@@ -72,6 +72,10 @@ update_status ModuleGameRedMap::Update()
 
 	UI->Render();
 	pokeBall->Update();
+
+	for (const auto& object : mapObjects) {
+		object->Update();
+	}
 
 	ModuleScene::FadeUpdate();
 
@@ -179,12 +183,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				float radius = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				radius /= 2;
 
-				b2Body* bumperBody =  Box2DFactory::GetInstance().CreateCircle(App->physics->world, { x+ radius,y+ radius }, radius);
-				bumperBody->SetType(b2_staticBody);
-				bumperBody->GetFixtureList()[0].SetDensity(1);
-				bumperBody->GetFixtureList()[0].SetRestitution(1.f);
-
-				simpoleCollidersBodies.emplace_back(bumperBody);
+				CircularBumper* circularBumper = new CircularBumper(this, { x,y }, radius, 1.f, 0);
 			}
 			else if (type == "triangularBumper") {
 

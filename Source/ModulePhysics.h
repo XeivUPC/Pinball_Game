@@ -7,9 +7,11 @@
 #include "box2D/box2d.h"
 #pragma warning(default:)
 
+#include "CollisionsManager.h"
+
 
 // Module --------------------------------------
-class ModulePhysics : public Module, public b2ContactListener // TODO
+class ModulePhysics : public Module // TODO
 {
 public:
 	ModulePhysics(Application* app, bool start_enabled = true);
@@ -22,7 +24,7 @@ public:
 
 	b2World* world = nullptr;
 	
-
+	CollisionsManager* collisionsManager;
 private:
 
 	bool debug;
