@@ -23,20 +23,9 @@ bool ModulePhysics::Start()
 {
 	LOG("Creating Physics 2D environment");
 
-	b2Vec2 gravity = {0,30};
+	b2Vec2 gravity = {0,40};
 	world = new b2World(gravity);
 
-	//b2BodyDef circleDef;
-
-	//circleDef.type = b2_staticBody;
-	//circleDef.position = b2Vec2({ PIXELS_TO_METERS(10),PIXELS_TO_METERS(0) });
-	//b2Body* baseCircle = world->CreateBody(&circleDef);
-	//b2CircleShape circleShape;
-	//circleShape.m_radius = PIXELS_TO_METERS(720/2);
-	//b2FixtureDef fixture;
-	//fixture.shape = &circleShape;
-	//baseCircle->CreateFixture(&fixture);
-	
 	return true;
 }
 

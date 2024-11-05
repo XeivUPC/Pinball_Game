@@ -14,6 +14,6 @@ public:
 private:
 
 protected:
-	ModuleGame* gameAt;
+	ModuleGame* gameAt = nullptr;
 };
 
