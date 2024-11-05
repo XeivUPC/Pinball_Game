@@ -24,8 +24,8 @@ private:
 	int audioStartGameId;
 
 
-	Timer scrollMenuTimer;
-	float scrollMenuTimeMS = 0.2f;
+	Timer scrollSaveTimer;
+	float scrollSaveTimeMS = 0.2f;
 
 
 public:
