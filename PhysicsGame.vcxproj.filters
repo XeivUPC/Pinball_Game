@@ -108,6 +108,9 @@
     <ClCompile Include="Source\CircularBumper.cpp">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\TriangularBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -218,6 +221,9 @@
       <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\CircularBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\TriangularBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
   </ItemGroup>

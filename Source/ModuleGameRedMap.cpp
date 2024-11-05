@@ -8,6 +8,7 @@
 #include "ModuleKeybinds.h"
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
+#include "TriangularBumper.h"
 
 
 #include "ModuleHighScore.h"
@@ -191,26 +192,13 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				std::vector<b2Vec2> vertices;
 				FromStringToVertices(collisionPolygonPoints, vertices);
 
-				b2ChainShape chainShape;
-				chainShape.CreateLoop(&vertices[0], vertices.size());
+				bool flip = false;
+				if (x*SCREEN_SIZE > SCREEN_WIDTH/2) {
+					flip = true;
+				}
 
-				b2FixtureDef chainFixtureDef;
-				chainFixtureDef.shape = &chainShape;
-				chainFixtureDef.density = 1.0f;
-				chainFixtureDef.restitution = 0.8f;
-				chainFixtureDef.friction = 1.f;
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 0);
 
-				b2BodyDef bd;
-				bd.type = b2_staticBody; // Set the body type to static
-				bd.position.Set(x, y); // Set the body's initial position
-
-				// Create the body
-				b2Body* body = App->physics->world->CreateBody(&bd);
-
-				// Attach the fixture to the body
-				body->CreateFixture(&chainFixtureDef);
-
-				simpoleCollidersBodies.emplace_back(body);
 			}
 		}
 	}
