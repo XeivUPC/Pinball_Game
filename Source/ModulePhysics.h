@@ -3,7 +3,9 @@
 #include "Module.h"
 #include "Globals.h"
 
-#include "box2d\box2d.h"
+#pragma warning(disable:)
+#include "box2D/box2d.h"
+#pragma warning(default:)
 
 
 // Module --------------------------------------
@@ -18,7 +20,7 @@ public:
 	update_status PostUpdate();
 	bool CleanUp();
 
-	b2World* world;
+	b2World* world = nullptr;
 	
 
 private:

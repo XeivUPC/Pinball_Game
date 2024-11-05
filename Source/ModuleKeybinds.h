@@ -3,10 +3,10 @@
 class ModuleKeybinds : public ModuleScene {
 private:
 
-	int selectedLanguage;
+	int selectedLanguage=-1;
 
-	Texture* background_texture;
-	int audioSelectId;
+	Texture* background_texture = nullptr;
+	int audioSelectId=-1;
 
 public:
 

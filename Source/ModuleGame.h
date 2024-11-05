@@ -2,7 +2,10 @@
 #include "ModuleScene.h"
 #include <vector>
 #include "pugixml.hpp"
+
+#pragma warning(disable:)
 #include "box2D/box2d.h"
+#pragma warning(default:)
 
 
 class MapObject;

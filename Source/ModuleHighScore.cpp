@@ -47,7 +47,7 @@ bool ModuleHighScore::Start()
 	AnimationData arrowIdle = AnimationData("Idle");
 	arrowIdle.AddSprite(Sprite{ arrow_texture,{0, 0}, {20,10} });
 	arrow_animator->AddAnimation(arrowIdle);
-	arrow_animator->SetSpeed(0.1);
+	arrow_animator->SetSpeed(0.1f);
 	arrow_animator->SelectAnimation("Idle", true);
 
 	AnimationData arrowAnim = AnimationData("Forward");
@@ -55,7 +55,7 @@ bool ModuleHighScore::Start()
 	arrowAnim.AddSprite(Sprite{ arrow_texture,{2, 0}, {20,10} });
 	arrowAnim.AddSprite(Sprite{ arrow_texture,{3, 0}, {20,10} });
 	arrow_animator->AddAnimation(arrowAnim);
-	arrow_animator->SetSpeed(0.1);
+	arrow_animator->SetSpeed(0.1f);
 
 	arrowTimer.Start();
 
@@ -122,7 +122,7 @@ update_status ModuleHighScore::Update()
 		}
 	}
 
-	Rectangle rectBackground = { 0 + 160 * versionColor,0 + 144 * selectedLanguage,160 + 160 * versionColor,144 + 144 * selectedLanguage };
+	Rectangle rectBackground = {160.0f * versionColor,144.0f * selectedLanguage,160.0f + 160 * versionColor,144.0f + 144 * selectedLanguage };
 
 	App->renderer->Draw(*background_texture, 0, 0, &rectBackground, WHITE);
 

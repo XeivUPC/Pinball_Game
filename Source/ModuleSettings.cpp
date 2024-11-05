@@ -233,10 +233,10 @@ update_status ModuleSettings::Update()
 	}
 
 
-	Rectangle rectBackground = { 0,selectedLanguage*144,160,144 };
+	Rectangle rectBackground = { 0,selectedLanguage*144.0f,160,144 };
 	App->renderer->Draw(*background_texture, 0, 0, &rectBackground, WHITE);
 
-	Rectangle rectvibrationType = { 48*selectedVibration,8*selectedLanguage,48,8 };
+	Rectangle rectvibrationType = { 48.0f*selectedVibration,8.0f*selectedLanguage,48,8 };
 	App->renderer->Draw(*vibrationType_texture, 96, 24, &rectvibrationType, WHITE);
 
 	if (selected) {

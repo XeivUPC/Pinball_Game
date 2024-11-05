@@ -43,14 +43,14 @@ bool ModuleMainMenu::Start()
 	pokeballAnim.AddSprite(Sprite{ pokeball_texture,{4, 0}, {16,16} });
 	pokeballAnim.AddSprite(Sprite{ pokeball_texture,{5, 0}, {16,16} });
 	pokeball_animator->AddAnimation(pokeballAnim);
-	pokeball_animator->SetSpeed(0.1);
+	pokeball_animator->SetSpeed(0.1f);
 	pokeball_animator->SelectAnimation("Boing", true);
 
 
 	AnimationData idleAnim = AnimationData("Idle");
 	idleAnim.AddSprite(Sprite{ background_texture,{0, (float)selectedLanguage}, {160,144} });
 	background_animator->AddAnimation(idleAnim);
-	background_animator->SetSpeed(0.1);
+	background_animator->SetSpeed(0.1f);
 	background_animator->SelectAnimation("Idle", false);
 
 	AnimationData blinkAnim = AnimationData("Blink");
@@ -58,7 +58,7 @@ bool ModuleMainMenu::Start()
 	blinkAnim.AddSprite(Sprite{ background_texture,{1, (float)selectedLanguage}, {160,144} });
 	blinkAnim.AddSprite(Sprite{ background_texture,{2, (float)selectedLanguage}, {160,144} });
 	background_animator->AddAnimation(blinkAnim);
-	background_animator->SetSpeed(0.1);
+	background_animator->SetSpeed(0.1f);
 
 	blinkTimer.Start();
 

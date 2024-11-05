@@ -1,5 +1,7 @@
 #pragma once
-#include <box2d/box2d.h>
+#pragma warning(disable:)
+#include "box2D/box2d.h"
+#pragma warning(default:)
 #include <set>
 
 class CollisionSensor

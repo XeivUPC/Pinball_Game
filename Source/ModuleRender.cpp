@@ -77,7 +77,7 @@ bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* sectio
 {
 	bool ret = true;
 
-    float flipValue = flip ? -1 : 1;
+    int flipValue = flip ? -1 : 1;
 
 	float scale = SCREEN_SIZE;
 
@@ -86,7 +86,7 @@ bool ModuleRender::Draw(Texture2D texture, int x, int y, const Rectangle* sectio
     position.x = (x-pivot_x) * scale;
     position.y = (y-pivot_y) * scale;
 
-    DrawTexturePro(texture, *section, {x*scale, y*scale, section->width*scale * flipValue, section->height * scale }, {pivot_x,pivot_y},angle, tint);
+    DrawTexturePro(texture, *section, {x*scale, y*scale, section->width*scale * flipValue, section->height * scale }, {pivot_x,pivot_y},(float)angle, tint);
 
 	return ret;
 }
@@ -114,6 +114,6 @@ bool ModuleRender::DrawRect(int x, int y, int width, int height, Color color)
 
     Rectangle rect = { position.x, position.y, width * scale, height * scale };
 
-    DrawRectangle(rect.x,rect.y, rect.width, rect.height, color);
+    DrawRectangle((int)rect.x, (int)rect.y, (int)rect.width, (int)rect.height, color);
     return ret;
 }

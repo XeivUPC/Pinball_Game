@@ -6,7 +6,7 @@
 Rectangle* ModuleHSNum::GetCharRect(char c, int color, int position, bool coma)
 {
 	Rectangle* rect = new Rectangle{ 0,0,0,0 };
-	for (int i = 0; i < charReferences.size(); i++)
+	for (size_t i = 0; i < charReferences.size(); i++)
 	{
 		if ((int)c == charReferences[i])
 		{
@@ -36,19 +36,19 @@ bool ModuleHSNum::Start()
 	App->texture->CreateTexture("Assets/high_score_nums.png", "hs_font_nums");
 	fontTexture = App->texture->GetTexture("hs_font_nums");
 	size = Vector2{ 8,16 };
-	int widht, height;
+	int widht=0, height =0;
 	count.x = fontTexture->width / size.x;
 	count.y = fontTexture->height / size.y;
-	charReferences.push_back(48);
-	charReferences.push_back(49);
-	charReferences.push_back(50);
-	charReferences.push_back(51);
-	charReferences.push_back(52);
-	charReferences.push_back(53);
-	charReferences.push_back(54);
-	charReferences.push_back(55);
-	charReferences.push_back(56);
-	charReferences.push_back(57);
+	charReferences.push_back('0');
+	charReferences.push_back('1');
+	charReferences.push_back('2');
+	charReferences.push_back('3');
+	charReferences.push_back('4');
+	charReferences.push_back('5');
+	charReferences.push_back('6');
+	charReferences.push_back('7');
+	charReferences.push_back('8');
+	charReferences.push_back('9');
 	return true;
 }
 
@@ -88,7 +88,7 @@ void ModuleHSNum::Write(const char* text, int x, int y, int color, int position)
 			coma = true;
 		}
 		Rectangle* letter = GetCharRect(text[i], color, position, coma);
-		App->renderer->Draw(*fontTexture, (x + size.x * i), y, letter, WHITE);
+		App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)y, letter, WHITE);
 		coma = false;
 		i++;
 	}

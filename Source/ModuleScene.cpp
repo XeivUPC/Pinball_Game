@@ -87,10 +87,10 @@ void ModuleScene::FadeIn()
 		Disable();
 	}
 	else {
-		int opacity = 255 * (fadeTimer.ReadSec() / fadeTime);
+		int opacity = (int)(255 * (fadeTimer.ReadSec() / fadeTime));
 		if (opacity > 255)
 			opacity = 255;
-		Color color = { fadeColor.r,fadeColor.g,fadeColor.b,opacity };
+		Color color = { fadeColor.r,fadeColor.g,fadeColor.b,(unsigned char)opacity };
 		DrawRectangle(0, 0, SCREEN_WIDTH * SCREEN_SIZE, SCREEN_HEIGHT * SCREEN_SIZE, color);
 	}
 }
@@ -99,10 +99,10 @@ void ModuleScene::FadeOut()
 {
 	if (fadeTimer.ReadSec() < fadeTime) {
 		
-		int opacity = 255 - 255 * (fadeTimer.ReadSec() / fadeTime);	
+		int opacity = 255 - (int)(255 * (fadeTimer.ReadSec() / fadeTime));
 		if (opacity< 0)
 			opacity = 0;
-		Color color = { fadeColor.r,fadeColor.g,fadeColor.b,opacity };
+		Color color = { fadeColor.r,fadeColor.g,fadeColor.b,(unsigned char)opacity };
 		DrawRectangle(0, 0, SCREEN_WIDTH * SCREEN_SIZE, SCREEN_HEIGHT * SCREEN_SIZE, color);
 	}
 	else {

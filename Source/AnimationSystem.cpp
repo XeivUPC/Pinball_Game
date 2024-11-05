@@ -60,7 +60,7 @@ AnimationData::~AnimationData()
 
 void Animator::Next()
 {
-	if (currentSprite < animations[currentAnimation].sprites.size() - 1)
+	if (currentSprite < (int)animations[currentAnimation].sprites.size() - 1)
 		currentSprite++;
 	else
 	{

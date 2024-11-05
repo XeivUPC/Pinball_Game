@@ -30,7 +30,7 @@ Flipper::Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleR
 
 	flipper_animator->AddAnimation(paddleIdle);
 	flipper_animator->AddAnimation(paddleClick);
-	flipper_animator->SetSpeed(0.02);
+	flipper_animator->SetSpeed(0.02f);
 	flipper_animator->SelectAnimation("Paddle_Idle", true);
 
 	////
@@ -45,7 +45,7 @@ Flipper::Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleR
 	body->ResetMassData();
 	body->SetType(b2_dynamicBody);
 
-	anchorBody = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, position, 0.2);
+	anchorBody = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, position, 0.2f);
 	anchorBody->SetType(b2_staticBody);
 
 	b2RevoluteJointDef jointDef;
@@ -105,6 +105,6 @@ update_status Flipper::Update()
 	}
 
 	flipper_animator->Update();
-	flipper_animator->Animate(drawingPosition.x, drawingPosition.y, flipped);
+	flipper_animator->Animate((int)drawingPosition.x, (int)drawingPosition.y, flipped);
 	return UPDATE_CONTINUE;
 }

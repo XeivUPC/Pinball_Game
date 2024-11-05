@@ -7,8 +7,8 @@ class ModuleHSNum : public ModuleText
 {
 private:
 	Texture2D* fontTexture = NULL;
-	Vector2 size;
-	Vector2 count;
+	Vector2 size = { 0,0 };
+	Vector2 count = { 0,0 };
 	std::vector<int> charReferences;
 	Rectangle* GetCharRect(char c, int color, int position, bool coma);
 public:

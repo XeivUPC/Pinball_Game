@@ -34,8 +34,8 @@ bool ModuleGameBlueMap::Start()
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 
 	pokeBall = new PokeBall(this, ballSpawn, 70);
-	leftFlipper = new Flipper(this, -40000, { 13.9,64.4 } , { -0.15 * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
-	rightFlipper = new Flipper(this, 40000, { 26.1,64.4 }, { -0.15 * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
+	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
+	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
 	return true;
 }
