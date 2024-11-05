@@ -9,11 +9,11 @@ private:
 
 	int currentButton = 0;
 
-	Texture* pokeball_texture;
-	Animator* pokeball_animator;
+	Texture* select_arrow = nullptr;
+	Animator* select_arrow_animator = nullptr;
 
-	Texture* background_texture;
-	Animator* background_animator;
+	Texture* background_texture = nullptr;
+	Animator* background_animator = nullptr;
 
 	Timer blinkTimer;
 
