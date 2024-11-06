@@ -1,6 +1,6 @@
 #include "MapSensors.h"
 
-MapSensor::MapSensor(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
+MapSensor::MapSensor(ModuleGame* gameAt, b2Vec2 position, float angle) : MapObject(gameAt)
 {
 	this->position = position;
 }
