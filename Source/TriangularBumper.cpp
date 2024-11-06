@@ -22,6 +22,7 @@ TriangularBumper::TriangularBumper(ModuleGame* gameAt, b2Vec2 position, std::vec
 	chainFixtureDef.density = 1.0f;
 	chainFixtureDef.restitution = 0.8f;
 	chainFixtureDef.friction = 1.f;
+	chainFixtureDef.userData = fixtureData;
 
 	b2BodyDef bd;
 	bd.type = b2_staticBody; // Set the body type to static
@@ -30,9 +31,9 @@ TriangularBumper::TriangularBumper(ModuleGame* gameAt, b2Vec2 position, std::vec
 	body = gameAt->App->physics->world->CreateBody(&bd);
 
 	// Attach the fixture to the body
-	body->CreateFixture(&chainFixtureDef);
+	b2Fixture* fixture = body->CreateFixture(&chainFixtureDef);
 
-	sensor.SetBodyToTrack(&body->GetFixtureList()[0]);
+	sensor.SetBodyToTrack(fixture);
 
 	sensor.AcceptOnlyTriggers(false);
 
