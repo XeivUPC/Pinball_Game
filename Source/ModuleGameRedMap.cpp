@@ -33,7 +33,10 @@ bool ModuleGameRedMap::Start()
 
 	StartFadeOut(WHITE, 0.3f);
 
+	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
+
+	dittoColliders->SetMode(DittoColliders::Small);
 
 	pokeBall = new PokeBall(this, ballSpawn,PokeBall::Pokeball,70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
@@ -154,16 +157,15 @@ void ModuleGameRedMap::LoadMap(std::string path)
 			// Attach the fixture to the body
 			body->CreateFixture(&chainFixtureDef);
 
-			simpoleCollidersBodies.emplace_back(body);
 
 			if (name == "DittoCollider1") {
-				dittoCollider1 = body;
-				//dittoCollider1->GetFixtureList()[0].SetSensor(true);
+				dittoColliders->SetModeData(DittoColliders::Small, body);
 			}
-
-			if (name == "DittoCollider2") {
-				dittoCollider2 = body;
-				dittoCollider2->GetFixtureList()[0].SetSensor(true);
+			else if (name == "DittoCollider2") {;
+				dittoColliders->SetModeData(DittoColliders::Big, body);
+			}
+			else {
+				simpoleCollidersBodies.emplace_back(body);
 			}
 		}
 

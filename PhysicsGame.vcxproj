@@ -198,6 +198,7 @@
     <ClInclude Include="Source\CollisionSensor.h" />
     <ClInclude Include="Source\CollisionsManager.h" />
     <ClInclude Include="Source\Counter.h" />
+    <ClInclude Include="Source\DittoColliders.h" />
     <ClInclude Include="Source\Flipper.h" />
     <ClInclude Include="Source\GameUI.h" />
     <ClInclude Include="Source\MapObject.h" />
@@ -238,6 +239,7 @@
     <ClCompile Include="Source\CollisionSensor.cpp" />
     <ClCompile Include="Source\CollisionsManager.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
+    <ClCompile Include="Source\DittoColliders.cpp" />
     <ClCompile Include="Source\Flipper.cpp" />
     <ClCompile Include="Source\GameUI.cpp" />
     <ClCompile Include="Source\MapObject.cpp" />

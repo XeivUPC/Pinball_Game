@@ -151,7 +151,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 
 			// Create the body
 			b2Body* body = App->physics->world->CreateBody(&bd);
-
+			
 			// Attach the fixture to the body
 			body->CreateFixture(&chainFixtureDef);
 

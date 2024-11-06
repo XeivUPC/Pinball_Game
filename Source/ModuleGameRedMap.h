@@ -5,6 +5,7 @@
 #include "GameUI.h"
 #include "PokeBall.h"
 #include "Flipper.h"
+#include "DittoColliders.h"
 
 
 
@@ -19,8 +20,7 @@ private:
 	GameUI* UI = nullptr;
 
 
-	b2Body* dittoCollider1 = nullptr;
-	b2Body* dittoCollider2 = nullptr;
+	DittoColliders* dittoColliders=nullptr;
 
 	
 	//Create
