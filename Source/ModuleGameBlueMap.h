@@ -17,11 +17,6 @@ private:
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
-
-
-	b2Body* dittoCollider1 = nullptr;
-	b2Body* dittoCollider2 = nullptr;
-
 	
 	//Create
 	void LoadMap(std::string path) override;

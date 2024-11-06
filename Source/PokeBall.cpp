@@ -4,10 +4,12 @@
 #include "ModuleTexture.h"
 #include <math.h>
  
-PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 position,float maxSpeed) : MapObject(gameAt)
+PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 position, PokeballType type,float maxSpeed) : MapObject(gameAt)
 {
 	gameAt->AddObject(this);
 	this->maxSpeed = maxSpeed;
+	
+
 	gameAt->App->texture->CreateTexture("Assets/pokebal_defaultSize.png", "pokebal_defaultSize");
 	pokeball_texture = gameAt->App->texture->GetTexture("pokebal_defaultSize");
 
@@ -32,10 +34,44 @@ PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 position,float maxSpeed) : MapObje
 	pokeballMove.AddSprite(Sprite{ pokeball_texture,{6, 0}, {16,16} });
 	pokeballMove.AddSprite(Sprite{ pokeball_texture,{7, 0}, {16,16} });
 
+	AnimationData superballMove = AnimationData("Superball_Anim");
+	superballMove.AddSprite(Sprite{ pokeball_texture,{0, 1}, {16,16} });
+	superballMove.AddSprite(Sprite{ pokeball_texture,{1, 1}, {16,16} });
+	superballMove.AddSprite(Sprite{ pokeball_texture,{2, 1}, {16,16} });
+	superballMove.AddSprite(Sprite{ pokeball_texture,{3, 1}, {16,16} });
+	superballMove.AddSprite(Sprite{ pokeball_texture,{4, 1}, {16,16} });
+	superballMove.AddSprite(Sprite{ pokeball_texture,{5, 1}, {16,16} });
+	superballMove.AddSprite(Sprite{ pokeball_texture,{6, 1}, {16,16} });
+	superballMove.AddSprite(Sprite{ pokeball_texture,{7, 1}, {16,16} });
+
+	AnimationData ultraballMove = AnimationData("Ultraball_Anim");
+	ultraballMove.AddSprite(Sprite{ pokeball_texture,{0, 2}, {16,16} });
+	ultraballMove.AddSprite(Sprite{ pokeball_texture,{1, 2}, {16,16} });
+	ultraballMove.AddSprite(Sprite{ pokeball_texture,{2, 2}, {16,16} });
+	ultraballMove.AddSprite(Sprite{ pokeball_texture,{3, 2}, {16,16} });
+	ultraballMove.AddSprite(Sprite{ pokeball_texture,{4, 2}, {16,16} });
+	ultraballMove.AddSprite(Sprite{ pokeball_texture,{5, 2}, {16,16} });
+	ultraballMove.AddSprite(Sprite{ pokeball_texture,{6, 2}, {16,16} });
+	ultraballMove.AddSprite(Sprite{ pokeball_texture,{7, 2}, {16,16} });
+
+	AnimationData masterballMove = AnimationData("Masterball_Anim");
+	masterballMove.AddSprite(Sprite{ pokeball_texture,{0, 3}, {16,16} });
+	masterballMove.AddSprite(Sprite{ pokeball_texture,{1, 3}, {16,16} });
+	masterballMove.AddSprite(Sprite{ pokeball_texture,{2, 3}, {16,16} });
+	masterballMove.AddSprite(Sprite{ pokeball_texture,{3, 3}, {16,16} });
+	masterballMove.AddSprite(Sprite{ pokeball_texture,{4, 3}, {16,16} });
+	masterballMove.AddSprite(Sprite{ pokeball_texture,{5, 3}, {16,16} });
+	masterballMove.AddSprite(Sprite{ pokeball_texture,{6, 3}, {16,16} });
+	masterballMove.AddSprite(Sprite{ pokeball_texture,{7, 3}, {16,16} });
+
 	pokeball_animator->SetSpeed(0);
 	pokeball_animator->AddAnimation(pokeballMove);
-	pokeball_animator->SelectAnimation("Pokeball_Anim", true);
+	pokeball_animator->AddAnimation(superballMove);
+	pokeball_animator->AddAnimation(ultraballMove);
+	pokeball_animator->AddAnimation(masterballMove);
 
+
+	SetType(type);
 }
 
 PokeBall::~PokeBall()
@@ -83,6 +119,34 @@ void PokeBall::SetPosition(b2Vec2 position)
 void PokeBall::SetVelocity(b2Vec2 velocity)
 {
 	body->SetLinearVelocity(velocity);
+}
+
+void PokeBall::SetType(PokeballType type)
+{
+	this->type = type;
+	switch (type)
+	{
+	case PokeBall::Pokeball:
+		pokeball_animator->SelectAnimation("Pokeball_Anim", true);
+		break;
+	case PokeBall::SuperBall:
+		pokeball_animator->SelectAnimation("Superball_Anim", true);
+		break;
+	case PokeBall::Ultraball:
+		pokeball_animator->SelectAnimation("Ultraball_Anim", true);
+		break;
+	case PokeBall::MasterBall:
+		pokeball_animator->SelectAnimation("Masterball_Anim", true);
+		break;
+	default:
+		pokeball_animator->SelectAnimation("Pokeball_Anim", true);
+		break;
+	}
+}
+
+PokeBall::PokeballType PokeBall::GetType()
+{
+	return type;
 }
 
 b2Vec2 PokeBall::GetPosition()
