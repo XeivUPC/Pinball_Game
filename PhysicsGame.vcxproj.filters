@@ -111,6 +111,12 @@
     <ClCompile Include="Source\TriangularBumper.cpp">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\MapSensors.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PokeballChangerSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -226,6 +232,12 @@
     <ClInclude Include="Source\TriangularBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
+    <ClInclude Include="Source\MapSensors.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PokeballChangerSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -263,6 +275,9 @@
     </Filter>
     <Filter Include="Objects\Bumpers %28Objects%29">
       <UniqueIdentifier>{f482764a-2278-486a-8dad-efc9aaf69e16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Sensors %28Objects%29">
+      <UniqueIdentifier>{c94fe65c-c863-4377-be2b-4e9fc37ee607}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
