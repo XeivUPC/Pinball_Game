@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="101">
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="113">
  <tileset firstgid="1" name="map_redMap" tilewidth="192" tileheight="278" tilecount="3" columns="3">
   <image source="../map_blueMap.png" width="576" height="278"/>
  </tileset>
@@ -345,48 +345,6 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="87" x="53" y="32" width="6" height="6">
-   <properties>
-    <property name="type" value="upperSensors"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="88" x="77" y="24" width="6" height="6">
-   <properties>
-    <property name="type" value="upperSensors"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="89" x="101" y="32" width="6" height="6">
-   <properties>
-    <property name="type" value="upperSensors"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="90" x="10" y="206" width="7" height="7">
-   <properties>
-    <property name="type" value="lowerSensors"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="91" x="26" y="206" width="7" height="7">
-   <properties>
-    <property name="type" value="lowerSensors"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="92" x="127" y="206" width="7" height="7">
-   <properties>
-    <property name="type" value="lowerSensors"/>
-   </properties>
-   <ellipse/>
-  </object>
-  <object id="93" x="143" y="206" width="7" height="7">
-   <properties>
-    <property name="type" value="lowerSensors"/>
-   </properties>
-   <ellipse/>
-  </object>
   <object id="96" x="74.0467" y="46.9148" width="12" height="12">
    <properties>
     <property name="type" value="pokemonCircularBumper"/>
@@ -407,6 +365,64 @@
     <property name="variant" type="int" value="1"/>
    </properties>
    <ellipse/>
+  </object>
+  <object id="101" x="12" y="216" width="4" height="6">
+   <properties>
+    <property name="type" value="Sensor"/>
+   </properties>
+  </object>
+  <object id="102" x="28" y="216" width="4" height="6">
+   <properties>
+    <property name="type" value="Sensor"/>
+   </properties>
+  </object>
+  <object id="103" x="128" y="216" width="4" height="6">
+   <properties>
+    <property name="type" value="Sensor"/>
+   </properties>
+  </object>
+  <object id="105" x="144" y="216" width="4" height="6">
+   <properties>
+    <property name="type" value="Sensor"/>
+   </properties>
+  </object>
+  <object id="106" x="54" y="39" width="4" height="6">
+   <properties>
+    <property name="type" value="PokeballChangerSensor"/>
+    <property name="variant" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="107" x="78" y="31" width="4" height="6">
+   <properties>
+    <property name="type" value="PokeballChangerSensor"/>
+    <property name="variant" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="108" x="102" y="39" width="4" height="6">
+   <properties>
+    <property name="type" value="PokeballChangerSensor"/>
+    <property name="variant" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="109" x="19.2663" y="49.144" width="4" height="6" rotation="15">
+   <properties>
+    <property name="type" value="Sensor"/>
+   </properties>
+  </object>
+  <object id="110" x="139.313" y="135.094" width="4" height="6" rotation="15">
+   <properties>
+    <property name="type" value="Sensor"/>
+   </properties>
+  </object>
+  <object id="111" x="136.781" y="50.125" width="4" height="6" rotation="-15">
+   <properties>
+    <property name="type" value="Sensor"/>
+   </properties>
+  </object>
+  <object id="112" x="16.8" y="136.156" width="4" height="6" rotation="-15">
+   <properties>
+    <property name="type" value="Sensor"/>
+   </properties>
   </object>
  </objectgroup>
 </map>

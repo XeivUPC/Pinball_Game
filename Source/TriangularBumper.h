@@ -16,6 +16,7 @@ public:
 protected:
 	void OnHit();
 	b2Body* body = nullptr;
+	b2Body* bumperBody = nullptr;
 
 private:
 	int variant = -1;
