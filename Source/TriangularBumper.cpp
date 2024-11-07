@@ -32,7 +32,7 @@ TriangularBumper::TriangularBumper(ModuleGame* gameAt, b2Vec2 position, std::vec
 	// Attach the fixture to the body
 	b2Fixture* fixture = body->CreateFixture(&chainFixtureDef);
 
-	bumperBody = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, {position.x +(2 - 2 * 2 * flip) , position.y + 3}, 0.3, 7, fixtureData);
+	bumperBody = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, {position.x +(2 - 2 * 2 * flip) , position.y + 3}, 0.3f, 7, fixtureData);
 	bumperBody->SetType(b2_staticBody);
 	bumperBody->GetFixtureList()[0].SetSensor(true);
 	bumperBody->GetFixtureList()[0].SetDensity(1);

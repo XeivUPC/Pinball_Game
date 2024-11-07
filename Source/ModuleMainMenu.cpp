@@ -174,7 +174,7 @@ update_status ModuleMainMenu::Update()
 
 	if (is_in_menu_save)
 	{
-		App->renderer->Draw(*main_menu_save, (SCREEN_WIDTH / 2) - (rect_main_menu_save.width / 2), (SCREEN_HEIGHT / 2) - (rect_main_menu_save.height / 2) - OffsetX_main_menu_save, &rect_main_menu_save);
+		App->renderer->Draw(*main_menu_save,(int)((SCREEN_WIDTH / 2) - (rect_main_menu_save.width / 2)), (int)((SCREEN_HEIGHT / 2) - (rect_main_menu_save.height / 2) - OffsetX_main_menu_save), &rect_main_menu_save);
 	}
 
 
@@ -244,7 +244,7 @@ update_status ModuleMainMenu::Update()
 	
 	if (is_in_menu_save) {
 		Rectangle rect = { 0, 0, 8, 8 };
-		App->renderer->Draw(*select_arrow, (SCREEN_WIDTH / 2) - (rect_main_menu_save.width / 2),(SCREEN_HEIGHT / 2) - (rect_main_menu_save.height / 2) + (currentButton_save_menu * 10), &rect);
+		App->renderer->Draw(*select_arrow, (int)((SCREEN_WIDTH / 2) - (rect_main_menu_save.width / 2)), (int)((SCREEN_HEIGHT / 2) - (rect_main_menu_save.height / 2) + (currentButton_save_menu * 10)), &rect);
 	}
 	
 	pokeball_animator->Animate(6, 97 + 12 * currentButton, false);
