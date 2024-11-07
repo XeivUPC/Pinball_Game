@@ -5,7 +5,7 @@
 class MapSensor : public MapObject {
 private:
 public:
-	MapSensor(ModuleGame* gameAt, b2Vec2 position, float angle);
+	MapSensor(ModuleGame* gameAt, b2Vec2 position, float width, float height, float angle);
 	~MapSensor() = 0;
 
 	update_status Update();
@@ -19,6 +19,8 @@ protected:
 	int timesActivated = 0;
 	b2Vec2 position = { 0,0 };
 	float angle;
+
 	CollisionSensor sensor;
+	b2Body* body = nullptr;
 };
 

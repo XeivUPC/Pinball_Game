@@ -9,6 +9,7 @@
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
 #include "TriangularBumper.h"
+#include "PokeballChangerSensor.h"
 
 
 #include "ModuleHighScore.h"
@@ -185,6 +186,14 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				radius /= 2;
 
 				CircularBumper* circularBumper = new CircularBumper(this, { x,y }, radius, 1.f, 0);
+			}
+			else if (type == "pokeballChangerSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+
+				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x + 3/SCREEN_SIZE,y + 5/SCREEN_SIZE }, width, height, angle, 0);
 			}
 			else if (type == "triangularBumper") {
 
