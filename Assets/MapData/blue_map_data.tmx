@@ -376,19 +376,19 @@
   </object>
   <object id="106" x="54" y="39" width="4" height="6">
    <properties>
-    <property name="type" value="PokeballChangerSensor"/>
+    <property name="type" value="pokeballChangerSensor"/>
     <property name="variant" type="int" value="1"/>
    </properties>
   </object>
   <object id="107" x="78" y="31" width="4" height="6">
    <properties>
-    <property name="type" value="PokeballChangerSensor"/>
+    <property name="type" value="pokeballChangerSensor"/>
     <property name="variant" type="int" value="1"/>
    </properties>
   </object>
   <object id="108" x="102" y="39" width="4" height="6">
    <properties>
-    <property name="type" value="PokeballChangerSensor"/>
+    <property name="type" value="pokeballChangerSensor"/>
     <property name="variant" type="int" value="1"/>
    </properties>
   </object>
