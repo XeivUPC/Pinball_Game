@@ -12,6 +12,7 @@
 #include "PoliwagBumper.h"
 #include "PsyduckBumper.h"
 #include "MapEnergyRotator.h"
+#include "PokeballChangerSensor.h"
 
 
 #include "ModuleHighScore.h"
@@ -223,6 +224,14 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				x += width / 2;
 				y += heigth / 2;
 				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, width, heigth, 1);
+			}
+			else if (type == "pokeballChangerSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+
+				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 1);
 			}
 		}
 	}

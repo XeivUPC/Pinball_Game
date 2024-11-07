@@ -31,5 +31,7 @@ private:
 	void SetShakeTime();
 
 	bool gettingHit = false;
+
+	int bumperAudioId = -1;
 };
 

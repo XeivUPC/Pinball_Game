@@ -1,6 +1,7 @@
 #include "Flipper.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include "ModuleAudio.h"
 #include "ModuleTexture.h"
 #include "AnimationSystem.h"
 
@@ -14,6 +15,8 @@ Flipper::Flipper(ModuleGame* gameAt, float power, b2Vec2 position, b2Vec2 angleR
 	this->activationKey = activationKey;
 
 	////
+
+	flipperAudioId = gameAt->App->audio->LoadFx("Assets/SFX/Game_Flipper.ogg");
 
 	gameAt->App->texture->CreateTexture("Assets/map_paddle.png", "map_paddle");
 	flipper_texture = gameAt->App->texture->GetTexture("map_paddle");
@@ -97,6 +100,7 @@ update_status Flipper::Update()
 	if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(activationKey))) {
 		flipper_animator->SelectAnimation("Paddle_Click", false);
 		flipperJoint->SetMotorSpeed(-power);
+		gameAt->App->audio->PlayFx(flipperAudioId);
 	}
 	else
 	{
