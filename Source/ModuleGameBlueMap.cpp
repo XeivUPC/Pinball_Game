@@ -13,6 +13,7 @@
 #include "PsyduckBumper.h"
 #include "MapEnergyRotator.h"
 #include "PokeballChangerSensor.h"
+#include "Pikachu.h"
 
 
 #include "ModuleHighScore.h"
@@ -42,6 +43,8 @@ bool ModuleGameBlueMap::Start()
 	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
+
+	Pikachu* pikachu = new Pikachu(this, {0,0});
 
 	return true;
 }
@@ -147,7 +150,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 			chainFixtureDef.shape = &chainShape;
 			chainFixtureDef.density = 1.0f;
 			chainFixtureDef.restitution = 0.5f;
-			chainFixtureDef.friction = 0.3f;
+			chainFixtureDef.friction = 0.f;
 
 			b2BodyDef bd;
 			bd.type = b2_staticBody; // Set the body type to static
