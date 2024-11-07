@@ -193,7 +193,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
 				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
 
-				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x + 3/SCREEN_SIZE,y + 5/SCREEN_SIZE }, width, height, angle, 0);
+				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 0);
 			}
 			else if (type == "triangularBumper") {
 

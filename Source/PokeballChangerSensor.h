@@ -16,7 +16,10 @@ public:
 protected:
 	void OnActivation();
 
+	b2Body* body = nullptr;
+
 private:
+	int variant = -1;
 
 	Texture* texture = nullptr;
 	Animator* animator = nullptr;

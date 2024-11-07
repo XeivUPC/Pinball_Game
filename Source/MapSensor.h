@@ -14,13 +14,16 @@ public:
 	int GetTotalActivations();
 	void ResetTotalActivations();
 
+	void SwitchActivation();
+
 protected:
 	virtual void OnActivation() = 0;
 	int timesActivated = 0;
+	bool active = false;
+
 	b2Vec2 position = { 0,0 };
 	float angle;
 
 	CollisionSensor sensor;
-	b2Body* body = nullptr;
 };
 

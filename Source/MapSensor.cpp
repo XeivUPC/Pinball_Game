@@ -7,24 +7,6 @@ MapSensor::MapSensor(ModuleGame* gameAt, b2Vec2 position, float width, float hei
 {
 	this->position = position;
 	this->angle = angle;
-
-	b2FixtureUserData fixtureData;
-	fixtureData.pointer = (uintptr_t)(&sensor);
-
-	body = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, { position.x , position.y }, width, height, fixtureData);
-	body->SetType(b2_staticBody);
-	body->GetFixtureList()[0].SetSensor(true);
-	body->GetFixtureList()[0].SetDensity(1);
-	float angle_radians = angle * b2_pi / 180.0f;
-	// Get current position
-	b2Vec2 currentPosition = body->GetPosition();
-
-	// Set the new position and rotation
-	body->SetTransform(currentPosition, angle_radians);
-
-	sensor.SetBodyToTrack(&body->GetFixtureList()[0]);
-
-	sensor.AcceptOnlyTriggers(false);
 }
 
 MapSensor::~MapSensor()
@@ -53,6 +35,16 @@ int MapSensor::GetTotalActivations()
 void MapSensor::ResetTotalActivations()
 {
 	timesActivated = 0;
+}
+
+void MapSensor::SwitchActivation()
+{
+	if (!active) {
+		active = true;
+	}
+	else {
+		active = false;
+	}
 }
 
 void MapSensor::OnActivation()

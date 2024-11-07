@@ -5,6 +5,28 @@
 
 PokeballChangerSensor::PokeballChangerSensor(ModuleGame* gameAt, b2Vec2 position, float width, float height, float angle, int variant) : MapSensor(gameAt, position, width, height, angle)
 {
+	gameAt->AddObject(this);
+
+	this->variant = variant;
+
+	b2FixtureUserData fixtureData;
+	fixtureData.pointer = (uintptr_t)(&sensor);
+
+	body = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, { position.x + width / 2 , position.y + height / 2 }, width, height, fixtureData);
+	body->SetType(b2_staticBody);
+	body->GetFixtureList()[0].SetSensor(true);
+	body->GetFixtureList()[0].SetDensity(1);
+	float angle_radians = angle * b2_pi / 180.0f;
+	// Get current position
+	b2Vec2 currentPosition = body->GetPosition();
+
+	// Set the new position and rotation
+	body->SetTransform(currentPosition, angle_radians);
+
+	sensor.SetBodyToTrack(&body->GetFixtureList()[0]);
+
+	sensor.AcceptOnlyTriggers(false);
+
 	gameAt->App->texture->CreateTexture("Assets/pokeball_changer_sensor.png", "pokeball_changer_sensor");
 	texture = gameAt->App->texture->GetTexture("pokeball_changer_sensor");
 
@@ -28,8 +50,9 @@ PokeballChangerSensor::~PokeballChangerSensor()
 
 update_status PokeballChangerSensor::Update()
 {
+	MapSensor::Update();
 	animator->Update();
-	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE - 9), (int)(body->GetPosition().y * SCREEN_SIZE - 9), true);
+	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE) - 4, (int)(body->GetPosition().y * SCREEN_SIZE - 10), false);
 	return UPDATE_CONTINUE;
 }
 
@@ -42,5 +65,13 @@ bool PokeballChangerSensor::CleanUp()
 
 void PokeballChangerSensor::OnActivation()
 {
+	MapSensor::OnActivation();
+	SwitchActivation();
+	if (active) {
+		animator->SelectAnimation("Pokeball_Sensor_Active", true);
+	}
+	else {
+		animator->SelectAnimation("Pokeball_Sensor_Unactive", true);
+	}
 
 }
