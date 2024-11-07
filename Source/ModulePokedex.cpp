@@ -143,9 +143,7 @@ update_status ModulePokedex::Update()
     else if (factor > 1 && selectedPokemon.x != selectedPokemon.y)
     {
         selectedPokemon.x = selectedPokemon.y;
-        if (slots_offset.y > slots_offset.x)
-            slots_offset.y--;
-        slots_offset.y = (int)slots_offset.y;
+        slots_offset.y = -selectedPokemon.y * 15;
         slots_offset.x = slots_offset.y;
         factor = 0;
     }
