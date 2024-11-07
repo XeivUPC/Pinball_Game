@@ -21,10 +21,9 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position, float restitution) : MapOb
 	map_pikachu_animator->AddAnimation(MapPikachuAnim);
 	map_pikachu_animator->SetSpeed(0.2f);
 	map_pikachu_animator->SelectAnimation("MapPikachuAnim", true);
-	map_pikachu_animator->SetDirection(-1);
 
 	bool is_in_left = true;
-	position_x = 10;
+	position_x = 138;
 }
 
 Pikachu::~Pikachu()
