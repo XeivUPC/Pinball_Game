@@ -33,7 +33,6 @@ public:
 
 
 private:
-	b2Vec2 position;
 	Texture* ditto_texture;
 	Animator* ditto_animator;
 	

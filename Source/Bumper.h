@@ -18,7 +18,7 @@ protected:
 	virtual void OnHit() = 0;
 	int hitsRecieved=0;
 	float restitution = 0;
-	b2Vec2 position = {0,0};
+	
 	CollisionSensor sensor;
 };
 

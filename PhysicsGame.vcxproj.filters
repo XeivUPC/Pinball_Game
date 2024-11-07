@@ -117,6 +117,21 @@
     <ClCompile Include="Source\PokeballChangerSensor.cpp">
       <Filter>Objects\Map Sensors %28Objects%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\DittoColliders.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DiglettBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PoliwagBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PsyduckBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapEnergyRotator.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -237,6 +252,21 @@
     </ClInclude>
     <ClInclude Include="Source\PokeballChangerSensor.h">
       <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DittoColliders.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiglettBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PoliwagBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PsyduckBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapEnergyRotator.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

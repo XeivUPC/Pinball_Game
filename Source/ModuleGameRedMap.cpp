@@ -9,6 +9,8 @@
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
 #include "TriangularBumper.h"
+#include "TriangularBumper.h"
+#include "MapEnergyRotator.h"
 
 
 #include "ModuleHighScore.h"
@@ -57,6 +59,19 @@ update_status ModuleGameRedMap::Update()
 
 	if (IsKeyPressed(KEY_P)) {
 		pokeBall->ApplyForce({ 0,-4000 });
+	}
+
+	if (IsKeyPressed(KEY_ONE)) {
+		pokeBall->SetType(PokeBall::Pokeball);
+	}
+	if (IsKeyPressed(KEY_TWO)) {
+		pokeBall->SetType(PokeBall::SuperBall);
+	}
+	if (IsKeyPressed(KEY_THREE)) {
+		pokeBall->SetType(PokeBall::Ultraball);
+	}
+	if (IsKeyPressed(KEY_FOUR)) {
+		pokeBall->SetType(PokeBall::MasterBall);
 	}
 
 	if (IsKeyPressed(KEY_R)) {
@@ -201,6 +216,27 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 0);
 
+			}
+			else if (type == "diglettBumper") {
+
+				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
+				std::vector<b2Vec2> vertices;
+				FromStringToVertices(collisionPolygonPoints, vertices);
+
+				bool flip = false;
+				if (x * SCREEN_SIZE > SCREEN_WIDTH / 2) {
+					flip = true;
+				}
+
+				DiglettBumper* diglettBumper = new DiglettBumper(this, { x,y }, vertices, 1.f, flip);
+			}
+			else if (type == "energyRotator") {
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float heigth = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				x += width / 2;
+				y += heigth / 2;
+				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, width, heigth, 0);
 			}
 		}
 	}

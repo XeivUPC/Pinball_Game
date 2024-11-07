@@ -9,6 +9,9 @@
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
 #include "TriangularBumper.h"
+#include "PoliwagBumper.h"
+#include "PsyduckBumper.h"
+#include "MapEnergyRotator.h"
 
 
 #include "ModuleHighScore.h"
@@ -161,7 +164,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 		for (pugi::xml_node objectNode = mapObjectsNode.child("object"); objectNode != NULL; objectNode = objectNode.next_sibling("object"))
 		{
 			///Create Map Objects
-			pugi::xml_node typeNode  = objectNode.child("properties").find_child_by_attribute("property", "name", "type");
+			pugi::xml_node typeNode = objectNode.child("properties").find_child_by_attribute("property", "name", "type");
 			std::string type = typeNode.attribute("value").as_string();
 
 			float x = objectNode.attribute("x").as_float() / SCREEN_SIZE;
@@ -174,7 +177,6 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 
 				float radius = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				radius /= 2;
-
 				CircularBumper* circularBumper = new CircularBumper(this, { x,y }, radius, 1.f, 1);
 			}
 			else if (type == "triangularBumper") {
@@ -189,6 +191,38 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				}
 
 				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 1);
+			}
+			else if (type == "poliwagBumper") {
+				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
+				std::vector<b2Vec2> vertices;
+				FromStringToVertices(collisionPolygonPoints, vertices);
+
+				bool flip = false;
+				if (x * SCREEN_SIZE > SCREEN_WIDTH / 2) {
+					flip = true;
+				}
+
+				PoliwagBumper* poliwagBumper = new PoliwagBumper(this, { x,y }, vertices, 1.f, flip);
+			}
+			else if (type == "psyduckBumper") {
+				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
+				std::vector<b2Vec2> vertices;
+				FromStringToVertices(collisionPolygonPoints, vertices);
+
+				bool flip = false;
+				if (x * SCREEN_SIZE > SCREEN_WIDTH / 2) {
+					flip = true;
+				}
+
+				PsyduckBumper* psyduckBumper = new PsyduckBumper(this, { x,y }, vertices, 1.f, flip);
+			}
+			else if (type == "energyRotator") {
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float heigth = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				x += width / 2;
+				y += heigth / 2;
+				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, width, heigth, 1);
 			}
 		}
 	}

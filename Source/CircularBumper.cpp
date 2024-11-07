@@ -58,14 +58,15 @@ CircularBumper::~CircularBumper()
 
 update_status CircularBumper::Update()
 {
+	
+	Bumper::Update();
+
 	if (animator->HasAnimationFinished()) {
 		if (gettingHit) {
 			gettingHit = false;
 		}
 		animator->SelectAnimation("Circular_Idle", true);
 	}
-	Bumper::Update();
-
 
 	if (!gettingHit && shake_time <= shake_timer.ReadSec()) {
 		animator->SelectAnimation("Circular_Shake", false);
@@ -87,7 +88,6 @@ update_status CircularBumper::Update()
 bool CircularBumper::CleanUp()
 {
 	gameAt->App->physics->world->DestroyBody(body);
-
 	return true;
 }
 

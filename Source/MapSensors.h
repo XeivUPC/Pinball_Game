@@ -17,7 +17,6 @@ public:
 protected:
 	virtual void OnActivation() = 0;
 	int timesActivated = 0;
-	b2Vec2 position = { 0,0 };
 	float angle;
 	CollisionSensor sensor;
 };

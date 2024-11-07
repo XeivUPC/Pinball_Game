@@ -15,5 +15,6 @@ private:
 
 protected:
 	ModuleGame* gameAt = nullptr;
+	b2Vec2 position = { 0,0 };
 };
 

@@ -6,6 +6,7 @@
 #include "PokeBall.h"
 #include "Flipper.h"
 #include "DittoColliders.h"
+#include "DiglettBumper.h"
 
 
 
