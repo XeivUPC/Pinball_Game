@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <pokedex>
 	<id value="1">
-		<weight value="6.9"/>
-		<height value="0.7"/>
+		<weight value="6,9"/>
+		<height value="0,7"/>
 		<preevolution-index value="-1"/>
 		<name value="107,91,136,145,103"/>	<!--フシギダネ-->
 		<!-- Japanese: Bulbasaur -->
@@ -21,8 +21,8 @@
 		<overworld-index value="1"/>
 	</id>
 	<id value="2">
-		<weight value="13.0"/>
-		<height value="1.0"/>
+		<weight value="13,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="1"/>
 		<name value="フシギソウ"/>
 		<!-- Japanese: Ivysaur -->
@@ -41,8 +41,8 @@
 		<overworld-index value="2"/>
 	</id>
 	<id value="3">
-		<weight value="100.0"/>
-		<height value="2.0"/>
+		<weight value="100,0"/>
+		<height value="2,0"/>
 		<preevolution-index value="2"/>
 		<name value="フシギバナ"/>
 		<!-- Japanese: Venusaur -->
@@ -61,8 +61,8 @@
 		<overworld-index value="3"/>
 	</id>
 	<id value="4">
-		<weight value="9.0"/>
-		<height value="0.6"/>
+		<weight value="9,0"/>
+		<height value="0,6"/>
 		<preevolution-index value="-1"/>
 		<name value="ヒトカゲ"/>
 		<!-- Japanese: Charmander -->
@@ -81,8 +81,8 @@
 		<overworld-index value="4"/>
 	</id>
 	<id value="5">
-		<weight value="22.0"/>
-		<height value="1.1"/>
+		<weight value="22,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="4"/>
 		<name value="リザード"/>
 		<!-- Japanese: Charmeleon -->
@@ -101,8 +101,8 @@
 		<overworld-index value="5"/>
 	</id>
 	<id value="6">
-		<weight value="90.5"/>
-		<height value="1.7"/>
+		<weight value="90,5"/>
+		<height value="1,7"/>
 		<preevolution-index value="5"/>
 		<name value="リザードン"/>
 		<!-- Japanese: Charizard -->
@@ -121,8 +121,8 @@
 		<overworld-index value="6"/>
 	</id>
 	<id value="7">
-		<weight value="9.0"/>
-		<height value="0.5"/>
+		<weight value="9,0"/>
+		<height value="0,5"/>
 		<preevolution-index value="-1"/>
 		<name value="ゼニガメ"/>
 		<!-- Japanese: Squirtle -->
@@ -141,8 +141,8 @@
 		<overworld-index value="7"/>
 	</id>
 	<id value="8">
-		<weight value="22.5"/>
-		<height value="0.8"/>
+		<weight value="22,5"/>
+		<height value="0,8"/>
 		<preevolution-index value="7"/>
 		<name value="カメール"/>
 		<!-- Japanese: Wartortle -->
@@ -161,8 +161,8 @@
 		<overworld-index value="8"/>
 	</id>
 	<id value="9">
-		<weight value="85.5"/>
-		<height value="1.0"/>
+		<weight value="85,5"/>
+		<height value="1,0"/>
 		<preevolution-index value="8"/>
 		<name value="カメックス"/>
 		<!-- Japanese: Blastoise -->
@@ -181,8 +181,8 @@
 		<overworld-index value="9"/>
 	</id>
 	<id value="10">
-		<weight value="40.0"/>
-		<height value="1.0"/>
+		<weight value="40,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="キャタピー"/>
 		<!-- Japanese: Caterpie -->
@@ -201,8 +201,8 @@
 		<overworld-index value="10"/>
 	</id>
 	<id value="11">
-		<weight value="10.0"/>
-		<height value="0.7"/>
+		<weight value="10,0"/>
+		<height value="0,7"/>
 		<preevolution-index value="10"/>
 		<name value="トランセル"/>
 		<!-- Japanese: Metapod -->
@@ -221,8 +221,8 @@
 		<overworld-index value="11"/>
 	</id>
 	<id value="12">
-		<weight value="32.0"/>
-		<height value="1.1"/>
+		<weight value="32,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="11"/>
 		<name value="バタフリー"/>
 		<!-- Japanese: Butterfree -->
@@ -241,8 +241,8 @@
 		<overworld-index value="12"/>
 	</id>
 	<id value="13">
-		<weight value="30.0"/>
-		<height value="0.8"/>
+		<weight value="30,0"/>
+		<height value="0,8"/>
 		<preevolution-index value="-1"/>
 		<name value="ビードル"/>
 		<!-- Japanese: Beedle -->
@@ -261,8 +261,8 @@
 		<overworld-index value="13"/>
 	</id>
 	<id value="14">
-		<weight value="32.0"/>
-		<height value="1.0"/>
+		<weight value="32,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="13"/>
 		<name value="コクーン"/>
 		<!-- Japanese: Kakuna -->
@@ -281,8 +281,8 @@
 		<overworld-index value="14"/>
 	</id>
 	<id value="15">
-		<weight value="45.0"/>
-		<height value="1.1"/>
+		<weight value="45,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="14"/>
 		<name value="スピアー"/>
 		<!-- Japanese: Beedrill -->
@@ -301,8 +301,8 @@
 		<overworld-index value="15"/>
 	</id>
 	<id value="16">
-		<weight value="8.5"/>
-		<height value="0.8"/>
+		<weight value="8,5"/>
+		<height value="0,8"/>
 		<preevolution-index value="-1"/>
 		<name value="ポッポ"/>
 		<!-- Japanese: Pidgey -->
@@ -321,8 +321,8 @@
 		<overworld-index value="16"/>
 	</id>
 	<id value="17">
-		<weight value="15.0"/>
-		<height value="1.1"/>
+		<weight value="15,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="16"/>
 		<name value="ポッポー"/>
 		<!-- Japanese: Pidgeotto -->
@@ -341,8 +341,8 @@
 		<overworld-index value="17"/>
 	</id>
 	<id value="18">
-		<weight value="39.5"/>
-		<height value="1.5"/>
+		<weight value="39,5"/>
+		<height value="1,5"/>
 		<preevolution-index value="17"/>
 		<name value="ポッポー"/>
 		<!-- Japanese: Pidgeot -->
@@ -361,8 +361,8 @@
 		<overworld-index value="18"/>
 	</id>
 	<id value="19">
-		<weight value="30.0"/>
-		<height value="1.1"/>
+		<weight value="30,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="-1"/>
 		<name value="コラッタ"/>
 		<!-- Japanese: Rattata -->
@@ -381,8 +381,8 @@
 		<overworld-index value="19"/>
 	</id>
 	<id value="20">
-		<weight value="18.5"/>
-		<height value="0.5"/>
+		<weight value="18,5"/>
+		<height value="0,5"/>
 		<preevolution-index value="19"/>
 		<name value="ラッタ"/>
 		<!-- Japanese: Raticate -->
@@ -401,8 +401,8 @@
 		<overworld-index value="20"/>
 	</id>
 	<id value="21">
-		<weight value="25.0"/>
-		<height value="0.8"/>
+		<weight value="25,0"/>
+		<height value="0,8"/>
 		<preevolution-index value="-1"/>
 		<name value="オニスズメ"/>
 		<!-- Japanese: Spearow -->
@@ -421,8 +421,8 @@
 		<overworld-index value="21"/>
 	</id>
 	<id value="22">
-		<weight value="40.0"/>
-		<height value="1.2"/>
+		<weight value="40,0"/>
+		<height value="1,2"/>
 		<preevolution-index value="21"/>
 		<name value="オニドリル"/>
 		<!-- Japanese: Fearow -->
@@ -441,8 +441,8 @@
 		<overworld-index value="22"/>
 	</id>
 	<id value="23">
-		<weight value="80.0"/>
-		<height value="1.6"/>
+		<weight value="80,0"/>
+		<height value="1,6"/>
 		<preevolution-index value="-1"/>
 		<name value="アーボ"/>
 		<!-- Japanese: Ekans -->
@@ -461,8 +461,8 @@
 		<overworld-index value="23"/>
 	</id>
 	<id value="24">
-		<weight value="65.0"/>
-		<height value="1.4"/>
+		<weight value="65,0"/>
+		<height value="1,4"/>
 		<preevolution-index value="23"/>
 		<name value="アーボック"/>
 		<!-- Japanese: Arbok -->
@@ -481,8 +481,8 @@
 		<overworld-index value="24"/>
 	</id>
 	<id value="25">
-		<weight value="6.0"/>
-		<height value="0.4"/>
+		<weight value="6,0"/>
+		<height value="0,4"/>
 		<preevolution-index value="-1"/>
 		<name value="ピカチュウ"/>
 		<!-- Japanese: Pikachu -->
@@ -501,8 +501,8 @@
 		<overworld-index value="25"/>
 	</id>
 	<id value="26">
-		<weight value="30.0"/>
-		<height value="0.8"/>
+		<weight value="30,0"/>
+		<height value="0,8"/>
 		<preevolution-index value="25"/>
 		<name value="ライチュウ"/>
 		<!-- Japanese: Raichu -->
@@ -521,8 +521,8 @@
 		<overworld-index value="26"/>
 	</id>
 	<id value="27">
-		<weight value="55.0"/>
-		<height value="1.0"/>
+		<weight value="55,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="サンド"/>
 		<!-- Japanese: Sandshrew -->
@@ -541,8 +541,8 @@
 		<overworld-index value="27"/>
 	</id>
 	<id value="28">
-		<weight value="120.0"/>
-		<height value="1.2"/>
+		<weight value="120,0"/>
+		<height value="1,2"/>
 		<preevolution-index value="27"/>
 		<name value="サンドパン"/>
 		<!-- Japanese: Sandslash -->
@@ -561,8 +561,8 @@
 		<overworld-index value="28"/>
 	</id>
 	<id value="29">
-		<weight value="50.0"/>
-		<height value="1.0"/>
+		<weight value="50,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="ニドラン♀"/>
 		<!-- Japanese: Nidoran♀ -->
@@ -581,8 +581,8 @@
 		<overworld-index value="29"/>
 	</id>
 	<id value="30">
-		<weight value="70.0"/>
-		<height value="1.1"/>
+		<weight value="70,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="29"/>
 		<name value="ニドリーナ"/>
 		<!-- Japanese: Nidorina -->
@@ -601,8 +601,8 @@
 		<overworld-index value="30"/>
 	</id>
 	<id value="31">
-		<weight value="110.0"/>
-		<height value="1.3"/>
+		<weight value="110,0"/>
+		<height value="1,3"/>
 		<preevolution-index value="30"/>
 		<name value="ニドキング"/>
 		<!-- Japanese: Nidoqueen -->
@@ -621,8 +621,8 @@
 		<overworld-index value="31"/>
 	</id>
 	<id value="32">
-		<weight value="40.0"/>
-		<height value="1.0"/>
+		<weight value="40,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="ニドラン♂"/>
 		<!-- Japanese: Nidoran♂ -->
@@ -641,8 +641,8 @@
 		<overworld-index value="32"/>
 	</id>
 	<id value="33">
-		<weight value="80.0"/>
-		<height value="1.2"/>
+		<weight value="80,0"/>
+		<height value="1,2"/>
 		<preevolution-index value="32"/>
 		<name value="ニドリーノ"/>
 		<!-- Japanese: Nidorino -->
@@ -661,8 +661,8 @@
 		<overworld-index value="33"/>
 	</id>
 	<id value="34">
-		<weight value="200.0"/>
-		<height value="1.4"/>
+		<weight value="200,0"/>
+		<height value="1,4"/>
 		<preevolution-index value="33"/>
 		<name value="ニドキング"/>
 		<!-- Japanese: Nidoking -->
@@ -681,8 +681,8 @@
 		<overworld-index value="34"/>
 	</id>
 	<id value="35">
-		<weight value="60.0"/>
-		<height value="1.1"/>
+		<weight value="60,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="-1"/>
 		<name value="ピッピ"/>
 		<!-- Japanese: Clefairy -->
@@ -701,8 +701,8 @@
 		<overworld-index value="35"/>
 	</id>
 	<id value="36">
-		<weight value="75.0"/>
-		<height value="1.3"/>
+		<weight value="75,0"/>
+		<height value="1,3"/>
 		<preevolution-index value="35"/>
 		<name value="ピクシー"/>
 		<!-- Japanese: Clefable -->
@@ -721,8 +721,8 @@
 		<overworld-index value="36"/>
 	</id>
 	<id value="37">
-		<weight value="30.0"/>
-		<height value="1.0"/>
+		<weight value="30,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="ロコン"/>
 		<!-- Japanese: Vulpix -->
@@ -741,8 +741,8 @@
 		<overworld-index value="37"/>
 	</id>
 	<id value="38">
-		<weight value="60.0"/>
-		<height value="1.1"/>
+		<weight value="60,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="37"/>
 		<name value="キュウコン"/>
 		<!-- Japanese: Ninetales -->
@@ -761,8 +761,8 @@
 		<overworld-index value="38"/>
 	</id>
 	<id value="39">
-		<weight value="12.0"/>
-		<height value="0.8"/>
+		<weight value="12,0"/>
+		<height value="0,8"/>
 		<preevolution-index value="-1"/>
 		<name value="プリン"/>
 		<!-- Japanese: Jigglypuff -->
@@ -781,8 +781,8 @@
 		<overworld-index value="39"/>
 	</id>
 	<id value="40">
-		<weight value="55.0"/>
-		<height value="1.0"/>
+		<weight value="55,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="39"/>
 		<name value="プクリン"/>
 		<!-- Japanese: Wigglytuff -->
@@ -801,8 +801,8 @@
 		<overworld-index value="40"/>
 	</id>
 	<id value="41">
-		<weight value="40.0"/>
-		<height value="1.0"/>
+		<weight value="40,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="ズバット"/>
 		<!-- Japanese: Zubat -->
@@ -821,8 +821,8 @@
 		<overworld-index value="41"/>
 	</id>
 	<id value="42">
-		<weight value="75.0"/>
-		<height value="1.6"/>
+		<weight value="75,0"/>
+		<height value="1,6"/>
 		<preevolution-index value="41"/>
 		<name value="ゴルバット"/>
 		<!-- Japanese: Golbat -->
@@ -841,8 +841,8 @@
 		<overworld-index value="42"/>
 	</id>
 	<id value="43">
-		<weight value="15.0"/>
-		<height value="0.6"/>
+		<weight value="15,0"/>
+		<height value="0,6"/>
 		<preevolution-index value="-1"/>
 		<name value="ポニータ"/>
 		<!-- Japanese: Ponyta -->
@@ -861,8 +861,8 @@
 		<overworld-index value="43"/>
 	</id>
 	<id value="44">
-		<weight value="95.0"/>
-		<height value="1.7"/>
+		<weight value="95,0"/>
+		<height value="1,7"/>
 		<preevolution-index value="43"/>
 		<name value="ギャロップ"/>
 		<!-- Japanese: Rapidash -->
@@ -881,8 +881,8 @@
 		<overworld-index value="44"/>
 	</id>
 	<id value="45">
-		<weight value="60.0"/>
-		<height value="1.5"/>
+		<weight value="60,0"/>
+		<height value="1,5"/>
 		<preevolution-index value="-1"/>
 		<name value="ヤドン"/>
 		<!-- Japanese: Slowpoke -->
@@ -901,8 +901,8 @@
 		<overworld-index value="45"/>
 	</id>
 	<id value="46">
-		<weight value="90.0"/>
-		<height value="1.6"/>
+		<weight value="90,0"/>
+		<height value="1,6"/>
 		<preevolution-index value="45"/>
 		<name value="ヤドラン"/>
 		<!-- Japanese: Slowbro -->
@@ -921,8 +921,8 @@
 		<overworld-index value="46"/>
 	</id>
 	<id value="47">
-		<weight value="44.0"/>
-		<height value="1.0"/>
+		<weight value="44,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="コイル"/>
 		<!-- Japanese: Magnemite -->
@@ -941,8 +941,8 @@
 		<overworld-index value="47"/>
 	</id>
 	<id value="48">
-		<weight value="60.0"/>
-		<height value="1.2"/>
+		<weight value="60,0"/>
+		<height value="1,2"/>
 		<preevolution-index value="47"/>
 		<name value="レアコイル"/>
 		<!-- Japanese: Magneton -->
@@ -961,8 +961,8 @@
 		<overworld-index value="48"/>
 	</id>
 	<id value="49">
-		<weight value="30.0"/>
-		<height value="1.2"/>
+		<weight value="30,0"/>
+		<height value="1,2"/>
 		<preevolution-index value="-1"/>
 		<name value="ビリリダマ"/>
 		<!-- Japanese: Voltorb -->
@@ -981,8 +981,8 @@
 		<overworld-index value="49"/>
 	</id>
 	<id value="50">
-		<weight value="50.0"/>
-		<height value="1.2"/>
+		<weight value="50,0"/>
+		<height value="1,2"/>
 		<preevolution-index value="49"/>
 		<name value="デンリュウ"/>
 		<!-- Japanese: Electrode -->
@@ -1001,8 +1001,8 @@
 		<overworld-index value="50"/>
 	</id>
 	<id value="51">
-		<weight value="9.0"/>
-		<height value="0.6"/>
+		<weight value="9,0"/>
+		<height value="0,6"/>
 		<preevolution-index value="-1"/>
 		<name value="タッツー"/>
 		<!-- Japanese: Horsea -->
@@ -1021,8 +1021,8 @@
 		<overworld-index value="51"/>
 	</id>
 	<id value="52">
-		<weight value="18.0"/>
-		<height value="1.0"/>
+		<weight value="18,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="51"/>
 		<name value="シードラ"/>
 		<!-- Japanese: Seadra -->
@@ -1041,8 +1041,8 @@
 		<overworld-index value="52"/>
 	</id>
 	<id value="53">
-		<weight value="15.0"/>
-		<height value="0.6"/>
+		<weight value="15,0"/>
+		<height value="0,6"/>
 		<preevolution-index value="-1"/>
 		<name value="トサキント"/>
 		<!-- Japanese: Goldeen -->
@@ -1061,8 +1061,8 @@
 		<overworld-index value="53"/>
 	</id>
 	<id value="54">
-		<weight value="39.0"/>
-		<height value="1.2"/>
+		<weight value="39,0"/>
+		<height value="1,2"/>
 		<preevolution-index value="53"/>
 		<name value="ドヒドイデ"/>
 		<!-- Japanese: Seaking -->
@@ -1081,8 +1081,8 @@
 		<overworld-index value="54"/>
 	</id>
 	<id value="55">
-		<weight value="40.0"/>
-		<height value="1.0"/>
+		<weight value="40,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="コダック"/>
 		<!-- Japanese: Psyduck -->
@@ -1101,8 +1101,8 @@
 		<overworld-index value="55"/>
 	</id>
 	<id value="56">
-		<weight value="80.0"/>
-		<height value="1.6"/>
+		<weight value="80,0"/>
+		<height value="1,6"/>
 		<preevolution-index value="55"/>
 		<name value="ゴルダック"/>
 		<!-- Japanese: Golduck -->
@@ -1121,8 +1121,8 @@
 		<overworld-index value="56"/>
 	</id>
 	<id value="57">
-		<weight value="28.0"/>
-		<height value="0.7"/>
+		<weight value="28,0"/>
+		<height value="0,7"/>
 		<preevolution-index value="-1"/>
 		<name value="マンキー"/>
 		<!-- Japanese: Mankey -->
@@ -1141,8 +1141,8 @@
 		<overworld-index value="57"/>
 	</id>
 	<id value="58">
-		<weight value="32.0"/>
-		<height value="1.0"/>
+		<weight value="32,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="57"/>
 		<name value="オコリザル"/>
 		<!-- Japanese: Primeape -->
@@ -1161,8 +1161,8 @@
 		<overworld-index value="58"/>
 	</id>
 	<id value="59">
-		<weight value="75.0"/>
-		<height value="1.6"/>
+		<weight value="75,0"/>
+		<height value="1,6"/>
 		<preevolution-index value="-1"/>
 		<name value="ガーディ"/>
 		<!-- Japanese: Growlithe -->
@@ -1181,8 +1181,8 @@
 		<overworld-index value="59"/>
 	</id>
 	<id value="60">
-		<weight value="190.0"/>
-		<height value="1.9"/>
+		<weight value="190,0"/>
+		<height value="1,9"/>
 		<preevolution-index value="59"/>
 		<name value="ウィンディ"/>
 		<!-- Japanese: Arcanine -->
@@ -1201,8 +1201,8 @@
 		<overworld-index value="60"/>
 	</id>
 	<id value="61">
-		<weight value="55.0"/>
-		<height value="1.5"/>
+		<weight value="55,0"/>
+		<height value="1,5"/>
 		<preevolution-index value="-1"/>
 		<name value="マリル"/>
 		<!-- Japanese: Marill -->
@@ -1221,8 +1221,8 @@
 		<overworld-index value="61"/>
 	</id>
 	<id value="62">
-		<weight value="90.0"/>
-		<height value="1.8"/>
+		<weight value="90,0"/>
+		<height value="1,8"/>
 		<preevolution-index value="61"/>
 		<name value="マリルリ"/>
 		<!-- Japanese: Azumarill -->
@@ -1241,8 +1241,8 @@
 		<overworld-index value="62"/>
 	</id>
 	<id value="63">
-		<weight value="75.0"/>
-		<height value="1.5"/>
+		<weight value="75,0"/>
+		<height value="1,5"/>
 		<preevolution-index value="-1"/>
 		<name value="ウリムー"/>
 		<!-- Japanese: Swinub -->
@@ -1261,8 +1261,8 @@
 		<overworld-index value="63"/>
 	</id>
 	<id value="64">
-		<weight value="100.0"/>
-		<height value="1.1"/>
+		<weight value="100,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="63"/>
 		<name value="イノムー"/>
 		<!-- Japanese: Piloswine -->
@@ -1281,8 +1281,8 @@
 		<overworld-index value="64"/>
 	</id>
 	<id value="65">
-		<weight value="40.0"/>
-		<height value="1.0"/>
+		<weight value="40,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="チョンチー"/>
 		<!-- Japanese: Chinchou -->
@@ -1301,8 +1301,8 @@
 		<overworld-index value="65"/>
 	</id>
 	<id value="66">
-		<weight value="65.0"/>
-		<height value="1.2"/>
+		<weight value="65,0"/>
+		<height value="1,2"/>
 		<preevolution-index value="65"/>
 		<name value="ランターン"/>
 		<!-- Japanese: Lanturn -->
@@ -1321,8 +1321,8 @@
 		<overworld-index value="66"/>
 	</id>
 	<id value="67">
-		<weight value="35.0"/>
-		<height value="1.0"/>
+		<weight value="35,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="タッツー"/>
 		<!-- Japanese: Horsea -->
@@ -1341,8 +1341,8 @@
 		<overworld-index value="67"/>
 	</id>
 	<id value="68">
-		<weight value="28.0"/>
-		<height value="0.8"/>
+		<weight value="28,0"/>
+		<height value="0,8"/>
 		<preevolution-index value="-1"/>
 		<name value="リトルコスモス"/>
 		<!-- Japanese: Cosmoem -->
@@ -1361,8 +1361,8 @@
 		<overworld-index value="68"/>
 	</id>
 	<id value="69">
-		<weight value="150.0"/>
-		<height value="1.3"/>
+		<weight value="150,0"/>
+		<height value="1,3"/>
 		<preevolution-index value="68"/>
 		<name value="コスモッグ"/>
 		<!-- Japanese: Cosmoem -->
@@ -1381,8 +1381,8 @@
 		<overworld-index value="69"/>
 	</id>
 	<id value="70">
-		<weight value="60.0"/>
-		<height value="1.0"/>
+		<weight value="60,0"/>
+		<height value="1,0"/>
 		<preevolution-index value="-1"/>
 		<name value="ヒトデマン"/>
 		<!-- Japanese: Staryu -->
@@ -1401,8 +1401,8 @@
 		<overworld-index value="70"/>
 	</id>
 	<id value="71">
-		<weight value="60.0"/>
-		<height value="1.1"/>
+		<weight value="60,0"/>
+		<height value="1,1"/>
 		<preevolution-index value="70"/>
 		<name value="スターミー"/>
 		<!-- Japanese: Starmie -->
@@ -1421,8 +1421,8 @@
 		<overworld-index value="71"/>
 	</id>
 	<id value="72">
-		<weight value="75.0"/>
-		<height value="1.4"/>
+		<weight value="75,0"/>
+		<height value="1,4"/>
 		<preevolution-index value="-1"/>
 		<name value="ビリリダマ"/>
 		<!-- Japanese: Voltorb -->
@@ -1441,8 +1441,8 @@
 		<overworld-index value="72"/>
 	</id>
 	<id value="73">
-		<weight value="80.0"/>
-		<height value="1.6"/>
+		<weight value="80,0"/>
+		<height value="1,6"/>
 		<preevolution-index value="72"/>
 		<name value="デンリュウ"/>
 		<!-- Japanese: Electrode -->

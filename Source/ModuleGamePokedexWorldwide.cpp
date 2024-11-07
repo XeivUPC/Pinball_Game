@@ -53,6 +53,7 @@ bool ModuleGamePokedexWorldWide::Start()
 	}
 
 	// Space
+	charReferences.push_back(44); // ASCII code for space
 	charReferences.push_back(32); // ASCII code for space
 
     return true;
@@ -75,7 +76,13 @@ void ModuleGamePokedexWorldWide::Write(const char* text, int x, int y, Color col
 		Rectangle* letter = GetCharRect(text[i]);
 		if (text[i] > 96 && text[i] < 123)
 			letter = GetCharRect(text[i]-32);
-		App->renderer->Draw(*fontTexture, (x + size.x * i), y, letter, color);
+		if (text[i] == ',')
+		{
+			App->renderer->Draw(*fontTexture, x + size.x * i, y+2, letter, color);
+			x -= size.x;
+		}
+		else
+			App->renderer->Draw(*fontTexture, (x + size.x * i), y, letter, color);
 		i++;
 	}
 }

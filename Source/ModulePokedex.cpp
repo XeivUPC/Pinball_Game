@@ -35,8 +35,8 @@ void ModulePokedex::RenderPokemonInfo(int id)
     {
         xy.x = (id / 38 * 2 + 1) * 48;
         xy.y = id % 38 * 32;
-        App->text_pokedex_worldwide->Write(pokemon_list[id].height.c_str(), 48, 20, WHITE);
-        App->text_pokedex_worldwide->Write(pokemon_list[id].weight.c_str(), 72, 20, WHITE);
+        App->text_pokedex_worldwide->Write(pokemon_list[id].height.c_str(), 72, 32, WHITE);
+        App->text_pokedex_worldwide->Write(pokemon_list[id].weight.c_str(), 120, 32, WHITE);
     }
     rect = { xy.x, xy.y, 48, 32 };
     App->renderer->Draw(*pokedexPokemon, 8, 16, &rect, WHITE);

@@ -22,5 +22,7 @@ public:
 
 	bool CleanUp()override;
 
+	//float StringToNumber(std::string str);
+
 	void Write(const char* text, int x, int y, Color color = WHITE);
 };
