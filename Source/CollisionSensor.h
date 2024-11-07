@@ -28,12 +28,12 @@ private:
     b2Body* GetDifferentBody(b2Body* body1, b2Body* body2, b2Body* bodyToBeDifferentFrom);
     
 
-    b2Fixture* bodyToTrack;
+    b2Fixture* bodyToTrack=nullptr;
     int bodiesInside = 0;
     bool onlyTriggers = true;
 
-    b2Body* lastBodyEnter;
-    b2Body* lastBodyExit;
+    b2Body* lastBodyEnter=nullptr;
+    b2Body* lastBodyExit=nullptr;
 
     std::set<b2Body*> bodiesColliding;
 };
