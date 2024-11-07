@@ -35,5 +35,7 @@ private:
 	b2Body* body;
 	b2Body* anchorBody;
 	b2RevoluteJoint* flipperJoint;
+
+	int flipperAudioId = -1;
 };
 

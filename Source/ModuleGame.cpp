@@ -66,8 +66,8 @@ void ModuleGame::RepositionCamera(b2Vec2 positionToTrack)
 		App->renderer->camera.offset.x = 0;
 	}
 
-	if (positionToTrack.y > 135 / SCREEN_SIZE) {
-		App->renderer->camera.offset.y = -135 * SCREEN_SIZE;
+	if (positionToTrack.y > 134 / SCREEN_SIZE) {
+		App->renderer->camera.offset.y = -134 * SCREEN_SIZE;
 	}
 	else {
 		App->renderer->camera.offset.y = 0;

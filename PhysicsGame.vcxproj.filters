@@ -111,7 +111,25 @@
     <ClCompile Include="Source\TriangularBumper.cpp">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Pikachu.cpp">
+    <ClCompile Include="Source\MapSensor.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PokeballChangerSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DittoColliders.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DiglettBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PoliwagBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PsyduckBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapEnergyRotator.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
   </ItemGroup>
@@ -229,7 +247,25 @@
     <ClInclude Include="Source\TriangularBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Pikachu.h">
+    <ClInclude Include="Source\MapSensor.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PokeballChangerSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DittoColliders.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiglettBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PoliwagBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PsyduckBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapEnergyRotator.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
@@ -269,6 +305,9 @@
     </Filter>
     <Filter Include="Objects\Bumpers %28Objects%29">
       <UniqueIdentifier>{f482764a-2278-486a-8dad-efc9aaf69e16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Sensors %28Objects%29">
+      <UniqueIdentifier>{c94fe65c-c863-4377-be2b-4e9fc37ee607}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

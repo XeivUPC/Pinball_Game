@@ -9,6 +9,10 @@
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
 #include "TriangularBumper.h"
+#include "PoliwagBumper.h"
+#include "PsyduckBumper.h"
+#include "MapEnergyRotator.h"
+#include "PokeballChangerSensor.h"
 
 
 #include "ModuleHighScore.h"
@@ -35,7 +39,7 @@ bool ModuleGameBlueMap::Start()
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 
-	pokeBall = new PokeBall(this, ballSpawn, 70);
+	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
@@ -151,27 +155,17 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 
 			// Create the body
 			b2Body* body = App->physics->world->CreateBody(&bd);
-
+			
 			// Attach the fixture to the body
 			body->CreateFixture(&chainFixtureDef);
 
 			simpoleCollidersBodies.emplace_back(body);
-
-			if (name == "DittoCollider1") {
-				dittoCollider1 = body;
-				//dittoCollider1->GetFixtureList()[0].SetSensor(true);
-			}
-
-			if (name == "DittoCollider2") {
-				dittoCollider2 = body;
-				dittoCollider2->GetFixtureList()[0].SetSensor(true);
-			}
 		}
 
 		for (pugi::xml_node objectNode = mapObjectsNode.child("object"); objectNode != NULL; objectNode = objectNode.next_sibling("object"))
 		{
 			///Create Map Objects
-			pugi::xml_node typeNode  = objectNode.child("properties").find_child_by_attribute("property", "name", "type");
+			pugi::xml_node typeNode = objectNode.child("properties").find_child_by_attribute("property", "name", "type");
 			std::string type = typeNode.attribute("value").as_string();
 
 			float x = objectNode.attribute("x").as_float() / SCREEN_SIZE;
@@ -184,7 +178,6 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 
 				float radius = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				radius /= 2;
-
 				CircularBumper* circularBumper = new CircularBumper(this, { x,y }, radius, 1.f, 1);
 			}
 			else if (type == "triangularBumper") {
@@ -199,6 +192,46 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				}
 
 				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 1);
+			}
+			else if (type == "poliwagBumper") {
+				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
+				std::vector<b2Vec2> vertices;
+				FromStringToVertices(collisionPolygonPoints, vertices);
+
+				bool flip = false;
+				if (x * SCREEN_SIZE > SCREEN_WIDTH / 2) {
+					flip = true;
+				}
+
+				PoliwagBumper* poliwagBumper = new PoliwagBumper(this, { x,y }, vertices, 1.f, flip);
+			}
+			else if (type == "psyduckBumper") {
+				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
+				std::vector<b2Vec2> vertices;
+				FromStringToVertices(collisionPolygonPoints, vertices);
+
+				bool flip = false;
+				if (x * SCREEN_SIZE > SCREEN_WIDTH / 2) {
+					flip = true;
+				}
+
+				PsyduckBumper* psyduckBumper = new PsyduckBumper(this, { x,y }, vertices, 1.f, flip);
+			}
+			else if (type == "energyRotator") {
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float heigth = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				x += width / 2;
+				y += heigth / 2;
+				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, width, heigth, 1);
+			}
+			else if (type == "pokeballChangerSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+
+				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 1);
 			}
 		}
 	}

@@ -41,8 +41,29 @@ bool CollisionSensor::OnTriggerExit()
         lastBodyExit = nullptr;
         return true;
     }
+    return nullptr;
+}
+
+b2Body* CollisionSensor::OnTriggerEnterGet()
+{
+    if (lastBodyEnter != nullptr) {
+        b2Body* aux = lastBodyEnter;
+        lastBodyEnter = nullptr;
+        return aux;
+    }
     return false;
 }
+
+b2Body* CollisionSensor::OnTriggerExitGet()
+{
+    if (lastBodyExit != nullptr) {
+        b2Body* aux = lastBodyExit;
+        lastBodyExit = nullptr;
+        return aux;
+    }
+    return nullptr;
+}
+
 
 void CollisionSensor::BeginContact(b2Contact* contact)
 {

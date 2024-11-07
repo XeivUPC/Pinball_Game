@@ -2,7 +2,6 @@
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
-#include <random>
 
 TriangularBumper::TriangularBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2Vec2> vertices, float restitution, bool flip, int variant) : Bumper(gameAt, position, restitution)
 {
@@ -33,7 +32,18 @@ TriangularBumper::TriangularBumper(ModuleGame* gameAt, b2Vec2 position, std::vec
 	// Attach the fixture to the body
 	b2Fixture* fixture = body->CreateFixture(&chainFixtureDef);
 
-	sensor.SetBodyToTrack(fixture);
+	bumperBody = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, {position.x +(2 - 2 * 2 * flip) , position.y + 3}, 0.3, 7, fixtureData);
+	bumperBody->SetType(b2_staticBody);
+	bumperBody->GetFixtureList()[0].SetSensor(true);
+	bumperBody->GetFixtureList()[0].SetDensity(1);
+	float angle = (-26.5f + 26.5f*2*flip) * b2_pi / 180.0f;
+	// Get current position
+	b2Vec2 currentPosition = bumperBody->GetPosition();
+
+	// Set the new position and rotation
+	bumperBody->SetTransform(currentPosition, angle);
+
+	sensor.SetBodyToTrack(&bumperBody->GetFixtureList()[0]);
 
 	sensor.AcceptOnlyTriggers(false);
 

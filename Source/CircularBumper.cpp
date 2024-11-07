@@ -2,6 +2,7 @@
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include "ModuleAudio.h"
 #include <random>
 
 CircularBumper::CircularBumper(ModuleGame* gameAt, b2Vec2 position, float radius, float restitution, int variant) : Bumper (gameAt, position, restitution)
@@ -24,6 +25,8 @@ CircularBumper::CircularBumper(ModuleGame* gameAt, b2Vec2 position, float radius
 
 	gameAt->App->texture->CreateTexture("Assets/circular_bumpers.png", "circular_bumpers");
 	texture = gameAt->App->texture->GetTexture("circular_bumpers");
+
+	bumperAudioId = gameAt->App->audio->LoadFx("Assets/SFX/Gam_Circular_Bumper.ogg");
 
 	animator = new Animator(gameAt->App);
 
@@ -58,14 +61,15 @@ CircularBumper::~CircularBumper()
 
 update_status CircularBumper::Update()
 {
+	
+	Bumper::Update();
+
 	if (animator->HasAnimationFinished()) {
 		if (gettingHit) {
 			gettingHit = false;
 		}
 		animator->SelectAnimation("Circular_Idle", true);
 	}
-	Bumper::Update();
-
 
 	if (!gettingHit && shake_time <= shake_timer.ReadSec()) {
 		animator->SelectAnimation("Circular_Shake", false);
@@ -87,7 +91,6 @@ update_status CircularBumper::Update()
 bool CircularBumper::CleanUp()
 {
 	gameAt->App->physics->world->DestroyBody(body);
-
 	return true;
 }
 
@@ -96,6 +99,8 @@ void CircularBumper::OnHit()
 	Bumper::OnHit();
 	animator->SelectAnimation("Circular_Idle", true);
 	animator->SelectAnimation("Circular_Hit", false);
+
+	gameAt->App->audio->PlayFx(bumperAudioId);
 
 	gettingHit = true;
 }

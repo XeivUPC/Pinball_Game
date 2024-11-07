@@ -9,6 +9,9 @@
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
 #include "TriangularBumper.h"
+#include "TriangularBumper.h"
+#include "MapEnergyRotator.h"
+#include "PokeballChangerSensor.h"
 
 
 #include "ModuleHighScore.h"
@@ -33,9 +36,12 @@ bool ModuleGameRedMap::Start()
 
 	StartFadeOut(WHITE, 0.3f);
 
+	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
-	pokeBall = new PokeBall(this, ballSpawn,70);
+	dittoColliders->SetMode(DittoColliders::Small);
+
+	pokeBall = new PokeBall(this, ballSpawn,PokeBall::Pokeball,70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
@@ -54,6 +60,19 @@ update_status ModuleGameRedMap::Update()
 
 	if (IsKeyPressed(KEY_P)) {
 		pokeBall->ApplyForce({ 0,-4000 });
+	}
+
+	if (IsKeyPressed(KEY_ONE)) {
+		pokeBall->SetType(PokeBall::Pokeball);
+	}
+	if (IsKeyPressed(KEY_TWO)) {
+		pokeBall->SetType(PokeBall::SuperBall);
+	}
+	if (IsKeyPressed(KEY_THREE)) {
+		pokeBall->SetType(PokeBall::Ultraball);
+	}
+	if (IsKeyPressed(KEY_FOUR)) {
+		pokeBall->SetType(PokeBall::MasterBall);
 	}
 
 	if (IsKeyPressed(KEY_R)) {
@@ -154,16 +173,15 @@ void ModuleGameRedMap::LoadMap(std::string path)
 			// Attach the fixture to the body
 			body->CreateFixture(&chainFixtureDef);
 
-			simpoleCollidersBodies.emplace_back(body);
 
 			if (name == "DittoCollider1") {
-				dittoCollider1 = body;
-				//dittoCollider1->GetFixtureList()[0].SetSensor(true);
+				dittoColliders->SetModeData(DittoColliders::Small, body);
 			}
-
-			if (name == "DittoCollider2") {
-				dittoCollider2 = body;
-				dittoCollider2->GetFixtureList()[0].SetSensor(true);
+			else if (name == "DittoCollider2") {;
+				dittoColliders->SetModeData(DittoColliders::Big, body);
+			}
+			else {
+				simpoleCollidersBodies.emplace_back(body);
 			}
 		}
 
@@ -199,6 +217,35 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 0);
 
+			}
+			else if (type == "diglettBumper") {
+
+				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
+				std::vector<b2Vec2> vertices;
+				FromStringToVertices(collisionPolygonPoints, vertices);
+
+				bool flip = false;
+				if (x * SCREEN_SIZE > SCREEN_WIDTH / 2) {
+					flip = true;
+				}
+
+				DiglettBumper* diglettBumper = new DiglettBumper(this, { x,y }, vertices, 1.f, flip);
+			}
+			else if (type == "energyRotator") {
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float heigth = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				x += width / 2;
+				y += heigth / 2;
+				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, width, heigth, 0);
+			}
+			else if (type == "pokeballChangerSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+
+				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 0);
 			}
 		}
 	}

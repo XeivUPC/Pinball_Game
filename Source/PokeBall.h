@@ -9,8 +9,19 @@
 
 class PokeBall : public MapObject
 {
+
+	
+
 public:
-	PokeBall(ModuleGame* gameAt, b2Vec2 position, float maxSpeed);
+
+	enum PokeballType {
+		Pokeball,
+		SuperBall,
+		Ultraball,
+		MasterBall
+	};
+
+	PokeBall(ModuleGame* gameAt, b2Vec2 position, PokeballType type, float maxSpeed);
 	~PokeBall();
 
 	update_status Update();
@@ -19,6 +30,8 @@ public:
 	void ApplyForce(b2Vec2 force);
 	void SetPosition(b2Vec2 position);
 	void SetVelocity(b2Vec2 velocity);
+	void SetType(PokeballType type);
+	PokeballType GetType();
 	b2Vec2 GetPosition();
 
 private:
@@ -29,5 +42,7 @@ private:
 	int pokeballAnimMaxSpeed = 80;
 
 	b2Body* body;
+
+	PokeballType type;
 };
 

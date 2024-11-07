@@ -14,6 +14,11 @@ public:
     void AcceptOnlyTriggers(bool acceptOnlyTriggers);
     bool OnTriggerEnter();
     bool OnTriggerExit();
+
+    b2Body* OnTriggerEnterGet();
+    b2Body* OnTriggerExitGet();
+
+
     void BeginContact(b2Contact* contact);
     void EndContact(b2Contact* contact);
 
