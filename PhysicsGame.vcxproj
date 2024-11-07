@@ -204,7 +204,8 @@
     <ClInclude Include="Source\GameUI.h" />
     <ClInclude Include="Source\MapEnergyRotator.h" />
     <ClInclude Include="Source\MapObject.h" />
-    <ClInclude Include="Source\MapSensors.h" />
+    <ClInclude Include="Source\MapSensor.h" />
+    <ClInclude Include="Source\MapSensorGroup.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleGame.h" />
     <ClInclude Include="Source\ModuleGameBlueMap.h" />
@@ -251,7 +252,8 @@
     <ClCompile Include="Source\GameUI.cpp" />
     <ClCompile Include="Source\MapEnergyRotator.cpp" />
     <ClCompile Include="Source\MapObject.cpp" />
-    <ClCompile Include="Source\MapSensors.cpp" />
+    <ClCompile Include="Source\MapSensor.cpp" />
+    <ClCompile Include="Source\MapSensorGroup.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
     <ClCompile Include="Source\ModuleGame.cpp" />
     <ClCompile Include="Source\ModuleGameBlueMap.cpp" />

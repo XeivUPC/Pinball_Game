@@ -111,7 +111,7 @@
     <ClCompile Include="Source\TriangularBumper.cpp">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\MapSensors.cpp">
+    <ClCompile Include="Source\MapSensor.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
     <ClCompile Include="Source\PokeballChangerSensor.cpp">
@@ -247,7 +247,7 @@
     <ClInclude Include="Source\TriangularBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MapSensors.h">
+    <ClInclude Include="Source\MapSensor.h">
       <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="Source\PokeballChangerSensor.h">
