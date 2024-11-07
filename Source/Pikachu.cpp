@@ -6,18 +6,7 @@
 
 Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position, float restitution) : MapObject(gameAt)
 {
-
-}
-
-Pikachu::~Pikachu()
-{
-
-}
-
-bool Pikachu::Start()
-{
-	LOG("Loading cute companion");
-	bool ret = true;
+	gameAt->AddObject(this);
 
 	gameAt->App->texture->CreateTexture("Assets/map_pikachu.png", "map_pikachu");
 	map_pikachu = gameAt->App->texture->GetTexture("map_pikachu");
@@ -30,35 +19,40 @@ bool Pikachu::Start()
 	MapPikachuAnim.AddSprite(Sprite{ map_pikachu,{2, 0}, {16,16} });
 
 	map_pikachu_animator->AddAnimation(MapPikachuAnim);
-	map_pikachu_animator->SetSpeed(0.1f);
+	map_pikachu_animator->SetSpeed(0.2f);
 	map_pikachu_animator->SelectAnimation("MapPikachuAnim", true);
+	map_pikachu_animator->SetDirection(-1);
 
 	bool is_in_left = true;
-	position_x = 100;
-
-	return ret;
+	position_x = 10;
 }
+
+Pikachu::~Pikachu()
+{
+
+}
+
 update_status Pikachu::Update()
 {
 	if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
-		position_x = 100;//Configure pos x
+		position_x = 6;//Configure pos x
 		is_in_left = true;
 	}
 	else if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-		position_x = 200;//Configure pos x
+		position_x = 138;//Configure pos x
 		is_in_left = false;
 	}
 
-	map_pikachu_animator->Update();
-
 	if (is_in_left)
 	{
-		map_pikachu_animator->Animate(6, position_x, false);//Configure pos y
+		map_pikachu_animator->Animate(position_x, 245, true);//Configure pos y
 	}
 	else
 	{
-		map_pikachu_animator->Animate(6, position_x, true);//Configure pos y
+		map_pikachu_animator->Animate(position_x, 245, false);//Configure pos y
 	}
+
+	map_pikachu_animator->Update();
 
 	return UPDATE_CONTINUE;
 }

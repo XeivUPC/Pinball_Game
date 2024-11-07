@@ -6,9 +6,8 @@
 class Pikachu : public MapObject {
 public:
 	Pikachu(ModuleGame* gameAt, b2Vec2 position, float restitution);
-	~Pikachu() = 0;
+	~Pikachu();
 
-	bool Start();
 	update_status Update();
 	bool CleanUp() override;
 

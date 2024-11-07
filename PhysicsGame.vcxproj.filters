@@ -132,6 +132,10 @@
     <ClCompile Include="Source\MapEnergyRotator.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\MapSensorGroup.cpp" />
+    <ClCompile Include="Source\Pikachu.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -266,6 +270,10 @@
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\MapEnergyRotator.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapSensorGroup.h" />
+    <ClInclude Include="Source\Pikachu.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>

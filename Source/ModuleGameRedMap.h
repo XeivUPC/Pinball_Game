@@ -7,6 +7,7 @@
 #include "Flipper.h"
 #include "DittoColliders.h"
 #include "DiglettBumper.h"
+#include "Pikachu.h"
 
 
 
@@ -19,6 +20,7 @@ private:
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
+	Pikachu* pikachu = nullptr;
 
 
 	DittoColliders* dittoColliders=nullptr;
