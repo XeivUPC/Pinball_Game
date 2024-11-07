@@ -35,7 +35,7 @@ bool ModuleGameBlueMap::Start()
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 
-	pokeBall = new PokeBall(this, ballSpawn, 70);
+	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
@@ -156,16 +156,6 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 			body->CreateFixture(&chainFixtureDef);
 
 			simpoleCollidersBodies.emplace_back(body);
-
-			if (name == "DittoCollider1") {
-				dittoCollider1 = body;
-				//dittoCollider1->GetFixtureList()[0].SetSensor(true);
-			}
-
-			if (name == "DittoCollider2") {
-				dittoCollider2 = body;
-				dittoCollider2->GetFixtureList()[0].SetSensor(true);
-			}
 		}
 
 		for (pugi::xml_node objectNode = mapObjectsNode.child("object"); objectNode != NULL; objectNode = objectNode.next_sibling("object"))
