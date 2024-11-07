@@ -11,19 +11,26 @@ class ModulePokedex : public ModuleScene
 private:
 	std::vector<Pokemon> pokemon_list;
 	int selectedLanguage;
-	int localSelection = 0;
-	int selectedPokemon = 0;
 	int audioSelectId;
 	int audioMoveId;
-	float factor = 0;
-	Timer lerpTimer;
-	float lerpTime = 2.f;
-	Texture2D* pokedexSpritesheet;
-	Texture2D* pokedexSlot;
-	xml_document _data;
-	float slots_offset = 0;
-	int option = 0;
 
+	int localSelection = 0;
+	Vector2 selectedPokemon = { 0,0 };
+	int direction = 0;
+	double factor = 0;
+	Vector2 slots_offset = { 0,0 };
+
+	Timer lerpTimer;
+	double lerpTime = 0.5f;
+
+	Texture2D* pokedexSpritesheet;
+	Texture2D* pokedexPokemon;
+	Texture2D* pokedexSlot;
+
+	xml_document _data;
+
+	const std::string TextFormat(int number);
+	void RenderPokemonInfo(int id);
 public:
 	ModulePokedex(Application* app, bool start_enabled = true);
 	~ModulePokedex();

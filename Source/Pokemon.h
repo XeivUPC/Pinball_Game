@@ -22,13 +22,13 @@ class Pokemon
 public:
 	int ID;
 	bool discovered, captured;
-	float weight, height;
+	std::string weight, height;
 	int preevolutionIndex;
 	int overworldIndex;
 	std::vector<std::string> Names;
 	std::vector<int> RedMapLocations;
 	std::vector<int> BlueMapLocations;
-	Pokemon(int ID, bool discovered, bool captured, float weight, float height, int preevolutionIndex, int overworldIndex, const std::vector<std::string>& Names, const std::vector<int>& RedMapLocations, const std::vector<int>& BlueMapLocations)
+	Pokemon(int ID, bool discovered, bool captured, std::string weight, std::string height, int preevolutionIndex, int overworldIndex, const std::vector<std::string>& Names, const std::vector<int>& RedMapLocations, const std::vector<int>& BlueMapLocations)
 		: ID(ID), discovered(discovered), captured(captured), weight(weight), height(height), preevolutionIndex(preevolutionIndex), overworldIndex(overworldIndex), Names(Names), RedMapLocations(RedMapLocations), BlueMapLocations(BlueMapLocations)
 	{
 	}
