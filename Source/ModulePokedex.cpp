@@ -72,7 +72,7 @@ bool ModulePokedex::Start()
 
 update_status ModulePokedex::Update()
 {
-    printf("%f %f\n", slots_offset.x, slots_offset.y);
+    printf("%f %f   %d\n", slots_offset.x, slots_offset.y, selectedPokemon.y);
 #pragma region Input
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN)))
     {
@@ -139,13 +139,17 @@ update_status ModulePokedex::Update()
     {
         factor = lerpTimer.ReadSec() / lerpTime;
         slots_offset.y = slots_offset.x + (selectedPokemon.x - selectedPokemon.y) * factor*15;
+        if (slots_offset.y > 0)
+        {
+            factor = 1;
+        }
     }
-    else if (factor > 1 && selectedPokemon.x != selectedPokemon.y)
+    else if (factor >= 1 && selectedPokemon.x != selectedPokemon.y)
     {
-        selectedPokemon.x = selectedPokemon.y;
-        slots_offset.y = -selectedPokemon.y * 15;
+        slots_offset.y = round(slots_offset.y / 15.0) * 15;;
         slots_offset.x = slots_offset.y;
         factor = 0;
+        selectedPokemon.x = selectedPokemon.y;
     }
 #pragma endregion
 #pragma region Render
