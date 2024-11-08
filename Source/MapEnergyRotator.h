@@ -14,7 +14,7 @@ public:
 	update_status Update();
 	bool CleanUp() override;
 private:
-	b2Body* body;
+	b2Body* body = nullptr;
 	CollisionSensor sensor;
 
 	Texture* texture = nullptr;

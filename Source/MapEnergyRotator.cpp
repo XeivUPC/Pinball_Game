@@ -52,13 +52,16 @@ update_status MapEnergyRotator::Update()
 	}
 
 
-	velocity -= speedReduction * GetFrameTime();
-	if (abs(velocity) < 0.5f)
-		velocity = 0;
+	
 
 	float speed = b2_maxFloat;
 
 	if (velocity != 0) {
+
+		velocity -= speedReduction * GetFrameTime();
+		if (abs(velocity) < 0.5f)
+			velocity = 0;
+
 		speed = (maxRotationSpeed / velocity) / 100;
 
 		if (velocity < 0)
