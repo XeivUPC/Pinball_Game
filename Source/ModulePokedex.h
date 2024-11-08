@@ -14,20 +14,38 @@ private:
 	int audioSelectId;
 	int audioMoveId;
 
-	int localSelection = 0;
-	Vector2 selectedPokemon = { 0,0 };
-	int direction = 0;
-	double factor = 0;
-	Vector2 slots_offset = { 0,0 };
-
-	Timer lerpTimer;
-	double lerpTime = 0.5f;
-
 	Texture2D* pokedexSpritesheet;
 	Texture2D* pokedexPokemon;
 	Texture2D* pokedexSlot;
 
 	xml_document _data;
+
+
+
+
+
+
+	///////////// 
+	int minId = 0;
+	int maxId = 150;
+
+
+	int minLocalId = 0;
+	int maxLocalId = 4;
+
+	int selectedId=0;
+	int localSelectedId=0;
+
+	float offset=0;
+	float targetOffset=0;
+
+	Timer lerpTimer;
+	float lerpTime=0.1f;
+
+	float direction = 1;
+	
+
+
 
 	const std::string TextFormat(int number);
 	void RenderPokemonInfo(int id);

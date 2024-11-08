@@ -72,7 +72,6 @@ bool ModulePokedex::Start()
 
 update_status ModulePokedex::Update()
 {
-    printf("%f %f   %d\n", slots_offset.x, slots_offset.y, selectedPokemon.y);
 #pragma region Input
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN)))
     {
@@ -80,211 +79,116 @@ update_status ModulePokedex::Update()
         App->audio->StopMusic();
         App->audio->PlayFx(audioSelectId);
     }
-    if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))) && selectedPokemon.y > 0)
+    if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))))
     {
-        if (localSelection > 0)
-        {
-            selectedPokemon.x--;
-            localSelection--;
+        selectedId--;
+        if (selectedId < minId) {
+            selectedId = minId;
         }
-        if (selectedPokemon.x == selectedPokemon.y)
-            lerpTimer.Start();
-        selectedPokemon.y--;
+
+        localSelectedId--;
+        if (localSelectedId < minLocalId) {
+            localSelectedId = minLocalId;
+
+            targetOffset = selectedId * -15;
+        }
+
+
+
+
     }
-    if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) && selectedPokemon.y < 152)
+    if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))))
     {
-        if (localSelection < 4)
-        {
-            selectedPokemon.x++;
-            localSelection++;
+        selectedId++;
+        if (selectedId > maxId) {
+            selectedId = maxId;
         }
-        if (selectedPokemon.x == selectedPokemon.y)
-            lerpTimer.Start();
-        selectedPokemon.y++;
+
+        localSelectedId++;
+        if (localSelectedId > maxLocalId)
+        {
+            localSelectedId = maxLocalId;
+            targetOffset = (selectedId-maxLocalId) * -15;
+        }
     }
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT)))
     {
-        if(selectedPokemon.x - 5 < 5)
-        {
-            selectedPokemon.x = localSelection;
-            selectedPokemon.y = localSelection;
-            slots_offset.y = 0 * 15;
+        selectedId-= maxLocalId+1;
+        if (selectedId < minId) {
+            selectedId = minId;
         }
-        else
-        {
-            selectedPokemon.x -= 5;
-            selectedPokemon.y -= 5;
-            slots_offset.y += 5 * 15;
+         
+
+        if (selectedId - maxLocalId<=minId){
+            targetOffset = 0;
+            localSelectedId = selectedId;
         }
+        else {
+            targetOffset = (selectedId - localSelectedId) * -15;
+        }
+
     }
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)))
     {
-        if (selectedPokemon.x + 5 > 147)
-        {
-            selectedPokemon.x += 5;
-            selectedPokemon.y += 5;
-            slots_offset.y = -147 * 15;
+        selectedId+= maxLocalId+1;
+        if (selectedId < minId) {
+            selectedId = minId;
         }
-        else
-        {
-            selectedPokemon.x += 5;
-            selectedPokemon.y += 5;
-            slots_offset.y -= 5 * 15;
+           
+
+        if (selectedId + maxLocalId >= maxId){
+            targetOffset = (maxId - maxLocalId) * -15;
+        }
+        else {
+            targetOffset = (selectedId - localSelectedId) * -15;
+
+
         }
     }
 #pragma endregion
 #pragma region Lerp
     
-    if (factor < 1 && selectedPokemon.x != selectedPokemon.y)
-    {
-        factor = lerpTimer.ReadSec() / lerpTime;
-        slots_offset.y = slots_offset.x + (selectedPokemon.x - selectedPokemon.y) * factor*15;
-        if (slots_offset.y > 0)
-        {
-            factor = 1;
-        }
-    }
-    else if (factor >= 1 && selectedPokemon.x != selectedPokemon.y)
-    {
-        slots_offset.y = round(slots_offset.y / 15.0) * 15;;
-        slots_offset.x = slots_offset.y;
-        factor = 0;
-        selectedPokemon.x = selectedPokemon.y;
-    }
+    //if (factor < 1 && selectedPokemon.x != selectedPokemon.y)
+    //{
+    //    factor = lerpTimer.ReadSec() / lerpTime;
+    //    slots_offset.y = slots_offset.x + (selectedPokemon.x - selectedPokemon.y) * factor * 15;
+    //    if (slots_offset.y > 0)
+    //    {
+    //        factor = 1;
+    //    }
+    //}
+    //else if (factor >= 1 && selectedPokemon.x != selectedPokemon.y)
+    //{
+    //    slots_offset.y = round(slots_offset.y / 15.0) * 15;;
+    //    slots_offset.x = slots_offset.y;
+    //    factor = 0;
+    //    selectedPokemon.x = selectedPokemon.y;
+    //}
+   
+    printf("%d vs %d \n", localSelectedId, selectedId);
+
+
 #pragma endregion
 #pragma region Render
     Rectangle rect;
     for (size_t i = 0; i < pokemon_list.size(); i++)
     {
         rect = { 0 , (float)15 * selectedLanguage, 124 ,15 };
-        App->renderer->Draw(*pokedexSlot, 10, 56 + slots_offset.y + 15 * i, &rect, WHITE);
-        App->text_pokedex_worldwide->Write(TextFormat(i + 1).c_str(), 80, (50 + slots_offset.y) + (15 * i), BLACK);
+        App->renderer->Draw(*pokedexSlot, 10, 56 + targetOffset + 15 * i, &rect, WHITE);
+        App->text_pokedex_worldwide->Write(TextFormat(i + 1).c_str(), 80, (50 + targetOffset) + (15 * i), BLACK);
     }
     rect = { 160 , 0, 160 ,144 };
     App->renderer->Draw(*pokedexSpritesheet, 0, 0, &rect, WHITE);
     rect = { 0, (float)(0 + 53 * selectedLanguage), 160, 53 };
     App->renderer->Draw(*pokedexSpritesheet, 0, 0, &rect, WHITE);
-    RenderPokemonInfo(selectedPokemon.x);
+    RenderPokemonInfo(selectedId);
     rect = { 0 , 90, 124 ,15 };
     App->renderer->Draw(*pokedexSlot, 10, 144 - 15, &rect, WHITE);
     rect = { 178 , 144, 5, 8 };
-    App->renderer->Draw(*pokedexSpritesheet, 25, 63 + localSelection * 15, &rect, WHITE);
+    App->renderer->Draw(*pokedexSpritesheet, 25, 63 + localSelectedId * 15, &rect, WHITE);
 #pragma endregion
 
 
-    //if (IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP)) || IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP)))
-    //{
-    //    if (localSelection == 0 && factor == 0 && selectedPokemon > 0)
-    //    {
-    //        lerpTimer.Start();
-    //        direction = 1;
-    //        selectedPokemon--;
-    //    }
-    //    else if (selectedPokemon > 0 && localSelection > 0)
-    //    {
-    //        localSelection--;
-    //        selectedPokemon--;
-    //    }
-    //}
-    //else if (IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN)) || IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN)))
-    //{
-    //    if (localSelection == 4 && factor == 0 && selectedPokemon < 150)
-    //    {
-    //        lerpTimer.Start();
-    //        direction = -1;
-    //        selectedPokemon++;
-    //    }
-    //    else if (selectedPokemon < 150 && localSelection < 4)
-    //    {
-    //        localSelection++;
-    //        selectedPokemon++;
-    //    }
-    //}
-    //else if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT)))
-    //{
-    //    if (selectedPokemon-5 < 5)
-    //    {
-    //        slots_offset.y = 0;
-    //        selectedPokemon = localSelection;
-    //    }
-    //    else
-    //    {
-    //        selectedPokemon -= 5;
-    //        slots_offset.y += 5 * 15;
-    //    }
-    //}
-    //else if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)))
-    //{
-    //    if (selectedPokemon + 5 > 145)
-    //    {
-    //        slots_offset.y = 15*145;
-    //        selectedPokemon = 145+localSelection;
-    //    }
-    //    else
-    //    {
-    //        selectedPokemon += 5;
-    //        slots_offset.y -= 5 * 15;
-    //    }
-    //}
-    //
-    //factor += lerpTimer.ReadSec() / lerpTime;
-    //if (factor > 0 && factor < 1)
-    //    slots_offset.y += 15 * direction / lerpTime * lerpTimer.ReadSec();
-    //else if (direction != 0)
-    //{
-    //    int slots = slots_offset.y / 15;
-    //    slots_offset.y = (slots + direction) * 15;
-    //    if (direction == 1)
-    //        slots_offset.y -= direction * 15;
-    //}
-    //if (factor > 1)
-    //{
-    //    factor = 0;
-    //    direction = 0;
-    //}
-    //for (size_t i = 0; i < pokemon_list.size(); i++)
-    //{
-    //    Rectangle rect = { 0 , 0 + 15 * selectedLanguage, 124 ,15 };
-    //    App->renderer->Draw(*pokedexSlot, 10, 56 + slots_offset.y + 15 * i, &rect, WHITE);
-    //    App->text_pokedex_worldwide->Write(TextFormat(i + 1).c_str(), 80, (50 + slots_offset.y) + (15 * i), BLACK);
-    //}
-
-    //Rectangle rect = { 0 , 90, 124 ,15 };
-    //App->renderer->Draw(*pokedexSlot, 10, 144 - 15, &rect, WHITE);
-    //for (size_t i = 0; i < pokemon_list.size(); i++)
-    //{
-    //    if (pokemon_list.at(i).captured)
-    //    {
-    //        switch (selectedLanguage)       //Names
-    //        {
-    //        case 0:
-    //            App->text_pokedex_japanese->Write(pokemon_list[i].Names.at(0).c_str(), 48, 60 + slots_offset.y + 15 * i, BLACK);
-    //            break;
-    //        case 1:
-    //            App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(1).c_str(), 48, 60 + slots_offset.y + 15 * i, BLACK);
-    //            break;
-    //        case 2:
-    //            App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(2).c_str(), 48, 60 + slots_offset.y + 15 * i, BLACK);
-    //            break;
-    //        case 3:
-    //            App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(3).c_str(), 48, 60 + slots_offset.y + 15 * i, BLACK);
-    //            break;
-    //        case 4:
-    //            App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(4).c_str(), 48, 60 + slots_offset.y + 15 * i, BLACK);
-    //            break;
-    //        case 5:
-    //            App->text_pokedex_worldwide->Write(pokemon_list[i].Names.at(5).c_str(), 48, 60 + slots_offset.y + 15 * i, BLACK);
-    //            break;
-    //        }
-    //    }
-    //}
-    //rect = { 160 , 0, 160 ,144 };
-    //App->renderer->Draw(*pokedexSpritesheet, 0, 0, &rect, WHITE);
-    //rect = { 0, (float)(0 + 53 * selectedLanguage), 160, 53 };
-    //App->renderer->Draw(*pokedexSpritesheet, 0, 0, &rect, WHITE);
-    //rect = { 178 , 144, 5, 8 };
-    //App->renderer->Draw(*pokedexSpritesheet, 25, 63 + localSelection * 15, &rect, WHITE);
-    //App->text_pokedex_worldwide->Write(TextFormat(selectedPokemon + 1).c_str(), 32, 0, WHITE);
     ModuleScene::FadeUpdate();
     return UPDATE_CONTINUE;
 }
@@ -296,7 +200,7 @@ bool ModulePokedex::CleanUp()
 
 void ModulePokedex::LoadConfigFile()
 {
-    pugi::xml_parse_result result = _data.load_file("Assets/Pokedex/Pokedex.xml");
+    pugi::xml_parse_result result = _data.load_file("Assets/Pokedex/Pokedex2.xml");
     if (result)
     {
         LOG("config.xml parsed without errors");
@@ -309,7 +213,7 @@ void ModulePokedex::LoadConfigFile()
 
 void ModulePokedex::SaveConfigFile()
 {
-    _data.save_file("Assets/Pokedex/Pokedex.xml");
+    _data.save_file("Assets/Pokedex/Pokedex2.xml");
 }
 
 
@@ -341,8 +245,8 @@ void ModulePokedex::LoadPokedex()
             pokemonIdNode.child("captured").attribute("value").as_bool(),
             pokemonIdNode.child("weight").attribute("value").as_string(),
             pokemonIdNode.child("height").attribute("value").as_string(),
-            pokemonIdNode.child("preevolution-index").attribute("value").as_int(),
-            pokemonIdNode.child("overworld-index").attribute("value").as_int(),
+            pokemonIdNode.child("pre-evolution-index").attribute("value").as_int(),
+            pokemonIdNode.child("habitat-index").attribute("value").as_int(),
             pokemonNames,
             pokemonBlueMapLocations,
             pokemonRedMapLocations
