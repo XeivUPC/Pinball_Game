@@ -34,7 +34,7 @@ bool ModuleGameBlueMap::Start()
 	map_texture = App->texture->GetTexture("map_blueMap");	
 	
 
-	UI = new GameUI(App);
+	UI = new GameUI(this);
 
 	StartFadeOut(WHITE, 0.3f);
 

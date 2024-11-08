@@ -100,7 +100,8 @@ update_status Flipper::Update()
 	if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(activationKey))) {
 		flipper_animator->SelectAnimation("Paddle_Click", false);
 		flipperJoint->SetMotorSpeed(-power);
-		gameAt->App->audio->PlayFx(flipperAudioId);
+		if(IsKeyPressed(gameAt->App->userPreferences->GetKeyValue(activationKey)))
+			gameAt->App->audio->PlayFx(flipperAudioId);
 	}
 	else
 	{

@@ -68,6 +68,12 @@ update_status MapEnergyRotator::Update()
 			animator->SetDirection(1);
 		else
 			animator->SetDirection(-1);
+
+		if (pointsTime <= pointsTimer.ReadSec()) {
+			pointsTimer.Start();
+			gameAt->pointsCounter.Add(100);
+		}
+
 	}
 	
 	animator->SetSpeed(speed);

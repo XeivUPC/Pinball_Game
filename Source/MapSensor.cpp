@@ -54,5 +54,6 @@ bool MapSensor::IsActive()
 
 void MapSensor::OnActivation()
 {
+	gameAt->pointsCounter.Add(1000);
 	timesActivated++;
 }

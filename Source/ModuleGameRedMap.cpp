@@ -33,7 +33,7 @@ bool ModuleGameRedMap::Start()
 	map_texture = App->texture->GetTexture("map_redMap");	
 	
 
-	UI = new GameUI(App);
+	UI = new GameUI(this);
 
 	StartFadeOut(WHITE, 0.3f);
 
@@ -108,7 +108,9 @@ update_status ModuleGameRedMap::Update()
 		}
 		else {
 			//give points
+			//pointsCounter.Add(10000000);
 		}
+	
 	}
 
 	ModuleScene::FadeUpdate();

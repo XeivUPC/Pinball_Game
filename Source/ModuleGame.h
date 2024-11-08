@@ -2,6 +2,7 @@
 #include "ModuleScene.h"
 #include <vector>
 #include "pugixml.hpp"
+#include "Counter.h"
 
 #pragma warning(disable:)
 #include "box2D/box2d.h"
@@ -23,6 +24,7 @@ public:
 	virtual update_status Update();
 	virtual bool CleanUp();
 
+	Counter pointsCounter = Counter(100);
 
 private:
 

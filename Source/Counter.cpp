@@ -1,6 +1,6 @@
 #include "Counter.h"
 
-Counter::Counter(float data)
+Counter::Counter(long long int data)
 {
 	_data = data;
 }
@@ -9,22 +9,22 @@ Counter::~Counter()
 {
 }
 
-float Counter::operator()() const
+long long int Counter::operator()() const
 {
 	return _data;
 }
 
-void Counter::Add(float amount, float multiplier)
+void Counter::Add(long long int amount, float multiplier)
 {
 	_data += amount * multiplier;
 }
 
-void Counter::Take(float amount, float multiplier)
+void Counter::Take(long long int amount, float multiplier)
 {
 	amount -= amount * multiplier;
 }
 
-void Counter::Set(float amount)
+void Counter::Set(long long int amount)
 {
 	_data = amount;
 }
