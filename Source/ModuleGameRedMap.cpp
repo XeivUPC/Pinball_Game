@@ -37,6 +37,7 @@ bool ModuleGameRedMap::Start()
 
 	StartFadeOut(WHITE, 0.3f);
 
+	pokeballChangerGroup = new PokeballChangerGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
@@ -45,6 +46,7 @@ bool ModuleGameRedMap::Start()
 	pokeBall = new PokeBall(this, ballSpawn,PokeBall::Pokeball,70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
+
 
 	Pikachu* pikachu = new Pikachu(this, { 0,0 });
 
@@ -89,7 +91,6 @@ update_status ModuleGameRedMap::Update()
 	Rectangle rectBackground = { 0,0,191,278 };
 	App->renderer->Draw(*map_texture, 0, 0, &rectBackground, WHITE);
 
-
 	leftFlipper->Update();
 	rightFlipper->Update();
 
@@ -98,6 +99,16 @@ update_status ModuleGameRedMap::Update()
 
 	for (const auto& object : mapObjects) {
 		object->Update();
+	}
+
+	pokeballChangerGroup->Update();
+	if (pokeballChangerGroup->ChangePokeball()) {
+		if (pokeBall->GetType() != PokeBall::PokeballType::MasterBall) {
+			pokeBall->SetType(PokeBall::PokeballType(pokeBall->GetType() + 1));
+		}
+		else {
+			//give points
+		}
 	}
 
 	ModuleScene::FadeUpdate();
@@ -249,6 +260,8 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
 
 				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 0);
+
+				pokeballChangerGroup->AddSensor(pokeballChangerSensor);
 			}
 		}
 	}

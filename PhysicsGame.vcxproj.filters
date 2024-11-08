@@ -111,9 +111,6 @@
     <ClCompile Include="Source\TriangularBumper.cpp">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\MapSensor.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
     <ClCompile Include="Source\PokeballChangerSensor.cpp">
       <Filter>Objects\Map Sensors %28Objects%29</Filter>
     </ClCompile>
@@ -131,6 +128,16 @@
     </ClCompile>
     <ClCompile Include="Source\MapEnergyRotator.cpp">
       <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pikachu.cpp" />
+    <ClCompile Include="Source\MapSensorGroup.cpp">
+      <Filter>Objects\Map Sensor Groups</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PokeballChangerGroup.cpp">
+      <Filter>Objects\Map Sensor Groups</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -247,9 +254,6 @@
     <ClInclude Include="Source\TriangularBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MapSensor.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
     <ClInclude Include="Source\PokeballChangerSensor.h">
       <Filter>Objects\Map Sensors %28Objects%29</Filter>
     </ClInclude>
@@ -267,6 +271,16 @@
     </ClInclude>
     <ClInclude Include="Source\MapEnergyRotator.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pikachu.h" />
+    <ClInclude Include="Source\MapSensorGroup.h">
+      <Filter>Objects\Map Sensor Groups</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PokeballChangerGroup.h">
+      <Filter>Objects\Map Sensor Groups</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -308,6 +322,9 @@
     </Filter>
     <Filter Include="Objects\Map Sensors %28Objects%29">
       <UniqueIdentifier>{c94fe65c-c863-4377-be2b-4e9fc37ee607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Sensor Groups">
+      <UniqueIdentifier>{2524249d-f531-40ae-9157-c587c4c753a9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

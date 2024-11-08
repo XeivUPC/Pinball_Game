@@ -15,6 +15,7 @@ public:
 	void ResetTotalActivations();
 
 	void SwitchActivation();
+	bool IsActive();
 
 protected:
 	virtual void OnActivation() = 0;
