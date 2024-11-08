@@ -132,6 +132,8 @@
     <ClCompile Include="Source\MapEnergyRotator.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\MapSensorGroup.cpp" />
+    <ClCompile Include="Source\Pikachu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -268,6 +270,8 @@
     <ClInclude Include="Source\MapEnergyRotator.h">
       <Filter>Objects</Filter>
     </ClInclude>
+    <ClInclude Include="Source\MapSensorGroup.h" />
+    <ClInclude Include="Source\Pikachu.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -278,9 +282,6 @@
     </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{7ff14ab1-7b05-465f-8926-685df6f9b282}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Config">
-      <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
     </Filter>
     <Filter Include="UIs">
       <UniqueIdentifier>{28ee3c68-574a-47a4-b59d-e59b83ad5827}</UniqueIdentifier>
@@ -309,13 +310,19 @@
     <Filter Include="Objects\Map Sensors %28Objects%29">
       <UniqueIdentifier>{c94fe65c-c863-4377-be2b-4e9fc37ee607}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data">
+      <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Assets\Preferences\UserPreferences.xml">
-      <Filter>Config</Filter>
+      <Filter>Data</Filter>
     </Xml>
     <Xml Include="Assets\Preferences\HighScore.xml">
-      <Filter>Config</Filter>
+      <Filter>Data</Filter>
+    </Xml>
+    <Xml Include="Assets\Data\Pokedex.xml">
+      <Filter>Data</Filter>
     </Xml>
   </ItemGroup>
 </Project>
