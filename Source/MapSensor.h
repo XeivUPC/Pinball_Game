@@ -28,3 +28,15 @@ protected:
 	CollisionSensor sensor;
 };
 
+//// OnTrigger
+
+//// Activate virtual
+
+//// Desctivate virtual
+
+//// SwitchActiveStatus
+
+//// IsActive
+
+//// GetTotalActivations
+//// ResetTotalActivations

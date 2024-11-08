@@ -15,3 +15,20 @@ protected:
 
 };
 
+
+//// vector<MapSensor>
+
+//// AddSensor
+//// RemoveSensor
+
+//// ActivateAll
+//// DesactivateAll
+
+//// SwitchAllActiveStatus
+
+
+//// AllActive
+
+//// GetActiveAmount
+
+//// OnAllActive virtual
