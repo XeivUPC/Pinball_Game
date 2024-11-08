@@ -224,6 +224,7 @@
     <ClInclude Include="Source\ModuleTexture.h" />
     <ClInclude Include="Source\Pikachu.h" />
     <ClInclude Include="Source\PokeBall.h" />
+    <ClInclude Include="Source\PokeballChangerGroup.h" />
     <ClInclude Include="Source\PokeballChangerSensor.h" />
     <ClInclude Include="Source\PoliwagBumper.h" />
     <ClInclude Include="Source\PsyduckBumper.h" />
@@ -273,6 +274,7 @@
     <ClCompile Include="Source\ModuleTexture.cpp" />
     <ClCompile Include="Source\Pikachu.cpp" />
     <ClCompile Include="Source\PokeBall.cpp" />
+    <ClCompile Include="Source\PokeballChangerGroup.cpp" />
     <ClCompile Include="Source\PokeballChangerSensor.cpp" />
     <ClCompile Include="Source\PoliwagBumper.cpp" />
     <ClCompile Include="Source\PsyduckBumper.cpp" />

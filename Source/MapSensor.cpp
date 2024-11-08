@@ -47,6 +47,11 @@ void MapSensor::SwitchActivation()
 	}
 }
 
+bool MapSensor::IsActive()
+{
+	return active;
+}
+
 void MapSensor::OnActivation()
 {
 	timesActivated++;
