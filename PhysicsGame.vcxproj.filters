@@ -132,8 +132,16 @@
     <ClCompile Include="Source\MapEnergyRotator.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\MapSensorGroup.cpp" />
     <ClCompile Include="Source\Pikachu.cpp" />
+    <ClCompile Include="Source\MapSensorGroup.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PokeballChangerGroup.cpp">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\StaryuBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -270,8 +278,16 @@
     <ClInclude Include="Source\MapEnergyRotator.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MapSensorGroup.h" />
     <ClInclude Include="Source\Pikachu.h" />
+    <ClInclude Include="Source\MapSensorGroup.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PokeballChangerGroup.h">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\StaryuBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -312,6 +328,9 @@
     </Filter>
     <Filter Include="Data">
       <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Sensor Group %28Objects%29">
+      <UniqueIdentifier>{05cce2c1-f9b7-432b-8b75-643ed68455c7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -4,12 +4,14 @@
 #include "pugixml.hpp"
 #include "Counter.h"
 
+
 #pragma warning(disable:)
 #include "box2D/box2d.h"
 #pragma warning(default:)
 
 
 class MapObject;
+class PokeBall;
 
 class ModuleGame : public ModuleScene
 {
@@ -26,10 +28,12 @@ public:
 
 	Counter pointsCounter = Counter(100);
 
-private:
+	PokeBall* GetPokeball();
 
+private:
 protected:
 	Texture* map_texture;
+	PokeBall* pokeBall=nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);

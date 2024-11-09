@@ -17,7 +17,7 @@ MapSensor::~MapSensor()
 update_status MapSensor::Update()
 {
 	if (sensor.OnTriggerEnter()) {
-		OnActivation();
+		OnTrigger();
 	}
 	return UPDATE_CONTINUE;
 }
@@ -37,14 +37,19 @@ void MapSensor::ResetTotalActivations()
 	timesActivated = 0;
 }
 
-void MapSensor::SwitchActivation()
+void MapSensor::Activate() {
+	active = true;
+}
+void MapSensor::Desactivate() {
+	active = false;
+}
+
+void MapSensor::SwitchActiveStatus()
 {
-	if (!active) {
-		active = true;
-	}
-	else {
-		active = false;
-	}
+	if (active)
+		Desactivate();
+	else
+		Activate();
 }
 
 bool MapSensor::IsActive()
@@ -52,7 +57,7 @@ bool MapSensor::IsActive()
 	return active;
 }
 
-void MapSensor::OnActivation()
+void MapSensor::OnTrigger()
 {
 	gameAt->pointsCounter.Add(1000);
 	timesActivated++;

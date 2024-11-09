@@ -116,6 +116,7 @@ bool ModuleGameBlueMap::CleanUp()
 	return true;
 }
 
+
 void ModuleGameBlueMap::LoadMap(std::string path)
 {
 	pugi::xml_parse_result result = mapFileXML.load_file(path.c_str());
@@ -161,6 +162,10 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 			
 			// Attach the fixture to the body
 			body->CreateFixture(&chainFixtureDef);
+
+			if (name == "EntryCollider") {
+				body->GetFixtureList()[0].SetSensor(true);
+			}
 
 			simpoleCollidersBodies.emplace_back(body);
 		}

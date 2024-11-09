@@ -12,9 +12,11 @@ public:
 
 	update_status Update();
 	bool CleanUp() override;
+	void Activate() override;
+	void Desactivate() override;
 
 protected:
-	void OnActivation();
+	void OnTrigger() override;
 
 	b2Body* body = nullptr;
 

@@ -51,6 +51,14 @@ PokeballChangerSensor::~PokeballChangerSensor()
 update_status PokeballChangerSensor::Update()
 {
 	MapSensor::Update();
+
+	if (active) {
+		animator->SelectAnimation("Pokeball_Sensor_Active", true);
+	}
+	else {
+		animator->SelectAnimation("Pokeball_Sensor_Unactive", true);
+	}
+
 	animator->Update();
 	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE) - 4, (int)(body->GetPosition().y * SCREEN_SIZE - 10), false);
 	return UPDATE_CONTINUE;
@@ -63,15 +71,19 @@ bool PokeballChangerSensor::CleanUp()
 	return true;
 }
 
-void PokeballChangerSensor::OnActivation()
+void PokeballChangerSensor::Activate()
 {
-	MapSensor::OnActivation();
-	SwitchActivation();
-	if (active) {
-		animator->SelectAnimation("Pokeball_Sensor_Active", true);
-	}
-	else {
-		animator->SelectAnimation("Pokeball_Sensor_Unactive", true);
-	}
+	MapSensor::Activate();
+}
 
+void PokeballChangerSensor::Desactivate()
+{
+	MapSensor::Desactivate();
+}
+
+void PokeballChangerSensor::OnTrigger()
+{
+	MapSensor::OnTrigger();
+	SwitchActiveStatus();
+	
 }

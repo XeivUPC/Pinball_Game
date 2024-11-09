@@ -10,12 +10,8 @@ public:
 	update_status Update();
 	bool CleanUp() override;
 
-	void AddSensor(PokeballChangerSensor* mapSensor);
-	bool ChangePokeball();
-	void Restart();
-
 protected:
-	std::vector<PokeballChangerSensor*> sensorGroup;
+	void OnAllActive() override;
 
 	bool hasToChange = false;
 };

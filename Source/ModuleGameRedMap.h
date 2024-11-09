@@ -15,8 +15,6 @@ using namespace pugi;
 
 class ModuleGameRedMap : public ModuleGame {
 private:
-
-	PokeBall* pokeBall = nullptr;
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
@@ -39,5 +37,6 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
+
 };
 

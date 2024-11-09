@@ -9,7 +9,7 @@
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
 #include "TriangularBumper.h"
-#include "TriangularBumper.h"
+#include "StaryuBumper.h"
 #include "MapEnergyRotator.h"
 #include "PokeballChangerSensor.h"
 #include "Pikachu.h"
@@ -101,18 +101,6 @@ update_status ModuleGameRedMap::Update()
 		object->Update();
 	}
 
-	pokeballChangerGroup->Update();
-	if (pokeballChangerGroup->ChangePokeball()) {
-		if (pokeBall->GetType() != PokeBall::PokeballType::MasterBall) {
-			pokeBall->SetType(PokeBall::PokeballType(pokeBall->GetType() + 1));
-		}
-		else {
-			//give points
-			//pointsCounter.Add(10000000);
-		}
-	
-	}
-
 	ModuleScene::FadeUpdate();
 
 	return UPDATE_CONTINUE;
@@ -142,6 +130,7 @@ bool ModuleGameRedMap::CleanUp()
 	App->renderer->camera.offset = { 0,0 };
 	return true;
 }
+
 
 void ModuleGameRedMap::LoadMap(std::string path)
 {
@@ -246,6 +235,19 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				}
 
 				DiglettBumper* diglettBumper = new DiglettBumper(this, { x,y }, vertices, 1.f, flip);
+			}
+			else if (type == "staryuBumper") {
+
+				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
+				std::vector<b2Vec2> vertices;
+				FromStringToVertices(collisionPolygonPoints, vertices);
+
+				bool flip = false;
+				if (x * SCREEN_SIZE > SCREEN_WIDTH / 2) {
+					flip = true;
+				}
+
+				StaryuBumper* staryuBumper = new StaryuBumper(this, { x,y }, vertices, 1.f, flip);
 			}
 			else if (type == "energyRotator") {
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;

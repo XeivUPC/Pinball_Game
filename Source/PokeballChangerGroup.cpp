@@ -1,4 +1,5 @@
 #include "PokeballChangerGroup.h"
+#include "PokeBall.h"
 
 PokeballChangerGroup::PokeballChangerGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
 {
@@ -12,43 +13,27 @@ PokeballChangerGroup::~PokeballChangerGroup()
 
 update_status PokeballChangerGroup::Update()
 {
-	bool allActive = true;
-	hasToChange = false;
-
-	for (PokeballChangerSensor* sensor : sensorGroup) {
-		if (sensor->IsActive()) {
-			allActive = false;
-		}
-	}
-
-	if (allActive) {
-		hasToChange = true;
-	}
-
+	if (AllActive())
+		OnAllActive();
 	return UPDATE_CONTINUE;
 }
 
 bool PokeballChangerGroup::CleanUp()
 {
-	for (PokeballChangerSensor* sensor : sensorGroup) {
-		delete sensor;
-	}
+	
 	return true;
 }
 
-void PokeballChangerGroup::AddSensor(PokeballChangerSensor* mapSensor)
+void PokeballChangerGroup::OnAllActive()
 {
-	sensorGroup.emplace_back(mapSensor);
-}
+	PokeBall* pokeBall = gameAt->GetPokeball();
 
-bool PokeballChangerGroup::ChangePokeball()
-{
-	return hasToChange;
-}
-
-void PokeballChangerGroup::Restart()
-{
-	for (PokeballChangerSensor* sensor : sensorGroup) {
-		sensor->ResetTotalActivations();
+	if (pokeBall->GetType() != PokeBall::PokeballType::MasterBall) {
+		pokeBall->SetType(PokeBall::PokeballType(pokeBall->GetType() + 1));
 	}
+	else {
+		//give points
+		gameAt->pointsCounter.Add(10000000);
+	}
+	DesactivateAll();
 }

@@ -12,8 +12,6 @@ using namespace pugi;
 
 class ModuleGameBlueMap : public ModuleGame {
 private:
-
-	PokeBall* pokeBall = nullptr;
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
