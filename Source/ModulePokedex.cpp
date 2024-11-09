@@ -230,14 +230,16 @@ update_status ModulePokedex::Update()
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)))
     {
         selectedId+= maxLocalId+1;
-        if (selectedId < minId)
+        if (selectedId > maxId)
         {
-            selectedId = minId;
+            selectedId = maxId;
         }
            
         if (selectedId + maxLocalId >= maxId)
         {
             targetOffset = (maxId - maxLocalId) * -15;
+
+            localSelectedId = maxLocalId - (maxId - selectedId);
         }
         else
         {

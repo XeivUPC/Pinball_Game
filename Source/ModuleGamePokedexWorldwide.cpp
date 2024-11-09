@@ -1,4 +1,4 @@
-#include "ModuleGamePokedexWorldWide.h"
+﻿#include "ModuleGamePokedexWorldWide.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "Application.h"
@@ -54,6 +54,9 @@ bool ModuleGamePokedexWorldWide::Start()
 
 	// Space
 	charReferences.push_back(44); // ASCII code for space
+	charReferences.push_back(39); // ASCII code for space
+	charReferences.push_back('+'); // ASCII code for space
+	charReferences.push_back('-'); // ASCII code for space
 	charReferences.push_back(32); // ASCII code for space
 
     return true;

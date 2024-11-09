@@ -47,7 +47,7 @@
 		<habitat-index value="0" />
 		<name value="106,99,85,136"/><!-- ヒトカゲ -->
 		<name value="Charmander" />
-		<name value="Salamèche" />
+		<name value="Salameche" />
 		<name value="Glumanda" />
 		<name value="Charmander" />
 		<name value="Charmander" />
@@ -395,12 +395,12 @@
 	<id value="29">
 		<pre-evolution-index value="-1" />
 		<habitat-index value="0" />
-		<name value="ニドラン♀" />
-		<name value="Nidoran♀" />
-		<name value="Nidoran♀" />
-		<name value="Nidoran♀" />
-		<name value="Nidoran♀" />
-		<name value="Nidoran♀" />
+		<name value="ニドラン+" />
+		<name value="Nidoran+" />
+		<name value="Nidoran+" />
+		<name value="Nidoran+" />
+		<name value="Nidoran+" />
+		<name value="Nidoran+" />
 		<height value="0,4" />
 		<weight value="7" />
 		<discovered value="true" />
@@ -437,12 +437,12 @@
 	<id value="32">
 		<pre-evolution-index value="-1" />
 		<habitat-index value="0" />
-		<name value="ニドラン♂" />
-		<name value="Nidoran♂" />
-		<name value="Nidoran♂" />
-		<name value="Nidoran♂" />
-		<name value="Nidoran♂" />
-		<name value="Nidoran♂" />
+		<name value="ニドラン-" />
+		<name value="Nidoran-" />
+		<name value="Nidoran-" />
+		<name value="Nidoran-" />
+		<name value="Nidoran-" />
+		<name value="Nidoran-" />
 		<height value="0,5" />
 		<weight value="9" />
 		<discovered value="true" />
@@ -481,7 +481,7 @@
 		<habitat-index value="0" />
 		<name value="ピッピ" />
 		<name value="Clefairy" />
-		<name value="Mélofée" />
+		<name value="Melofee" />
 		<name value="Piepi" />
 		<name value="Clefairy" />
 		<name value="Clefairy" />
@@ -495,7 +495,7 @@
 		<habitat-index value="0" />
 		<name value="ピクシー" />
 		<name value="Clefable" />
-		<name value="Mélodelfe" />
+		<name value="Melodelfe" />
 		<name value="Pixi" />
 		<name value="Clefable" />
 		<name value="Clefable" />
@@ -677,7 +677,7 @@
 		<habitat-index value="0" />
 		<name value="モルフォン" />
 		<name value="Venomoth" />
-		<name value="Aéromite" />
+		<name value="Aeromite" />
 		<name value="Omot" />
 		<name value="Venomoth" />
 		<name value="Venomoth" />
@@ -775,7 +775,7 @@
 		<habitat-index value="0" />
 		<name value="マンキー" />
 		<name value="Mankey" />
-		<name value="Férosinge" />
+		<name value="Ferosinge" />
 		<name value="Menki" />
 		<name value="Mankey" />
 		<name value="Mankey" />
@@ -957,7 +957,7 @@
 		<habitat-index value="0" />
 		<name value="マダツボミ" />
 		<name value="Bellsprout" />
-		<name value="Chétiflor" />
+		<name value="Chetiflor" />
 		<name value="Knofensa" />
 		<name value="Bellsprout" />
 		<name value="Bellsprout" />
@@ -1125,7 +1125,7 @@
 		<habitat-index value="0" />
 		<name value="コイル" />
 		<name value="Magnemite" />
-		<name value="Magnéti" />
+		<name value="Magneti" />
 		<name value="Magnetilo" />
 		<name value="Magnemite" />
 		<name value="Magnemite" />
@@ -1139,7 +1139,7 @@
 		<habitat-index value="0" />
 		<name value="レアコイル" />
 		<name value="Magneton" />
-		<name value="Magnéton" />
+		<name value="Magneton" />
 		<name value="Magneton" />
 		<name value="Magneton" />
 		<name value="Magneton" />
@@ -1152,11 +1152,11 @@
 		<pre-evolution-index value="-1" />
 		<habitat-index value="0" />
 		<name value="カモネギ" />
-		<name value="Farfetch’d" />
+		<name value="Farfetch'd" />
 		<name value="Canarticho" />
 		<name value="Porenta" />
-		<name value="Farfetch’d" />
-		<name value="Farfetch’d" />
+		<name value="Farfetch'd" />
+		<name value="Farfetch'd" />
 		<height value="0,8" />
 		<weight value="15" />
 		<discovered value="true" />
@@ -1405,7 +1405,7 @@
 		<habitat-index value="0" />
 		<name value="マルマイン" />
 		<name value="Electrode" />
-		<name value="Électrode" />
+		<name value="Electrode" />
 		<name value="Lektrobal" />
 		<name value="Electrode" />
 		<name value="Electrode" />
@@ -1559,7 +1559,7 @@
 		<habitat-index value="0" />
 		<name value="サイドン" />
 		<name value="Rhydon" />
-		<name value="Rhinoféros" />
+		<name value="Rhinoferos" />
 		<name value="Rizeros" />
 		<name value="Rhydon" />
 		<name value="Rhydon" />
@@ -1629,7 +1629,7 @@
 		<habitat-index value="0" />
 		<name value="シードラ" />
 		<name value="Seadra" />
-		<name value="Hypocéan" />
+		<name value="Hypocean" />
 		<name value="Seemon" />
 		<name value="Seadra" />
 		<name value="Seadra" />
@@ -1643,7 +1643,7 @@
 		<habitat-index value="0" />
 		<name value="トサキント" />
 		<name value="Goldeen" />
-		<name value="Poissirène" />
+		<name value="Poissirene" />
 		<name value="Goldini" />
 		<name value="Goldeen" />
 		<name value="Goldeen" />
@@ -1713,7 +1713,7 @@
 		<habitat-index value="0" />
 		<name value="ストライク" />
 		<name value="Scyther" />
-		<name value="Insécateur" />
+		<name value="Insecateur" />
 		<name value="Sichlor" />
 		<name value="Scyther" />
 		<name value="Scyther" />
@@ -1741,7 +1741,7 @@
 		<habitat-index value="0" />
 		<name value="エレブー" />
 		<name value="Electabuzz" />
-		<name value="Élektek" />
+		<name value="Elektek" />
 		<name value="Elektek" />
 		<name value="Electabuzz" />
 		<name value="Electabuzz" />
@@ -1811,7 +1811,7 @@
 		<habitat-index value="0" />
 		<name value="ギャラドス" />
 		<name value="Gyarados" />
-		<name value="Léviator" />
+		<name value="Leviator" />
 		<name value="Garados" />
 		<name value="Gyarados" />
 		<name value="Gyarados" />
@@ -1839,7 +1839,7 @@
 		<habitat-index value="0" />
 		<name value="メタモン" />
 		<name value="Ditto" />
-		<name value="Métamorph" />
+		<name value="Metamorph" />
 		<name value="Ditto" />
 		<name value="Ditto" />
 		<name value="Ditto" />
@@ -1853,7 +1853,7 @@
 		<habitat-index value="0" />
 		<name value="イーブイ" />
 		<name value="Eevee" />
-		<name value="Évoli" />
+		<name value="Evoli" />
 		<name value="Evoli" />
 		<name value="Eevee" />
 		<name value="Eevee" />
@@ -1979,7 +1979,7 @@
 		<habitat-index value="0" />
 		<name value="プテラ" />
 		<name value="Aerodactyl" />
-		<name value="Ptéra" />
+		<name value="Ptera" />
 		<name value="Aerodactyl" />
 		<name value="Aerodactyl" />
 		<name value="Aerodactyl" />
@@ -2021,7 +2021,7 @@
 		<habitat-index value="0" />
 		<name value="サンダー" />
 		<name value="Zapdos" />
-		<name value="Électhor" />
+		<name value="Electhor" />
 		<name value="Zapdos" />
 		<name value="Zapdos" />
 		<name value="Zapdos" />
