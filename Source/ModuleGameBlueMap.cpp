@@ -80,7 +80,7 @@ update_status ModuleGameBlueMap::Update()
 	rightFlipper->Update();
 
 	UI->Render();
-	pokeBall->Update();
+	//pokeBall->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
