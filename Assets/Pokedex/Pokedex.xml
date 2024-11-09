@@ -1,1463 +1,2117 @@
-<?xml version="1.0"?>
 <pokedex>
 	<id value="1">
-		<weight value="6,9"/>
-		<height value="0,7"/>
-		<preevolution-index value="-1"/>
-		<name value="107,91,136,145,103"/>	<!--フシギダネ-->
-		<!-- Japanese: Bulbasaur -->
-		<name value="Bulbasaur"/>
-		<!-- English -->
-		<name value="Bulbizarre"/>
-		<!-- French -->
-		<name value="Bisasam"/>
-		<!-- German -->
-		<name value="Bulbasaur"/>
-		<!-- Spanish -->
-		<name value="Bulbasaur"/>
-		<!-- Italian -->
-		<discovered value="true"/>
-		<captured value="true"/>
-		<overworld-index value="1"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="107,91,136,145,103"/>
+		<!--フシギダネ-->
+		<name value="Bulbasaur" />
+		<name value="Bulbizarre" />
+		<name value="Bisasam" />
+		<name value="Bulbasaur" />
+		<name value="Bulbasaur" />
+		<height value="0,7" />
+		<weight value="6,9" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="2">
-		<weight value="13,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="1"/>
-		<name value="フシギソウ"/>
-		<!-- Japanese: Ivysaur -->
-		<name value="Ivysaur"/>
-		<!-- English -->
-		<name value="Herbizarre"/>
-		<!-- French -->
-		<name value="Bisaknosp"/>
-		<!-- German -->
-		<name value="Ivysaur"/>
-		<!-- Spanish -->
-		<name value="Ivysaur"/>
-		<!-- Italian -->
-		<discovered value="true"/>
-		<captured value="true"/>
-		<overworld-index value="2"/>
+		<pre-evolution-index value="1" />
+		<habitat-index value="0" />
+		<name value="107,91,136,94,82"/><!-- フシギソウ -->
+		<name value="Ivysaur" />
+		<name value="Herbizarre" />
+		<name value="Bisaknosp" />
+		<name value="Ivysaur" />
+		<name value="Ivysaur" />
+		<height value="1" />
+		<weight value="13" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="3">
-		<weight value="100,0"/>
-		<height value="2,0"/>
-		<preevolution-index value="2"/>
-		<name value="フシギバナ"/>
-		<!-- Japanese: Venusaur -->
-		<name value="Venusaur"/>
-		<!-- English -->
-		<name value="Florizarre"/>
-		<!-- French -->
-		<name value="Bisaflor"/>
-		<!-- German -->
-		<name value="Venusaur"/>
-		<!-- Spanish -->
-		<name value="Venusaur"/>
-		<!-- Italian -->
-		<discovered value="true"/>
-		<captured value="false"/>
-		<overworld-index value="3"/>
+		<pre-evolution-index value="2" />
+		<habitat-index value="0" />
+		<name value="107,91,136,148,100"/><!-- フシギバナ -->
+		<name value="Venusaur" />
+		<name value="Florizarre" />
+		<name value="Bisaflor" />
+		<name value="Venusaur" />
+		<name value="Venusaur" />
+		<height value="2" />
+		<weight value="100" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="4">
-		<weight value="9,0"/>
-		<height value="0,6"/>
-		<preevolution-index value="-1"/>
-		<name value="ヒトカゲ"/>
-		<!-- Japanese: Charmander -->
-		<name value="Charmander"/>
-		<!-- English -->
-		<name value="Salamèche"/>
-		<!-- French -->
-		<name value="Glumanda"/>
-		<!-- German -->
-		<name value="Charmander"/>
-		<!-- Spanish -->
-		<name value="Charmander"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="4"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="106,99,85,136"/><!-- ヒトカゲ -->
+		<name value="Charmander" />
+		<name value="Salamèche" />
+		<name value="Glumanda" />
+		<name value="Charmander" />
+		<name value="Charmander" />
+		<height value="0,6" />
+		<weight value="8,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="5">
-		<weight value="22,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="4"/>
-		<name value="リザード"/>
-		<!-- Japanese: Charmeleon -->
-		<name value="Charmeleon"/>
-		<!-- English -->
-		<name value="Reptincel"/>
-		<!-- French -->
-		<name value="Glutexo"/>
-		<!-- German -->
-		<name value="Charmeleon"/>
-		<!-- Spanish -->
-		<name value="Charmeleon"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="5"/>
+		<pre-evolution-index value="4" />
+		<habitat-index value="0" />
+		<name value="119,138,159,147"/><!-- リザード -->
+		<name value="Charmeleon" />
+		<name value="Reptincel" />
+		<name value="Glutexo" />
+		<name value="Charmeleon" />
+		<name value="Charmeleon" />
+		<height value="1,1" />
+		<weight value="19" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="6">
-		<weight value="90,5"/>
-		<height value="1,7"/>
-		<preevolution-index value="5"/>
-		<name value="リザードン"/>
-		<!-- Japanese: Charizard -->
-		<name value="Charizard"/>
-		<!-- English -->
-		<name value="Dracaufeu"/>
-		<!-- French -->
-		<name value="Glurak"/>
-		<!-- German -->
-		<name value="Charizard"/>
-		<!-- Spanish -->
-		<name value="Charizard"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="6"/>
+		<pre-evolution-index value="5" />
+		<habitat-index value="0" />
+		<name value="119,138,159,147,124"/><!-- リザードン -->
+		<name value="Charizard" />
+		<name value="Dracaufeu" />
+		<name value="Glurak" />
+		<name value="Charizard" />
+		<name value="Charizard" />
+		<height value="1,7" />
+		<weight value="90,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="7">
-		<weight value="9,0"/>
-		<height value="0,5"/>
-		<preevolution-index value="-1"/>
-		<name value="ゼニガメ"/>
-		<!-- Japanese: Squirtle -->
-		<name value="Squirtle"/>
-		<!-- English -->
-		<name value="Carapuce"/>
-		<!-- French -->
-		<name value="Schiggy"/>
-		<!-- German -->
-		<name value="Squirtle"/>
-		<!-- Spanish -->
-		<name value="Squirtle"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="7"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="141,101,133,113"/><!-- ゼニガメ -->
+		<name value="Squirtle" />
+		<name value="Carapuce" />
+		<name value="Schiggy" />
+		<name value="Squirtle" />
+		<name value="Squirtle" />
+		<height value="0,5" />
+		<weight value="9" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="8">
-		<weight value="22,5"/>
-		<height value="0,8"/>
-		<preevolution-index value="7"/>
-		<name value="カメール"/>
-		<!-- Japanese: Wartortle -->
-		<name value="Wartortle"/>
-		<!-- English -->
-		<name value="Vortorro"/>
-		<!-- French -->
-		<name value="Schillok"/>
-		<!-- German -->
-		<name value="Wartortle"/>
-		<!-- Spanish -->
-		<name value="Wartortle"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="8"/>
+		<pre-evolution-index value="7" />
+		<habitat-index value="0" />
+		<name value="85,113,159,120"/><!-- カメール -->
+		<name value="Wartortle" />
+		<name value="Carabaffe" />
+		<name value="Schillok" />
+		<name value="Wartortle" />
+		<name value="Wartortle" />
+		<height value="1" />
+		<weight value="22,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="9">
-		<weight value="85,5"/>
-		<height value="1,0"/>
-		<preevolution-index value="8"/>
-		<name value="カメックス"/>
-		<!-- Japanese: Blastoise -->
-		<name value="Blastoise"/>
-		<!-- English -->
-		<name value="Tortank"/>
-		<!-- French -->
-		<name value="Bisaflor"/>
-		<!-- German -->
-		<name value="Blastoise"/>
-		<!-- Spanish -->
-		<name value="Blastoise"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="9"/>
+		<pre-evolution-index value="8" />
+		<habitat-index value="0" />
+		<name value="85,113,46,87,92"/><!-- カメックス -->
+		<name value="Blastoise" />
+		<name value="Tortank" />
+		<name value="Turtok" />
+		<name value="Blastoise" />
+		<name value="Blastoise" />
+		<height value="1,6" />
+		<weight value="85,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="10">
-		<weight value="40,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="キャタピー"/>
-		<!-- Japanese: Caterpie -->
-		<name value="Caterpie"/>
-		<!-- English -->
-		<name value="Chenipan"/>
-		<!-- French -->
-		<name value="Raupy"/>
-		<!-- German -->
-		<name value="Caterpie"/>
-		<!-- Spanish -->
-		<name value="Caterpie"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="10"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="86,130,95,154,159"/><!-- キャタピー -->
+		<name value="Caterpie" />
+		<name value="Chenipan" />
+		<name value="Raupy" />
+		<name value="Caterpie" />
+		<name value="Caterpie" />
+		<height value="0,3" />
+		<weight value="2,9" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="11">
-		<weight value="10,0"/>
-		<height value="0,7"/>
-		<preevolution-index value="10"/>
-		<name value="トランセル"/>
-		<!-- Japanese: Metapod -->
-		<name value="Metapod"/>
-		<!-- English -->
-		<name value="Chrysacier"/>
-		<!-- French -->
-		<name value="Metapod"/>
-		<!-- German -->
-		<name value="Metapod"/>
-		<!-- Spanish -->
-		<name value="Metapod"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="11"/>
+		<pre-evolution-index value="10" />
+		<habitat-index value="0" />
+		<name value="99,118,124,93,120"/><!-- トランセル -->
+		<name value="Metapod" />
+		<name value="Chrysacier" />
+		<name value="Safcon" />
+		<name value="Metapod" />
+		<name value="Metapod" />
+		<height value="0,7" />
+		<weight value="9,9" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="12">
-		<weight value="32,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="11"/>
-		<name value="バタフリー"/>
-		<!-- Japanese: Butterfree -->
-		<name value="Butterfree"/>
-		<!-- English -->
-		<name value="Papilusion"/>
-		<!-- French -->
-		<name value="Smettbo"/>
-		<!-- German -->
-		<name value="Butterfree"/>
-		<!-- Spanish -->
-		<name value="Butterfree"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="12"/>
+		<pre-evolution-index value="11" />
+		<habitat-index value="0" />
+		<name value="バタフリー" />
+		<name value="Butterfree" />
+		<name value="Papilusion" />
+		<name value="Smettbo" />
+		<name value="Butterfree" />
+		<name value="Butterfree" />
+		<height value="1,1" />
+		<weight value="32" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="13">
-		<weight value="30,0"/>
-		<height value="0,8"/>
-		<preevolution-index value="-1"/>
-		<name value="ビードル"/>
-		<!-- Japanese: Beedle -->
-		<name value="Weedle"/>
-		<!-- English -->
-		<name value="Mimigal"/>
-		<!-- French -->
-		<name value="Bibor"/>
-		<!-- German -->
-		<name value="Weedle"/>
-		<!-- Spanish -->
-		<name value="Weedle"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="13"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ビードル" />
+		<name value="Weedle" />
+		<name value="Aspicot" />
+		<name value="Hornliu" />
+		<name value="Weedle" />
+		<name value="Weedle" />
+		<height value="0,3" />
+		<weight value="3,2" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="14">
-		<weight value="32,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="13"/>
-		<name value="コクーン"/>
-		<!-- Japanese: Kakuna -->
-		<name value="Kakuna"/>
-		<!-- English -->
-		<name value="Kakuna"/>
-		<!-- French -->
-		<name value="Kakuna"/>
-		<!-- German -->
-		<name value="Kakuna"/>
-		<!-- Spanish -->
-		<name value="Kakuna"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="14"/>
+		<pre-evolution-index value="13" />
+		<habitat-index value="0" />
+		<name value="コクーン" />
+		<name value="Kakuna" />
+		<name value="Coconfort" />
+		<name value="Kokuna" />
+		<name value="Kakuna" />
+		<name value="Kakuna" />
+		<height value="0,6" />
+		<weight value="10" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="15">
-		<weight value="45,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="14"/>
-		<name value="スピアー"/>
-		<!-- Japanese: Beedrill -->
-		<name value="Beedrill"/>
-		<!-- English -->
-		<name value="Dardargnan"/>
-		<!-- French -->
-		<name value="Bibor"/>
-		<!-- German -->
-		<name value="Beedrill"/>
-		<!-- Spanish -->
-		<name value="Beedrill"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="15"/>
+		<pre-evolution-index value="14" />
+		<habitat-index value="0" />
+		<name value="スピアー" />
+		<name value="Beedrill" />
+		<name value="Dardargnan" />
+		<name value="Bibor" />
+		<name value="Beedrill" />
+		<name value="Beedrill" />
+		<height value="1" />
+		<weight value="29,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="16">
-		<weight value="8,5"/>
-		<height value="0,8"/>
-		<preevolution-index value="-1"/>
-		<name value="ポッポ"/>
-		<!-- Japanese: Pidgey -->
-		<name value="Pidgey"/>
-		<!-- English -->
-		<name value="Pidgey"/>
-		<!-- French -->
-		<name value="Taubsi"/>
-		<!-- German -->
-		<name value="Pidgey"/>
-		<!-- Spanish -->
-		<name value="Pidgey"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="16"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ポッポ" />
+		<name value="Pidgey" />
+		<name value="Roucool" />
+		<name value="Taubsi" />
+		<name value="Pidgey" />
+		<name value="Pidgey" />
+		<height value="0,3" />
+		<weight value="1,8" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="17">
-		<weight value="15,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="16"/>
-		<name value="ポッポー"/>
-		<!-- Japanese: Pidgeotto -->
-		<name value="Pidgeotto"/>
-		<!-- English -->
-		<name value="Pidgeot"/>
-		<!-- French -->
-		<name value="Tauboga"/>
-		<!-- German -->
-		<name value="Pidgeotto"/>
-		<!-- Spanish -->
-		<name value="Pidgeotto"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="17"/>
+		<pre-evolution-index value="16" />
+		<habitat-index value="0" />
+		<name value="ピジョン" />
+		<name value="Pidgeotto" />
+		<name value="Roucoups" />
+		<name value="Tauboga" />
+		<name value="Pidgeotto" />
+		<name value="Pidgeotto" />
+		<height value="1,1" />
+		<weight value="30" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="18">
-		<weight value="39,5"/>
-		<height value="1,5"/>
-		<preevolution-index value="17"/>
-		<name value="ポッポー"/>
-		<!-- Japanese: Pidgeot -->
-		<name value="Pidgeot"/>
-		<!-- English -->
-		<name value="Pidgeot"/>
-		<!-- French -->
-		<name value="Tauboss"/>
-		<!-- German -->
-		<name value="Pidgeot"/>
-		<!-- Spanish -->
-		<name value="Pidgeot"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="18"/>
+		<pre-evolution-index value="17" />
+		<habitat-index value="0" />
+		<name value="ピジョット" />
+		<name value="Pidgeot" />
+		<name value="Roucarnage" />
+		<name value="Tauboss" />
+		<name value="Pidgeot" />
+		<name value="Pidgeot" />
+		<height value="1,5" />
+		<weight value="39,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="19">
-		<weight value="30,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="-1"/>
-		<name value="コラッタ"/>
-		<!-- Japanese: Rattata -->
-		<name value="Rattata"/>
-		<!-- English -->
-		<name value="Rattata"/>
-		<!-- French -->
-		<name value="Rattfratz"/>
-		<!-- German -->
-		<name value="Rattata"/>
-		<!-- Spanish -->
-		<name value="Rattata"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="19"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="コラッタ" />
+		<name value="Rattata" />
+		<name value="Rattata" />
+		<name value="Rattfratz" />
+		<name value="Rattata" />
+		<name value="Rattata" />
+		<height value="0,3" />
+		<weight value="3,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="20">
-		<weight value="18,5"/>
-		<height value="0,5"/>
-		<preevolution-index value="19"/>
-		<name value="ラッタ"/>
-		<!-- Japanese: Raticate -->
-		<name value="Raticate"/>
-		<!-- English -->
-		<name value="Rattatac"/>
-		<!-- French -->
-		<name value="Rattikarl"/>
-		<!-- German -->
-		<name value="Raticate"/>
-		<!-- Spanish -->
-		<name value="Raticate"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="20"/>
+		<pre-evolution-index value="19" />
+		<habitat-index value="0" />
+		<name value="ラッタ" />
+		<name value="Raticate" />
+		<name value="Rattatac" />
+		<name value="Rattikarl" />
+		<name value="Raticate" />
+		<name value="Raticate" />
+		<height value="0,7" />
+		<weight value="18,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="21">
-		<weight value="25,0"/>
-		<height value="0,8"/>
-		<preevolution-index value="-1"/>
-		<name value="オニスズメ"/>
-		<!-- Japanese: Spearow -->
-		<name value="Spearow"/>
-		<!-- English -->
-		<name value="Piafabec"/>
-		<!-- French -->
-		<name value="Habitak"/>
-		<!-- German -->
-		<name value="Spearow"/>
-		<!-- Spanish -->
-		<name value="Spearow"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="21"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="オニスズメ" />
+		<name value="Spearow" />
+		<name value="Piafabec" />
+		<name value="Habitak" />
+		<name value="Spearow" />
+		<name value="Spearow" />
+		<height value="0,3" />
+		<weight value="2" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="22">
-		<weight value="40,0"/>
-		<height value="1,2"/>
-		<preevolution-index value="21"/>
-		<name value="オニドリル"/>
-		<!-- Japanese: Fearow -->
-		<name value="Fearow"/>
-		<!-- English -->
-		<name value="Piafabec"/>
-		<!-- French -->
-		<name value="Tengulist"/>
-		<!-- German -->
-		<name value="Fearow"/>
-		<!-- Spanish -->
-		<name value="Fearow"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="22"/>
+		<pre-evolution-index value="21" />
+		<habitat-index value="0" />
+		<name value="オニドリル" />
+		<name value="Fearow" />
+		<name value="Rapasdepic" />
+		<name value="Ibitak" />
+		<name value="Fearow" />
+		<name value="Fearow" />
+		<height value="1,2" />
+		<weight value="38" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="23">
-		<weight value="80,0"/>
-		<height value="1,6"/>
-		<preevolution-index value="-1"/>
-		<name value="アーボ"/>
-		<!-- Japanese: Ekans -->
-		<name value="Ekans"/>
-		<!-- English -->
-		<name value="Arbok"/>
-		<!-- French -->
-		<name value="Apoquy"/>
-		<!-- German -->
-		<name value="Ekans"/>
-		<!-- Spanish -->
-		<name value="Ekans"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="23"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="アーボ" />
+		<name value="Ekans" />
+		<name value="Abo" />
+		<name value="Rettan" />
+		<name value="Ekans" />
+		<name value="Ekans" />
+		<height value="2" />
+		<weight value="6,9" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="24">
-		<weight value="65,0"/>
-		<height value="1,4"/>
-		<preevolution-index value="23"/>
-		<name value="アーボック"/>
-		<!-- Japanese: Arbok -->
-		<name value="Arbok"/>
-		<!-- English -->
-		<name value="Arbok"/>
-		<!-- French -->
-		<name value="Arbok"/>
-		<!-- German -->
-		<name value="Arbok"/>
-		<!-- Spanish -->
-		<name value="Arbok"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="24"/>
+		<pre-evolution-index value="23" />
+		<habitat-index value="0" />
+		<name value="アーボック" />
+		<name value="Arbok" />
+		<name value="Arbok" />
+		<name value="Arbok" />
+		<name value="Arbok" />
+		<name value="Arbok" />
+		<height value="3,5" />
+		<weight value="65" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="25">
-		<weight value="6,0"/>
-		<height value="0,4"/>
-		<preevolution-index value="-1"/>
-		<name value="ピカチュウ"/>
-		<!-- Japanese: Pikachu -->
-		<name value="Pikachu"/>
-		<!-- English -->
-		<name value="Pikachu"/>
-		<!-- French -->
-		<name value="Pikachu"/>
-		<!-- German -->
-		<name value="Pikachu"/>
-		<!-- Spanish -->
-		<name value="Pikachu"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="25"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ピカチュウ" />
+		<name value="Pikachu" />
+		<name value="Pikachu" />
+		<name value="Pikachu" />
+		<name value="Pikachu" />
+		<name value="Pikachu" />
+		<height value="0,4" />
+		<weight value="6" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="26">
-		<weight value="30,0"/>
-		<height value="0,8"/>
-		<preevolution-index value="25"/>
-		<name value="ライチュウ"/>
-		<!-- Japanese: Raichu -->
-		<name value="Raichu"/>
-		<!-- English -->
-		<name value="Raichu"/>
-		<!-- French -->
-		<name value="Raichu"/>
-		<!-- German -->
-		<name value="Raichu"/>
-		<!-- Spanish -->
-		<name value="Raichu"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="26"/>
+		<pre-evolution-index value="25" />
+		<habitat-index value="0" />
+		<name value="ライチュウ" />
+		<name value="Raichu" />
+		<name value="Raichu" />
+		<name value="Raichu" />
+		<name value="Raichu" />
+		<name value="Raichu" />
+		<height value="0,8" />
+		<weight value="30" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="27">
-		<weight value="55,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="サンド"/>
-		<!-- Japanese: Sandshrew -->
-		<name value="Sandshrew"/>
-		<!-- English -->
-		<name value="Sabelette"/>
-		<!-- French -->
-		<name value="Sandan"/>
-		<!-- German -->
-		<name value="Sandshrew"/>
-		<!-- Spanish -->
-		<name value="Sandshrew"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="27"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="サンド" />
+		<name value="Sandshrew" />
+		<name value="Sabelette" />
+		<name value="Sandan" />
+		<name value="Sandshrew" />
+		<name value="Sandshrew" />
+		<height value="0,6" />
+		<weight value="12" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="28">
-		<weight value="120,0"/>
-		<height value="1,2"/>
-		<preevolution-index value="27"/>
-		<name value="サンドパン"/>
-		<!-- Japanese: Sandslash -->
-		<name value="Sandslash"/>
-		<!-- English -->
-		<name value="Sabelette"/>
-		<!-- French -->
-		<name value="Sandan"/>
-		<!-- German -->
-		<name value="Sandslash"/>
-		<!-- Spanish -->
-		<name value="Sandslash"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="28"/>
+		<pre-evolution-index value="27" />
+		<habitat-index value="0" />
+		<name value="サンドパン" />
+		<name value="Sandslash" />
+		<name value="Sablaireau" />
+		<name value="Sandamer" />
+		<name value="Sandslash" />
+		<name value="Sandslash" />
+		<height value="1" />
+		<weight value="29,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="29">
-		<weight value="50,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="ニドラン♀"/>
-		<!-- Japanese: Nidoran♀ -->
-		<name value="Nidoran♀"/>
-		<!-- English -->
-		<name value="Nidoran♀"/>
-		<!-- French -->
-		<name value="Nidoran♀"/>
-		<!-- German -->
-		<name value="Nidoran♀"/>
-		<!-- Spanish -->
-		<name value="Nidoran♀"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="29"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ニドラン♀" />
+		<name value="Nidoran♀" />
+		<name value="Nidoran♀" />
+		<name value="Nidoran♀" />
+		<name value="Nidoran♀" />
+		<name value="Nidoran♀" />
+		<height value="0,4" />
+		<weight value="7" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="30">
-		<weight value="70,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="29"/>
-		<name value="ニドリーナ"/>
-		<!-- Japanese: Nidorina -->
-		<name value="Nidorina"/>
-		<!-- English -->
-		<name value="Nidorina"/>
-		<!-- French -->
-		<name value="Nidorina"/>
-		<!-- German -->
-		<name value="Nidorina"/>
-		<!-- Spanish -->
-		<name value="Nidorina"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="30"/>
+		<pre-evolution-index value="29" />
+		<habitat-index value="0" />
+		<name value="ニドリーナ" />
+		<name value="Nidorina" />
+		<name value="Nidorina" />
+		<name value="Nidorina" />
+		<name value="Nidorina" />
+		<name value="Nidorina" />
+		<height value="0,8" />
+		<weight value="20" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="31">
-		<weight value="110,0"/>
-		<height value="1,3"/>
-		<preevolution-index value="30"/>
-		<name value="ニドキング"/>
-		<!-- Japanese: Nidoqueen -->
-		<name value="Nidoqueen"/>
-		<!-- English -->
-		<name value="Nidoqueen"/>
-		<!-- French -->
-		<name value="Nidoqueen"/>
-		<!-- German -->
-		<name value="Nidoqueen"/>
-		<!-- Spanish -->
-		<name value="Nidoqueen"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="31"/>
+		<pre-evolution-index value="30" />
+		<habitat-index value="0" />
+		<name value="ニドクイン" />
+		<name value="Nidoqueen" />
+		<name value="Nidoqueen" />
+		<name value="Nidoqueen" />
+		<name value="Nidoqueen" />
+		<name value="Nidoqueen" />
+		<height value="1,3" />
+		<weight value="60" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="32">
-		<weight value="40,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="ニドラン♂"/>
-		<!-- Japanese: Nidoran♂ -->
-		<name value="Nidoran♂"/>
-		<!-- English -->
-		<name value="Nidoran♂"/>
-		<!-- French -->
-		<name value="Nidoran♂"/>
-		<!-- German -->
-		<name value="Nidoran♂"/>
-		<!-- Spanish -->
-		<name value="Nidoran♂"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="32"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ニドラン♂" />
+		<name value="Nidoran♂" />
+		<name value="Nidoran♂" />
+		<name value="Nidoran♂" />
+		<name value="Nidoran♂" />
+		<name value="Nidoran♂" />
+		<height value="0,5" />
+		<weight value="9" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="33">
-		<weight value="80,0"/>
-		<height value="1,2"/>
-		<preevolution-index value="32"/>
-		<name value="ニドリーノ"/>
-		<!-- Japanese: Nidorino -->
-		<name value="Nidorino"/>
-		<!-- English -->
-		<name value="Nidorino"/>
-		<!-- French -->
-		<name value="Nidorino"/>
-		<!-- German -->
-		<name value="Nidorino"/>
-		<!-- Spanish -->
-		<name value="Nidorino"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="33"/>
+		<pre-evolution-index value="32" />
+		<habitat-index value="0" />
+		<name value="ニドリーノ" />
+		<name value="Nidorino" />
+		<name value="Nidorino" />
+		<name value="Nidorino" />
+		<name value="Nidorino" />
+		<name value="Nidorino" />
+		<height value="0,9" />
+		<weight value="19,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="34">
-		<weight value="200,0"/>
-		<height value="1,4"/>
-		<preevolution-index value="33"/>
-		<name value="ニドキング"/>
-		<!-- Japanese: Nidoking -->
-		<name value="Nidoking"/>
-		<!-- English -->
-		<name value="Nidoking"/>
-		<!-- French -->
-		<name value="Nidoking"/>
-		<!-- German -->
-		<name value="Nidoking"/>
-		<!-- Spanish -->
-		<name value="Nidoking"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="34"/>
+		<pre-evolution-index value="33" />
+		<habitat-index value="0" />
+		<name value="ニドキング" />
+		<name value="Nidoking" />
+		<name value="Nidoking" />
+		<name value="Nidoking" />
+		<name value="Nidoking" />
+		<name value="Nidoking" />
+		<height value="1,4" />
+		<weight value="62" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="35">
-		<weight value="60,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="-1"/>
-		<name value="ピッピ"/>
-		<!-- Japanese: Clefairy -->
-		<name value="Clefairy"/>
-		<!-- English -->
-		<name value="Mélofée"/>
-		<!-- French -->
-		<name value="Pixi"/>
-		<!-- German -->
-		<name value="Clefairy"/>
-		<!-- Spanish -->
-		<name value="Clefairy"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="35"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ピッピ" />
+		<name value="Clefairy" />
+		<name value="Mélofée" />
+		<name value="Piepi" />
+		<name value="Clefairy" />
+		<name value="Clefairy" />
+		<height value="0,6" />
+		<weight value="7,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="36">
-		<weight value="75,0"/>
-		<height value="1,3"/>
-		<preevolution-index value="35"/>
-		<name value="ピクシー"/>
-		<!-- Japanese: Clefable -->
-		<name value="Clefable"/>
-		<!-- English -->
-		<name value="Méganium"/>
-		<!-- French -->
-		<name value="Pixi"/>
-		<!-- German -->
-		<name value="Clefable"/>
-		<!-- Spanish -->
-		<name value="Clefable"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="36"/>
+		<pre-evolution-index value="35" />
+		<habitat-index value="0" />
+		<name value="ピクシー" />
+		<name value="Clefable" />
+		<name value="Mélodelfe" />
+		<name value="Pixi" />
+		<name value="Clefable" />
+		<name value="Clefable" />
+		<height value="1,3" />
+		<weight value="40" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="37">
-		<weight value="30,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="ロコン"/>
-		<!-- Japanese: Vulpix -->
-		<name value="Vulpix"/>
-		<!-- English -->
-		<name value="Rondoudou"/>
-		<!-- French -->
-		<name value="Vulpix"/>
-		<!-- German -->
-		<name value="Vulpix"/>
-		<!-- Spanish -->
-		<name value="Vulpix"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="37"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ロコン" />
+		<name value="Vulpix" />
+		<name value="Goupix" />
+		<name value="Vulpix" />
+		<name value="Vulpix" />
+		<name value="Vulpix" />
+		<height value="0,6" />
+		<weight value="9,9" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="38">
-		<weight value="60,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="37"/>
-		<name value="キュウコン"/>
-		<!-- Japanese: Ninetales -->
-		<name value="Ninetales"/>
-		<!-- English -->
-		<name value="Goupix"/>
-		<!-- French -->
-		<name value="Vulpix"/>
-		<!-- German -->
-		<name value="Ninetales"/>
-		<!-- Spanish -->
-		<name value="Ninetales"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="38"/>
+		<pre-evolution-index value="37" />
+		<habitat-index value="0" />
+		<name value="キュウコン" />
+		<name value="Ninetales" />
+		<name value="Feunard" />
+		<name value="Vulnona" />
+		<name value="Ninetales" />
+		<name value="Ninetales" />
+		<height value="1,1" />
+		<weight value="19,9" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="39">
-		<weight value="12,0"/>
-		<height value="0,8"/>
-		<preevolution-index value="-1"/>
-		<name value="プリン"/>
-		<!-- Japanese: Jigglypuff -->
-		<name value="Jigglypuff"/>
-		<!-- English -->
-		<name value="Rondoudou"/>
-		<!-- French -->
-		<name value="Jigglypuff"/>
-		<!-- German -->
-		<name value="Jigglypuff"/>
-		<!-- Spanish -->
-		<name value="Jigglypuff"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="39"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="プリン" />
+		<name value="Jigglypuff" />
+		<name value="Rondoudou" />
+		<name value="Pummeluff" />
+		<name value="Jigglypuff" />
+		<name value="Jigglypuff" />
+		<height value="0,5" />
+		<weight value="5,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="40">
-		<weight value="55,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="39"/>
-		<name value="プクリン"/>
-		<!-- Japanese: Wigglytuff -->
-		<name value="Wigglytuff"/>
-		<!-- English -->
-		<name value="Grodoudou"/>
-		<!-- French -->
-		<name value="Jigglypuff"/>
-		<!-- German -->
-		<name value="Wigglytuff"/>
-		<!-- Spanish -->
-		<name value="Wigglytuff"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="40"/>
+		<pre-evolution-index value="39" />
+		<habitat-index value="0" />
+		<name value="プクリン" />
+		<name value="Wigglytuff" />
+		<name value="Grodoudou" />
+		<name value="Knuddeluff" />
+		<name value="Wigglytuff" />
+		<name value="Wigglytuff" />
+		<height value="1" />
+		<weight value="12" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="41">
-		<weight value="40,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="ズバット"/>
-		<!-- Japanese: Zubat -->
-		<name value="Zubat"/>
-		<!-- English -->
-		<name value="Nosferapti"/>
-		<!-- French -->
-		<name value="Zubat"/>
-		<!-- German -->
-		<name value="Zubat"/>
-		<!-- Spanish -->
-		<name value="Zubat"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="41"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ズバット" />
+		<name value="Zubat" />
+		<name value="Nosferapti" />
+		<name value="Zubat" />
+		<name value="Zubat" />
+		<name value="Zubat" />
+		<height value="0,8" />
+		<weight value="7,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="42">
-		<weight value="75,0"/>
-		<height value="1,6"/>
-		<preevolution-index value="41"/>
-		<name value="ゴルバット"/>
-		<!-- Japanese: Golbat -->
-		<name value="Golbat"/>
-		<!-- English -->
-		<name value="Nosferalto"/>
-		<!-- French -->
-		<name value="Golbat"/>
-		<!-- German -->
-		<name value="Golbat"/>
-		<!-- Spanish -->
-		<name value="Golbat"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="42"/>
+		<pre-evolution-index value="41" />
+		<habitat-index value="0" />
+		<name value="ゴルバット" />
+		<name value="Golbat" />
+		<name value="Nosferalto" />
+		<name value="Golbat" />
+		<name value="Golbat" />
+		<name value="Golbat" />
+		<height value="1,6" />
+		<weight value="55" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="43">
-		<weight value="15,0"/>
-		<height value="0,6"/>
-		<preevolution-index value="-1"/>
-		<name value="ポニータ"/>
-		<!-- Japanese: Ponyta -->
-		<name value="Ponyta"/>
-		<!-- English -->
-		<name value="Ponyta"/>
-		<!-- French -->
-		<name value="Ponyta"/>
-		<!-- German -->
-		<name value="Ponyta"/>
-		<!-- Spanish -->
-		<name value="Ponyta"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="43"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ナゾノクサ" />
+		<name value="Oddish" />
+		<name value="Mystherbe" />
+		<name value="Myrapla" />
+		<name value="Oddish" />
+		<name value="Oddish" />
+		<height value="0,5" />
+		<weight value="5,4" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="44">
-		<weight value="95,0"/>
-		<height value="1,7"/>
-		<preevolution-index value="43"/>
-		<name value="ギャロップ"/>
-		<!-- Japanese: Rapidash -->
-		<name value="Rapidash"/>
-		<!-- English -->
-		<name value="Galopa"/>
-		<!-- French -->
-		<name value="Gallopa"/>
-		<!-- German -->
-		<name value="Rapidash"/>
-		<!-- Spanish -->
-		<name value="Rapidash"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="44"/>
+		<pre-evolution-index value="43" />
+		<habitat-index value="0" />
+		<name value="クサイハナ" />
+		<name value="Gloom" />
+		<name value="Ortide" />
+		<name value="Duflor" />
+		<name value="Gloom" />
+		<name value="Gloom" />
+		<height value="0,8" />
+		<weight value="8,6" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="45">
-		<weight value="60,0"/>
-		<height value="1,5"/>
-		<preevolution-index value="-1"/>
-		<name value="ヤドン"/>
-		<!-- Japanese: Slowpoke -->
-		<name value="Slowpoke"/>
-		<!-- English -->
-		<name value="Vulnébri"/>
-		<!-- French -->
-		<name value="Sichlor"/>
-		<!-- German -->
-		<name value="Slowpoke"/>
-		<!-- Spanish -->
-		<name value="Slowpoke"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="45"/>
+		<pre-evolution-index value="44" />
+		<habitat-index value="0" />
+		<name value="ラフレシア" />
+		<name value="Vileplume" />
+		<name value="Rafflesia" />
+		<name value="Giflor" />
+		<name value="Vileplume" />
+		<name value="Vileplume" />
+		<height value="1,2" />
+		<weight value="18,6" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="46">
-		<weight value="90,0"/>
-		<height value="1,6"/>
-		<preevolution-index value="45"/>
-		<name value="ヤドラン"/>
-		<!-- Japanese: Slowbro -->
-		<name value="Slowbro"/>
-		<!-- English -->
-		<name value="Vulnébri"/>
-		<!-- French -->
-		<name value="Sichlor"/>
-		<!-- German -->
-		<name value="Slowbro"/>
-		<!-- Spanish -->
-		<name value="Slowbro"/>
-		<!-- Italian -->
-		<name value="false"/>
-		<captured value="false"/>
-		<overworld-index value="46"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="パラス" />
+		<name value="Paras" />
+		<name value="Paras" />
+		<name value="Paras" />
+		<name value="Paras" />
+		<name value="Paras" />
+		<height value="0,3" />
+		<weight value="5,4" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="47">
-		<weight value="44,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="コイル"/>
-		<!-- Japanese: Magnemite -->
-		<name value="Magnemite"/>
-		<!-- English -->
-		<name value="Magnéti"/>
-		<!-- French -->
-		<name value="Magneton"/>
-		<!-- German -->
-		<name value="Magnemite"/>
-		<!-- Spanish -->
-		<name value="Magnemite"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="47"/>
+		<pre-evolution-index value="46" />
+		<habitat-index value="0" />
+		<name value="パラセクト" />
+		<name value="Parasect" />
+		<name value="Parasect" />
+		<name value="Parasek" />
+		<name value="Parasect" />
+		<name value="Parasect" />
+		<height value="1" />
+		<weight value="29,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="48">
-		<weight value="60,0"/>
-		<height value="1,2"/>
-		<preevolution-index value="47"/>
-		<name value="レアコイル"/>
-		<!-- Japanese: Magneton -->
-		<name value="Magneton"/>
-		<!-- English -->
-		<name value="Magnéti"/>
-		<!-- French -->
-		<name value="Magneton"/>
-		<!-- German -->
-		<name value="Magneton"/>
-		<!-- Spanish -->
-		<name value="Magneton"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="48"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="コンパン" />
+		<name value="Venonat" />
+		<name value="Mimitoss" />
+		<name value="Bluzuk" />
+		<name value="Venonat" />
+		<name value="Venonat" />
+		<height value="1" />
+		<weight value="30" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="49">
-		<weight value="30,0"/>
-		<height value="1,2"/>
-		<preevolution-index value="-1"/>
-		<name value="ビリリダマ"/>
-		<!-- Japanese: Voltorb -->
-		<name value="Voltorb"/>
-		<!-- English -->
-		<name value="Voltorb"/>
-		<!-- French -->
-		<name value="Voltorb"/>
-		<!-- German -->
-		<name value="Voltorb"/>
-		<!-- Spanish -->
-		<name value="Voltorb"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="49"/>
+		<pre-evolution-index value="48" />
+		<habitat-index value="0" />
+		<name value="モルフォン" />
+		<name value="Venomoth" />
+		<name value="Aéromite" />
+		<name value="Omot" />
+		<name value="Venomoth" />
+		<name value="Venomoth" />
+		<height value="1,5" />
+		<weight value="12,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="50">
-		<weight value="50,0"/>
-		<height value="1,2"/>
-		<preevolution-index value="49"/>
-		<name value="デンリュウ"/>
-		<!-- Japanese: Electrode -->
-		<name value="Electrode"/>
-		<!-- English -->
-		<name value="Electrode"/>
-		<!-- French -->
-		<name value="Electrode"/>
-		<!-- German -->
-		<name value="Electrode"/>
-		<!-- Spanish -->
-		<name value="Electrode"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="50"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ディグダ" />
+		<name value="Diglett" />
+		<name value="Taupiqueur" />
+		<name value="Digda" />
+		<name value="Diglett" />
+		<name value="Diglett" />
+		<height value="0,2" />
+		<weight value="0,8" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="51">
-		<weight value="9,0"/>
-		<height value="0,6"/>
-		<preevolution-index value="-1"/>
-		<name value="タッツー"/>
-		<!-- Japanese: Horsea -->
-		<name value="Horsea"/>
-		<!-- English -->
-		<name value="Horsea"/>
-		<!-- French -->
-		<name value="Horsea"/>
-		<!-- German -->
-		<name value="Horsea"/>
-		<!-- Spanish -->
-		<name value="Horsea"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="51"/>
+		<pre-evolution-index value="50" />
+		<habitat-index value="0" />
+		<name value="ダグトリオ" />
+		<name value="Dugtrio" />
+		<name value="Triopikeur" />
+		<name value="Digdri" />
+		<name value="Dugtrio" />
+		<name value="Dugtrio" />
+		<height value="0,7" />
+		<weight value="33,3" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="52">
-		<weight value="18,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="51"/>
-		<name value="シードラ"/>
-		<!-- Japanese: Seadra -->
-		<name value="Seadra"/>
-		<!-- English -->
-		<name value="Seadra"/>
-		<!-- French -->
-		<name value="Seadra"/>
-		<!-- German -->
-		<name value="Seadra"/>
-		<!-- Spanish -->
-		<name value="Seadra"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="52"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ニャース" />
+		<name value="Meowth" />
+		<name value="Miaouss" />
+		<name value="Mauzi" />
+		<name value="Meowth" />
+		<name value="Meowth" />
+		<height value="0,4" />
+		<weight value="4,2" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="53">
-		<weight value="15,0"/>
-		<height value="0,6"/>
-		<preevolution-index value="-1"/>
-		<name value="トサキント"/>
-		<!-- Japanese: Goldeen -->
-		<name value="Goldeen"/>
-		<!-- English -->
-		<name value="Goldeen"/>
-		<!-- French -->
-		<name value="Goldeen"/>
-		<!-- German -->
-		<name value="Goldeen"/>
-		<!-- Spanish -->
-		<name value="Goldeen"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="53"/>
+		<pre-evolution-index value="52" />
+		<habitat-index value="0" />
+		<name value="ペルシアン" />
+		<name value="Persian" />
+		<name value="Persian" />
+		<name value="Snobilikat" />
+		<name value="Persian" />
+		<name value="Persian" />
+		<height value="1" />
+		<weight value="32" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="54">
-		<weight value="39,0"/>
-		<height value="1,2"/>
-		<preevolution-index value="53"/>
-		<name value="ドヒドイデ"/>
-		<!-- Japanese: Seaking -->
-		<name value="Seaking"/>
-		<!-- English -->
-		<name value="Seaking"/>
-		<!-- French -->
-		<name value="Seaking"/>
-		<!-- German -->
-		<name value="Seaking"/>
-		<!-- Spanish -->
-		<name value="Seaking"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="54"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="コダック" />
+		<name value="Psyduck" />
+		<name value="Psykokwak" />
+		<name value="Enton" />
+		<name value="Psyduck" />
+		<name value="Psyduck" />
+		<height value="0,8" />
+		<weight value="19,6" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="55">
-		<weight value="40,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="コダック"/>
-		<!-- Japanese: Psyduck -->
-		<name value="Psyduck"/>
-		<!-- English -->
-		<name value="Psyduck"/>
-		<!-- French -->
-		<name value="Psyduck"/>
-		<!-- German -->
-		<name value="Psyduck"/>
-		<!-- Spanish -->
-		<name value="Psyduck"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="55"/>
+		<pre-evolution-index value="54" />
+		<habitat-index value="0" />
+		<name value="ゴルダック" />
+		<name value="Golduck" />
+		<name value="Akwakwak" />
+		<name value="Entoron" />
+		<name value="Golduck" />
+		<name value="Golduck" />
+		<height value="1,7" />
+		<weight value="76,6" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="56">
-		<weight value="80,0"/>
-		<height value="1,6"/>
-		<preevolution-index value="55"/>
-		<name value="ゴルダック"/>
-		<!-- Japanese: Golduck -->
-		<name value="Golduck"/>
-		<!-- English -->
-		<name value="Golduck"/>
-		<!-- French -->
-		<name value="Golduck"/>
-		<!-- German -->
-		<name value="Golduck"/>
-		<!-- Spanish -->
-		<name value="Golduck"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="56"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="マンキー" />
+		<name value="Mankey" />
+		<name value="Férosinge" />
+		<name value="Menki" />
+		<name value="Mankey" />
+		<name value="Mankey" />
+		<height value="0,5" />
+		<weight value="28" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="57">
-		<weight value="28,0"/>
-		<height value="0,7"/>
-		<preevolution-index value="-1"/>
-		<name value="マンキー"/>
-		<!-- Japanese: Mankey -->
-		<name value="Mankey"/>
-		<!-- English -->
-		<name value="Féroce"/>
-		<!-- French -->
-		<name value="Mankey"/>
-		<!-- German -->
-		<name value="Mankey"/>
-		<!-- Spanish -->
-		<name value="Mankey"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="57"/>
+		<pre-evolution-index value="56" />
+		<habitat-index value="0" />
+		<name value="オコリザル" />
+		<name value="Primeape" />
+		<name value="Colossinge" />
+		<name value="Rasaff" />
+		<name value="Primeape" />
+		<name value="Primeape" />
+		<height value="1" />
+		<weight value="32" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="58">
-		<weight value="32,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="57"/>
-		<name value="オコリザル"/>
-		<!-- Japanese: Primeape -->
-		<name value="Primeape"/>
-		<!-- English -->
-		<name value="Féroce"/>
-		<!-- French -->
-		<name value="Machomei"/>
-		<!-- German -->
-		<name value="Primeape"/>
-		<!-- Spanish -->
-		<name value="Primeape"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="58"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ガーディ" />
+		<name value="Growlithe" />
+		<name value="Caninos" />
+		<name value="Fukano" />
+		<name value="Growlithe" />
+		<name value="Growlithe" />
+		<height value="0,7" />
+		<weight value="19" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="59">
-		<weight value="75,0"/>
-		<height value="1,6"/>
-		<preevolution-index value="-1"/>
-		<name value="ガーディ"/>
-		<!-- Japanese: Growlithe -->
-		<name value="Growlithe"/>
-		<!-- English -->
-		<name value="Caninos"/>
-		<!-- French -->
-		<name value="Glumanda"/>
-		<!-- German -->
-		<name value="Growlithe"/>
-		<!-- Spanish -->
-		<name value="Growlithe"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="59"/>
+		<pre-evolution-index value="58" />
+		<habitat-index value="0" />
+		<name value="ウインディ" />
+		<name value="Arcanine" />
+		<name value="Arcanin" />
+		<name value="Arkani" />
+		<name value="Arcanine" />
+		<name value="Arcanine" />
+		<height value="1,9" />
+		<weight value="155" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="60">
-		<weight value="190,0"/>
-		<height value="1,9"/>
-		<preevolution-index value="59"/>
-		<name value="ウィンディ"/>
-		<!-- Japanese: Arcanine -->
-		<name value="Arcanine"/>
-		<!-- English -->
-		<name value="Arcanine"/>
-		<!-- French -->
-		<name value="Arcanine"/>
-		<!-- German -->
-		<name value="Arcanine"/>
-		<!-- Spanish -->
-		<name value="Arcanine"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="60"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ニョロモ" />
+		<name value="Poliwag" />
+		<name value="Ptitard" />
+		<name value="Quapsel" />
+		<name value="Poliwag" />
+		<name value="Poliwag" />
+		<height value="0,6" />
+		<weight value="12,4" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="61">
-		<weight value="55,0"/>
-		<height value="1,5"/>
-		<preevolution-index value="-1"/>
-		<name value="マリル"/>
-		<!-- Japanese: Marill -->
-		<name value="Marill"/>
-		<!-- English -->
-		<name value="Marill"/>
-		<!-- French -->
-		<name value="Marill"/>
-		<!-- German -->
-		<name value="Marill"/>
-		<!-- Spanish -->
-		<name value="Marill"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="61"/>
+		<pre-evolution-index value="60" />
+		<habitat-index value="0" />
+		<name value="ニョロゾ" />
+		<name value="Poliwhirl" />
+		<name value="Têtarte" />
+		<name value="Quaputzi" />
+		<name value="Poliwhirl" />
+		<name value="Poliwhirl" />
+		<height value="1" />
+		<weight value="20" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="62">
-		<weight value="90,0"/>
-		<height value="1,8"/>
-		<preevolution-index value="61"/>
-		<name value="マリルリ"/>
-		<!-- Japanese: Azumarill -->
-		<name value="Azumarill"/>
-		<!-- English -->
-		<name value="Azumarill"/>
-		<!-- French -->
-		<name value="Azumarill"/>
-		<!-- German -->
-		<name value="Azumarill"/>
-		<!-- Spanish -->
-		<name value="Azumarill"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="62"/>
+		<pre-evolution-index value="61" />
+		<habitat-index value="0" />
+		<name value="ニョロボン" />
+		<name value="Poliwrath" />
+		<name value="Tartard" />
+		<name value="Quappo" />
+		<name value="Poliwrath" />
+		<name value="Poliwrath" />
+		<height value="1,3" />
+		<weight value="54" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="63">
-		<weight value="75,0"/>
-		<height value="1,5"/>
-		<preevolution-index value="-1"/>
-		<name value="ウリムー"/>
-		<!-- Japanese: Swinub -->
-		<name value="Swinub"/>
-		<!-- English -->
-		<name value="Swinub"/>
-		<!-- French -->
-		<name value="Swinub"/>
-		<!-- German -->
-		<name value="Swinub"/>
-		<!-- Spanish -->
-		<name value="Swinub"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="63"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ケーシィ" />
+		<name value="Abra" />
+		<name value="Abra" />
+		<name value="Abra" />
+		<name value="Abra" />
+		<name value="Abra" />
+		<height value="0,9" />
+		<weight value="19,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="64">
-		<weight value="100,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="63"/>
-		<name value="イノムー"/>
-		<!-- Japanese: Piloswine -->
-		<name value="Piloswine"/>
-		<!-- English -->
-		<name value="Piloswine"/>
-		<!-- French -->
-		<name value="Piloswine"/>
-		<!-- German -->
-		<name value="Piloswine"/>
-		<!-- Spanish -->
-		<name value="Piloswine"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="64"/>
+		<pre-evolution-index value="63" />
+		<habitat-index value="0" />
+		<name value="ユンゲラー" />
+		<name value="Kadabra" />
+		<name value="Kadabra" />
+		<name value="Kadabra" />
+		<name value="Kadabra" />
+		<name value="Kadabra" />
+		<height value="1,3" />
+		<weight value="56,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="65">
-		<weight value="40,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="チョンチー"/>
-		<!-- Japanese: Chinchou -->
-		<name value="Chinchou"/>
-		<!-- English -->
-		<name value="Chinchou"/>
-		<!-- French -->
-		<name value="Chinchou"/>
-		<!-- German -->
-		<name value="Chinchou"/>
-		<!-- Spanish -->
-		<name value="Chinchou"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="65"/>
+		<pre-evolution-index value="64" />
+		<habitat-index value="0" />
+		<name value="フーディン" />
+		<name value="Alakazam" />
+		<name value="Alakazam" />
+		<name value="Simsala" />
+		<name value="Alakazam" />
+		<name value="Alakazam" />
+		<height value="1,5" />
+		<weight value="48" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="66">
-		<weight value="65,0"/>
-		<height value="1,2"/>
-		<preevolution-index value="65"/>
-		<name value="ランターン"/>
-		<!-- Japanese: Lanturn -->
-		<name value="Lanturn"/>
-		<!-- English -->
-		<name value="Lanturn"/>
-		<!-- French -->
-		<name value="Lanturn"/>
-		<!-- German -->
-		<name value="Lanturn"/>
-		<!-- Spanish -->
-		<name value="Lanturn"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="66"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ワンリキー" />
+		<name value="Machop" />
+		<name value="Machoc" />
+		<name value="Machollo" />
+		<name value="Machop" />
+		<name value="Machop" />
+		<height value="0,8" />
+		<weight value="19,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="67">
-		<weight value="35,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="タッツー"/>
-		<!-- Japanese: Horsea -->
-		<name value="Horsea"/>
-		<!-- English -->
-		<name value="Horsea"/>
-		<!-- French -->
-		<name value="Horsea"/>
-		<!-- German -->
-		<name value="Horsea"/>
-		<!-- Spanish -->
-		<name value="Horsea"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="67"/>
+		<pre-evolution-index value="66" />
+		<habitat-index value="0" />
+		<name value="ゴーリキー" />
+		<name value="Machoke" />
+		<name value="Machopeur" />
+		<name value="Maschock" />
+		<name value="Machoke" />
+		<name value="Machoke" />
+		<height value="1,5" />
+		<weight value="70,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="68">
-		<weight value="28,0"/>
-		<height value="0,8"/>
-		<preevolution-index value="-1"/>
-		<name value="リトルコスモス"/>
-		<!-- Japanese: Cosmoem -->
-		<name value="Cosmoem"/>
-		<!-- English -->
-		<name value="Cosmoem"/>
-		<!-- French -->
-		<name value="Cosmoem"/>
-		<!-- German -->
-		<name value="Cosmoem"/>
-		<!-- Spanish -->
-		<name value="Cosmoem"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="68"/>
+		<pre-evolution-index value="67" />
+		<habitat-index value="0" />
+		<name value="カイリキー" />
+		<name value="Machamp" />
+		<name value="Mackogneur" />
+		<name value="Machomei" />
+		<name value="Machamp" />
+		<name value="Machamp" />
+		<height value="1,6" />
+		<weight value="130" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="69">
-		<weight value="150,0"/>
-		<height value="1,3"/>
-		<preevolution-index value="68"/>
-		<name value="コスモッグ"/>
-		<!-- Japanese: Cosmoem -->
-		<name value="Cosmoem"/>
-		<!-- English -->
-		<name value="Cosmoem"/>
-		<!-- French -->
-		<name value="Cosmoem"/>
-		<!-- German -->
-		<name value="Cosmoem"/>
-		<!-- Spanish -->
-		<name value="Cosmoem"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="69"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="マダツボミ" />
+		<name value="Bellsprout" />
+		<name value="Chétiflor" />
+		<name value="Knofensa" />
+		<name value="Bellsprout" />
+		<name value="Bellsprout" />
+		<height value="0,7" />
+		<weight value="4" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="70">
-		<weight value="60,0"/>
-		<height value="1,0"/>
-		<preevolution-index value="-1"/>
-		<name value="ヒトデマン"/>
-		<!-- Japanese: Staryu -->
-		<name value="Staryu"/>
-		<!-- English -->
-		<name value="Staryu"/>
-		<!-- French -->
-		<name value="Staryu"/>
-		<!-- German -->
-		<name value="Staryu"/>
-		<!-- Spanish -->
-		<name value="Staryu"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="70"/>
+		<pre-evolution-index value="69" />
+		<habitat-index value="0" />
+		<name value="ウツドン" />
+		<name value="Weepinbell" />
+		<name value="Boustiflor" />
+		<name value="Ultrigaria" />
+		<name value="Weepinbell" />
+		<name value="Weepinbell" />
+		<height value="1" />
+		<weight value="6,4" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="71">
-		<weight value="60,0"/>
-		<height value="1,1"/>
-		<preevolution-index value="70"/>
-		<name value="スターミー"/>
-		<!-- Japanese: Starmie -->
-		<name value="Starmie"/>
-		<!-- English -->
-		<name value="Starmie"/>
-		<!-- French -->
-		<name value="Starmie"/>
-		<!-- German -->
-		<name value="Starmie"/>
-		<!-- Spanish -->
-		<name value="Starmie"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="71"/>
+		<pre-evolution-index value="70" />
+		<habitat-index value="0" />
+		<name value="ウツボット" />
+		<name value="Victreebel" />
+		<name value="Empiflor" />
+		<name value="Sarzenia" />
+		<name value="Victreebel" />
+		<name value="Victreebel" />
+		<height value="1,7" />
+		<weight value="15,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="72">
-		<weight value="75,0"/>
-		<height value="1,4"/>
-		<preevolution-index value="-1"/>
-		<name value="ビリリダマ"/>
-		<!-- Japanese: Voltorb -->
-		<name value="Voltorb"/>
-		<!-- English -->
-		<name value="Voltorb"/>
-		<!-- French -->
-		<name value="Voltorb"/>
-		<!-- German -->
-		<name value="Voltorb"/>
-		<!-- Spanish -->
-		<name value="Voltorb"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="72"/>
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="メノクラゲ" />
+		<name value="Tentacool" />
+		<name value="Tentacool" />
+		<name value="Tentacha" />
+		<name value="Tentacool" />
+		<name value="Tentacool" />
+		<height value="0,9" />
+		<weight value="45,5" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="73">
-		<weight value="80,0"/>
-		<height value="1,6"/>
-		<preevolution-index value="72"/>
-		<name value="デンリュウ"/>
-		<!-- Japanese: Electrode -->
-		<name value="Electrode"/>
-		<!-- English -->
-		<name value="Electrode"/>
-		<!-- French -->
-		<name value="Electrode"/>
-		<!-- German -->
-		<name value="Electrode"/>
-		<!-- Spanish -->
-		<name value="Electrode"/>
-		<!-- Italian -->
-		<discovered value="false"/>
-		<captured value="false"/>
-		<overworld-index value="73"/>
+		<pre-evolution-index value="72" />
+		<habitat-index value="0" />
+		<name value="ドククラゲ" />
+		<name value="Tentacruel" />
+		<name value="Tentacruel" />
+		<name value="Tentoxa" />
+		<name value="Tentacruel" />
+		<name value="Tentacruel" />
+		<height value="1,6" />
+		<weight value="55" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="74">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="イシツブテ" />
+		<name value="Geodude" />
+		<name value="Racaillou" />
+		<name value="Kleinstein" />
+		<name value="Geodude" />
+		<name value="Geodude" />
+		<height value="0,4" />
+		<weight value="20" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="75">
+		<pre-evolution-index value="74" />
+		<habitat-index value="0" />
+		<name value="ゴローン" />
+		<name value="Graveler" />
+		<name value="Gravalanch" />
+		<name value="Georok" />
+		<name value="Graveler" />
+		<name value="Graveler" />
+		<height value="1" />
+		<weight value="105" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="76">
+		<pre-evolution-index value="75" />
+		<habitat-index value="0" />
+		<name value="ゴローニャ" />
+		<name value="Golem" />
+		<name value="Grolem" />
+		<name value="Geowaz" />
+		<name value="Golem" />
+		<name value="Golem" />
+		<height value="1,4" />
+		<weight value="300" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="77">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ポニータ" />
+		<name value="Ponyta" />
+		<name value="Ponyta" />
+		<name value="Ponita" />
+		<name value="Ponyta" />
+		<name value="Ponyta" />
+		<height value="1" />
+		<weight value="30" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="78">
+		<pre-evolution-index value="77" />
+		<habitat-index value="0" />
+		<name value="ギャロップ" />
+		<name value="Rapidash" />
+		<name value="Galopa" />
+		<name value="Gallopa" />
+		<name value="Rapidash" />
+		<name value="Rapidash" />
+		<height value="1,7" />
+		<weight value="95" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="79">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ヤドン" />
+		<name value="Slowpoke" />
+		<name value="Ramoloss" />
+		<name value="Flegmon" />
+		<name value="Slowpoke" />
+		<name value="Slowpoke" />
+		<height value="1,2" />
+		<weight value="36" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="80">
+		<pre-evolution-index value="79" />
+		<habitat-index value="0" />
+		<name value="ヤドラン" />
+		<name value="Slowbro" />
+		<name value="Flagadoss" />
+		<name value="Lahmus" />
+		<name value="Slowbro" />
+		<name value="Slowbro" />
+		<height value="1,6" />
+		<weight value="78,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="81">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="コイル" />
+		<name value="Magnemite" />
+		<name value="Magnéti" />
+		<name value="Magnetilo" />
+		<name value="Magnemite" />
+		<name value="Magnemite" />
+		<height value="0,3" />
+		<weight value="6" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="82">
+		<pre-evolution-index value="81" />
+		<habitat-index value="0" />
+		<name value="レアコイル" />
+		<name value="Magneton" />
+		<name value="Magnéton" />
+		<name value="Magneton" />
+		<name value="Magneton" />
+		<name value="Magneton" />
+		<height value="1" />
+		<weight value="60" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="83">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="カモネギ" />
+		<name value="Farfetch’d" />
+		<name value="Canarticho" />
+		<name value="Porenta" />
+		<name value="Farfetch’d" />
+		<name value="Farfetch’d" />
+		<height value="0,8" />
+		<weight value="15" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="84">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ドードー" />
+		<name value="Doduo" />
+		<name value="Doduo" />
+		<name value="Dodu" />
+		<name value="Doduo" />
+		<name value="Doduo" />
+		<height value="1,4" />
+		<weight value="39,2" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="85">
+		<pre-evolution-index value="84" />
+		<habitat-index value="0" />
+		<name value="ドードリオ" />
+		<name value="Dodrio" />
+		<name value="Dodrio" />
+		<name value="Dodri" />
+		<name value="Dodrio" />
+		<name value="Dodrio" />
+		<height value="1,8" />
+		<weight value="85,2" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="86">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="パウワウ" />
+		<name value="Seel" />
+		<name value="Otaria" />
+		<name value="Jurob" />
+		<name value="Seel" />
+		<name value="Seel" />
+		<height value="1,1" />
+		<weight value="90" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="87">
+		<pre-evolution-index value="86" />
+		<habitat-index value="0" />
+		<name value="ジュゴン" />
+		<name value="Dewgong" />
+		<name value="Lamantine" />
+		<name value="Jugong" />
+		<name value="Dewgong" />
+		<name value="Dewgong" />
+		<height value="1,7" />
+		<weight value="120" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="88">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ベトベター" />
+		<name value="Grimer" />
+		<name value="Tadmorv" />
+		<name value="Sleima" />
+		<name value="Grimer" />
+		<name value="Grimer" />
+		<height value="0,9" />
+		<weight value="30" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="89">
+		<pre-evolution-index value="88" />
+		<habitat-index value="0" />
+		<name value="ベトベトン" />
+		<name value="Muk" />
+		<name value="Grotadmorv" />
+		<name value="Sleimok" />
+		<name value="Muk" />
+		<name value="Muk" />
+		<height value="1,2" />
+		<weight value="30" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="90">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="シェルダー" />
+		<name value="Shellder" />
+		<name value="Kokiyas" />
+		<name value="Muschas" />
+		<name value="Shellder" />
+		<name value="Shellder" />
+		<height value="0,3" />
+		<weight value="4" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="91">
+		<pre-evolution-index value="90" />
+		<habitat-index value="0" />
+		<name value="パルシェン" />
+		<name value="Cloyster" />
+		<name value="Crustabri" />
+		<name value="Austos" />
+		<name value="Cloyster" />
+		<name value="Cloyster" />
+		<height value="1,5" />
+		<weight value="132,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="92">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ゴース" />
+		<name value="Gastly" />
+		<name value="Fantominus" />
+		<name value="Nebulak" />
+		<name value="Gastly" />
+		<name value="Gastly" />
+		<height value="1,3" />
+		<weight value="0,1" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="93">
+		<pre-evolution-index value="92" />
+		<habitat-index value="0" />
+		<name value="ゴースト" />
+		<name value="Haunter" />
+		<name value="Spectrum" />
+		<name value="Alpollo" />
+		<name value="Haunter" />
+		<name value="Haunter" />
+		<height value="1,6" />
+		<weight value="0,1" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="94">
+		<pre-evolution-index value="93" />
+		<habitat-index value="0" />
+		<name value="ゲンガー" />
+		<name value="Gengar" />
+		<name value="Ectoplasma" />
+		<name value="Gengar" />
+		<name value="Gengar" />
+		<name value="Gengar" />
+		<height value="1,5" />
+		<weight value="40,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="95">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="イワーク" />
+		<name value="Onix" />
+		<name value="Onix" />
+		<name value="Onix" />
+		<name value="Onix" />
+		<name value="Onix" />
+		<height value="8,8" />
+		<weight value="210" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="96">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="スリープ" />
+		<name value="Drowzee" />
+		<name value="Soporifik" />
+		<name value="Traumato" />
+		<name value="Drowzee" />
+		<name value="Drowzee" />
+		<height value="1" />
+		<weight value="32,4" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="97">
+		<pre-evolution-index value="96" />
+		<habitat-index value="0" />
+		<name value="スリーパー" />
+		<name value="Hypno" />
+		<name value="Hypnomade" />
+		<name value="Hypno" />
+		<name value="Hypno" />
+		<name value="Hypno" />
+		<height value="1,6" />
+		<weight value="75,6" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="98">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="クラブ" />
+		<name value="Krabby" />
+		<name value="Krabby" />
+		<name value="Krabby" />
+		<name value="Krabby" />
+		<name value="Krabby" />
+		<height value="0,4" />
+		<weight value="6,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="99">
+		<pre-evolution-index value="98" />
+		<habitat-index value="0" />
+		<name value="キングラー" />
+		<name value="Kingler" />
+		<name value="Krabboss" />
+		<name value="Kingler" />
+		<name value="Kingler" />
+		<name value="Kingler" />
+		<height value="1,3" />
+		<weight value="60" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="100">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ビリリダマ" />
+		<name value="Voltorb" />
+		<name value="Voltorbe" />
+		<name value="Voltobal" />
+		<name value="Voltorb" />
+		<name value="Voltorb" />
+		<height value="0,5" />
+		<weight value="10,4" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="101">
+		<pre-evolution-index value="100" />
+		<habitat-index value="0" />
+		<name value="マルマイン" />
+		<name value="Electrode" />
+		<name value="Électrode" />
+		<name value="Lektrobal" />
+		<name value="Electrode" />
+		<name value="Electrode" />
+		<height value="1,2" />
+		<weight value="66,6" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="102">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="タマタマ" />
+		<name value="Exeggcute" />
+		<name value="Noeunoeuf" />
+		<name value="Owei" />
+		<name value="Exeggcute" />
+		<name value="Exeggcute" />
+		<height value="0,4" />
+		<weight value="2,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="103">
+		<pre-evolution-index value="102" />
+		<habitat-index value="0" />
+		<name value="ナッシー" />
+		<name value="Exeggutor" />
+		<name value="Noadkoko" />
+		<name value="Kokowei" />
+		<name value="Exeggutor" />
+		<name value="Exeggutor" />
+		<height value="2" />
+		<weight value="120" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="104">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="カラカラ" />
+		<name value="Cubone" />
+		<name value="Osselait" />
+		<name value="Tragosso" />
+		<name value="Cubone" />
+		<name value="Cubone" />
+		<height value="0,4" />
+		<weight value="6,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="105">
+		<pre-evolution-index value="104" />
+		<habitat-index value="0" />
+		<name value="ガラガラ" />
+		<name value="Marowak" />
+		<name value="Ossatueur" />
+		<name value="Knogga" />
+		<name value="Marowak" />
+		<name value="Marowak" />
+		<height value="1" />
+		<weight value="45" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="106">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="サワムラー" />
+		<name value="Hitmonlee" />
+		<name value="Kicklee" />
+		<name value="Kicklee" />
+		<name value="Hitmonlee" />
+		<name value="Hitmonlee" />
+		<height value="1,5" />
+		<weight value="49,8" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="107">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="エビワラー" />
+		<name value="Hitmonchan" />
+		<name value="Tygnon" />
+		<name value="Nockchan" />
+		<name value="Hitmonchan" />
+		<name value="Hitmonchan" />
+		<height value="1,4" />
+		<weight value="50,2" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="108">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ベロリンガ" />
+		<name value="Lickitung" />
+		<name value="Excelangue" />
+		<name value="Schlurp" />
+		<name value="Lickitung" />
+		<name value="Lickitung" />
+		<height value="1,2" />
+		<weight value="65,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="109">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ドガース" />
+		<name value="Koffing" />
+		<name value="Smogo" />
+		<name value="Smogon" />
+		<name value="Koffing" />
+		<name value="Koffing" />
+		<height value="0,6" />
+		<weight value="1" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="110">
+		<pre-evolution-index value="109" />
+		<habitat-index value="0" />
+		<name value="マタドガス" />
+		<name value="Weezing" />
+		<name value="Smogogo" />
+		<name value="Smogmog" />
+		<name value="Weezing" />
+		<name value="Weezing" />
+		<height value="1,2" />
+		<weight value="9,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="111">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="サイホーン" />
+		<name value="Rhyhorn" />
+		<name value="Rhinocorne" />
+		<name value="Rihorn" />
+		<name value="Rhyhorn" />
+		<name value="Rhyhorn" />
+		<height value="1" />
+		<weight value="115" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="112">
+		<pre-evolution-index value="111" />
+		<habitat-index value="0" />
+		<name value="サイドン" />
+		<name value="Rhydon" />
+		<name value="Rhinoféros" />
+		<name value="Rizeros" />
+		<name value="Rhydon" />
+		<name value="Rhydon" />
+		<height value="1,9" />
+		<weight value="120" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="113">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ラッキー" />
+		<name value="Chansey" />
+		<name value="Leveinard" />
+		<name value="Chaneira" />
+		<name value="Chansey" />
+		<name value="Chansey" />
+		<height value="1,1" />
+		<weight value="34,6" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="114">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="モンジャラ" />
+		<name value="Tangela" />
+		<name value="Saquedeneu" />
+		<name value="Tangela" />
+		<name value="Tangela" />
+		<name value="Tangela" />
+		<height value="1" />
+		<weight value="35" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="115">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ガルーラ" />
+		<name value="Kangaskhan" />
+		<name value="Kangourex" />
+		<name value="Kangama" />
+		<name value="Kangaskhan" />
+		<name value="Kangaskhan" />
+		<height value="2,2" />
+		<weight value="80" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="116">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="タッツー" />
+		<name value="Horsea" />
+		<name value="Hypotrempe" />
+		<name value="Seeper" />
+		<name value="Horsea" />
+		<name value="Horsea" />
+		<height value="0,4" />
+		<weight value="8" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="117">
+		<pre-evolution-index value="116" />
+		<habitat-index value="0" />
+		<name value="シードラ" />
+		<name value="Seadra" />
+		<name value="Hypocéan" />
+		<name value="Seemon" />
+		<name value="Seadra" />
+		<name value="Seadra" />
+		<height value="1,2" />
+		<weight value="25" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="118">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="トサキント" />
+		<name value="Goldeen" />
+		<name value="Poissirène" />
+		<name value="Goldini" />
+		<name value="Goldeen" />
+		<name value="Goldeen" />
+		<height value="0,6" />
+		<weight value="15" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="119">
+		<pre-evolution-index value="118" />
+		<habitat-index value="0" />
+		<name value="アズマオウ" />
+		<name value="Seaking" />
+		<name value="Poissoroy" />
+		<name value="Golking" />
+		<name value="Seaking" />
+		<name value="Seaking" />
+		<height value="1,3" />
+		<weight value="39" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="120">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ヒトデマン" />
+		<name value="Staryu" />
+		<name value="Stari" />
+		<name value="Sterndu" />
+		<name value="Staryu" />
+		<name value="Staryu" />
+		<height value="0,8" />
+		<weight value="34,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="121">
+		<pre-evolution-index value="120" />
+		<habitat-index value="0" />
+		<name value="スターミー" />
+		<name value="Starmie" />
+		<name value="Staross" />
+		<name value="Starmie" />
+		<name value="Starmie" />
+		<name value="Starmie" />
+		<height value="1,1" />
+		<weight value="80" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="122">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="バリヤード" />
+		<name value="Mr. Mime" />
+		<name value="M. Mime" />
+		<name value="Pantimos" />
+		<name value="Mr. Mime" />
+		<name value="Mr. Mime" />
+		<height value="1,3" />
+		<weight value="54,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="123">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ストライク" />
+		<name value="Scyther" />
+		<name value="Insécateur" />
+		<name value="Sichlor" />
+		<name value="Scyther" />
+		<name value="Scyther" />
+		<height value="1,5" />
+		<weight value="56" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="124">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ルージュラ" />
+		<name value="Jynx" />
+		<name value="Lippoutou" />
+		<name value="Rossana" />
+		<name value="Jynx" />
+		<name value="Jynx" />
+		<height value="1,4" />
+		<weight value="40,6" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="125">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="エレブー" />
+		<name value="Electabuzz" />
+		<name value="Élektek" />
+		<name value="Elektek" />
+		<name value="Electabuzz" />
+		<name value="Electabuzz" />
+		<height value="1,1" />
+		<weight value="30" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="126">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ブーバー" />
+		<name value="Magmar" />
+		<name value="Magmar" />
+		<name value="Magmar" />
+		<name value="Magmar" />
+		<name value="Magmar" />
+		<height value="1,3" />
+		<weight value="44,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="127">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="カイロス" />
+		<name value="Pinsir" />
+		<name value="Scarabrute" />
+		<name value="Pinsir" />
+		<name value="Pinsir" />
+		<name value="Pinsir" />
+		<height value="1,5" />
+		<weight value="55" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="128">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ケンタロス" />
+		<name value="Tauros" />
+		<name value="Tauros" />
+		<name value="Tauros" />
+		<name value="Tauros" />
+		<name value="Tauros" />
+		<height value="1,4" />
+		<weight value="88,4" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="129">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="コイキング" />
+		<name value="Magikarp" />
+		<name value="Magicarpe" />
+		<name value="Karpador" />
+		<name value="Magikarp" />
+		<name value="Magikarp" />
+		<height value="0,9" />
+		<weight value="10" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="130">
+		<pre-evolution-index value="129" />
+		<habitat-index value="0" />
+		<name value="ギャラドス" />
+		<name value="Gyarados" />
+		<name value="Léviator" />
+		<name value="Garados" />
+		<name value="Gyarados" />
+		<name value="Gyarados" />
+		<height value="6,5" />
+		<weight value="235" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="131">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ラプラス" />
+		<name value="Lapras" />
+		<name value="Lokhlass" />
+		<name value="Lapras" />
+		<name value="Lapras" />
+		<name value="Lapras" />
+		<height value="2,5" />
+		<weight value="220" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="132">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="メタモン" />
+		<name value="Ditto" />
+		<name value="Métamorph" />
+		<name value="Ditto" />
+		<name value="Ditto" />
+		<name value="Ditto" />
+		<height value="0,3" />
+		<weight value="4" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="133">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="イーブイ" />
+		<name value="Eevee" />
+		<name value="Évoli" />
+		<name value="Evoli" />
+		<name value="Eevee" />
+		<name value="Eevee" />
+		<height value="0,3" />
+		<weight value="6,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="134">
+		<pre-evolution-index value="133" />
+		<habitat-index value="0" />
+		<name value="シャワーズ" />
+		<name value="Vaporeon" />
+		<name value="Aquali" />
+		<name value="Aquana" />
+		<name value="Vaporeon" />
+		<name value="Vaporeon" />
+		<height value="1" />
+		<weight value="29" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="135">
+		<pre-evolution-index value="133" />
+		<habitat-index value="0" />
+		<name value="サンダース" />
+		<name value="Jolteon" />
+		<name value="Voltali" />
+		<name value="Blitza" />
+		<name value="Jolteon" />
+		<name value="Jolteon" />
+		<height value="0,8" />
+		<weight value="24,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="136">
+		<pre-evolution-index value="133" />
+		<habitat-index value="0" />
+		<name value="ブースター" />
+		<name value="Flareon" />
+		<name value="Pyroli" />
+		<name value="Flamara" />
+		<name value="Flareon" />
+		<name value="Flareon" />
+		<height value="0,9" />
+		<weight value="25" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="137">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ポリゴン" />
+		<name value="Porygon" />
+		<name value="Porygon" />
+		<name value="Porygon" />
+		<name value="Porygon" />
+		<name value="Porygon" />
+		<height value="0,8" />
+		<weight value="36,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="138">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="オムナイト" />
+		<name value="Omanyte" />
+		<name value="Amonita" />
+		<name value="Amonitas" />
+		<name value="Omanyte" />
+		<name value="Omanyte" />
+		<height value="0,4" />
+		<weight value="7,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="139">
+		<pre-evolution-index value="138" />
+		<habitat-index value="0" />
+		<name value="オムスター" />
+		<name value="Omastar" />
+		<name value="Amonistar" />
+		<name value="Amoroso" />
+		<name value="Omastar" />
+		<name value="Omastar" />
+		<height value="1" />
+		<weight value="35" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="140">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="カブト" />
+		<name value="Kabuto" />
+		<name value="Kabuto" />
+		<name value="Kabuto" />
+		<name value="Kabuto" />
+		<name value="Kabuto" />
+		<height value="0,5" />
+		<weight value="11,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="141">
+		<pre-evolution-index value="140" />
+		<habitat-index value="0" />
+		<name value="カブトプス" />
+		<name value="Kabutops" />
+		<name value="Kabutops" />
+		<name value="Kabutops" />
+		<name value="Kabutops" />
+		<name value="Kabutops" />
+		<height value="1,3" />
+		<weight value="40,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="142">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="プテラ" />
+		<name value="Aerodactyl" />
+		<name value="Ptéra" />
+		<name value="Aerodactyl" />
+		<name value="Aerodactyl" />
+		<name value="Aerodactyl" />
+		<height value="1,8" />
+		<weight value="59" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="143">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="カビゴン" />
+		<name value="Snorlax" />
+		<name value="Ronflex" />
+		<name value="Relaxo" />
+		<name value="Snorlax" />
+		<name value="Snorlax" />
+		<height value="2,1" />
+		<weight value="460" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="144">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="フリーザー" />
+		<name value="Articuno" />
+		<name value="Artikodin" />
+		<name value="Arktos" />
+		<name value="Articuno" />
+		<name value="Articuno" />
+		<height value="1,7" />
+		<weight value="55,4" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="145">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="サンダー" />
+		<name value="Zapdos" />
+		<name value="Électhor" />
+		<name value="Zapdos" />
+		<name value="Zapdos" />
+		<name value="Zapdos" />
+		<height value="1,6" />
+		<weight value="52,6" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="146">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ファイヤー" />
+		<name value="Moltres" />
+		<name value="Sulfura" />
+		<name value="Lavados" />
+		<name value="Moltres" />
+		<name value="Moltres" />
+		<height value="2" />
+		<weight value="60" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="147">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ミニリュウ" />
+		<name value="Dratini" />
+		<name value="Minidraco" />
+		<name value="Dratini" />
+		<name value="Dratini" />
+		<name value="Dratini" />
+		<height value="1,8" />
+		<weight value="3,3" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="148">
+		<pre-evolution-index value="147" />
+		<habitat-index value="0" />
+		<name value="ハクリュー" />
+		<name value="Dragonair" />
+		<name value="Draco" />
+		<name value="Dragonir" />
+		<name value="Dragonair" />
+		<name value="Dragonair" />
+		<height value="4" />
+		<weight value="16,5" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="149">
+		<pre-evolution-index value="148" />
+		<habitat-index value="0" />
+		<name value="カイリュー" />
+		<name value="Dragonite" />
+		<name value="Dracolosse" />
+		<name value="Dragoran" />
+		<name value="Dragonite" />
+		<name value="Dragonite" />
+		<height value="2,2" />
+		<weight value="210" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="150">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ミュウツー" />
+		<name value="Mewtwo" />
+		<name value="Mewtwo" />
+		<name value="Mewtu" />
+		<name value="Mewtwo" />
+		<name value="Mewtwo" />
+		<height value="2" />
+		<weight value="122" />
+		<discovered value="true" />
+		<captured value="true" />
+	</id>
+	<id value="151">
+		<pre-evolution-index value="-1" />
+		<habitat-index value="0" />
+		<name value="ミュウ" />
+		<name value="Mew" />
+		<name value="Mew" />
+		<name value="Mew" />
+		<name value="Mew" />
+		<name value="Mew" />
+		<height value="0,4" />
+		<weight value="4" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 </pokedex>

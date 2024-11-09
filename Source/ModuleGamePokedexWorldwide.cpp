@@ -78,8 +78,8 @@ void ModuleGamePokedexWorldWide::Write(const char* text, int x, int y, Color col
 			letter = GetCharRect(text[i]-32);
 		if (text[i] == ',')
 		{
-			App->renderer->Draw(*fontTexture, x + size.x * i, y+2, letter, color);
 			x -= size.x;
+			App->renderer->Draw(*fontTexture, x + size.x * i, y+1, letter, color);
 		}
 		else
 			App->renderer->Draw(*fontTexture, (x + size.x * i), y, letter, color);
