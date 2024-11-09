@@ -279,7 +279,7 @@ update_status ModulePokedex::Update()
             if(selectedLanguage == 0)
                 App->text_pokedex_japanese->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, 60 + 15 * i + targetOffset, BLACK);
             else
-                App->text_pokedex_worldwide->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, 60 + 15 * i + targetOffset, BLACK);
+                App->text_pokedex_worldwide->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, 59 + 15 * i + targetOffset, BLACK);
         }
     }
     rect = { 0 , 90, 124 ,15 };
