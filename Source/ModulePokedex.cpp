@@ -305,7 +305,7 @@ bool ModulePokedex::CleanUp()
 
 void ModulePokedex::LoadConfigFile()
 {
-    pugi::xml_parse_result result = _data.load_file("Assets/Pokedex/Pokedex.xml");
+    pugi::xml_parse_result result = _data.load_file("Assets/Pokedex/Pokedex2.xml");
     if (result)
     {
         LOG("config.xml parsed without errors");
@@ -318,7 +318,7 @@ void ModulePokedex::LoadConfigFile()
 
 void ModulePokedex::SaveConfigFile()
 {
-    _data.save_file("Assets/Pokedex/Pokedex.xml");
+    _data.save_file("Assets/Pokedex/Pokedex2.xml");
 }
 
 

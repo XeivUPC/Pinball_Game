@@ -1,8 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
 <pokedex>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
   <id value="1">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-	  <name value="107,91,136,145,103"/><!--フシギダネ-->
+    <blue-habitat-index value="-1" />
+    <red-habitat-index value="-1" />
+    <name value="107,91,134,143,103"><!--フシギダネ--></name>
     <name value="Bulbasaur" />
     <name value="Bulbizarre" />
     <name value="Bisasam" />
@@ -15,8 +38,9 @@
   </id>
   <id value="2">
     <pre-evolution-index value="1" />
-    <habitat-index value="0" />
-    <name value="フシギソウ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="107,91,134,94,82"><!--フシギソウ--></name>
     <name value="Ivysaur" />
     <name value="Herbizarre" />
     <name value="Bisaknosp" />
@@ -24,13 +48,14 @@
     <name value="Ivysaur" />
     <height value="1" />
     <weight value="13" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="3">
     <pre-evolution-index value="2" />
-    <habitat-index value="0" />
-    <name value="フシギバナ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />  
+    <name value="107,91,134,148,100"><!--フシギバナ--></name>
     <name value="Venusaur" />
     <name value="Florizarre" />
     <name value="Bisaflor" />
@@ -38,27 +63,29 @@
     <name value="Venusaur" />
     <height value="2" />
     <weight value="100" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="4">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ヒトカゲ" />
+    <blue-habitat-index value="-1" />
+    <red-habitat-index value="-1" />
+	<name value="106,99,85,136"><!--ヒトカゲ--></name>
     <name value="Charmander" />
-    <name value="Salameche" />
+    <name value="Salamèche" />
     <name value="Glumanda" />
     <name value="Charmander" />
     <name value="Charmander" />
     <height value="0,6" />
     <weight value="8,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="5">
     <pre-evolution-index value="4" />
-    <habitat-index value="0" />
-    <name value="リザード" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="119,138,159,147"><!--リザード--></name>
     <name value="Charmeleon" />
     <name value="Reptincel" />
     <name value="Glutexo" />
@@ -66,13 +93,14 @@
     <name value="Charmeleon" />
     <height value="1,1" />
     <weight value="19" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="6">
     <pre-evolution-index value="5" />
-    <habitat-index value="0" />
-    <name value="リザードン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+	<name value="119,138,159,147,124"><!--リザードン--></name>
     <name value="Charizard" />
     <name value="Dracaufeu" />
     <name value="Glurak" />
@@ -80,13 +108,14 @@
     <name value="Charizard" />
     <height value="1,7" />
     <weight value="90,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="7">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ゼニガメ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="141,101,133,113"><!--ゼニガメ--></name>
     <name value="Squirtle" />
     <name value="Carapuce" />
     <name value="Schiggy" />
@@ -94,13 +123,14 @@
     <name value="Squirtle" />
     <height value="0,5" />
     <weight value="9" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="8">
     <pre-evolution-index value="7" />
-    <habitat-index value="0" />
-    <name value="カメール" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,113,159,120"><!--カメール--></name>
     <name value="Wartortle" />
     <name value="Carabaffe" />
     <name value="Schillok" />
@@ -108,13 +138,14 @@
     <name value="Wartortle" />
     <height value="1" />
     <weight value="22,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="9">
     <pre-evolution-index value="8" />
-    <habitat-index value="0" />
-    <name value="カメックス" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,113,ッ,87,92"><!--カメクス--></name>
     <name value="Blastoise" />
     <name value="Tortank" />
     <name value="Turtok" />
@@ -122,13 +153,14 @@
     <name value="Blastoise" />
     <height value="1,6" />
     <weight value="85,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="10">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="キャタピー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="86,130,95,154,159"><!--キャタピー--></name>
     <name value="Caterpie" />
     <name value="Chenipan" />
     <name value="Raupy" />
@@ -136,13 +168,14 @@
     <name value="Caterpie" />
     <height value="0,3" />
     <weight value="2,9" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="11">
     <pre-evolution-index value="10" />
-    <habitat-index value="0" />
-    <name value="トランセル" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="99,118,124,93,120"><!--トランセル--></name>
     <name value="Metapod" />
     <name value="Chrysacier" />
     <name value="Safcon" />
@@ -150,13 +183,14 @@
     <name value="Metapod" />
     <height value="0,7" />
     <weight value="9,9" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="12">
     <pre-evolution-index value="11" />
-    <habitat-index value="0" />
-    <name value="バタフリー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="148,95,107,119,159"><!--バタフリー--></name>
     <name value="Butterfree" />
     <name value="Papilusion" />
     <name value="Smettbo" />
@@ -164,13 +198,14 @@
     <name value="Butterfree" />
     <height value="1,1" />
     <weight value="32" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="13">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ビードル" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="149,159,147,120"><!--ビードル--></name>
     <name value="Weedle" />
     <name value="Aspicot" />
     <name value="Hornliu" />
@@ -178,13 +213,14 @@
     <name value="Weedle" />
     <height value="0,3" />
     <weight value="3,2" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="14">
     <pre-evolution-index value="13" />
-    <habitat-index value="0" />
-    <name value="コクーン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="89,87,159,124"><!--コクーン--></name>
     <name value="Kakuna" />
     <name value="Coconfort" />
     <name value="Kokuna" />
@@ -192,13 +228,14 @@
     <name value="Kakuna" />
     <height value="0,6" />
     <weight value="10" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="15">
     <pre-evolution-index value="14" />
-    <habitat-index value="0" />
-    <name value="スピアー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="92,154,80,159"><!--スピアー--></name>
     <name value="Beedrill" />
     <name value="Dardargnan" />
     <name value="Bibor" />
@@ -206,13 +243,14 @@
     <name value="Beedrill" />
     <height value="1" />
     <weight value="29,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="16">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ポッポ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="157,ッ,157"><!--ポポ--></name>
     <name value="Pidgey" />
     <name value="Roucool" />
     <name value="Taubsi" />
@@ -220,27 +258,29 @@
     <name value="Pidgey" />
     <height value="0,3" />
     <weight value="1,8" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="17">
     <pre-evolution-index value="16" />
-    <habitat-index value="0" />
-    <name value="ピジョン" />
-    <name value="Pidgeotto" />
-    <name value="Roucoups" />
-    <name value="Tauboga" />
-    <name value="Pidgeotto" />
-    <name value="Pidgeotto" />
-    <height value="1,1" />
-    <weight value="30" />
-    <discovered value="false" />
-    <captured value="false" />
+    <blue-habitat-index value="-1" />
+	  <red-habitat-index value="-1" />
+	  <name value="154,139,132,124"><!--ピジョン--></name>
+	  <name value="Pidgeotto" />
+	  <name value="Roucoups" />
+	  <name value="Tauboga" />
+	  <name value="Pidgeotto" />
+	  <name value="Pidgeotto" />
+	  <height value="1,1" />
+	  <weight value="30" />
+	  <discovered value="true" />
+	  <captured value="true" />
   </id>
   <id value="18">
-    <pre-evolution-index value="17" />
-    <habitat-index value="0" />
-    <name value="ピジョット" />
+	<pre-evolution-index value="17" />
+	<blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="154,139,132,ッ,99"><!--ピジョト--></name>
     <name value="Pidgeot" />
     <name value="Roucarnage" />
     <name value="Tauboss" />
@@ -248,13 +288,14 @@
     <name value="Pidgeot" />
     <height value="1,5" />
     <weight value="39,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="19">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="コラッタ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="89,118,ッ,95"><!--コラタ--></name>
     <name value="Rattata" />
     <name value="Rattata" />
     <name value="Rattfratz" />
@@ -262,13 +303,14 @@
     <name value="Rattata" />
     <height value="0,3" />
     <weight value="3,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="20">
     <pre-evolution-index value="19" />
-    <habitat-index value="0" />
-    <name value="ラッタ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="118,ッ,95"><!--ラタ--></name>
     <name value="Raticate" />
     <name value="Rattatac" />
     <name value="Rattikarl" />
@@ -276,13 +318,14 @@
     <name value="Raticate" />
     <height value="0,7" />
     <weight value="18,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="21">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="オニスズメ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="84,101,92,140,113"><!--オニスズメ--></name>
     <name value="Spearow" />
     <name value="Piafabec" />
     <name value="Habitak" />
@@ -290,13 +333,14 @@
     <name value="Spearow" />
     <height value="0,3" />
     <weight value="2" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="22">
     <pre-evolution-index value="21" />
-    <habitat-index value="0" />
-    <name value="オニドリル" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="84,101,147,119,120"><!--オニドリル--></name>
     <name value="Fearow" />
     <name value="Rapasdepic" />
     <name value="Ibitak" />
@@ -304,13 +348,14 @@
     <name value="Fearow" />
     <height value="1,2" />
     <weight value="38" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="23">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="アーボ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="80,159,152"><!--アーボ--></name>
     <name value="Ekans" />
     <name value="Abo" />
     <name value="Rettan" />
@@ -318,13 +363,14 @@
     <name value="Ekans" />
     <height value="2" />
     <weight value="6,9" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="24">
     <pre-evolution-index value="23" />
-    <habitat-index value="0" />
-    <name value="アーボック" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="80,159,152,ッ,87"><!--アーボク--></name>
     <name value="Arbok" />
     <name value="Arbok" />
     <name value="Arbok" />
@@ -332,13 +378,14 @@
     <name value="Arbok" />
     <height value="3,5" />
     <weight value="65" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="25">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ピカチュウ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="154,85,96,131,82"><!--ピカチュウ--></name>
     <name value="Pikachu" />
     <name value="Pikachu" />
     <name value="Pikachu" />
@@ -346,13 +393,14 @@
     <name value="Pikachu" />
     <height value="0,4" />
     <weight value="6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="26">
     <pre-evolution-index value="25" />
-    <habitat-index value="0" />
-    <name value="ライチュウ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="118,81,96,131,82"><!--ライチュウ--></name>
     <name value="Raichu" />
     <name value="Raichu" />
     <name value="Raichu" />
@@ -360,13 +408,14 @@
     <name value="Raichu" />
     <height value="0,8" />
     <weight value="30" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="27">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="サンド" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="90,124,147"><!--サンド--></name>
     <name value="Sandshrew" />
     <name value="Sabelette" />
     <name value="Sandan" />
@@ -374,13 +423,14 @@
     <name value="Sandshrew" />
     <height value="0,6" />
     <weight value="12" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="28">
     <pre-evolution-index value="27" />
-    <habitat-index value="0" />
-    <name value="サンドパン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="90,124,147,153,124"><!--サンドパン--></name>
     <name value="Sandslash" />
     <name value="Sablaireau" />
     <name value="Sandamer" />
@@ -388,27 +438,29 @@
     <name value="Sandslash" />
     <height value="1" />
     <weight value="29,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="29">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ニドラン+" />
-    <name value="Nidoran+" />
-    <name value="Nidoran+" />
-    <name value="Nidoran+" />
-    <name value="Nidoran+" />
-    <name value="Nidoran+" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,147,118,124,♀"><!--ニドラン--></name>
+    <name value="Nidoran♀" />
+    <name value="Nidoran♀" />
+    <name value="Nidoran♀" />
+    <name value="Nidoran♀" />
+    <name value="Nidoran♀" />
     <height value="0,4" />
     <weight value="7" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="30">
     <pre-evolution-index value="29" />
-    <habitat-index value="0" />
-    <name value="ニドリーナ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,147,119,159,100"><!--ニドリーナ--></name>
     <name value="Nidorina" />
     <name value="Nidorina" />
     <name value="Nidorina" />
@@ -416,13 +468,14 @@
     <name value="Nidorina" />
     <height value="0,8" />
     <weight value="20" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="31">
     <pre-evolution-index value="30" />
-    <habitat-index value="0" />
-    <name value="ニドクイン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,147,87,81,124"><!--ニドクイン--></name>
     <name value="Nidoqueen" />
     <name value="Nidoqueen" />
     <name value="Nidoqueen" />
@@ -430,27 +483,29 @@
     <name value="Nidoqueen" />
     <height value="1,3" />
     <weight value="60" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="32">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ニドラン-" />
-    <name value="Nidoran-" />
-    <name value="Nidoran-" />
-    <name value="Nidoran-" />
-    <name value="Nidoran-" />
-    <name value="Nidoran-" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,147,118,124,♂"><!--ニドラン--></name>
+    <name value="Nidoran♂" />
+    <name value="Nidoran♂" />
+    <name value="Nidoran♂" />
+    <name value="Nidoran♂" />
+    <name value="Nidoran♂" />
     <height value="0,5" />
     <weight value="9" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="33">
     <pre-evolution-index value="32" />
-    <habitat-index value="0" />
-    <name value="ニドリーノ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,147,119,159,104"><!--ニドリーノ--></name>
     <name value="Nidorino" />
     <name value="Nidorino" />
     <name value="Nidorino" />
@@ -458,13 +513,14 @@
     <name value="Nidorino" />
     <height value="0,9" />
     <weight value="19,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="34">
     <pre-evolution-index value="33" />
-    <habitat-index value="0" />
-    <name value="ニドキング" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,147,86,124,135"><!--ニドキング--></name>
     <name value="Nidoking" />
     <name value="Nidoking" />
     <name value="Nidoking" />
@@ -472,41 +528,44 @@
     <name value="Nidoking" />
     <height value="1,4" />
     <weight value="62" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="35">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ピッピ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="154,ッ,154"><!--ピピ--></name>
     <name value="Clefairy" />
-    <name value="Melofee" />
+    <name value="Mélofée" />
     <name value="Piepi" />
     <name value="Clefairy" />
     <name value="Clefairy" />
     <height value="0,6" />
     <weight value="7,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="36">
     <pre-evolution-index value="35" />
-    <habitat-index value="0" />
-    <name value="ピクシー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="154,87,91,159"><!--ピクシー--></name>
     <name value="Clefable" />
-    <name value="Melodelfe" />
+    <name value="Mélodelfe" />
     <name value="Pixi" />
     <name value="Clefable" />
     <name value="Clefable" />
     <height value="1,3" />
     <weight value="40" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="37">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ロコン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="122,89,124"><!--ロコン--></name>
     <name value="Vulpix" />
     <name value="Goupix" />
     <name value="Vulpix" />
@@ -514,13 +573,14 @@
     <name value="Vulpix" />
     <height value="0,6" />
     <weight value="9,9" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="38">
     <pre-evolution-index value="37" />
-    <habitat-index value="0" />
-    <name value="キュウコン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="86,131,82,89,124"><!--キュウコン--></name>
     <name value="Ninetales" />
     <name value="Feunard" />
     <name value="Vulnona" />
@@ -528,13 +588,14 @@
     <name value="Ninetales" />
     <height value="1,1" />
     <weight value="19,9" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="39">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="プリン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="155,119,124"><!--プリン--></name>
     <name value="Jigglypuff" />
     <name value="Rondoudou" />
     <name value="Pummeluff" />
@@ -542,13 +603,14 @@
     <name value="Jigglypuff" />
     <height value="0,5" />
     <weight value="5,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="40">
     <pre-evolution-index value="39" />
-    <habitat-index value="0" />
-    <name value="プクリン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="155,87,119,124"><!--プクリン--></name>
     <name value="Wigglytuff" />
     <name value="Grodoudou" />
     <name value="Knuddeluff" />
@@ -556,13 +618,14 @@
     <name value="Wigglytuff" />
     <height value="1" />
     <weight value="12" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="41">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ズバット" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="140,148,ッ,99"><!--ズバト--></name>
     <name value="Zubat" />
     <name value="Nosferapti" />
     <name value="Zubat" />
@@ -570,13 +633,14 @@
     <name value="Zubat" />
     <height value="0,8" />
     <weight value="7,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="42">
     <pre-evolution-index value="41" />
-    <habitat-index value="0" />
-    <name value="ゴルバット" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="137,120,148,ッ,99"><!--ゴルバト--></name>
     <name value="Golbat" />
     <name value="Nosferalto" />
     <name value="Golbat" />
@@ -584,13 +648,14 @@
     <name value="Golbat" />
     <height value="1,6" />
     <weight value="55" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="43">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ナゾノクサ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="100,142,104,87,90"><!--ナゾノクサ--></name>
     <name value="Oddish" />
     <name value="Mystherbe" />
     <name value="Myrapla" />
@@ -598,13 +663,14 @@
     <name value="Oddish" />
     <height value="0,5" />
     <weight value="5,4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="44">
     <pre-evolution-index value="43" />
-    <habitat-index value="0" />
-    <name value="クサイハナ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="87,90,81,105,100"><!--クサイハナ--></name>
     <name value="Gloom" />
     <name value="Ortide" />
     <name value="Duflor" />
@@ -612,13 +678,14 @@
     <name value="Gloom" />
     <height value="0,8" />
     <weight value="8,6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="45">
     <pre-evolution-index value="44" />
-    <habitat-index value="0" />
-    <name value="ラフレシア" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="118,107,121,91,80"><!--ラフレシア--></name>
     <name value="Vileplume" />
     <name value="Rafflesia" />
     <name value="Giflor" />
@@ -626,13 +693,14 @@
     <name value="Vileplume" />
     <height value="1,2" />
     <weight value="18,6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="46">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="パラス" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="153,118,92"><!--パラス--></name>
     <name value="Paras" />
     <name value="Paras" />
     <name value="Paras" />
@@ -640,13 +708,14 @@
     <name value="Paras" />
     <height value="0,3" />
     <weight value="5,4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="47">
     <pre-evolution-index value="46" />
-    <habitat-index value="0" />
-    <name value="パラセクト" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="153,118,93,87,99"><!--パラセクト--></name>
     <name value="Parasect" />
     <name value="Parasect" />
     <name value="Parasek" />
@@ -654,13 +723,14 @@
     <name value="Parasect" />
     <height value="1" />
     <weight value="29,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="48">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="コンパン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="89,124,153,124"><!--コンパン--></name>
     <name value="Venonat" />
     <name value="Mimitoss" />
     <name value="Bluzuk" />
@@ -668,27 +738,29 @@
     <name value="Venonat" />
     <height value="1" />
     <weight value="30" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="49">
     <pre-evolution-index value="48" />
-    <habitat-index value="0" />
-    <name value="モルフォン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="114,120,107,129,124"><!--モルフォン--></name>
     <name value="Venomoth" />
-    <name value="Aeromite" />
+    <name value="Aéromite" />
     <name value="Omot" />
     <name value="Venomoth" />
     <name value="Venomoth" />
     <height value="1,5" />
     <weight value="12,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="50">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ディグダ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="146,126,135,143"><!--ディグダ--></name>
     <name value="Diglett" />
     <name value="Taupiqueur" />
     <name value="Digda" />
@@ -696,13 +768,14 @@
     <name value="Diglett" />
     <height value="0,2" />
     <weight value="0,8" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="51">
     <pre-evolution-index value="50" />
-    <habitat-index value="0" />
-    <name value="ダグトリオ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="143,135,99,119,84"><!--ダグトリオ--></name>
     <name value="Dugtrio" />
     <name value="Triopikeur" />
     <name value="Digdri" />
@@ -710,13 +783,14 @@
     <name value="Dugtrio" />
     <height value="0,7" />
     <weight value="33,3" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="52">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ニャース" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,130,159,92"><!--ニャース--></name>
     <name value="Meowth" />
     <name value="Miaouss" />
     <name value="Mauzi" />
@@ -724,13 +798,14 @@
     <name value="Meowth" />
     <height value="0,4" />
     <weight value="4,2" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="53">
     <pre-evolution-index value="52" />
-    <habitat-index value="0" />
-    <name value="ペルシアン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="156,120,91,80,124"><!--ペルシアン--></name>
     <name value="Persian" />
     <name value="Persian" />
     <name value="Snobilikat" />
@@ -738,13 +813,14 @@
     <name value="Persian" />
     <height value="1" />
     <weight value="32" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="54">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="コダック" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="89,143,ッ,87"><!--コダク--></name>
     <name value="Psyduck" />
     <name value="Psykokwak" />
     <name value="Enton" />
@@ -752,13 +828,14 @@
     <name value="Psyduck" />
     <height value="0,8" />
     <weight value="19,6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="55">
     <pre-evolution-index value="54" />
-    <habitat-index value="0" />
-    <name value="ゴルダック" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="137,120,143,ッ,87"><!--ゴルダク--></name>
     <name value="Golduck" />
     <name value="Akwakwak" />
     <name value="Entoron" />
@@ -766,27 +843,29 @@
     <name value="Golduck" />
     <height value="1,7" />
     <weight value="76,6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="56">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="マンキー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="110,124,86,159"><!--マンキー--></name>
     <name value="Mankey" />
-    <name value="Ferosinge" />
+    <name value="Férosinge" />
     <name value="Menki" />
     <name value="Mankey" />
     <name value="Mankey" />
     <height value="0,5" />
     <weight value="28" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="57">
     <pre-evolution-index value="56" />
-    <habitat-index value="0" />
-    <name value="オコリザル" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="84,89,119,138,120"><!--オコリザル--></name>
     <name value="Primeape" />
     <name value="Colossinge" />
     <name value="Rasaff" />
@@ -794,13 +873,14 @@
     <name value="Primeape" />
     <height value="1" />
     <weight value="32" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="58">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ガーディ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="133,159,146,126"><!--ガーディ--></name>
     <name value="Growlithe" />
     <name value="Caninos" />
     <name value="Fukano" />
@@ -808,13 +888,14 @@
     <name value="Growlithe" />
     <height value="0,7" />
     <weight value="19" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="59">
     <pre-evolution-index value="58" />
-    <habitat-index value="0" />
-    <name value="ウインディ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="82,81,124,146,126"><!--ウインディ--></name>
     <name value="Arcanine" />
     <name value="Arcanin" />
     <name value="Arkani" />
@@ -822,13 +903,14 @@
     <name value="Arcanine" />
     <height value="1,9" />
     <weight value="155" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="60">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ニョロモ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,132,122,114"><!--ニョロモ--></name>
     <name value="Poliwag" />
     <name value="Ptitard" />
     <name value="Quapsel" />
@@ -836,13 +918,14 @@
     <name value="Poliwag" />
     <height value="0,6" />
     <weight value="12,4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="61">
     <pre-evolution-index value="60" />
-    <habitat-index value="0" />
-    <name value="ニョロゾ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,132,122,142"><!--ニョロゾ--></name>
     <name value="Poliwhirl" />
     <name value="Têtarte" />
     <name value="Quaputzi" />
@@ -850,13 +933,14 @@
     <name value="Poliwhirl" />
     <height value="1" />
     <weight value="20" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="62">
     <pre-evolution-index value="61" />
-    <habitat-index value="0" />
-    <name value="ニョロボン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="101,132,122,152,124"><!--ニョロボン--></name>
     <name value="Poliwrath" />
     <name value="Tartard" />
     <name value="Quappo" />
@@ -864,13 +948,14 @@
     <name value="Poliwrath" />
     <height value="1,3" />
     <weight value="54" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="63">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ケーシィ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="88,159,91,126"><!--ケーシィ--></name>
     <name value="Abra" />
     <name value="Abra" />
     <name value="Abra" />
@@ -878,13 +963,14 @@
     <name value="Abra" />
     <height value="0,9" />
     <weight value="19,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="64">
     <pre-evolution-index value="63" />
-    <habitat-index value="0" />
-    <name value="ユンゲラー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="116,124,136,118,159"><!--ユンゲラー--></name>
     <name value="Kadabra" />
     <name value="Kadabra" />
     <name value="Kadabra" />
@@ -892,13 +978,14 @@
     <name value="Kadabra" />
     <height value="1,3" />
     <weight value="56,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="65">
     <pre-evolution-index value="64" />
-    <habitat-index value="0" />
-    <name value="フーディン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="107,159,146,126,124"><!--フーディン--></name>
     <name value="Alakazam" />
     <name value="Alakazam" />
     <name value="Simsala" />
@@ -906,13 +993,14 @@
     <name value="Alakazam" />
     <height value="1,5" />
     <weight value="48" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="66">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ワンリキー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="123,124,119,86,159"><!--ワンリキー--></name>
     <name value="Machop" />
     <name value="Machoc" />
     <name value="Machollo" />
@@ -920,13 +1008,14 @@
     <name value="Machop" />
     <height value="0,8" />
     <weight value="19,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="67">
     <pre-evolution-index value="66" />
-    <habitat-index value="0" />
-    <name value="ゴーリキー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="137,159,119,86,159"><!--ゴーリキー--></name>
     <name value="Machoke" />
     <name value="Machopeur" />
     <name value="Maschock" />
@@ -934,13 +1023,14 @@
     <name value="Machoke" />
     <height value="1,5" />
     <weight value="70,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="68">
     <pre-evolution-index value="67" />
-    <habitat-index value="0" />
-    <name value="カイリキー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,81,119,86,159"><!--カイリキー--></name>
     <name value="Machamp" />
     <name value="Mackogneur" />
     <name value="Machomei" />
@@ -948,27 +1038,29 @@
     <name value="Machamp" />
     <height value="1,6" />
     <weight value="130" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="69">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="マダツボミ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="110,143,97,152,111"><!--マダツボミ--></name>
     <name value="Bellsprout" />
-    <name value="Chetiflor" />
+    <name value="Chétiflor" />
     <name value="Knofensa" />
     <name value="Bellsprout" />
     <name value="Bellsprout" />
     <height value="0,7" />
     <weight value="4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="70">
     <pre-evolution-index value="69" />
-    <habitat-index value="0" />
-    <name value="ウツドン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="82,97,147,124"><!--ウツドン--></name>
     <name value="Weepinbell" />
     <name value="Boustiflor" />
     <name value="Ultrigaria" />
@@ -976,13 +1068,14 @@
     <name value="Weepinbell" />
     <height value="1" />
     <weight value="6,4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="71">
     <pre-evolution-index value="70" />
-    <habitat-index value="0" />
-    <name value="ウツボット" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="82,97,152,ッ,99"><!--ウツボト--></name>
     <name value="Victreebel" />
     <name value="Empiflor" />
     <name value="Sarzenia" />
@@ -990,13 +1083,14 @@
     <name value="Victreebel" />
     <height value="1,7" />
     <weight value="15,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="72">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="メノクラゲ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="113,104,87,118,136"><!--メノクラゲ--></name>
     <name value="Tentacool" />
     <name value="Tentacool" />
     <name value="Tentacha" />
@@ -1004,13 +1098,14 @@
     <name value="Tentacool" />
     <height value="0,9" />
     <weight value="45,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="73">
     <pre-evolution-index value="72" />
-    <habitat-index value="0" />
-    <name value="ドククラゲ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="147,87,87,118,136"><!--ドククラゲ--></name>
     <name value="Tentacruel" />
     <name value="Tentacruel" />
     <name value="Tentoxa" />
@@ -1018,13 +1113,14 @@
     <name value="Tentacruel" />
     <height value="1,6" />
     <weight value="55" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="74">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="イシツブテ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="81,91,97,150,98"><!--イシツブテ--></name>
     <name value="Geodude" />
     <name value="Racaillou" />
     <name value="Kleinstein" />
@@ -1032,13 +1128,14 @@
     <name value="Geodude" />
     <height value="0,4" />
     <weight value="20" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="75">
     <pre-evolution-index value="74" />
-    <habitat-index value="0" />
-    <name value="ゴローン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="137,122,159,124"><!--ゴローン--></name>
     <name value="Graveler" />
     <name value="Gravalanch" />
     <name value="Georok" />
@@ -1046,13 +1143,14 @@
     <name value="Graveler" />
     <height value="1" />
     <weight value="105" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="76">
     <pre-evolution-index value="75" />
-    <habitat-index value="0" />
-    <name value="ゴローニャ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="137,122,159,101,130"><!--ゴローニャ--></name>
     <name value="Golem" />
     <name value="Grolem" />
     <name value="Geowaz" />
@@ -1060,13 +1158,14 @@
     <name value="Golem" />
     <height value="1,4" />
     <weight value="300" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="77">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ポニータ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="157,101,159,95"><!--ポニータ--></name>
     <name value="Ponyta" />
     <name value="Ponyta" />
     <name value="Ponita" />
@@ -1074,13 +1173,14 @@
     <name value="Ponyta" />
     <height value="1" />
     <weight value="30" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="78">
     <pre-evolution-index value="77" />
-    <habitat-index value="0" />
-    <name value="ギャロップ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="134,130,122,ッ,155"><!--ギャロプ--></name>
     <name value="Rapidash" />
     <name value="Galopa" />
     <name value="Gallopa" />
@@ -1088,13 +1188,14 @@
     <name value="Rapidash" />
     <height value="1,7" />
     <weight value="95" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="79">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ヤドン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="115,147,124"><!--ヤドン--></name>
     <name value="Slowpoke" />
     <name value="Ramoloss" />
     <name value="Flegmon" />
@@ -1102,13 +1203,14 @@
     <name value="Slowpoke" />
     <height value="1,2" />
     <weight value="36" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="80">
     <pre-evolution-index value="79" />
-    <habitat-index value="0" />
-    <name value="ヤドラン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="115,147,118,124"><!--ヤドラン--></name>
     <name value="Slowbro" />
     <name value="Flagadoss" />
     <name value="Lahmus" />
@@ -1116,55 +1218,60 @@
     <name value="Slowbro" />
     <height value="1,6" />
     <weight value="78,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
+	  
   </id>
   <id value="81">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="コイル" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="89,81,120"><!--コイル--></name>
     <name value="Magnemite" />
-    <name value="Magneti" />
+    <name value="Magnéti" />
     <name value="Magnetilo" />
     <name value="Magnemite" />
     <name value="Magnemite" />
     <height value="0,3" />
     <weight value="6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="82">
     <pre-evolution-index value="81" />
-    <habitat-index value="0" />
-    <name value="レアコイル" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="121,80,89,81,120"><!--レアコイル--></name>
     <name value="Magneton" />
-    <name value="Magneton" />
+    <name value="Magnéton" />
     <name value="Magneton" />
     <name value="Magneton" />
     <name value="Magneton" />
     <height value="1" />
     <weight value="60" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="83">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="カモネギ" />
-    <name value="Farfetch'd" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,114,103,134"><!--カモネギ--></name>
+    <name value="Farfetch’d" />
     <name value="Canarticho" />
     <name value="Porenta" />
-    <name value="Farfetch'd" />
-    <name value="Farfetch'd" />
+    <name value="Farfetch’d" />
+    <name value="Farfetch’d" />
     <height value="0,8" />
     <weight value="15" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="84">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ドードー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="147,159,147,159"><!--ドードー--></name>
     <name value="Doduo" />
     <name value="Doduo" />
     <name value="Dodu" />
@@ -1172,13 +1279,14 @@
     <name value="Doduo" />
     <height value="1,4" />
     <weight value="39,2" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="85">
     <pre-evolution-index value="84" />
-    <habitat-index value="0" />
-    <name value="ドードリオ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="147,159,147,119,84"><!--ドードリオ--></name>
     <name value="Dodrio" />
     <name value="Dodrio" />
     <name value="Dodri" />
@@ -1186,13 +1294,14 @@
     <name value="Dodrio" />
     <height value="1,8" />
     <weight value="85,2" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="86">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="パウワウ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="153,82,123,82"><!--パウワウ--></name>
     <name value="Seel" />
     <name value="Otaria" />
     <name value="Jurob" />
@@ -1200,13 +1309,14 @@
     <name value="Seel" />
     <height value="1,1" />
     <weight value="90" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="87">
     <pre-evolution-index value="86" />
-    <habitat-index value="0" />
-    <name value="ジュゴン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="139,131,137,124"><!--ジュゴン--></name>
     <name value="Dewgong" />
     <name value="Lamantine" />
     <name value="Jugong" />
@@ -1214,13 +1324,14 @@
     <name value="Dewgong" />
     <height value="1,7" />
     <weight value="120" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="88">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ベトベター" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="151,99,151,95,159"><!--ベトベター--></name>
     <name value="Grimer" />
     <name value="Tadmorv" />
     <name value="Sleima" />
@@ -1228,13 +1339,14 @@
     <name value="Grimer" />
     <height value="0,9" />
     <weight value="30" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="89">
     <pre-evolution-index value="88" />
-    <habitat-index value="0" />
-    <name value="ベトベトン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="151,99,151,99,124"><!--ベトベトン--></name>
     <name value="Muk" />
     <name value="Grotadmorv" />
     <name value="Sleimok" />
@@ -1242,13 +1354,14 @@
     <name value="Muk" />
     <height value="1,2" />
     <weight value="30" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="90">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="シェルダー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="91,128,120,143,159"><!--シェルダー--></name>
     <name value="Shellder" />
     <name value="Kokiyas" />
     <name value="Muschas" />
@@ -1256,13 +1369,14 @@
     <name value="Shellder" />
     <height value="0,3" />
     <weight value="4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="91">
     <pre-evolution-index value="90" />
-    <habitat-index value="0" />
-    <name value="パルシェン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="153,120,91,128,124"><!--パルシェン--></name>
     <name value="Cloyster" />
     <name value="Crustabri" />
     <name value="Austos" />
@@ -1270,13 +1384,14 @@
     <name value="Cloyster" />
     <height value="1,5" />
     <weight value="132,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="92">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ゴース" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="137,159,92"><!--ゴース--></name>
     <name value="Gastly" />
     <name value="Fantominus" />
     <name value="Nebulak" />
@@ -1284,13 +1399,14 @@
     <name value="Gastly" />
     <height value="1,3" />
     <weight value="0,1" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="93">
     <pre-evolution-index value="92" />
-    <habitat-index value="0" />
-    <name value="ゴースト" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="137,159,92,99"><!--ゴースト--></name>
     <name value="Haunter" />
     <name value="Spectrum" />
     <name value="Alpollo" />
@@ -1298,13 +1414,14 @@
     <name value="Haunter" />
     <height value="1,6" />
     <weight value="0,1" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="94">
     <pre-evolution-index value="93" />
-    <habitat-index value="0" />
-    <name value="ゲンガー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="136,124,133,159"><!--ゲンガー--></name>
     <name value="Gengar" />
     <name value="Ectoplasma" />
     <name value="Gengar" />
@@ -1312,13 +1429,14 @@
     <name value="Gengar" />
     <height value="1,5" />
     <weight value="40,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="95">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="イワーク" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="81,123,159,87"><!--イワーク--></name>
     <name value="Onix" />
     <name value="Onix" />
     <name value="Onix" />
@@ -1326,13 +1444,14 @@
     <name value="Onix" />
     <height value="8,8" />
     <weight value="210" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="96">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="スリープ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="92,119,159,155"><!--スリープ--></name>
     <name value="Drowzee" />
     <name value="Soporifik" />
     <name value="Traumato" />
@@ -1340,13 +1459,14 @@
     <name value="Drowzee" />
     <height value="1" />
     <weight value="32,4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="97">
     <pre-evolution-index value="96" />
-    <habitat-index value="0" />
-    <name value="スリーパー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="92,119,159,153,159"><!--スリーパー--></name>
     <name value="Hypno" />
     <name value="Hypnomade" />
     <name value="Hypno" />
@@ -1354,13 +1474,14 @@
     <name value="Hypno" />
     <height value="1,6" />
     <weight value="75,6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="98">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="クラブ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="87,118,150"><!--クラブ--></name>
     <name value="Krabby" />
     <name value="Krabby" />
     <name value="Krabby" />
@@ -1368,13 +1489,14 @@
     <name value="Krabby" />
     <height value="0,4" />
     <weight value="6,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="99">
     <pre-evolution-index value="98" />
-    <habitat-index value="0" />
-    <name value="キングラー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="86,124,135,118,159"><!--キングラー--></name>
     <name value="Kingler" />
     <name value="Krabboss" />
     <name value="Kingler" />
@@ -1382,13 +1504,14 @@
     <name value="Kingler" />
     <height value="1,3" />
     <weight value="60" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="100">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ビリリダマ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="149,119,119,143,110"><!--ビリリダマ--></name>
     <name value="Voltorb" />
     <name value="Voltorbe" />
     <name value="Voltobal" />
@@ -1396,27 +1519,29 @@
     <name value="Voltorb" />
     <height value="0,5" />
     <weight value="10,4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="101">
     <pre-evolution-index value="100" />
-    <habitat-index value="0" />
-    <name value="マルマイン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="110,120,110,81,124"><!--マルマイン--></name>
     <name value="Electrode" />
-    <name value="Electrode" />
+    <name value="Électrode" />
     <name value="Lektrobal" />
     <name value="Electrode" />
     <name value="Electrode" />
     <height value="1,2" />
     <weight value="66,6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="102">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="タマタマ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="95,110,95,110"><!--タマタマ--></name>
     <name value="Exeggcute" />
     <name value="Noeunoeuf" />
     <name value="Owei" />
@@ -1424,13 +1549,14 @@
     <name value="Exeggcute" />
     <height value="0,4" />
     <weight value="2,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="103">
     <pre-evolution-index value="102" />
-    <habitat-index value="0" />
-    <name value="ナッシー" />
+    <blue-habitat-index value="-1" />\
+	<red-habitat-index value="-1" />
+    <name value="100,ッ,91,159"><!--ナシー--></name>
     <name value="Exeggutor" />
     <name value="Noadkoko" />
     <name value="Kokowei" />
@@ -1438,13 +1564,14 @@
     <name value="Exeggutor" />
     <height value="2" />
     <weight value="120" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="104">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="カラカラ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,118,85,118"><!--カラカラ--></name>
     <name value="Cubone" />
     <name value="Osselait" />
     <name value="Tragosso" />
@@ -1452,13 +1579,14 @@
     <name value="Cubone" />
     <height value="0,4" />
     <weight value="6,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="105">
     <pre-evolution-index value="104" />
-    <habitat-index value="0" />
-    <name value="ガラガラ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="133,118,133,118"><!--ガラガラ--></name>
     <name value="Marowak" />
     <name value="Ossatueur" />
     <name value="Knogga" />
@@ -1466,13 +1594,14 @@
     <name value="Marowak" />
     <height value="1" />
     <weight value="45" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="106">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="サワムラー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="90,123,112,118,159"><!--サワムラー--></name>
     <name value="Hitmonlee" />
     <name value="Kicklee" />
     <name value="Kicklee" />
@@ -1480,13 +1609,14 @@
     <name value="Hitmonlee" />
     <height value="1,5" />
     <weight value="49,8" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="107">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="エビワラー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="83,149,123,118,159"><!--エビワラー--></name>
     <name value="Hitmonchan" />
     <name value="Tygnon" />
     <name value="Nockchan" />
@@ -1494,13 +1624,14 @@
     <name value="Hitmonchan" />
     <height value="1,4" />
     <weight value="50,2" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="108">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ベロリンガ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="151,122,119,124,133"><!--ベロリンガ--></name>
     <name value="Lickitung" />
     <name value="Excelangue" />
     <name value="Schlurp" />
@@ -1508,13 +1639,14 @@
     <name value="Lickitung" />
     <height value="1,2" />
     <weight value="65,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="109">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ドガース" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="147,133,159,92"><!--ドガース--></name>
     <name value="Koffing" />
     <name value="Smogo" />
     <name value="Smogon" />
@@ -1522,13 +1654,14 @@
     <name value="Koffing" />
     <height value="0,6" />
     <weight value="1" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="110">
     <pre-evolution-index value="109" />
-    <habitat-index value="0" />
-    <name value="マタドガス" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="110,95,147,133,92"><!--マタドガス--></name>
     <name value="Weezing" />
     <name value="Smogogo" />
     <name value="Smogmog" />
@@ -1536,13 +1669,14 @@
     <name value="Weezing" />
     <height value="1,2" />
     <weight value="9,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="111">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="サイホーン" />
+    <blue-habitat-index value="-1" />
+    <red-habitat-index value="-1" />
+    <name value="90,81,109,159,124"><!--サイホーン--></name>
     <name value="Rhyhorn" />
     <name value="Rhinocorne" />
     <name value="Rihorn" />
@@ -1550,27 +1684,29 @@
     <name value="Rhyhorn" />
     <height value="1" />
     <weight value="115" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="112">
     <pre-evolution-index value="111" />
-    <habitat-index value="0" />
-    <name value="サイドン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="90,81,147,124"><!--サイドン--></name>
     <name value="Rhydon" />
-    <name value="Rhinoferos" />
+    <name value="Rhinoféros" />
     <name value="Rizeros" />
     <name value="Rhydon" />
     <name value="Rhydon" />
     <height value="1,9" />
     <weight value="120" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="113">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ラッキー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="118,ッ,86,159"><!--ラキー--></name>
     <name value="Chansey" />
     <name value="Leveinard" />
     <name value="Chaneira" />
@@ -1578,13 +1714,14 @@
     <name value="Chansey" />
     <height value="1,1" />
     <weight value="34,6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="114">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="モンジャラ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="114,124,139,130,118"><!--モンジャラ--></name>
     <name value="Tangela" />
     <name value="Saquedeneu" />
     <name value="Tangela" />
@@ -1592,13 +1729,14 @@
     <name value="Tangela" />
     <height value="1" />
     <weight value="35" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="115">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ガルーラ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="133,120,159,118"><!--ガルーラ--></name>
     <name value="Kangaskhan" />
     <name value="Kangourex" />
     <name value="Kangama" />
@@ -1606,13 +1744,14 @@
     <name value="Kangaskhan" />
     <height value="2,2" />
     <weight value="80" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="116">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="タッツー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="95,ッ,97,159"><!--タツー--></name>
     <name value="Horsea" />
     <name value="Hypotrempe" />
     <name value="Seeper" />
@@ -1620,41 +1759,44 @@
     <name value="Horsea" />
     <height value="0,4" />
     <weight value="8" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="117">
     <pre-evolution-index value="116" />
-    <habitat-index value="0" />
-    <name value="シードラ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="91,159,147,118"><!--シードラ--></name>
     <name value="Seadra" />
-    <name value="Hypocean" />
+    <name value="Hypocéan" />
     <name value="Seemon" />
     <name value="Seadra" />
     <name value="Seadra" />
     <height value="1,2" />
     <weight value="25" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="118">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="トサキント" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="99,90,86,124,99"><!--トサキント--></name>
     <name value="Goldeen" />
-    <name value="Poissirene" />
+    <name value="Poissirène" />
     <name value="Goldini" />
     <name value="Goldeen" />
     <name value="Goldeen" />
     <height value="0,6" />
     <weight value="15" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="119">
     <pre-evolution-index value="118" />
-    <habitat-index value="0" />
-    <name value="アズマオウ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="80,140,110,84,82"><!--アズマオウ--></name>
     <name value="Seaking" />
     <name value="Poissoroy" />
     <name value="Golking" />
@@ -1662,13 +1804,14 @@
     <name value="Seaking" />
     <height value="1,3" />
     <weight value="39" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="120">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ヒトデマン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="106,99,146,110,124"><!--ヒトデマン--></name>
     <name value="Staryu" />
     <name value="Stari" />
     <name value="Sterndu" />
@@ -1676,13 +1819,14 @@
     <name value="Staryu" />
     <height value="0,8" />
     <weight value="34,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="121">
     <pre-evolution-index value="120" />
-    <habitat-index value="0" />
-    <name value="スターミー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="92,95,159,111,159"><!--スターミー--></name>
     <name value="Starmie" />
     <name value="Staross" />
     <name value="Starmie" />
@@ -1690,13 +1834,14 @@
     <name value="Starmie" />
     <height value="1,1" />
     <weight value="80" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="122">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="バリヤード" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="148,119,115,159,147"><!--バリヤード--></name>
     <name value="Mr. Mime" />
     <name value="M. Mime" />
     <name value="Pantimos" />
@@ -1704,27 +1849,29 @@
     <name value="Mr. Mime" />
     <height value="1,3" />
     <weight value="54,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="123">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ストライク" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="92,99,118,81,87"><!--ストライク--></name>
     <name value="Scyther" />
-    <name value="Insecateur" />
+    <name value="Insécateur" />
     <name value="Sichlor" />
     <name value="Scyther" />
     <name value="Scyther" />
     <height value="1,5" />
     <weight value="56" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="124">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ルージュラ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="120,159,139,131,118"><!--ルージュラ--></name>
     <name value="Jynx" />
     <name value="Lippoutou" />
     <name value="Rossana" />
@@ -1732,27 +1879,29 @@
     <name value="Jynx" />
     <height value="1,4" />
     <weight value="40,6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="125">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="エレブー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="83,121,150,159"><!--エレブー--></name>
     <name value="Electabuzz" />
-    <name value="Elektek" />
+    <name value="Élektek" />
     <name value="Elektek" />
     <name value="Electabuzz" />
     <name value="Electabuzz" />
     <height value="1,1" />
     <weight value="30" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="126">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ブーバー" />
+    <blue-habitat-index value="-1" />
+    <red-habitat-index value="-1" />
+    <name value="150,159,148,159"><!--ブーバー--></name>
     <name value="Magmar" />
     <name value="Magmar" />
     <name value="Magmar" />
@@ -1760,13 +1909,14 @@
     <name value="Magmar" />
     <height value="1,3" />
     <weight value="44,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="127">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="カイロス" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,81,122,92"><!--カイロス--></name>
     <name value="Pinsir" />
     <name value="Scarabrute" />
     <name value="Pinsir" />
@@ -1774,13 +1924,14 @@
     <name value="Pinsir" />
     <height value="1,5" />
     <weight value="55" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="128">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ケンタロス" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="88,124,95,122,92"><!--ケンタロス--></name>
     <name value="Tauros" />
     <name value="Tauros" />
     <name value="Tauros" />
@@ -1788,13 +1939,14 @@
     <name value="Tauros" />
     <height value="1,4" />
     <weight value="88,4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="129">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="コイキング" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="89,81,86,124,135"><!--コイキング--></name>
     <name value="Magikarp" />
     <name value="Magicarpe" />
     <name value="Karpador" />
@@ -1802,27 +1954,29 @@
     <name value="Magikarp" />
     <height value="0,9" />
     <weight value="10" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="130">
     <pre-evolution-index value="129" />
-    <habitat-index value="0" />
-    <name value="ギャラドス" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="134,130,118,147,92"><!--ギャラドス--></name>
     <name value="Gyarados" />
-    <name value="Leviator" />
+    <name value="Léviator" />
     <name value="Garados" />
     <name value="Gyarados" />
     <name value="Gyarados" />
     <height value="6,5" />
     <weight value="235" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="131">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ラプラス" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="118,155,118,92"><!--ラプラス--></name>
     <name value="Lapras" />
     <name value="Lokhlass" />
     <name value="Lapras" />
@@ -1830,41 +1984,44 @@
     <name value="Lapras" />
     <height value="2,5" />
     <weight value="220" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="132">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="メタモン" />
+    <blue-habitat-index value="-1" />
+    <red-habitat-index value="-1" />
+    <name value="113,95,114,124"><!--メタモン--></name>
     <name value="Ditto" />
-    <name value="Metamorph" />
+    <name value="Métamorph" />
     <name value="Ditto" />
     <name value="Ditto" />
     <name value="Ditto" />
     <height value="0,3" />
     <weight value="4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="133">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="イーブイ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="81,159,150,81"><!--イーブイ--></name>
     <name value="Eevee" />
-    <name value="Evoli" />
+    <name value="Évoli" />
     <name value="Evoli" />
     <name value="Eevee" />
     <name value="Eevee" />
     <height value="0,3" />
     <weight value="6,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="134">
     <pre-evolution-index value="133" />
-    <habitat-index value="0" />
-    <name value="シャワーズ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="91,130,123,159,140"><!--シャワーズ--></name>
     <name value="Vaporeon" />
     <name value="Aquali" />
     <name value="Aquana" />
@@ -1872,13 +2029,14 @@
     <name value="Vaporeon" />
     <height value="1" />
     <weight value="29" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="135">
     <pre-evolution-index value="133" />
-    <habitat-index value="0" />
-    <name value="サンダース" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="90,124,143,159,92"><!--サンダース--></name>
     <name value="Jolteon" />
     <name value="Voltali" />
     <name value="Blitza" />
@@ -1886,13 +2044,14 @@
     <name value="Jolteon" />
     <height value="0,8" />
     <weight value="24,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="136">
     <pre-evolution-index value="133" />
-    <habitat-index value="0" />
-    <name value="ブースター" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="150,159,92,95,159"><!--ブースター--></name>
     <name value="Flareon" />
     <name value="Pyroli" />
     <name value="Flamara" />
@@ -1900,13 +2059,14 @@
     <name value="Flareon" />
     <height value="0,9" />
     <weight value="25" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="137">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ポリゴン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="157,119,137,124"><!--ポリゴン--></name>
     <name value="Porygon" />
     <name value="Porygon" />
     <name value="Porygon" />
@@ -1914,13 +2074,14 @@
     <name value="Porygon" />
     <height value="0,8" />
     <weight value="36,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="138">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="オムナイト" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="84,112,100,81,99"><!--オムナイト--></name>
     <name value="Omanyte" />
     <name value="Amonita" />
     <name value="Amonitas" />
@@ -1928,13 +2089,14 @@
     <name value="Omanyte" />
     <height value="0,4" />
     <weight value="7,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="139">
     <pre-evolution-index value="138" />
-    <habitat-index value="0" />
-    <name value="オムスター" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="84,112,92,95,159"><!--オムスター--></name>
     <name value="Omastar" />
     <name value="Amonistar" />
     <name value="Amoroso" />
@@ -1942,13 +2104,14 @@
     <name value="Omastar" />
     <height value="1" />
     <weight value="35" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="140">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="カブト" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,150,99"><!--カブト--></name>
     <name value="Kabuto" />
     <name value="Kabuto" />
     <name value="Kabuto" />
@@ -1956,13 +2119,14 @@
     <name value="Kabuto" />
     <height value="0,5" />
     <weight value="11,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="141">
     <pre-evolution-index value="140" />
-    <habitat-index value="0" />
-    <name value="カブトプス" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,150,99,155,92"><!--カブトプス--></name>
     <name value="Kabutops" />
     <name value="Kabutops" />
     <name value="Kabutops" />
@@ -1970,27 +2134,29 @@
     <name value="Kabutops" />
     <height value="1,3" />
     <weight value="40,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="142">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="プテラ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="155,98,118"><!--プテラ--></name>
     <name value="Aerodactyl" />
-    <name value="Ptera" />
+    <name value="Ptéra" />
     <name value="Aerodactyl" />
     <name value="Aerodactyl" />
     <name value="Aerodactyl" />
     <height value="1,8" />
     <weight value="59" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="143">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="カビゴン" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,149,137,124"><!--カビゴン--></name>
     <name value="Snorlax" />
     <name value="Ronflex" />
     <name value="Relaxo" />
@@ -1998,13 +2164,14 @@
     <name value="Snorlax" />
     <height value="2,1" />
     <weight value="460" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="144">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="フリーザー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="107,119,159,138,159"><!--フリーザー--></name>
     <name value="Articuno" />
     <name value="Artikodin" />
     <name value="Arktos" />
@@ -2012,27 +2179,29 @@
     <name value="Articuno" />
     <height value="1,7" />
     <weight value="55,4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="145">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="サンダー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="90,124,143,159"><!--サンダー--></name>
     <name value="Zapdos" />
-    <name value="Electhor" />
+    <name value="Électhor" />
     <name value="Zapdos" />
     <name value="Zapdos" />
     <name value="Zapdos" />
     <height value="1,6" />
     <weight value="52,6" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="146">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ファイヤー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="107,125,81,115,159"><!--ファイヤー--></name>
     <name value="Moltres" />
     <name value="Sulfura" />
     <name value="Lavados" />
@@ -2040,13 +2209,14 @@
     <name value="Moltres" />
     <height value="2" />
     <weight value="60" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="147">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ミニリュウ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="111,101,119,131,82"><!--ミニリュウ--></name>
     <name value="Dratini" />
     <name value="Minidraco" />
     <name value="Dratini" />
@@ -2054,13 +2224,14 @@
     <name value="Dratini" />
     <height value="1,8" />
     <weight value="3,3" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="148">
     <pre-evolution-index value="147" />
-    <habitat-index value="0" />
-    <name value="ハクリュー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="105,87,119,131,159"><!--ハクリュー--></name>
     <name value="Dragonair" />
     <name value="Draco" />
     <name value="Dragonir" />
@@ -2068,13 +2239,14 @@
     <name value="Dragonair" />
     <height value="4" />
     <weight value="16,5" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="149">
     <pre-evolution-index value="148" />
-    <habitat-index value="0" />
-    <name value="カイリュー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="85,81,119,131,159"><!--カイリュー--></name>
     <name value="Dragonite" />
     <name value="Dracolosse" />
     <name value="Dragoran" />
@@ -2082,13 +2254,14 @@
     <name value="Dragonite" />
     <height value="2,2" />
     <weight value="210" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="150">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ミュウツー" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="111,131,82,97,159"><!--ミュウツー--></name>
     <name value="Mewtwo" />
     <name value="Mewtwo" />
     <name value="Mewtu" />
@@ -2096,13 +2269,14 @@
     <name value="Mewtwo" />
     <height value="2" />
     <weight value="122" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
   <id value="151">
     <pre-evolution-index value="-1" />
-    <habitat-index value="0" />
-    <name value="ミュウ" />
+    <blue-habitat-index value="-1" />
+	<red-habitat-index value="-1" />
+    <name value="111,131,82"><!--ミュウ--></name>
     <name value="Mew" />
     <name value="Mew" />
     <name value="Mew" />
@@ -2110,7 +2284,7 @@
     <name value="Mew" />
     <height value="0,4" />
     <weight value="4" />
-    <discovered value="false" />
-    <captured value="false" />
+    <discovered value="true" />
+    <captured value="true" />
   </id>
 </pokedex>
