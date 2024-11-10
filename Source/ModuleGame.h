@@ -32,7 +32,7 @@ public:
 
 private:
 protected:
-	Texture* map_texture;
+	Texture* map_texture= nullptr;
 	PokeBall* pokeBall=nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);

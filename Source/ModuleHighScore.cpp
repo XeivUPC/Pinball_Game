@@ -167,6 +167,11 @@ bool ModuleHighScore::CleanUp()
 	return true;
 }
 
+void ModuleHighScore::SetPlayerPoints(long long int points)
+{
+	incoming_score = points;
+}
+
 void ModuleHighScore::LoadHighScore()
 {
 	xml_node positionNode;

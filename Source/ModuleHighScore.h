@@ -31,6 +31,8 @@ public:
 	update_status Update();
 	bool CleanUp();
 
+	void SetPlayerPoints(long long int points);
+
 	/// <summary>
 	/// Sets the version's color to Red = 0 or Blue = 1
 	/// </summary>

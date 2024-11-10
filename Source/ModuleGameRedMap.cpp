@@ -58,6 +58,7 @@ update_status ModuleGameRedMap::Update()
 	RepositionCamera(pokeBall->GetPosition());
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
+		App->scene_highScore->SetPlayerPoints(pointsCounter());
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 	}
 
