@@ -1,26 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
 <pokedex>
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<!--0- Pueblo Paleta-->
+	<!--1- Ciudad Verde-->
+	<!--2- Bosque Verde-->
+	<!--3- Ciudad Paleta-->
+	<!--4- MT. Moon-->
+	<!--5- Ciudad Celste-->
+	<!--6- Ciudad Azulona-->
+	<!--7- Ciudad Carmin (calles)-->
+	<!--8- Ciudad Carmin (puerto)-->
+	<!--9- Carril Bici-->
+	<!--10- Pueblo Lavanda-->
+	<!--11- Tunel Roca-->
+	<!--12- Ciudad Azafran-->
+	<!--13- Ciudad Fucsia-->
+	<!--14- Zona Safari-->
+	<!--15- Islas Espuma-->
+	<!--16- Isla Canela-->
+	<!--17- Meseta Añil-->
+  
   <id value="1">
     <pre-evolution-index value="-1" />
     <blue-habitat-index value="-1" />
