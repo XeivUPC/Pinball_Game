@@ -209,6 +209,8 @@
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleGame.h" />
     <ClInclude Include="Source\ModuleGameBlueMap.h" />
+    <ClInclude Include="Source\ModuleGamePokedexJapanese.h" />
+    <ClInclude Include="Source\ModuleGamePokedexWorldwide.h" />
     <ClInclude Include="Source\ModuleGameRedMap.h" />
     <ClInclude Include="Source\ModuleGameUIText.h" />
     <ClInclude Include="Source\ModuleHighScore.h" />
@@ -217,6 +219,7 @@
     <ClInclude Include="Source\ModuleKeybinds.h" />
     <ClInclude Include="Source\ModuleLanguageSelect.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h" />
+    <ClInclude Include="Source\ModulePokedex.h" />
     <ClInclude Include="Source\ModuleScene.h" />
     <ClInclude Include="Source\ModuleMainMenu.h" />
     <ClInclude Include="Source\ModuleSettings.h" />
@@ -260,6 +263,8 @@
     <ClCompile Include="Source\ModuleCredits.cpp" />
     <ClCompile Include="Source\ModuleGame.cpp" />
     <ClCompile Include="Source\ModuleGameBlueMap.cpp" />
+    <ClCompile Include="Source\ModuleGamePokedexJapanese.cpp" />
+    <ClCompile Include="Source\ModuleGamePokedexWorldwide.cpp" />
     <ClCompile Include="Source\ModuleGameRedMap.cpp" />
     <ClCompile Include="Source\ModuleGameUIText.cpp" />
     <ClCompile Include="Source\ModuleHighScore.cpp" />
@@ -268,6 +273,7 @@
     <ClCompile Include="Source\ModuleKeybinds.cpp" />
     <ClCompile Include="Source\ModuleLanguageSelect.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp" />
+    <ClCompile Include="Source\ModulePokedex.cpp" />
     <ClCompile Include="Source\ModuleScene.cpp" />
     <ClCompile Include="Source\ModuleMainMenu.cpp" />
     <ClCompile Include="Source\ModuleSettings.cpp" />

@@ -163,13 +163,14 @@ bool ModuleHighScore::CleanUp()
 		arrow_animator = nullptr;
 	}
 	highScoreFile.reset();
+	incoming_score = 0;
 	LOG("Unloading High Score scene");
 	return true;
 }
 
 void ModuleHighScore::SetPlayerPoints(long long int points)
 {
-	incoming_score = points;
+	incoming_score = (double)points;
 }
 
 void ModuleHighScore::LoadHighScore()

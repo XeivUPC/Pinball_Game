@@ -24,7 +24,7 @@ int ModulePokedex::AnchorToRight(const std::string& text, int x)
 {
     x -= text.size()*8;
     int commas = 0;
-    int i = 0;
+    size_t i = 0;
     while (i < text.size())
     {
         if (text[i] == ',')
@@ -44,13 +44,13 @@ void ModulePokedex::RenderPokemonInfo(int id)
         return;
     else if (!pokemon_list[id].captured)
     {
-        xy.x = id / 38 * 2 * 48;
-        xy.y = id % 38 * 32;
+        xy.x = (float)(id / 38 * 2 * 48);
+        xy.y = (float)(id % 38 * 32);
     }
     else
     {
-        xy.x = (id / 38 * 2 + 1) * 48;
-        xy.y = id % 38 * 32;
+        xy.x = (float)((id / 38 * 2 + 1) * 48);
+        xy.y = (float)(id % 38 * 32);
         if (selectedLanguage == 1)
         {
             App->text_pokedex_worldwide->Write(ToLibras(pokemon_list[id].weight).c_str(), AnchorToRight(ToLibras(pokemon_list[id].weight).c_str(), 144), 32, WHITE);
@@ -79,7 +79,7 @@ float ModulePokedex::StringToNumber(std::string string)
     float integerweight = 0;
     float decimalweight = 0;
     int count = 0;
-    int i = 0;
+    size_t i = 0;
     while (i < string.size())
     {
         integerweight += string[i] - 48;
@@ -98,7 +98,7 @@ float ModulePokedex::StringToNumber(std::string string)
         count++;
     }
     decimalweight /= 10;
-    decimalweight /= pow(10, count);
+    decimalweight /= (float)pow(10, count);
 
     float w = (integerweight + decimalweight);
     return w;
@@ -109,7 +109,7 @@ std::string ModulePokedex::ToLibras(std::string weight)
     float w = StringToNumber(weight)* 2.205f;
     w = std::round(w*10)/10;
     std::string str = std::to_string(w);
-    int i = 0;
+    size_t i = 0;
     while (i < str.size())
     {
         if (str[i] == '.')
@@ -120,7 +120,7 @@ std::string ModulePokedex::ToLibras(std::string weight)
         }
         i++;
     }
-    for (int t = str.size(); t > i+1; t--)
+    for (size_t t = str.size(); t > i+1; t--)
     {
         str.pop_back();
     }
@@ -168,6 +168,8 @@ bool ModulePokedex::Start()
     App->texture->CreateTexture("Assets/pokemons_shadow_and_color.png", "pokemon");
     pokedexPokemon = App->texture->GetTexture("pokemon");
 
+
+
     StartFadeOut(WHITE, 0.3f);
     return true;
 }
@@ -192,7 +194,7 @@ update_status ModulePokedex::Update()
         if (localSelectedId < minLocalId) {
             localSelectedId = minLocalId;
 
-            targetOffset = selectedId * -15;
+            targetOffset = selectedId * -15.f;
         }
     }
     if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))))
@@ -207,7 +209,7 @@ update_status ModulePokedex::Update()
         if (localSelectedId > maxLocalId)
         {
             localSelectedId = maxLocalId;
-            targetOffset = (selectedId-maxLocalId) * -15;
+            targetOffset = (selectedId-maxLocalId) * -15.f;
         }
     }
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT)))
@@ -224,7 +226,7 @@ update_status ModulePokedex::Update()
         }
         else
         {
-            targetOffset = (selectedId - localSelectedId) * -15;
+            targetOffset = (selectedId - localSelectedId) * -15.f;
         }
     }
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)))
@@ -237,13 +239,13 @@ update_status ModulePokedex::Update()
            
         if (selectedId + maxLocalId >= maxId)
         {
-            targetOffset = (maxId - maxLocalId) * -15;
+            targetOffset = (maxId - maxLocalId) * -15.f;
 
             localSelectedId = maxLocalId - (maxId - selectedId);
         }
         else
         {
-            targetOffset = (selectedId - localSelectedId) * -15;
+            targetOffset = (selectedId - localSelectedId) * -15.f;
         }
     }
 #pragma endregion
@@ -270,18 +272,18 @@ update_status ModulePokedex::Update()
     Rectangle rect;
     for (size_t i = 0; i < pokemon_list.size(); i++)
     {
-        rect = { 0 , (float)15 * selectedLanguage, 124 ,15 };
-        App->renderer->Draw(*pokedexSlot, 10, 56 + targetOffset + 15 * i, &rect, WHITE);
-        App->text_pokedex_worldwide->Write(Text0Format(i + 1).c_str(), 56, (50 + targetOffset) + (15 * i), BLACK);
+        rect = { 0 , 15.f * selectedLanguage, 124 ,15 };
+        App->renderer->Draw(*pokedexSlot, 10, (int)(56 + targetOffset + 15 * i), &rect, WHITE);
+        App->text_pokedex_worldwide->Write(Text0Format(i + 1).c_str(), 56, (int)((50 + targetOffset) + (15 * i)), BLACK);
     }
     for (size_t i = 0; i < pokemon_list.size(); i++)
     {
         if (pokemon_list.at(i).captured)
         {
             if(selectedLanguage == 0)
-                App->text_pokedex_japanese->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, 60 + 15 * i + targetOffset, BLACK);
+                App->text_pokedex_japanese->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(59+ 15 * i + targetOffset), BLACK);
             else
-                App->text_pokedex_worldwide->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, 59 + 15 * i + targetOffset, BLACK);
+                App->text_pokedex_worldwide->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(59 + 15 * i + targetOffset), BLACK);
         }
     }
     rect = { 0 , 90, 124 ,15 };
@@ -300,12 +302,16 @@ update_status ModulePokedex::Update()
 
 bool ModulePokedex::CleanUp()
 {
+    selectedId = 0;
+    localSelectedId = 0;
+    offset = 0;
+    targetOffset = 0;
     return true;
 }
 
 void ModulePokedex::LoadConfigFile()
 {
-    pugi::xml_parse_result result = _data.load_file("Assets/Pokedex/Pokedex2.xml");
+    pugi::xml_parse_result result = _data.load_file("Assets/Data/Pokedex.xml");
     if (result)
     {
         LOG("config.xml parsed without errors");
@@ -318,7 +324,7 @@ void ModulePokedex::LoadConfigFile()
 
 void ModulePokedex::SaveConfigFile()
 {
-    _data.save_file("Assets/Pokedex/Pokedex2.xml");
+    _data.save_file("Assets/Data/Pokedex.xml");
 }
 
 
@@ -360,4 +366,8 @@ void ModulePokedex::LoadPokedex()
             
         pokemon_list.push_back(pokemon);
     }
+}
+
+void ModulePokedex::SavePokedex()
+{
 }

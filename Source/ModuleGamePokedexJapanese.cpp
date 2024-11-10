@@ -7,8 +7,8 @@
 Rectangle* ModuleGamePokedexJapanese::GetCharRect(int index)
 {
 	Rectangle* rect = new Rectangle{ 0,0,0,0 };
-	rect->x = (int)((index % (int)count.x)*size.x);
-	rect->y = (int)((index / (int)count.x)*size.y);
+	rect->x = (float)((int)((index % (int)count.x)*size.x));
+	rect->y = (float)((int)((index / (int)count.x)*size.y));
 	rect->width = size.x;
 	rect->height = size.y;
 	return rect;
@@ -32,7 +32,7 @@ bool ModuleGamePokedexJapanese::Start()
 	App->texture->CreateTexture("Assets/pokedex-japanese.png", "font-japanese");
 	fontTexture = App->texture->GetTexture("font-japanese");
 	size = Vector2{ 8,16 };
-	int widht, height;
+	int widht=0, height=0;
 	count.x = fontTexture->width / size.x;
 	count.y = fontTexture->height / size.y;
     return true;
@@ -61,7 +61,7 @@ void ModuleGamePokedexJapanese::Write(const char* text, int x, int y, Color colo
 		}
 		number /= 10;
 		Rectangle* letter = GetCharRect(number);
-		App->renderer->Draw(*fontTexture, (x + size.x * t), y+1, letter, color);
+		App->renderer->Draw(*fontTexture, (int)((x + size.x * t)), y+1, letter, color);
 		i++;
 		t++;
 	}

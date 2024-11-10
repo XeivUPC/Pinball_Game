@@ -59,6 +59,7 @@ update_status ModuleGameRedMap::Update()
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
 		App->scene_highScore->SetPlayerPoints(pointsCounter());
+		pointsCounter.Set(0);
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 	}
 

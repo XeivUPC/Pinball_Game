@@ -16,12 +16,12 @@ long long int Counter::operator()() const
 
 void Counter::Add(long long int amount, float multiplier)
 {
-	_data += amount * multiplier;
+	_data += (long long int)(amount * multiplier);
 }
 
 void Counter::Take(long long int amount, float multiplier)
 {
-	amount -= amount * multiplier;
+	amount -= (long long int)(amount * multiplier);
 }
 
 void Counter::Set(long long int amount)

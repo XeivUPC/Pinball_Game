@@ -7,7 +7,7 @@
 Rectangle* ModuleGamePokedexWorldWide::GetCharRect(char c)
 {
 	Rectangle* rect = new Rectangle{ 0,0,0,0 };
-	for (int i = 0; i < charReferences.size(); i++)
+	for (size_t i = 0; i < charReferences.size(); i++)
 	{
 		if ((int)c == charReferences[i])
 		{
@@ -39,7 +39,7 @@ bool ModuleGamePokedexWorldWide::Start()
 	App->texture->CreateTexture("Assets/pokedex-worldwide.png", "font-worldwide");
 	fontTexture = App->texture->GetTexture("font-worldwide");
 	size = Vector2{ 8,16 };
-	int widht, height;
+	int widht=0, height=0;
 	count.x = fontTexture->width / size.x;
 	count.y = fontTexture->height / size.y;
 	// Uppercase letters A to Z
@@ -81,11 +81,11 @@ void ModuleGamePokedexWorldWide::Write(const char* text, int x, int y, Color col
 			letter = GetCharRect(text[i]-32);
 		if (text[i] == ',')
 		{
-			x -= size.x;
-			App->renderer->Draw(*fontTexture, x + size.x * i, y+1, letter, color);
+			x -= (int)size.x;
+			App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)(y+1), letter, color);
 		}
 		else
-			App->renderer->Draw(*fontTexture, (x + size.x * i), y, letter, color);
+			App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)(y), letter, color);
 		i++;
 	}
 }

@@ -10,13 +10,13 @@ class ModulePokedex : public ModuleScene
 {
 private:
 	std::vector<Pokemon> pokemon_list;
-	int selectedLanguage;
-	int audioSelectId;
-	int audioMoveId;
+	int selectedLanguage = -1;
+	int audioSelectId = -1;
+	int audioMoveId = -1;
 
-	Texture2D* pokedexSpritesheet;
-	Texture2D* pokedexPokemon;
-	Texture2D* pokedexSlot;
+	Texture2D* pokedexSpritesheet = nullptr;
+	Texture2D* pokedexPokemon = nullptr;
+	Texture2D* pokedexSlot = nullptr;
 
 	xml_document _data;
 
