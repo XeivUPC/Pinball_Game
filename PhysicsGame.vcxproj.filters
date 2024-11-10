@@ -142,6 +142,9 @@
     <ClCompile Include="Source\StaryuBumper.cpp">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ModuleGamePokedexJapanese.cpp" />
+    <ClCompile Include="Source\ModuleGamePokedexWorldwide.cpp" />
+    <ClCompile Include="Source\ModulePokedex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -288,6 +291,9 @@
     <ClInclude Include="Source\StaryuBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
+    <ClInclude Include="Source\ModuleGamePokedexJapanese.h" />
+    <ClInclude Include="Source\ModuleGamePokedexWorldwide.h" />
+    <ClInclude Include="Source\ModulePokedex.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -334,13 +340,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="Assets\Preferences\UserPreferences.xml">
-      <Filter>Data</Filter>
-    </Xml>
-    <Xml Include="Assets\Preferences\HighScore.xml">
-      <Filter>Data</Filter>
-    </Xml>
     <Xml Include="Assets\Data\Pokedex.xml">
+      <Filter>Data</Filter>
+    </Xml>
+    <Xml Include="Assets\Data\HighScore.xml">
+      <Filter>Data</Filter>
+    </Xml>
+    <Xml Include="Assets\Data\UserPreferences.xml">
       <Filter>Data</Filter>
     </Xml>
   </ItemGroup>

@@ -295,9 +295,9 @@
     <ResourceCompile Include="Source\resources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Xml Include="Assets\Data\HighScore.xml" />
     <Xml Include="Assets\Data\Pokedex.xml" />
-    <Xml Include="Assets\Preferences\HighScore.xml" />
-    <Xml Include="Assets\Preferences\UserPreferences.xml" />
+    <Xml Include="Assets\Data\UserPreferences.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
