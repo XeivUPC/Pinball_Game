@@ -147,6 +147,7 @@ std::string ModulePokedex::ToInchDecimal(std::string height)
 ModulePokedex::ModulePokedex(Application* app, bool start_enabled) : ModuleScene(app, start_enabled){}
 
 ModulePokedex::~ModulePokedex(){}
+
 bool ModulePokedex::Init()
 {
     LoadConfigFile();
@@ -168,15 +169,23 @@ bool ModulePokedex::Start()
     App->texture->CreateTexture("Assets/pokemons_shadow_and_color.png", "pokemon");
     pokedexPokemon = App->texture->GetTexture("pokemon");
 
-
-
+    ScrollBarAnimator = new Animator(App);
+    AnimationData ScrollBarAnim = AnimationData("ScrollBar");
+    ScrollBarAnim.AddSprite(Sprite{ pokedexSpritesheet, {27,72}, { 6, 2}});
+    ScrollBarAnim.AddSprite(Sprite{ pokedexSpritesheet, {28,72}, { 6, 2}});
+    ScrollBarAnim.AddSprite(Sprite{ pokedexSpritesheet, {29,72}, { 6, 2}});
+    ScrollBarAnimator->AddAnimation(ScrollBarAnim);
+    ScrollBarAnimator->SetSpeed(0.1f);
+    ScrollBarAnimator->SelectAnimation("ScrollBar", true);
     StartFadeOut(WHITE, 0.3f);
     return true;
 }
 
 update_status ModulePokedex::Update()
 {
+    direction = 0;
 #pragma region Input
+
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN)))
     {
         StartFadeIn(App->scene_mainMenu, WHITE, 0.3f);
@@ -186,14 +195,15 @@ update_status ModulePokedex::Update()
     if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))))
     {
         selectedId--;
-        if (selectedId < minId) {
+        if (selectedId < minId)
+        {
             selectedId = minId;
         }
 
         localSelectedId--;
-        if (localSelectedId < minLocalId) {
+        if (localSelectedId < minLocalId)
+        {
             localSelectedId = minLocalId;
-
             targetOffset = selectedId * -16.f;
         }
         lerpTimer.Start();
@@ -233,6 +243,7 @@ update_status ModulePokedex::Update()
             targetOffset = (selectedId - localSelectedId) * -16.f;
         }
               offset = targetOffset;
+              direction = -1;
     }
     if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))))
     {
@@ -254,12 +265,15 @@ update_status ModulePokedex::Update()
         }
 
         offset = targetOffset;
+        direction = 1;
     }
+    if (IsKeyPressed(KEY_B))
+        CapturePokemon(0);
 #pragma endregion
 #pragma region Lerp
     
-
-    if (targetOffset!=offset) {
+    if (targetOffset!=offset)
+    {
         float factor = lerpTimer.ReadSec() / lerpTime;
         int distance = abs(targetOffset - offset);
         offset = offset + distance * factor * direction;
@@ -268,9 +282,22 @@ update_status ModulePokedex::Update()
             offset = targetOffset;
         }
     }
-
 #pragma endregion
 #pragma region Render
+    ScrollBarAnimator->Update();
+    arrowCurrentTime -= GetFrameTime();
+
+    if (arrowCurrentTime <= 0)
+    {
+        arrowCurrentTime = arrowAnimSpeed;
+        arrowAppeared = !arrowAppeared;
+    }
+    if (direction != 0)
+    {
+        arrowAppeared = true;
+        arrowCurrentTime = arrowAnimSpeed;
+    }
+        
     App->renderer->DrawRect(0, 0, SCREEN_WIDTH , SCREEN_HEIGHT, WHITE);
     Rectangle rect;
     for (size_t i = 0; i < pokemon_list.size(); i++)
@@ -281,7 +308,7 @@ update_status ModulePokedex::Update()
     }
     for (size_t i = 0; i < pokemon_list.size(); i++)
     {
-        if (pokemon_list.at(i).captured)
+        if (pokemon_list.at(i).discovered)
         {
             if(selectedLanguage == 0)
                 App->text_pokedex_japanese->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(60+ 16 * i + offset), BLACK);
@@ -289,17 +316,18 @@ update_status ModulePokedex::Update()
                 App->text_pokedex_worldwide->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(60 + 16 * i + offset), BLACK);
         }
     }
-
-
     rect = { 160 , 0, 160 ,144 };
     App->renderer->Draw(*pokedexSpritesheet, 0, 0, &rect, WHITE);
     rect = { 0, (float)(0 + 53 * selectedLanguage), 160, 53 };
     App->renderer->Draw(*pokedexSpritesheet, 0, 0, &rect, WHITE);
     RenderPokemonInfo(selectedId);
-    rect = { 178 , 144, 5, 8 };
-    App->renderer->Draw(*pokedexSpritesheet, 25, 63 + localSelectedId * 16, &rect, WHITE);  /// Add Animation
+    rect = { 180 , 144, 5, 8 };
+    if(arrowAppeared)
+        App->renderer->Draw(*pokedexSpritesheet, 25, 63 + localSelectedId * 16, &rect, WHITE);
     App->renderer->DrawRect(10,139, SCREEN_WIDTH-36,5,WHITE);
     App->renderer->DrawRect(10,56, SCREEN_WIDTH-36,3, WHITE);
+
+    ScrollBarAnimator->Animate(145, (73 + (134 - 73) * selectedId / pokemon_list.size()), true);
 #pragma endregion
     ModuleScene::FadeUpdate();
     return UPDATE_CONTINUE;
@@ -311,6 +339,10 @@ bool ModulePokedex::CleanUp()
     localSelectedId = 0;
     offset = 0;
     targetOffset = 0;
+
+
+    SaveConfigFile();
+    _data.reset();
     return true;
 }
 
@@ -331,7 +363,6 @@ void ModulePokedex::SaveConfigFile()
 {
     _data.save_file("Assets/Data/Pokedex.xml");
 }
-
 
 void ModulePokedex::LoadPokedex()
 {
@@ -373,6 +404,49 @@ void ModulePokedex::LoadPokedex()
     }
 }
 
-void ModulePokedex::SavePokedex()
+void ModulePokedex::DiscoverPokemon(int id)
 {
+    pokemon_list.at(id).discovered = true;
+    SavePokemon(id);
+}
+
+void ModulePokedex::CapturePokemon(int id)
+{
+
+    pokemon_list.at(id).discovered = true;
+    pokemon_list.at(id).captured = true;
+
+    SavePokemon(pokemon_list.at(id).ID);
+
+    while (SearchEvolutionID(id) != -1)
+    {
+        pokemon_list.at(SearchEvolutionID(id)).discovered = true;
+        SavePokemon(pokemon_list.at(SearchEvolutionID(id)).ID);
+        id = SearchEvolutionID(id);
+    }
+}
+
+void ModulePokedex::SavePokemon(int id)
+{
+    xml_node pokedex = _data.child("pokedex");
+
+    for (pugi::xml_node pokemonIdNode = pokedex.child("id"); pokemonIdNode != NULL; pokemonIdNode = pokemonIdNode.next_sibling("id"))
+    {
+        if (pokemonIdNode.attribute("value").as_int() == id)
+        {
+            pokemonIdNode.child("discovered").attribute("value").set_value(pokemon_list[id-1].discovered);
+            pokemonIdNode.child("captured").attribute("value").set_value(pokemon_list[id-1].captured);
+        }
+    }
+    SaveConfigFile();
+}
+
+int ModulePokedex::SearchEvolutionID(int id)
+{
+    for (int i = 0; i < pokemon_list.size(); i++)
+    {
+        if (pokemon_list.at(i).preevolutionIndex == pokemon_list.at(id).ID)
+            return i;
+    }
+    return -1;
 }

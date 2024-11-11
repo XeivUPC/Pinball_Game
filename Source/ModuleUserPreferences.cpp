@@ -168,7 +168,6 @@ void ModuleUserPreferences::SaveUserPreferences()
 	preferencesFile.child("config").child("vibration").attribute("value").set_value(vibrationIndex);
 
 	SaveConfigFile();
-
 }
 
 void ModuleUserPreferences::LoadConfigFile()

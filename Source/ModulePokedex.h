@@ -3,6 +3,9 @@
 #include "raylib.h"
 #include "pugixml.hpp"
 #include "pokemon.h"
+#include "ModuleTexture.h"
+#include "ModuleRender.h"
+#include "AnimationSystem.h"
 #include <vector>
 
 using namespace pugi;
@@ -17,6 +20,10 @@ private:
 	Texture2D* pokedexSpritesheet = nullptr;
 	Texture2D* pokedexPokemon = nullptr;
 	Texture2D* pokedexSlot = nullptr;
+	Animator* ScrollBarAnimator;
+	bool arrowAppeared = true;
+	float arrowCurrentTime;
+	float arrowAnimSpeed = 0.2f;
 
 	xml_document _data;
 
@@ -35,7 +42,7 @@ private:
 	Timer lerpTimer;
 	float lerpTime=0.1f;
 
-	float direction = 1;
+	int direction = 1;
 	
 	const std::string Text0Format(int number);
 	int AnchorToRight(const std::string& text, int x);
@@ -44,6 +51,8 @@ private:
 	std::string ToLibras(std::string weight);
 	std::string ToFeet(std::string weight);
 	std::string ToInchDecimal(std::string weight);
+	void SavePokemon(int id);
+	int SearchEvolutionID(int id);
 public:
 	ModulePokedex(Application* app, bool start_enabled = true);
 	~ModulePokedex();
@@ -54,5 +63,7 @@ public:
 	void LoadConfigFile();
 	void SaveConfigFile();
 	void LoadPokedex();
-	void SavePokedex();
+
+	void DiscoverPokemon(int id);
+	void CapturePokemon(int id);
 };
