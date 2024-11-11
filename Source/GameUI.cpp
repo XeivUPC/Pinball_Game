@@ -5,6 +5,7 @@
 #include "ModuleRender.h"
 #include "PokeBall.h"
 
+
 #include "ModuleGameUIText.h"
 #include <sstream>
 
@@ -12,8 +13,7 @@ GameUI::GameUI(ModuleGame* gameAt) : UI(gameAt->App)
 {
     this->gameAt = gameAt;
 
-    
-    pokeball = gameAt->GetPokeball();
+   
 }
 
 GameUI::~GameUI()
@@ -22,6 +22,13 @@ GameUI::~GameUI()
 
 void GameUI::Render() const
 {
+
+    std::string livesStr = std::to_string(gameAt->GetPokeball()->GetLivesPokeball());
+    std::string pikachusStr = std::to_string(0);//Link to the num of Pikachus
+
+    std::string lives_and_pikachus;
+    lives_and_pikachus = "^" + pikachusStr + "  @" + livesStr;
+
 	EndMode2D();
 	App->renderer->DrawRect(0, 134, 160, 10, BLACK);
 	App->text_gameUIText->Write(lives_and_pikachus.c_str(), 0, 134);
@@ -40,10 +47,7 @@ void GameUI::Render() const
 
 update_status GameUI::Update()
 {
-    std::string livesStr = std::to_string(pokeball->GetLivesPokeball());
-    std::string pikachusStr = std::to_string(0);//Link to the num of Pikachus
 
-    lives_and_pikachus = "^" + pikachusStr + "  @" + livesStr;
 
     return UPDATE_CONTINUE;
 }

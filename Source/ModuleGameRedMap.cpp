@@ -96,6 +96,7 @@ update_status ModuleGameRedMap::Update()
 	rightFlipper->Update();
 
 	UI->Render();
+
 	//pokeBall->Update();
 
 	for (const auto& object : mapObjects) {
