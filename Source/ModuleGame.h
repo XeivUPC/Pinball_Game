@@ -43,6 +43,5 @@ protected:
 	pugi::xml_document mapFileXML;
 
 	b2Vec2 ballSpawn;
-
 };
 

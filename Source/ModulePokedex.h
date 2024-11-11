@@ -42,6 +42,7 @@ private:
 	Timer lerpTimer;
 	float lerpTime=0.1f;
 
+	bool moving = false;
 	int direction = 1;
 	
 	const std::string Text0Format(int number);
