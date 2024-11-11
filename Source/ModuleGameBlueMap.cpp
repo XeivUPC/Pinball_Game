@@ -15,6 +15,8 @@
 #include "PokeballChangerSensor.h"
 #include "CaveSensor.h"
 #include "Pikachu.h"
+#include "Slowpoke.h"
+#include "Cloyster.h"
 
 
 #include "ModuleHighScore.h"
@@ -63,6 +65,8 @@ bool ModuleGameBlueMap::Start()
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
 	Pikachu* pikachu = new Pikachu(this, {0,0});
+	Slowpoke* slowpoke = new Slowpoke(this, { 0,0 });
+	Cloyster* cloyster = new Cloyster(this, { 0,0 });
 
 	SetState(StartGame);
 
