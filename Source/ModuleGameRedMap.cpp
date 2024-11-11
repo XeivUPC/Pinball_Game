@@ -12,6 +12,7 @@
 #include "StaryuBumper.h"
 #include "MapEnergyRotator.h"
 #include "PokeballChangerSensor.h"
+#include "CaveSensor.h"
 #include "Pikachu.h"
 
 
@@ -268,6 +269,19 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 0);
 
 				pokeballChangerGroup->AddSensor(pokeballChangerSensor);
+			}
+			else if (type == "caveSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				CaveSensor* caveSensor = new CaveSensor(this, { x,y }, width, height, angle, order, 0);
+
+				//caveSensorGroup->AddSensor(caveSensor, order);
 			}
 		}
 	}
