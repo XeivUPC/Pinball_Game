@@ -8,6 +8,7 @@
 #include "DittoColliders.h"
 #include "DiglettBumper.h"
 #include "PokeballChangerGroup.h"
+#include "PokemonRevealer.h"
 
 
 
@@ -19,7 +20,7 @@ private:
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
 
-	//dfgd*
+	PokemonRevealer* revealer;
 
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
 

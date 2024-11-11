@@ -47,7 +47,7 @@ bool ModuleGameRedMap::Start()
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
-
+	revealer = new PokemonRevealer(this);
 	Pikachu* pikachu = new Pikachu(this, { 0,0 });
 
 	return true;
@@ -63,7 +63,6 @@ update_status ModuleGameRedMap::Update()
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 	}
 
-	
 
 	if (IsKeyPressed(KEY_P)) {
 		pokeBall->ApplyForce({ 0,-4000 });
@@ -98,6 +97,7 @@ update_status ModuleGameRedMap::Update()
 
 	UI->Render();
 	//pokeBall->Update();
+	revealer->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
