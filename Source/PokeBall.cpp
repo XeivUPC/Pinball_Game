@@ -218,6 +218,11 @@ void PokeBall::Reset(bool saveBall)
 	}
 }
 
+int PokeBall::GetLivesPokeball() const
+{
+	return lives_pokeball;
+}
+
 bool PokeBall::CleanUp()
 {
 	gameAt->App->physics->world->DestroyBody(body);
