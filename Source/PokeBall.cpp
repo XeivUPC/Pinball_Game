@@ -72,6 +72,8 @@ PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 position, PokeballType type,float 
 
 
 	SetType(type);
+
+	lives_pokeball = 3;
 }
 
 PokeBall::~PokeBall()
@@ -131,6 +133,12 @@ update_status PokeBall::Update()
 
 	pokeball_animator->Update();
 	pokeball_animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE - 8), (int)(body->GetPosition().y * SCREEN_SIZE - 8), true);
+
+	if (position.y > 294)
+	{
+		lives_pokeball--;
+	}
+
 	return UPDATE_CONTINUE;
 }
 
@@ -180,6 +188,11 @@ PokeBall::PokeballType PokeBall::GetType()
 b2Vec2 PokeBall::GetPosition()
 {
 	return body->GetPosition();
+}
+
+int PokeBall::GetLivesPokeball() const
+{
+	return lives_pokeball;
 }
 
 bool PokeBall::CleanUp()

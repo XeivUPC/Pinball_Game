@@ -3,6 +3,7 @@
 #include "ModuleText.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
+#include "PokeBall.h"
 
 #include "ModuleGameUIText.h"
 #include <sstream>
@@ -10,6 +11,9 @@
 GameUI::GameUI(ModuleGame* gameAt) : UI(gameAt->App)
 {
     this->gameAt = gameAt;
+
+    
+    pokeball = gameAt->GetPokeball();
 }
 
 GameUI::~GameUI()
@@ -20,7 +24,7 @@ void GameUI::Render() const
 {
 	EndMode2D();
 	App->renderer->DrawRect(0, 134, 160, 10, BLACK);
-	App->text_gameUIText->Write("^0  @3", 0, 134);
+	App->text_gameUIText->Write(lives_and_pikachus.c_str(), 0, 134);
 
     long long int points=gameAt->pointsCounter();
 	std::string pointsStr = std::to_string(points);
@@ -32,6 +36,16 @@ void GameUI::Render() const
 
 	BeginMode2D(App->renderer->camera);
 
+}
+
+update_status GameUI::Update()
+{
+    std::string livesStr = std::to_string(pokeball->GetLivesPokeball());
+    std::string pikachusStr = std::to_string(0);//Link to the num of Pikachus
+
+    lives_and_pikachus = "^" + pikachusStr + "  @" + livesStr;
+
+    return UPDATE_CONTINUE;
 }
 
 std::string GameUI::FormatNumberWithOnlyComas(long long int number) const

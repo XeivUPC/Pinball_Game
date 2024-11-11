@@ -34,6 +34,8 @@ public:
 	PokeballType GetType();
 	b2Vec2 GetPosition();
 
+	int GetLivesPokeball() const;
+
 private:
 	float maxSpeed;
 	Texture* pokeball_texture;
@@ -46,5 +48,7 @@ private:
 	PokeballType type;
 
 	bool godMode = false;
+
+	int lives_pokeball;
 };
 
