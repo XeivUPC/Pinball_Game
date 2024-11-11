@@ -338,9 +338,7 @@ bool ModulePokedex::CleanUp()
     offset = 0;
     targetOffset = 0;
 
-
     SaveConfigFile();
-    _data.reset();
     return true;
 }
 
