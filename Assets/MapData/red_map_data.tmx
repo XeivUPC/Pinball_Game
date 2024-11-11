@@ -409,18 +409,21 @@
   </object>
   <object id="86" x="100" y="55" width="4" height="6">
    <properties>
+    <property name="order" type="int" value="2"/>
     <property name="type" value="pokeballChangerSensor"/>
     <property name="variant" type="int" value="0"/>
    </properties>
   </object>
   <object id="87" x="78" y="54" width="4" height="6">
    <properties>
+    <property name="order" type="int" value="1"/>
     <property name="type" value="pokeballChangerSensor"/>
     <property name="variant" type="int" value="0"/>
    </properties>
   </object>
   <object id="88" x="56" y="65" width="4" height="6">
    <properties>
+    <property name="order" type="int" value="0"/>
     <property name="type" value="pokeballChangerSensor"/>
     <property name="variant" type="int" value="0"/>
    </properties>

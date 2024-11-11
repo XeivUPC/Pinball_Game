@@ -73,6 +73,18 @@ update_status CaveSensor::Update()
 	}
 
 	animator->Update();
+	if (twinkling) {
+		if (twinklingTimer.ReadSec() >= twinklingTime) {
+			animator->SetIfCanDraw(!animator->CanDraw());
+			twinklingTimer.Start();
+		}
+		if (twinkleTimer.ReadSec() >= twinkleTime) {
+			animator->SetIfCanDraw(true);
+			Desactivate();
+			twinkling = false;
+			finishedTwinkling = true;
+		}
+	}
 	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE) - 4, (int)(body->GetPosition().y * SCREEN_SIZE - 13), false);
 	return UPDATE_CONTINUE;
 }
@@ -101,6 +113,9 @@ int CaveSensor::GetOrder() const
 
 void CaveSensor::OnTrigger()
 {
+	if (twinkling) {
+		return;
+	}
 	if (active) {
 		if (cooldownTimer.ReadSec() < cooldownTime) {
 			return;

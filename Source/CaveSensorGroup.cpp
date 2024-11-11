@@ -48,8 +48,24 @@ update_status CaveSensorGroup::Update()
 			mapSensors.front()->Desactivate();
 	}
 
-	if (AllActive())
+	bool areTwinkling = true;
+	for (const auto& sensorPointer : mapSensors)
+	{
+		if (!sensorPointer->IsTwinkling()) {
+			areTwinkling = false;
+		}
+	}
+	if (AllActive() && !areTwinkling)
 		OnAllActive();
+
+	for (const auto& sensorPointer : mapSensors)
+	{
+		if (sensorPointer->HasFinishedTwinkling()) {
+			DesactivateAll();
+			sensorPointer->FinishTwinkle();
+		}
+	}
+
 	return UPDATE_CONTINUE;
 }
 
@@ -69,11 +85,13 @@ void CaveSensorGroup::Sort()
 		return caveA->GetOrder() < caveB->GetOrder();
 	});
 
-
 }
 
 void CaveSensorGroup::OnAllActive()
 {
-	gameAt->pointsCounter.Add(20000);
-	DesactivateAll();
+	gameAt->pointsCounter.Add(25000);
+	for (const auto& sensorPointer : mapSensors)
+	{
+		sensorPointer->Twinkle();
+	}
 }

@@ -3,11 +3,12 @@
 #include "Application.h"
 #include "ModulePhysics.h"
 
-PokeballChangerSensor::PokeballChangerSensor(ModuleGame* gameAt, b2Vec2 position, float width, float height, float angle, int variant) : MapSensor(gameAt, position, width, height, angle)
+PokeballChangerSensor::PokeballChangerSensor(ModuleGame* gameAt, b2Vec2 position, float width, float height, float angle, int order, int variant) : MapSensor(gameAt, position, width, height, angle)
 {
 	gameAt->AddObject(this);
 
 	this->variant = variant;
+	this->order = order;
 
 	b2FixtureUserData fixtureData;
 	fixtureData.pointer = (uintptr_t)(&sensor);
@@ -62,6 +63,19 @@ update_status PokeballChangerSensor::Update()
 	}
 
 	animator->Update();
+	if (twinkling) {
+		if (twinklingTimer.ReadSec() >= twinklingTime) {
+			animator->SetIfCanDraw(!animator->CanDraw());
+			twinklingTimer.Start();
+		}
+		if (twinkleTimer.ReadSec() >= twinkleTime) {
+			animator->SetIfCanDraw(true);
+			Desactivate();
+			twinkling = false;
+			finishedTwinkling = true;
+		}
+	}
+
 	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE) - 4, (int)(body->GetPosition().y * SCREEN_SIZE - 10), false);
 	return UPDATE_CONTINUE;
 }
@@ -83,8 +97,16 @@ void PokeballChangerSensor::Desactivate()
 	MapSensor::Desactivate();
 }
 
+int PokeballChangerSensor::GetOrder() const
+{
+	return order;
+}
+
 void PokeballChangerSensor::OnTrigger()
 {
+	if (twinkling) {
+		return;
+	}
 	if (active) {
 		if (cooldownTimer.ReadSec() < cooldownTime) {
 			return;

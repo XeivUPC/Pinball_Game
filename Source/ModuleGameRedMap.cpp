@@ -44,6 +44,7 @@ bool ModuleGameRedMap::Start()
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
 	caveSensorGroup->Sort();
+	pokeballChangerGroup->Sort();
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
@@ -269,7 +270,10 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
 				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
 
-				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 0);
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, order, 0);
 
 				pokeballChangerGroup->AddSensor(pokeballChangerSensor);
 			}

@@ -20,10 +20,23 @@ public:
 	void SwitchActiveStatus();
 	bool IsActive();
 
+	void Twinkle();
+	bool IsTwinkling() const;
+	bool HasFinishedTwinkling() const;
+	void FinishTwinkle();
+
 protected:
 	virtual void OnTrigger() = 0;
 	int timesActivated = 0;
 	bool active = false;
+
+	bool twinkling = false;
+	bool finishedTwinkling = false;
+
+	Timer twinklingTimer;
+	float twinklingTime = 0.15f;
+	Timer twinkleTimer;
+	int twinkleTime = 2;
 
 	b2Vec2 position = { 0,0 };
 	float angle;
