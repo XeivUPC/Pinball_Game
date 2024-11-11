@@ -20,6 +20,8 @@ private:
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
 
+	//dfgd*
+
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
 	CaveSensorGroup* caveSensorGroup = nullptr;
 

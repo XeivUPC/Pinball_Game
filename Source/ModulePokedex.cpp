@@ -183,7 +183,7 @@ bool ModulePokedex::Start()
 
 update_status ModulePokedex::Update()
 {
-    direction = 0;
+    moving = false;
 #pragma region Input
 
     if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN)))
@@ -208,6 +208,7 @@ update_status ModulePokedex::Update()
         }
         lerpTimer.Start();
         direction = 1;
+        moving = true;
     }
     if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))))
     {
@@ -225,6 +226,7 @@ update_status ModulePokedex::Update()
         }
         lerpTimer.Start();
         direction = -1;
+        moving = true;
     }
     if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))))
     {
@@ -244,6 +246,7 @@ update_status ModulePokedex::Update()
         }
               offset = targetOffset;
               direction = -1;
+              moving = true;
     }
     if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))))
     {
@@ -266,6 +269,7 @@ update_status ModulePokedex::Update()
 
         offset = targetOffset;
         direction = 1;
+        moving = true;
     }
 #pragma endregion
 #pragma region Lerp
@@ -290,7 +294,7 @@ update_status ModulePokedex::Update()
         arrowCurrentTime = arrowAnimSpeed;
         arrowAppeared = !arrowAppeared;
     }
-    if (direction != 0)
+    if (moving)
     {
         arrowAppeared = true;
         arrowCurrentTime = arrowAnimSpeed;

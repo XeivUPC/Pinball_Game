@@ -227,10 +227,12 @@
     <ClInclude Include="Source\ModuleSettings.h" />
     <ClInclude Include="Source\ModuleText.h" />
     <ClInclude Include="Source\ModuleTexture.h" />
+    <ClInclude Include="Source\OverworldPokemonBumper.h" />
     <ClInclude Include="Source\Pikachu.h" />
     <ClInclude Include="Source\PokeBall.h" />
     <ClInclude Include="Source\PokeballChangerGroup.h" />
     <ClInclude Include="Source\PokeballChangerSensor.h" />
+    <ClInclude Include="Source\PokemonRevealer.h" />
     <ClInclude Include="Source\PoliwagBumper.h" />
     <ClInclude Include="Source\PsyduckBumper.h" />
     <ClInclude Include="Source\StaryuBumper.h" />
@@ -283,10 +285,12 @@
     <ClCompile Include="Source\ModuleSettings.cpp" />
     <ClCompile Include="Source\ModuleText.cpp" />
     <ClCompile Include="Source\ModuleTexture.cpp" />
+    <ClCompile Include="Source\OverworldPokemonBumper.cpp" />
     <ClCompile Include="Source\Pikachu.cpp" />
     <ClCompile Include="Source\PokeBall.cpp" />
     <ClCompile Include="Source\PokeballChangerGroup.cpp" />
     <ClCompile Include="Source\PokeballChangerSensor.cpp" />
+    <ClCompile Include="Source\PokemonRevealer.cpp" />
     <ClCompile Include="Source\PoliwagBumper.cpp" />
     <ClCompile Include="Source\PsyduckBumper.cpp" />
     <ClCompile Include="Source\StaryuBumper.cpp" />
