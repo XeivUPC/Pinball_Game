@@ -192,11 +192,13 @@
     <ClInclude Include="Source/ModuleWindow.h" />
     <ClInclude Include="Source/p2Point.h" />
     <ClInclude Include="Source\AnimationSystem.h" />
+    <ClInclude Include="Source\Bellsprout.h" />
     <ClInclude Include="Source\Box2DFactory.h" />
     <ClInclude Include="Source\Bumper.h" />
     <ClInclude Include="Source\CaveSensor.h" />
     <ClInclude Include="Source\CaveSensorGroup.h" />
     <ClInclude Include="Source\CircularBumper.h" />
+    <ClInclude Include="Source\Cloyster.h" />
     <ClInclude Include="Source\CollisionSensor.h" />
     <ClInclude Include="Source\CollisionsManager.h" />
     <ClInclude Include="Source\Counter.h" />
@@ -235,6 +237,8 @@
     <ClInclude Include="Source\PokemonRevealer.h" />
     <ClInclude Include="Source\PoliwagBumper.h" />
     <ClInclude Include="Source\PsyduckBumper.h" />
+    <ClInclude Include="Source\Slowpoke.h" />
+    <ClInclude Include="Source\Staryu.h" />
     <ClInclude Include="Source\StaryuBumper.h" />
     <ClInclude Include="Source\Timer.h" />
     <ClInclude Include="Source\ModuleUserPreferences.h" />
@@ -250,11 +254,13 @@
     <ClCompile Include="Source/ModuleRender.cpp" />
     <ClCompile Include="Source/ModuleWindow.cpp" />
     <ClCompile Include="Source\AnimationSystem.cpp" />
+    <ClCompile Include="Source\Bellsprout.cpp" />
     <ClCompile Include="Source\Box2DFactory.cpp" />
     <ClCompile Include="Source\Bumper.cpp" />
     <ClCompile Include="Source\CaveSensor.cpp" />
     <ClCompile Include="Source\CaveSensorGroup.cpp" />
     <ClCompile Include="Source\CircularBumper.cpp" />
+    <ClCompile Include="Source\Cloyster.cpp" />
     <ClCompile Include="Source\CollisionSensor.cpp" />
     <ClCompile Include="Source\CollisionsManager.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
@@ -293,6 +299,8 @@
     <ClCompile Include="Source\PokemonRevealer.cpp" />
     <ClCompile Include="Source\PoliwagBumper.cpp" />
     <ClCompile Include="Source\PsyduckBumper.cpp" />
+    <ClCompile Include="Source\Slowpoke.cpp" />
+    <ClCompile Include="Source\Staryu.cpp" />
     <ClCompile Include="Source\StaryuBumper.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
     <ClCompile Include="Source\ModuleUserPreferences.cpp" />

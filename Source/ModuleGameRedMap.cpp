@@ -14,7 +14,8 @@
 #include "PokeballChangerSensor.h"
 #include "CaveSensor.h"
 #include "Pikachu.h"
-
+#include "Staryu.h"
+#include "Bellsprout.h"
 
 #include "ModuleHighScore.h"
 
@@ -65,6 +66,8 @@ bool ModuleGameRedMap::Start()
 
 
 	Pikachu* pikachu = new Pikachu(this, { 0,0 });
+	Staryu* staryu = new Staryu(this, { 0,0 });
+	Bellsprout* bellsprout = new Bellsprout(this, { 0,0 });
 
 	SetState(StartGame);
 
