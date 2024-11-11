@@ -42,6 +42,8 @@ PokeballChangerSensor::PokeballChangerSensor(ModuleGame* gameAt, b2Vec2 position
 	animator->AddAnimation(pokeballSensorActive);
 	animator->SetSpeed(0.25f);
 	animator->SelectAnimation("Pokeball_Sensor_Unactive", true);
+
+	cooldownTimer.Start();
 }
 
 PokeballChangerSensor::~PokeballChangerSensor()
@@ -51,6 +53,14 @@ PokeballChangerSensor::~PokeballChangerSensor()
 update_status PokeballChangerSensor::Update()
 {
 	MapSensor::Update();
+
+	if (active) {
+		animator->SelectAnimation("Pokeball_Sensor_Active", true);
+	}
+	else {
+		animator->SelectAnimation("Pokeball_Sensor_Unactive", true);
+	}
+
 	animator->Update();
 	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE) - 4, (int)(body->GetPosition().y * SCREEN_SIZE - 10), false);
 	return UPDATE_CONTINUE;
@@ -63,15 +73,28 @@ bool PokeballChangerSensor::CleanUp()
 	return true;
 }
 
-void PokeballChangerSensor::OnActivation()
+void PokeballChangerSensor::Activate()
 {
-	MapSensor::OnActivation();
-	SwitchActivation();
+	MapSensor::Activate();
+}
+
+void PokeballChangerSensor::Desactivate()
+{
+	MapSensor::Desactivate();
+}
+
+void PokeballChangerSensor::OnTrigger()
+{
 	if (active) {
-		animator->SelectAnimation("Pokeball_Sensor_Active", true);
-	}
-	else {
-		animator->SelectAnimation("Pokeball_Sensor_Unactive", true);
+		if (cooldownTimer.ReadSec() < cooldownTime) {
+			return;
+		}
 	}
 
+	MapSensor::OnTrigger();
+	SwitchActiveStatus();
+
+	if (active) {
+		cooldownTimer.Start();
+	}
 }

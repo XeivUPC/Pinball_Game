@@ -27,7 +27,7 @@ bool ModuleAudio::Init()
 
     InitAudioDevice();
 
-	SetMasterVolume(0.2f);
+	SetMasterVolume(0.02f);
 
 	return ret;
 }

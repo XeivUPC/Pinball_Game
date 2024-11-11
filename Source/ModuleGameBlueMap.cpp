@@ -13,6 +13,7 @@
 #include "PsyduckBumper.h"
 #include "MapEnergyRotator.h"
 #include "PokeballChangerSensor.h"
+#include "Pikachu.h"
 
 
 #include "ModuleHighScore.h"
@@ -33,15 +34,19 @@ bool ModuleGameBlueMap::Start()
 	map_texture = App->texture->GetTexture("map_blueMap");	
 	
 
-	UI = new GameUI(App);
+	UI = new GameUI(this);
 
 	StartFadeOut(WHITE, 0.3f);
+
+	pokeballChangerGroup = new PokeballChangerGroup(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 
 	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
+
+	Pikachu* pikachu = new Pikachu(this, {0,0});
 
 	return true;
 }
@@ -51,6 +56,8 @@ update_status ModuleGameBlueMap::Update()
 	RepositionCamera(pokeBall->GetPosition());
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
+		App->scene_highScore->SetPlayerPoints(pointsCounter());
+		pointsCounter.Set(0);
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 	}
 
@@ -77,7 +84,7 @@ update_status ModuleGameBlueMap::Update()
 	rightFlipper->Update();
 
 	UI->Render();
-	pokeBall->Update();
+	//pokeBall->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
@@ -113,6 +120,7 @@ bool ModuleGameBlueMap::CleanUp()
 	return true;
 }
 
+
 void ModuleGameBlueMap::LoadMap(std::string path)
 {
 	pugi::xml_parse_result result = mapFileXML.load_file(path.c_str());
@@ -147,7 +155,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 			chainFixtureDef.shape = &chainShape;
 			chainFixtureDef.density = 1.0f;
 			chainFixtureDef.restitution = 0.5f;
-			chainFixtureDef.friction = 0.3f;
+			chainFixtureDef.friction = 0.f;
 
 			b2BodyDef bd;
 			bd.type = b2_staticBody; // Set the body type to static
@@ -158,6 +166,10 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 			
 			// Attach the fixture to the body
 			body->CreateFixture(&chainFixtureDef);
+
+			if (name == "EntryCollider") {
+				body->GetFixtureList()[0].SetSensor(true);
+			}
 
 			simpoleCollidersBodies.emplace_back(body);
 		}
@@ -232,6 +244,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
 
 				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 1);
+				pokeballChangerGroup->AddSensor(pokeballChangerSensor);
 			}
 		}
 	}

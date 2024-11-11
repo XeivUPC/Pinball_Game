@@ -14,7 +14,7 @@ public:
 	update_status Update();
 	bool CleanUp() override;
 private:
-	b2Body* body;
+	b2Body* body = nullptr;
 	CollisionSensor sensor;
 
 	Texture* texture = nullptr;
@@ -26,6 +26,9 @@ private:
 	float maxRotationSpeed=60;
 
 	float speedReduction = 10;
+
+	float pointsTime = 0.5f;
+	Timer pointsTimer;
 protected:
 };
 

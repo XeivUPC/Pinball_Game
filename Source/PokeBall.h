@@ -44,5 +44,7 @@ private:
 	b2Body* body;
 
 	PokeballType type;
+
+	bool godMode = false;
 };
 
