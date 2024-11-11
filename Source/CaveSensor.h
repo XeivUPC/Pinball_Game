@@ -15,6 +15,8 @@ public:
 	void Activate() override;
 	void Desactivate() override;
 
+	int GetOrder() const;
+
 protected:
 	void OnTrigger() override;
 

@@ -39,8 +39,11 @@ bool ModuleGameRedMap::Start()
 	StartFadeOut(WHITE, 0.3f);
 
 	pokeballChangerGroup = new PokeballChangerGroup(this);
+	caveSensorGroup = new CaveSensorGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
+
+	caveSensorGroup->Sort();
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
@@ -281,7 +284,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				CaveSensor* caveSensor = new CaveSensor(this, { x,y }, width, height, angle, order, 0);
 
-				//caveSensorGroup->AddSensor(caveSensor, order);
+				caveSensorGroup->AddSensor(caveSensor);
 			}
 		}
 	}

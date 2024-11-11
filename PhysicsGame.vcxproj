@@ -195,6 +195,7 @@
     <ClInclude Include="Source\Box2DFactory.h" />
     <ClInclude Include="Source\Bumper.h" />
     <ClInclude Include="Source\CaveSensor.h" />
+    <ClInclude Include="Source\CaveSensorGroup.h" />
     <ClInclude Include="Source\CircularBumper.h" />
     <ClInclude Include="Source\CollisionSensor.h" />
     <ClInclude Include="Source\CollisionsManager.h" />
@@ -250,6 +251,7 @@
     <ClCompile Include="Source\Box2DFactory.cpp" />
     <ClCompile Include="Source\Bumper.cpp" />
     <ClCompile Include="Source\CaveSensor.cpp" />
+    <ClCompile Include="Source\CaveSensorGroup.cpp" />
     <ClCompile Include="Source\CircularBumper.cpp" />
     <ClCompile Include="Source\CollisionSensor.cpp" />
     <ClCompile Include="Source\CollisionsManager.cpp" />

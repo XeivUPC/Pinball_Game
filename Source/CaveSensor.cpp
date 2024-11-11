@@ -94,6 +94,11 @@ void CaveSensor::Desactivate()
 	MapSensor::Desactivate();
 }
 
+int CaveSensor::GetOrder() const
+{
+	return order;
+}
+
 void CaveSensor::OnTrigger()
 {
 	if (active) {
