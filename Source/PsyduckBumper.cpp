@@ -106,6 +106,10 @@ void PsyduckBumper::OnHit()
 	psyduck_animator->SelectAnimation("Psyduck_Hide", false);
 
 	if (hitsRecieved > 3) {
-		hitsRecieved = 3;
+		hitsRecieved = 0;
+		if (!flip)
+			gameAt->NextHabitat();
+		else
+			gameAt->PreviousHabitat();
 	}
 }

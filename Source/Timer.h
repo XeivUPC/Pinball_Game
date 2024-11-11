@@ -12,9 +12,14 @@ public:
 
 	void Start();
 	double ReadSec() const;
+	void LockTimer();
+	void UnlockTimer();
+	bool IsLocked();
 
 private:
 
     // Start time in seconds
 	double started_at;   
+
+	bool locked = false;
 };

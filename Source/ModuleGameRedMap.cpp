@@ -19,7 +19,18 @@
 
 ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
-
+	mapHabitats.emplace_back(0);
+	mapHabitats.emplace_back(2);
+	mapHabitats.emplace_back(3);
+	mapHabitats.emplace_back(5);
+	mapHabitats.emplace_back(8);
+	mapHabitats.emplace_back(11);
+	mapHabitats.emplace_back(10);
+	mapHabitats.emplace_back(9);
+	mapHabitats.emplace_back(14);
+	mapHabitats.emplace_back(15);
+	mapHabitats.emplace_back(16);
+	mapHabitats.emplace_back(17);
 	
 }
 
@@ -50,6 +61,8 @@ bool ModuleGameRedMap::Start()
 
 	Pikachu* pikachu = new Pikachu(this, { 0,0 });
 
+	SetState(StartGame);
+
 	return true;
 }
 
@@ -63,41 +76,53 @@ update_status ModuleGameRedMap::Update()
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 	}
 
-	
-
-	if (IsKeyPressed(KEY_P)) {
-		pokeBall->ApplyForce({ 0,-4000 });
-	}
-
-	if (IsKeyPressed(KEY_ONE)) {
-		pokeBall->SetType(PokeBall::Pokeball);
-	}
-	if (IsKeyPressed(KEY_TWO)) {
-		pokeBall->SetType(PokeBall::SuperBall);
-	}
-	if (IsKeyPressed(KEY_THREE)) {
-		pokeBall->SetType(PokeBall::Ultraball);
-	}
-	if (IsKeyPressed(KEY_FOUR)) {
-		pokeBall->SetType(PokeBall::MasterBall);
-	}
-
-	if (IsKeyPressed(KEY_R)) {
-		pokeBall->SetPosition(ballSpawn);
-		pokeBall->SetVelocity({0,0});
-		
-	}
-
-	
-
 	Rectangle rectBackground = { 0,0,191,278 };
 	App->renderer->Draw(*map_texture, 0, 0, &rectBackground, WHITE);
 
-	leftFlipper->Update();
-	rightFlipper->Update();
+	switch (state)
+	{
+		case ModuleGame::StartGame:
+			
+			if (!statesTimer.IsLocked()) {
+				pokeBall->ApplyForce({ 0,-4000 });
+				if (statesTimer.ReadSec() > statesTime) {
+					SetState(PlayGame);
+				}
+			}
+			else {
+				if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+					statesTimer.UnlockTimer();
+					statesTimer.Start();
+				}
+			}
+
+			break;
+		case ModuleGame::PlayGame:
+
+			leftFlipper->Update();
+			rightFlipper->Update();
+
+			if (IsKeyPressed(KEY_R)) {
+				SetState(RestartGame);
+			}
+
+			break;
+		case ModuleGame::BlockGame:
+			break;
+		case ModuleGame::RestartGame:
+
+			////
+
+			pokeBall->Reset();
+
+			////
+			SetState(StartGame);
+			break;
+		default:
+			break;
+	}
 
 	UI->Render();
-	//pokeBall->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
@@ -270,5 +295,29 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				pokeballChangerGroup->AddSensor(pokeballChangerSensor);
 			}
 		}
+	}
+
+
+}
+void ModuleGameRedMap::SetState(GameStates stateToChange)
+{
+	ModuleGame::SetState(stateToChange);
+
+	statesTimer.UnlockTimer();
+	statesTimer.Start();
+	switch (state)
+	{
+	case ModuleGame::StartGame:
+		statesTimer.LockTimer();
+		statesTime = 0.5f;
+		break;
+	case ModuleGame::PlayGame:
+		break;
+	case ModuleGame::BlockGame:
+		break;
+	case ModuleGame::RestartGame:
+		break;
+	default:
+		break;
 	}
 }

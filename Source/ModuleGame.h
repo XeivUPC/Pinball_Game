@@ -16,6 +16,18 @@ class PokeBall;
 class ModuleGame : public ModuleScene
 {
 public:
+
+	enum GameStates {
+		StartGame,
+		
+		PlayGame,
+
+		BlockGame,
+
+		RestartGame
+	};
+
+
 	ModuleGame(Application* app, bool start_enabled = true);
 	virtual ~ModuleGame();
 
@@ -29,6 +41,13 @@ public:
 	Counter pointsCounter = Counter(100);
 
 	PokeBall* GetPokeball();
+
+	void NextHabitat();
+	void PreviousHabitat();
+	bool ChangeToHabitat(int habitat);
+	int GetHabitat();
+
+	virtual void SetState(GameStates stateToChange) =0;
 
 private:
 protected:
@@ -44,5 +63,12 @@ protected:
 
 	b2Vec2 ballSpawn;
 
+	std::vector<int> mapHabitats;
+	size_t habitatIndex;
+
+	GameStates state = GameStates::StartGame;
+
+	Timer statesTimer;
+	float statesTime;
 };
 

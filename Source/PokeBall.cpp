@@ -4,16 +4,17 @@
 #include "ModuleTexture.h"
 #include <math.h>
  
-PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 position, PokeballType type,float maxSpeed) : MapObject(gameAt)
+PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 spawn, PokeballType type,float maxSpeed) : MapObject(gameAt)
 {
 	gameAt->AddObject(this);
 	this->maxSpeed = maxSpeed;
+	this->spawn = spawn;
 	
 
 	gameAt->App->texture->CreateTexture("Assets/pokebal_defaultSize.png", "pokebal_defaultSize");
 	pokeball_texture = gameAt->App->texture->GetTexture("pokebal_defaultSize");
 
-	body = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, position, 1.3f);
+	body = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, spawn, 1.3f);
 	body->GetFixtureList()[0].SetRestitution(0.5f);
 	body->GetFixtureList()[0].SetFriction(0);
 	body->GetFixtureList()[0].SetDensity(10);
@@ -151,22 +152,30 @@ void PokeBall::SetVelocity(b2Vec2 velocity)
 
 void PokeBall::SetType(PokeballType type)
 {
+	PokeballType lastType = this->type;
 	this->type = type;
+
 	switch (type)
 	{
 	case PokeBall::Pokeball:
+		gameAt->pointsCounter.AddMultiplier(1);
 		pokeball_animator->SelectAnimation("Pokeball_Anim", true);
 		break;
 	case PokeBall::SuperBall:
+		gameAt->pointsCounter.EditMultiplier(1,2);
 		pokeball_animator->SelectAnimation("Superball_Anim", true);
 		break;
 	case PokeBall::Ultraball:
+		gameAt->pointsCounter.EditMultiplier(2,3);
 		pokeball_animator->SelectAnimation("Ultraball_Anim", true);
+
 		break;
 	case PokeBall::MasterBall:
+		gameAt->pointsCounter.EditMultiplier(3,5);
 		pokeball_animator->SelectAnimation("Masterball_Anim", true);
 		break;
 	default:
+		gameAt->pointsCounter.AddMultiplier(1);
 		pokeball_animator->SelectAnimation("Pokeball_Anim", true);
 		break;
 	}
@@ -180,6 +189,33 @@ PokeBall::PokeballType PokeBall::GetType()
 b2Vec2 PokeBall::GetPosition()
 {
 	return body->GetPosition();
+}
+
+void PokeBall::Reset(bool saveBall)
+{
+	SetPosition(spawn);
+	SetVelocity({ 0,0 });
+
+	if (saveBall)
+		return;
+	switch (type)
+	{
+	case PokeBall::Pokeball:
+		gameAt->pointsCounter.RemoveMultiplier(1);
+		break;
+	case PokeBall::SuperBall:		
+		gameAt->pointsCounter.RemoveMultiplier(2);
+		break;
+	case PokeBall::Ultraball:
+		gameAt->pointsCounter.RemoveMultiplier(3);
+		break;
+	case PokeBall::MasterBall:
+		gameAt->pointsCounter.RemoveMultiplier(5);
+		break;
+	default:
+		gameAt->pointsCounter.RemoveMultiplier(1);
+		break;
+	}
 }
 
 bool PokeBall::CleanUp()

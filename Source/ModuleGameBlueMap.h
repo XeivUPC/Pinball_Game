@@ -23,7 +23,7 @@ private:
 	
 	//Create
 	void LoadMap(std::string path) override;
-
+	void SetState(GameStates stateToChange) override;
 
 	std::string mapPath = "Assets/MapData/";
 

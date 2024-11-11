@@ -34,6 +34,45 @@ PokeBall* ModuleGame::GetPokeball()
 	return pokeBall;
 }
 
+void ModuleGame::NextHabitat()
+{
+	habitatIndex++;
+	if (habitatIndex >= mapHabitats.size())
+		habitatIndex = 0;
+}
+
+void ModuleGame::PreviousHabitat()
+{
+	habitatIndex--;
+	if (habitatIndex < 0)
+		habitatIndex = mapHabitats.size()-1;
+}
+
+bool ModuleGame::ChangeToHabitat(int habitat)
+{
+	int index = 0;
+	bool found=false;
+	for (const auto& habitatType : mapHabitats) {
+		if (habitat == habitatType) {
+			found = true;
+			break;
+		}
+		index++;
+	}
+	return found;
+}
+
+int ModuleGame::GetHabitat()
+{
+	return mapHabitats[habitatIndex];
+}
+
+void ModuleGame::SetState(GameStates stateToChange)
+{
+	state = stateToChange;
+
+}
+
 void ModuleGame::AddObject(MapObject* object)
 {
 	mapObjects.emplace_back(object);
