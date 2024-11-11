@@ -55,5 +55,4 @@ public:
 	void SaveConfigFile();
 	void LoadPokedex();
 	void SavePokedex();
-
 };
