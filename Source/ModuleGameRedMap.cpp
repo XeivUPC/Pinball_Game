@@ -12,6 +12,7 @@
 #include "StaryuBumper.h"
 #include "MapEnergyRotator.h"
 #include "PokeballChangerSensor.h"
+#include "CaveSensor.h"
 #include "Pikachu.h"
 
 
@@ -49,8 +50,12 @@ bool ModuleGameRedMap::Start()
 	StartFadeOut(WHITE, 0.3f);
 
 	pokeballChangerGroup = new PokeballChangerGroup(this);
+	caveSensorGroup = new CaveSensorGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
+
+	caveSensorGroup->Sort();
+	pokeballChangerGroup->Sort();
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
@@ -290,9 +295,25 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
 				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
 
-				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 0);
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, order, 0);
 
 				pokeballChangerGroup->AddSensor(pokeballChangerSensor);
+			}
+			else if (type == "caveSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				CaveSensor* caveSensor = new CaveSensor(this, { x,y }, width, height, angle, order, 0);
+
+				caveSensorGroup->AddSensor(caveSensor);
 			}
 		}
 	}

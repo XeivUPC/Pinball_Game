@@ -5,10 +5,10 @@
 #include "ModuleRender.h"
 #include "AnimationSystem.h"
 
-class PokeballChangerSensor : public MapSensor {
+class CaveSensor : public MapSensor {
 public:
-	PokeballChangerSensor(ModuleGame* gameAt, b2Vec2 position, float width, float height, float angle, int order, int variant);
-	~PokeballChangerSensor();
+	CaveSensor(ModuleGame* gameAt, b2Vec2 position, float width, float height, float angle, int order, int variant);
+	~CaveSensor();
 
 	update_status Update();
 	bool CleanUp() override;
@@ -24,7 +24,8 @@ protected:
 
 private:
 	int variant = -1;
-	int order = 1;
+	int order = -1;
+	int selectedLanguage = -1;
 
 	Texture* texture = nullptr;
 	Animator* animator = nullptr;

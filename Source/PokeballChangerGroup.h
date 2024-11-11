@@ -10,6 +10,8 @@ public:
 	update_status Update();
 	bool CleanUp() override;
 
+	void Sort();
+
 protected:
 	void OnAllActive() override;
 

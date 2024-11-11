@@ -57,6 +57,28 @@ bool MapSensor::IsActive()
 	return active;
 }
 
+void MapSensor::Twinkle()
+{
+	twinkling = true;
+	twinkleTimer.Start();
+	twinklingTimer.Start();
+}
+
+bool MapSensor::IsTwinkling() const
+{
+	return twinkling;
+}
+
+bool MapSensor::HasFinishedTwinkling() const
+{
+	return finishedTwinkling;
+}
+
+void MapSensor::FinishTwinkle()
+{
+	finishedTwinkling = false;
+}
+
 void MapSensor::OnTrigger()
 {
 	gameAt->pointsCounter.Add(1000);

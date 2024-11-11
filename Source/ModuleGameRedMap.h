@@ -8,6 +8,7 @@
 #include "DittoColliders.h"
 #include "DiglettBumper.h"
 #include "PokeballChangerGroup.h"
+#include "CaveSensorGroup.h"
 
 
 
@@ -20,6 +21,7 @@ private:
 	GameUI* UI = nullptr;
 
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
+	CaveSensorGroup* caveSensorGroup = nullptr;
 
 	DittoColliders* dittoColliders=nullptr;
 

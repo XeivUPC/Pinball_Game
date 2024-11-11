@@ -1,9 +1,10 @@
-#include "PokeballChangerSensor.h"
+#include "CaveSensor.h"
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include "ModuleUserPreferences.h"
 
-PokeballChangerSensor::PokeballChangerSensor(ModuleGame* gameAt, b2Vec2 position, float width, float height, float angle, int order, int variant) : MapSensor(gameAt, position, width, height, angle)
+CaveSensor::CaveSensor(ModuleGame* gameAt, b2Vec2 position, float width, float height, float angle, int order, int variant) : MapSensor(gameAt, position, width, height, angle)
 {
 	gameAt->AddObject(this);
 
@@ -28,38 +29,47 @@ PokeballChangerSensor::PokeballChangerSensor(ModuleGame* gameAt, b2Vec2 position
 
 	sensor.AcceptOnlyTriggers(false);
 
-	gameAt->App->texture->CreateTexture("Assets/pokeball_changer_sensor.png", "pokeball_changer_sensor");
-	texture = gameAt->App->texture->GetTexture("pokeball_changer_sensor");
+	gameAt->App->texture->CreateTexture("Assets/cave_sensor.png", "cave_sensor");
+	texture = gameAt->App->texture->GetTexture("cave_sensor");
+
+	selectedLanguage = gameAt->App->userPreferences->GetLanguage();
+
+	if (selectedLanguage == 0) {
+		selectedLanguage = 1;
+	}
+	if (selectedLanguage >= 1) {
+		selectedLanguage = 2;
+	}
 
 	animator = new Animator(gameAt->App);
 
-	AnimationData pokeballSensorUnactive = AnimationData("Pokeball_Sensor_Unactive");
-	pokeballSensorUnactive.AddSprite(Sprite{ texture,{0, (float)variant}, {8,16} });
+	AnimationData caveSensorUnactive = AnimationData("Cave_Sensor_Unactive");
+	caveSensorUnactive.AddSprite(Sprite{ texture,{(float)variant * 4 + order, 0}, {8,16} });
 
-	AnimationData pokeballSensorActive = AnimationData("Pokeball_Sensor_Active");
-	pokeballSensorActive.AddSprite(Sprite{ texture,{1, (float)variant}, {8,16} });
+	AnimationData caveSensorActive = AnimationData("Cave_Sensor_Active");
+	caveSensorActive.AddSprite(Sprite{ texture,{(float)variant * 4 + order, (float)selectedLanguage}, {8,16} });
 
-	animator->AddAnimation(pokeballSensorUnactive);
-	animator->AddAnimation(pokeballSensorActive);
+	animator->AddAnimation(caveSensorUnactive);
+	animator->AddAnimation(caveSensorActive);
 	animator->SetSpeed(0.25f);
-	animator->SelectAnimation("Pokeball_Sensor_Unactive", true);
+	animator->SelectAnimation("Cave_Sensor_Unactive", true);
 
 	cooldownTimer.Start();
 }
 
-PokeballChangerSensor::~PokeballChangerSensor()
+CaveSensor::~CaveSensor()
 {
 }
 
-update_status PokeballChangerSensor::Update()
+update_status CaveSensor::Update()
 {
 	MapSensor::Update();
 
 	if (active) {
-		animator->SelectAnimation("Pokeball_Sensor_Active", true);
+		animator->SelectAnimation("Cave_Sensor_Active", true);
 	}
 	else {
-		animator->SelectAnimation("Pokeball_Sensor_Unactive", true);
+		animator->SelectAnimation("Cave_Sensor_Unactive", true);
 	}
 
 	animator->Update();
@@ -75,34 +85,33 @@ update_status PokeballChangerSensor::Update()
 			finishedTwinkling = true;
 		}
 	}
-
-	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE) - 4, (int)(body->GetPosition().y * SCREEN_SIZE - 10), false);
+	animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE) - 4, (int)(body->GetPosition().y * SCREEN_SIZE - 13), false);
 	return UPDATE_CONTINUE;
 }
 
-bool PokeballChangerSensor::CleanUp()
+bool CaveSensor::CleanUp()
 {
 	gameAt->App->physics->world->DestroyBody(body);
 
 	return true;
 }
 
-void PokeballChangerSensor::Activate()
+void CaveSensor::Activate()
 {
 	MapSensor::Activate();
 }
 
-void PokeballChangerSensor::Desactivate()
+void CaveSensor::Desactivate()
 {
 	MapSensor::Desactivate();
 }
 
-int PokeballChangerSensor::GetOrder() const
+int CaveSensor::GetOrder() const
 {
 	return order;
 }
 
-void PokeballChangerSensor::OnTrigger()
+void CaveSensor::OnTrigger()
 {
 	if (twinkling) {
 		return;
