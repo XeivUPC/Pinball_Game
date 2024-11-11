@@ -267,8 +267,6 @@ update_status ModulePokedex::Update()
         offset = targetOffset;
         direction = 1;
     }
-    if (IsKeyPressed(KEY_B))
-        CapturePokemon(0);
 #pragma endregion
 #pragma region Lerp
     
