@@ -194,8 +194,10 @@ update_status ModulePokedex::Update()
         if (localSelectedId < minLocalId) {
             localSelectedId = minLocalId;
 
-            targetOffset = selectedId * -15.f;
+            targetOffset = selectedId * -16.f;
         }
+        lerpTimer.Start();
+        direction = 1;
     }
     if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))))
     {
@@ -209,10 +211,12 @@ update_status ModulePokedex::Update()
         if (localSelectedId > maxLocalId)
         {
             localSelectedId = maxLocalId;
-            targetOffset = (selectedId-maxLocalId) * -15.f;
+            targetOffset = (selectedId-maxLocalId) * -16.f;
         }
+        lerpTimer.Start();
+        direction = -1;
     }
-    if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT)))
+    if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))))
     {
         selectedId-= maxLocalId+1;
         if (selectedId < minId) {
@@ -226,10 +230,11 @@ update_status ModulePokedex::Update()
         }
         else
         {
-            targetOffset = (selectedId - localSelectedId) * -15.f;
+            targetOffset = (selectedId - localSelectedId) * -16.f;
         }
+              offset = targetOffset;
     }
-    if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)))
+    if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))))
     {
         selectedId+= maxLocalId+1;
         if (selectedId > maxId)
@@ -239,62 +244,62 @@ update_status ModulePokedex::Update()
            
         if (selectedId + maxLocalId >= maxId)
         {
-            targetOffset = (maxId - maxLocalId) * -15.f;
+            targetOffset = (maxId - maxLocalId) * -16.f;
 
             localSelectedId = maxLocalId - (maxId - selectedId);
         }
         else
         {
-            targetOffset = (selectedId - localSelectedId) * -15.f;
+            targetOffset = (selectedId - localSelectedId) * -16.f;
         }
+
+        offset = targetOffset;
     }
 #pragma endregion
 #pragma region Lerp
     
-    //if (factor <  1 && selectedPokemon.x != selectedPokemon.y)
-    //{
-    //    factor = lerpTimer.ReadSec() / lerpTime;
-    //    slots_offset.y = slots_offset.x + (selectedPokemon.x - selectedPokemon.y) * factor * 15;
-    //    if (slots_offset.y > 0)
-    //    {
-    //        factor = 1;
-    //    }
-    //}
-    //else if (factor >= 1 && selectedPokemon.x != selectedPokemon.y)
-    //{
-    //    slots_offset.y = round(slots_offset.y / 15.0) * 15;
-    //    slots_offset.x = slots_offset.y;
-    //    factor = 0;
-    //    selectedPokemon.x = selectedPokemon.y;
-    //}
+
+    if (targetOffset!=offset) {
+        float factor = lerpTimer.ReadSec() / lerpTime;
+        int distance = abs(targetOffset - offset);
+        offset = offset + distance * factor * direction;
+        distance = abs(targetOffset - offset);
+        if (distance < 1) {
+            offset = targetOffset;
+        }
+    }
+
 #pragma endregion
 #pragma region Render
+    App->renderer->DrawRect(0, 0, SCREEN_WIDTH , SCREEN_HEIGHT, WHITE);
     Rectangle rect;
     for (size_t i = 0; i < pokemon_list.size(); i++)
     {
-        rect = { 0 , 15.f * selectedLanguage, 124 ,15 };
-        App->renderer->Draw(*pokedexSlot, 10, (int)(56 + targetOffset + 15 * i), &rect, WHITE);
-        App->text_pokedex_worldwide->Write(Text0Format(i + 1).c_str(), 56, (int)((50 + targetOffset) + (15 * i)), BLACK);
+        rect = { 0 , 16.f * selectedLanguage, 124 ,16 };
+        App->renderer->Draw(*pokedexSlot, 10, (int)(56 + offset + 16 * i), &rect, WHITE);
+        App->text_pokedex_worldwide->Write(Text0Format(i + 1).c_str(), 56, (int)((49 + offset) + (16 * i)), BLACK);
     }
     for (size_t i = 0; i < pokemon_list.size(); i++)
     {
         if (pokemon_list.at(i).captured)
         {
             if(selectedLanguage == 0)
-                App->text_pokedex_japanese->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(59+ 15 * i + targetOffset), BLACK);
+                App->text_pokedex_japanese->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(60+ 16 * i + offset), BLACK);
             else
-                App->text_pokedex_worldwide->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(59 + 15 * i + targetOffset), BLACK);
+                App->text_pokedex_worldwide->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(60 + 16 * i + offset), BLACK);
         }
     }
-    rect = { 0 , 90, 124 ,15 };
-    App->renderer->Draw(*pokedexSlot, 10, 144 - 9, &rect, WHITE);
+
+
     rect = { 160 , 0, 160 ,144 };
     App->renderer->Draw(*pokedexSpritesheet, 0, 0, &rect, WHITE);
     rect = { 0, (float)(0 + 53 * selectedLanguage), 160, 53 };
     App->renderer->Draw(*pokedexSpritesheet, 0, 0, &rect, WHITE);
     RenderPokemonInfo(selectedId);
     rect = { 178 , 144, 5, 8 };
-    App->renderer->Draw(*pokedexSpritesheet, 25, 63 + localSelectedId * 15, &rect, WHITE);
+    App->renderer->Draw(*pokedexSpritesheet, 25, 63 + localSelectedId * 16, &rect, WHITE);  /// Add Animation
+    App->renderer->DrawRect(10,139, SCREEN_WIDTH-36,5,WHITE);
+    App->renderer->DrawRect(10,56, SCREEN_WIDTH-36,3, WHITE);
 #pragma endregion
     ModuleScene::FadeUpdate();
     return UPDATE_CONTINUE;
