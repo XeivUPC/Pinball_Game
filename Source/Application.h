@@ -14,8 +14,6 @@ class ModuleText;
 class ModuleHSNum;
 class ModuleHSName;
 class ModuleGameUIText;
-class ModuleGamePokedexJapanese;
-class ModuleGamePokedexWorldWide;
 
 
 class ModuleUserPreferences;
@@ -23,7 +21,6 @@ class ModuleUserPreferences;
 class ModuleLevelSelection;
 class ModuleCredits;
 class ModuleMainMenu;
-class ModulePokedex;
 class ModuleLanguageSelect;
 class ModuleSettings;
 class ModuleKeybinds;
@@ -45,7 +42,6 @@ public:
 	ModuleLevelSelection* scene_levelSelection;
 	ModuleCredits* scene_credits;
 	ModuleMainMenu* scene_mainMenu;
-	ModulePokedex* scene_pokedex;
 	ModuleLanguageSelect* scene_languageSelect;
 	ModuleSettings* scene_settings;
 	ModuleKeybinds* scene_keybinds;
@@ -58,8 +54,6 @@ public:
 	ModuleHSNum* text_highScoreNum;
 	ModuleHSName* text_highScoreName;
 	ModuleGameUIText* text_gameUIText;
-	ModuleGamePokedexJapanese* text_pokedex_japanese;
-	ModuleGamePokedexWorldWide* text_pokedex_worldwide;
 
 
 

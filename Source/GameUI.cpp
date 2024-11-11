@@ -3,13 +3,11 @@
 #include "ModuleText.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
-
 #include "ModuleGameUIText.h"
 #include <sstream>
 
-GameUI::GameUI(ModuleGame* gameAt) : UI(gameAt->App)
+GameUI::GameUI(Application* App) : UI(App)
 {
-    this->gameAt = gameAt;
 }
 
 GameUI::~GameUI()
@@ -22,7 +20,7 @@ void GameUI::Render() const
 	App->renderer->DrawRect(0, 134, 160, 10, BLACK);
 	App->text_gameUIText->Write("^0  @3", 0, 134);
 
-    long long int points=gameAt->pointsCounter();
+    long long int points=384738798937LL;
 	std::string pointsStr = std::to_string(points);
 	std::string onlyComasStr = FormatNumberWithOnlyComas(points);
 
@@ -40,8 +38,8 @@ std::string GameUI::FormatNumberWithOnlyComas(long long int number) const
     std::string result;
 
     
-    for (int i = numStr.length()-1; i > 0 ; i--) {
-        if((i)%3 == 0)
+    for (size_t i = 0; i < numStr.length()-1; i++) {
+        if((i+1)%3 == 0)
             result = result + "`";
         else
             result = result + " " ;

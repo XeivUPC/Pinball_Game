@@ -12,11 +12,9 @@ public:
 
 	update_status Update();
 	bool CleanUp() override;
-	void Activate() override;
-	void Desactivate() override;
 
 protected:
-	void OnTrigger() override;
+	void OnActivation();
 
 	b2Body* body = nullptr;
 
@@ -25,8 +23,5 @@ private:
 
 	Texture* texture = nullptr;
 	Animator* animator = nullptr;
-
-	Timer cooldownTimer;
-	float cooldownTime = 0.5;
 };
 

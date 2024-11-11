@@ -2,8 +2,6 @@
 #include "ModuleScene.h"
 #include <vector>
 #include "pugixml.hpp"
-#include "Counter.h"
-
 
 #pragma warning(disable:)
 #include "box2D/box2d.h"
@@ -11,7 +9,6 @@
 
 
 class MapObject;
-class PokeBall;
 
 class ModuleGame : public ModuleScene
 {
@@ -26,14 +23,11 @@ public:
 	virtual update_status Update();
 	virtual bool CleanUp();
 
-	Counter pointsCounter = Counter(100);
-
-	PokeBall* GetPokeball();
 
 private:
+
 protected:
-	Texture* map_texture= nullptr;
-	PokeBall* pokeBall=nullptr;
+	Texture* map_texture;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);

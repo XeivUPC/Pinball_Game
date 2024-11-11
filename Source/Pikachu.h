@@ -5,7 +5,7 @@
 
 class Pikachu : public MapObject {
 public:
-	Pikachu(ModuleGame* gameAt, b2Vec2 position);
+	Pikachu(ModuleGame* gameAt, b2Vec2 position, float restitution);
 	~Pikachu();
 
 	update_status Update();

@@ -29,11 +29,6 @@ bool ModuleGame::CleanUp()
 	return true;
 }
 
-PokeBall* ModuleGame::GetPokeball()
-{
-	return pokeBall;
-}
-
 void ModuleGame::AddObject(MapObject* object)
 {
 	mapObjects.emplace_back(object);

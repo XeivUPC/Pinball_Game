@@ -2,12 +2,12 @@
 class Counter
 {
 private:
-	long long int _data = 0LL;
+	float _data;
 public:
-    Counter(long long int data = 0);
+    Counter(float data = 0);
     ~Counter();
-    long long int operator()() const;
-    void Add(long long int amount, float multiplier = 1);
-    void Take(long long int amount, float multiplier = 1);
-    void Set(long long int amount);
+    float operator()() const;
+    void Add(float amount, float multiplier = 1);
+    void Take(float amount, float multiplier = 1);
+    void Set(float amount);
 };

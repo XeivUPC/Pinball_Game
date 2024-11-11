@@ -14,14 +14,10 @@ public:
 	int GetTotalActivations();
 	void ResetTotalActivations();
 
-
-	virtual void Activate() = 0;
-	virtual void Desactivate() = 0;
-	void SwitchActiveStatus();
-	bool IsActive();
+	void SwitchActivation();
 
 protected:
-	virtual void OnTrigger() = 0;
+	virtual void OnActivation() = 0;
 	int timesActivated = 0;
 	bool active = false;
 
@@ -31,15 +27,3 @@ protected:
 	CollisionSensor sensor;
 };
 
-//// OnTrigger
-
-//// Activate virtual
-
-//// Desctivate virtual
-
-//// SwitchActiveStatus
-
-//// IsActive
-
-//// GetTotalActivations
-//// ResetTotalActivations

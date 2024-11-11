@@ -102,8 +102,6 @@ void CircularBumper::OnHit()
 
 	gameAt->App->audio->PlayFx(bumperAudioId);
 
-	gameAt->pointsCounter.Add(5000);
-
 	gettingHit = true;
 }
 

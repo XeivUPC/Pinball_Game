@@ -6,8 +6,6 @@
 #include "ModuleAudio.h"
 #include "ModuleLevelSelection.h"
 #include "ModuleUserPreferences.h"
-#include "ModuleHighScore.h"
-#include "ModulePokedex.h"
 
 
 ModuleMainMenu::ModuleMainMenu(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
@@ -214,8 +212,6 @@ update_status ModuleMainMenu::Update()
 				break;
 			case 1:
 				//Go to pokedex
-				StartFadeIn(App->scene_pokedex, WHITE, 0.3f);
-				App->audio->StopMusic();
 				App->audio->PlayFx(audioSelectId);
 				break;
 			case 2:
@@ -239,9 +235,9 @@ update_status ModuleMainMenu::Update()
 		}
 		else {
 
-			StartFadeIn(App->scene_highScore, WHITE, 0.3f);
-			App->audio->StopMusic();
-			App->audio->PlayFx(audioSelectId);
+			//StartFadeIn(App->scene_mainMenu, WHITE, 0.3f);
+			//App->audio->StopMusic();
+			//App->audio->PlayFx(audioSelectId);
 		}
 
 	}

@@ -132,24 +132,7 @@
     <ClCompile Include="Source\MapEnergyRotator.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\MapSensorGroup.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PokeballChangerGroup.cpp">
-      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\StaryuBumper.cpp">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModuleGamePokedexJapanese.cpp">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModuleGamePokedexWorldwide.cpp">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModulePokedex.cpp">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClCompile>
+    <ClCompile Include="Source\MapSensorGroup.cpp" />
     <ClCompile Include="Source\Pikachu.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
@@ -289,24 +272,7 @@
     <ClInclude Include="Source\MapEnergyRotator.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MapSensorGroup.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\PokeballChangerGroup.h">
-      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\StaryuBumper.h">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleGamePokedexJapanese.h">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleGamePokedexWorldwide.h">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModulePokedex.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClInclude>
+    <ClInclude Include="Source\MapSensorGroup.h" />
     <ClInclude Include="Source\Pikachu.h">
       <Filter>Objects</Filter>
     </ClInclude>
@@ -320,6 +286,9 @@
     </Filter>
     <Filter Include="Utils">
       <UniqueIdentifier>{7ff14ab1-7b05-465f-8926-685df6f9b282}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
     </Filter>
     <Filter Include="UIs">
       <UniqueIdentifier>{28ee3c68-574a-47a4-b59d-e59b83ad5827}</UniqueIdentifier>
@@ -348,22 +317,13 @@
     <Filter Include="Objects\Map Sensors %28Objects%29">
       <UniqueIdentifier>{c94fe65c-c863-4377-be2b-4e9fc37ee607}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Data">
-      <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Objects\Map Sensor Group %28Objects%29">
-      <UniqueIdentifier>{05cce2c1-f9b7-432b-8b75-643ed68455c7}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="Assets\Data\Pokedex.xml">
-      <Filter>Data</Filter>
+    <Xml Include="Assets\Preferences\UserPreferences.xml">
+      <Filter>Config</Filter>
     </Xml>
-    <Xml Include="Assets\Data\HighScore.xml">
-      <Filter>Data</Filter>
-    </Xml>
-    <Xml Include="Assets\Data\UserPreferences.xml">
-      <Filter>Data</Filter>
+    <Xml Include="Assets\Preferences\HighScore.xml">
+      <Filter>Config</Filter>
     </Xml>
   </ItemGroup>
 </Project>

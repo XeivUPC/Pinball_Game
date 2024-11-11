@@ -7,7 +7,7 @@
 #include "Flipper.h"
 #include "DittoColliders.h"
 #include "DiglettBumper.h"
-#include "PokeballChangerGroup.h"
+#include "Pikachu.h"
 
 
 
@@ -15,11 +15,13 @@ using namespace pugi;
 
 class ModuleGameRedMap : public ModuleGame {
 private:
+
+	PokeBall* pokeBall = nullptr;
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
+	Pikachu* pikachu = nullptr;
 
-	PokeballChangerGroup* pokeballChangerGroup = nullptr;
 
 	DittoColliders* dittoColliders=nullptr;
 
@@ -37,6 +39,5 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
-
 };
 

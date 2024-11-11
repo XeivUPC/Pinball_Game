@@ -4,7 +4,7 @@
 #include "ModuleRender.h"
 #include "ModuleUserPreferences.h"
 
-Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
+Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position, float restitution) : MapObject(gameAt)
 {
 	gameAt->AddObject(this);
 
@@ -13,16 +13,17 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 
 	map_pikachu_animator = new Animator(gameAt->App);
 
-	AnimationData mapPikachuAnim = AnimationData("MapPikachuAnim");
-	mapPikachuAnim.AddSprite(Sprite{ map_pikachu,{0, 0}, {16,16} });
-	mapPikachuAnim.AddSprite(Sprite{ map_pikachu,{1, 0}, {16,16} });
+	AnimationData MapPikachuAnim = AnimationData("MapPikachuAnim");
+	MapPikachuAnim.AddSprite(Sprite{ map_pikachu,{0, 0}, {16,16} });
+	MapPikachuAnim.AddSprite(Sprite{ map_pikachu,{1, 0}, {16,16} });
+	MapPikachuAnim.AddSprite(Sprite{ map_pikachu,{2, 0}, {16,16} });
 
-	map_pikachu_animator->AddAnimation(mapPikachuAnim);
-	map_pikachu_animator->SetSpeed(0.3f);
+	map_pikachu_animator->AddAnimation(MapPikachuAnim);
+	map_pikachu_animator->SetSpeed(0.2f);
 	map_pikachu_animator->SelectAnimation("MapPikachuAnim", true);
 
 	bool is_in_left = true;
-	position_x = 139;
+	position_x = 138;
 }
 
 Pikachu::~Pikachu()
@@ -33,21 +34,21 @@ Pikachu::~Pikachu()
 update_status Pikachu::Update()
 {
 	if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
-		position_x = 8;//Configure pos x
+		position_x = 6;//Configure pos x
 		is_in_left = true;
 	}
 	else if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-		position_x = 139;//Configure pos x
+		position_x = 138;//Configure pos x
 		is_in_left = false;
 	}
 
 	if (is_in_left)
 	{
-		map_pikachu_animator->Animate(position_x, 244, false);//Configure pos y
+		map_pikachu_animator->Animate(position_x, 245, true);//Configure pos y
 	}
 	else
 	{
-		map_pikachu_animator->Animate(position_x, 244, false);//Configure pos y
+		map_pikachu_animator->Animate(position_x, 245, false);//Configure pos y
 	}
 
 	map_pikachu_animator->Update();

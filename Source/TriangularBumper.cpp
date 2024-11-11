@@ -2,7 +2,6 @@
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
-#include "ModuleAudio.h"
 
 TriangularBumper::TriangularBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2Vec2> vertices, float restitution, bool flip, int variant) : Bumper(gameAt, position, restitution)
 {
@@ -51,8 +50,6 @@ TriangularBumper::TriangularBumper(ModuleGame* gameAt, b2Vec2 position, std::vec
 	gameAt->App->texture->CreateTexture("Assets/triangular_bumper.png", "triangular_bumper");
 	texture = gameAt->App->texture->GetTexture("triangular_bumper");
 
-	bumperAudioId = gameAt->App->audio->LoadFx("Assets/SFX/Game_Triangular_Bumper.ogg");
-
 	animator = new Animator(gameAt->App);
 
 	AnimationData triangularIdle = AnimationData("Triangular_Idle");
@@ -98,8 +95,6 @@ void TriangularBumper::OnHit()
 	Bumper::OnHit();
 	animator->SelectAnimation("Triangular_Idle", true);
 	animator->SelectAnimation("Triangular_Hit", false);
-
-	gameAt->App->audio->PlayFx(bumperAudioId);
 
 	gettingHit = true;
 }

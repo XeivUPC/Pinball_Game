@@ -26,7 +26,5 @@ private:
 	Animator* animator = nullptr;
 
 	bool gettingHit = false;
-
-	int bumperAudioId = -1;
 };
 

@@ -81,34 +81,6 @@ PokeBall::~PokeBall()
 
 update_status PokeBall::Update()
 {
-	if (IsKeyPressed(KEY_F2)) {
-		godMode = !godMode;
-	}
-
-	if (godMode) {
-		body->SetGravityScale(0);
-
-		float speed = 1000 * GetFrameTime();
-		b2Vec2 direction = { 0,0 };
-		
-		if (IsKeyDown(KEY_UP)) {
-			direction.y -= speed;
-		}
-		if (IsKeyDown(KEY_DOWN)) {
-			direction.y += speed;
-		}
-		if (IsKeyDown(KEY_LEFT)) {
-			direction.x -= speed;
-		}
-		if (IsKeyDown(KEY_RIGHT)) {
-			direction.x += speed;
-		}
-		body->SetLinearVelocity(direction);
-
-	}
-	else {
-		body->SetGravityScale(1);
-	}
 	float xVel = body->GetLinearVelocity().x;
 	float yVel = body->GetLinearVelocity().y;
 
