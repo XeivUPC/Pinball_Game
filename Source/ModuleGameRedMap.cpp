@@ -24,10 +24,10 @@ ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : Modul
 	mapHabitats.emplace_back(2);
 	mapHabitats.emplace_back(3);
 	mapHabitats.emplace_back(5);
+	mapHabitats.emplace_back(7);
 	mapHabitats.emplace_back(8);
-	mapHabitats.emplace_back(11);
-	mapHabitats.emplace_back(10);
 	mapHabitats.emplace_back(9);
+	mapHabitats.emplace_back(11);
 	mapHabitats.emplace_back(14);
 	mapHabitats.emplace_back(15);
 	mapHabitats.emplace_back(16);

@@ -25,12 +25,12 @@ ModuleGameBlueMap::ModuleGameBlueMap(Application* app, bool start_enabled) : Mod
 	mapHabitats.emplace_back(2);
 	mapHabitats.emplace_back(4);
 	mapHabitats.emplace_back(5);
-	mapHabitats.emplace_back(7);
-	mapHabitats.emplace_back(11);
 	mapHabitats.emplace_back(6);
+	mapHabitats.emplace_back(8);
+	mapHabitats.emplace_back(10);
 	mapHabitats.emplace_back(13);
 	mapHabitats.emplace_back(14);
-	mapHabitats.emplace_back(12);
+	mapHabitats.emplace_back(13);
 	mapHabitats.emplace_back(16);
 	mapHabitats.emplace_back(17);
 	
