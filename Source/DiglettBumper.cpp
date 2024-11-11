@@ -94,7 +94,7 @@ void DiglettBumper::OnHit()
 		return;
 	Bumper::OnHit();
 	hidden = true;	
-
+	gameAt->pointsCounter.Add(5000);
 	body->GetFixtureList()[0].SetSensor(true);
 
 	hidden_timer.Start();

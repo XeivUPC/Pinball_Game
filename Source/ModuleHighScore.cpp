@@ -163,8 +163,14 @@ bool ModuleHighScore::CleanUp()
 		arrow_animator = nullptr;
 	}
 	highScoreFile.reset();
+	incoming_score = 0;
 	LOG("Unloading High Score scene");
 	return true;
+}
+
+void ModuleHighScore::SetPlayerPoints(long long int points)
+{
+	incoming_score = (double)points;
 }
 
 void ModuleHighScore::LoadHighScore()
@@ -216,7 +222,7 @@ void ModuleHighScore::SaveHighScore()
 
 void ModuleHighScore::LoadHighScoreFile()
 {
-	pugi::xml_parse_result result = highScoreFile.load_file("Assets/Preferences/HighScore.xml");
+	pugi::xml_parse_result result = highScoreFile.load_file("Assets/Data/HighScore.xml");
 	if (result)
 	{
 		LOG("HighScore.xml parsed without errors");
@@ -229,7 +235,7 @@ void ModuleHighScore::LoadHighScoreFile()
 
 void ModuleHighScore::SaveConfigFile()
 {
-	highScoreFile.save_file("Assets/Preferences/HighScore.xml");
+	highScoreFile.save_file("Assets/Data/HighScore.xml");
 }
 
 void ModuleHighScore::TryToInsertHighScore(double points)

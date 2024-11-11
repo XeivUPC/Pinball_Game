@@ -9,9 +9,10 @@
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
 #include "TriangularBumper.h"
-#include "TriangularBumper.h"
+#include "StaryuBumper.h"
 #include "MapEnergyRotator.h"
 #include "PokeballChangerSensor.h"
+#include "Pikachu.h"
 
 
 #include "ModuleHighScore.h"
@@ -32,10 +33,11 @@ bool ModuleGameRedMap::Start()
 	map_texture = App->texture->GetTexture("map_redMap");	
 	
 
-	UI = new GameUI(App);
+	UI = new GameUI(this);
 
 	StartFadeOut(WHITE, 0.3f);
 
+	pokeballChangerGroup = new PokeballChangerGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
@@ -46,6 +48,9 @@ bool ModuleGameRedMap::Start()
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 	pikachu = new Pikachu(this,{0,0},0);
 
+
+	Pikachu* pikachu = new Pikachu(this, { 0,0 });
+
 	return true;
 }
 
@@ -54,6 +59,8 @@ update_status ModuleGameRedMap::Update()
 	RepositionCamera(pokeBall->GetPosition());
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
+		App->scene_highScore->SetPlayerPoints(pointsCounter());
+		pointsCounter.Set(0);
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 	}
 
@@ -87,12 +94,11 @@ update_status ModuleGameRedMap::Update()
 	Rectangle rectBackground = { 0,0,191,278 };
 	App->renderer->Draw(*map_texture, 0, 0, &rectBackground, WHITE);
 
-
 	leftFlipper->Update();
 	rightFlipper->Update();
 
 	UI->Render();
-	pokeBall->Update();
+	//pokeBall->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
@@ -128,6 +134,7 @@ bool ModuleGameRedMap::CleanUp()
 	return true;
 }
 
+
 void ModuleGameRedMap::LoadMap(std::string path)
 {
 	pugi::xml_parse_result result = mapFileXML.load_file(path.c_str());
@@ -162,7 +169,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 			chainFixtureDef.shape = &chainShape;
 			chainFixtureDef.density = 1.0f;
 			chainFixtureDef.restitution = 0.2f;
-			chainFixtureDef.friction = 0.3f;
+			chainFixtureDef.friction = 0.f;
 
 			b2BodyDef bd;
 			bd.type = b2_staticBody; // Set the body type to static
@@ -232,6 +239,19 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				DiglettBumper* diglettBumper = new DiglettBumper(this, { x,y }, vertices, 1.f, flip);
 			}
+			else if (type == "staryuBumper") {
+
+				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
+				std::vector<b2Vec2> vertices;
+				FromStringToVertices(collisionPolygonPoints, vertices);
+
+				bool flip = false;
+				if (x * SCREEN_SIZE > SCREEN_WIDTH / 2) {
+					flip = true;
+				}
+
+				StaryuBumper* staryuBumper = new StaryuBumper(this, { x,y }, vertices, 1.f, flip);
+			}
 			else if (type == "energyRotator") {
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				float heigth = objectNode.attribute("height").as_float() / SCREEN_SIZE;
@@ -247,6 +267,8 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
 
 				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 0);
+
+				pokeballChangerGroup->AddSensor(pokeballChangerSensor);
 			}
 		}
 	}

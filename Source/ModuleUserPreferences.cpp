@@ -173,7 +173,7 @@ void ModuleUserPreferences::SaveUserPreferences()
 
 void ModuleUserPreferences::LoadConfigFile()
 {
-	pugi::xml_parse_result result = preferencesFile.load_file("Assets/Preferences/UserPreferences.xml");
+	pugi::xml_parse_result result = preferencesFile.load_file("Assets/Data/UserPreferences.xml");
 	if (result)
 	{
 		LOG("config.xml parsed without errors");
@@ -187,5 +187,5 @@ void ModuleUserPreferences::LoadConfigFile()
 
 void ModuleUserPreferences::SaveConfigFile()
 {
-	preferencesFile.save_file("Assets/Preferences/UserPreferences.xml");
+	preferencesFile.save_file("Assets/Data/UserPreferences.xml");
 }
