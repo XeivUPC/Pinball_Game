@@ -6,7 +6,7 @@
 #include "PokeBall.h"
 #include "Flipper.h"
 #include "PokeballChangerGroup.h"
-
+#include "CaveSensorGroup.h"
 
 
 
@@ -16,6 +16,7 @@ class ModuleGameBlueMap : public ModuleGame {
 private:
 
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
+	CaveSensorGroup* caveSensorGroup = nullptr;
 
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
@@ -23,7 +24,7 @@ private:
 	
 	//Create
 	void LoadMap(std::string path) override;
-
+	void SetState(GameStates stateToChange) override;
 
 	std::string mapPath = "Assets/MapData/";
 

@@ -153,6 +153,12 @@
     <ClCompile Include="Source\Pikachu.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\OverworldPokemonBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PokemonRevealer.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -308,6 +314,12 @@
       <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\Pikachu.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\OverworldPokemonBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PokemonRevealer.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>

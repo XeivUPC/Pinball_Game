@@ -101,6 +101,10 @@ void DiglettBumper::OnHit()
 	diglett_animator->SelectAnimation("Diglett_Hide", false);
 	diglett_animator->SetSpeed(0.07f);
 	if (hitsRecieved > 3) {
-		hitsRecieved = 3;
+		hitsRecieved = 0;
+		if (!flip)
+			gameAt->NextHabitat();
+		else
+			gameAt->PreviousHabitat();
 	}
 }

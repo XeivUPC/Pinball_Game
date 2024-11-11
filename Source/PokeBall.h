@@ -21,7 +21,7 @@ public:
 		MasterBall
 	};
 
-	PokeBall(ModuleGame* gameAt, b2Vec2 position, PokeballType type, float maxSpeed);
+	PokeBall(ModuleGame* gameAt, b2Vec2 spawn, PokeballType type, float maxSpeed);
 	~PokeBall();
 
 	update_status Update();
@@ -33,6 +33,7 @@ public:
 	void SetType(PokeballType type);
 	PokeballType GetType();
 	b2Vec2 GetPosition();
+	void Reset(bool saveBall= false);
 
 	int GetLivesPokeball() const;
 
@@ -46,6 +47,8 @@ private:
 	b2Body* body;
 
 	PokeballType type;
+
+	b2Vec2 spawn;
 
 	bool godMode = false;
 

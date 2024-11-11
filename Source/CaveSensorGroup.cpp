@@ -1,25 +1,25 @@
-#include "PokeballChangerGroup.h"
-#include "PokeBall.h"
+#include "CaveSensorGroup.h"
+#include "CaveSensor.h"
 #include "ModuleUserPreferences.h"
 #include "Application.h"
 #include <algorithm>
 
-PokeballChangerGroup::PokeballChangerGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
+CaveSensorGroup::CaveSensorGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
 {
 	this->gameAt = gameAt;
 }
 
-PokeballChangerGroup::~PokeballChangerGroup()
+CaveSensorGroup::~CaveSensorGroup()
 {
 
 }
 
-update_status PokeballChangerGroup::Update()
+update_status CaveSensorGroup::Update()
 {
 	if (IsKeyPressed(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
 		bool startValue = mapSensors.front()->IsActive();
 
-		for (size_t i = 0; i < mapSensors.size() - 1; i++)
+		for (size_t i = 0; i < mapSensors.size()-1; i++)
 		{
 			if (mapSensors[i + 1]->IsActive())
 				mapSensors[i]->Activate();
@@ -65,38 +65,31 @@ update_status PokeballChangerGroup::Update()
 			sensorPointer->FinishTwinkle();
 		}
 	}
+
 	return UPDATE_CONTINUE;
 }
 
-bool PokeballChangerGroup::CleanUp()
+bool CaveSensorGroup::CleanUp()
 {
-	
+
 	return true;
 }
 
-void PokeballChangerGroup::Sort()
+void CaveSensorGroup::Sort()
 {
-	std::sort(mapSensors.begin(), mapSensors.end(), [](MapSensor* a, MapSensor* b) {
+	std::sort(mapSensors.begin(), mapSensors.end(), []( MapSensor* a, MapSensor* b) {
 
-		PokeballChangerSensor* sensorA = static_cast<PokeballChangerSensor*>(a);
-		PokeballChangerSensor* sensorB = static_cast<PokeballChangerSensor*>(b);
+		CaveSensor* caveA = static_cast<CaveSensor*>(a);
+		CaveSensor* caveB = static_cast<CaveSensor*>(b);
 
-		return sensorA->GetOrder() < sensorB->GetOrder();
-		});
+		return caveA->GetOrder() < caveB->GetOrder();
+	});
 
 }
 
-void PokeballChangerGroup::OnAllActive()
+void CaveSensorGroup::OnAllActive()
 {
-	PokeBall* pokeBall = gameAt->GetPokeball();
-
-	if (pokeBall->GetType() != PokeBall::PokeballType::MasterBall) {
-		pokeBall->SetType(PokeBall::PokeballType(pokeBall->GetType() + 1));
-	}
-	else {
-		//give points
-		gameAt->pointsCounter.Add(10000000);
-	}
+	gameAt->pointsCounter.Add(25000);
 	for (const auto& sensorPointer : mapSensors)
 	{
 		sensorPointer->Twinkle();

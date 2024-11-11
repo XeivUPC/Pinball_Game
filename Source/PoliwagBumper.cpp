@@ -91,6 +91,10 @@ void PoliwagBumper::OnHit()
 	hidden_timer.Start();
 	poliwag_animator->SelectAnimation("Poliwag_Hidden", true);
 	if (hitsRecieved > 3) {
-		hitsRecieved = 3;
+		hitsRecieved = 0;
+		if(!flip)
+			gameAt->NextHabitat();
+		else
+			gameAt->PreviousHabitat();
 	}
 }

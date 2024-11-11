@@ -8,6 +8,7 @@
 #include "DittoColliders.h"
 #include "DiglettBumper.h"
 #include "PokeballChangerGroup.h"
+#include "CaveSensorGroup.h"
 
 
 
@@ -19,13 +20,17 @@ private:
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
 
+	//dfgd*
+
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
+	CaveSensorGroup* caveSensorGroup = nullptr;
 
 	DittoColliders* dittoColliders=nullptr;
 
 	
 	//Create
 	void LoadMap(std::string path) override;
+	void SetState(GameStates stateToChange) override;
 
 
 	std::string mapPath = "Assets/MapData/";

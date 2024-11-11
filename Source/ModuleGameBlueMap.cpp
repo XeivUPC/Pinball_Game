@@ -13,6 +13,7 @@
 #include "PsyduckBumper.h"
 #include "MapEnergyRotator.h"
 #include "PokeballChangerSensor.h"
+#include "CaveSensor.h"
 #include "Pikachu.h"
 
 
@@ -20,7 +21,18 @@
 
 ModuleGameBlueMap::ModuleGameBlueMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
-
+	mapHabitats.emplace_back(1);
+	mapHabitats.emplace_back(2);
+	mapHabitats.emplace_back(4);
+	mapHabitats.emplace_back(5);
+	mapHabitats.emplace_back(6);
+	mapHabitats.emplace_back(8);
+	mapHabitats.emplace_back(10);
+	mapHabitats.emplace_back(13);
+	mapHabitats.emplace_back(14);
+	mapHabitats.emplace_back(13);
+	mapHabitats.emplace_back(16);
+	mapHabitats.emplace_back(17);
 	
 }
 
@@ -39,14 +51,20 @@ bool ModuleGameBlueMap::Start()
 	StartFadeOut(WHITE, 0.3f);
 
 	pokeballChangerGroup = new PokeballChangerGroup(this);
+	caveSensorGroup = new CaveSensorGroup(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
+
+	caveSensorGroup->Sort();
+	pokeballChangerGroup->Sort();
 
 	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
 	Pikachu* pikachu = new Pikachu(this, {0,0});
+
+	SetState(StartGame);
 
 	return true;
 }
@@ -61,30 +79,53 @@ update_status ModuleGameBlueMap::Update()
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 	}
 
-	
-
-	if (IsKeyPressed(KEY_P)) {
-		pokeBall->ApplyForce({ 0,-4000 });
-	}
-
-	if (IsKeyPressed(KEY_R)) {
-		pokeBall->SetPosition(ballSpawn);
-		pokeBall->SetVelocity({0,0});
-		
-	}
-
-	
-	
-
 	Rectangle rectBackground = { 0,0,191,278 };
 	App->renderer->Draw(*map_texture, 0, 0, &rectBackground, WHITE);
 
+	switch (state)
+	{
+	case ModuleGame::StartGame:
 
-	leftFlipper->Update();
-	rightFlipper->Update();
+		if (!statesTimer.IsLocked()) {
+			pokeBall->ApplyForce({ 0,-4000 });
+			if (statesTimer.ReadSec() > statesTime) {
+				SetState(PlayGame);
+			}
+		}
+		else {
+			if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+				statesTimer.UnlockTimer();
+				statesTimer.Start();
+			}
+		}
+
+		break;
+	case ModuleGame::PlayGame:
+
+		leftFlipper->Update();
+		rightFlipper->Update();
+
+		if (IsKeyPressed(KEY_R)) {
+			SetState(RestartGame);
+		}
+
+		break;
+	case ModuleGame::BlockGame:
+		break;
+	case ModuleGame::RestartGame:
+
+		////
+
+		pokeBall->Reset();
+
+		////
+		SetState(StartGame);
+		break;
+	default:
+		break;
+	}
 
 	UI->Render();
-	//pokeBall->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
@@ -243,9 +284,48 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
 				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
 
-				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 1);
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, order, 1);
 				pokeballChangerGroup->AddSensor(pokeballChangerSensor);
 			}
+			else if (type == "caveSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				CaveSensor* caveSensor = new CaveSensor(this, { x,y }, width, height, angle, order, 1);
+
+				caveSensorGroup->AddSensor(caveSensor);
+			}
 		}
+	}
+}
+
+void ModuleGameBlueMap::SetState(GameStates stateToChange)
+{
+	ModuleGame::SetState(stateToChange);
+
+	statesTimer.UnlockTimer();
+	statesTimer.Start();
+	switch (state)
+	{
+	case ModuleGame::StartGame:
+		statesTimer.LockTimer();
+		statesTime = 0.5f;
+		break;
+	case ModuleGame::PlayGame:
+		break;
+	case ModuleGame::BlockGame:
+		break;
+	case ModuleGame::RestartGame:
+		break;
+	default:
+		break;
 	}
 }
