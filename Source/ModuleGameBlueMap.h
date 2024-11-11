@@ -5,6 +5,8 @@
 #include "GameUI.h"
 #include "PokeBall.h"
 #include "Flipper.h"
+#include "PokeballChangerGroup.h"
+
 
 
 
@@ -12,6 +14,9 @@ using namespace pugi;
 
 class ModuleGameBlueMap : public ModuleGame {
 private:
+
+	PokeballChangerGroup* pokeballChangerGroup = nullptr;
+
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;

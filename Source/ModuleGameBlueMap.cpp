@@ -38,6 +38,8 @@ bool ModuleGameBlueMap::Start()
 
 	StartFadeOut(WHITE, 0.3f);
 
+	pokeballChangerGroup = new PokeballChangerGroup(this);
+
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 
 	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
@@ -242,6 +244,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
 
 				PokeballChangerSensor* pokeballChangerSensor = new PokeballChangerSensor(this, { x,y }, width, height, angle, 1);
+				pokeballChangerGroup->AddSensor(pokeballChangerSensor);
 			}
 		}
 	}
