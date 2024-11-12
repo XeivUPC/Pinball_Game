@@ -4,7 +4,6 @@
 #include "pugixml.hpp"
 #include "Counter.h"
 
-
 #pragma warning(disable:)
 #include "box2D/box2d.h"
 #pragma warning(default:)
@@ -12,6 +11,7 @@
 
 class MapObject;
 class PokeBall;
+class CentralScreen;
 
 class ModuleGame : public ModuleScene
 {
@@ -25,11 +25,9 @@ public:
 	virtual bool Start();
 	virtual update_status Update();
 	virtual bool CleanUp();
-
 	Counter pointsCounter = Counter(100);
-
 	PokeBall* GetPokeball();
-
+	CentralScreen* screen;
 private:
 protected:
 	Texture* map_texture= nullptr;

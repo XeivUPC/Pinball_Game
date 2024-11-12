@@ -1,4 +1,4 @@
-#include "PokemonRevealer.h"
+/*
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
@@ -18,14 +18,17 @@ void PokemonRevealer::SelectPokemonIDByZone()
 	id = 0;
 }
 
+void PokemonRevealer::AddHit()
+{
+	count++;
+}
+
 update_status PokemonRevealer::Update()
 {
 	factor += time.ReadSec() / animTime;
 	printf("%d\n", count);
 	if (id == -1)
 		return UPDATE_CONTINUE;
-	if (IsKeyPressed(KEY_B))
-		count++;
 	Rectangle rect = { id % 38,id / 38,48,32 };
 	gameAt->App->renderer->Draw(*tex, 56, 166, &rect, WHITE);
 	rect.x += 48;
@@ -76,4 +79,4 @@ update_status PokemonRevealer::Update()
 bool PokemonRevealer::CleanUp()
 {
 	return true;
-}
+}*/

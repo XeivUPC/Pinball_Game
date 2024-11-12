@@ -194,6 +194,7 @@
     <ClInclude Include="Source\AnimationSystem.h" />
     <ClInclude Include="Source\Box2DFactory.h" />
     <ClInclude Include="Source\Bumper.h" />
+    <ClInclude Include="Source\CentralScreen.h" />
     <ClInclude Include="Source\CircularBumper.h" />
     <ClInclude Include="Source\CollisionSensor.h" />
     <ClInclude Include="Source\CollisionsManager.h" />
@@ -230,7 +231,6 @@
     <ClInclude Include="Source\PokeBall.h" />
     <ClInclude Include="Source\PokeballChangerGroup.h" />
     <ClInclude Include="Source\PokeballChangerSensor.h" />
-    <ClInclude Include="Source\PokemonRevealer.h" />
     <ClInclude Include="Source\PoliwagBumper.h" />
     <ClInclude Include="Source\PsyduckBumper.h" />
     <ClInclude Include="Source\StaryuBumper.h" />
@@ -250,6 +250,7 @@
     <ClCompile Include="Source\AnimationSystem.cpp" />
     <ClCompile Include="Source\Box2DFactory.cpp" />
     <ClCompile Include="Source\Bumper.cpp" />
+    <ClCompile Include="Source\CentralScreen.cpp" />
     <ClCompile Include="Source\CircularBumper.cpp" />
     <ClCompile Include="Source\CollisionSensor.cpp" />
     <ClCompile Include="Source\CollisionsManager.cpp" />

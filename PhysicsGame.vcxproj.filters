@@ -159,6 +159,9 @@
     <ClCompile Include="Source\PokemonRevealer.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CentralScreen.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -319,7 +322,7 @@
     <ClInclude Include="Source\OverworldPokemonBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\PokemonRevealer.h">
+    <ClInclude Include="Source\CentralScreen.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>

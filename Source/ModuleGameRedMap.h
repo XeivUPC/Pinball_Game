@@ -8,9 +8,6 @@
 #include "DittoColliders.h"
 #include "DiglettBumper.h"
 #include "PokeballChangerGroup.h"
-#include "PokemonRevealer.h"
-
-
 
 using namespace pugi;
 
@@ -19,17 +16,11 @@ private:
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
-
-	PokemonRevealer* revealer;
-
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
-
 	DittoColliders* dittoColliders=nullptr;
 
-	
 	//Create
 	void LoadMap(std::string path) override;
-
 
 	std::string mapPath = "Assets/MapData/";
 
@@ -40,6 +31,5 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
-
 };
 

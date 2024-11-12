@@ -12,6 +12,7 @@
 #include "PoliwagBumper.h"
 #include "PsyduckBumper.h"
 #include "MapEnergyRotator.h"
+#include "CentralScreen.h"
 #include "PokeballChangerSensor.h"
 #include "Pikachu.h"
 
@@ -41,13 +42,13 @@ bool ModuleGameBlueMap::Start()
 	pokeballChangerGroup = new PokeballChangerGroup(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
+	screen = new CentralScreen(this);
 
 	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
 	Pikachu* pikachu = new Pikachu(this, {0,0});
-
 	return true;
 }
 

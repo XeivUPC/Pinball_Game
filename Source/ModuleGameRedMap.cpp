@@ -12,16 +12,14 @@
 #include "StaryuBumper.h"
 #include "MapEnergyRotator.h"
 #include "PokeballChangerSensor.h"
+#include "CentralScreen.h"
 #include "Pikachu.h"
 
 
 #include "ModuleHighScore.h"
 
 ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
-{
-
-	
-}
+{}
 
 ModuleGameRedMap::~ModuleGameRedMap()
 {
@@ -40,6 +38,7 @@ bool ModuleGameRedMap::Start()
 	pokeballChangerGroup = new PokeballChangerGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
+	screen = new CentralScreen(this);
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
@@ -47,9 +46,7 @@ bool ModuleGameRedMap::Start()
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
-	revealer = new PokemonRevealer(this);
 	Pikachu* pikachu = new Pikachu(this, { 0,0 });
-
 	return true;
 }
 
@@ -97,7 +94,6 @@ update_status ModuleGameRedMap::Update()
 
 	UI->Render();
 	//pokeBall->Update();
-	revealer->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
@@ -107,10 +103,6 @@ update_status ModuleGameRedMap::Update()
 
 	return UPDATE_CONTINUE;
 }
-
-
-
-
 
 bool ModuleGameRedMap::CleanUp()
 {
