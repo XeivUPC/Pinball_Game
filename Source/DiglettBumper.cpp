@@ -92,6 +92,10 @@ void DiglettBumper::OnHit()
 {
 	if (hidden)
 		return;
+
+	if (hitsRecieved == 3)
+		hitsRecieved = 0;
+
 	Bumper::OnHit();
 	hidden = true;	
 	gameAt->pointsCounter.Add(5000);
@@ -100,8 +104,7 @@ void DiglettBumper::OnHit()
 	hidden_timer.Start();
 	diglett_animator->SelectAnimation("Diglett_Hide", false);
 	diglett_animator->SetSpeed(0.07f);
-	if (hitsRecieved > 3) {
-		hitsRecieved = 0;
+	if (hitsRecieved == 3) {
 		if (!flip)
 			gameAt->NextHabitat();
 		else

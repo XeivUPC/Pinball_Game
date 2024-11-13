@@ -13,7 +13,7 @@ class PoliwagBumper	: public Bumper{
 	   bool CleanUp() override;
 
    protected:
-	   void OnHit();
+	   void OnHit()override;
 	   b2Body* body = nullptr;
 
    private:

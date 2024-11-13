@@ -83,6 +83,10 @@ void PoliwagBumper::OnHit()
 {
 	if (hidden)
 		return;
+
+	if (hitsRecieved == 3)
+		hitsRecieved = 0;
+
 	Bumper::OnHit();
 	hidden = true;
 	gameAt->pointsCounter.Add(5000);
@@ -90,8 +94,8 @@ void PoliwagBumper::OnHit()
 
 	hidden_timer.Start();
 	poliwag_animator->SelectAnimation("Poliwag_Hidden", true);
-	if (hitsRecieved > 3) {
-		hitsRecieved = 0;
+	if (hitsRecieved == 3) {
+
 		if(!flip)
 			gameAt->NextHabitat();
 		else

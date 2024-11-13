@@ -97,6 +97,10 @@ void PsyduckBumper::OnHit()
 {
 	if (hidden)
 		return;
+
+	if (hitsRecieved == 3)
+		hitsRecieved = 0;
+
 	Bumper::OnHit();
 	hidden = true;
 	gameAt->pointsCounter.Add(5000);
@@ -105,8 +109,8 @@ void PsyduckBumper::OnHit()
 	hidden_timer.Start();
 	psyduck_animator->SelectAnimation("Psyduck_Hide", false);
 
-	if (hitsRecieved > 3) {
-		hitsRecieved = 0;
+	if (hitsRecieved == 3) {
+
 		if (!flip)
 			gameAt->NextHabitat();
 		else
