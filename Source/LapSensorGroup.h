@@ -11,10 +11,15 @@ public:
 	bool CleanUp() override;
 
 	void Sort();
+	bool HaveToActivateArrowGet();
+	bool HaveToActivateArrowEvo();
 
 protected:
 	void OnAllActive() override;
 
 	int direction = 0;
+
+	bool activateNextGetArrow = false;
+	bool activateNextEvoArrow = false;
 };
 

@@ -17,10 +17,6 @@ public:
 
 	int GetOrder() const;
 
-protected:
-
-	b2Body* body = nullptr;
-
 private:
 	int variant = -1;
 	int order = -1;

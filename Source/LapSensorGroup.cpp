@@ -50,14 +50,36 @@ void LapSensorGroup::Sort()
 
 }
 
+bool LapSensorGroup::HaveToActivateArrowGet()
+{
+	if (activateNextGetArrow) {
+		activateNextGetArrow = false;
+		return true;
+	}
+	else {
+		return activateNextGetArrow;
+	}
+}
+
+bool LapSensorGroup::HaveToActivateArrowEvo()
+{
+	if (activateNextEvoArrow) {
+		activateNextEvoArrow = false;
+		return true;
+	}
+	else {
+		return activateNextEvoArrow;
+	}
+}
+
 void LapSensorGroup::OnAllActive()
 {
 	gameAt->pointsCounter.Add(25000);
 	if (direction == -1) {
-		// Get +1
+		activateNextGetArrow = true;
 	}
 	else if (direction == 1) {
-		// Evo +1
+		activateNextEvoArrow = true;
 	}
 	DesactivateAll();
 }

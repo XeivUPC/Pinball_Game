@@ -140,6 +140,13 @@ update_status ModuleGameRedMap::Update()
 		object->Update();
 	}
 
+	if (lapSensorGroup->HaveToActivateArrowGet()) {
+		getArrowGroup->ActivateNext();
+	}
+	if (lapSensorGroup->HaveToActivateArrowEvo()) {
+		//evoArrowGroup->ActivateNext();
+	}
+
 	ModuleScene::FadeUpdate();
 
 	return UPDATE_CONTINUE;
@@ -335,7 +342,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				lapSensorGroup->AddSensor(lapSensor);
 			}
-			else if (type == "lapSensor") {
+			else if (type == "getEvoArrow") {
 
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
@@ -343,12 +350,17 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
 				int order = orderNode.attribute("value").as_int();
 
-				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "arrowType");
-				int order = orderNode.attribute("value").as_int();
+				pugi::xml_node arrowTypeNode = objectNode.child("properties").find_child_by_attribute("property", "name", "arrowType");
+				int arrowType = arrowTypeNode.attribute("value").as_int();
 
-				GetEvoArrow* getEvoArrow = new GetEvoArrow(this, { x,y }, order, 0);
+				GetEvoArrow* getEvoArrow = new GetEvoArrow(this, { x,y }, order, arrowType, 0);
 
-				getArrowGroup->AddArrow(lapSensor);
+				if (arrowType == 0) {
+
+				}
+				else if (arrowType == 1) {
+					getArrowGroup->AddArrow(getEvoArrow);
+				}
 			}
 		}
 	}
