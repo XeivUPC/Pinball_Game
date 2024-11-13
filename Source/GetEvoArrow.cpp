@@ -7,6 +7,7 @@ GetEvoArrow::GetEvoArrow(ModuleGame* gameAt, b2Vec2 position, int order, int typ
 
 	this->variant = variant;
 	this->order = order;
+	this->position = position;
 
 	gameAt->App->texture->CreateTexture("Assets/get_evo_arrows.png", "get_evo_arrows");
 	texture = gameAt->App->texture->GetTexture("get_evo_arrows");
@@ -36,6 +37,8 @@ GetEvoArrow::~GetEvoArrow()
 
 update_status GetEvoArrow::Update()
 {
+	animator->Update();
+	animator->Animate((int)(position.x * SCREEN_SIZE), (int)(position.y * SCREEN_SIZE), false);
 	return UPDATE_CONTINUE;
 }
 
@@ -46,11 +49,13 @@ bool GetEvoArrow::CleanUp()
 
 void GetEvoArrow::Activate()
 {
+	MapArrow::Activate();
 	animator->SelectAnimation("Arrow_Active", true);
 }
 
 void GetEvoArrow::Desactivate()
 {
+	MapArrow::Desactivate();
 	animator->SelectAnimation("Arrow_Unactive", true);
 }
 

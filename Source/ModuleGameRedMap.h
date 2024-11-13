@@ -11,6 +11,7 @@
 #include "CaveSensorGroup.h"
 #include "LapSensorGroup.h"
 #include "GetArrowGroup.h"
+#include "EvoArrowGroup.h"
 
 
 
@@ -28,6 +29,7 @@ private:
 	CaveSensorGroup* caveSensorGroup = nullptr;
 	LapSensorGroup* lapSensorGroup = nullptr;
 	GetArrowGroup* getArrowGroup = nullptr;
+	EvoArrowGroup* evoArrowGroup = nullptr;
 
 	DittoColliders* dittoColliders=nullptr;
 

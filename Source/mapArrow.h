@@ -12,6 +12,7 @@ public:
 
 	virtual void Activate() = 0;
 	virtual void Desactivate() = 0;
+	virtual void Twinkle() = 0;
 	void SwitchActiveStatus();
 	bool IsActive();
 

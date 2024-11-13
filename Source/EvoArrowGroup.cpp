@@ -1,20 +1,20 @@
-#include "GetArrowGroup.h"
+#include "EvoArrowGroup.h"
 #include "GetEvoArrow.h"
 #include "ModuleUserPreferences.h"
 #include "Application.h"
 #include <algorithm>
 
-GetArrowGroup::GetArrowGroup(ModuleGame* gameAt) : MapArrowGroup(gameAt)
+EvoArrowGroup::EvoArrowGroup(ModuleGame* gameAt) : MapArrowGroup(gameAt)
 {
 	this->gameAt = gameAt;
 }
 
-GetArrowGroup::~GetArrowGroup()
+EvoArrowGroup::~EvoArrowGroup()
 {
 
 }
 
-update_status GetArrowGroup::Update()
+update_status EvoArrowGroup::Update()
 {
 	for (const auto& arrowPointer : mapArrows)
 	{
@@ -29,13 +29,13 @@ update_status GetArrowGroup::Update()
 	return UPDATE_CONTINUE;
 }
 
-bool GetArrowGroup::CleanUp()
+bool EvoArrowGroup::CleanUp()
 {
 
 	return true;
 }
 
-void GetArrowGroup::Sort()
+void EvoArrowGroup::Sort()
 {
 	std::sort(mapArrows.begin(), mapArrows.end(), [](MapArrow* a, MapArrow* b) {
 
@@ -47,7 +47,7 @@ void GetArrowGroup::Sort()
 
 }
 
-void GetArrowGroup::ActivateNext()
+void EvoArrowGroup::ActivateNext()
 {
 	for (const auto& arrowPointer : mapArrows)
 	{
@@ -58,8 +58,9 @@ void GetArrowGroup::ActivateNext()
 	}
 }
 
-void GetArrowGroup::OnAllActive()
+void EvoArrowGroup::OnAllActive()
 {
 	// gameAt->pointsCounter.Add(25000);
-	// Entering Bellsprout will make a pokemon appear
+	// Dito collider now gets removed and evolution is possible
+	mapArrows.front()->Twinkle();
 }

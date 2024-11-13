@@ -54,6 +54,7 @@ bool ModuleGameRedMap::Start()
 	caveSensorGroup = new CaveSensorGroup(this);
 	lapSensorGroup = new LapSensorGroup(this);
 	getArrowGroup = new GetArrowGroup(this);
+	evoArrowGroup = new EvoArrowGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
@@ -61,6 +62,7 @@ bool ModuleGameRedMap::Start()
 	lapSensorGroup->Sort();
 	pokeballChangerGroup->Sort();
 	getArrowGroup->Sort();
+	evoArrowGroup->Sort();
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
@@ -118,6 +120,13 @@ update_status ModuleGameRedMap::Update()
 				SetState(RestartGame);
 			}
 
+			if (lapSensorGroup->HaveToActivateArrowGet()) {
+				getArrowGroup->ActivateNext();
+			}
+			if (lapSensorGroup->HaveToActivateArrowEvo()) {
+				evoArrowGroup->ActivateNext();
+			}
+
 			break;
 		case ModuleGame::BlockGame:
 			break;
@@ -140,12 +149,6 @@ update_status ModuleGameRedMap::Update()
 		object->Update();
 	}
 
-	if (lapSensorGroup->HaveToActivateArrowGet()) {
-		getArrowGroup->ActivateNext();
-	}
-	if (lapSensorGroup->HaveToActivateArrowEvo()) {
-		//evoArrowGroup->ActivateNext();
-	}
 
 	ModuleScene::FadeUpdate();
 
@@ -356,7 +359,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				GetEvoArrow* getEvoArrow = new GetEvoArrow(this, { x,y }, order, arrowType, 0);
 
 				if (arrowType == 0) {
-
+					evoArrowGroup->AddArrow(getEvoArrow);
 				}
 				else if (arrowType == 1) {
 					getArrowGroup->AddArrow(getEvoArrow);

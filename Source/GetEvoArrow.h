@@ -13,7 +13,7 @@ public:
 	bool CleanUp() override;
 	void Activate() override;
 	void Desactivate() override;
-	void Twinkle();
+	void Twinkle() override;
 
 	int GetOrder() const;
 
@@ -21,6 +21,8 @@ private:
 	int variant = -1;
 	int order = -1;
 	int type = -1;
+
+	b2Vec2 position = { 0,0 };
 
 	Texture* texture = nullptr;
 	Animator* animator = nullptr;

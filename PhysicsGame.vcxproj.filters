@@ -195,6 +195,9 @@
     <ClCompile Include="Source\MapArrowGroup.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\EvoArrowGroup.cpp">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -393,6 +396,9 @@
     </ClInclude>
     <ClInclude Include="Source\MapArrowGroup.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EvoArrowGroup.h">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
