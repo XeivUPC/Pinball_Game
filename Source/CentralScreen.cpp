@@ -6,6 +6,7 @@ void CentralScreen::AddProgram(ScreenProgram* program)
 {
 	actualProgram = program;
 	actualProgram->StartProgram();
+	actualProgram->SetGameReference(gameAt);
 }
 
 Rectangle CentralScreen::GetScreenArea()

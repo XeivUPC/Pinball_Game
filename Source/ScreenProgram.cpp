@@ -9,6 +9,11 @@ ScreenProgram::~ScreenProgram()
 {
 }
 
+void ScreenProgram::SetGameReference(ModuleGame* game)
+{
+	gameAt = game;
+}
+
 std::string ScreenProgram::GetProgramIdentifier()
 {
 	return identifier;
@@ -28,4 +33,5 @@ void ScreenProgram::Render()
 
 void ScreenProgram::EndProgram()
 {
+	gameAt = nullptr;
 }

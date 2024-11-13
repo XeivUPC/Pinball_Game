@@ -1,4 +1,6 @@
 #include "CapturePokemon.h"
+#include "Application.h"
+#include "ModuleTexture.h"
 
 void CapturePokemon::AddHit()
 {
@@ -12,4 +14,6 @@ void CapturePokemon::SelectPokemonByZone(int zone)
 
 CapturePokemon::CapturePokemon(const std::string id) : ScreenProgram(id)
 {
+	gameAt->App->texture->CreateTexture("Assets/pokedex-spritesheet.png", "spritesheet");
+	pokedexSpritesheet = App->texture->GetTexture("spritesheet");
 }
