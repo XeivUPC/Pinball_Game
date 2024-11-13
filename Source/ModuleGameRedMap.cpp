@@ -16,6 +16,7 @@
 #include "Pikachu.h"
 #include "Staryu.h"
 #include "Bellsprout.h"
+#include "DiglettCounter.h"
 
 #include "ModuleHighScore.h"
 
@@ -271,6 +272,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				}
 
 				DiglettBumper* diglettBumper = new DiglettBumper(this, { x,y }, vertices, 1.f, flip);
+				DiglettCounter* counter = new DiglettCounter(this, { 0,0 }, diglettBumper, flip);
 			}
 			else if (type == "staryuBumper") {
 

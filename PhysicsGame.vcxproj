@@ -202,6 +202,7 @@
     <ClInclude Include="Source\CollisionSensor.h" />
     <ClInclude Include="Source\CollisionsManager.h" />
     <ClInclude Include="Source\Counter.h" />
+    <ClInclude Include="Source\DiglettCounter.h" />
     <ClInclude Include="Source\DiglettBumper.h" />
     <ClInclude Include="Source\DittoColliders.h" />
     <ClInclude Include="Source\Flipper.h" />
@@ -264,6 +265,7 @@
     <ClCompile Include="Source\CollisionSensor.cpp" />
     <ClCompile Include="Source\CollisionsManager.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
+    <ClCompile Include="Source\DiglettCounter.cpp" />
     <ClCompile Include="Source\DiglettBumper.cpp" />
     <ClCompile Include="Source\DittoColliders.cpp" />
     <ClCompile Include="Source\Flipper.cpp" />
