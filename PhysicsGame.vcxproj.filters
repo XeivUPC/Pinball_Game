@@ -183,6 +183,9 @@
     <ClCompile Include="Source\LapSensorGroup.cpp">
       <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\mapArrow.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -369,6 +372,9 @@
     </ClInclude>
     <ClInclude Include="Source\LapSensorGroup.h">
       <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\mapArrow.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

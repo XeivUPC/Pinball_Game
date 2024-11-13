@@ -26,7 +26,8 @@ update_status LapSensorGroup::Update()
 		direction = 0;
 	}
 
-	OnAllActive();
+	if (AllActive())
+		OnAllActive();
 
 	return UPDATE_CONTINUE;
 }
@@ -58,4 +59,5 @@ void LapSensorGroup::OnAllActive()
 	else if (direction == 1) {
 		// Evo +1
 	}
+	DesactivateAll();
 }
