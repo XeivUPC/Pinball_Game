@@ -14,7 +14,7 @@ public:
 	bool CleanUp() override;
 
 protected:
-	void OnHit();
+	void OnHit()override;
 	b2Body* body = nullptr;
 	b2Body* bumperBody = nullptr;
 

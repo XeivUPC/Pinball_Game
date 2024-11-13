@@ -13,7 +13,7 @@ class PoliwagBumper	: public Bumper{
 	   bool CleanUp() override;
 
    protected:
-	   void OnHit();
+	   void OnHit()override;
 	   b2Body* body = nullptr;
 
    private:
@@ -22,6 +22,9 @@ class PoliwagBumper	: public Bumper{
 
 	   bool hidden = false;
 	   bool flip = false;
+
+	   Timer remove_timer;
+	   float remove_time = 10.f;
 
 	   Timer hidden_timer;
 	   float hidden_time = 0.5f;

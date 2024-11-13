@@ -134,7 +134,7 @@ update_status ModuleGameBlueMap::Update()
 
 		////
 
-		pokeBall->Reset();
+		pokeBall->Reset(saveBall);
 
 		////
 		SetState(StartGame);
@@ -143,7 +143,7 @@ update_status ModuleGameBlueMap::Update()
 		break;
 	}
 
-	UI->Render();
+	UI->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
@@ -364,6 +364,7 @@ void ModuleGameBlueMap::SetState(GameStates stateToChange)
 
 	statesTimer.UnlockTimer();
 	statesTimer.Start();
+
 	switch (state)
 	{
 	case ModuleGame::StartGame:

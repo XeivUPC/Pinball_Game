@@ -68,6 +68,13 @@ update_status DiglettBumper::Update()
 		diglett_animator->SelectAnimation("Diglett_Hidden", true);	
 	}
 
+	if (remove_time < remove_timer.ReadSec()) {
+		hitsRecieved--;
+		remove_timer.Start();
+		if (hitsRecieved < 0)
+			hitsRecieved = 0;
+	}
+
 	if (hidden && hidden_time <= hidden_timer.ReadSec()) {
 		hidden = false;
 		body->GetFixtureList()[0].SetSensor(false);
@@ -92,7 +99,14 @@ void DiglettBumper::OnHit()
 {
 	if (hidden)
 		return;
+
+	if (hitsRecieved == 3)
+		hitsRecieved = 0;
+
+
 	Bumper::OnHit();
+
+	remove_timer.Start();
 	hidden = true;	
 	gameAt->pointsCounter.Add(5000);
 	body->GetFixtureList()[0].SetSensor(true);
@@ -100,8 +114,7 @@ void DiglettBumper::OnHit()
 	hidden_timer.Start();
 	diglett_animator->SelectAnimation("Diglett_Hide", false);
 	diglett_animator->SetSpeed(0.07f);
-	if (hitsRecieved > 3) {
-		hitsRecieved = 0;
+	if (hitsRecieved == 3) {
 		if (!flip)
 			gameAt->NextHabitat();
 		else

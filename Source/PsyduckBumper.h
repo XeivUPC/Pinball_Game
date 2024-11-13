@@ -13,7 +13,7 @@ public:
 	bool CleanUp() override;
 
 protected:
-	void OnHit();
+	void OnHit()override;
 	b2Body* body = nullptr;
 
 private:
@@ -23,6 +23,9 @@ private:
 	bool hidden = false;
 	bool flip = false;
 
+	Timer remove_timer;
+	float remove_time = 10.f;
+
 	Timer hidden_timer;
-	float hidden_time = 1.5f;
+	float hidden_time = 2.f;
 };

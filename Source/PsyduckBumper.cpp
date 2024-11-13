@@ -74,6 +74,13 @@ update_status PsyduckBumper::Update()
 		psyduck_animator->SelectAnimation("Psyduck_Angry"+ std::to_string(hitsRecieved), true);
 	}
 
+	if (remove_time < remove_timer.ReadSec()) {
+		hitsRecieved--;
+		remove_timer.Start();
+		if (hitsRecieved < 0)
+			hitsRecieved = 0;
+	}
+
 	if (hidden && hidden_time <= hidden_timer.ReadSec()) {
 		hidden = false;
 		body->GetFixtureList()[0].SetSensor(false);
@@ -97,7 +104,12 @@ void PsyduckBumper::OnHit()
 {
 	if (hidden)
 		return;
+
+	if (hitsRecieved == 3)
+		hitsRecieved = 0;
+
 	Bumper::OnHit();
+	remove_timer.Start();
 	hidden = true;
 	gameAt->pointsCounter.Add(5000);
 	body->GetFixtureList()[0].SetSensor(true);
@@ -105,8 +117,8 @@ void PsyduckBumper::OnHit()
 	hidden_timer.Start();
 	psyduck_animator->SelectAnimation("Psyduck_Hide", false);
 
-	if (hitsRecieved > 3) {
-		hitsRecieved = 0;
+	if (hitsRecieved == 3) {
+
 		if (!flip)
 			gameAt->NextHabitat();
 		else

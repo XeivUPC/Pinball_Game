@@ -81,6 +81,8 @@ void MapSensor::FinishTwinkle()
 
 void MapSensor::OnTrigger()
 {
-	gameAt->pointsCounter.Add(1000);
-	timesActivated++;
+	if (active) {
+		gameAt->pointsCounter.Add(1000);
+		timesActivated++;
+	}
 }

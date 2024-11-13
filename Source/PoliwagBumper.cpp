@@ -66,6 +66,13 @@ update_status PoliwagBumper::Update()
 		poliwag_animator->SelectAnimation("Poliwag_Idle", true);
 	}
 
+	if (remove_time < remove_timer.ReadSec()) {
+		hitsRecieved--;
+		remove_timer.Start();
+		if (hitsRecieved < 0)
+			hitsRecieved = 0;
+	}
+
 	b2Vec2 renderOffset = { flip ? -8.f  : -0.f,-8.f };
 	poliwag_animator->Update();
 	poliwag_animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE + renderOffset.x), (int)(body->GetPosition().y * SCREEN_SIZE + renderOffset.y), flip);
@@ -83,15 +90,20 @@ void PoliwagBumper::OnHit()
 {
 	if (hidden)
 		return;
+
+	if (hitsRecieved == 3)
+		hitsRecieved = 0;
+
 	Bumper::OnHit();
+	remove_timer.Start();
 	hidden = true;
 	gameAt->pointsCounter.Add(5000);
 	body->GetFixtureList()[0].SetSensor(true);
 
 	hidden_timer.Start();
 	poliwag_animator->SelectAnimation("Poliwag_Hidden", true);
-	if (hitsRecieved > 3) {
-		hitsRecieved = 0;
+	if (hitsRecieved == 3) {
+
 		if(!flip)
 			gameAt->NextHabitat();
 		else

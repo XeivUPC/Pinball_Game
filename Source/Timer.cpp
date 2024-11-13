@@ -26,6 +26,18 @@ double Timer::ReadSec() const
 	return (GetTime() - started_at);
 }
 
+double Timer::ReadSecEvenLocked() const
+{
+	return (GetTime() - started_at);
+}
+
+void Timer::AdjustStartToCurrentTime()
+{
+	double timePassed = ReadSec();
+	Start();
+	started_at -= timePassed;
+}
+
 void Timer::LockTimer()
 {
 	locked = true;

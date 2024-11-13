@@ -44,7 +44,6 @@ PokeballChangerSensor::PokeballChangerSensor(ModuleGame* gameAt, b2Vec2 position
 	animator->SetSpeed(0.25f);
 	animator->SelectAnimation("Pokeball_Sensor_Unactive", true);
 
-	cooldownTimer.Start();
 }
 
 PokeballChangerSensor::~PokeballChangerSensor()
@@ -107,16 +106,10 @@ void PokeballChangerSensor::OnTrigger()
 	if (twinkling) {
 		return;
 	}
-	if (active) {
-		if (cooldownTimer.ReadSec() < cooldownTime) {
-			return;
-		}
-	}
+	
+	Activate();
 
 	MapSensor::OnTrigger();
-	SwitchActiveStatus();
 
-	if (active) {
-		cooldownTimer.Start();
-	}
+	
 }

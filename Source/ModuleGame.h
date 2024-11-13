@@ -48,6 +48,7 @@ public:
 	int GetHabitat();
 
 	virtual void SetState(GameStates stateToChange) =0;
+	GameStates GetState();
 
 private:
 protected:
@@ -66,9 +67,15 @@ protected:
 	std::vector<int> mapHabitats;
 	size_t habitatIndex;
 
+	bool saveBall=true;
+
+
 	GameStates state = GameStates::StartGame;
 
 	Timer statesTimer;
 	float statesTime;
+
+
+
 };
 
