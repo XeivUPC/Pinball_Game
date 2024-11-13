@@ -23,6 +23,9 @@ class PoliwagBumper	: public Bumper{
 	   bool hidden = false;
 	   bool flip = false;
 
+	   Timer remove_timer;
+	   float remove_time = 10.f;
+
 	   Timer hidden_timer;
 	   float hidden_time = 0.5f;
 	};

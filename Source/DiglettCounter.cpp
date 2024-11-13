@@ -64,7 +64,6 @@ update_status DiglettCounter::Update()
 	default:
 		break;
 	}
-	printf("%d\n", hits);
 	map_diggletCounter_animator->Update();
 
 	b2Vec2 drawPos = {(flip ? 136.0f : 0.0f), 166.f};

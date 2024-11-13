@@ -25,5 +25,8 @@ private:
 
 	Timer hidden_timer;
 	float hidden_time = 2.f;
+
+	Timer remove_timer;
+	float remove_time = 10.f;
 };
 
