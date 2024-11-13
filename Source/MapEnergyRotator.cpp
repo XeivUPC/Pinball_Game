@@ -4,9 +4,11 @@
 #include "Box2DFactory.h"
 #include "ModuleTexture.h"
 
-MapEnergyRotator::MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, float width, float height, int variant) : MapObject(gameAt)
+MapEnergyRotator::MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, MapEnergyBattery* battery, float width, float height, int variant) : MapObject(gameAt)
 {
 	gameAt->AddObject(this);
+
+	this->battery = battery;
 
 	b2FixtureUserData fixtureData;
 	fixtureData.pointer = (uintptr_t)(&sensor);
@@ -73,7 +75,7 @@ update_status MapEnergyRotator::Update()
 			pointsTimer.Start();
 			gameAt->pointsCounter.Add(100);
 		}
-
+		battery->AddEnergy(velocity*GetFrameTime()/2);
 	}
 	
 	animator->SetSpeed(speed);

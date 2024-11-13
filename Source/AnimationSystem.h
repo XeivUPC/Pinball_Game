@@ -70,6 +70,7 @@ public:
 	bool HasAnimationFinished();
 	void SetSpeed(float s);
 	void Update();
+	void LerpUpdate(float factor);
 	void SetDirection(int direction);
 	void Animate(int x, int y, bool flip);
 

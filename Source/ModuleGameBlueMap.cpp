@@ -12,6 +12,7 @@
 #include "PoliwagBumper.h"
 #include "PsyduckBumper.h"
 #include "MapEnergyRotator.h"
+#include "MapEnergyBattery.h"
 #include "PokeballChangerSensor.h"
 #include "CaveSensor.h"
 #include "Pikachu.h"
@@ -279,10 +280,21 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 			else if (type == "energyRotator") {
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				float heigth = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				
+				pugi::xml_node batteryIdNode = objectNode.child("properties").find_child_by_attribute("property", "name", "battery");
+
+				int batteryId = batteryIdNode.attribute("value").as_int();
+
+				pugi::xml_node energyBatteryNode = mapObjectsNode.find_child_by_attribute("object", "id", std::to_string(batteryId).c_str());
+
+				float batteryX = energyBatteryNode.attribute("x").as_float() / SCREEN_SIZE;
+				float batteryY = energyBatteryNode.attribute("y").as_float() / SCREEN_SIZE;
+
+				MapEnergyBattery* battery = new MapEnergyBattery(this, { batteryX ,batteryY},1);
 
 				x += width / 2;
 				y += heigth / 2;
-				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, width, heigth, 1);
+				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, battery, width, heigth, 1);
 			}
 			else if (type == "pokeballChangerSensor") {
 

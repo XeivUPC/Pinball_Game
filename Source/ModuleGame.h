@@ -47,6 +47,9 @@ public:
 	bool ChangeToHabitat(int habitat);
 	int GetHabitat();
 
+	bool IsEnergyCharged();
+	void SetEnergyStatus(bool isCharged);
+
 	virtual void SetState(GameStates stateToChange) =0;
 	GameStates GetState();
 
@@ -68,6 +71,7 @@ protected:
 	size_t habitatIndex;
 
 	bool saveBall=true;
+	bool energyCharged = false;
 
 
 	GameStates state = GameStates::StartGame;

@@ -67,6 +67,16 @@ int ModuleGame::GetHabitat()
 	return mapHabitats[habitatIndex];
 }
 
+bool ModuleGame::IsEnergyCharged()
+{
+	return energyCharged;
+}
+
+void ModuleGame::SetEnergyStatus(bool isCharged)
+{
+	energyCharged = isCharged;
+}
+
 void ModuleGame::SetState(GameStates stateToChange)
 {
 	state = stateToChange;

@@ -4,11 +4,12 @@
 #include "MapObject.h"
 #include "CollisionSensor.h"
 #include "AnimationSystem.h"
+#include "MapEnergyBattery.h"
 
 class MapEnergyRotator : public MapObject
 {
 public:
-	MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, float width, float height, int variant);
+	MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, MapEnergyBattery* battery, float width, float height, int variant);
 	~MapEnergyRotator();
 
 	update_status Update();
@@ -19,6 +20,8 @@ private:
 
 	Texture* texture = nullptr;
 	Animator* animator = nullptr;
+
+	MapEnergyBattery* battery;
 
 	bool rotating=false;
 

@@ -139,16 +139,51 @@ void Animator::Update()
 {
 	if (!isPlaying)
 		return;
-		if (timer.ReadSec() >= speed)
-		{
-			timer.Start();
-			if (animationDirection==1) {
-				Next();	
-			}
-			else {
-				Previous();
-			}
+	if (timer.ReadSec() >= speed)
+	{
+		timer.Start();
+		if (animationDirection==1) {
+			Next();	
 		}
+		else {
+			Previous();
+		}
+	}
+
+}
+
+void Animator::LerpUpdate(float factor)
+{
+	if (!isPlaying)
+		return;
+
+	factor *= animationDirection;
+
+
+	int spriteCount = animations[currentAnimation].sprites.size();
+
+
+	int	frame = round(factor * (spriteCount-1));
+
+	if (loop) {
+		if(spriteCount!=0)
+			frame %= spriteCount;
+		else {
+			frame = 0;
+		}
+	}
+	else {
+		if (animationDirection == 1) {
+			if (frame >= spriteCount)
+				frame = spriteCount-1;
+		}
+		else {
+			if (frame < 0)
+				frame = 0;
+		}
+	}
+
+	currentSprite = frame;
 
 }
 
