@@ -1,6 +1,5 @@
 #pragma once
 #include "MapObject.h"
-#include "CollisionSensor.h"
 
 class MapArrow : public MapObject {
 private:

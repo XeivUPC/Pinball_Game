@@ -482,18 +482,21 @@
   </object>
   <object id="116" x="27" y="146" width="10" height="12">
    <properties>
+    <property name="arrowType" type="int" value="0"/>
     <property name="order" type="int" value="0"/>
     <property name="type" value="arrowEvo"/>
    </properties>
   </object>
   <object id="117" x="33" y="156" width="10" height="12">
    <properties>
+    <property name="arrowType" type="int" value="0"/>
     <property name="order" type="int" value="1"/>
     <property name="type" value="arrowEvo"/>
    </properties>
   </object>
   <object id="118" x="39" y="166" width="10" height="12">
    <properties>
+    <property name="arrowType" type="int" value="0"/>
     <property name="order" type="int" value="2"/>
     <property name="type" value="arrowEvo"/>
    </properties>
@@ -518,18 +521,21 @@
   </object>
   <object id="122" x="123" y="146" width="10" height="12">
    <properties>
+    <property name="arrowType" type="int" value="1"/>
     <property name="order" type="int" value="0"/>
     <property name="type" value="arrowGet"/>
    </properties>
   </object>
   <object id="123" x="117" y="156" width="10" height="12">
    <properties>
+    <property name="arrowType" type="int" value="1"/>
     <property name="order" type="int" value="1"/>
     <property name="type" value="arrowGet"/>
    </properties>
   </object>
   <object id="124" x="111" y="166" width="10" height="12">
    <properties>
+    <property name="arrowType" type="int" value="1"/>
     <property name="order" type="int" value="2"/>
     <property name="type" value="arrowGet"/>
    </properties>

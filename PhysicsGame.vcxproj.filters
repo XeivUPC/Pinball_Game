@@ -186,6 +186,15 @@
     <ClCompile Include="Source\mapArrow.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\GetEvoArrow.cpp">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GetArrowGroup.cpp">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapArrowGroup.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -376,6 +385,15 @@
     <ClInclude Include="Source\mapArrow.h">
       <Filter>Objects</Filter>
     </ClInclude>
+    <ClInclude Include="Source\GetEvoArrow.h">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GetArrowGroup.h">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapArrowGroup.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -419,6 +437,12 @@
     </Filter>
     <Filter Include="Objects\Map Sensor Group %28Objects%29">
       <UniqueIdentifier>{05cce2c1-f9b7-432b-8b75-643ed68455c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Arrows %28Objects%29">
+      <UniqueIdentifier>{4320cf60-7027-404a-a4d6-6fbd17362c84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Arrow Group %28Objects%29">
+      <UniqueIdentifier>{6b1e2c4d-3b62-4a28-993d-7df0a77e8a41}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

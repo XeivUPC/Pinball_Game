@@ -1,7 +1,4 @@
 #include "MapArrow.h"
-#include "Box2DFactory.h"
-#include "Application.h"
-#include "ModulePhysics.h"
 
 MapArrow::MapArrow(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 {

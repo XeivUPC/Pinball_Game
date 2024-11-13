@@ -53,12 +53,14 @@ bool ModuleGameRedMap::Start()
 	pokeballChangerGroup = new PokeballChangerGroup(this);
 	caveSensorGroup = new CaveSensorGroup(this);
 	lapSensorGroup = new LapSensorGroup(this);
+	getArrowGroup = new GetArrowGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
 	caveSensorGroup->Sort();
 	lapSensorGroup->Sort();
 	pokeballChangerGroup->Sort();
+	getArrowGroup->Sort();
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
@@ -332,6 +334,21 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				LapSensor* lapSensor = new LapSensor(this, { x,y }, width, height, angle, order, 0);
 
 				lapSensorGroup->AddSensor(lapSensor);
+			}
+			else if (type == "lapSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "arrowType");
+				int order = orderNode.attribute("value").as_int();
+
+				GetEvoArrow* getEvoArrow = new GetEvoArrow(this, { x,y }, order, 0);
+
+				getArrowGroup->AddArrow(lapSensor);
 			}
 		}
 	}
