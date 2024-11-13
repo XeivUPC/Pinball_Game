@@ -214,6 +214,7 @@
     <ClInclude Include="Source\LapSensorGroup.h" />
     <ClInclude Include="Source\mapArrow.h" />
     <ClInclude Include="Source\MapArrowGroup.h" />
+    <ClInclude Include="Source\MapEnergyBattery.h" />
     <ClInclude Include="Source\MapEnergyRotator.h" />
     <ClInclude Include="Source\MapObject.h" />
     <ClInclude Include="Source\MapSensor.h" />
@@ -284,6 +285,7 @@
     <ClCompile Include="Source\LapSensorGroup.cpp" />
     <ClCompile Include="Source\mapArrow.cpp" />
     <ClCompile Include="Source\MapArrowGroup.cpp" />
+    <ClCompile Include="Source\MapEnergyBattery.cpp" />
     <ClCompile Include="Source\MapEnergyRotator.cpp" />
     <ClCompile Include="Source\MapObject.cpp" />
     <ClCompile Include="Source\MapSensor.cpp" />
