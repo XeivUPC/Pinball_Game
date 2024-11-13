@@ -162,6 +162,9 @@
     <ClCompile Include="Source\CentralScreen.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\ScreenProgram.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -323,6 +326,9 @@
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\CentralScreen.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ScreenProgram.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>

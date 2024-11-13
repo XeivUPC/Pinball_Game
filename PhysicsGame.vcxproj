@@ -233,6 +233,7 @@
     <ClInclude Include="Source\PokeballChangerSensor.h" />
     <ClInclude Include="Source\PoliwagBumper.h" />
     <ClInclude Include="Source\PsyduckBumper.h" />
+    <ClInclude Include="Source\ScreenProgram.h" />
     <ClInclude Include="Source\StaryuBumper.h" />
     <ClInclude Include="Source\Timer.h" />
     <ClInclude Include="Source\ModuleUserPreferences.h" />
@@ -290,6 +291,7 @@
     <ClCompile Include="Source\PokemonRevealer.cpp" />
     <ClCompile Include="Source\PoliwagBumper.cpp" />
     <ClCompile Include="Source\PsyduckBumper.cpp" />
+    <ClCompile Include="Source\ScreenProgram.cpp" />
     <ClCompile Include="Source\StaryuBumper.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
     <ClCompile Include="Source\ModuleUserPreferences.cpp" />

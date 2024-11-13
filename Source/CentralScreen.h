@@ -1,6 +1,7 @@
 #pragma once
 #include "MapObject.h"
 #include "ScreenProgram.h"
+#include "AnimationSystem.h"
 #include <vector>
 #include <string.h>
 
@@ -9,14 +10,13 @@ class CentralScreen : public MapObject
 private:
 	ScreenProgram* actualProgram;
 	Rectangle screenArea;
-	void ActivateProgram(ScreenProgram* program);
-protected:
-	void DrawOnScreen(Texture2D texture, int x, int y, Rectangle section, Color tint, bool flip, double angle, float pivot_x, float pivot_y);
 public:
 	void AddProgram(ScreenProgram* program);
+	Rectangle GetScreenArea();
 	update_status Update();
 	void RemoveProgram();
 	
+	bool CleanUp()override;
 	CentralScreen(ModuleGame* gameAt);
 	~CentralScreen();
 };

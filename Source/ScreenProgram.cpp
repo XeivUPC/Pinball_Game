@@ -1,16 +1,17 @@
 #include "ScreenProgram.h"
 
-ScreenProgram::ScreenProgram()
+ScreenProgram::ScreenProgram(const std::string id)
 {
+	identifier = id;
 }
 
 ScreenProgram::~ScreenProgram()
 {
 }
 
-ScreenProgram* ScreenProgram::Activate()
+std::string ScreenProgram::GetProgramIdentifier()
 {
-	return this;
+	return identifier;
 }
 
 void ScreenProgram::StartProgram()

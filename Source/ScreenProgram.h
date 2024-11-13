@@ -1,10 +1,14 @@
 #pragma once
+#include "AnimationSystem.h"
+#include <string.h>
 class ScreenProgram
 {
+private:
+	std::string identifier;
 public:
-	ScreenProgram();
+	ScreenProgram(const std::string id);
 	~ScreenProgram();
-	virtual ScreenProgram* Activate();
+	std::string GetProgramIdentifier();
 	virtual void StartProgram();
 	virtual void Logic();
 	virtual void Render();
