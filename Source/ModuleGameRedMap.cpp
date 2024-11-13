@@ -68,7 +68,7 @@ bool ModuleGameRedMap::Start()
 
 	Pikachu* pikachu = new Pikachu(this, { 0,0 });
 	Staryu* staryu = new Staryu(this, { 0,0 });
-	Bellsprout* bellsprout = new Bellsprout(this, { 0,0 });
+	Bellsprout* bellsprout = new Bellsprout(this, { 104.f/ SCREEN_SIZE,78.f/SCREEN_SIZE },8.f/SCREEN_SIZE);
 
 	SetState(StartGame);
 

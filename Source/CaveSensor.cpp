@@ -54,7 +54,6 @@ CaveSensor::CaveSensor(ModuleGame* gameAt, b2Vec2 position, float width, float h
 	animator->SetSpeed(0.25f);
 	animator->SelectAnimation("Cave_Sensor_Unactive", true);
 
-	cooldownTimer.Start();
 }
 
 CaveSensor::~CaveSensor()
@@ -117,15 +116,10 @@ void CaveSensor::OnTrigger()
 		return;
 	}
 	if (active) {
-		if (cooldownTimer.ReadSec() < cooldownTime) {
-			return;
-		}
+		return;
 	}
 
-	SwitchActiveStatus();
+	Activate();
 	MapSensor::OnTrigger();
 
-	if (active) {
-		cooldownTimer.Start();
-	}
 }
