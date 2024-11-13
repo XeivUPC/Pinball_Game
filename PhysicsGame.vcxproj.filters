@@ -159,6 +159,20 @@
     <ClCompile Include="Source\PokemonRevealer.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CaveSensor.cpp" />
+    <ClCompile Include="Source\CaveSensorGroup.cpp" />
+    <ClCompile Include="Source\Bellsprout.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Slowpoke.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Cloyster.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Staryu.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -320,6 +334,20 @@
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\PokemonRevealer.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CaveSensor.h" />
+    <ClInclude Include="Source\CaveSensorGroup.h" />
+    <ClInclude Include="Source\Bellsprout.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Slowpoke.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Cloyster.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Staryu.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>

@@ -35,6 +35,8 @@ public:
 	b2Vec2 GetPosition();
 	void Reset(bool saveBall= false);
 
+	int GetLivesPokeball() const;
+
 private:
 	float maxSpeed;
 	Texture* pokeball_texture;
@@ -49,5 +51,7 @@ private:
 	b2Vec2 spawn;
 
 	bool godMode = false;
+
+	int lives_pokeball=3;
 };
 

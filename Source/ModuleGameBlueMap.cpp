@@ -15,6 +15,8 @@
 #include "PokeballChangerSensor.h"
 #include "CaveSensor.h"
 #include "Pikachu.h"
+#include "Slowpoke.h"
+#include "Cloyster.h"
 
 
 #include "ModuleHighScore.h"
@@ -25,12 +27,12 @@ ModuleGameBlueMap::ModuleGameBlueMap(Application* app, bool start_enabled) : Mod
 	mapHabitats.emplace_back(2);
 	mapHabitats.emplace_back(4);
 	mapHabitats.emplace_back(5);
-	mapHabitats.emplace_back(7);
-	mapHabitats.emplace_back(11);
 	mapHabitats.emplace_back(6);
+	mapHabitats.emplace_back(8);
+	mapHabitats.emplace_back(10);
 	mapHabitats.emplace_back(13);
 	mapHabitats.emplace_back(14);
-	mapHabitats.emplace_back(12);
+	mapHabitats.emplace_back(13);
 	mapHabitats.emplace_back(16);
 	mapHabitats.emplace_back(17);
 	
@@ -58,11 +60,14 @@ bool ModuleGameBlueMap::Start()
 	caveSensorGroup->Sort();
 	pokeballChangerGroup->Sort();
 
-	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
+	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
+	
 	Pikachu* pikachu = new Pikachu(this, {0,0});
+	Slowpoke* slowpoke = new Slowpoke(this, { 0,0 });
+	Cloyster* cloyster = new Cloyster(this, { 0,0 });
 
 	SetState(StartGame);
 
