@@ -7,7 +7,9 @@
 #include "Flipper.h"
 #include "PokeballChangerGroup.h"
 #include "CaveSensorGroup.h"
-
+#include "LapSensorGroup.h"
+#include "GetArrowGroup.h"
+#include "EvoArrowGroup.h"
 
 
 using namespace pugi;
@@ -17,6 +19,9 @@ private:
 
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
 	CaveSensorGroup* caveSensorGroup = nullptr;
+	LapSensorGroup* lapSensorGroup = nullptr;
+	GetArrowGroup* getArrowGroup = nullptr;
+	EvoArrowGroup* evoArrowGroup = nullptr;
 
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;

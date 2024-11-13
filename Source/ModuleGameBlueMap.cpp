@@ -54,11 +54,17 @@ bool ModuleGameBlueMap::Start()
 
 	pokeballChangerGroup = new PokeballChangerGroup(this);
 	caveSensorGroup = new CaveSensorGroup(this);
+	lapSensorGroup = new LapSensorGroup(this);
+	getArrowGroup = new GetArrowGroup(this);
+	evoArrowGroup = new EvoArrowGroup(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 
 	caveSensorGroup->Sort();
 	pokeballChangerGroup->Sort();
+	lapSensorGroup->Sort();
+	getArrowGroup->Sort();
+	evoArrowGroup->Sort();
 
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
@@ -112,6 +118,13 @@ update_status ModuleGameBlueMap::Update()
 
 		if (IsKeyPressed(KEY_R)) {
 			SetState(RestartGame);
+		}
+
+		if (lapSensorGroup->HaveToActivateArrowGet()) {
+			getArrowGroup->ActivateNext();
+		}
+		if (lapSensorGroup->HaveToActivateArrowEvo()) {
+			evoArrowGroup->ActivateNext();
 		}
 
 		break;
@@ -307,6 +320,39 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				CaveSensor* caveSensor = new CaveSensor(this, { x,y }, width, height, angle, order, 1);
 
 				caveSensorGroup->AddSensor(caveSensor);
+			}
+			else if (type == "lapSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				LapSensor* lapSensor = new LapSensor(this, { x,y }, width, height, angle, order, 1);
+
+				lapSensorGroup->AddSensor(lapSensor);
+			}
+			else if (type == "getEvoArrow") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				pugi::xml_node arrowTypeNode = objectNode.child("properties").find_child_by_attribute("property", "name", "arrowType");
+				int arrowType = arrowTypeNode.attribute("value").as_int();
+
+				GetEvoArrow* getEvoArrow = new GetEvoArrow(this, { x,y }, order, arrowType, 1);
+
+				if (arrowType == 0) {
+					evoArrowGroup->AddArrow(getEvoArrow);
+				}
+				else if (arrowType == 1) {
+					getArrowGroup->AddArrow(getEvoArrow);
+				}
 			}
 		}
 	}

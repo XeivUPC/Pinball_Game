@@ -59,8 +59,8 @@ bool ModuleGameRedMap::Start()
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
 	caveSensorGroup->Sort();
-	lapSensorGroup->Sort();
 	pokeballChangerGroup->Sort();
+	lapSensorGroup->Sort();
 	getArrowGroup->Sort();
 	evoArrowGroup->Sort();
 

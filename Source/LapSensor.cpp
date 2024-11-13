@@ -21,11 +21,17 @@ LapSensor::LapSensor(ModuleGame* gameAt, b2Vec2 position, float width, float hei
 	// Get current position
 	b2Vec2 currentPosition = body->GetPosition();
 
-	if (angle < 0) {
+	if (angle == -45) {
 		currentPosition = { body->GetPosition().x + width/2, body->GetPosition().y - height/2};
 	}
-	else if (angle > 0) {
+	else if (angle == 45) {
 		currentPosition = { body->GetPosition().x - width / 2, body->GetPosition().y };
+	}
+	else if (angle == -15) {
+		currentPosition = { body->GetPosition().x, body->GetPosition().y };
+	}
+	else if (angle == 15) {
+		currentPosition = { body->GetPosition().x, body->GetPosition().y };
 	}
 
 	// Set the new position and rotation
