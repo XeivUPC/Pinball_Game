@@ -159,8 +159,6 @@
     <ClCompile Include="Source\PokemonRevealer.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CaveSensor.cpp" />
-    <ClCompile Include="Source\CaveSensorGroup.cpp" />
     <ClCompile Include="Source\Bellsprout.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
@@ -172,6 +170,18 @@
     </ClCompile>
     <ClCompile Include="Source\Staryu.cpp">
       <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CaveSensorGroup.cpp">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CaveSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LapSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LapSensorGroup.cpp">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -336,8 +346,6 @@
     <ClInclude Include="Source\PokemonRevealer.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CaveSensor.h" />
-    <ClInclude Include="Source\CaveSensorGroup.h" />
     <ClInclude Include="Source\Bellsprout.h">
       <Filter>Objects</Filter>
     </ClInclude>
@@ -349,6 +357,18 @@
     </ClInclude>
     <ClInclude Include="Source\Staryu.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CaveSensorGroup.h">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CaveSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LapSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LapSensorGroup.h">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

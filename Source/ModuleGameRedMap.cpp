@@ -52,10 +52,12 @@ bool ModuleGameRedMap::Start()
 
 	pokeballChangerGroup = new PokeballChangerGroup(this);
 	caveSensorGroup = new CaveSensorGroup(this);
+	lapSensorGroup = new LapSensorGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
 	caveSensorGroup->Sort();
+	lapSensorGroup->Sort();
 	pokeballChangerGroup->Sort();
 
 	dittoColliders->SetMode(DittoColliders::Small);
@@ -296,7 +298,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
-				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
 
 				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
 				int order = orderNode.attribute("value").as_int();
@@ -309,7 +311,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
-				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
 
 				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
 				int order = orderNode.attribute("value").as_int();
@@ -317,6 +319,19 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				CaveSensor* caveSensor = new CaveSensor(this, { x,y }, width, height, angle, order, 0);
 
 				caveSensorGroup->AddSensor(caveSensor);
+			}
+			else if (type == "lapSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				LapSensor* lapSensor = new LapSensor(this, { x,y }, width, height, angle, order, 0);
+
+				lapSensorGroup->AddSensor(lapSensor);
 			}
 		}
 	}

@@ -404,7 +404,8 @@
   </object>
   <object id="85" x="140" y="104" width="4" height="6">
    <properties>
-    <property name="type" value="Sensor"/>
+    <property name="order" type="int" value="3"/>
+    <property name="type" value="lapSensor"/>
    </properties>
   </object>
   <object id="86" x="100" y="55" width="4" height="6">
@@ -435,7 +436,8 @@
   </object>
   <object id="90" x="16" y="104" width="4" height="6">
    <properties>
-    <property name="type" value="Sensor"/>
+    <property name="order" type="int" value="0"/>
+    <property name="type" value="lapSensor"/>
    </properties>
   </object>
   <object id="97" x="35.7232" y="114.133" width="4" height="6" rotation="-15">
@@ -445,12 +447,14 @@
   </object>
   <object id="99" x="42.1739" y="48.9878" width="4" height="6" rotation="45">
    <properties>
-    <property name="type" value="Sensor"/>
+    <property name="order" type="int" value="1"/>
+    <property name="type" value="lapSensor"/>
    </properties>
   </object>
   <object id="100" x="119.938" y="51.8125" width="4" height="6" rotation="-45">
    <properties>
-    <property name="type" value="Sensor"/>
+    <property name="order" type="int" value="2"/>
+    <property name="type" value="lapSensor"/>
    </properties>
   </object>
   <object id="101" x="27.1255" y="41.002" width="4" height="6" rotation="20">

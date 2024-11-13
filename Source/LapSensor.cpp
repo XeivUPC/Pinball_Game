@@ -21,8 +21,17 @@ LapSensor::LapSensor(ModuleGame* gameAt, b2Vec2 position, float width, float hei
 	// Get current position
 	b2Vec2 currentPosition = body->GetPosition();
 
+	if (angle < 0) {
+		currentPosition = { body->GetPosition().x + width/2, body->GetPosition().y - height/2};
+	}
+	else if (angle > 0) {
+		currentPosition = { body->GetPosition().x - width / 2, body->GetPosition().y };
+	}
+
 	// Set the new position and rotation
 	body->SetTransform(currentPosition, angle_radians);
+
+	currentPosition = body->GetPosition();
 
 	sensor.SetBodyToTrack(&body->GetFixtureList()[0]);
 
@@ -69,5 +78,6 @@ int LapSensor::GetOrder() const
 void LapSensor::OnTrigger()
 {
 	MapSensor::OnTrigger();
+	cooldownTimer.Start();
 	Activate();
 }
