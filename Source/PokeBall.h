@@ -52,6 +52,6 @@ private:
 
 	bool godMode = false;
 
-	int lives_pokeball;
+	int lives_pokeball=3;
 };
 

@@ -216,6 +216,8 @@ void PokeBall::Reset(bool saveBall)
 		gameAt->pointsCounter.RemoveMultiplier(1);
 		break;
 	}
+
+	lives_pokeball--;
 }
 
 int PokeBall::GetLivesPokeball() const

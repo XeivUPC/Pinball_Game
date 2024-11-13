@@ -24,6 +24,7 @@ Staryu::Staryu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 
 Staryu::~Staryu()
 {
+	 
 }
 
 update_status Staryu::Update()

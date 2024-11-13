@@ -16,10 +16,10 @@ Cloyster::Cloyster(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	AnimationData mapCloysterAnim = AnimationData("MapCloysterAnim");
 	mapCloysterAnim.AddSprite(Sprite{ map_cloyster,{0, 0}, {24,32} });
 	mapCloysterAnim.AddSprite(Sprite{ map_cloyster,{1, 0}, {24,32} });
-	mapCloysterAnim.AddSprite(Sprite{ map_cloyster,{2, 0}, {24,32} });
+	//mapCloysterAnim.AddSprite(Sprite{ map_cloyster,{2, 0}, {24,32} });
 
 	map_cloyster_animator->AddAnimation(mapCloysterAnim);
-	map_cloyster_animator->SetSpeed(0.3f);
+	map_cloyster_animator->SetSpeed(1.f);
 	map_cloyster_animator->SelectAnimation("MapCloysterAnim", true);
 }
 

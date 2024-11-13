@@ -16,11 +16,11 @@ Bellsprout::Bellsprout(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	AnimationData mapBellsproutAnim = AnimationData("MapBellsproutAnim");
 	mapBellsproutAnim.AddSprite(Sprite{ map_bellsprout,{0, 0}, {32,40} });
 	mapBellsproutAnim.AddSprite(Sprite{ map_bellsprout,{1, 0}, {32,40} });
-	mapBellsproutAnim.AddSprite(Sprite{ map_bellsprout,{2, 0}, {32,40} });
-	mapBellsproutAnim.AddSprite(Sprite{ map_bellsprout,{3, 0}, {32,40} });
+	//mapBellsproutAnim.AddSprite(Sprite{ map_bellsprout,{2, 0}, {32,40} });
+	//mapBellsproutAnim.AddSprite(Sprite{ map_bellsprout,{3, 0}, {32,40} });
 
 	map_bellsprout_animator->AddAnimation(mapBellsproutAnim);
-	map_bellsprout_animator->SetSpeed(0.3f);
+	map_bellsprout_animator->SetSpeed(1.f);
 	map_bellsprout_animator->SelectAnimation("MapBellsproutAnim", true);
 }
 

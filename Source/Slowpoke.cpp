@@ -16,10 +16,10 @@ Slowpoke::Slowpoke(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	AnimationData mapSlowpokeAnim = AnimationData("MapSlowpokeAnim");
 	mapSlowpokeAnim.AddSprite(Sprite{ map_slowpoke,{0, 0}, {32,32} });
 	mapSlowpokeAnim.AddSprite(Sprite{ map_slowpoke,{1, 0}, {32,32} });
-	mapSlowpokeAnim.AddSprite(Sprite{ map_slowpoke,{2, 0}, {32,32} });
+	//mapSlowpokeAnim.AddSprite(Sprite{ map_slowpoke,{2, 0}, {32,32} });
 
 	map_slowpoke_animator->AddAnimation(mapSlowpokeAnim);
-	map_slowpoke_animator->SetSpeed(0.3f);
+	map_slowpoke_animator->SetSpeed(1.f);
 	map_slowpoke_animator->SelectAnimation("MapSlowpokeAnim", true);
 }
 
