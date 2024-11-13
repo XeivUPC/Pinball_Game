@@ -217,7 +217,8 @@ void PokeBall::Reset(bool saveBall)
 		break;
 	}
 
-	lives_pokeball--;
+	if(saveBall)
+		lives_pokeball--;
 }
 
 int PokeBall::GetLivesPokeball() const
