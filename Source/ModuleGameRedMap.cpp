@@ -92,7 +92,8 @@ update_status ModuleGameRedMap::Update()
 		case ModuleGame::StartGame:
 			
 			if (!statesTimer.IsLocked()) {
-				pokeBall->ApplyForce({ 0,-4000 });
+				if (statesTimer.ReadSecEvenLocked() < 0.5f)
+					pokeBall->ApplyForce({ 0,-4000 });
 				if (statesTimer.ReadSec() > statesTime) {
 					SetState(PlayGame);
 				}
@@ -121,7 +122,7 @@ update_status ModuleGameRedMap::Update()
 
 			////
 
-			pokeBall->Reset();
+			pokeBall->Reset(saveBall);
 
 			////
 			SetState(StartGame);
@@ -130,7 +131,7 @@ update_status ModuleGameRedMap::Update()
 			break;
 	}
 
-	UI->Render();
+	UI->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
@@ -332,10 +333,12 @@ void ModuleGameRedMap::SetState(GameStates stateToChange)
 	switch (state)
 	{
 	case ModuleGame::StartGame:
+		dittoColliders->SetMode(DittoColliders::Small);
 		statesTimer.LockTimer();
-		statesTime = 0.5f;
+		statesTime = 1.8f;
 		break;
 	case ModuleGame::PlayGame:
+		dittoColliders->SetMode(DittoColliders::Big);
 		break;
 	case ModuleGame::BlockGame:
 		break;

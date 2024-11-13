@@ -22,6 +22,7 @@ GameUI::~GameUI()
 
 void GameUI::Render() const
 {
+    ModuleGame::GameStates state = gameAt->GetState();
 
     std::string livesStr = std::to_string(gameAt->GetPokeball()->GetLivesPokeball());
     std::string pikachusStr = std::to_string(0);//Link to the num of Pikachus
@@ -31,6 +32,7 @@ void GameUI::Render() const
 
 	EndMode2D();
 	App->renderer->DrawRect(0, 134, 160, 10, BLACK);
+
 	App->text_gameUIText->Write(lives_and_pikachus.c_str(), 0, 134);
 
     long long int points=gameAt->pointsCounter();
@@ -47,7 +49,7 @@ void GameUI::Render() const
 
 update_status GameUI::Update()
 {
-
+    Render();
 
     return UPDATE_CONTINUE;
 }

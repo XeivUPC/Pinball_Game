@@ -112,9 +112,9 @@ void PokeballChangerSensor::OnTrigger()
 			return;
 		}
 	}
+	SwitchActiveStatus();
 
 	MapSensor::OnTrigger();
-	SwitchActiveStatus();
 
 	if (active) {
 		cooldownTimer.Start();

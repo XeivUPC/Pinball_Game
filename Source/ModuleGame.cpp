@@ -73,6 +73,11 @@ void ModuleGame::SetState(GameStates stateToChange)
 
 }
 
+ModuleGame::GameStates ModuleGame::GetState()
+{
+	return state;
+}
+
 void ModuleGame::AddObject(MapObject* object)
 {
 	mapObjects.emplace_back(object);

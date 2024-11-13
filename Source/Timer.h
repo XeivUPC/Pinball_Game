@@ -12,6 +12,10 @@ public:
 
 	void Start();
 	double ReadSec() const;
+	double ReadSecEvenLocked() const;
+
+	void AdjustStartToCurrentTime();
+
 	void LockTimer();
 	void UnlockTimer();
 	bool IsLocked();

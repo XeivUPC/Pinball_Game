@@ -26,6 +26,11 @@ void Counter::Add(long long int amount)
 	_data += (long long int)(amount * totalMultiplierValue);
 }
 
+void Counter::AddWithoutMultipliers(long long int amount)
+{
+	_data += (amount);
+}
+
 void Counter::Take(long long int amount)
 {
 	

@@ -122,8 +122,8 @@ void CaveSensor::OnTrigger()
 		}
 	}
 
-	MapSensor::OnTrigger();
 	SwitchActiveStatus();
+	MapSensor::OnTrigger();
 
 	if (active) {
 		cooldownTimer.Start();

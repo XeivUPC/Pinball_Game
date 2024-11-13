@@ -12,6 +12,7 @@ public:
     ~Counter();
     long long int operator()() const;
     void Add(long long int amount);
+    void AddWithoutMultipliers(long long int amount);
     void Take(long long int amount);
     void Set(long long int amount);
     void AddMultiplier(float multiplier);

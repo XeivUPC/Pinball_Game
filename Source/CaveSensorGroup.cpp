@@ -89,7 +89,8 @@ void CaveSensorGroup::Sort()
 
 void CaveSensorGroup::OnAllActive()
 {
-	gameAt->pointsCounter.Add(25000);
+	gameAt->pointsCounter.Take(1000);
+	gameAt->pointsCounter.Add(5000);
 	for (const auto& sensorPointer : mapSensors)
 	{
 		sensorPointer->Twinkle();
