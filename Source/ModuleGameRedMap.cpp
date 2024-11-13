@@ -54,11 +54,17 @@ bool ModuleGameRedMap::Start()
 
 	pokeballChangerGroup = new PokeballChangerGroup(this);
 	caveSensorGroup = new CaveSensorGroup(this);
+	lapSensorGroup = new LapSensorGroup(this);
+	getArrowGroup = new GetArrowGroup(this);
+	evoArrowGroup = new EvoArrowGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
 	caveSensorGroup->Sort();
 	pokeballChangerGroup->Sort();
+	lapSensorGroup->Sort();
+	getArrowGroup->Sort();
+	evoArrowGroup->Sort();
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
@@ -117,6 +123,13 @@ update_status ModuleGameRedMap::Update()
 				SetState(RestartGame);
 			}
 
+			if (lapSensorGroup->HaveToActivateArrowGet()) {
+				getArrowGroup->ActivateNext();
+			}
+			if (lapSensorGroup->HaveToActivateArrowEvo()) {
+				evoArrowGroup->ActivateNext();
+			}
+
 			break;
 		case ModuleGame::BlockGame:
 			break;
@@ -138,6 +151,7 @@ update_status ModuleGameRedMap::Update()
 	for (const auto& object : mapObjects) {
 		object->Update();
 	}
+
 
 	ModuleScene::FadeUpdate();
 
@@ -311,7 +325,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
-				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
 
 				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
 				int order = orderNode.attribute("value").as_int();
@@ -324,7 +338,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
 				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
-				float angle = objectNode.attribute("angle").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
 
 				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
 				int order = orderNode.attribute("value").as_int();
@@ -332,6 +346,39 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				CaveSensor* caveSensor = new CaveSensor(this, { x,y }, width, height, angle, order, 0);
 
 				caveSensorGroup->AddSensor(caveSensor);
+			}
+			else if (type == "lapSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				LapSensor* lapSensor = new LapSensor(this, { x,y }, width, height, angle, order, 0);
+
+				lapSensorGroup->AddSensor(lapSensor);
+			}
+			else if (type == "getEvoArrow") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				pugi::xml_node arrowTypeNode = objectNode.child("properties").find_child_by_attribute("property", "name", "arrowType");
+				int arrowType = arrowTypeNode.attribute("value").as_int();
+
+				GetEvoArrow* getEvoArrow = new GetEvoArrow(this, { x,y }, order, arrowType, 0);
+
+				if (arrowType == 0) {
+					evoArrowGroup->AddArrow(getEvoArrow);
+				}
+				else if (arrowType == 1) {
+					getArrowGroup->AddArrow(getEvoArrow);
+				}
 			}
 		}
 	}
