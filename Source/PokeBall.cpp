@@ -217,7 +217,7 @@ void PokeBall::Reset(bool saveBall)
 		break;
 	}
 
-	if(saveBall)
+	if(!saveBall)
 		lives_pokeball--;
 }
 
