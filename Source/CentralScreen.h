@@ -1,30 +1,22 @@
 #pragma once
 #include "MapObject.h"
+#include "ScreenProgram.h"
 #include <vector>
 #include <string.h>
-
-struct ScreenLayer
-{
-	Texture* texture;
-	Rectangle rect;
-	Vector2 position;
-};
 
 class CentralScreen : public MapObject
 {
 private:
-	int renderPriority;
-	Vector2 basePosition;
-	std::string renderingName;
-	std::vector<ScreenLayer> layers;
-	void AddLayer(Texture* texture, Rectangle textureSection, Vector2 position);
-	int AlreadyInVector(Texture* texture, Rectangle textureSection, Vector2 position);
+	ScreenProgram* actualProgram;
+	Rectangle screenArea;
+	void ActivateProgram(ScreenProgram* program);
+protected:
+	void DrawOnScreen(Texture2D texture, int x, int y, Rectangle section, Color tint, bool flip, double angle, float pivot_x, float pivot_y);
 public:
+	void AddProgram(ScreenProgram* program);
+	update_status Update();
+	void RemoveProgram();
+	
 	CentralScreen(ModuleGame* gameAt);
 	~CentralScreen();
-	void RenderInScreen(Texture* texture, Rectangle textureSection, Vector2 position, std::string groupName);
-	void SetGroupPriority(std::string groupName, int priority);
-	void StopRenderingGroup(std::string groupName);
-	update_status Update();
-	bool CleanUp() override;
 };

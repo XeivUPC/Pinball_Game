@@ -2,72 +2,43 @@
 #include "ModuleRender.h"
 #include "Application.h"
 
-void CentralScreen::AddLayer(Texture* texture, Rectangle textureSection, Vector2 position)
+void CentralScreen::ActivateProgram(ScreenProgram* program)
 {
-	layers.push_back(ScreenLayer{ texture, textureSection, position});
+	actualProgram = program->Activate();
 }
 
-int CentralScreen::AlreadyInVector(Texture* texture, Rectangle textureSection, Vector2 position)
+void CentralScreen::DrawOnScreen(Texture2D texture, int x, int y, Rectangle section, Color tint, bool flip, double angle, float pivot_x, float pivot_y)
 {
-	for (int i = 0; i < layers.size(); i++)
-	{
-		if (texture == layers.at(i).texture && textureSection.x == layers.at(i).rect.x && textureSection.y == layers.at(i).rect.y && textureSection.width == layers.at(i).rect.width && textureSection.height == layers.at(i).rect.height && position.x == layers.at(i).position.x && position.y == layers.at(i).position.y)
-			return i;
-	}
-	return -1;
+	if (section.width > screenArea.width - x) section.width = screenArea.width - x;
+	if (section.height > screenArea.height - y) section.height = screenArea.height - y;
+	if (x > screenArea.width || y > screenArea.height)return;
+	gameAt->App->renderer->Draw(texture, screenArea.x+x, screenArea.y+y, &section, tint, flip, angle, pivot_x, pivot_y);
 }
 
-CentralScreen::CentralScreen(ModuleGame* gameAt) : MapObject(gameAt)
+void CentralScreen::AddProgram(ScreenProgram* program)
 {
-	gameAt->AddObject(this);
-	basePosition.x = 56;
-	basePosition.y = 166;
-	renderPriority = 0;
-}
-
-CentralScreen::~CentralScreen()
-{
-}
-
-void CentralScreen::RenderInScreen(Texture* texture, Rectangle textureSection, Vector2 position, std::string groupName)
-{
-	if (groupName != renderingName)return;
-	if (AlreadyInVector(texture, textureSection, position) != -1)
-	{
-		for (int i = AlreadyInVector(texture, textureSection, position); i < layers.size()-1; i++)
-		{
-			layers.at(i) = layers.at(i + 1);
-		}
-	}
-	AddLayer(texture, textureSection, position);
-}
-
-void CentralScreen::SetGroupPriority(std::string groupName, int priority)
-{
-	if (priority < renderPriority)return;
-	renderingName = groupName;
-	renderPriority = priority;
-}
-
-void CentralScreen::StopRenderingGroup(std::string groupName)
-{
-	if (groupName != renderingName)return;
-	layers.clear();
-	groupName = "";
-	renderPriority = 0;
+	ActivateProgram(program);
 }
 
 update_status CentralScreen::Update()
 {
-	for (int i = 0; i < layers.size(); i++)
-	{
-		gameAt->App->renderer->Draw(*(layers.at(i).texture), basePosition.x+layers.at(i).position.x, basePosition.y + layers.at(i).position.y, &layers.at(i).rect, WHITE);
-	}
-    return UPDATE_CONTINUE;
+	actualProgram->Logic();
+	actualProgram->Render();
+	return UPDATE_CONTINUE;
 }
 
-bool CentralScreen::CleanUp()
+void CentralScreen::RemoveProgram()
 {
-	layers.clear();
-    return true;
+	actualProgram = nullptr;
+}
+
+CentralScreen::CentralScreen(ModuleGame* gameAt) : MapObject(gameAt)
+{
+	screenArea = Rectangle{ 56, 166, 48, 32};
+	actualProgram = nullptr;
+}
+
+CentralScreen::~CentralScreen()
+{
+	actualProgram = nullptr;
 }
