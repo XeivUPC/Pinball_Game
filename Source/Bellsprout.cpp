@@ -3,6 +3,7 @@
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "ModuleUserPreferences.h"
+#include "Box2DFactory.h"
 
 Bellsprout::Bellsprout(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 {

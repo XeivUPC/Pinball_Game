@@ -24,6 +24,6 @@ private:
 	bool flip = false;
 
 	Timer hidden_timer;
-	float hidden_time = 1.f;
+	float hidden_time = 2.f;
 };
 
