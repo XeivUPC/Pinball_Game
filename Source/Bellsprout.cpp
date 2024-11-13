@@ -22,6 +22,8 @@ Bellsprout::Bellsprout(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	map_bellsprout_animator->AddAnimation(mapBellsproutAnim);
 	map_bellsprout_animator->SetSpeed(1.f);
 	map_bellsprout_animator->SelectAnimation("MapBellsproutAnim", true);
+
+	this->position = position;
 }
 
 Bellsprout::~Bellsprout()
