@@ -9,6 +9,11 @@ void CentralScreen::AddProgram(ScreenProgram* program)
 	actualProgram->SetGameReference(gameAt);
 }
 
+void CentralScreen::CallScreenEvent(int index)
+{
+	actualProgram->CallAction(index);
+}
+
 Rectangle CentralScreen::GetScreenArea()
 {
 	return screenArea;

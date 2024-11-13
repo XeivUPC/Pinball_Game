@@ -13,6 +13,7 @@ public:
 	void SetGameReference(ModuleGame* game);
 	std::string GetProgramIdentifier();
 	virtual void StartProgram();
+	virtual void CallAction(int id);
 	virtual void Logic();
 	virtual void Render();
 	virtual void EndProgram();

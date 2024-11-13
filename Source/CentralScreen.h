@@ -12,6 +12,7 @@ private:
 	Rectangle screenArea;
 public:
 	void AddProgram(ScreenProgram* program);
+	void CallScreenEvent(int index);
 	Rectangle GetScreenArea();
 	update_status Update();
 	void RemoveProgram();

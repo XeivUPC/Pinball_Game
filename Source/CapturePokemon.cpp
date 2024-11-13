@@ -14,6 +14,10 @@ void CapturePokemon::SelectPokemonByZone(int zone)
 
 CapturePokemon::CapturePokemon(const std::string id) : ScreenProgram(id)
 {
-	gameAt->App->texture->CreateTexture("Assets/pokedex-spritesheet.png", "spritesheet");
-	pokedexSpritesheet = App->texture->GetTexture("spritesheet");
+}
+
+void CapturePokemon::StartProgram()
+{
+	gameAt->App->texture->CreateTexture("Assets/pokemons_shadow_and_color.png", "spritesheet");
+	texture = gameAt->App->texture->GetTexture("spritesheet");
 }

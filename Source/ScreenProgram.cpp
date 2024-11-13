@@ -23,6 +23,10 @@ void ScreenProgram::StartProgram()
 {
 }
 
+void ScreenProgram::CallAction(int id)
+{
+}
+
 void ScreenProgram::Logic()
 {
 }
