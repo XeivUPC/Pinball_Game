@@ -16,8 +16,8 @@ public:
 	void DesactivateTop();
 	void ActivateBot();
 	void DesactivateBot();
-	void ActivateBoth();
-	void DesactivateBoth();
+	void Activate() override;
+	void Desactivate() override;
 	void Twinkle() override;
 
 	int GetOrder() const;
@@ -36,7 +36,7 @@ private:
 	Texture* texture = nullptr;
 	Animator* animator = nullptr;
 
-	Timer cooldownTimer;
-	float cooldownTime = 0.5;
+	/*Timer cooldownTimer;
+	float cooldownTime = 0.5;*/
 };
 

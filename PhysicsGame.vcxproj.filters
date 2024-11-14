@@ -201,6 +201,13 @@
     <ClCompile Include="Source\DiglettCounter.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\MapEnergyBattery.cpp" />
+    <ClCompile Include="Source\CenterBlueArrow.cpp">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CenterBlueArrowGroup.cpp">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -405,6 +412,13 @@
     </ClInclude>
     <ClInclude Include="Source\DiglettCounter.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapEnergyBattery.h" />
+    <ClInclude Include="Source\CenterBlueArrow.h">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CenterBlueArrowGroup.h">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

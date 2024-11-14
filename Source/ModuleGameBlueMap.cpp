@@ -58,6 +58,7 @@ bool ModuleGameBlueMap::Start()
 	lapSensorGroup = new LapSensorGroup(this);
 	getArrowGroup = new GetArrowGroup(this);
 	evoArrowGroup = new EvoArrowGroup(this);
+	centerBlueArrowGroup = new CenterBlueArrowGroup(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 
@@ -66,6 +67,7 @@ bool ModuleGameBlueMap::Start()
 	lapSensorGroup->Sort();
 	getArrowGroup->Sort();
 	evoArrowGroup->Sort();
+	centerBlueArrowGroup->Sort();
 
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
@@ -126,6 +128,10 @@ update_status ModuleGameBlueMap::Update()
 		}
 		if (lapSensorGroup->HaveToActivateArrowEvo()) {
 			evoArrowGroup->ActivateNext();
+		}
+
+		if (getArrowGroup->GetActiveAmount() >= 2) {
+			centerBlueArrowGroup->ActivateLeftTop();
 		}
 
 		break;
@@ -365,6 +371,18 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				else if (arrowType == 1) {
 					getArrowGroup->AddArrow(getEvoArrow);
 				}
+			}
+			else if (type == "centerArrow") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				CenterBlueArrow* centerArrow = new CenterBlueArrow(this, { x,y }, order);
+
+				centerBlueArrowGroup->AddArrow(centerArrow);
 			}
 		}
 	}

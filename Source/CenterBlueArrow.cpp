@@ -13,7 +13,7 @@ CenterBlueArrow::CenterBlueArrow(ModuleGame* gameAt, b2Vec2 position, int order)
 
 	animator = new Animator(gameAt->App);
 
-	AnimationData unactive = AnimationData("Arrow_Both_Unactive");
+	AnimationData unactive = AnimationData("Arrow_Unactive");
 	unactive.AddSprite(Sprite{ texture,{(float)order, 0}, {16,16} });
 
 	AnimationData topActive = AnimationData("Arrow_Top_Active");
@@ -40,9 +40,9 @@ CenterBlueArrow::CenterBlueArrow(ModuleGame* gameAt, b2Vec2 position, int order)
 	animator->AddAnimation(topActiveTwinkle);
 	animator->AddAnimation(bothActiveTwinkle);
 	animator->SetSpeed(0.25f);
-	animator->SelectAnimation("Arrow_Top_Unactive", true);
+	animator->SelectAnimation("Arrow_Unactive", true);
 
-	cooldownTimer.Start();
+	//cooldownTimer.Start();
 }
 
 CenterBlueArrow::~CenterBlueArrow()
@@ -64,7 +64,7 @@ update_status CenterBlueArrow::Update()
 			animator->SelectAnimation("Arrow_Top_Active", true);
 		}
 		else {
-			animator->SelectAnimation("Arrow_Unctive", true);
+			animator->SelectAnimation("Arrow_Unactive", true);
 		}
 	}
 	else {
@@ -75,9 +75,9 @@ update_status CenterBlueArrow::Update()
 			animator->SelectAnimation("Arrow_Bottom_Unactive_Twinkle", true);
 		}
 
-		if (cooldownTimer.ReadSec() >= cooldownTime) {
-			twinkle = false;
-		}
+		//if (cooldownTimer.ReadSec() >= cooldownTime) {
+		//	twinkle = false;
+		//}
 	}
 
 	animator->Update();
@@ -110,13 +110,13 @@ void CenterBlueArrow::DesactivateBot()
 	botActive = false;
 }
 
-void CenterBlueArrow::ActivateBoth()
+void CenterBlueArrow::Activate()
 {
 	topActive = true;
 	botActive = true;
 }
 
-void CenterBlueArrow::DesactivateBoth()
+void CenterBlueArrow::Desactivate()
 {
 	topActive = false;
 	botActive = false;
@@ -125,7 +125,7 @@ void CenterBlueArrow::DesactivateBoth()
 void CenterBlueArrow::Twinkle()
 {
 	twinkle = true;
-	cooldownTimer.Start();
+	//cooldownTimer.Start();
 }
 
 int CenterBlueArrow::GetOrder() const

@@ -197,6 +197,8 @@
     <ClInclude Include="Source\Bumper.h" />
     <ClInclude Include="Source\CaveSensor.h" />
     <ClInclude Include="Source\CaveSensorGroup.h" />
+    <ClInclude Include="Source\CenterBlueArrow.h" />
+    <ClInclude Include="Source\CenterBlueArrowGroup.h" />
     <ClInclude Include="Source\CircularBumper.h" />
     <ClInclude Include="Source\Cloyster.h" />
     <ClInclude Include="Source\CollisionSensor.h" />
@@ -268,6 +270,8 @@
     <ClCompile Include="Source\Bumper.cpp" />
     <ClCompile Include="Source\CaveSensor.cpp" />
     <ClCompile Include="Source\CaveSensorGroup.cpp" />
+    <ClCompile Include="Source\CenterBlueArrow.cpp" />
+    <ClCompile Include="Source\CenterBlueArrowGroup.cpp" />
     <ClCompile Include="Source\CircularBumper.cpp" />
     <ClCompile Include="Source\Cloyster.cpp" />
     <ClCompile Include="Source\CollisionSensor.cpp" />

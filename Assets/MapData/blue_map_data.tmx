@@ -504,19 +504,19 @@
   <object id="136" x="63" y="149" width="10" height="15">
    <properties>
     <property name="order" type="int" value="0"/>
-    <property name="type" value="arrowCenter"/>
+    <property name="type" value="centerArrow"/>
    </properties>
   </object>
   <object id="137" x="74" y="151" width="13" height="13">
    <properties>
     <property name="order" type="int" value="1"/>
-    <property name="type" value="arrowCenter"/>
+    <property name="type" value="centerArrow"/>
    </properties>
   </object>
   <object id="138" x="88" y="149" width="10" height="15">
    <properties>
     <property name="order" type="int" value="2"/>
-    <property name="type" value="arrowCenter"/>
+    <property name="type" value="centerArrow"/>
    </properties>
   </object>
  </objectgroup>
