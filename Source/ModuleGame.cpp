@@ -132,10 +132,10 @@ void ModuleGame::RepositionCamera(b2Vec2 positionToTrack)
 
 	if (positionToTrack.y > 134 / SCREEN_SIZE) {
 		App->renderer->camera.offset.y = -134 * SCREEN_SIZE;
-		isBallInTopSection = true;
+		isBallInTopSection = false;
 	}
 	else {
 		App->renderer->camera.offset.y = 0;
-		isBallInTopSection = false;
+		isBallInTopSection = true;
 	}
 }

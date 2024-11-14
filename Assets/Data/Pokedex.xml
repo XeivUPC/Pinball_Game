@@ -2,8 +2,8 @@
 <pokedex>
 	<id false="1">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="107,91,134,143,103" />
 		<name false="Bulbasaur" />
 		<name false="Bulbizarre" />
@@ -17,8 +17,8 @@
 	</id>
 	<id false="2">
 		<pre-evolution-index false="1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="107,91,134,94,82" />
 		<name false="Ivysaur" />
 		<name false="Herbizarre" />
@@ -32,8 +32,8 @@
 	</id>
 	<id false="3">
 		<pre-evolution-index false="2" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="107,91,134,148,100" />
 		<name false="Venusaur" />
 		<name false="Florizarre" />
@@ -47,8 +47,8 @@
 	</id>
 	<id false="4">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="106,99,85,136" />
 		<name false="Charmander" />
 		<name false="Salamèche" />
@@ -62,8 +62,8 @@
 	</id>
 	<id false="5">
 		<pre-evolution-index false="4" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="119,138,159,147" />
 		<name false="Charmeleon" />
 		<name false="Reptincel" />
@@ -77,8 +77,8 @@
 	</id>
 	<id false="6">
 		<pre-evolution-index false="5" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="119,138,159,147,124" />
 		<name false="Charizard" />
 		<name false="Dracaufeu" />
@@ -92,8 +92,8 @@
 	</id>
 	<id false="7">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="141,101,133,113" />
 		<name false="Squirtle" />
 		<name false="Carapuce" />
@@ -107,8 +107,8 @@
 	</id>
 	<id false="8">
 		<pre-evolution-index false="7" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,113,159,120" />
 		<name false="Wartortle" />
 		<name false="Carabaffe" />
@@ -122,8 +122,8 @@
 	</id>
 	<id false="9">
 		<pre-evolution-index false="8" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,113,160,87,92" />
 		<name false="Blastoise" />
 		<name false="Tortank" />
@@ -137,8 +137,8 @@
 	</id>
 	<id false="10">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="86,130,95,154,159" />
 		<name false="Caterpie" />
 		<name false="Chenipan" />
@@ -152,8 +152,8 @@
 	</id>
 	<id false="11">
 		<pre-evolution-index false="10" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="99,118,124,93,120" />
 		<name false="Metapod" />
 		<name false="Chrysacier" />
@@ -167,8 +167,8 @@
 	</id>
 	<id false="12">
 		<pre-evolution-index false="11" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="148,95,107,119,159" />
 		<name false="Butterfree" />
 		<name false="Papilusion" />
@@ -182,8 +182,8 @@
 	</id>
 	<id false="13">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="149,159,147,120" />
 		<name false="Weedle" />
 		<name false="Aspicot" />
@@ -197,8 +197,8 @@
 	</id>
 	<id false="14">
 		<pre-evolution-index false="13" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="89,87,159,124" />
 		<name false="Kakuna" />
 		<name false="Coconfort" />
@@ -212,8 +212,8 @@
 	</id>
 	<id false="15">
 		<pre-evolution-index false="14" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="92,154,80,159" />
 		<name false="Beedrill" />
 		<name false="Dardargnan" />
@@ -227,8 +227,8 @@
 	</id>
 	<id false="16">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="157,160,157" />
 		<name false="Pidgey" />
 		<name false="Roucool" />
@@ -242,8 +242,8 @@
 	</id>
 	<id false="17">
 		<pre-evolution-index false="16" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="154,139,132,124" />
 		<name false="Pidgeotto" />
 		<name false="Roucoups" />
@@ -257,8 +257,8 @@
 	</id>
 	<id false="18">
 		<pre-evolution-index false="17" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="154,139,132,160,99" />
 		<name false="Pidgeot" />
 		<name false="Roucarnage" />
@@ -272,8 +272,8 @@
 	</id>
 	<id false="19">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="89,118,160,95" />
 		<name false="Rattata" />
 		<name false="Rattata" />
@@ -287,8 +287,8 @@
 	</id>
 	<id false="20">
 		<pre-evolution-index false="19" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="118,160,95" />
 		<name false="Raticate" />
 		<name false="Rattatac" />
@@ -302,8 +302,8 @@
 	</id>
 	<id false="21">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="84,101,92,140,113" />
 		<name false="Spearow" />
 		<name false="Piafabec" />
@@ -317,8 +317,8 @@
 	</id>
 	<id false="22">
 		<pre-evolution-index false="21" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="84,101,147,119,120" />
 		<name false="Fearow" />
 		<name false="Rapasdepic" />
@@ -332,8 +332,8 @@
 	</id>
 	<id false="23">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="80,159,152" />
 		<name false="Ekans" />
 		<name false="Abo" />
@@ -347,8 +347,8 @@
 	</id>
 	<id false="24">
 		<pre-evolution-index false="23" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="80,159,152,160,87" />
 		<name false="Arbok" />
 		<name false="Arbok" />
@@ -362,8 +362,8 @@
 	</id>
 	<id false="25">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="154,85,96,131,82" />
 		<name false="Pikachu" />
 		<name false="Pikachu" />
@@ -377,8 +377,8 @@
 	</id>
 	<id false="26">
 		<pre-evolution-index false="25" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="118,81,96,131,82" />
 		<name false="Raichu" />
 		<name false="Raichu" />
@@ -392,8 +392,8 @@
 	</id>
 	<id false="27">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="90,124,147" />
 		<name false="Sandshrew" />
 		<name false="Sabelette" />
@@ -407,8 +407,8 @@
 	</id>
 	<id false="28">
 		<pre-evolution-index false="27" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="90,124,147,153,124" />
 		<name false="Sandslash" />
 		<name false="Sablaireau" />
@@ -422,8 +422,8 @@
 	</id>
 	<id false="29">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,147,118,124,♀" />
 		<name false="Nidoran♀" />
 		<name false="Nidoran♀" />
@@ -437,8 +437,8 @@
 	</id>
 	<id false="30">
 		<pre-evolution-index false="29" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,147,119,159,100" />
 		<name false="Nidorina" />
 		<name false="Nidorina" />
@@ -452,8 +452,8 @@
 	</id>
 	<id false="31">
 		<pre-evolution-index false="30" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,147,87,81,124" />
 		<name false="Nidoqueen" />
 		<name false="Nidoqueen" />
@@ -467,8 +467,8 @@
 	</id>
 	<id false="32">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,147,118,124,♂" />
 		<name false="Nidoran♂" />
 		<name false="Nidoran♂" />
@@ -482,8 +482,8 @@
 	</id>
 	<id false="33">
 		<pre-evolution-index false="32" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,147,119,159,104" />
 		<name false="Nidorino" />
 		<name false="Nidorino" />
@@ -497,8 +497,8 @@
 	</id>
 	<id false="34">
 		<pre-evolution-index false="33" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,147,86,124,135" />
 		<name false="Nidoking" />
 		<name false="Nidoking" />
@@ -512,8 +512,8 @@
 	</id>
 	<id false="35">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="154,160,154" />
 		<name false="Clefairy" />
 		<name false="Mélofée" />
@@ -527,8 +527,8 @@
 	</id>
 	<id false="36">
 		<pre-evolution-index false="35" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="154,87,91,159" />
 		<name false="Clefable" />
 		<name false="Mélodelfe" />
@@ -542,8 +542,8 @@
 	</id>
 	<id false="37">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="122,89,124" />
 		<name false="Vulpix" />
 		<name false="Goupix" />
@@ -557,8 +557,8 @@
 	</id>
 	<id false="38">
 		<pre-evolution-index false="37" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="86,131,82,89,124" />
 		<name false="Ninetales" />
 		<name false="Feunard" />
@@ -572,8 +572,8 @@
 	</id>
 	<id false="39">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="155,119,124" />
 		<name false="Jigglypuff" />
 		<name false="Rondoudou" />
@@ -587,8 +587,8 @@
 	</id>
 	<id false="40">
 		<pre-evolution-index false="39" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="155,87,119,124" />
 		<name false="Wigglytuff" />
 		<name false="Grodoudou" />
@@ -602,8 +602,8 @@
 	</id>
 	<id false="41">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="140,148,160,99" />
 		<name false="Zubat" />
 		<name false="Nosferapti" />
@@ -617,8 +617,8 @@
 	</id>
 	<id false="42">
 		<pre-evolution-index false="41" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="137,120,148,160,99" />
 		<name false="Golbat" />
 		<name false="Nosferalto" />
@@ -632,8 +632,8 @@
 	</id>
 	<id false="43">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="100,142,104,87,90" />
 		<name false="Oddish" />
 		<name false="Mystherbe" />
@@ -647,8 +647,8 @@
 	</id>
 	<id false="44">
 		<pre-evolution-index false="43" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="87,90,81,105,100" />
 		<name false="Gloom" />
 		<name false="Ortide" />
@@ -662,8 +662,8 @@
 	</id>
 	<id false="45">
 		<pre-evolution-index false="44" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="118,107,121,91,80" />
 		<name false="Vileplume" />
 		<name false="Rafflesia" />
@@ -677,8 +677,8 @@
 	</id>
 	<id false="46">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="153,118,92" />
 		<name false="Paras" />
 		<name false="Paras" />
@@ -692,8 +692,8 @@
 	</id>
 	<id false="47">
 		<pre-evolution-index false="46" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="153,118,93,87,99" />
 		<name false="Parasect" />
 		<name false="Parasect" />
@@ -707,8 +707,8 @@
 	</id>
 	<id false="48">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="89,124,153,124" />
 		<name false="Venonat" />
 		<name false="Mimitoss" />
@@ -722,8 +722,8 @@
 	</id>
 	<id false="49">
 		<pre-evolution-index false="48" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="114,120,107,129,124" />
 		<name false="Venomoth" />
 		<name false="Aéromite" />
@@ -737,8 +737,8 @@
 	</id>
 	<id false="50">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="146,126,135,143" />
 		<name false="Diglett" />
 		<name false="Taupiqueur" />
@@ -752,8 +752,8 @@
 	</id>
 	<id false="51">
 		<pre-evolution-index false="50" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="143,135,99,119,84" />
 		<name false="Dugtrio" />
 		<name false="Triopikeur" />
@@ -767,8 +767,8 @@
 	</id>
 	<id false="52">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,130,159,92" />
 		<name false="Meowth" />
 		<name false="Miaouss" />
@@ -782,8 +782,8 @@
 	</id>
 	<id false="53">
 		<pre-evolution-index false="52" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="156,120,91,80,124" />
 		<name false="Persian" />
 		<name false="Persian" />
@@ -797,8 +797,8 @@
 	</id>
 	<id false="54">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="89,143,160,87" />
 		<name false="Psyduck" />
 		<name false="Psykokwak" />
@@ -812,8 +812,8 @@
 	</id>
 	<id false="55">
 		<pre-evolution-index false="54" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="137,120,143,160,87" />
 		<name false="Golduck" />
 		<name false="Akwakwak" />
@@ -827,8 +827,8 @@
 	</id>
 	<id false="56">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="110,124,86,159" />
 		<name false="Mankey" />
 		<name false="Férosinge" />
@@ -842,8 +842,8 @@
 	</id>
 	<id false="57">
 		<pre-evolution-index false="56" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="84,89,119,138,120" />
 		<name false="Primeape" />
 		<name false="Colossinge" />
@@ -857,8 +857,8 @@
 	</id>
 	<id false="58">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="133,159,146,126" />
 		<name false="Growlithe" />
 		<name false="Caninos" />
@@ -872,8 +872,8 @@
 	</id>
 	<id false="59">
 		<pre-evolution-index false="58" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="82,81,124,146,126" />
 		<name false="Arcanine" />
 		<name false="Arcanin" />
@@ -887,8 +887,8 @@
 	</id>
 	<id false="60">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,132,122,114" />
 		<name false="Poliwag" />
 		<name false="Ptitard" />
@@ -902,8 +902,8 @@
 	</id>
 	<id false="61">
 		<pre-evolution-index false="60" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,132,122,142" />
 		<name false="Poliwhirl" />
 		<name false="Têtarte" />
@@ -917,8 +917,8 @@
 	</id>
 	<id false="62">
 		<pre-evolution-index false="61" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="101,132,122,152,124" />
 		<name false="Poliwrath" />
 		<name false="Tartard" />
@@ -932,8 +932,8 @@
 	</id>
 	<id false="63">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="88,159,91,126" />
 		<name false="Abra" />
 		<name false="Abra" />
@@ -947,8 +947,8 @@
 	</id>
 	<id false="64">
 		<pre-evolution-index false="63" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="116,124,136,118,159" />
 		<name false="Kadabra" />
 		<name false="Kadabra" />
@@ -962,8 +962,8 @@
 	</id>
 	<id false="65">
 		<pre-evolution-index false="64" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="107,159,146,126,124" />
 		<name false="Alakazam" />
 		<name false="Alakazam" />
@@ -977,8 +977,8 @@
 	</id>
 	<id false="66">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="123,124,119,86,159" />
 		<name false="Machop" />
 		<name false="Machoc" />
@@ -992,8 +992,8 @@
 	</id>
 	<id false="67">
 		<pre-evolution-index false="66" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="137,159,119,86,159" />
 		<name false="Machoke" />
 		<name false="Machopeur" />
@@ -1007,8 +1007,8 @@
 	</id>
 	<id false="68">
 		<pre-evolution-index false="67" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,81,119,86,159" />
 		<name false="Machamp" />
 		<name false="Mackogneur" />
@@ -1022,8 +1022,8 @@
 	</id>
 	<id false="69">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="110,143,97,152,111" />
 		<name false="Bellsprout" />
 		<name false="Chétiflor" />
@@ -1037,8 +1037,8 @@
 	</id>
 	<id false="70">
 		<pre-evolution-index false="69" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="82,97,147,124" />
 		<name false="Weepinbell" />
 		<name false="Boustiflor" />
@@ -1052,8 +1052,8 @@
 	</id>
 	<id false="71">
 		<pre-evolution-index false="70" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="82,97,152,160,99" />
 		<name false="Victreebel" />
 		<name false="Empiflor" />
@@ -1067,8 +1067,8 @@
 	</id>
 	<id false="72">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="113,104,87,118,136" />
 		<name false="Tentacool" />
 		<name false="Tentacool" />
@@ -1082,8 +1082,8 @@
 	</id>
 	<id false="73">
 		<pre-evolution-index false="72" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="147,87,87,118,136" />
 		<name false="Tentacruel" />
 		<name false="Tentacruel" />
@@ -1097,8 +1097,8 @@
 	</id>
 	<id false="74">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="81,91,97,150,98" />
 		<name false="Geodude" />
 		<name false="Racaillou" />
@@ -1112,8 +1112,8 @@
 	</id>
 	<id false="75">
 		<pre-evolution-index false="74" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="137,122,159,124" />
 		<name false="Graveler" />
 		<name false="Gravalanch" />
@@ -1127,8 +1127,8 @@
 	</id>
 	<id false="76">
 		<pre-evolution-index false="75" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="137,122,159,101,130" />
 		<name false="Golem" />
 		<name false="Grolem" />
@@ -1142,8 +1142,8 @@
 	</id>
 	<id false="77">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="157,101,159,95" />
 		<name false="Ponyta" />
 		<name false="Ponyta" />
@@ -1157,8 +1157,8 @@
 	</id>
 	<id false="78">
 		<pre-evolution-index false="77" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="134,130,122,160,155" />
 		<name false="Rapidash" />
 		<name false="Galopa" />
@@ -1172,8 +1172,8 @@
 	</id>
 	<id false="79">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="115,147,124" />
 		<name false="Slowpoke" />
 		<name false="Ramoloss" />
@@ -1187,8 +1187,8 @@
 	</id>
 	<id false="80">
 		<pre-evolution-index false="79" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="115,147,118,124" />
 		<name false="Slowbro" />
 		<name false="Flagadoss" />
@@ -1202,8 +1202,8 @@
 	</id>
 	<id false="81">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="89,81,120" />
 		<name false="Magnemite" />
 		<name false="Magnéti" />
@@ -1217,8 +1217,8 @@
 	</id>
 	<id false="82">
 		<pre-evolution-index false="81" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="121,80,89,81,120" />
 		<name false="Magneton" />
 		<name false="Magnéton" />
@@ -1232,8 +1232,8 @@
 	</id>
 	<id false="83">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,114,103,134" />
 		<name false="Farfetch’d" />
 		<name false="Canarticho" />
@@ -1247,8 +1247,8 @@
 	</id>
 	<id false="84">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="147,159,147,159" />
 		<name false="Doduo" />
 		<name false="Doduo" />
@@ -1262,8 +1262,8 @@
 	</id>
 	<id false="85">
 		<pre-evolution-index false="84" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="147,159,147,119,84" />
 		<name false="Dodrio" />
 		<name false="Dodrio" />
@@ -1277,8 +1277,8 @@
 	</id>
 	<id false="86">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="153,82,123,82" />
 		<name false="Seel" />
 		<name false="Otaria" />
@@ -1292,8 +1292,8 @@
 	</id>
 	<id false="87">
 		<pre-evolution-index false="86" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="139,131,137,124" />
 		<name false="Dewgong" />
 		<name false="Lamantine" />
@@ -1307,8 +1307,8 @@
 	</id>
 	<id false="88">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="151,99,151,95,159" />
 		<name false="Grimer" />
 		<name false="Tadmorv" />
@@ -1322,8 +1322,8 @@
 	</id>
 	<id false="89">
 		<pre-evolution-index false="88" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="151,99,151,99,124" />
 		<name false="Muk" />
 		<name false="Grotadmorv" />
@@ -1337,8 +1337,8 @@
 	</id>
 	<id false="90">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="91,128,120,143,159" />
 		<name false="Shellder" />
 		<name false="Kokiyas" />
@@ -1352,8 +1352,8 @@
 	</id>
 	<id false="91">
 		<pre-evolution-index false="90" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="153,120,91,128,124" />
 		<name false="Cloyster" />
 		<name false="Crustabri" />
@@ -1367,8 +1367,8 @@
 	</id>
 	<id false="92">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="137,159,92" />
 		<name false="Gastly" />
 		<name false="Fantominus" />
@@ -1382,8 +1382,8 @@
 	</id>
 	<id false="93">
 		<pre-evolution-index false="92" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="137,159,92,99" />
 		<name false="Haunter" />
 		<name false="Spectrum" />
@@ -1397,8 +1397,8 @@
 	</id>
 	<id false="94">
 		<pre-evolution-index false="93" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="136,124,133,159" />
 		<name false="Gengar" />
 		<name false="Ectoplasma" />
@@ -1412,8 +1412,8 @@
 	</id>
 	<id false="95">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="81,123,159,87" />
 		<name false="Onix" />
 		<name false="Onix" />
@@ -1427,8 +1427,8 @@
 	</id>
 	<id false="96">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="92,119,159,155" />
 		<name false="Drowzee" />
 		<name false="Soporifik" />
@@ -1442,8 +1442,8 @@
 	</id>
 	<id false="97">
 		<pre-evolution-index false="96" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="92,119,159,153,159" />
 		<name false="Hypno" />
 		<name false="Hypnomade" />
@@ -1457,8 +1457,8 @@
 	</id>
 	<id false="98">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="87,118,150" />
 		<name false="Krabby" />
 		<name false="Krabby" />
@@ -1472,8 +1472,8 @@
 	</id>
 	<id false="99">
 		<pre-evolution-index false="98" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="86,124,135,118,159" />
 		<name false="Kingler" />
 		<name false="Krabboss" />
@@ -1487,8 +1487,8 @@
 	</id>
 	<id false="100">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="149,119,119,143,110" />
 		<name false="Voltorb" />
 		<name false="Voltorbe" />
@@ -1502,8 +1502,8 @@
 	</id>
 	<id false="101">
 		<pre-evolution-index false="100" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="110,120,110,81,124" />
 		<name false="Electrode" />
 		<name false="Électrode" />
@@ -1517,8 +1517,8 @@
 	</id>
 	<id false="102">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="95,110,95,110" />
 		<name false="Exeggcute" />
 		<name false="Noeunoeuf" />
@@ -1532,8 +1532,8 @@
 	</id>
 	<id false="103">
 		<pre-evolution-index false="102" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="100,160,91,159" />
 		<name false="Exeggutor" />
 		<name false="Noadkoko" />
@@ -1547,8 +1547,8 @@
 	</id>
 	<id false="104">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,118,85,118" />
 		<name false="Cubone" />
 		<name false="Osselait" />
@@ -1562,8 +1562,8 @@
 	</id>
 	<id false="105">
 		<pre-evolution-index false="104" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="133,118,133,118" />
 		<name false="Marowak" />
 		<name false="Ossatueur" />
@@ -1577,8 +1577,8 @@
 	</id>
 	<id false="106">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="90,123,112,118,159" />
 		<name false="Hitmonlee" />
 		<name false="Kicklee" />
@@ -1592,8 +1592,8 @@
 	</id>
 	<id false="107">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="83,149,123,118,159" />
 		<name false="Hitmonchan" />
 		<name false="Tygnon" />
@@ -1607,8 +1607,8 @@
 	</id>
 	<id false="108">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="151,122,119,124,133" />
 		<name false="Lickitung" />
 		<name false="Excelangue" />
@@ -1622,8 +1622,8 @@
 	</id>
 	<id false="109">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="147,133,159,92" />
 		<name false="Koffing" />
 		<name false="Smogo" />
@@ -1637,8 +1637,8 @@
 	</id>
 	<id false="110">
 		<pre-evolution-index false="109" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="110,95,147,133,92" />
 		<name false="Weezing" />
 		<name false="Smogogo" />
@@ -1652,8 +1652,8 @@
 	</id>
 	<id false="111">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="90,81,109,159,124" />
 		<name false="Rhyhorn" />
 		<name false="Rhinocorne" />
@@ -1667,8 +1667,8 @@
 	</id>
 	<id false="112">
 		<pre-evolution-index false="111" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="90,81,147,124" />
 		<name false="Rhydon" />
 		<name false="Rhinoféros" />
@@ -1682,8 +1682,8 @@
 	</id>
 	<id false="113">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="118,160,86,159" />
 		<name false="Chansey" />
 		<name false="Leveinard" />
@@ -1697,8 +1697,8 @@
 	</id>
 	<id false="114">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="114,124,139,130,118" />
 		<name false="Tangela" />
 		<name false="Saquedeneu" />
@@ -1712,8 +1712,8 @@
 	</id>
 	<id false="115">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="133,120,159,118" />
 		<name false="Kangaskhan" />
 		<name false="Kangourex" />
@@ -1727,8 +1727,8 @@
 	</id>
 	<id false="116">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="95,160,97,159" />
 		<name false="Horsea" />
 		<name false="Hypotrempe" />
@@ -1742,8 +1742,8 @@
 	</id>
 	<id false="117">
 		<pre-evolution-index false="116" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="91,159,147,118" />
 		<name false="Seadra" />
 		<name false="Hypocéan" />
@@ -1757,8 +1757,8 @@
 	</id>
 	<id false="118">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="99,90,86,124,99" />
 		<name false="Goldeen" />
 		<name false="Poissirène" />
@@ -1772,8 +1772,8 @@
 	</id>
 	<id false="119">
 		<pre-evolution-index false="118" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="80,140,110,84,82" />
 		<name false="Seaking" />
 		<name false="Poissoroy" />
@@ -1787,8 +1787,8 @@
 	</id>
 	<id false="120">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="106,99,146,110,124" />
 		<name false="Staryu" />
 		<name false="Stari" />
@@ -1802,8 +1802,8 @@
 	</id>
 	<id false="121">
 		<pre-evolution-index false="120" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="92,95,159,111,159" />
 		<name false="Starmie" />
 		<name false="Staross" />
@@ -1817,8 +1817,8 @@
 	</id>
 	<id false="122">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="148,119,115,159,147" />
 		<name false="Mr. Mime" />
 		<name false="M. Mime" />
@@ -1832,8 +1832,8 @@
 	</id>
 	<id false="123">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="92,99,118,81,87" />
 		<name false="Scyther" />
 		<name false="Insécateur" />
@@ -1847,8 +1847,8 @@
 	</id>
 	<id false="124">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="120,159,139,131,118" />
 		<name false="Jynx" />
 		<name false="Lippoutou" />
@@ -1862,8 +1862,8 @@
 	</id>
 	<id false="125">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="83,121,150,159" />
 		<name false="Electabuzz" />
 		<name false="Élektek" />
@@ -1877,8 +1877,8 @@
 	</id>
 	<id false="126">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="150,159,148,159" />
 		<name false="Magmar" />
 		<name false="Magmar" />
@@ -1892,8 +1892,8 @@
 	</id>
 	<id false="127">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,81,122,92" />
 		<name false="Pinsir" />
 		<name false="Scarabrute" />
@@ -1907,8 +1907,8 @@
 	</id>
 	<id false="128">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="88,124,95,122,92" />
 		<name false="Tauros" />
 		<name false="Tauros" />
@@ -1922,8 +1922,8 @@
 	</id>
 	<id false="129">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="89,81,86,124,135" />
 		<name false="Magikarp" />
 		<name false="Magicarpe" />
@@ -1937,8 +1937,8 @@
 	</id>
 	<id false="130">
 		<pre-evolution-index false="129" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="134,130,118,147,92" />
 		<name false="Gyarados" />
 		<name false="Léviator" />
@@ -1952,8 +1952,8 @@
 	</id>
 	<id false="131">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="118,155,118,92" />
 		<name false="Lapras" />
 		<name false="Lokhlass" />
@@ -1967,8 +1967,8 @@
 	</id>
 	<id false="132">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="113,95,114,124" />
 		<name false="Ditto" />
 		<name false="Métamorph" />
@@ -1982,8 +1982,8 @@
 	</id>
 	<id false="133">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="81,159,150,81" />
 		<name false="Eevee" />
 		<name false="Évoli" />
@@ -1997,8 +1997,8 @@
 	</id>
 	<id false="134">
 		<pre-evolution-index false="133" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="91,130,123,159,140" />
 		<name false="Vaporeon" />
 		<name false="Aquali" />
@@ -2012,8 +2012,8 @@
 	</id>
 	<id false="135">
 		<pre-evolution-index false="133" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="90,124,143,159,92" />
 		<name false="Jolteon" />
 		<name false="Voltali" />
@@ -2027,8 +2027,8 @@
 	</id>
 	<id false="136">
 		<pre-evolution-index false="133" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="150,159,92,95,159" />
 		<name false="Flareon" />
 		<name false="Pyroli" />
@@ -2042,8 +2042,8 @@
 	</id>
 	<id false="137">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="157,119,137,124" />
 		<name false="Porygon" />
 		<name false="Porygon" />
@@ -2057,8 +2057,8 @@
 	</id>
 	<id false="138">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="84,112,100,81,99" />
 		<name false="Omanyte" />
 		<name false="Amonita" />
@@ -2072,8 +2072,8 @@
 	</id>
 	<id false="139">
 		<pre-evolution-index false="138" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="84,112,92,95,159" />
 		<name false="Omastar" />
 		<name false="Amonistar" />
@@ -2087,8 +2087,8 @@
 	</id>
 	<id false="140">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,150,99" />
 		<name false="Kabuto" />
 		<name false="Kabuto" />
@@ -2102,8 +2102,8 @@
 	</id>
 	<id false="141">
 		<pre-evolution-index false="140" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,150,99,155,92" />
 		<name false="Kabutops" />
 		<name false="Kabutops" />
@@ -2117,8 +2117,8 @@
 	</id>
 	<id false="142">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="155,98,118" />
 		<name false="Aerodactyl" />
 		<name false="Ptéra" />
@@ -2132,8 +2132,8 @@
 	</id>
 	<id false="143">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,149,137,124" />
 		<name false="Snorlax" />
 		<name false="Ronflex" />
@@ -2147,8 +2147,8 @@
 	</id>
 	<id false="144">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="107,119,159,138,159" />
 		<name false="Articuno" />
 		<name false="Artikodin" />
@@ -2162,8 +2162,8 @@
 	</id>
 	<id false="145">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="90,124,143,159" />
 		<name false="Zapdos" />
 		<name false="Électhor" />
@@ -2177,8 +2177,8 @@
 	</id>
 	<id false="146">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="107,125,81,115,159" />
 		<name false="Moltres" />
 		<name false="Sulfura" />
@@ -2192,8 +2192,8 @@
 	</id>
 	<id false="147">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="111,101,119,131,82" />
 		<name false="Dratini" />
 		<name false="Minidraco" />
@@ -2207,8 +2207,8 @@
 	</id>
 	<id false="148">
 		<pre-evolution-index false="147" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="105,87,119,131,159" />
 		<name false="Dragonair" />
 		<name false="Draco" />
@@ -2222,8 +2222,8 @@
 	</id>
 	<id false="149">
 		<pre-evolution-index false="148" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="85,81,119,131,159" />
 		<name false="Dragonite" />
 		<name false="Dracolosse" />
@@ -2237,8 +2237,8 @@
 	</id>
 	<id false="150">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="111,131,82,97,159" />
 		<name false="Mewtwo" />
 		<name false="Mewtwo" />
@@ -2252,8 +2252,8 @@
 	</id>
 	<id false="151">
 		<pre-evolution-index false="-1" />
-		<blue-habitat-index false="-1" />
-		<red-habitat-index false="-1" />
+		<blue-habitat-index value="-1" />
+		<red-habitat-index value="-1" />
 		<name false="111,131,82" />
 		<name false="Mew" />
 		<name false="Mew" />

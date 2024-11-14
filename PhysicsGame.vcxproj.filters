@@ -205,6 +205,15 @@
     <ClCompile Include="Source\PoliwagPsyduckCounter.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CentralScreen.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ScreenProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CapturePokemon.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -414,6 +423,15 @@
     <ClInclude Include="Source\PoliwagPsyduckCounter.h">
       <Filter>Objects</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CentralScreen.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ScreenProgram.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CapturePokemon.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -463,6 +481,9 @@
     </Filter>
     <Filter Include="Objects\Map Arrow Group %28Objects%29">
       <UniqueIdentifier>{6b1e2c4d-3b62-4a28-993d-7df0a77e8a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScreenPrograms">
+      <UniqueIdentifier>{2923ee15-975c-40eb-9efa-53b891f7f827}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

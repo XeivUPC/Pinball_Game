@@ -65,7 +65,10 @@ void CapturePokemon::Logic()
 		factor = 0;
 		animating = true;
 	}
-	if ((factor >= 1 && animationStarted != 0) || (factor >= 3 && animationStarted == 0))
+
+	////// Solo avanzar cuando el ball esta abajo/////////
+
+	if ((factor >= 1 && animationStarted != 0) || (factor >= 1.5f && animationStarted == 0))
 	{
 		factor = 0;
 		animationStarted++;

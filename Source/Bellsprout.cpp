@@ -6,6 +6,7 @@
 #include "ModuleUserPreferences.h"
 #include "Box2DFactory.h"
 #include "Pokeball.h"
+#include "CentralScreen.h"
 
 Bellsprout::Bellsprout(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : MapObject(gameAt)
 {
@@ -60,6 +61,11 @@ update_status Bellsprout::Update()
 		map_bellsprout_animator->SelectAnimation("MapBellsproutEat", false);
 		gameAt->pointsCounter.Add(100000);
 		mouthTimer.Start();
+
+		if (!gameAt->screen->HasProgram()) {
+			gameAt->screen->QuitProgram();
+			gameAt->screen->AddProgram(new CapturePokemon);
+		}
 	}
 
 	if (ballIn) {

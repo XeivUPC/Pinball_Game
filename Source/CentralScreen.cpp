@@ -14,6 +14,11 @@ void CentralScreen::CallScreenEvent(int index)
 	actualProgram->CallAction(index);
 }
 
+bool CentralScreen::HasProgram()
+{
+	return actualProgram != nullptr;
+}
+
 Rectangle CentralScreen::GetScreenArea()
 {
 	return screenArea;
@@ -30,12 +35,18 @@ update_status CentralScreen::Update()
 
 void CentralScreen::RemoveProgram()
 {
+	if (actualProgram == nullptr)
+		return;
 	actualProgram->EndProgram();
+	delete actualProgram;
 	actualProgram = nullptr;
 }
 
 void CentralScreen::QuitProgram()
 {
+	if (actualProgram == nullptr)
+		return;
+	delete actualProgram;
 	actualProgram = nullptr;
 }
 
@@ -47,6 +58,10 @@ std::string CentralScreen::GetActualProgramIdentifier()
 
 bool CentralScreen::CleanUp()
 {
+	if (actualProgram == nullptr)
+		return true;
+	delete actualProgram;
+	actualProgram = nullptr;
 	return true;
 }
 
@@ -60,5 +75,5 @@ CentralScreen::CentralScreen(ModuleGame* gameAt) : MapObject(gameAt)
 
 CentralScreen::~CentralScreen()
 {
-	actualProgram = nullptr;
+	
 }
