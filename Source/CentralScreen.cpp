@@ -23,6 +23,7 @@ update_status CentralScreen::Update()
 {
 	if (actualProgram == nullptr)return UPDATE_CONTINUE;
 	actualProgram->Logic();
+	if (actualProgram == nullptr)return UPDATE_CONTINUE;
 	actualProgram->Render();
 	return UPDATE_CONTINUE;
 }
@@ -33,8 +34,14 @@ void CentralScreen::RemoveProgram()
 	actualProgram = nullptr;
 }
 
+void CentralScreen::QuitProgram()
+{
+	actualProgram = nullptr;
+}
+
 std::string CentralScreen::GetActualProgramIdentifier()
 {
+	if (actualProgram == nullptr)return "";
 	return actualProgram->GetProgramIdentifier();
 }
 
@@ -48,7 +55,7 @@ CentralScreen::CentralScreen(ModuleGame* gameAt) : MapObject(gameAt)
 	gameAt->AddObject(this);
 	screenArea = Rectangle{ 56, 166, 48, 32};
 	actualProgram = nullptr;
-	AddProgram(new CapturePokemon);
+	
 }
 
 CentralScreen::~CentralScreen()

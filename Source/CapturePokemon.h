@@ -4,8 +4,13 @@ class CapturePokemon : public ScreenProgram
 {
 private:
 	Texture* texture;
-	Timer animationType;
+	int animationStarted;
+	float factor;
+	float animationTime;
+	Timer animationTimer;
 	Rectangle rect;
+	Rectangle baseRect;
+	bool animating;
 	int count;
 	int ID;
 
@@ -14,6 +19,7 @@ private:
 public:
 	CapturePokemon();
 	~CapturePokemon();
+	void SetID(int id);
 	void CallAction(int id)override;
 	void StartProgram()override;
 	void Logic()override;

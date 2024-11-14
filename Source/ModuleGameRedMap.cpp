@@ -39,6 +39,7 @@ bool ModuleGameRedMap::Start()
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 	screen = new CentralScreen(this);
+	screen->AddProgram(new CapturePokemon);
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
