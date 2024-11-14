@@ -134,6 +134,10 @@ update_status ModuleGameBlueMap::Update()
 			centerBlueArrowGroup->ActivateLeftTop();
 		}
 
+		if (evoArrowGroup->GetActiveAmount() >= 3) {
+			centerBlueArrowGroup->ActivateRightTop();
+		}
+
 		break;
 	case ModuleGame::BlockGame:
 		break;

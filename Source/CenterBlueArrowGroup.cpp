@@ -47,6 +47,7 @@ void CenterBlueArrowGroup::ActivateRightTop()
 {
 	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front());
 	arrow->ActivateTop();
+	arrow->Twinkle();
 }
 
 void CenterBlueArrowGroup::ActivateRightBot()
