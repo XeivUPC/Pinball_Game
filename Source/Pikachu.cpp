@@ -1,12 +1,27 @@
 #include "Pikachu.h"
 #include "Application.h"
 #include "ModuleTexture.h"
+#include "ModulePhysics.h"
 #include "ModuleRender.h"
 #include "ModuleUserPreferences.h"
+#include "Box2DFactory.h"
+#include "Pokeball.h"
+#include "CentralScreen.h"
 
 Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 {
 	gameAt->AddObject(this);
+
+	position.x = 139;
+	position.y = 245;
+
+	b2FixtureUserData fixtureData;
+	fixtureData.pointer = (uintptr_t)(&sensor);
+
+	body = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, { (float)position.x + width / 2 , position.y + height / 2 }, width, height, fixtureData);
+	body->SetType(b2_dynamicBody);
+	body->GetFixtureList()[0].SetSensor(true);
+	sensor.SetBodyToTrack(&body->GetFixtureList()[0]);
 
 	gameAt->App->texture->CreateTexture("Assets/map_pikachu.png", "map_pikachu");
 	map_pikachu = gameAt->App->texture->GetTexture("map_pikachu");
@@ -17,6 +32,10 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	mapPikachuAnim.AddSprite(Sprite{ map_pikachu,{0, 0}, {16,16} });
 	mapPikachuAnim.AddSprite(Sprite{ map_pikachu,{1, 0}, {16,16} });
 
+	AnimationData mapPikachuEnergizeAnim = AnimationData("MapPikachuEnergizeAnim");
+	mapPikachuEnergizeAnim.AddSprite(Sprite{ map_pikachu,{2, 0}, {16,16} });
+
+	map_pikachu_animator->AddAnimation(mapPikachuEnergizeAnim);
 	map_pikachu_animator->AddAnimation(mapPikachuAnim);
 	map_pikachu_animator->SetSpeed(0.3f);
 	map_pikachu_animator->SelectAnimation("MapPikachuAnim", true);
@@ -33,8 +52,16 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{2, 0}, {16,16} });
 	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{3, 0}, {16,16} });
 
+	AnimationData mapPikachuEnergyIdleAnim = AnimationData("MapPikachuEnergyIdleAnim");
+	mapPikachuEnergyIdleAnim.AddSprite(Sprite{ map_pikachuEnergy,{4, 0}, {16,16} });
+
+	map_pikachuEnergy_animator->AddAnimation(mapPikachuEnergyIdleAnim);
+	map_pikachuEnergy_animator->AddAnimation(mapPikachuEnergyAnim);
+	map_pikachuEnergy_animator->SetSpeed(0.3f);
+	map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyIdleAnim", true);
+
 	bool is_in_left = true;
-	position_x = 139;
+	
 }
 
 Pikachu::~Pikachu()
@@ -44,30 +71,42 @@ Pikachu::~Pikachu()
 
 update_status Pikachu::Update()
 {
+	//Configure position
 	if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
-		position_x = 8;//Configure pos x
-		is_in_left = true;
+		position.x = 8;
+		/*position.y = 245;*/
 	}
 	else if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-		position_x = 139;//Configure pos x
-		is_in_left = false;
+		position.x = 139;
+		/*position.y = 245;*/
+	}
+	
+	if (sensor.OnTriggerEnter() /*&& gameAt->IsEnergyCharged()*/) {
+		ballIn = true;
+		map_pikachu_animator->SelectAnimation("MapPikachuEnergizeAnim", false);
+		map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyAnim", true);
+		gameAt->pointsCounter.Add(100000);//(to do) Check if pikachu gives points
+		energizeTimer.Start();
+	}
+	if (ballIn) {
+		map_pikachu_animator->SetSpeed(0.1f);
+		gameAt->GetPokeball()->SetPosition({ position.x + 5 , position.y + 2.7f });
+		gameAt->GetPokeball()->SetVelocity({ 0,0 });
+		if (energizeTimer.ReadSec() > energizeTime) {
+			if (map_pikachuEnergy_animator->HasAnimationFinished()) {
+				gameAt->GetPokeball()->SetVelocity({ 0,-10 });
+				ballIn = false;
+				map_pikachu_animator->SelectAnimation("MapPikachuAnim", true);
+				map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyIdleAnim", true);
+			}
+		}
 	}
 
-	if (is_in_left)
-	{
-		map_pikachu_animator->Animate(position_x, 244, false);
-	}
-	else
-	{
-		map_pikachu_animator->Animate(position_x, 244, false);
-	}
-
+	map_pikachu_animator->Animate(position.x, position.y, false);
 	map_pikachu_animator->Update();
 
-	if (gameAt->IsEnergyCharged())
-	{
-
-	}
+	map_pikachuEnergy_animator->Animate(position.x, position.y - 16, false);
+	map_pikachuEnergy_animator->Update();
 
 	return UPDATE_CONTINUE;
 }
@@ -82,6 +121,8 @@ bool Pikachu::CleanUp()
 		delete map_pikachuEnergy_animator;
 		map_pikachuEnergy_animator = nullptr;
 	}
+
+	gameAt->App->physics->world->DestroyBody(body);
 
 	LOG("Unloading cute companion");
 	return true;

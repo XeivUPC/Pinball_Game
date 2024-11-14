@@ -1,5 +1,4 @@
 #include "MapObject.h"
-#include "CollisionSensor.h"
 #include "AnimationSystem.h"
 #include "CollisionSensor.h"
 #include "Timer.h"
