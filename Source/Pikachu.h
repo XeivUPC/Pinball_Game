@@ -16,6 +16,9 @@ private:
 	Texture* map_pikachu = nullptr;
 	Animator* map_pikachu_animator = nullptr;
 
+	Texture* map_pikachuEnergy = nullptr;
+	Animator* map_pikachuEnergy_animator = nullptr;
+
 	int position_x;
 	bool is_in_left;
 };
