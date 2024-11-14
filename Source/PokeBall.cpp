@@ -86,6 +86,15 @@ update_status PokeBall::Update()
 		godMode = !godMode;
 	}
 
+	if (type!= Pokeball && type!=MasterBall) {
+		if (pokeballDowngradeTimer.ReadSec() > pokeballDowngradeTime) {
+			SetType((PokeballType)((int)type - 1));
+		}
+	}
+	else
+		pokeballDowngradeTimer.Start();
+	
+
 	float xVel = body->GetLinearVelocity().x;
 	float yVel = body->GetLinearVelocity().y;
 
@@ -157,32 +166,37 @@ void PokeBall::SetVelocity(b2Vec2 velocity)
 void PokeBall::SetType(PokeballType type)
 {
 	PokeballType lastType = this->type;
+
+	int lastMultiplier = GetMultiplierByType(lastType);
+	int newMultiplier = GetMultiplierByType(type);
+
 	this->type = type;
 
 	switch (type)
 	{
 	case PokeBall::Pokeball:
-		gameAt->pointsCounter.AddMultiplier(1);
+		gameAt->pointsCounter.AddMultiplier(newMultiplier);
 		pokeball_animator->SelectAnimation("Pokeball_Anim", true);
 		break;
 	case PokeBall::SuperBall:
-		gameAt->pointsCounter.EditMultiplier(1,2);
+		gameAt->pointsCounter.EditMultiplier(lastMultiplier, newMultiplier);
 		pokeball_animator->SelectAnimation("Superball_Anim", true);
 		break;
 	case PokeBall::Ultraball:
-		gameAt->pointsCounter.EditMultiplier(2,3);
+		gameAt->pointsCounter.EditMultiplier(lastMultiplier, newMultiplier);
 		pokeball_animator->SelectAnimation("Ultraball_Anim", true);
 
 		break;
 	case PokeBall::MasterBall:
-		gameAt->pointsCounter.EditMultiplier(3,5);
+		gameAt->pointsCounter.EditMultiplier(lastMultiplier, newMultiplier);
 		pokeball_animator->SelectAnimation("Masterball_Anim", true);
 		break;
 	default:
-		gameAt->pointsCounter.AddMultiplier(1);
+		gameAt->pointsCounter.AddMultiplier(newMultiplier);
 		pokeball_animator->SelectAnimation("Pokeball_Anim", true);
 		break;
 	}
+	pokeballDowngradeTimer.Start();
 }
 
 PokeBall::PokeballType PokeBall::GetType()
@@ -197,37 +211,44 @@ b2Vec2 PokeBall::GetPosition()
 
 void PokeBall::Reset(bool saveBall)
 {
+	PokeballType lastType = this->type;
+	
+
 	SetPosition(spawn);
 	SetVelocity({ 0,0 });
 
 	if (saveBall)
 		return;
-	switch (type)
-	{
-	case PokeBall::Pokeball:
-		gameAt->pointsCounter.RemoveMultiplier(1);
-		break;
-	case PokeBall::SuperBall:		
-		gameAt->pointsCounter.RemoveMultiplier(2);
-		break;
-	case PokeBall::Ultraball:
-		gameAt->pointsCounter.RemoveMultiplier(3);
-		break;
-	case PokeBall::MasterBall:
-		gameAt->pointsCounter.RemoveMultiplier(5);
-		break;
-	default:
-		gameAt->pointsCounter.RemoveMultiplier(1);
-		break;
-	}
-
-	if(!saveBall)
-		lives_pokeball--;
+	
+	gameAt->pointsCounter.RemoveMultiplier(GetMultiplierByType(lastType));
+	lives_pokeball--;
 }
 
 int PokeBall::GetLivesPokeball() const
 {
 	return lives_pokeball;
+}
+
+int PokeBall::GetMultiplierByType(PokeballType type)
+{
+	switch (type)
+	{
+	case PokeBall::Pokeball:
+		return 1;
+		break;
+	case PokeBall::SuperBall:
+		return 2;
+		break;
+	case PokeBall::Ultraball:
+		return 3;
+		break;
+	case PokeBall::MasterBall:
+		return 5;
+		break;
+	default:
+		return 1;
+		break;
+	}
 }
 
 bool PokeBall::CleanUp()

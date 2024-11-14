@@ -4,7 +4,6 @@ class Counter
 {
 private:
 	long long int _data = 0LL;
-    float multiplier = 1;
     std::vector<float> multipliers;
 
 public:

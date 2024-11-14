@@ -38,6 +38,9 @@ public:
 	int GetLivesPokeball() const;
 
 private:
+
+	int GetMultiplierByType(PokeballType type);
+
 	float maxSpeed;
 	Texture* pokeball_texture;
 	Animator* pokeball_animator;
@@ -53,5 +56,9 @@ private:
 	bool godMode = false;
 
 	int lives_pokeball=3;
+
+
+	Timer pokeballDowngradeTimer;
+	float pokeballDowngradeTime = 60;
 };
 

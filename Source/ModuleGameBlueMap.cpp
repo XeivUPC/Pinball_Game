@@ -78,6 +78,8 @@ bool ModuleGameBlueMap::Start()
 
 	SetState(StartGame);
 
+	pointsCounter.AddMultiplier(1);
+
 	return true;
 }
 

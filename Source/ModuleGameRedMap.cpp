@@ -79,6 +79,8 @@ bool ModuleGameRedMap::Start()
 
 	SetState(StartGame);
 
+	pointsCounter.AddMultiplier(1);
+
 	return true;
 }
 
