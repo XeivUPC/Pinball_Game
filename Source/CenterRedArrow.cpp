@@ -1,15 +1,15 @@
-#include "CenterBlueArrow.h"
+#include "CenterRedArrow.h"
 #include "Application.h"
 
-CenterBlueArrow::CenterBlueArrow(ModuleGame* gameAt, b2Vec2 position, int order) : MapArrow(gameAt, position)
+CenterRedArrow::CenterRedArrow(ModuleGame* gameAt, b2Vec2 position, int order) : MapArrow(gameAt, position)
 {
 	gameAt->AddObject(this);
 
 	this->order = order;
 	this->position = position;
 
-	gameAt->App->texture->CreateTexture("Assets/center_blue_arrows.png", "center_blue_arrows");
-	texture = gameAt->App->texture->GetTexture("center_blue_arrows");
+	gameAt->App->texture->CreateTexture("Assets/center_red_arrows.png", "center_red_arrows");
+	texture = gameAt->App->texture->GetTexture("center_red_arrows");
 
 	animator = new Animator(gameAt->App);
 
@@ -19,28 +19,23 @@ CenterBlueArrow::CenterBlueArrow(ModuleGame* gameAt, b2Vec2 position, int order)
 	AnimationData active = AnimationData("Arrow_Active");
 	active.AddSprite(Sprite{ texture,{(float)order, 2}, {16,16} });
 
-	AnimationData topActiveTwinkle = AnimationData("Arrow_Unactive_Twinkle");
-	topActiveTwinkle.AddSprite(Sprite{ texture,{(float)order, 0}, {16,16} });
-	topActiveTwinkle.AddSprite(Sprite{ texture,{(float)order, 1}, {16,16} });
-
-	AnimationData bothActiveTwinkle = AnimationData("Arrow_Active_Twinkle");
-	bothActiveTwinkle.AddSprite(Sprite{ texture,{(float)order, 2}, {16,16} });
-	bothActiveTwinkle.AddSprite(Sprite{ texture,{(float)order, 3}, {16,16} });
+	AnimationData twinkle = AnimationData("Arrow_Twinkle");
+	twinkle.AddSprite(Sprite{ texture,{(float)order, 0}, {16,16} });
+	twinkle.AddSprite(Sprite{ texture,{(float)order, 1}, {16,16} });
 
 	animator->AddAnimation(unactive);
 	animator->AddAnimation(active);
-	animator->AddAnimation(topActiveTwinkle);
-	animator->AddAnimation(bothActiveTwinkle);
+	animator->AddAnimation(twinkle);
 	animator->SetSpeed(0.25f);
 	animator->SelectAnimation("Arrow_Unactive", true);
 
 }
 
-CenterBlueArrow::~CenterBlueArrow()
+CenterRedArrow::~CenterRedArrow()
 {
 }
 
-update_status CenterBlueArrow::Update()
+update_status CenterRedArrow::Update()
 {
 	if (botActive) {
 		if (topActive) {
@@ -64,48 +59,48 @@ update_status CenterBlueArrow::Update()
 	return UPDATE_CONTINUE;
 }
 
-bool CenterBlueArrow::CleanUp()
+bool CenterRedArrow::CleanUp()
 {
 	return true;
 }
 
-void CenterBlueArrow::ActivateTop()
+void CenterRedArrow::ActivateTop()
 {
 	topActive = true;
 }
 
-void CenterBlueArrow::DesactivateTop()
+void CenterRedArrow::DesactivateTop()
 {
 	topActive = false;
 }
 
-void CenterBlueArrow::ActivateBot()
+void CenterRedArrow::ActivateBot()
 {
 	botActive = true;
 }
 
-void CenterBlueArrow::DesactivateBot()
+void CenterRedArrow::DesactivateBot()
 {
 	botActive = false;
 }
 
-void CenterBlueArrow::Activate()
+void CenterRedArrow::Activate()
 {
 	topActive = true;
 	botActive = true;
 }
 
-void CenterBlueArrow::Desactivate()
+void CenterRedArrow::Desactivate()
 {
 	topActive = false;
 	botActive = false;
 }
 
-void CenterBlueArrow::Twinkle()
+void CenterRedArrow::Twinkle()
 {
 }
 
-int CenterBlueArrow::GetOrder() const
+int CenterRedArrow::GetOrder() const
 {
 	return order;
 }

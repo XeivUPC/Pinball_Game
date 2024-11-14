@@ -69,6 +69,9 @@ bool ModuleGameBlueMap::Start()
 	evoArrowGroup->Sort();
 	centerBlueArrowGroup->Sort();
 
+	getArrowGroup->ActivateNext();
+	getArrowGroup->ActivateNext();
+
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
 
@@ -129,6 +132,7 @@ update_status ModuleGameBlueMap::Update()
 		if (lapSensorGroup->HaveToActivateArrowEvo()) {
 			evoArrowGroup->ActivateNext();
 		}
+		//after catching/failing pokemon capture/evo, deactivate all get/evo arrows 
 
 		if (getArrowGroup->GetActiveAmount() >= 2) {
 			centerBlueArrowGroup->ActivateLeftTop();
@@ -137,6 +141,9 @@ update_status ModuleGameBlueMap::Update()
 		if (evoArrowGroup->GetActiveAmount() >= 3) {
 			centerBlueArrowGroup->ActivateRightTop();
 		}
+		// the top arrow in the center is activated when there is a black hole for events
+
+		// the bottom arrow follows where the air arrow controller in the middle of the top part points
 
 		break;
 	case ModuleGame::BlockGame:

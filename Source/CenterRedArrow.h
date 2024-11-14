@@ -4,10 +4,10 @@
 #include "ModuleRender.h"
 #include "AnimationSystem.h"
 
-class CenterBlueArrow : public MapArrow {
+class CenterRedArrow : public MapArrow {
 public:
-	CenterBlueArrow(ModuleGame* gameAt, b2Vec2 position, int order);
-	~CenterBlueArrow();
+	CenterRedArrow(ModuleGame* gameAt, b2Vec2 position, int order);
+	~CenterRedArrow();
 
 	update_status Update();
 	bool CleanUp() override;
