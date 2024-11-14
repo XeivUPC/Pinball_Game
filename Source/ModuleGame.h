@@ -50,6 +50,8 @@ public:
 	bool IsEnergyCharged();
 	void SetEnergyStatus(bool isCharged);
 
+	bool IsBallInTopSection();
+
 	virtual void SetState(GameStates stateToChange) =0;
 	GameStates GetState();
 
@@ -72,6 +74,7 @@ protected:
 
 	bool saveBall=true;
 	bool energyCharged = false;
+	bool isBallInTopSection = false;
 
 
 	GameStates state = GameStates::StartGame;

@@ -77,6 +77,11 @@ void ModuleGame::SetEnergyStatus(bool isCharged)
 	energyCharged = isCharged;
 }
 
+bool ModuleGame::IsBallInTopSection()
+{
+	return isBallInTopSection;
+}
+
 void ModuleGame::SetState(GameStates stateToChange)
 {
 	state = stateToChange;
@@ -127,8 +132,10 @@ void ModuleGame::RepositionCamera(b2Vec2 positionToTrack)
 
 	if (positionToTrack.y > 134 / SCREEN_SIZE) {
 		App->renderer->camera.offset.y = -134 * SCREEN_SIZE;
+		isBallInTopSection = true;
 	}
 	else {
 		App->renderer->camera.offset.y = 0;
+		isBallInTopSection = false;
 	}
 }
