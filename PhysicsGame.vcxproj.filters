@@ -201,7 +201,6 @@
     <ClCompile Include="Source\DiglettCounter.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Source\MapEnergyBattery.cpp" />
     <ClCompile Include="Source\PoliwagPsyduckCounter.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
@@ -213,6 +212,9 @@
     </ClCompile>
     <ClCompile Include="Source\CapturePokemon.cpp">
       <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapEnergyBattery.cpp">
+      <Filter>Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -419,7 +421,6 @@
     <ClInclude Include="Source\DiglettCounter.h">
       <Filter>Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MapEnergyBattery.h" />
     <ClInclude Include="Source\PoliwagPsyduckCounter.h">
       <Filter>Objects</Filter>
     </ClInclude>
@@ -431,6 +432,9 @@
     </ClInclude>
     <ClInclude Include="Source\CapturePokemon.h">
       <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapEnergyBattery.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
