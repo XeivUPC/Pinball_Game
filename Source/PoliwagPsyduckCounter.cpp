@@ -21,17 +21,14 @@ PoliwagPsyduckCounter::PoliwagPsyduckCounter(ModuleGame* gameAt, b2Vec2 position
 	zeroHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{0, 0}, {24,32} });
 
 	AnimationData oneHitAnimPoliwag = AnimationData("OneHitsPoliwag");
-	oneHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{1, 0}, {24,32} });
 	oneHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{2, 0}, {24,32} });
 	oneHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{1, 0}, {24,32} });
 
 	AnimationData twoHitAnimPoliwag = AnimationData("TwoHitsPoliwag");
-	twoHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{3, 0}, {24,32} });
 	twoHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{4, 0}, {24,32} });
 	twoHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{3, 0}, {24,32} });
 
 	AnimationData threeHitAnimPoliwag = AnimationData("ThreeHitsPoliwag");
-	threeHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{5, 0}, {24,32} });
 	threeHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{6, 0}, {24,32} });
 	threeHitAnimPoliwag.AddSprite(Sprite{ map_poliwagCounter,{0, 0}, {24,32} });
 
