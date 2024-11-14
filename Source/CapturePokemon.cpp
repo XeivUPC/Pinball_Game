@@ -67,8 +67,6 @@ void CapturePokemon::Logic()
 		animationTimer.Start();
 	}
 
-	////// Solo avanzar cuando el ball esta abajo/////////
-
 	if ((factor >= 1 && animationStarted != 0) || (factor >= 1.5f && animationStarted == 0 && animating))
 	{
 		factor = 0;
