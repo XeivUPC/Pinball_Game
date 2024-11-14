@@ -7,6 +7,8 @@
 #include "ModuleGamePokedexJapanese.h"
 #include "ModuleGamePokedexWorldwide.h"
 #include "ModuleMainMenu.h"
+#include <sstream>
+#include <string>
 
 const std::string ModulePokedex::Text0Format(int number)
 {
@@ -367,6 +369,9 @@ void ModulePokedex::SaveConfigFile()
 void ModulePokedex::LoadPokedex()
 {
     xml_node pokedex = _data.child("pokedex");
+
+    
+
     for (pugi::xml_node pokemonIdNode = pokedex.child("id"); pokemonIdNode != NULL; pokemonIdNode = pokemonIdNode.next_sibling("id"))
     {
         std::vector<std::string> pokemonNames;
@@ -377,13 +382,31 @@ void ModulePokedex::LoadPokedex()
             std::string name = language.attribute("value").as_string();
             pokemonNames.emplace_back(name);
         }
-        for (pugi::xml_node bluemap = pokemonIdNode.child("bluemaploc"); bluemap != NULL; bluemap = bluemap.next_sibling("bluemaploc"))
-        {
-            pokemonBlueMapLocations.emplace_back(bluemap.attribute("value").as_int());
+
+
+        std::string blueMapIndexs = pokemonIdNode.child("blue-habitat-index").attribute("value").as_string();
+
+        if (blueMapIndexs != "-1") {
+            std::stringstream ss(blueMapIndexs);
+            std::string temp;
+
+            while (std::getline(ss, temp, ',')) {
+                pokemonBlueMapLocations.push_back(std::stoi(temp));
+            }
         }
-        for (pugi::xml_node redmap = pokemonIdNode.child("redmaploc"); redmap != NULL; redmap = redmap.next_sibling("redmaploc"))
-        {
-            pokemonRedMapLocations.emplace_back(redmap.attribute("value").as_int());
+
+
+
+        std::string redMapIndexs = pokemonIdNode.child("red-habitat-index").attribute("value").as_string();
+
+        if (redMapIndexs != "-1") {
+
+            std::stringstream ss(redMapIndexs);
+            std::string temp;
+
+            while (std::getline(ss, temp, ',')) {
+                pokemonRedMapLocations.push_back(std::stoi(temp));
+            }
         }
 
         Pokemon pokemon = Pokemon
@@ -396,11 +419,25 @@ void ModulePokedex::LoadPokedex()
             pokemonIdNode.child("pre-evolution-index").attribute("value").as_int(),
             pokemonIdNode.child("habitat-index").attribute("value").as_int(),
             pokemonNames,
-            pokemonBlueMapLocations,
-            pokemonRedMapLocations
+            pokemonRedMapLocations,
+            pokemonBlueMapLocations
         };
             
         pokemon_list.push_back(pokemon);
+    }
+    for (size_t i = 0; i < 18; i++)
+    {
+        printf("%d ->", i);
+        for (size_t x = 0; x < pokemon_list.size(); x++)
+        {
+            for (size_t y = 0; y < pokemon_list[x].redMapLocations.size(); y++)
+            {
+                if(pokemon_list[x].redMapLocations[y] == i)
+                    printf(" %s,", pokemon_list[x].Names[1].c_str());
+                    
+            }
+        }
+        printf("\n");
     }
 }
 
