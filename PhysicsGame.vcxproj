@@ -245,6 +245,7 @@
     <ClInclude Include="Source\PokeballChangerSensor.h" />
     <ClInclude Include="Source\PokemonRevealer.h" />
     <ClInclude Include="Source\PoliwagBumper.h" />
+    <ClInclude Include="Source\PoliwagPsyduckCounter.h" />
     <ClInclude Include="Source\PsyduckBumper.h" />
     <ClInclude Include="Source\Slowpoke.h" />
     <ClInclude Include="Source\Staryu.h" />
@@ -316,6 +317,7 @@
     <ClCompile Include="Source\PokeballChangerSensor.cpp" />
     <ClCompile Include="Source\PokemonRevealer.cpp" />
     <ClCompile Include="Source\PoliwagBumper.cpp" />
+    <ClCompile Include="Source\PoliwagPsyduckCounter.cpp" />
     <ClCompile Include="Source\PsyduckBumper.cpp" />
     <ClCompile Include="Source\Slowpoke.cpp" />
     <ClCompile Include="Source\Staryu.cpp" />
