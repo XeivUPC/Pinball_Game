@@ -1,5 +1,4 @@
 #pragma once
-
 #include "AnimationSystem.h"
 #include "ModuleGame.h"
 #include "GameUI.h"
@@ -21,7 +20,6 @@ private:
 
 	//Create
 	void LoadMap(std::string path) override;
-
 	std::string mapPath = "Assets/MapData/";
 
 public:

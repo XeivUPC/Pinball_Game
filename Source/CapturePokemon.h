@@ -12,8 +12,9 @@ private:
 	void AddHit();
 	void SelectPokemonByZone(int zone);
 public:
-	CapturePokemon(const std::string id);
+	CapturePokemon();
 	~CapturePokemon();
+	void CallAction(int id)override;
 	void StartProgram()override;
 	void Logic()override;
 	void Render()override;

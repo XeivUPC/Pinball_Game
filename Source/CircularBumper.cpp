@@ -100,7 +100,8 @@ void CircularBumper::OnHit()
 	Bumper::OnHit();
 	animator->SelectAnimation("Circular_Idle", true);
 	animator->SelectAnimation("Circular_Hit", false);
-	//gameAt->revealer->AddHit();
+	if (gameAt->screen->GetActualProgramIdentifier() == "CapturePokemon")
+		gameAt->screen->CallScreenEvent(0);
 	gameAt->App->audio->PlayFx(bumperAudioId);
 
 	gameAt->pointsCounter.Add(5000);

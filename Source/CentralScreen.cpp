@@ -5,8 +5,8 @@
 void CentralScreen::AddProgram(ScreenProgram* program)
 {
 	actualProgram = program;
-	actualProgram->StartProgram();
 	actualProgram->SetGameReference(gameAt);
+	actualProgram->StartProgram();
 }
 
 void CentralScreen::CallScreenEvent(int index)
@@ -33,6 +33,11 @@ void CentralScreen::RemoveProgram()
 	actualProgram = nullptr;
 }
 
+std::string CentralScreen::GetActualProgramIdentifier()
+{
+	return actualProgram->GetProgramIdentifier();
+}
+
 bool CentralScreen::CleanUp()
 {
 	return true;
@@ -43,6 +48,7 @@ CentralScreen::CentralScreen(ModuleGame* gameAt) : MapObject(gameAt)
 	gameAt->AddObject(this);
 	screenArea = Rectangle{ 56, 166, 48, 32};
 	actualProgram = nullptr;
+	AddProgram(new CapturePokemon);
 }
 
 CentralScreen::~CentralScreen()
