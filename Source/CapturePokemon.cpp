@@ -47,7 +47,7 @@ void CapturePokemon::StartProgram()
 	count = 0;
 	factor = 0;
 	animationTimer.Start();
-	animationTime = 1;
+	animationTime = 0.5f;
 	animationStarted = 0;
 	ID = 3;
 	animating = false;
@@ -58,17 +58,18 @@ void CapturePokemon::Logic()
 {
 	if (ID == -1)
 		return;
-	if (animationStarted != 0 || count >= 6)
+	if (animating)
 		factor += GetFrameTime() / animationTime;
-	if (animationStarted == 0 && count >= 6 && !animating)
+	if (animationStarted == 0 && count >= 6 && !animating && !gameAt->IsBallInTopSection())
 	{
 		factor = 0;
 		animating = true;
+		animationTimer.Start();
 	}
 
 	////// Solo avanzar cuando el ball esta abajo/////////
 
-	if ((factor >= 1 && animationStarted != 0) || (factor >= 1.5f && animationStarted == 0))
+	if ((factor >= 1 && animationStarted != 0) || (factor >= 1.5f && animationStarted == 0 && animating))
 	{
 		factor = 0;
 		animationStarted++;
@@ -78,9 +79,8 @@ void CapturePokemon::Logic()
 	{
 		count = (int)trunc(factor * 6 + 1);
 	}
-	if (animationStarted == 2)
+	if (animationStarted == 3)
 		EndProgram();
-	printf("%f\n", factor);
 }
 
 void CapturePokemon::Render()
