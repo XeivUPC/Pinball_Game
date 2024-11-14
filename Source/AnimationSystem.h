@@ -25,10 +25,10 @@ private:
 	std::string name = "";
 	std::vector <Sprite> sprites;
 protected:
-	Rectangle GetSpriteRect(int spriteIndex);
 	Texture2D* GetTexture(int spriteIndex);
-	int GetCount(int spriteIndex);
 public:
+	Rectangle GetSpriteRect(int spriteIndex);
+	int GetCount();
 	void AddSprite(Sprite sprite);
 	void AddSprite(Sprite sprite, int extraData);
 	AnimationData(std::string n, std::vector<Sprite> s);
@@ -73,6 +73,7 @@ public:
 	void LerpUpdate(float factor);
 	void SetDirection(int direction);
 	void Animate(int x, int y, bool flip);
+	void Animate(int x, int y, Rectangle rect, bool flip);
 
 	void SetIfPlaying(bool isPlaying);
 	bool IsPlaying();

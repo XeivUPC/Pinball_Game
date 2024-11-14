@@ -13,6 +13,7 @@
 #include "PsyduckBumper.h"
 #include "MapEnergyRotator.h"
 #include "MapEnergyBattery.h"
+#include "CentralScreen.h"
 #include "PokeballChangerSensor.h"
 #include "CaveSensor.h"
 #include "Pikachu.h"
@@ -60,6 +61,7 @@ bool ModuleGameBlueMap::Start()
 	evoArrowGroup = new EvoArrowGroup(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
+	screen = new CentralScreen(this);
 
 	caveSensorGroup->Sort();
 	pokeballChangerGroup->Sort();

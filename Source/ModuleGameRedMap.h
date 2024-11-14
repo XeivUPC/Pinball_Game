@@ -1,5 +1,4 @@
 #pragma once
-
 #include "AnimationSystem.h"
 #include "ModuleGame.h"
 #include "GameUI.h"
@@ -13,8 +12,6 @@
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
 
-
-
 using namespace pugi;
 
 class ModuleGameRedMap : public ModuleGame {
@@ -22,9 +19,6 @@ private:
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
 	GameUI* UI = nullptr;
-
-	//dfgd*
-
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
 	CaveSensorGroup* caveSensorGroup = nullptr;
 	LapSensorGroup* lapSensorGroup = nullptr;
@@ -33,7 +27,6 @@ private:
 
 	DittoColliders* dittoColliders=nullptr;
 
-	
 	//Create
 	void LoadMap(std::string path) override;
 	void SetState(GameStates stateToChange) override;
@@ -48,6 +41,5 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
-
 };
 

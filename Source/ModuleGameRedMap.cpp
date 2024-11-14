@@ -14,6 +14,7 @@
 #include "MapEnergyBattery.h"
 #include "PokeballChangerSensor.h"
 #include "CaveSensor.h"
+#include "CentralScreen.h"
 #include "Pikachu.h"
 #include "Staryu.h"
 #include "Bellsprout.h"
@@ -59,6 +60,8 @@ bool ModuleGameRedMap::Start()
 	evoArrowGroup = new EvoArrowGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
+	screen = new CentralScreen(this);
+	screen->AddProgram(new CapturePokemon);
 
 	caveSensorGroup->Sort();
 	pokeballChangerGroup->Sort();
@@ -150,7 +153,8 @@ update_status ModuleGameRedMap::Update()
 
 	UI->Update();
 
-	for (const auto& object : mapObjects) {
+	for (const auto& object : mapObjects)
+	{
 		object->Update();
 	}
 
@@ -159,10 +163,6 @@ update_status ModuleGameRedMap::Update()
 
 	return UPDATE_CONTINUE;
 }
-
-
-
-
 
 bool ModuleGameRedMap::CleanUp()
 {

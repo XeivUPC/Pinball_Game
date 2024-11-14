@@ -21,7 +21,7 @@ Texture2D* AnimationData::GetTexture(int spriteIndex)
 	return sprites[spriteIndex].texture;
 }
 
-int AnimationData::GetCount(int spriteIndex)
+int AnimationData::GetCount()
 {
 	return sprites.size();
 }
@@ -203,6 +203,18 @@ void Animator::Animate(int x, int y, bool flip)
 
 	App->renderer->Draw(*animations[currentAnimation].sprites[currentSprite].texture,x,y, &rect, WHITE, flip);
 	
+}
+
+void Animator::Animate(int x, int y, Rectangle rect, bool flip)
+{
+	if (!canDraw)
+		return;
+
+	if (flip)
+		rect.width *= -1;
+
+	App->renderer->Draw(*animations[currentAnimation].sprites[currentSprite].texture, x, y, &rect, WHITE, flip);
+
 }
 
 void Animator::SetIfPlaying(bool isPlaying)
