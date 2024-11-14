@@ -39,7 +39,7 @@ public:
 
 private:
 
-	int GetMultiplierByType(PokeballType type);
+	float GetMultiplierByType(PokeballType type);
 
 	float maxSpeed;
 	Texture* pokeball_texture;

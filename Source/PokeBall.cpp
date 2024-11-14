@@ -167,8 +167,8 @@ void PokeBall::SetType(PokeballType type)
 {
 	PokeballType lastType = this->type;
 
-	int lastMultiplier = GetMultiplierByType(lastType);
-	int newMultiplier = GetMultiplierByType(type);
+	float lastMultiplier = GetMultiplierByType(lastType);
+	float newMultiplier = GetMultiplierByType(type);
 
 	this->type = type;
 
@@ -229,7 +229,7 @@ int PokeBall::GetLivesPokeball() const
 	return lives_pokeball;
 }
 
-int PokeBall::GetMultiplierByType(PokeballType type)
+float PokeBall::GetMultiplierByType(PokeballType type)
 {
 	switch (type)
 	{

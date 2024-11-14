@@ -163,7 +163,7 @@ void Animator::LerpUpdate(float factor)
 	int spriteCount = animations[currentAnimation].sprites.size();
 
 
-	int	frame = round(factor * (spriteCount-1));
+	int	frame = (int)round(factor * (spriteCount-1));
 
 	if (loop) {
 		if(spriteCount!=0)

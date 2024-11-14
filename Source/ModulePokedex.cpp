@@ -276,10 +276,10 @@ update_status ModulePokedex::Update()
     
     if (targetOffset!=offset)
     {
-        float factor = lerpTimer.ReadSec() / lerpTime;
-        int distance = abs(targetOffset - offset);
+        float factor =(float)(lerpTimer.ReadSec() / lerpTime);
+        int distance = (int)abs(targetOffset - offset);
         offset = offset + distance * factor * direction;
-        distance = abs(targetOffset - offset);
+        distance = (int)abs(targetOffset - offset);
         if (distance < 1) {
             offset = targetOffset;
         }
@@ -443,7 +443,7 @@ void ModulePokedex::SavePokemon(int id)
 
 int ModulePokedex::SearchEvolutionID(int id)
 {
-    for (int i = 0; i < pokemon_list.size(); i++)
+    for (size_t i = 0; i < pokemon_list.size(); i++)
     {
         if (pokemon_list.at(i).preevolutionIndex == pokemon_list.at(id).ID)
             return i;

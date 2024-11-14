@@ -67,7 +67,7 @@ update_status DiglettCounter::Update()
 	map_diggletCounter_animator->Update();
 
 	b2Vec2 drawPos = {(flip ? 136.0f : 0.0f), 166.f};
-	map_diggletCounter_animator->Animate(drawPos.x, drawPos.y,flip);
+	map_diggletCounter_animator->Animate((int)drawPos.x, (int)drawPos.y,flip);
 
 
 	return UPDATE_CONTINUE;
