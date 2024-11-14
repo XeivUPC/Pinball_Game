@@ -162,8 +162,11 @@
     <ClCompile Include="Source\CentralScreen.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CapturePokemon.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
     <ClCompile Include="Source\ScreenProgram.cpp">
-      <Filter>Objects</Filter>
+      <Filter>ScreenPrograms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -328,8 +331,11 @@
     <ClInclude Include="Source\CentralScreen.h">
       <Filter>Objects</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CapturePokemon.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
     <ClInclude Include="Source\ScreenProgram.h">
-      <Filter>Objects</Filter>
+      <Filter>ScreenPrograms</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -374,6 +380,9 @@
     </Filter>
     <Filter Include="Objects\Map Sensor Group %28Objects%29">
       <UniqueIdentifier>{05cce2c1-f9b7-432b-8b75-643ed68455c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScreenPrograms">
+      <UniqueIdentifier>{bfc96d71-9cb5-4b6b-8584-50969cc9b111}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
