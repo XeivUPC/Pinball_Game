@@ -86,6 +86,9 @@ update_status PokeBall::Update()
 		godMode = !godMode;
 	}
 
+	float xVel = body->GetLinearVelocity().x;
+	float yVel = body->GetLinearVelocity().y;
+
 	if (godMode) {
 		body->SetGravityScale(0);
 
@@ -105,13 +108,14 @@ update_status PokeBall::Update()
 			direction.x += speed;
 		}
 		body->SetLinearVelocity(direction);
-
 	}
 	else {
 		body->SetGravityScale(1);
+		if (yVel < 0) {
+			body->SetGravityScale(0.8f);
+		}
 	}
-	float xVel = body->GetLinearVelocity().x;
-	float yVel = body->GetLinearVelocity().y;
+	
 
 	float pokeballSpeed = sqrt(xVel * xVel + yVel * yVel);
 	pokeballSpeed = (pokeballAnimMaxSpeed / pokeballSpeed) / 100;
