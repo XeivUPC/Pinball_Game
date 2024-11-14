@@ -95,7 +95,8 @@ update_status ModuleGameRedMap::Update()
 	UI->Render();
 	//pokeBall->Update();
 
-	for (const auto& object : mapObjects) {
+	for (const auto& object : mapObjects)
+	{
 		object->Update();
 	}
 

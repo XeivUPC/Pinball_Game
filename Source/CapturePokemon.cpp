@@ -16,8 +16,24 @@ CapturePokemon::CapturePokemon(const std::string id) : ScreenProgram(id)
 {
 }
 
+CapturePokemon::~CapturePokemon()
+{
+}
+
 void CapturePokemon::StartProgram()
 {
 	gameAt->App->texture->CreateTexture("Assets/pokemons_shadow_and_color.png", "spritesheet");
 	texture = gameAt->App->texture->GetTexture("spritesheet");
+}
+
+void CapturePokemon::Logic()
+{
+}
+
+void CapturePokemon::Render()
+{
+}
+
+void CapturePokemon::EndProgram()
+{
 }

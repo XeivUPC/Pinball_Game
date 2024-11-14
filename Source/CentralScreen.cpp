@@ -21,6 +21,7 @@ Rectangle CentralScreen::GetScreenArea()
 
 update_status CentralScreen::Update()
 {
+	if (actualProgram == nullptr)return UPDATE_CONTINUE;
 	actualProgram->Logic();
 	actualProgram->Render();
 	return UPDATE_CONTINUE;
