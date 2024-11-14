@@ -29,5 +29,7 @@ private:
 	Texture* texture = nullptr;
 	Animator* animator = nullptr;
 
+	Timer cooldownTimer;
+	float cooldownTime = 0.5;
 };
 
