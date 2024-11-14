@@ -18,7 +18,7 @@
 #include "Pikachu.h"
 #include "Slowpoke.h"
 #include "Cloyster.h"
-
+#include "PoliwagPsyduckCounter.h"
 
 #include "ModuleHighScore.h"
 
@@ -276,6 +276,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				}
 
 				PoliwagBumper* poliwagBumper = new PoliwagBumper(this, { x,y }, vertices, 1.f, flip);
+				PoliwagPsyduckCounter* poliwagCounter = new PoliwagPsyduckCounter(this, { 0,0 }, poliwagBumper, flip);
 			}
 			else if (type == "psyduckBumper") {
 				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
@@ -288,6 +289,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				}
 
 				PsyduckBumper* psyduckBumper = new PsyduckBumper(this, { x,y }, vertices, 1.f, flip);
+				PoliwagPsyduckCounter* psyduckCounter = new PoliwagPsyduckCounter(this, { 0,0 }, psyduckBumper, flip);
 			}
 			else if (type == "energyRotator") {
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;

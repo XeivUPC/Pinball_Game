@@ -201,6 +201,10 @@
     <ClCompile Include="Source\DiglettCounter.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\MapEnergyBattery.cpp" />
+    <ClCompile Include="Source\PoliwagPsyduckCounter.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -404,6 +408,10 @@
       <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\DiglettCounter.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapEnergyBattery.h" />
+    <ClInclude Include="Source\PoliwagPsyduckCounter.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
