@@ -9,6 +9,18 @@ void CentralScreen::AddProgram(ScreenProgram* program)
 	actualProgram->StartProgram();
 }
 
+void CentralScreen::SetDefaultProgram(ScreenProgram* program)
+{
+	if (defaultProgram != nullptr) {
+		defaultProgram->EndProgram();
+		delete defaultProgram;
+		defaultProgram = nullptr;
+	}
+	defaultProgram = program;
+	defaultProgram->SetGameReference(gameAt);
+	defaultProgram->StartProgram();
+}
+
 void CentralScreen::SwitchProgram(ScreenProgram* program)
 {
 	if (actualProgram == nullptr) {
@@ -43,10 +55,25 @@ Rectangle CentralScreen::GetScreenArea()
 
 update_status CentralScreen::Update()
 {
-	if (actualProgram == nullptr)return UPDATE_CONTINUE;
-	actualProgram->Logic();
-	if (actualProgram == nullptr)return UPDATE_CONTINUE;
-	actualProgram->Render();
+	if (actualProgram == nullptr) {
+		if (defaultProgram == nullptr)
+			return UPDATE_CONTINUE;
+		else
+			defaultProgram->Logic();
+	}
+	else {
+		actualProgram->Logic();	
+	}
+
+	if (actualProgram == nullptr) {
+		if (defaultProgram == nullptr)
+			return UPDATE_CONTINUE;
+		else
+			defaultProgram->Render();
+	}
+	else {
+		actualProgram->Render();
+	}
 	return UPDATE_CONTINUE;
 }
 
@@ -57,6 +84,7 @@ void CentralScreen::RemoveProgram()
 	actualProgram->EndProgram();
 	delete actualProgram;
 	actualProgram = nullptr;
+
 }
 
 void CentralScreen::QuitProgram()
@@ -73,12 +101,25 @@ std::string CentralScreen::GetActualProgramIdentifier()
 	return actualProgram->GetProgramIdentifier();
 }
 
+std::string CentralScreen::GetDefaultProgramIdentifier()
+{
+	if (defaultProgram == nullptr)return "";
+	return defaultProgram->GetProgramIdentifier();
+}
+
 bool CentralScreen::CleanUp()
 {
-	if (actualProgram == nullptr)
-		return true;
-	delete actualProgram;
-	actualProgram = nullptr;
+	if (actualProgram != nullptr)
+	{
+		delete actualProgram;
+		actualProgram = nullptr;
+	}
+
+	if (defaultProgram != nullptr) {
+		delete defaultProgram;
+		defaultProgram = nullptr;
+	}
+
 	return true;
 }
 

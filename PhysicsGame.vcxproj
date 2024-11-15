@@ -211,6 +211,7 @@
     <ClInclude Include="Source\DiglettCounter.h" />
     <ClInclude Include="Source\DiglettBumper.h" />
     <ClInclude Include="Source\DittoColliders.h" />
+    <ClInclude Include="Source\EmptyProgram.h" />
     <ClInclude Include="Source\EvoArrowGroup.h" />
     <ClInclude Include="Source\Flipper.h" />
     <ClInclude Include="Source\GameUI.h" />
@@ -292,6 +293,7 @@
     <ClCompile Include="Source\DiglettCounter.cpp" />
     <ClCompile Include="Source\DiglettBumper.cpp" />
     <ClCompile Include="Source\DittoColliders.cpp" />
+    <ClCompile Include="Source\EmptyProgram.cpp" />
     <ClCompile Include="Source\EvoArrowGroup.cpp" />
     <ClCompile Include="Source\Flipper.cpp" />
     <ClCompile Include="Source\GameUI.cpp" />

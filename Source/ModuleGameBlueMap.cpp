@@ -88,6 +88,7 @@ bool ModuleGameBlueMap::Start()
 
 	std::vector<int> habitatsToSelect(mapHabitats.begin(), mapHabitats.begin() + 7);
 	screen->AddProgram(new HabitatSelectionProgram(habitatsToSelect));
+	screen->SetDefaultProgram(new HabitatSelectedProgram());
 
 	return true;
 }

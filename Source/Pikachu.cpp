@@ -18,7 +18,7 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	b2FixtureUserData fixtureData;
 	fixtureData.pointer = (uintptr_t)(&sensor);
 
-	body = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, { (float)position.x + width - 0.2f, position.y - height / 2 - 0.7f }, width, height, fixtureData);
+	body = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, { position.x + width - 0.2f, position.y - height / 2 - 0.7f }, (float)width, (float)height, fixtureData);
 	body->SetType(b2_dynamicBody);
 	body->GetFixtureList()[0].SetSensor(true);
 	body->SetGravityScale(0);
