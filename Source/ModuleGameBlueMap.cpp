@@ -167,11 +167,11 @@ update_status ModuleGameBlueMap::Update()
 		break;
 	}
 
-	UI->Update();
 
 	for (const auto& object : mapObjects) {
 		object->Update();
 	}
+	UI->Update();
 
 	ModuleScene::FadeUpdate();
 
