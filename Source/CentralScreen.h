@@ -3,6 +3,7 @@
 #include "ScreenProgram.h"
 #include "AnimationSystem.h"
 #include "CapturePokemon.h"
+#include "HabitatSelectionProgram.h"
 #include <vector>
 #include <string.h>
 

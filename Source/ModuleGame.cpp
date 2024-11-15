@@ -59,6 +59,9 @@ bool ModuleGame::ChangeToHabitat(int habitat)
 		}
 		index++;
 	}
+	if (found)
+		habitatIndex = habitat;
+
 	return found;
 }
 

@@ -4,13 +4,19 @@
 enum SPAWN_LOCATION
 {
 	Pallet_Town,
+	Viridian_City,
 	Viridian_Forest,
 	Pewter_City,
+	MtMoon,
 	Celurean_City,
-	Vermilion_City,
+	Vermilion_City_Streets,
+	Vermilion_City_Harbor,
 	Rock_Tunnel,
 	Lavender_Town,
-	Cycling_Road,
+	Celadon_City,
+	Bike_Path,
+	Saffron_City,
+	Fuchsia_City,
 	Safari_Zone,
 	Seafoam_Islands,
 	Cinnabar_Island,
@@ -26,10 +32,10 @@ public:
 	int preevolutionIndex;
 	int overworldIndex;
 	std::vector<std::string> Names;
-	std::vector<int> RedMapLocations;
-	std::vector<int> BlueMapLocations;
+	std::vector<int> redMapLocations;
+	std::vector<int> blueMapLocations;
 	Pokemon(int ID, bool discovered, bool captured, std::string weight, std::string height, int preevolutionIndex, int overworldIndex, const std::vector<std::string>& Names, const std::vector<int>& RedMapLocations, const std::vector<int>& BlueMapLocations)
-		: ID(ID), discovered(discovered), captured(captured), weight(weight), height(height), preevolutionIndex(preevolutionIndex), overworldIndex(overworldIndex), Names(Names), RedMapLocations(RedMapLocations), BlueMapLocations(BlueMapLocations)
+		: ID(ID), discovered(discovered), captured(captured), weight(weight), height(height), preevolutionIndex(preevolutionIndex), overworldIndex(overworldIndex), Names(Names), redMapLocations(RedMapLocations), blueMapLocations(BlueMapLocations)
 	{
 	}
 };

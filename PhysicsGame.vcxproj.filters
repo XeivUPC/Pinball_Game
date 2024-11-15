@@ -216,6 +216,9 @@
     <ClCompile Include="Source\MapEnergyBattery.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\HabitatSelectionProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -435,6 +438,9 @@
     </ClInclude>
     <ClInclude Include="Source\MapEnergyBattery.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HabitatSelectionProgram.h">
+      <Filter>ScreenPrograms</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
