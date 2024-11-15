@@ -11,6 +11,7 @@
 #include "LapSensorGroup.h"
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
+#include "CenterRedArrowGroup.h"
 
 using namespace pugi;
 
@@ -24,6 +25,7 @@ private:
 	LapSensorGroup* lapSensorGroup = nullptr;
 	GetArrowGroup* getArrowGroup = nullptr;
 	EvoArrowGroup* evoArrowGroup = nullptr;
+	CenterRedArrowGroup* centerRedArrowGroup = nullptr;
 
 	DittoColliders* dittoColliders=nullptr;
 
