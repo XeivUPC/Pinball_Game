@@ -12,6 +12,7 @@
 #include "LapSensorGroup.h"
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
+#include "CenterRedArrowGroup.h"
 
 
 
@@ -30,6 +31,7 @@ private:
 	LapSensorGroup* lapSensorGroup = nullptr;
 	GetArrowGroup* getArrowGroup = nullptr;
 	EvoArrowGroup* evoArrowGroup = nullptr;
+	CenterRedArrowGroup* centerRedArrowGroup = nullptr;
 
 	DittoColliders* dittoColliders=nullptr;
 

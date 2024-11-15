@@ -57,6 +57,7 @@ bool ModuleGameRedMap::Start()
 	lapSensorGroup = new LapSensorGroup(this);
 	getArrowGroup = new GetArrowGroup(this);
 	evoArrowGroup = new EvoArrowGroup(this);
+	centerRedArrowGroup = new CenterRedArrowGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 
@@ -65,6 +66,7 @@ bool ModuleGameRedMap::Start()
 	lapSensorGroup->Sort();
 	getArrowGroup->Sort();
 	evoArrowGroup->Sort();
+	centerRedArrowGroup->Sort();
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
@@ -129,6 +131,21 @@ update_status ModuleGameRedMap::Update()
 			if (lapSensorGroup->HaveToActivateArrowEvo()) {
 				evoArrowGroup->ActivateNext();
 			}
+			//after catching/failing pokemon capture/evo, deactivate all get/evo arrows 
+
+			if (getArrowGroup->GetActiveAmount() >= 2) {
+				centerRedArrowGroup->ActivateRight();
+				centerRedArrowGroup->TwinkleRight();
+			}
+
+			if (evoArrowGroup->GetActiveAmount() >= 3) {
+				centerRedArrowGroup->ActivateLeft();
+				centerRedArrowGroup->TwinkleLeft();
+			}
+
+			// the top arrow in the center is activated when there is a black hole for events
+
+			// the bottom arrow follows where the air arrow controller in the middle of the top part points
 
 			break;
 		case ModuleGame::BlockGame:
@@ -379,6 +396,18 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				else if (arrowType == 1) {
 					getArrowGroup->AddArrow(getEvoArrow);
 				}
+			}
+			else if (type == "centerArrow") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				CenterRedArrow* centerArrow = new CenterRedArrow(this, { x,y }, order);
+
+				centerRedArrowGroup->AddArrow(centerArrow);
 			}
 		}
 	}

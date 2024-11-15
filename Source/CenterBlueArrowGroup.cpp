@@ -50,10 +50,22 @@ void CenterBlueArrowGroup::ActivateRightTop()
 	arrow->Twinkle();
 }
 
+void CenterBlueArrowGroup::DeactivateRightTop()
+{
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front());
+	arrow->DesactivateTop();
+}
+
 void CenterBlueArrowGroup::ActivateRightBot()
 {
 	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front());
 	arrow->ActivateBot();
+}
+
+void CenterBlueArrowGroup::DeactivateRightBot()
+{
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front());
+	arrow->DesactivateBot();
 }
 
 void CenterBlueArrowGroup::ActivateMid()
@@ -68,10 +80,22 @@ void CenterBlueArrowGroup::ActivateMidTop()
 	arrow->ActivateTop();
 }
 
+void CenterBlueArrowGroup::DeactivateMidTop()
+{
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front() + 1);
+	arrow->DesactivateTop();
+}
+
 void CenterBlueArrowGroup::ActivateMidBot()
 {
 	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front()+1);
 	arrow->ActivateBot();
+}
+
+void CenterBlueArrowGroup::DeactivateMidBot()
+{
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front() + 1);
+	arrow->DesactivateBot();
 }
 
 void CenterBlueArrowGroup::ActivateLeft()
@@ -87,13 +111,26 @@ void CenterBlueArrowGroup::ActivateLeftTop()
 	arrow->Twinkle();
 }
 
+void CenterBlueArrowGroup::DeactivateLeftTop()
+{
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.back());
+	arrow->DesactivateTop();
+}
+
 void CenterBlueArrowGroup::ActivateLeftBot()
 {
 	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.back());
 	arrow->ActivateBot();
 }
 
+void CenterBlueArrowGroup::DeactivateLeftBot()
+{
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.back());
+	arrow->DesactivateBot();
+}
+
 void CenterBlueArrowGroup::OnAllActive()
 {
 	//nothing
 }
+

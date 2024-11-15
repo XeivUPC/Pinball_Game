@@ -14,15 +14,21 @@ public:
 
 	void ActivateRight();
 	void ActivateRightTop();
+	void DeactivateRightTop();
 	void ActivateRightBot();
+	void DeactivateRightBot();
 
 	void ActivateMid();
 	void ActivateMidTop();
+	void DeactivateMidTop();
 	void ActivateMidBot();
+	void DeactivateMidBot();
 
 	void ActivateLeft();
 	void ActivateLeftTop();
+	void DeactivateLeftTop();
 	void ActivateLeftBot();
+	void DeactivateLeftBot();
 
 protected:
 	void OnAllActive() override;
