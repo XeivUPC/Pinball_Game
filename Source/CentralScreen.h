@@ -10,7 +10,8 @@
 class CentralScreen : public MapObject
 {
 private:
-	ScreenProgram* actualProgram;
+	ScreenProgram* actualProgram=nullptr;
+	ScreenProgram* defaultProgram=nullptr;
 public:
 	Rectangle screenArea;
 	void AddProgram(ScreenProgram* program);

@@ -234,7 +234,8 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 			body->CreateFixture(&chainFixtureDef);
 
 			if (name == "EntryCollider") {
-				body->GetFixtureList()[0].SetSensor(true);
+				entryCollider = body;
+				entryCollider->GetFixtureList()[0].SetSensor(true);
 			}
 
 			simpoleCollidersBodies.emplace_back(body);
@@ -388,10 +389,12 @@ void ModuleGameBlueMap::SetState(GameStates stateToChange)
 	switch (state)
 	{
 	case ModuleGame::StartGame:
+		entryCollider->GetFixtureList()[0].SetSensor(true);
 		statesTimer.LockTimer();
-		statesTime = 0.5f;
+		statesTime = 1.1f;
 		break;
 	case ModuleGame::PlayGame:
+		entryCollider->GetFixtureList()[0].SetSensor(false);
 		break;
 	case ModuleGame::BlockGame:
 		break;
