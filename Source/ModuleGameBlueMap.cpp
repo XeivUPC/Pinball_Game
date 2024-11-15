@@ -73,7 +73,7 @@ bool ModuleGameBlueMap::Start()
 
 	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	
-	Pikachu* pikachu = new Pikachu(this, {0,0});
+	Pikachu* pikachu = new Pikachu(this, { 139.f / SCREEN_SIZE ,245.f / SCREEN_SIZE });
 	Slowpoke* slowpoke = new Slowpoke(this, { 0,0 });
 	Cloyster* cloyster = new Cloyster(this, { 0,0 });
 
