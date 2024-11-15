@@ -77,6 +77,7 @@ Pikachu::~Pikachu()
 
 update_status Pikachu::Update()
 {
+	map_pikachu_animator->SetSpeed(0.3f);
 	//Configure position
 	if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
 		position.x = 8.f / SCREEN_SIZE;
