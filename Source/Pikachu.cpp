@@ -88,6 +88,7 @@ update_status Pikachu::Update()
 	}
 	
 	if (sensor.OnTriggerEnter() && gameAt->IsEnergyCharged()) {
+		gameAt->UseEnergy();
 		ballIn = true;
 		map_pikachu_animator->SelectAnimation("MapPikachuEnergizeAnim", false);
 		map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyAnim", false);
