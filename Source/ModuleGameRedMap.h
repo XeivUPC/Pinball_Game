@@ -12,6 +12,7 @@
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
 #include "CenterRedArrowGroup.h"
+#include "BonusMultiplierSensorGroup.h"
 
 using namespace pugi;
 
@@ -26,6 +27,7 @@ private:
 	GetArrowGroup* getArrowGroup = nullptr;
 	EvoArrowGroup* evoArrowGroup = nullptr;
 	CenterRedArrowGroup* centerRedArrowGroup = nullptr;
+	BonusMultiplierSensorGroup* bonusMultiplierSensorGroup = nullptr;
 
 	DittoColliders* dittoColliders=nullptr;
 

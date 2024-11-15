@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="141">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="143">
  <tileset firstgid="1" name="map_redMap" tilewidth="192" tileheight="278" tilecount="3" columns="3">
   <image source="../map_blueMap.png" width="576" height="278"/>
  </tileset>
@@ -519,19 +519,17 @@
     <property name="type" value="centerArrow"/>
    </properties>
   </object>
-  <object id="139" x="35.0938" y="152.344">
+  <object id="141" x="38.0056" y="152.734" width="11.6552" height="2.19952" rotation="-28">
    <properties>
     <property name="order" type="int" value="0"/>
-    <property name="type" value="bonusMultiplierBumper"/>
+    <property name="type" value="bonusMultiplierSensor"/>
    </properties>
-   <polygon points="-0.09375,-0.34375 3.59375,1.59375 13.4688,-3.59375 12.9063,-7.34375 8.90625,-7.34375 0.5625,-2.34375"/>
   </object>
-  <object id="140" x="124.978" y="152.541">
+  <object id="142" x="111.766" y="147.619" width="11.6552" height="2.19952" rotation="28">
    <properties>
     <property name="order" type="int" value="1"/>
-    <property name="type" value="bonusMultiplierBumper"/>
+    <property name="type" value="bonusMultiplierSensor"/>
    </properties>
-   <polygon points="0.0215986,-0.541063 -3.59375,1.59375 -13.4688,-3.59375 -12.9784,-7.54106 -8.9784,-7.54106 -0.5625,-2.34375"/>
   </object>
  </objectgroup>
 </map>

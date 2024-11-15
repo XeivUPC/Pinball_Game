@@ -59,6 +59,7 @@ bool ModuleGameBlueMap::Start()
 	getArrowGroup = new GetArrowGroup(this);
 	evoArrowGroup = new EvoArrowGroup(this);
 	centerBlueArrowGroup = new CenterBlueArrowGroup(this);
+	bonusMultiplierSensorGroup = new BonusMultiplierSensorGroup(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 	screen = new CentralScreen(this);
@@ -69,6 +70,7 @@ bool ModuleGameBlueMap::Start()
 	getArrowGroup->Sort();
 	evoArrowGroup->Sort();
 	centerBlueArrowGroup->Sort();
+	bonusMultiplierSensorGroup->Sort();
 
 	getArrowGroup->ActivateNext();
 	getArrowGroup->ActivateNext();
@@ -404,6 +406,19 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 
 				centerBlueArrowGroup->AddArrow(centerArrow);
 			}
+			else if (type == "bonusMultiplierSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				BonusMultiplierSensor* bonusMultiplierSensor = new BonusMultiplierSensor(this, { x,y }, width, height, angle, order, 1);
+
+				bonusMultiplierSensorGroup->AddSensor(bonusMultiplierSensor);
+				}
 		}
 	}
 }
