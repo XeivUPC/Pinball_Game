@@ -3,16 +3,12 @@
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "CentralScreen.h"
+#include "ModulePokedex.h"
 
 void CapturePokemon::AddHit()
 {
 	if(animationStarted == 0)
 		count++;
-}
-
-void CapturePokemon::SelectPokemonByZone(int zone)
-{
-	ID = 3;
 }
 
 CapturePokemon::CapturePokemon() : ScreenProgram("CapturePokemon")
@@ -22,6 +18,40 @@ CapturePokemon::CapturePokemon() : ScreenProgram("CapturePokemon")
 
 CapturePokemon::~CapturePokemon()
 {
+}
+
+void CapturePokemon::SetRandomPokemonByZone(bool zoneID, int rarity)
+{
+	std::vector<int> possiblePokemon;
+	int index = 0;
+	for (int i = 0; i < gameAt->App->scene_pokedex->GetPokemonListCount(); i++)
+	{
+		if (!zoneID)
+		{
+			for (int j = 0; j < gameAt->App->scene_pokedex->GetBlueMapHabitats(i).size(); j++)
+			{
+				if (gameAt->App->scene_pokedex->GetBlueMapHabitats(i).at(j) == gameAt->GetHabitat() /*&& gameAt->App->scene_pokedex->GetPokemonRarity(i) == rarity*/)
+				{
+					possiblePokemon.push_back(i);
+					break;
+				}
+			}
+		}
+		else
+		{
+			for (int j = 0; j < gameAt->App->scene_pokedex->GetRedMapHabitats(i).size(); j++)
+			{
+				if (gameAt->App->scene_pokedex->GetRedMapHabitats(i).at(j) == gameAt->GetHabitat() /*&& gameAt->App->scene_pokedex->GetPokemonRarity(i) == rarity*/)
+				{
+					possiblePokemon.push_back(i);
+					break;
+				}
+			}
+		}
+	}
+	index = GetRandomValue(0, possiblePokemon.size());
+	SetID(possiblePokemon.at(index));
+	possiblePokemon.clear();
 }
 
 void CapturePokemon::SetID(int id)
@@ -42,16 +72,20 @@ void CapturePokemon::CallAction(int id)
 
 void CapturePokemon::StartProgram()
 {
-	gameAt->App->texture->CreateTexture("Assets/pokemons_shadow_and_color.png", "spritesheet");
-	texture = gameAt->App->texture->GetTexture("spritesheet");
+	gameAt->App->texture->CreateTexture("Assets/pokemons_shadow_and_color.png", "Assets/pokemons_shadow_and_color.png");
+	texture = gameAt->App->texture->GetTexture("Assets/pokemons_shadow_and_color.png");
+	bool isRedMap = false;
+	ModuleGameRedMap* redMap = (ModuleGameRedMap*)(gameAt);
+	if (redMap != nullptr)
+		isRedMap = true;
+	SetRandomPokemonByZone(isRedMap);
 	count = 0;
 	factor = 0;
 	animationTimer.Start();
 	animationTime = 0.5f;
 	animationStarted = 0;
-	ID = 3;
 	animating = false;
-	baseRect = { (float)(ID / 38) * gameAt->screen->screenArea.width, (float)(ID % 38) * gameAt->screen->screenArea.height, gameAt->screen->screenArea.width, gameAt->screen->screenArea.height };
+	baseRect = { (float)((ID / 38)*2) * gameAt->screen->screenArea.width, (float)(ID % 38) * gameAt->screen->screenArea.height, gameAt->screen->screenArea.width, gameAt->screen->screenArea.height };
 }
 
 void CapturePokemon::Logic()
@@ -126,5 +160,6 @@ void CapturePokemon::Render()
 
 void CapturePokemon::EndProgram()
 {
+	gameAt->App->scene_pokedex->DiscoverPokemon(ID);
 	gameAt->screen->QuitProgram();
 }

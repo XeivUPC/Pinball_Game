@@ -441,10 +441,30 @@ void ModulePokedex::LoadPokedex()
     }*/
 }
 
+int ModulePokedex::GetPokemonListCount()
+{
+    return pokemon_list.size();
+}
+
+std::vector<int> ModulePokedex::GetBlueMapHabitats(int i)
+{
+    return pokemon_list.at(i).blueMapLocations;
+}
+
+std::vector<int> ModulePokedex::GetRedMapHabitats(int i)
+{
+    return pokemon_list.at(i).redMapLocations;
+}
+
+int ModulePokedex::GetPokemonRarity(int i)
+{
+    return 0;
+}
+
 void ModulePokedex::DiscoverPokemon(int id)
 {
     pokemon_list.at(id).discovered = true;
-    SavePokemon(id);
+    SavePokemon(pokemon_list.at(id).ID);
 }
 
 void ModulePokedex::CapturePokemon(int id)
@@ -473,6 +493,7 @@ void ModulePokedex::SavePokemon(int id)
         {
             pokemonIdNode.child("discovered").attribute("value").set_value(pokemon_list[id-1].discovered);
             pokemonIdNode.child("captured").attribute("value").set_value(pokemon_list[id-1].captured);
+            break;
         }
     }
     SaveConfigFile();

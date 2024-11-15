@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "ModulePhysics.h"
 #include "ModuleRender.h"
+#include "ModuleMainMenu.h"
 #include "MapObject.h"
 #include "MapEnergyBattery.h"
 #include <sstream>
