@@ -10,6 +10,7 @@
 #include "LapSensorGroup.h"
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
+#include "CenterBlueArrowGroup.h"
 
 
 using namespace pugi;
@@ -22,6 +23,7 @@ private:
 	LapSensorGroup* lapSensorGroup = nullptr;
 	GetArrowGroup* getArrowGroup = nullptr;
 	EvoArrowGroup* evoArrowGroup = nullptr;
+	CenterBlueArrowGroup* centerBlueArrowGroup = nullptr;
 
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;

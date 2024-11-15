@@ -4,6 +4,7 @@
 #include "AnimationSystem.h"
 #include "CapturePokemon.h"
 #include "HabitatSelectionProgram.h"
+#include "HabitatSelectedProgram.h"
 #include <vector>
 #include <string.h>
 
@@ -15,6 +16,7 @@ private:
 public:
 	Rectangle screenArea;
 	void AddProgram(ScreenProgram* program);
+	void SetDefaultProgram(ScreenProgram* program);
 	void SwitchProgram(ScreenProgram* program);
 	void CallScreenEvent(int index);
 	bool HasProgram();
@@ -24,6 +26,7 @@ public:
 	void RemoveProgram();
 	void QuitProgram();
 	std::string GetActualProgramIdentifier();
+	std::string GetDefaultProgramIdentifier();
 	
 	bool CleanUp()override;
 	CentralScreen(ModuleGame* gameAt);

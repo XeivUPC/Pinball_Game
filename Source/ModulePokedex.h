@@ -64,6 +64,10 @@ public:
 	void LoadConfigFile();
 	void SaveConfigFile();
 	void LoadPokedex();
+	int GetPokemonListCount();
+	std::vector<int> GetBlueMapHabitats(int i);
+	std::vector<int> GetRedMapHabitats(int i);
+	int GetPokemonRarity(int i);
 
 	void DiscoverPokemon(int id);
 	void CapturePokemon(int id);

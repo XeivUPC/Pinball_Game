@@ -198,6 +198,10 @@
     <ClInclude Include="Source\CapturePokemon.h" />
     <ClInclude Include="Source\CaveSensor.h" />
     <ClInclude Include="Source\CaveSensorGroup.h" />
+    <ClInclude Include="Source\CenterBlueArrow.h" />
+    <ClInclude Include="Source\CenterBlueArrowGroup.h" />
+    <ClInclude Include="Source\CenterRedArrow.h" />
+    <ClInclude Include="Source\CenterRedArrowGroup.h" />
     <ClInclude Include="Source\CentralScreen.h" />
     <ClInclude Include="Source\CircularBumper.h" />
     <ClInclude Include="Source\Cloyster.h" />
@@ -207,6 +211,7 @@
     <ClInclude Include="Source\DiglettCounter.h" />
     <ClInclude Include="Source\DiglettBumper.h" />
     <ClInclude Include="Source\DittoColliders.h" />
+    <ClInclude Include="Source\EmptyProgram.h" />
     <ClInclude Include="Source\EvoArrowGroup.h" />
     <ClInclude Include="Source\Flipper.h" />
     <ClInclude Include="Source\GameUI.h" />
@@ -216,7 +221,7 @@
     <ClInclude Include="Source\HabitatSelectionProgram.h" />
     <ClInclude Include="Source\LapSensor.h" />
     <ClInclude Include="Source\LapSensorGroup.h" />
-    <ClInclude Include="Source\mapArrow.h" />
+    <ClInclude Include="Source\MapArrow.h" />
     <ClInclude Include="Source\MapArrowGroup.h" />
     <ClInclude Include="Source\MapEnergyBattery.h" />
     <ClInclude Include="Source\MapEnergyRotator.h" />
@@ -275,6 +280,10 @@
     <ClCompile Include="Source\CapturePokemon.cpp" />
     <ClCompile Include="Source\CaveSensor.cpp" />
     <ClCompile Include="Source\CaveSensorGroup.cpp" />
+    <ClCompile Include="Source\CenterBlueArrow.cpp" />
+    <ClCompile Include="Source\CenterBlueArrowGroup.cpp" />
+    <ClCompile Include="Source\CenterRedArrow.cpp" />
+    <ClCompile Include="Source\CenterRedArrowGroup.cpp" />
     <ClCompile Include="Source\CentralScreen.cpp" />
     <ClCompile Include="Source\CircularBumper.cpp" />
     <ClCompile Include="Source\Cloyster.cpp" />
@@ -284,6 +293,7 @@
     <ClCompile Include="Source\DiglettCounter.cpp" />
     <ClCompile Include="Source\DiglettBumper.cpp" />
     <ClCompile Include="Source\DittoColliders.cpp" />
+    <ClCompile Include="Source\EmptyProgram.cpp" />
     <ClCompile Include="Source\EvoArrowGroup.cpp" />
     <ClCompile Include="Source\Flipper.cpp" />
     <ClCompile Include="Source\GameUI.cpp" />
@@ -293,7 +303,7 @@
     <ClCompile Include="Source\HabitatSelectionProgram.cpp" />
     <ClCompile Include="Source\LapSensor.cpp" />
     <ClCompile Include="Source\LapSensorGroup.cpp" />
-    <ClCompile Include="Source\mapArrow.cpp" />
+    <ClCompile Include="Source\MapArrow.cpp" />
     <ClCompile Include="Source\MapArrowGroup.cpp" />
     <ClCompile Include="Source\MapEnergyBattery.cpp" />
     <ClCompile Include="Source\MapEnergyRotator.cpp" />

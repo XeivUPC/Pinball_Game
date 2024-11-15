@@ -58,6 +58,7 @@ bool ModuleGameRedMap::Start()
 	lapSensorGroup = new LapSensorGroup(this);
 	getArrowGroup = new GetArrowGroup(this);
 	evoArrowGroup = new EvoArrowGroup(this);
+	centerRedArrowGroup = new CenterRedArrowGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 	screen = new CentralScreen(this);
@@ -68,6 +69,10 @@ bool ModuleGameRedMap::Start()
 	lapSensorGroup->Sort();
 	getArrowGroup->Sort();
 	evoArrowGroup->Sort();
+	centerRedArrowGroup->Sort();
+
+	getArrowGroup->ActivateNext();
+	getArrowGroup->ActivateNext();
 
 	dittoColliders->SetMode(DittoColliders::Small);
 
@@ -76,7 +81,7 @@ bool ModuleGameRedMap::Start()
 
 	pokeBall = new PokeBall(this, ballSpawn,PokeBall::Pokeball,70);
 
-	Pikachu* pikachu = new Pikachu(this, { 0,0 });
+	Pikachu* pikachu = new Pikachu(this, { 139.f / SCREEN_SIZE ,245.f / SCREEN_SIZE });
 	Staryu* staryu = new Staryu(this, { 0,0 });
 	Bellsprout* bellsprout = new Bellsprout(this, { 104.f/ SCREEN_SIZE,78.f/SCREEN_SIZE },8.f/SCREEN_SIZE);
 
@@ -84,6 +89,7 @@ bool ModuleGameRedMap::Start()
 
 	std::vector<int> habitatsToSelect(mapHabitats.begin(), mapHabitats.begin() + 7);
 	screen->AddProgram(new HabitatSelectionProgram(habitatsToSelect));
+	screen->SetDefaultProgram(new HabitatSelectedProgram());
 
 	pointsCounter.AddMultiplier(1);
 
@@ -137,6 +143,21 @@ update_status ModuleGameRedMap::Update()
 			if (lapSensorGroup->HaveToActivateArrowEvo()) {
 				evoArrowGroup->ActivateNext();
 			}
+			//after catching/failing pokemon capture/evo, deactivate all get/evo arrows 
+
+			if (getArrowGroup->GetActiveAmount() >= 2) {
+				centerRedArrowGroup->ActivateRight();
+				centerRedArrowGroup->TwinkleRight();
+			}
+
+			if (evoArrowGroup->GetActiveAmount() >= 3) {
+				centerRedArrowGroup->ActivateLeft();
+				centerRedArrowGroup->TwinkleLeft();
+			}
+
+			// the top arrow in the center is activated when there is a black hole for events
+
+			// the bottom arrow follows where the air arrow controller in the middle of the top part points
 
 			break;
 		case ModuleGame::BlockGame:
@@ -154,13 +175,13 @@ update_status ModuleGameRedMap::Update()
 			break;
 	}
 
-	UI->Update();
 
 	for (const auto& object : mapObjects)
 	{
 		object->Update();
 	}
 
+	UI->Update();
 
 	ModuleScene::FadeUpdate();
 
@@ -320,11 +341,11 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				float batteryX = energyBatteryNode.attribute("x").as_float() / SCREEN_SIZE;
 				float batteryY = energyBatteryNode.attribute("y").as_float() / SCREEN_SIZE;
 
-				MapEnergyBattery* battery = new MapEnergyBattery(this, { batteryX ,batteryY }, 0);
+				energyBattery = new MapEnergyBattery(this, { batteryX ,batteryY }, 0);
 
 				x += width / 2;
 				y += heigth / 2;
-				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, battery, width, heigth, 0);
+				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, energyBattery, width, heigth, 0);
 			}
 			else if (type == "pokeballChangerSensor") {
 
@@ -384,6 +405,18 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				else if (arrowType == 1) {
 					getArrowGroup->AddArrow(getEvoArrow);
 				}
+			}
+			else if (type == "centerArrow") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				CenterRedArrow* centerArrow = new CenterRedArrow(this, { x,y }, order);
+
+				centerRedArrowGroup->AddArrow(centerArrow);
 			}
 		}
 	}

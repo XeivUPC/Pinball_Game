@@ -14,11 +14,6 @@ HabitatSelectedProgram::~HabitatSelectedProgram()
 
 }
 
-void HabitatSelectedProgram::SetID(int id)
-{
-
-}
-
 void HabitatSelectedProgram::CallAction(int id)
 {
 

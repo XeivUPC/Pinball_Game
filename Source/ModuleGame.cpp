@@ -2,7 +2,9 @@
 #include "Application.h"
 #include "ModulePhysics.h"
 #include "ModuleRender.h"
+#include "ModuleMainMenu.h"
 #include "MapObject.h"
+#include "MapEnergyBattery.h"
 #include <sstream>
 
 
@@ -72,12 +74,17 @@ int ModuleGame::GetHabitat()
 
 bool ModuleGame::IsEnergyCharged()
 {
-	return energyCharged;
+	return isEnergyCharged;
 }
 
 void ModuleGame::SetEnergyStatus(bool isCharged)
 {
-	energyCharged = isCharged;
+	isEnergyCharged = isCharged;
+}
+
+void ModuleGame::UseEnergy()
+{
+	energyBattery->Reset();
 }
 
 bool ModuleGame::IsBallInTopSection()

@@ -81,6 +81,12 @@ void MapEnergyBattery::AddEnergy(float amount)
 		currentEnergy = totalCapacity;
 }
 
+void MapEnergyBattery::SetEnergy(float amount)
+{
+	currentEnergy = 0;
+	AddEnergy(amount);
+}
+
 void MapEnergyBattery::Reset()
 {
 	currentEnergy = 0;

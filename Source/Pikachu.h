@@ -16,6 +16,18 @@ private:
 	Texture* map_pikachu = nullptr;
 	Animator* map_pikachu_animator = nullptr;
 
-	int position_x;
-	bool is_in_left;
+	Texture* map_pikachuEnergy = nullptr;
+	Animator* map_pikachuEnergy_animator = nullptr;
+
+	int width = 8;
+	int height = 4;
+
+	b2Body* body;
+	CollisionSensor sensor;
+
+	Timer energizeTimer;
+	float energizeTime = 1.f;
+
+
+	bool ballIn = false;
 };

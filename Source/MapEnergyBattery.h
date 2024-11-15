@@ -15,6 +15,7 @@ public:
 	bool CleanUp() override;
 
 	void AddEnergy(float amount);
+	void SetEnergy(float amount);
 	void Reset();
 
 private:
