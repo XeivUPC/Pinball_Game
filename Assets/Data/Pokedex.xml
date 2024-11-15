@@ -2,7 +2,7 @@
 <pokedex>
 	<id value="1">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="1" />
 		<red-habitat-index value="0" />
 		<name value="107,91,134,143,103" />
 		<name value="Bulbasaur" />
@@ -92,7 +92,7 @@
 	</id>
 	<id value="7">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="1" />
 		<red-habitat-index value="-1" />
 		<name value="141,101,133,113" />
 		<name value="Squirtle" />
@@ -137,7 +137,7 @@
 	</id>
 	<id value="10">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="2,5" />
 		<red-habitat-index value="2,5" />
 		<name value="86,130,95,154,159" />
 		<name value="Caterpie" />
@@ -182,7 +182,7 @@
 	</id>
 	<id value="13">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="2,5" />
 		<red-habitat-index value="2,5" />
 		<name value="149,159,147,120" />
 		<name value="Weedle" />
@@ -227,7 +227,7 @@
 	</id>
 	<id value="16">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="2,12" />
 		<red-habitat-index value="0,2,3,7,9" />
 		<name value="157,160,157" />
 		<name value="Pidgey" />
@@ -272,7 +272,7 @@
 	</id>
 	<id value="19">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="2" />
 		<red-habitat-index value="0,2" />
 		<name value="89,118,160,95" />
 		<name value="Rattata" />
@@ -302,7 +302,7 @@
 	</id>
 	<id value="21">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="17" />
 		<red-habitat-index value="3,11,17" />
 		<name value="84,101,92,140,113" />
 		<name value="Spearow" />
@@ -332,7 +332,7 @@
 	</id>
 	<id value="23">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="4,8,12" />
 		<red-habitat-index value="3,7,8,9" />
 		<name value="80,159,152" />
 		<name value="Ekans" />
@@ -362,7 +362,7 @@
 	</id>
 	<id value="25">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="2" />
 		<red-habitat-index value="2" />
 		<name value="154,85,96,131,82" />
 		<name value="Pikachu" />
@@ -392,7 +392,7 @@
 	</id>
 	<id value="27">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="4,12,17" />
 		<red-habitat-index value="17" />
 		<name value="90,124,147" />
 		<name value="Sandshrew" />
@@ -422,7 +422,7 @@
 	</id>
 	<id value="29">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="1,14" />
 		<red-habitat-index value="0,14" />
 		<name value="101,147,118,124,+" />
 		<name value="Nidoran+" />
@@ -467,7 +467,7 @@
 	</id>
 	<id value="32">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="1,14" />
 		<red-habitat-index value="0,14" />
 		<name value="101,147,118,124,-" />
 		<name value="Nidoran-" />
@@ -512,7 +512,7 @@
 	</id>
 	<id value="35">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="4,10" />
 		<red-habitat-index value="-1" />
 		<name value="154,160,154" />
 		<name value="Clefairy" />
@@ -542,7 +542,7 @@
 	</id>
 	<id value="37">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="10,16" />
 		<red-habitat-index value="16" />
 		<name value="122,89,124" />
 		<name value="Vulpix" />
@@ -602,7 +602,7 @@
 	</id>
 	<id value="41">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="4" />
 		<red-habitat-index value="-1" />
 		<name value="140,148,160,99" />
 		<name value="Zubat" />
@@ -632,7 +632,7 @@
 	</id>
 	<id value="43">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="5,12" />
 		<red-habitat-index value="5,7" />
 		<name value="100,142,104,87,90" />
 		<name value="Oddish" />
@@ -677,7 +677,7 @@
 	</id>
 	<id value="46">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="4,14" />
 		<red-habitat-index value="14" />
 		<name value="153,118,92" />
 		<name value="Paras" />
@@ -707,7 +707,7 @@
 	</id>
 	<id value="48">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="13" />
 		<red-habitat-index value="-1" />
 		<name value="89,124,153,124" />
 		<name value="Venonat" />
@@ -737,7 +737,7 @@
 	</id>
 	<id value="50">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="8" />
 		<red-habitat-index value="8" />
 		<name value="146,126,135,143" />
 		<name value="Diglett" />
@@ -767,7 +767,7 @@
 	</id>
 	<id value="52">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="5,6,10" />
 		<red-habitat-index value="5" />
 		<name value="101,130,159,92" />
 		<name value="Meowth" />
@@ -797,7 +797,7 @@
 	</id>
 	<id value="54">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="5" />
 		<red-habitat-index value="5" />
 		<name value="89,143,160,87" />
 		<name value="Psyduck" />
@@ -827,7 +827,7 @@
 	</id>
 	<id value="56">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="5,10,12" />
 		<red-habitat-index value="5,9" />
 		<name value="110,124,86,159" />
 		<name value="Mankey" />
@@ -857,7 +857,7 @@
 	</id>
 	<id value="58">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="10,16" />
 		<red-habitat-index value="9,16" />
 		<name value="133,159,146,126" />
 		<name value="Growlithe" />
@@ -887,7 +887,7 @@
 	</id>
 	<id value="60">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="1" />
 		<red-habitat-index value="0" />
 		<name value="101,132,122,114" />
 		<name value="Poliwag" />
@@ -932,7 +932,7 @@
 	</id>
 	<id value="63">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="5,10" />
 		<red-habitat-index value="5" />
 		<name value="88,159,91,126" />
 		<name value="Abra" />
@@ -977,7 +977,7 @@
 	</id>
 	<id value="66">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="8,17" />
 		<red-habitat-index value="8,17" />
 		<name value="123,124,119,86,159" />
 		<name value="Machop" />
@@ -1022,7 +1022,7 @@
 	</id>
 	<id value="69">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="5,6" />
 		<red-habitat-index value="5" />
 		<name value="110,143,97,152,111" />
 		<name value="Bellsprout" />
@@ -1067,7 +1067,7 @@
 	</id>
 	<id value="72">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="1" />
 		<red-habitat-index value="0" />
 		<name value="113,104,87,118,136" />
 		<name value="Tentacool" />
@@ -1097,7 +1097,7 @@
 	</id>
 	<id value="74">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="4,8,17" />
 		<red-habitat-index value="8,17" />
 		<name value="81,91,97,150,98" />
 		<name value="Geodude" />
@@ -1142,7 +1142,7 @@
 	</id>
 	<id value="77">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="16" />
 		<red-habitat-index value="16" />
 		<name value="157,101,159,95" />
 		<name value="Ponyta" />
@@ -1172,7 +1172,7 @@
 	</id>
 	<id value="79">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="8" />
 		<red-habitat-index value="8,15" />
 		<name value="115,147,124" />
 		<name value="Slowpoke" />
@@ -1232,7 +1232,7 @@
 	</id>
 	<id value="83">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="6" />
 		<red-habitat-index value="7" />
 		<name value="85,114,103,134" />
 		<name value="Farfetch'd" />
@@ -1247,7 +1247,7 @@
 	</id>
 	<id value="84">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="14" />
 		<red-habitat-index value="11,14" />
 		<name value="147,159,147,159" />
 		<name value="Doduo" />
@@ -1307,7 +1307,7 @@
 	</id>
 	<id value="88">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="14,16" />
 		<red-habitat-index value="14,16" />
 		<name value="151,99,151,95,159" />
 		<name value="Grimer" />
@@ -1337,7 +1337,7 @@
 	</id>
 	<id value="90">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="6" />
 		<red-habitat-index value="7,15" />
 		<name value="91,128,120,143,159" />
 		<name value="Shellder" />
@@ -1412,7 +1412,7 @@
 	</id>
 	<id value="95">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="8,17" />
 		<red-habitat-index value="8,17" />
 		<name value="81,123,159,87" />
 		<name value="Onix" />
@@ -1427,7 +1427,7 @@
 	</id>
 	<id value="96">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="6" />
 		<red-habitat-index value="-1" />
 		<name value="92,119,159,155" />
 		<name value="Drowzee" />
@@ -1457,7 +1457,7 @@
 	</id>
 	<id value="98">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="5,6" />
 		<red-habitat-index value="5,7,15" />
 		<name value="87,118,150" />
 		<name value="Krabby" />
@@ -1487,7 +1487,7 @@
 	</id>
 	<id value="100">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="8" />
 		<red-habitat-index value="8" />
 		<name value="149,119,119,143,110" />
 		<name value="Voltorb" />
@@ -1517,7 +1517,7 @@
 	</id>
 	<id value="102">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="13" />
 		<red-habitat-index value="-1" />
 		<name value="95,110,95,110" />
 		<name value="Exeggcute" />
@@ -1577,7 +1577,7 @@
 	</id>
 	<id value="106">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="12" />
 		<red-habitat-index value="-1" />
 		<name value="90,123,112,118,159" />
 		<name value="Hitmonlee" />
@@ -1592,7 +1592,7 @@
 	</id>
 	<id value="107">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="12" />
 		<red-habitat-index value="-1" />
 		<name value="83,149,123,118,159" />
 		<name value="Hitmonchan" />
@@ -1622,7 +1622,7 @@
 	</id>
 	<id value="109">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="16" />
 		<red-habitat-index value="16" />
 		<name value="147,133,159,92" />
 		<name value="Koffing" />
@@ -1652,7 +1652,7 @@
 	</id>
 	<id value="111">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="14" />
 		<red-habitat-index value="14" />
 		<name value="90,81,109,159,124" />
 		<name value="Rhyhorn" />
@@ -1682,7 +1682,7 @@
 	</id>
 	<id value="113">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="14" />
 		<red-habitat-index value="14" />
 		<name value="118,160,86,159" />
 		<name value="Chansey" />
@@ -1697,7 +1697,7 @@
 	</id>
 	<id value="114">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="16" />
 		<red-habitat-index value="0,16" />
 		<name value="114,124,139,130,118" />
 		<name value="Tangela" />
@@ -1712,7 +1712,7 @@
 	</id>
 	<id value="115">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="8,13" />
 		<red-habitat-index value="8" />
 		<name value="133,120,159,118" />
 		<name value="Kangaskhan" />
@@ -1757,7 +1757,7 @@
 	</id>
 	<id value="118">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="5,13" />
 		<red-habitat-index value="5,11,15" />
 		<name value="99,90,86,124,99" />
 		<name value="Goldeen" />
@@ -1817,7 +1817,7 @@
 	</id>
 	<id value="122">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="8" />
 		<red-habitat-index value="8" />
 		<name value="148,119,115,159,147" />
 		<name value="Mr. Mime" />
@@ -1832,7 +1832,7 @@
 	</id>
 	<id value="123">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="10,14" />
 		<red-habitat-index value="14" />
 		<name value="92,99,118,81,87" />
 		<name value="Scyther" />
@@ -1847,7 +1847,7 @@
 	</id>
 	<id value="124">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="5" />
 		<red-habitat-index value="5" />
 		<name value="120,159,139,131,118" />
 		<name value="Jynx" />
@@ -1877,7 +1877,7 @@
 	</id>
 	<id value="126">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="16" />
 		<red-habitat-index value="16" />
 		<name value="150,159,148,159" />
 		<name value="Magmar" />
@@ -1892,7 +1892,7 @@
 	</id>
 	<id value="127">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="6,10,14,17" />
 		<red-habitat-index value="14,17" />
 		<name value="85,81,122,92" />
 		<name value="Pinsir" />
@@ -1907,7 +1907,7 @@
 	</id>
 	<id value="128">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="14" />
 		<red-habitat-index value="14" />
 		<name value="88,124,95,122,92" />
 		<name value="Tauros" />
@@ -1922,7 +1922,7 @@
 	</id>
 	<id value="129">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="13" />
 		<red-habitat-index value="3" />
 		<name value="89,81,86,124,135" />
 		<name value="Magikarp" />
@@ -1952,7 +1952,7 @@
 	</id>
 	<id value="131">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="12" />
 		<red-habitat-index value="-1" />
 		<name value="118,155,118,92" />
 		<name value="Lapras" />
@@ -1967,7 +1967,7 @@
 	</id>
 	<id value="132">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="17" />
 		<red-habitat-index value="17" />
 		<name value="113,95,114,124" />
 		<name value="Ditto" />
@@ -1982,7 +1982,7 @@
 	</id>
 	<id value="133">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="10" />
 		<red-habitat-index value="-1" />
 		<name value="81,159,150,81" />
 		<name value="Eevee" />
@@ -2042,7 +2042,7 @@
 	</id>
 	<id value="137">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="10" />
 		<red-habitat-index value="-1" />
 		<name value="157,119,137,124" />
 		<name value="Porygon" />
@@ -2057,7 +2057,7 @@
 	</id>
 	<id value="138">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="16" />
 		<red-habitat-index value="16" />
 		<name value="84,112,100,81,99" />
 		<name value="Omanyte" />
@@ -2087,7 +2087,7 @@
 	</id>
 	<id value="140">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="16" />
 		<red-habitat-index value="16" />
 		<name value="85,150,99" />
 		<name value="Kabuto" />
@@ -2117,7 +2117,7 @@
 	</id>
 	<id value="142">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="16" />
 		<red-habitat-index value="16" />
 		<name value="155,98,118" />
 		<name value="Aerodactyl" />
@@ -2177,7 +2177,7 @@
 	</id>
 	<id value="146">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="17" />
 		<red-habitat-index value="17" />
 		<name value="107,125,81,115,159" />
 		<name value="Moltres" />
@@ -2192,7 +2192,7 @@
 	</id>
 	<id value="147">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="10,14" />
 		<red-habitat-index value="-1" />
 		<name value="111,101,119,131,82" />
 		<name value="Dratini" />
@@ -2237,7 +2237,7 @@
 	</id>
 	<id value="150">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="17" />
 		<red-habitat-index value="17" />
 		<name value="111,131,82,97,159" />
 		<name value="Mewtwo" />
@@ -2252,7 +2252,7 @@
 	</id>
 	<id value="151">
 		<pre-evolution-index value="-1" />
-		<blue-habitat-index value="-1" />
+		<blue-habitat-index value="17" />
 		<red-habitat-index value="17" />
 		<name value="111,131,82" />
 		<name value="Mew" />
