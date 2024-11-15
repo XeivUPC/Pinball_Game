@@ -3,9 +3,10 @@
 #include "AnimationSystem.h"
 #include "Timer.h"
 
+
 class Slowpoke : public MapObject {
 public:
-	Slowpoke(ModuleGame* gameAt, b2Vec2 position);
+	Slowpoke(ModuleGame* gameAt, b2Vec2 position, float mouthRadius);
 	~Slowpoke();
 
 	update_status Update();
@@ -16,4 +17,12 @@ private:
 	Texture* map_slowpoke = nullptr;
 	Animator* map_slowpoke_animator = nullptr;
 
+	b2Body* body;
+
+	CollisionSensor sensor;
+
+	Timer mouthTimer;
+	float mouthTime = 1.f;
+
+	bool ballIn = false;
 };

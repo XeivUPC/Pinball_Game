@@ -74,8 +74,8 @@ bool ModuleGameBlueMap::Start()
 	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	
 	Pikachu* pikachu = new Pikachu(this, {0,0});
-	Slowpoke* slowpoke = new Slowpoke(this, { 0,0 });
-	Cloyster* cloyster = new Cloyster(this, { 0,0 });
+	Slowpoke* slowpoke = new Slowpoke(this, { 16.f / SCREEN_SIZE,95.f / SCREEN_SIZE }, 8.f / SCREEN_SIZE);
+	Cloyster* cloyster = new Cloyster(this, { 110.f / SCREEN_SIZE,90.f / SCREEN_SIZE }, 8.f / SCREEN_SIZE);
 
 	SetState(StartGame);
 
