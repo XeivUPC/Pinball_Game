@@ -84,7 +84,7 @@ int MapArrowGroup::GetActiveAmount()
 	int count = 0;
 	for (const auto& arrowPointer : mapArrows)
 	{
-		if (!arrowPointer->IsActive()) {
+		if (arrowPointer->IsActive()) {
 			count++;
 		}
 	}
