@@ -28,7 +28,7 @@ void CapturePokemon::SetRandomPokemonByZone(bool zoneID, int rarity)
 	{
 		if (!zoneID)
 		{
-			for (int j = 0; j < gameAt->App->scene_pokedex->GetBlueMapHabitats(i).size(); j++)
+			for (size_t j = 0; j < gameAt->App->scene_pokedex->GetBlueMapHabitats(i).size(); j++)
 			{
 				if (gameAt->App->scene_pokedex->GetBlueMapHabitats(i).at(j) == gameAt->GetHabitat() /*&& gameAt->App->scene_pokedex->GetPokemonRarity(i) == rarity*/)
 				{
@@ -39,7 +39,7 @@ void CapturePokemon::SetRandomPokemonByZone(bool zoneID, int rarity)
 		}
 		else
 		{
-			for (int j = 0; j < gameAt->App->scene_pokedex->GetRedMapHabitats(i).size(); j++)
+			for (size_t j = 0; j < gameAt->App->scene_pokedex->GetRedMapHabitats(i).size(); j++)
 			{
 				if (gameAt->App->scene_pokedex->GetRedMapHabitats(i).at(j) == gameAt->GetHabitat() /*&& gameAt->App->scene_pokedex->GetPokemonRarity(i) == rarity*/)
 				{
@@ -49,7 +49,7 @@ void CapturePokemon::SetRandomPokemonByZone(bool zoneID, int rarity)
 			}
 		}
 	}
-	index = GetRandomValue(0, possiblePokemon.size());
+	index = GetRandomValue(0, possiblePokemon.size()-1);
 	SetID(possiblePokemon.at(index));
 	possiblePokemon.clear();
 }
