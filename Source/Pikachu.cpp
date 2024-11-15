@@ -92,7 +92,7 @@ update_status Pikachu::Update()
 		ballIn = true;
 		map_pikachu_animator->SelectAnimation("MapPikachuEnergizeAnim", false);
 		map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyAnim", false);
-		gameAt->pointsCounter.Add(100000);//(to do) Check if pikachu gives points
+
 		energizeTimer.Start();
 	}
 	if (ballIn) {
