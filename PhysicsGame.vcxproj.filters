@@ -222,6 +222,14 @@
     <ClCompile Include="Source\HabitatSelectedProgram.cpp">
       <Filter>ScreenPrograms</Filter>
     </ClCompile>
+    <ClCompile Include="Source\CenterBlueArrow.cpp" />
+    <ClCompile Include="Source\CenterBlueArrowGroup.cpp" />
+    <ClCompile Include="Source\CenterRedArrow.cpp" />
+    <ClCompile Include="Source\CenterRedArrowGroup.cpp" />
+    <ClCompile Include="Source\EmptyProgram.cpp" />
+    <ClCompile Include="Source\SaveAgainBall.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -447,6 +455,14 @@
     </ClInclude>
     <ClInclude Include="Source\HabitatSelectedProgram.h">
       <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CenterBlueArrow.h" />
+    <ClInclude Include="Source\CenterBlueArrowGroup.h" />
+    <ClInclude Include="Source\CenterRedArrow.h" />
+    <ClInclude Include="Source\CenterRedArrowGroup.h" />
+    <ClInclude Include="Source\EmptyProgram.h" />
+    <ClInclude Include="Source\SaveAgainBall.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
