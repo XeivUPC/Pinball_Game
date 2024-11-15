@@ -58,6 +58,7 @@ bool ModuleGameBlueMap::Start()
 	lapSensorGroup = new LapSensorGroup(this);
 	getArrowGroup = new GetArrowGroup(this);
 	evoArrowGroup = new EvoArrowGroup(this);
+	centerBlueArrowGroup = new CenterBlueArrowGroup(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 	screen = new CentralScreen(this);
@@ -67,6 +68,10 @@ bool ModuleGameBlueMap::Start()
 	lapSensorGroup->Sort();
 	getArrowGroup->Sort();
 	evoArrowGroup->Sort();
+	centerBlueArrowGroup->Sort();
+
+	getArrowGroup->ActivateNext();
+	getArrowGroup->ActivateNext();
 
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
@@ -133,6 +138,18 @@ update_status ModuleGameBlueMap::Update()
 		if (lapSensorGroup->HaveToActivateArrowEvo()) {
 			evoArrowGroup->ActivateNext();
 		}
+		//after catching/failing pokemon capture/evo, deactivate all get/evo arrows 
+
+		if (getArrowGroup->GetActiveAmount() >= 2) {
+			centerBlueArrowGroup->ActivateLeftTop();
+		}
+
+		if (evoArrowGroup->GetActiveAmount() >= 3) {
+			centerBlueArrowGroup->ActivateRightTop();
+		}
+		// the top arrow in the center is activated when there is a black hole for events
+
+		// the bottom arrow follows where the air arrow controller in the middle of the top part points
 
 		break;
 	case ModuleGame::BlockGame:
@@ -373,6 +390,18 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				else if (arrowType == 1) {
 					getArrowGroup->AddArrow(getEvoArrow);
 				}
+			}
+			else if (type == "centerArrow") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				CenterBlueArrow* centerArrow = new CenterBlueArrow(this, { x,y }, order);
+
+				centerBlueArrowGroup->AddArrow(centerArrow);
 			}
 		}
 	}
