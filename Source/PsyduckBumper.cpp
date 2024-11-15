@@ -85,6 +85,8 @@ update_status PsyduckBumper::Update()
 		hidden = false;
 		body->GetFixtureList()[0].SetSensor(false);
 		psyduck_animator->SelectAnimation("Psyduck_Idle", true);
+		if (hitsRecieved == 3)
+			hitsRecieved = 0;
 	}
 
 	b2Vec2 renderOffset = { flip ? -15.f : 0.f,-14.f };
@@ -120,8 +122,8 @@ void PsyduckBumper::OnHit()
 	if (hitsRecieved == 3) {
 
 		if (!flip)
-			gameAt->NextHabitat();
-		else
 			gameAt->PreviousHabitat();
+		else
+			gameAt->NextHabitat();
 	}
 }

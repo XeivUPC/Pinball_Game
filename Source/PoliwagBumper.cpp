@@ -64,6 +64,8 @@ update_status PoliwagBumper::Update()
 		hidden = false;
 		body->GetFixtureList()[0].SetSensor(false);
 		poliwag_animator->SelectAnimation("Poliwag_Idle", true);
+		if (hitsRecieved == 3)
+			hitsRecieved = 0;
 	}
 
 	if (remove_time < remove_timer.ReadSec()) {
@@ -104,9 +106,9 @@ void PoliwagBumper::OnHit()
 	poliwag_animator->SelectAnimation("Poliwag_Hidden", true);
 	if (hitsRecieved == 3) {
 
-		if(!flip)
-			gameAt->NextHabitat();
-		else
+		if (!flip)
 			gameAt->PreviousHabitat();
+		else
+			gameAt->NextHabitat();
 	}
 }

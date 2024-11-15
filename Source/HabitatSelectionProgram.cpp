@@ -4,6 +4,7 @@
 #include "ModuleRender.h"
 #include "CentralScreen.h"
 #include "ModuleUserPreferences.h"
+#include "HabitatSelectedProgram.h"
 
 HabitatSelectionProgram::HabitatSelectionProgram(std::vector<int> habitatsToSelect) : ScreenProgram("HabitatSelection")
 {
@@ -12,6 +13,7 @@ HabitatSelectionProgram::HabitatSelectionProgram(std::vector<int> habitatsToSele
 
 HabitatSelectionProgram::~HabitatSelectionProgram()
 {
+
 }
 
 void HabitatSelectionProgram::SetID(int id)
@@ -21,11 +23,10 @@ void HabitatSelectionProgram::SetID(int id)
 
 void HabitatSelectionProgram::CallAction(int id)
 {
-	if (alreadySelected)
-		return;
-	selectedHabitatIndex = animator->GetCurrentAnimationSprite().extraData;
-	alreadySelected = true;
+	canBeOverwritten = true;
+	int selectedHabitatIndex = animator->GetCurrentAnimationSprite().extraData;
 	gameAt->ChangeToHabitat(selectedHabitatIndex);
+	gameAt->screen->SwitchProgram(new HabitatSelectedProgram());
 }
 
 void HabitatSelectionProgram::StartProgram()
@@ -59,13 +60,7 @@ void HabitatSelectionProgram::Logic()
 
 void HabitatSelectionProgram::Render()
 {
-	if (!alreadySelected) {
-		animator->Animate(gameAt->screen->screenArea.x, gameAt->screen->screenArea.y, false);
-	}
-	else {
-		Rectangle rect = { selectedHabitatIndex*48,1*32,48,32 };
-		gameAt->App->renderer->Draw(*texture, gameAt->screen->screenArea.x, gameAt->screen->screenArea.y, &rect);
-	}
+	animator->Animate((int)gameAt->screen->screenArea.x, (int)gameAt->screen->screenArea.y, false);
 }
 
 void HabitatSelectionProgram::EndProgram()

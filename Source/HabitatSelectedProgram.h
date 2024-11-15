@@ -1,18 +1,18 @@
 #pragma once
 #include "ScreenProgram.h"
 #include "AnimationSystem.h"
-#include <vector>
-class HabitatSelectionProgram : public ScreenProgram
+
+class HabitatSelectedProgram : public ScreenProgram
 {
 private:
 	Texture* texture=nullptr;
-	Animator* animator=nullptr;
 
-	std::vector<int> habitatsToSelect;
+	Timer timer;
+	float minTimeInScreen = 1.f;
 
 public:
-	HabitatSelectionProgram(std::vector<int> habitatsToSelect);
-	~HabitatSelectionProgram();
+	HabitatSelectedProgram();
+	~HabitatSelectedProgram();
 	void SetID(int id);
 	void CallAction(int id)override;
 	void StartProgram()override;

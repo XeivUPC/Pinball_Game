@@ -37,7 +37,6 @@ ModuleGameBlueMap::ModuleGameBlueMap(Application* app, bool start_enabled) : Mod
 	mapHabitats.emplace_back(13);
 	mapHabitats.emplace_back(16);
 	mapHabitats.emplace_back(17);
-	
 }
 
 ModuleGameBlueMap::~ModuleGameBlueMap()

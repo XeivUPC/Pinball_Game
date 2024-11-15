@@ -9,6 +9,16 @@ void CentralScreen::AddProgram(ScreenProgram* program)
 	actualProgram->StartProgram();
 }
 
+void CentralScreen::SwitchProgram(ScreenProgram* program)
+{
+	if (actualProgram == nullptr) {
+		AddProgram(program);
+		return;
+	}
+	RemoveProgram();
+	AddProgram(program);
+}
+
 void CentralScreen::CallScreenEvent(int index)
 {
 	actualProgram->CallAction(index);
@@ -17,6 +27,13 @@ void CentralScreen::CallScreenEvent(int index)
 bool CentralScreen::HasProgram()
 {
 	return actualProgram != nullptr;
+}
+
+bool CentralScreen::CanProgramBeOverwritten()
+{
+	if (actualProgram == nullptr)
+		return true;
+	return actualProgram->CanBeOverwritten();
 }
 
 Rectangle CentralScreen::GetScreenArea()

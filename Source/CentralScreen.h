@@ -14,8 +14,10 @@ private:
 public:
 	Rectangle screenArea;
 	void AddProgram(ScreenProgram* program);
+	void SwitchProgram(ScreenProgram* program);
 	void CallScreenEvent(int index);
 	bool HasProgram();
+	bool CanProgramBeOverwritten();
 	Rectangle GetScreenArea();
 	update_status Update();
 	void RemoveProgram();

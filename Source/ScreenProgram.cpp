@@ -14,6 +14,11 @@ void ScreenProgram::SetGameReference(ModuleGame* game)
 	gameAt = game;
 }
 
+bool ScreenProgram::CanBeOverwritten()
+{
+	return canBeOverwritten;
+}
+
 std::string ScreenProgram::GetProgramIdentifier()
 {
 	return identifier;

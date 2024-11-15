@@ -80,6 +80,8 @@ update_status DiglettBumper::Update()
 		body->GetFixtureList()[0].SetSensor(false);
 		diglett_animator->SetSpeed(0.15f);
 		diglett_animator->SelectAnimation("Diglett_Idle", true);
+		if (hitsRecieved == 3)
+			hitsRecieved = 0;
 	}
 
 	b2Vec2 renderOffset = { flip ? -11.f : 0.f,-8.f };
@@ -116,8 +118,8 @@ void DiglettBumper::OnHit()
 	diglett_animator->SetSpeed(0.07f);
 	if (hitsRecieved == 3) {
 		if (!flip)
-			gameAt->NextHabitat();
-		else
 			gameAt->PreviousHabitat();
+		else
+			gameAt->NextHabitat();
 	}
 }

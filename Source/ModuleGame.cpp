@@ -37,7 +37,7 @@ PokeBall* ModuleGame::GetPokeball()
 void ModuleGame::NextHabitat()
 {
 	habitatIndex++;
-	if (habitatIndex >= mapHabitats.size())
+	if (habitatIndex >= (int)mapHabitats.size())
 		habitatIndex = 0;
 }
 
@@ -60,7 +60,7 @@ bool ModuleGame::ChangeToHabitat(int habitat)
 		index++;
 	}
 	if (found)
-		habitatIndex = habitat;
+		habitatIndex = index;
 
 	return found;
 }

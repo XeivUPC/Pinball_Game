@@ -219,6 +219,9 @@
     <ClCompile Include="Source\HabitatSelectionProgram.cpp">
       <Filter>ScreenPrograms</Filter>
     </ClCompile>
+    <ClCompile Include="Source\HabitatSelectedProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -440,6 +443,9 @@
       <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="Source\HabitatSelectionProgram.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HabitatSelectedProgram.h">
       <Filter>ScreenPrograms</Filter>
     </ClInclude>
   </ItemGroup>

@@ -62,11 +62,10 @@ update_status Bellsprout::Update()
 		gameAt->pointsCounter.Add(100000);
 		mouthTimer.Start();
 
-		if (!gameAt->screen->HasProgram()) {
-			
+		if (gameAt->screen->CanProgramBeOverwritten()) {
+			gameAt->screen->SwitchProgram(new CapturePokemon);
 		}
-		gameAt->screen->QuitProgram();
-		gameAt->screen->AddProgram(new CapturePokemon);
+		
 	}
 
 	if (ballIn) {

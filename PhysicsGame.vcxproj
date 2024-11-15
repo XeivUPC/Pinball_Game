@@ -212,6 +212,7 @@
     <ClInclude Include="Source\GameUI.h" />
     <ClInclude Include="Source\GetEvoArrow.h" />
     <ClInclude Include="Source\GetArrowGroup.h" />
+    <ClInclude Include="Source\HabitatSelectedProgram.h" />
     <ClInclude Include="Source\HabitatSelectionProgram.h" />
     <ClInclude Include="Source\LapSensor.h" />
     <ClInclude Include="Source\LapSensorGroup.h" />
@@ -288,6 +289,7 @@
     <ClCompile Include="Source\GameUI.cpp" />
     <ClCompile Include="Source\GetEvoArrow.cpp" />
     <ClCompile Include="Source\GetArrowGroup.cpp" />
+    <ClCompile Include="Source\HabitatSelectedProgram.cpp" />
     <ClCompile Include="Source\HabitatSelectionProgram.cpp" />
     <ClCompile Include="Source\LapSensor.cpp" />
     <ClCompile Include="Source\LapSensorGroup.cpp" />

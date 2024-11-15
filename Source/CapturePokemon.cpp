@@ -84,43 +84,43 @@ void CapturePokemon::Logic()
 void CapturePokemon::Render()
 {
 	rect = baseRect;
-	gameAt->App->renderer->Draw(*texture, gameAt->screen->screenArea.x, gameAt->screen->screenArea.y, &rect, WHITE);
+	gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x), (int)(gameAt->screen->screenArea.y), &rect, WHITE);
 	rect.x = baseRect.x + gameAt->screen->screenArea.width;
 	rect.width = 16;
 	rect.height = 16;
 	if ((animationStarted == 0 && count >= 1) || (animationStarted != 0 && (count >= 1 && count <= 3)))
 	{
-		gameAt->App->renderer->Draw(*texture, gameAt->screen->screenArea.x, gameAt->screen->screenArea.y, &rect, WHITE);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x), (int)(gameAt->screen->screenArea.y), &rect, WHITE);
 	}
 	if ((animationStarted == 0 && count >= 2) || (animationStarted != 0 && (count >= 2 && count <= 4)))
 	{
 		rect.x = baseRect.x + gameAt->screen->screenArea.width + 16;
 		rect.y = baseRect.y + 16;
-		gameAt->App->renderer->Draw(*texture, gameAt->screen->screenArea.x+16, gameAt->screen->screenArea.y+16, &rect, WHITE);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x+16), (int)(gameAt->screen->screenArea.y+16), &rect, WHITE);
 	}
 	if ((animationStarted == 0 && count >= 3) || (animationStarted != 0 && (count >= 3 && count <= 5)))
 	{
 		rect.x = baseRect.x + gameAt->screen->screenArea.width + 32;
 		rect.y = baseRect.y;
-		gameAt->App->renderer->Draw(*texture, gameAt->screen->screenArea.x + 32, gameAt->screen->screenArea.y, &rect, WHITE);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x + 32), (int)(gameAt->screen->screenArea.y), &rect, WHITE);
 	}
 	if ((animationStarted == 0 && count >= 4) || (animationStarted != 0 && (count >= 4 && count <= 6)))
 	{
 		rect.x = baseRect.x + gameAt->screen->screenArea.width;
 		rect.y = baseRect.y + 16;
-		gameAt->App->renderer->Draw(*texture, gameAt->screen->screenArea.x, gameAt->screen->screenArea.y+16, &rect, WHITE);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x), (int)(gameAt->screen->screenArea.y+16), &rect, WHITE);
 	}
 	if ((animationStarted == 0 && count >= 5) || (animationStarted != 0 && ((count >= 5 && count <= 6) || (count == 1))))
 	{
 		rect.x = baseRect.x + gameAt->screen->screenArea.width + 16;
 		rect.y = baseRect.y;
-		gameAt->App->renderer->Draw(*texture, gameAt->screen->screenArea.x+16, gameAt->screen->screenArea.y, &rect, WHITE);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x+16), (int)(gameAt->screen->screenArea.y), &rect, WHITE);
 	}
 	if ((animationStarted == 0 && count >= 6) || (animationStarted != 0 && ((count >= 1 && count <= 2) || (count == 6))))
 	{
 		rect.x = baseRect.x + gameAt->screen->screenArea.width + 32;
 		rect.y = baseRect.y + 16;
-		gameAt->App->renderer->Draw(*texture, gameAt->screen->screenArea.x + 32, gameAt->screen->screenArea.y+16, &rect, WHITE);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x + 32), (int)(gameAt->screen->screenArea.y+16), &rect, WHITE);
 	}
 }
 

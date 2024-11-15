@@ -53,7 +53,7 @@ public:
 	virtual void SetState(GameStates stateToChange) =0;
 	GameStates GetState();
 
-	CentralScreen* screen;
+	CentralScreen* screen=nullptr;
 private:
 protected:
 	Texture* map_texture= nullptr;
@@ -69,7 +69,7 @@ protected:
 	b2Vec2 ballSpawn;
 
 	std::vector<int> mapHabitats;
-	size_t habitatIndex;
+	int habitatIndex=-1;
 
 	bool saveBall=true;
 	bool energyCharged = false;
@@ -79,7 +79,7 @@ protected:
 	GameStates state = GameStates::StartGame;
 
 	Timer statesTimer;
-	float statesTime;
+	float statesTime=0;
 
 
 

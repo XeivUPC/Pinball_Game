@@ -102,7 +102,7 @@ update_status PoliwagPsyduckCounter::Update()
 		map_poliwagCounter_animator->Update();
 
 		b2Vec2 drawPos = { (flip ? 136.0f : 0.0f), 158.f };
-		map_poliwagCounter_animator->Animate(drawPos.x, drawPos.y, false);
+		map_poliwagCounter_animator->Animate((int)drawPos.x, (int)drawPos.y, false);
 	}
 	else 
 	{
@@ -127,7 +127,7 @@ update_status PoliwagPsyduckCounter::Update()
 		map_psyduckCounter_animator->Update();
 
 		b2Vec2 drawPos = { (flip ? 138.0f : 0.0f), 166.f };
-		map_psyduckCounter_animator->Animate(drawPos.x, drawPos.y, false);
+		map_psyduckCounter_animator->Animate((int)drawPos.x, (int)drawPos.y, false);
 	}
 	
 	return UPDATE_CONTINUE;
