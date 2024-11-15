@@ -12,15 +12,16 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 {
 	gameAt->AddObject(this);
 
-	position.x = 139;
-	position.y = 245;
+	width /= SCREEN_SIZE;
+	height /= SCREEN_SIZE;
 
 	b2FixtureUserData fixtureData;
 	fixtureData.pointer = (uintptr_t)(&sensor);
 
-	body = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, { (float)position.x + width / 2 , position.y + height / 2 }, width, height, fixtureData);
+	body = Box2DFactory::GetInstance().CreateBox(gameAt->App->physics->world, { (float)position.x + width - 0.2f, position.y - height / 2 - 0.7f }, width, height, fixtureData);
 	body->SetType(b2_dynamicBody);
 	body->GetFixtureList()[0].SetSensor(true);
+	body->SetGravityScale(0);
 	sensor.SetBodyToTrack(&body->GetFixtureList()[0]);
 
 	gameAt->App->texture->CreateTexture("Assets/map_pikachu.png", "map_pikachu");
@@ -47,13 +48,16 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	map_pikachuEnergy_animator = new Animator(gameAt->App);
 
 	AnimationData mapPikachuEnergyAnim = AnimationData("MapPikachuEnergyAnim");
-	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{0, 0}, {16,16} });
-	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{1, 0}, {16,16} });
-	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{2, 0}, {16,16} });
-	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{3, 0}, {16,16} });
+	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{0, 0}, {16,32} });
+	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{1, 0}, {16,32} });
+	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{2, 0}, {16,32} });
+	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{3, 0}, {16,32} });
+	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{4, 0}, {16,32} });
+	mapPikachuEnergyAnim.AddSprite(Sprite{ map_pikachuEnergy,{5, 0}, {16,32} });
+	
 
 	AnimationData mapPikachuEnergyIdleAnim = AnimationData("MapPikachuEnergyIdleAnim");
-	mapPikachuEnergyIdleAnim.AddSprite(Sprite{ map_pikachuEnergy,{4, 0}, {16,16} });
+	mapPikachuEnergyIdleAnim.AddSprite(Sprite{ map_pikachuEnergy,{6, 0}, {16,16} });
 
 	map_pikachuEnergy_animator->AddAnimation(mapPikachuEnergyIdleAnim);
 	map_pikachuEnergy_animator->AddAnimation(mapPikachuEnergyAnim);
@@ -61,7 +65,9 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyIdleAnim", true);
 
 	bool is_in_left = true;
-	
+
+	this->position = position;
+
 }
 
 Pikachu::~Pikachu()
@@ -73,28 +79,28 @@ update_status Pikachu::Update()
 {
 	//Configure position
 	if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
-		position.x = 8;
-		/*position.y = 245;*/
+		position.x = 8.f / SCREEN_SIZE;
+		body->SetTransform({ position.x + width - 0.5f, position.y - height / 2 - 0.7f}, 0);
 	}
 	else if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-		position.x = 139;
-		/*position.y = 245;*/
+		position.x = 139.f / SCREEN_SIZE;
+		body->SetTransform({ position.x + width - 0.2f, position.y - height / 2 - 0.7f }, 0);
 	}
 	
-	if (sensor.OnTriggerEnter() /*&& gameAt->IsEnergyCharged()*/) {
+	if (sensor.OnTriggerEnter() && gameAt->IsEnergyCharged()) {
 		ballIn = true;
 		map_pikachu_animator->SelectAnimation("MapPikachuEnergizeAnim", false);
-		map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyAnim", true);
+		map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyAnim", false);
 		gameAt->pointsCounter.Add(100000);//(to do) Check if pikachu gives points
 		energizeTimer.Start();
 	}
 	if (ballIn) {
 		map_pikachu_animator->SetSpeed(0.1f);
-		gameAt->GetPokeball()->SetPosition({ position.x + 5 , position.y + 2.7f });
 		gameAt->GetPokeball()->SetVelocity({ 0,0 });
+		gameAt->GetPokeball()->SetPosition(gameAt->GetPokeball()->GetPosition());
 		if (energizeTimer.ReadSec() > energizeTime) {
 			if (map_pikachuEnergy_animator->HasAnimationFinished()) {
-				gameAt->GetPokeball()->SetVelocity({ 0,-10 });
+				gameAt->GetPokeball()->SetVelocity({ 0,-100 });
 				ballIn = false;
 				map_pikachu_animator->SelectAnimation("MapPikachuAnim", true);
 				map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyIdleAnim", true);
@@ -102,10 +108,10 @@ update_status Pikachu::Update()
 		}
 	}
 
-	map_pikachu_animator->Animate(position.x, position.y, false);
+	map_pikachu_animator->Animate((int)(position.x * SCREEN_SIZE), (int)(position.y * SCREEN_SIZE), false);
 	map_pikachu_animator->Update();
 
-	map_pikachuEnergy_animator->Animate(position.x, position.y - 16, false);
+	map_pikachuEnergy_animator->Animate((int)(position.x * SCREEN_SIZE), (int)((position.y - (32/SCREEN_SIZE)) * SCREEN_SIZE), false);
 	map_pikachuEnergy_animator->Update();
 
 	return UPDATE_CONTINUE;
