@@ -12,10 +12,6 @@ public:
 	update_status Update();
 	bool CleanUp() override;
 
-	void ActivateTop();
-	void DesactivateTop();
-	void ActivateBot();
-	void DesactivateBot();
 	void Activate() override;
 	void Desactivate() override;
 	void Twinkle() override;
@@ -26,8 +22,8 @@ private:
 	int order = -1;
 	int type = -1;
 
-	bool topActive = false;
-	bool botActive = false;
+	bool active = false;
+	bool twinkle = false;
 
 	b2Vec2 position = { 0,0 };
 

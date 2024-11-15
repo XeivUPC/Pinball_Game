@@ -37,21 +37,16 @@ CenterRedArrow::~CenterRedArrow()
 
 update_status CenterRedArrow::Update()
 {
-	if (botActive) {
-		if (topActive) {
-			animator->SelectAnimation("Arrow_Active_Twinkle", true);
+	if (active) {
+		if (twinkle) {
+			animator->SelectAnimation("Arrow_Twinkle", true);
 		}
 		else {
 			animator->SelectAnimation("Arrow_Active", true);
 		}
 	}
 	else {
-		if (topActive) {
-			animator->SelectAnimation("Arrow_Unactive_Twinkle", true);
-		}
-		else {
-			animator->SelectAnimation("Arrow_Unactive", true);
-		}
+		animator->SelectAnimation("Arrow_Unactive", true);
 	}
 
 	animator->Update();
@@ -64,40 +59,19 @@ bool CenterRedArrow::CleanUp()
 	return true;
 }
 
-void CenterRedArrow::ActivateTop()
-{
-	topActive = true;
-}
-
-void CenterRedArrow::DesactivateTop()
-{
-	topActive = false;
-}
-
-void CenterRedArrow::ActivateBot()
-{
-	botActive = true;
-}
-
-void CenterRedArrow::DesactivateBot()
-{
-	botActive = false;
-}
-
 void CenterRedArrow::Activate()
 {
-	topActive = true;
-	botActive = true;
+	active = true;
 }
 
 void CenterRedArrow::Desactivate()
 {
-	topActive = false;
-	botActive = false;
+	active = false;
 }
 
 void CenterRedArrow::Twinkle()
 {
+	twinkle = true;
 }
 
 int CenterRedArrow::GetOrder() const
