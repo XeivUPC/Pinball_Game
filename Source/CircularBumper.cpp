@@ -6,7 +6,7 @@
 #include "ModuleAudio.h"
 #include <random>
 
-CircularBumper::CircularBumper(ModuleGame* gameAt, b2Vec2 position, float radius, float restitution, int variant) : Bumper (gameAt, position, restitution)
+CircularBumper::CircularBumper(ModuleGame* gameAt, b2Vec2 position, float radius, float restitution, int variant) 
 {
 	gameAt->AddObject(this);
 
