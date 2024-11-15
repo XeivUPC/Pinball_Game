@@ -87,6 +87,16 @@ void ModuleGame::UseEnergy()
 	energyBattery->Reset();
 }
 
+bool ModuleGame::CanEvolve()
+{
+	return canEvolve;
+}
+
+bool ModuleGame::CanCapture()
+{
+	return canCapture;
+}
+
 bool ModuleGame::IsBallInTopSection()
 {
 	return isBallInTopSection;

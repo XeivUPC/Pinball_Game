@@ -143,10 +143,19 @@ update_status ModuleGameBlueMap::Update()
 
 		if (getArrowGroup->GetActiveAmount() >= 2) {
 			centerBlueArrowGroup->ActivateLeftTop();
+			canCapture = true;
+		}
+		else
+		{
+			canCapture = false;
 		}
 
 		if (evoArrowGroup->GetActiveAmount() >= 3) {
 			centerBlueArrowGroup->ActivateRightTop();
+			canEvolve = true;
+		}
+		else {
+			canEvolve = false;
 		}
 		// the top arrow in the center is activated when there is a black hole for events
 

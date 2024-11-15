@@ -50,6 +50,9 @@ public:
 	void SetEnergyStatus(bool isCharged);
 	void UseEnergy();
 
+	bool CanEvolve();
+	bool CanCapture();
+
 	bool IsBallInTopSection();
 
 	virtual void SetState(GameStates stateToChange) =0;
@@ -75,9 +78,16 @@ protected:
 	int habitatIndex=-1;
 
 	bool saveBall=true;
+
 	bool isEnergyCharged = false;
 	bool isEnergyUsed = false;
 	bool isBallInTopSection = false;
+
+	bool canCapture = false;
+	bool canEvolve = false;
+
+
+
 
 
 
