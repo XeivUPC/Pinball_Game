@@ -71,6 +71,9 @@ bool ModuleGameRedMap::Start()
 	evoArrowGroup->Sort();
 	centerRedArrowGroup->Sort();
 
+	getArrowGroup->ActivateNext();
+	getArrowGroup->ActivateNext();
+
 	dittoColliders->SetMode(DittoColliders::Small);
 
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
