@@ -15,7 +15,7 @@ private:
 	int ID;
 
 	void AddHit();
-	void SelectPokemonByZone(int zone);
+	void SetRandomPokemonByZone(bool zoneID, int rarity = 2);
 public:
 	CapturePokemon();
 	~CapturePokemon();

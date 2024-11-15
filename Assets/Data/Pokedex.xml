@@ -12,8 +12,8 @@
 		<name value="Bulbasaur" />
 		<height value="0,7" />
 		<weight value="6,9" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="2">
 		<pre-evolution-index value="1" />
@@ -27,7 +27,7 @@
 		<name value="Ivysaur" />
 		<height value="1" />
 		<weight value="13" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="3">
@@ -42,7 +42,7 @@
 		<name value="Venusaur" />
 		<height value="2" />
 		<weight value="100" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="4">
