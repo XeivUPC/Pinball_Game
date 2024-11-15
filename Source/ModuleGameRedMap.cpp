@@ -320,11 +320,11 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				float batteryX = energyBatteryNode.attribute("x").as_float() / SCREEN_SIZE;
 				float batteryY = energyBatteryNode.attribute("y").as_float() / SCREEN_SIZE;
 
-				MapEnergyBattery* battery = new MapEnergyBattery(this, { batteryX ,batteryY }, 0);
+				energyBattery = new MapEnergyBattery(this, { batteryX ,batteryY }, 0);
 
 				x += width / 2;
 				y += heigth / 2;
-				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, battery, width, heigth, 0);
+				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, energyBattery, width, heigth, 0);
 			}
 			else if (type == "pokeballChangerSensor") {
 
