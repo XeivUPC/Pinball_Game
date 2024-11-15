@@ -12,6 +12,7 @@
 class MapObject;
 class PokeBall;
 class CentralScreen;
+class MapEnergyBattery;
 
 class ModuleGame : public ModuleScene
 {
@@ -47,6 +48,7 @@ public:
 
 	bool IsEnergyCharged();
 	void SetEnergyStatus(bool isCharged);
+	void UseEnergy();
 
 	bool IsBallInTopSection();
 
@@ -58,6 +60,7 @@ private:
 protected:
 	Texture* map_texture= nullptr;
 	PokeBall* pokeBall=nullptr;
+	MapEnergyBattery* energyBattery=nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);
@@ -72,8 +75,10 @@ protected:
 	int habitatIndex=-1;
 
 	bool saveBall=true;
-	bool energyCharged = false;
+	bool isEnergyCharged = false;
+	bool isEnergyUsed = false;
 	bool isBallInTopSection = false;
+
 
 
 	GameStates state = GameStates::StartGame;
