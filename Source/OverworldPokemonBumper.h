@@ -18,10 +18,10 @@ protected:
 	b2Body* body = nullptr;
 
 private:
-	Texture* pokemonTexture;
-	Animator* animator;
+	Texture* pokemonTexture = nullptr;
+	Animator* animator = nullptr;
 	Timer cooldown;
 	bool gettingHit = false;
-	float cooldownTime;
-	int bumperAudioId;
+	float cooldownTime = 0;
+	int bumperAudioId = -1;
 };

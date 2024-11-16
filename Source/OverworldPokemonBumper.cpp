@@ -58,7 +58,7 @@ update_status OverworldPokemonBumper::Update()
 		animator->SelectAnimation("PokemonIdle", true);
 	}
 	animator->Update();
-	animator->Animate(gameAt->screen->screenArea.x + gameAt->screen->screenArea.width/2-16, gameAt->screen->screenArea.y + gameAt->screen->screenArea.height / 2-16, false);
+	animator->Animate((int)(gameAt->screen->screenArea.x + gameAt->screen->screenArea.width/2-16),(int)(gameAt->screen->screenArea.y + gameAt->screen->screenArea.height / 2-16), false);
 	return UPDATE_CONTINUE;
 }
 

@@ -87,6 +87,11 @@ void OverworldPokemon::Logic()
 		animator->SetSpeed(0.15f);
 		animator->SelectAnimation("PokeballStatic", false);
 		count = 0;
+
+		gameAt->GetPokeball()->SetIfBlockMovement(true);
+		gameAt->GetPokeball()->SetIfBlockRender(true);
+		gameAt->GetPokeball()->SetPosition({ (gameAt->screen->screenArea.x + gameAt->screen->screenArea.width / 2 ) / SCREEN_SIZE, (gameAt->screen->screenArea.y + gameAt->screen->screenArea.height / 2) / SCREEN_SIZE });
+
 		//Quitar bola pinball
 	}
 	if (animator->GetCurrentAnimationName() == "PokeballStatic" && animator->HasAnimationFinished())
@@ -96,9 +101,13 @@ void OverworldPokemon::Logic()
 	if (animator->GetCurrentAnimationName() == "PokeballShake" && animator->HasAnimationFinished())
 	{
 		if (count == 2) {
-			gameAt->screen->RemoveProgram();
 			gameAt->App->scene_pokedex->CapturePokemon(ID);
 			//Poner bola pinball
+
+			gameAt->GetPokeball()->SetIfBlockMovement(false);
+			gameAt->GetPokeball()->SetIfBlockRender(false);
+			gameAt->GetPokeball()->SetVelocity({ 5,-1 });
+			gameAt->screen->RemoveProgram();
 			return;
 		}
 		animator->SelectAnimation("PokeballStatic", false);
@@ -110,24 +119,24 @@ void OverworldPokemon::Logic()
 void OverworldPokemon::Render()
 {
 	rect = {192, 64, gameAt->screen->screenArea.width, gameAt->screen->screenArea.height};
-	gameAt->App->renderer->Draw(*texture, (gameAt->screen->screenArea.x), (int)(gameAt->screen->screenArea.y), &rect, WHITE);
+	gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x), (int)(gameAt->screen->screenArea.y), &rect, WHITE);
 	if (count >= 1 || animating)
 	{
 		rect = { 224, (float)gameAt->App->userPreferences->GetLanguage()*8, 16, 8};
-		gameAt->App->renderer->Draw(*texture, (gameAt->screen->screenArea.x), (gameAt->screen->screenArea.y + gameAt->screen->screenArea.height), &rect, WHITE);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x), (int)(gameAt->screen->screenArea.y + gameAt->screen->screenArea.height), &rect, WHITE);
 	}
 	if (count >= 2 || animating)
 	{
 		rect = { 224+16, (float)gameAt->App->userPreferences->GetLanguage()*8, 16, 8 };
-		gameAt->App->renderer->Draw(*texture, (gameAt->screen->screenArea.x+16), (gameAt->screen->screenArea.y + gameAt->screen->screenArea.height), &rect, WHITE);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x+16), (int)(gameAt->screen->screenArea.y + gameAt->screen->screenArea.height), &rect, WHITE);
 	}
 	if (count >= 3 || animating)
 	{
 		rect = { 224+32, (float)gameAt->App->userPreferences->GetLanguage()*8, 16, 8 };
-		gameAt->App->renderer->Draw(*texture, (gameAt->screen->screenArea.x+32), (gameAt->screen->screenArea.y + gameAt->screen->screenArea.height), &rect, WHITE);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x+32), (int)(gameAt->screen->screenArea.y + gameAt->screen->screenArea.height), &rect, WHITE);
 	}
 	animator->Update();
-	animator->Animate(gameAt->screen->screenArea.x + gameAt->screen->screenArea.width / 2 - animator->GetCurrentAnimationSprite().size.x/2, gameAt->screen->screenArea.y + gameAt->screen->screenArea.height / 2 - animator->GetCurrentAnimationSprite().size.y / 2 + offset*2, false);
+	animator->Animate((int)(gameAt->screen->screenArea.x + gameAt->screen->screenArea.width / 2 - animator->GetCurrentAnimationSprite().size.x/2), (int)(gameAt->screen->screenArea.y + gameAt->screen->screenArea.height / 2 - animator->GetCurrentAnimationSprite().size.y / 2 + offset*2), false);
 }
 
 void OverworldPokemon::EndProgram()

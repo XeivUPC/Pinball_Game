@@ -69,5 +69,7 @@ private:
 
 	bool blockMovement = false;
 	bool blockRender = false;
+
+	std::vector<std::string> ballSavedUIText = { "BALL SAVED","BALL SAVED","BILLE SAUVEE", "BALL GERETTET", "BOLA SALVADA", "PALLA SALVATA" };
 };
 

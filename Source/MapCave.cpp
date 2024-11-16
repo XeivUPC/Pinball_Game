@@ -100,7 +100,7 @@ void MapCave::FreeBall()
 {
 	gameAt->GetPokeball()->SetIfBlockMovement(false);
 	gameAt->GetPokeball()->SetIfBlockRender(false);
-	gameAt->GetPokeball()->SetVelocity({ 5,1 });
+	gameAt->GetPokeball()->SetVelocity({ 5,-1 });
 	freeBallTimer.Start();
 	animator->SelectAnimation("Opened_NoEffect", true);
 	isOpen = true;
