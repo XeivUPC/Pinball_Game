@@ -16,17 +16,13 @@ public:
 private:
 
 	Texture* map_saveAgainBall = nullptr;
-	Animator* map_saveAgainBall_animator = nullptr;
+	Animator* map_saveBall_animator = nullptr;
+	Animator* map_againBall_animator = nullptr;
 
 	int selectedLanguage = -1;
 
-	Timer BallSaverTimer;
-	float BallSaverTime = 60.f;
-
-	Timer BallSaverBlinkTimer;
-	float BallSaverBlinkTime = 0.3f;
+	Timer ballSaverTimer;
+	float ballSaverTime = 0.f;
 
 	int numBallsSaved = 0;
-
-	bool again = false;
 };

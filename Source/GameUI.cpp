@@ -72,7 +72,7 @@ void GameUI::ShowNextText()
     if (textPauseTimer.ReadSec() >= textPauseTime) {
         textCurrentPos--;
     }
-    App->text_gameUIText->Write(currentText.c_str(), textCurrentPos, 134);
+    App->text_gameUIText->Write(currentText.c_str(), (int)textCurrentPos, 134);
 }
 
 void GameUI::ShowBasicUI()

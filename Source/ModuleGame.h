@@ -15,6 +15,7 @@ class CentralScreen;
 class MapEnergyBattery;
 class GameUI;
 class MapCave;
+class SaveAgainBall;
 
 class ModuleGame : public ModuleScene
 {
@@ -57,6 +58,13 @@ public:
 	bool CanEvolve();
 	bool CanCapture();
 
+	void SetSaveBall(bool status);
+	void SetExtraBall(bool status);
+	bool HasExtraBall();
+	bool HasSaveBall();
+	void SetTimeSaveBall(float time);
+
+
 	void OpenCave();
 	void CloseCave();
 	void FreeBallCave();
@@ -77,6 +85,7 @@ protected:
 	MapEnergyBattery* energyBattery=nullptr;
 	GameUI* UI = nullptr;
 	MapCave* cave = nullptr;
+	SaveAgainBall* saveAgainBall = nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);
@@ -90,8 +99,8 @@ protected:
 	std::vector<int> mapHabitats;
 	int habitatIndex=-1;
 
-	bool saveBall = true;
-	bool extraBall = true;
+	bool saveBall = false;
+	bool extraBall = false;
 
 	bool isEnergyCharged = false;
 	bool isEnergyUsed = false;

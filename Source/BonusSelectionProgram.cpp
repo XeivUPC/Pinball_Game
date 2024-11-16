@@ -22,13 +22,13 @@ bool BonusSelectionProgram::GiveBonus(int type, int subType)
 			
 			break;
 		case 3:
-
+			gameAt->SetTimeSaveBall(30);
 			break;
 		case 4:
-
+			gameAt->SetTimeSaveBall(60);
 			break;
 		case 5:
-
+			gameAt->SetTimeSaveBall(90);
 			break;
 		case 6:
 
@@ -37,7 +37,7 @@ bool BonusSelectionProgram::GiveBonus(int type, int subType)
 
 			break;
 		case 10:
-
+			gameAt->SetExtraBall(true);
 			break;
 		case 11:
 			gameAt->screen->SwitchProgram(new CapturePokemon);

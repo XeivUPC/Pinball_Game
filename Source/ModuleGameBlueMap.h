@@ -30,7 +30,7 @@ private:
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
 
-	b2Body* entryCollider;
+	b2Body* entryCollider = nullptr;
 	
 	//Create
 	void LoadMap(std::string path) override;

@@ -72,8 +72,8 @@ private:
 	int musicVolume=100;
 	int sfxVolume=100;
 
-	AppLanguage language;
-	Vibration vibration;
+	AppLanguage language = NONE;
+	Vibration vibration = Mild;
 	std::unordered_map<VirtualButton, int> keyBinds;
 };
 

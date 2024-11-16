@@ -84,7 +84,6 @@ bool ModuleGameRedMap::Start()
 
 	leftFlipper = new Flipper(this, -40000, { 13.9f,64.4f } , { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::LEFT, false);
 	rightFlipper = new Flipper(this, 40000, { 26.1f,64.4f }, { -0.15f * b2_pi, 0.15f * b2_pi }, ModuleUserPreferences::RIGHT, true);
-	SaveAgainBall* saveAgainBall = new SaveAgainBall(this, { 64.f / SCREEN_SIZE ,238.f / SCREEN_SIZE });
 
 	pokeBall = new PokeBall(this, ballSpawn,PokeBall::Pokeball,70);
 
