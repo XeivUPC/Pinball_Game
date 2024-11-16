@@ -64,6 +64,11 @@ SaveAgainBall::~SaveAgainBall()
 {
 }
 
+void SaveAgainBall::SetBallSaverTimer(float time)
+{
+	BallSaverTime = time;
+}
+
 update_status SaveAgainBall::Update()
 {
 	//Draw Background

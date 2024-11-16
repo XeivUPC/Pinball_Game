@@ -9,6 +9,7 @@ public:
 	SaveAgainBall(ModuleGame* gameAt, b2Vec2 position);
 	~SaveAgainBall();
 
+	void SetBallSaverTimer(float time);
 	update_status Update();
 	bool CleanUp() override;
 
@@ -20,7 +21,7 @@ private:
 	int selectedLanguage = -1;
 
 	Timer BallSaverTimer;
-	float BallSaverTime = 20.f;
+	float BallSaverTime = 60.f;
 
 	Timer BallSaverBlinkTimer;
 	float BallSaverBlinkTime = 0.3f;
