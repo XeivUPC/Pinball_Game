@@ -95,6 +95,7 @@ update_status Pikachu::Update()
 		map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyAnim", false);
 
 		energizeTimer.Start();
+		gameAt->GetPokeball()->SetIfBlockMovement(true);
 	}
 	if (ballIn) {
 		map_pikachu_animator->SetSpeed(0.1f);
@@ -102,6 +103,7 @@ update_status Pikachu::Update()
 		gameAt->GetPokeball()->SetPosition(gameAt->GetPokeball()->GetPosition());
 		if (energizeTimer.ReadSec() > energizeTime) {
 			if (map_pikachuEnergy_animator->HasAnimationFinished()) {
+				gameAt->GetPokeball()->SetIfBlockMovement(false);
 				gameAt->GetPokeball()->SetVelocity({ 0,-100 });
 				ballIn = false;
 				map_pikachu_animator->SelectAnimation("MapPikachuAnim", true);

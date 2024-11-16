@@ -204,6 +204,7 @@ void BonusSelectionProgram::Logic()
 		}
 		if (selectedShowTime < selectedShowTimer.ReadSec()) {
 			canBeOverwritten = true;
+			gameAt->FreeBallCave();
 			if(!GiveBonus(selectedBonus, selectedBonusSubType))
 				gameAt->screen->RemoveProgram();
 		}

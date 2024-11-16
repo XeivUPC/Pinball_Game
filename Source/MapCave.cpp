@@ -5,6 +5,7 @@
 #include "ModulePhysics.h"
 #include "CentralScreen.h"
 #include "ModuleAudio.h"
+#include "PokeBall.h"
 
 MapCave::MapCave(ModuleGame* gameAt, b2Vec2 position, b2Vec2 entryPosition, float entryRadius) : MapObject(gameAt)
 {
@@ -13,13 +14,14 @@ MapCave::MapCave(ModuleGame* gameAt, b2Vec2 position, b2Vec2 entryPosition, floa
 	this->position = position;
 	this->entryPosition = entryPosition;
 	this->entryRadius = entryRadius;
-
+	
+	this->entryPosition = { entryPosition.x + entryRadius, entryPosition.y + entryRadius };
 
 
 	b2FixtureUserData fixtureData;
 	fixtureData.pointer = (uintptr_t)(&sensor);
 
-	body = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, { entryPosition.x + entryRadius, entryPosition.y + entryRadius }, entryRadius, fixtureData);
+	body = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, this->entryPosition , entryRadius, fixtureData);
 	body->SetType(b2_staticBody);
 	body->GetFixtureList()[0].SetSensor(true);
 
@@ -59,10 +61,15 @@ update_status MapCave::Update()
 	animator->Update();
 
 	if (isOpen) {
-		if (sensor.OnTriggerEnter()) {
-			OnHit();
+		if (isBallIn && freeBallTime < freeBallTimer.ReadSec()) {
+			isBallIn = false;
+			CloseCave();
 		}
+		if (sensor.OnTriggerEnter()) {
+			OnHit();		
+		}	
 	}
+
 
 	animator->Animate((int)(position.x * SCREEN_SIZE ), (int)(position.y * SCREEN_SIZE), true);
 	return UPDATE_CONTINUE;
@@ -86,6 +93,16 @@ void MapCave::CloseCave()
 	animator->SelectAnimation("Closed", true);
 }
 
+void MapCave::FreeBall()
+{
+	gameAt->GetPokeball()->SetIfBlockMovement(false);
+	gameAt->GetPokeball()->SetIfBlockRender(false);
+	gameAt->GetPokeball()->SetVelocity({ 5,1 });
+	freeBallTimer.Start();
+	animator->SelectAnimation("Opened_NoEffect", true);
+	isOpen = true;
+}
+
 bool MapCave::IsCaveOpen()
 {
 	return isOpen;
@@ -97,5 +114,9 @@ void MapCave::OnHit()
 	if (gameAt->screen->GetActualProgramIdentifier() == "BonusStart") {
 		gameAt->screen->CallScreenEvent(0);
 		CloseCave();
+		gameAt->GetPokeball()->SetIfBlockMovement(true);
+		gameAt->GetPokeball()->SetIfBlockRender(true);
+		gameAt->GetPokeball()->SetPosition(entryPosition);
+		isBallIn = true;
 	}
 }

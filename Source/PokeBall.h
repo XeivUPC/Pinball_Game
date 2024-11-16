@@ -37,6 +37,12 @@ public:
 
 	int GetLivesPokeball() const;
 
+	
+	void SetIfBlockMovement(bool status);
+	bool IsMovementBlocked();
+	void SetIfBlockRender(bool status);
+	bool IsRenderBlocked();
+
 private:
 
 	float GetMultiplierByType(PokeballType type);
@@ -60,5 +66,8 @@ private:
 
 	Timer pokeballDowngradeTimer;
 	float pokeballDowngradeTime = 60;
+
+	bool blockMovement = false;
+	bool blockRender = false;
 };
 

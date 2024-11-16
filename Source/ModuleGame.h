@@ -59,6 +59,7 @@ public:
 
 	void OpenCave();
 	void CloseCave();
+	void FreeBallCave();
 
 	int GetBonusSelectionAttempts();
 	void AddBonusSelectionAttempts();

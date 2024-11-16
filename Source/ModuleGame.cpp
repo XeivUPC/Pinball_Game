@@ -126,6 +126,11 @@ void ModuleGame::CloseCave()
 	cave->CloseCave();
 }
 
+void ModuleGame::FreeBallCave()
+{
+	cave->FreeBall();
+}
+
 int ModuleGame::GetBonusSelectionAttempts()
 {
 	return bonusSelectionAttempts;
