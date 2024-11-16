@@ -2,6 +2,7 @@
 #include "CaveSensor.h"
 #include "ModuleUserPreferences.h"
 #include "Application.h"
+#include "CentralScreen.h"
 #include <algorithm>
 
 CaveSensorGroup::CaveSensorGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
@@ -91,6 +92,12 @@ void CaveSensorGroup::OnAllActive()
 {
 	gameAt->pointsCounter.Take(1000);
 	gameAt->pointsCounter.Add(5000);
+
+	if(gameAt->screen->CanProgramBeOverwritten()) {
+		gameAt->screen->SwitchProgram(new BonusSelectionProgram(gameAt->GetBonusSelectionAttempts()));
+		gameAt->AddBonusSelectionAttempts();
+	}
+
 	for (const auto& sensorPointer : mapSensors)
 	{
 		sensorPointer->Twinkle();

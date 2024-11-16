@@ -45,6 +45,9 @@ ModuleGameBlueMap::~ModuleGameBlueMap()
 
 bool ModuleGameBlueMap::Start()
 {
+
+	ModuleGame::Start();
+
 	App->texture->CreateTexture("Assets/map_blueMap.png", "map_blueMap");
 	map_texture = App->texture->GetTexture("map_blueMap");	
 	
@@ -97,6 +100,7 @@ bool ModuleGameBlueMap::Start()
 
 update_status ModuleGameBlueMap::Update()
 {
+	ModuleGame::Update();
 	RepositionCamera(pokeBall->GetPosition());
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
@@ -196,6 +200,7 @@ update_status ModuleGameBlueMap::Update()
 
 bool ModuleGameBlueMap::CleanUp()
 {
+	ModuleGame::CleanUp();
 	for (const auto& colliderBody : simpoleCollidersBodies) {
 		if(colliderBody !=nullptr)
 			App->physics->world->DestroyBody(colliderBody);

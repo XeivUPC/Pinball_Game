@@ -195,6 +195,7 @@
     <ClInclude Include="Source\Bellsprout.h" />
     <ClInclude Include="Source\BonusMultiplierSensor.h" />
     <ClInclude Include="Source\BonusMultiplierSensorGroup.h" />
+    <ClInclude Include="Source\BonusSelectionProgram.h" />
     <ClInclude Include="Source\Box2DFactory.h" />
     <ClInclude Include="Source\Bumper.h" />
     <ClInclude Include="Source\CapturePokemon.h" />
@@ -279,6 +280,7 @@
     <ClCompile Include="Source\Bellsprout.cpp" />
     <ClCompile Include="Source\BonusMultiplierSensor.cpp" />
     <ClCompile Include="Source\BonusMultiplierSensorGroup.cpp" />
+    <ClCompile Include="Source\BonusSelectionProgram.cpp" />
     <ClCompile Include="Source\Box2DFactory.cpp" />
     <ClCompile Include="Source\Bumper.cpp" />
     <ClCompile Include="Source\CapturePokemon.cpp" />

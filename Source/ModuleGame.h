@@ -53,6 +53,9 @@ public:
 	bool CanEvolve();
 	bool CanCapture();
 
+	int GetBonusSelectionAttempts();
+	void AddBonusSelectionAttempts();
+
 	bool IsBallInTopSection();
 
 	virtual void SetState(GameStates stateToChange) =0;
@@ -86,7 +89,7 @@ protected:
 	bool canCapture = false;
 	bool canEvolve = false;
 
-
+	int bonusSelectionAttempts = 1;
 
 
 

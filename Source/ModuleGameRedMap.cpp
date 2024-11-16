@@ -45,6 +45,9 @@ ModuleGameRedMap::~ModuleGameRedMap()
 
 bool ModuleGameRedMap::Start()
 {
+
+	ModuleGame::Start();
+
 	App->texture->CreateTexture("Assets/map_redMap.png", "map_redMap");
 	map_texture = App->texture->GetTexture("map_redMap");	
 	
@@ -100,6 +103,8 @@ bool ModuleGameRedMap::Start()
 
 update_status ModuleGameRedMap::Update()
 {
+	ModuleGame::Update();
+
 	RepositionCamera(pokeBall->GetPosition());
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
@@ -201,6 +206,7 @@ update_status ModuleGameRedMap::Update()
 
 bool ModuleGameRedMap::CleanUp()
 {
+	ModuleGame::CleanUp();
 	for (const auto& colliderBody : simpoleCollidersBodies) {
 		if(colliderBody !=nullptr)
 			App->physics->world->DestroyBody(colliderBody);
@@ -213,6 +219,7 @@ bool ModuleGameRedMap::CleanUp()
 			delete objectBody;
 		}
 	}
+
 	mapObjects.clear();
 
 

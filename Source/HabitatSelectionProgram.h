@@ -13,7 +13,6 @@ private:
 public:
 	HabitatSelectionProgram(std::vector<int> habitatsToSelect);
 	~HabitatSelectionProgram();
-	void SetID(int id);
 	void CallAction(int id)override;
 	void StartProgram()override;
 	void Logic()override;

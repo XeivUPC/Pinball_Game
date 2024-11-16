@@ -16,11 +16,6 @@ HabitatSelectionProgram::~HabitatSelectionProgram()
 
 }
 
-void HabitatSelectionProgram::SetID(int id)
-{
-
-}
-
 void HabitatSelectionProgram::CallAction(int id)
 {
 	canBeOverwritten = true;
@@ -65,4 +60,8 @@ void HabitatSelectionProgram::Render()
 
 void HabitatSelectionProgram::EndProgram()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
 }

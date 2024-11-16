@@ -18,6 +18,7 @@ ModuleGame::~ModuleGame()
 
 bool ModuleGame::Start()
 {
+	pointsCounter.Set(100);
 	return true;
 }
 
@@ -28,6 +29,18 @@ update_status ModuleGame::Update()
 
 bool ModuleGame::CleanUp()
 {
+	habitatIndex = -1;
+
+	saveBall = true;
+
+	isEnergyCharged = false;
+	isEnergyUsed = false;
+	isBallInTopSection = false;
+
+	canCapture = false;
+	canEvolve = false;
+
+	bonusSelectionAttempts = 1;
 	return true;
 }
 
@@ -95,6 +108,18 @@ bool ModuleGame::CanEvolve()
 bool ModuleGame::CanCapture()
 {
 	return canCapture;
+}
+
+int ModuleGame::GetBonusSelectionAttempts()
+{
+	return bonusSelectionAttempts;
+}
+
+void ModuleGame::AddBonusSelectionAttempts()
+{
+	bonusSelectionAttempts++;
+	if (bonusSelectionAttempts > 5)
+		bonusSelectionAttempts = 1;
 }
 
 bool ModuleGame::IsBallInTopSection()

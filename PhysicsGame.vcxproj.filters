@@ -243,6 +243,9 @@
     <ClCompile Include="Source\EmptyProgram.cpp">
       <Filter>ScreenPrograms</Filter>
     </ClCompile>
+    <ClCompile Include="Source\BonusSelectionProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -488,6 +491,9 @@
       <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\EmptyProgram.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BonusSelectionProgram.h">
       <Filter>ScreenPrograms</Filter>
     </ClInclude>
   </ItemGroup>
