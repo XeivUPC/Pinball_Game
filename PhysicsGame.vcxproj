@@ -261,6 +261,7 @@
     <ClInclude Include="Source\PoliwagBumper.h" />
     <ClInclude Include="Source\PoliwagPsyduckCounter.h" />
     <ClInclude Include="Source\PsyduckBumper.h" />
+    <ClInclude Include="Source\SaveAgainBall.h" />
     <ClInclude Include="Source\ScreenProgram.h" />
     <ClInclude Include="Source\Slowpoke.h" />
     <ClInclude Include="Source\Staryu.h" />
@@ -348,6 +349,7 @@
     <ClCompile Include="Source\PoliwagBumper.cpp" />
     <ClCompile Include="Source\PoliwagPsyduckCounter.cpp" />
     <ClCompile Include="Source\PsyduckBumper.cpp" />
+    <ClCompile Include="Source\SaveAgainBall.cpp" />
     <ClCompile Include="Source\ScreenProgram.cpp" />
     <ClCompile Include="Source\Slowpoke.cpp" />
     <ClCompile Include="Source\Staryu.cpp" />
