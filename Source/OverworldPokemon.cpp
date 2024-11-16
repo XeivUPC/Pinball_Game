@@ -89,28 +89,41 @@ void OverworldPokemon::Logic()
 		animator->SetSpeed(0.25f);
 		animator->SelectAnimation("PokeballStatic", false);
 		count = 0;
+		timer.Start();
+		timerTime = 1;
 	}
-	if (animator->GetCurrentAnimationName() == "PokeballStatic" && animator->HasAnimationFinished())
+	if (animator->GetCurrentAnimationName() == "PokeballStatic" && timer.ReadSec()>=timerTime)
 	{
-		if (timer.ReadSec() >= 5) {
+		if (count == 3) {
 			gameAt->App->scene_pokedex->CapturePokemon(ID);
 
 			gameAt->GetPokeball()->SetIfBlockMovement(false);
 			gameAt->GetPokeball()->SetIfBlockRender(false);
-			gameAt->GetPokeball()->SetVelocity({ 5,-1 });
+			gameAt->GetPokeball()->SetVelocity({ 5,-2 });
 			gameAt->screen->RemoveProgram();
 			return;
 		}
-		if (count < 2)
-			animator->SelectAnimation("PokeballShake", false);
+		
+		timerTime = 1;
+		animator->SelectAnimation("PokeballShake", false); if (count < 2)			
+		timer.Start();
 	}
-	if (animator->GetCurrentAnimationName() == "PokeballShake" && animator->HasAnimationFinished())
+	if (animator->GetCurrentAnimationName() == "PokeballShake" && timer.ReadSec() >= timerTime)
 	{
-		if (count == 2)
-			timer.Start();
 		count++;
 		animator->SelectAnimation("PokeballStatic", false);
+
+		if (count == 3) {
+			timerTime = 2;
+		}
+		else {
+			timerTime = 1;
+		}
+
+		timer.Start();
 	}
+
+	printf("%d\n", count);
 }
 
 void OverworldPokemon::Render()
