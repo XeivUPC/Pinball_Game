@@ -13,6 +13,9 @@ class MapObject;
 class PokeBall;
 class CentralScreen;
 class MapEnergyBattery;
+class GameUI;
+class MapCave;
+class SaveAgainBall;
 
 class ModuleGame : public ModuleScene
 {
@@ -42,6 +45,8 @@ public:
 	Counter pointsCounter = Counter(100);
 	PokeBall* GetPokeball();
 
+	GameUI* GetUI();
+
 	void NextHabitat();
 	void PreviousHabitat();
 	bool ChangeToHabitat(int habitat);
@@ -50,6 +55,23 @@ public:
 	bool IsEnergyCharged();
 	void SetEnergyStatus(bool isCharged);
 	void UseEnergy();
+
+	bool CanEvolve();
+	bool CanCapture();
+
+	void SetSaveBall(bool status);
+	void SetExtraBall(bool status);
+	bool HasExtraBall();
+	bool HasSaveBall();
+	void SetTimeSaveBall(float time);
+
+
+	void OpenCave();
+	void CloseCave();
+	void FreeBallCave();
+
+	int GetBonusSelectionAttempts();
+	void AddBonusSelectionAttempts();
 
 	bool IsBallInTopSection();
 
@@ -63,6 +85,9 @@ protected:
 	Texture* map_texture= nullptr;
 	PokeBall* pokeBall=nullptr;
 	MapEnergyBattery* energyBattery=nullptr;
+	GameUI* UI = nullptr;
+	MapCave* cave = nullptr;
+	SaveAgainBall* saveAgainBall = nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);
@@ -77,10 +102,18 @@ protected:
 	std::vector<int> mapHabitats;
 	int habitatIndex=-1;
 
-	bool saveBall=true;
+	bool saveBall = false;
+	bool extraBall = false;
+
 	bool isEnergyCharged = false;
 	bool isEnergyUsed = false;
 	bool isBallInTopSection = false;
+
+	bool canCapture = false;
+	bool canEvolve = false;
+
+	int bonusSelectionAttempts = 1;
+
 
 
 

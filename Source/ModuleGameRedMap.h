@@ -12,6 +12,7 @@
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
 #include "CenterRedArrowGroup.h"
+#include "BonusMultiplierSensorGroup.h"
 
 using namespace pugi;
 
@@ -19,13 +20,13 @@ class ModuleGameRedMap : public ModuleGame {
 private:
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
-	GameUI* UI = nullptr;
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
 	CaveSensorGroup* caveSensorGroup = nullptr;
 	LapSensorGroup* lapSensorGroup = nullptr;
 	GetArrowGroup* getArrowGroup = nullptr;
 	EvoArrowGroup* evoArrowGroup = nullptr;
 	CenterRedArrowGroup* centerRedArrowGroup = nullptr;
+	BonusMultiplierSensorGroup* bonusMultiplierSensorGroup = nullptr;
 
 	DittoColliders* dittoColliders=nullptr;
 

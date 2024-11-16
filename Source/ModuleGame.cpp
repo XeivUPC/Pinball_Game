@@ -5,6 +5,8 @@
 #include "ModuleMainMenu.h"
 #include "MapObject.h"
 #include "MapEnergyBattery.h"
+#include "MapCave.h"
+#include "SaveAgainBall.h"
 #include <sstream>
 
 
@@ -18,6 +20,11 @@ ModuleGame::~ModuleGame()
 
 bool ModuleGame::Start()
 {
+	pointsCounter.Set(100);
+
+	saveAgainBall = new SaveAgainBall(this, { 64.f / SCREEN_SIZE ,238.f / SCREEN_SIZE });
+	SetTimeSaveBall(24.f);
+
 	return true;
 }
 
@@ -28,12 +35,30 @@ update_status ModuleGame::Update()
 
 bool ModuleGame::CleanUp()
 {
+	habitatIndex = -1;
+
+	saveBall = false;
+	extraBall = false;
+
+	isEnergyCharged = false;
+	isEnergyUsed = false;
+	isBallInTopSection = false;
+
+	canCapture = false;
+	canEvolve = false;
+
+	bonusSelectionAttempts = 1;
 	return true;
 }
 
 PokeBall* ModuleGame::GetPokeball()
 {
 	return pokeBall;
+}
+
+GameUI* ModuleGame::GetUI()
+{
+	return UI;
 }
 
 void ModuleGame::NextHabitat()
@@ -85,6 +110,68 @@ void ModuleGame::SetEnergyStatus(bool isCharged)
 void ModuleGame::UseEnergy()
 {
 	energyBattery->Reset();
+}
+
+bool ModuleGame::CanEvolve()
+{
+	return canEvolve;
+}
+
+bool ModuleGame::CanCapture()
+{
+	return canCapture;
+}
+
+void ModuleGame::OpenCave()
+{
+	cave->OpenCave();
+}
+
+void ModuleGame::CloseCave()
+{
+	cave->CloseCave();
+}
+
+void ModuleGame::FreeBallCave()
+{
+	cave->FreeBall();
+}
+
+void ModuleGame::SetSaveBall(bool status)
+{
+	saveBall = status;
+}
+
+void ModuleGame::SetExtraBall(bool status)
+{
+	extraBall = status;
+}
+
+void ModuleGame::SetTimeSaveBall(float time)
+{
+	saveAgainBall->SetBallSaverTimer(time);
+}
+
+bool ModuleGame::HasExtraBall()
+{
+	return extraBall;
+}
+
+bool ModuleGame::HasSaveBall()
+{
+	return saveBall;
+}
+
+int ModuleGame::GetBonusSelectionAttempts()
+{
+	return bonusSelectionAttempts;
+}
+
+void ModuleGame::AddBonusSelectionAttempts()
+{
+	bonusSelectionAttempts++;
+	if (bonusSelectionAttempts > 5)
+		bonusSelectionAttempts = 1;
 }
 
 bool ModuleGame::IsBallInTopSection()

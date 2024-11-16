@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="126">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="136">
  <tileset firstgid="1" name="map_redMap" tilewidth="192" tileheight="278" tilecount="3" columns="3">
   <image source="../map_redMap.png" width="576" height="278"/>
  </tileset>
@@ -289,9 +289,6 @@
   <object id="6" x="66.3043" y="49.1739">
    <polygon points="0,0 5.43478,-2.13043 5.52853,12.6386 0.0502717,14.2473"/>
   </object>
-  <object id="12" x="29.9091" y="85.0909">
-   <polygon points="0,0 0.181818,6.09091 -1.09091,12.2727 -1,23 1.45455,33.3636 4.90909,43.5455 8.90909,51.5455 13.9091,57.6364 14.3636,61.0909 9.72727,65.7273 5.18182,60.4545 -0.727273,46.6364 -3.36364,37.5455 -5.45455,24.1818 -5.45455,11.7273 -3,3.63636"/>
-  </object>
   <object id="13" x="88.5217" y="43.5217">
    <polygon points="0,0 5,0.0869565 5.03125,12.519 -0.0122283,12.5625"/>
   </object>
@@ -327,6 +324,9 @@
   </object>
   <object id="42" name="DittoCollider1" x="27.625" y="33">
    <polygon points="-0.46875,-1.15625 -6.625,6.4375 -11.9375,15.9375 -15.5313,24.9063 -18.25,35.1875 -18.375,-0.625"/>
+  </object>
+  <object id="130" x="44.8281" y="143.953">
+   <polygon points="0,0 0.21875,2.28125 -4.3125,6.73438 -6.29688,6.57813 -10.1094,1.1875 -13.8906,-7.23438 -18.4531,-21.2969 -20.3438,-34.4531 -20.3281,-47.125 -17.875,-55.2344 -14.9531,-58.8125 -14.75,-52.7969 -16.0469,-46.8594 -15.8281,-37.625 -11.0625,-18.875 -7.875,-9.98438 -4.73438,-6.54688"/>
   </object>
  </objectgroup>
  <objectgroup id="3" name="Objects">
@@ -546,6 +546,27 @@
     <property name="type" value="energyBattery"/>
    </properties>
    <point/>
+  </object>
+  <object id="131" x="39.1573" y="150.744" width="8.05228" height="1.75127" rotation="-45">
+   <properties>
+    <property name="order" type="int" value="0"/>
+    <property name="type" value="bonusMultiplierSensor"/>
+   </properties>
+  </object>
+  <object id="132" x="115.395" y="144.118" width="8.11072" height="1.98697" rotation="45">
+   <properties>
+    <property name="order" type="int" value="1"/>
+    <property name="type" value="bonusMultiplierSensor"/>
+   </properties>
+  </object>
+  <object id="134" name="Cave" x="64" y="134" width="33" height="1">
+   <properties>
+    <property name="entry" type="object" value="135"/>
+    <property name="type" value="cave"/>
+   </properties>
+  </object>
+  <object id="135" name="CaveEntry" x="74" y="135" width="13" height="13">
+   <ellipse/>
   </object>
  </objectgroup>
 </map>

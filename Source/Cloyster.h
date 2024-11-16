@@ -5,7 +5,7 @@
 
 class Cloyster : public MapObject {
 public:
-	Cloyster(ModuleGame* gameAt, b2Vec2 position);
+	Cloyster(ModuleGame* gameAt, b2Vec2 position, float mouthRadius);
 	~Cloyster();
 
 	update_status Update();
@@ -16,4 +16,13 @@ private:
 	Texture* map_cloyster = nullptr;
 	Animator* map_cloyster_animator = nullptr;
 
+
+	b2Body* body;
+
+	CollisionSensor sensor;
+
+	Timer mouthTimer;
+	float mouthTime = 1.f;
+
+	bool ballIn = false;
 };

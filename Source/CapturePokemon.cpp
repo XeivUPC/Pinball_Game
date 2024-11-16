@@ -25,7 +25,7 @@ void CapturePokemon::SetRandomPokemonByZone(bool zoneID, int rarity)
 {
 	std::vector<int> possiblePokemon;
 	int index = 0;
-	for (int i = 0; i < gameAt->App->scene_pokedex->GetPokemonListCount(); i++)
+	for (int i = 0; i < gameAt->App->scene_pokedex->GetPokemonListCount()-1; i++)
 	{
 		if (!zoneID)
 		{
