@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="131">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="133">
  <tileset firstgid="1" name="map_redMap" tilewidth="192" tileheight="278" tilecount="3" columns="3">
   <image source="../map_redMap.png" width="576" height="278"/>
  </tileset>
@@ -547,11 +547,17 @@
    </properties>
    <point/>
   </object>
-  <object id="127" x="120.219" y="151.813">
-   <polygon points="-0.399653,-1.27049 -5.34375,-6.09375 -5,-9 6,-15 2.23438,-1.6875"/>
+  <object id="131" x="39.1573" y="150.744" width="8.05228" height="1.75127" rotation="-45">
+   <properties>
+    <property name="order" type="int" value="0"/>
+    <property name="type" value="bonusMultiplierSensor"/>
+   </properties>
   </object>
-  <object id="129" x="40.25" y="152.594">
-   <polygon points="0.399653,-1.27049 5.25486,-6.08264 4.80556,-8.62708 -2.07813,-1.98438"/>
+  <object id="132" x="115.395" y="144.118" width="8.11072" height="1.98697" rotation="45">
+   <properties>
+    <property name="order" type="int" value="1"/>
+    <property name="type" value="bonusMultiplierSensor"/>
+   </properties>
   </object>
  </objectgroup>
 </map>

@@ -59,6 +59,7 @@ bool ModuleGameRedMap::Start()
 	getArrowGroup = new GetArrowGroup(this);
 	evoArrowGroup = new EvoArrowGroup(this);
 	centerRedArrowGroup = new CenterRedArrowGroup(this);
+	bonusMultiplierSensorGroup = new BonusMultiplierSensorGroup(this);
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 	screen = new CentralScreen(this);
@@ -70,6 +71,7 @@ bool ModuleGameRedMap::Start()
 	getArrowGroup->Sort();
 	evoArrowGroup->Sort();
 	centerRedArrowGroup->Sort();
+	bonusMultiplierSensorGroup->Sort();
 
 	getArrowGroup->ActivateNext();
 	getArrowGroup->ActivateNext();
@@ -426,6 +428,19 @@ void ModuleGameRedMap::LoadMap(std::string path)
 				CenterRedArrow* centerArrow = new CenterRedArrow(this, { x,y }, order);
 
 				centerRedArrowGroup->AddArrow(centerArrow);
+			}
+			else if (type == "bonusMultiplierSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				BonusMultiplierSensor* bonusMultiplierSensor = new BonusMultiplierSensor(this, { x,y }, width, height, angle, order, 0);
+
+				bonusMultiplierSensorGroup->AddSensor(bonusMultiplierSensor);
 			}
 		}
 	}
