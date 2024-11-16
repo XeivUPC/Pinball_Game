@@ -23,7 +23,7 @@ public:
 private:
 
     // Start time in seconds
-	double started_at;   
+	double started_at = 0;   
 
 	bool locked = false;
 };

@@ -5,16 +5,16 @@
 class OverworldPokemon : public ScreenProgram
 {
 private:
-	int count;
-	int ID;
-	int overworldID;
+	int count = 0;
+	int ID = 0;
+	int overworldID = 0;
 	bool animating = false;
-	Texture* texture;
-	Rectangle rect;
-	Bumper* pokemon_bumper;
-	Animator* animator;
+	Texture* texture = nullptr;
+	Rectangle rect = {0,0,0,0};
+	Bumper* pokemon_bumper = nullptr;
+	Animator* animator = nullptr;
 	float fallingTime = 1.5f;
-	float offset;
+	float offset = 0;
 	float factor = 0;
 
 	void AddHit();
