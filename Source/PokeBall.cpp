@@ -2,6 +2,8 @@
 #include "Application.h"
 #include "ModulePhysics.h"
 #include "ModuleTexture.h"
+#include "ModuleUserPreferences.h"
+#include "GameUI.h"
 #include <math.h>
  
 PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 spawn, PokeballType type,float maxSpeed) : MapObject(gameAt)
@@ -143,7 +145,7 @@ update_status PokeBall::Update()
 
 	pokeball_animator->SetSpeed(pokeballSpeed);
 
-	pokeball_animator->Update();\
+	pokeball_animator->Update();
 
 
 	if (blockMovement) {
@@ -221,6 +223,11 @@ void PokeBall::Reset(bool saveBall)
 {
 	PokeballType lastType = this->type;
 	
+	if (saveBall) {
+		const char* text = "BOLA SALVADA";
+		int selectedLanguage = gameAt->App->userPreferences->GetLanguage();
+		gameAt->GetUI()->AddText(ballSavedUIText[selectedLanguage]);
+	}
 
 	SetPosition(spawn);
 	SetVelocity({ 0,0 });
