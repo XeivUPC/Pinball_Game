@@ -11,6 +11,7 @@
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
 #include "CenterBlueArrowGroup.h"
+#include "BonusMultiplierSensorGroup.h"
 
 
 using namespace pugi;
@@ -24,10 +25,12 @@ private:
 	GetArrowGroup* getArrowGroup = nullptr;
 	EvoArrowGroup* evoArrowGroup = nullptr;
 	CenterBlueArrowGroup* centerBlueArrowGroup = nullptr;
+	BonusMultiplierSensorGroup* bonusMultiplierSensorGroup = nullptr;
 
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
-	GameUI* UI = nullptr;
+
+	b2Body* entryCollider;
 	
 	//Create
 	void LoadMap(std::string path) override;

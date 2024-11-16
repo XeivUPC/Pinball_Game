@@ -45,6 +45,9 @@ ModuleGameBlueMap::~ModuleGameBlueMap()
 
 bool ModuleGameBlueMap::Start()
 {
+
+	ModuleGame::Start();
+
 	App->texture->CreateTexture("Assets/map_blueMap.png", "map_blueMap");
 	map_texture = App->texture->GetTexture("map_blueMap");	
 	
@@ -59,6 +62,7 @@ bool ModuleGameBlueMap::Start()
 	getArrowGroup = new GetArrowGroup(this);
 	evoArrowGroup = new EvoArrowGroup(this);
 	centerBlueArrowGroup = new CenterBlueArrowGroup(this);
+	bonusMultiplierSensorGroup = new BonusMultiplierSensorGroup(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 	screen = new CentralScreen(this);
@@ -69,6 +73,7 @@ bool ModuleGameBlueMap::Start()
 	getArrowGroup->Sort();
 	evoArrowGroup->Sort();
 	centerBlueArrowGroup->Sort();
+	bonusMultiplierSensorGroup->Sort();
 
 	getArrowGroup->ActivateNext();
 	getArrowGroup->ActivateNext();
@@ -79,8 +84,8 @@ bool ModuleGameBlueMap::Start()
 	pokeBall = new PokeBall(this, ballSpawn, PokeBall::Pokeball, 70);
 	
 	Pikachu* pikachu = new Pikachu(this, { 139.f / SCREEN_SIZE ,245.f / SCREEN_SIZE });
-	Slowpoke* slowpoke = new Slowpoke(this, { 0,0 });
-	Cloyster* cloyster = new Cloyster(this, { 0,0 });
+	Slowpoke* slowpoke = new Slowpoke(this, { 16.f / SCREEN_SIZE,95.f / SCREEN_SIZE }, 8.f / SCREEN_SIZE);
+	Cloyster* cloyster = new Cloyster(this, { 110.f / SCREEN_SIZE,90.f / SCREEN_SIZE }, 8.f / SCREEN_SIZE);
 
 	SetState(StartGame);
 
@@ -95,6 +100,7 @@ bool ModuleGameBlueMap::Start()
 
 update_status ModuleGameBlueMap::Update()
 {
+	ModuleGame::Update();
 	RepositionCamera(pokeBall->GetPosition());
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
@@ -143,10 +149,19 @@ update_status ModuleGameBlueMap::Update()
 
 		if (getArrowGroup->GetActiveAmount() >= 2) {
 			centerBlueArrowGroup->ActivateLeftTop();
+			canCapture = true;
+		}
+		else
+		{
+			canCapture = false;
 		}
 
 		if (evoArrowGroup->GetActiveAmount() >= 3) {
 			centerBlueArrowGroup->ActivateRightTop();
+			canEvolve = true;
+		}
+		else {
+			canEvolve = false;
 		}
 		// the top arrow in the center is activated when there is a black hole for events
 
@@ -185,6 +200,7 @@ update_status ModuleGameBlueMap::Update()
 
 bool ModuleGameBlueMap::CleanUp()
 {
+	ModuleGame::CleanUp();
 	for (const auto& colliderBody : simpoleCollidersBodies) {
 		if(colliderBody !=nullptr)
 			App->physics->world->DestroyBody(colliderBody);
@@ -252,7 +268,8 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 			body->CreateFixture(&chainFixtureDef);
 
 			if (name == "EntryCollider") {
-				body->GetFixtureList()[0].SetSensor(true);
+				entryCollider = body;
+				entryCollider->GetFixtureList()[0].SetSensor(true);
 			}
 
 			simpoleCollidersBodies.emplace_back(body);
@@ -404,6 +421,19 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 
 				centerBlueArrowGroup->AddArrow(centerArrow);
 			}
+			else if (type == "bonusMultiplierSensor") {
+
+				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
+				float height = objectNode.attribute("height").as_float() / SCREEN_SIZE;
+				float angle = objectNode.attribute("rotation").as_float();
+
+				pugi::xml_node orderNode = objectNode.child("properties").find_child_by_attribute("property", "name", "order");
+				int order = orderNode.attribute("value").as_int();
+
+				BonusMultiplierSensor* bonusMultiplierSensor = new BonusMultiplierSensor(this, { x,y }, width, height, angle, order, 1);
+
+				bonusMultiplierSensorGroup->AddSensor(bonusMultiplierSensor);
+				}
 		}
 	}
 }
@@ -418,10 +448,12 @@ void ModuleGameBlueMap::SetState(GameStates stateToChange)
 	switch (state)
 	{
 	case ModuleGame::StartGame:
+		entryCollider->GetFixtureList()[0].SetSensor(true);
 		statesTimer.LockTimer();
-		statesTime = 0.5f;
+		statesTime = 1.1f;
 		break;
 	case ModuleGame::PlayGame:
+		entryCollider->GetFixtureList()[0].SetSensor(false);
 		break;
 	case ModuleGame::BlockGame:
 		break;

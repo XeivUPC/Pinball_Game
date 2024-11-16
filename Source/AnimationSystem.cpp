@@ -135,6 +135,11 @@ void Animator::SetSpeed(float s)
 	speed = s;
 }
 
+float Animator::GetSpeed()
+{
+	return speed;
+}
+
 void Animator::Update()
 {
 	if (!isPlaying)

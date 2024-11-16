@@ -222,13 +222,29 @@
     <ClCompile Include="Source\HabitatSelectedProgram.cpp">
       <Filter>ScreenPrograms</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CenterBlueArrow.cpp" />
-    <ClCompile Include="Source\CenterBlueArrowGroup.cpp" />
-    <ClCompile Include="Source\CenterRedArrow.cpp" />
-    <ClCompile Include="Source\CenterRedArrowGroup.cpp" />
-    <ClCompile Include="Source\EmptyProgram.cpp" />
-    <ClCompile Include="Source\SaveAgainBall.cpp">
-      <Filter>Objects</Filter>
+    <ClCompile Include="Source\CenterRedArrow.cpp">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CenterBlueArrow.cpp">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CenterBlueArrowGroup.cpp">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CenterRedArrowGroup.cpp">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BonusMultiplierSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BonusMultiplierSensorGroup.cpp">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EmptyProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BonusSelectionProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -456,13 +472,29 @@
     <ClInclude Include="Source\HabitatSelectedProgram.h">
       <Filter>ScreenPrograms</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CenterBlueArrow.h" />
-    <ClInclude Include="Source\CenterBlueArrowGroup.h" />
-    <ClInclude Include="Source\CenterRedArrow.h" />
-    <ClInclude Include="Source\CenterRedArrowGroup.h" />
-    <ClInclude Include="Source\EmptyProgram.h" />
-    <ClInclude Include="Source\SaveAgainBall.h">
-      <Filter>Objects</Filter>
+    <ClInclude Include="Source\CenterRedArrow.h">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CenterBlueArrow.h">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CenterRedArrowGroup.h">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CenterBlueArrowGroup.h">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BonusMultiplierSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BonusMultiplierSensorGroup.h">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EmptyProgram.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BonusSelectionProgram.h">
+      <Filter>ScreenPrograms</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

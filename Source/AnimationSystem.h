@@ -69,6 +69,7 @@ public:
 	void SelectAnimation(std::string animName, bool l);
 	bool HasAnimationFinished();
 	void SetSpeed(float s);
+	float GetSpeed();
 	void Update();
 	void LerpUpdate(float factor);
 	void SetDirection(int direction);

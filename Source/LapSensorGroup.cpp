@@ -2,6 +2,7 @@
 #include "LapSensor.h"
 #include "ModuleUserPreferences.h"
 #include "Application.h"
+#include "PokeBall.h"
 #include <algorithm>
 
 LapSensorGroup::LapSensorGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
@@ -22,7 +23,11 @@ update_status LapSensorGroup::Update()
 	else if (mapSensors.front()->IsActive() && !mapSensors.back()->IsActive()) {
 		direction = 1;
 	}
-	else if(!mapSensors.front()->IsActive() && !mapSensors.back()->IsActive()) {
+	else if (!mapSensors.front()->IsActive() && !mapSensors.back()->IsActive()) {
+		direction = 0;
+	}
+	if (gameAt->GetPokeball()->GetPosition().y > 155.f / SCREEN_SIZE) {
+		DesactivateAll();
 		direction = 0;
 	}
 
@@ -74,12 +79,14 @@ bool LapSensorGroup::HaveToActivateArrowEvo()
 
 void LapSensorGroup::OnAllActive()
 {
-	gameAt->pointsCounter.Add(25000);
 	if (direction == -1) {
+		gameAt->pointsCounter.Add(25000);
 		activateNextGetArrow = true;
+		DesactivateAll();
 	}
 	else if (direction == 1) {
+		gameAt->pointsCounter.Add(25000);
 		activateNextEvoArrow = true;
+		DesactivateAll();
 	}
-	DesactivateAll();
 }

@@ -5,14 +5,15 @@
 #include "CapturePokemon.h"
 #include "HabitatSelectionProgram.h"
 #include "HabitatSelectedProgram.h"
+#include "BonusSelectionProgram.h"
 #include <vector>
 #include <string.h>
 
 class CentralScreen : public MapObject
 {
 private:
-	ScreenProgram* actualProgram;
-	ScreenProgram* defaultProgram;
+	ScreenProgram* actualProgram=nullptr;
+	ScreenProgram* defaultProgram=nullptr;
 public:
 	Rectangle screenArea;
 	void AddProgram(ScreenProgram* program);
