@@ -15,6 +15,6 @@ public:
 protected:
 	void OnAllActive() override;
 private:
-	float totalNum = 0;
+	int totalNum = 0;
 };
 

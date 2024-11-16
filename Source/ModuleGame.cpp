@@ -49,6 +49,11 @@ PokeBall* ModuleGame::GetPokeball()
 	return pokeBall;
 }
 
+GameUI* ModuleGame::GetUI()
+{
+	return UI;
+}
+
 void ModuleGame::NextHabitat()
 {
 	habitatIndex++;

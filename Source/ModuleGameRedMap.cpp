@@ -146,11 +146,9 @@ update_status ModuleGameRedMap::Update()
 
 			if (lapSensorGroup->HaveToActivateArrowGet()) {
 				getArrowGroup->ActivateNext();
-				UI->AddText("GET");
 			}
 			if (lapSensorGroup->HaveToActivateArrowEvo()) {
 				evoArrowGroup->ActivateNext();
-				UI->AddText("EVO");
 			}
 			//after catching/failing pokemon capture/evo, deactivate all get/evo arrows 
 
@@ -228,7 +226,6 @@ bool ModuleGameRedMap::CleanUp()
 	App->renderer->camera.offset = { 0,0 };
 	return true;
 }
-
 
 void ModuleGameRedMap::LoadMap(std::string path)
 {

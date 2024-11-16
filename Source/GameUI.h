@@ -11,7 +11,7 @@ public:
 	void Render();
 	update_status Update();
 
-	void AddText(const char* text);
+	void AddText(std::string text);
 	void ShowNextText();
 	void ShowBasicUI();
 
@@ -21,7 +21,7 @@ private:
 
 	PokeBall* pokeball;
 
-	std::vector<const char*> textQueue;
+	std::vector<std::string> textQueue;
 	bool showingText = false;
 
 	bool paused = false;

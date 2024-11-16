@@ -20,7 +20,6 @@ class ModuleGameRedMap : public ModuleGame {
 private:
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
-	GameUI* UI = nullptr;
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
 	CaveSensorGroup* caveSensorGroup = nullptr;
 	LapSensorGroup* lapSensorGroup = nullptr;

@@ -2,6 +2,7 @@
 #include "BonusMultiplierSensor.h"
 #include "ModuleUserPreferences.h"
 #include "Application.h"
+#include "GameUI.h"
 #include <algorithm>
 
 BonusMultiplierSensorGroup::BonusMultiplierSensorGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
@@ -28,11 +29,19 @@ update_status BonusMultiplierSensorGroup::Update()
 	}
 	else if (frontSensor->IsActive() && backSensor->IsActive()) {
 		totalNum++;
+
+		const char* text = "MULT. BONUS x";
+		std::string textNum = std::to_string(totalNum);
+		std::string result = std::string(text) + textNum;
+
+		gameAt->GetUI()->AddText(result);
+
+
 		if (totalNum >= 100) {
 			totalNum = 99;
 		}
-		frontSensor->SetNumber((int)totalNum/10);
-		backSensor->SetNumber((int)totalNum - ((int)totalNum / 10)*10);
+		frontSensor->SetNumber(totalNum/10);
+		backSensor->SetNumber(totalNum - (totalNum / 10)*10);
 
 		frontSensor->Desactivate();
 		backSensor->Desactivate();

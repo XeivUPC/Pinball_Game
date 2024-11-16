@@ -41,7 +41,7 @@ update_status GameUI::Update()
     return UPDATE_CONTINUE;
 }
 
-void GameUI::AddText(const char* text)
+void GameUI::AddText(std::string text)
 {
     textQueue.push_back(text);
 }
@@ -49,7 +49,7 @@ void GameUI::AddText(const char* text)
 void GameUI::ShowNextText()
 {
     showingText = true;
-    const char* currentText = textQueue.front();
+    std::string currentText = textQueue.front();
     EndMode2D();
     App->renderer->DrawRect(0, 134, 160, 10, BLACK);
 
@@ -72,7 +72,7 @@ void GameUI::ShowNextText()
     if (textPauseTimer.ReadSec() >= textPauseTime) {
         textCurrentPos--;
     }
-    App->text_gameUIText->Write(currentText, textCurrentPos, 134);
+    App->text_gameUIText->Write(currentText.c_str(), textCurrentPos, 134);
 }
 
 void GameUI::ShowBasicUI()

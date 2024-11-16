@@ -13,6 +13,7 @@ class MapObject;
 class PokeBall;
 class CentralScreen;
 class MapEnergyBattery;
+class GameUI;
 
 class ModuleGame : public ModuleScene
 {
@@ -41,6 +42,8 @@ public:
 	Counter pointsCounter = Counter(100);
 	PokeBall* GetPokeball();
 
+	GameUI* GetUI();
+
 	void NextHabitat();
 	void PreviousHabitat();
 	bool ChangeToHabitat(int habitat);
@@ -67,6 +70,7 @@ protected:
 	Texture* map_texture= nullptr;
 	PokeBall* pokeBall=nullptr;
 	MapEnergyBattery* energyBattery=nullptr;
+	GameUI* UI = nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);

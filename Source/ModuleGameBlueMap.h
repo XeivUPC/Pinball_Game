@@ -29,7 +29,6 @@ private:
 
 	Flipper* leftFlipper = nullptr;
 	Flipper* rightFlipper = nullptr;
-	GameUI* UI = nullptr;
 
 	b2Body* entryCollider;
 	
