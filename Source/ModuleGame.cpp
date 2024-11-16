@@ -5,6 +5,7 @@
 #include "ModuleMainMenu.h"
 #include "MapObject.h"
 #include "MapEnergyBattery.h"
+#include "MapCave.h"
 #include <sstream>
 
 
@@ -113,6 +114,16 @@ bool ModuleGame::CanEvolve()
 bool ModuleGame::CanCapture()
 {
 	return canCapture;
+}
+
+void ModuleGame::OpenCave()
+{
+	cave->OpenCave();
+}
+
+void ModuleGame::CloseCave()
+{
+	cave->CloseCave();
 }
 
 int ModuleGame::GetBonusSelectionAttempts()

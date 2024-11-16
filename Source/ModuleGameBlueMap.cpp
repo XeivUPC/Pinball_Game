@@ -20,6 +20,7 @@
 #include "Slowpoke.h"
 #include "Cloyster.h"
 #include "PoliwagPsyduckCounter.h"
+#include "MapCave.h"
 
 #include "ModuleHighScore.h"
 
@@ -350,6 +351,23 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 				x += width / 2;
 				y += heigth / 2;
 				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, energyBattery, width, heigth, 1);
+			}
+			else if (type == "cave") {
+				b2Vec2 entryPos = { 0,0 };
+				float entryRadius = 0; 
+
+				pugi::xml_node entryIdNode = objectNode.child("properties").find_child_by_attribute("property", "name", "entry");
+
+				int entryId = entryIdNode.attribute("value").as_int();
+
+				pugi::xml_node entryNode = mapObjectsNode.find_child_by_attribute("object", "id", std::to_string(entryId).c_str());
+				entryPos.x = entryNode.attribute("x").as_float() / SCREEN_SIZE;
+				entryPos.y = entryNode.attribute("y").as_float() / SCREEN_SIZE;
+
+				entryRadius = entryNode.attribute("width").as_float() / SCREEN_SIZE;
+				entryRadius /= 2;
+
+				cave = new MapCave(this, { x,y }, entryPos, entryRadius);
 			}
 			else if (type == "pokeballChangerSensor") {
 

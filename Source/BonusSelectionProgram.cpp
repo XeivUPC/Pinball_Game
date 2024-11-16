@@ -194,11 +194,12 @@ void BonusSelectionProgram::Logic()
 		}
 	}
 	else {
-		if (selectedBonusSubType != -1) {
+		if (selectedBonusSubType != -1 && !showingSubType) {
 
 			if (selectedShowTime/2 < selectedShowTimer.ReadSec()) {
 				animator->SelectAnimation("Select_Animation_" + std::to_string(selectedBonus) + "_" + std::to_string(selectedBonusSubType), true);
 				selectedShowTime += 1;
+				showingSubType = true;
 			}
 		}
 		if (selectedShowTime < selectedShowTimer.ReadSec()) {

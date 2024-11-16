@@ -6,6 +6,7 @@
 #include "HabitatSelectionProgram.h"
 #include "HabitatSelectedProgram.h"
 #include "BonusSelectionProgram.h"
+#include "BonusStartProgram.h"
 #include <vector>
 #include <string.h>
 

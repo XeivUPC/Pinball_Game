@@ -94,8 +94,8 @@ void CaveSensorGroup::OnAllActive()
 	gameAt->pointsCounter.Add(5000);
 
 	if(gameAt->screen->CanProgramBeOverwritten()) {
-		gameAt->screen->SwitchProgram(new BonusSelectionProgram(gameAt->GetBonusSelectionAttempts()));
-		gameAt->AddBonusSelectionAttempts();
+		gameAt->screen->SwitchProgram(new BonusStartProgram());
+		gameAt->OpenCave();
 	}
 
 	for (const auto& sensorPointer : mapSensors)

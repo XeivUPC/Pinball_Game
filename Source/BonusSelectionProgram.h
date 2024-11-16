@@ -24,6 +24,8 @@ private:
 	int selectedBonus = -1;
 	int selectedBonusSubType = -1;
 
+	bool showingSubType =false;
+
 	bool GiveBonus(int type, int subType);
 
 public:

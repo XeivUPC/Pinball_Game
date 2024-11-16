@@ -14,6 +14,7 @@ class PokeBall;
 class CentralScreen;
 class MapEnergyBattery;
 class GameUI;
+class MapCave;
 
 class ModuleGame : public ModuleScene
 {
@@ -56,6 +57,9 @@ public:
 	bool CanEvolve();
 	bool CanCapture();
 
+	void OpenCave();
+	void CloseCave();
+
 	int GetBonusSelectionAttempts();
 	void AddBonusSelectionAttempts();
 
@@ -71,6 +75,7 @@ protected:
 	PokeBall* pokeBall=nullptr;
 	MapEnergyBattery* energyBattery=nullptr;
 	GameUI* UI = nullptr;
+	MapCave* cave = nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);

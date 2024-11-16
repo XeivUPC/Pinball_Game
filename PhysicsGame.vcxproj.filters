@@ -246,6 +246,12 @@
     <ClCompile Include="Source\BonusSelectionProgram.cpp">
       <Filter>ScreenPrograms</Filter>
     </ClCompile>
+    <ClCompile Include="Source\BonusStartProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapCave.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -495,6 +501,12 @@
     </ClInclude>
     <ClInclude Include="Source\BonusSelectionProgram.h">
       <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BonusStartProgram.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapCave.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
