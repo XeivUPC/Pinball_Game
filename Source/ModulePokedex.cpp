@@ -425,25 +425,16 @@ void ModulePokedex::LoadPokedex()
             
         pokemon_list.push_back(pokemon);
     }
-    /*for (size_t i = 0; i < 18; i++)
-    {
-        printf("%d ->", i);
-        for (size_t x = 0; x < pokemon_list.size(); x++)
-        {
-            for (size_t y = 0; y < pokemon_list[x].blueMapLocations.size(); y++)
-            {
-                if(pokemon_list[x].blueMapLocations[y] == i)
-                    printf(" %s,", pokemon_list[x].Names[1].c_str());
-                    
-            }
-        }
-        printf("\n");
-    }*/
 }
 
 int ModulePokedex::GetPokemonListCount()
 {
     return pokemon_list.size();
+}
+
+int ModulePokedex::GetOverworldTexture(int i)
+{
+    return pokemon_list.at(i).overworldIndex;
 }
 
 std::vector<int> ModulePokedex::GetBlueMapHabitats(int i)

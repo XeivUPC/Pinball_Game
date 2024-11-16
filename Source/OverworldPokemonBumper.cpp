@@ -12,7 +12,7 @@ OverworldPokemonBumper::OverworldPokemonBumper(ModuleGame* gameAt, b2Vec2 positi
 	b2FixtureUserData fixtureData;
 	fixtureData.pointer = (uintptr_t)(&sensor);
 
-	body = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, { position.x + radius, position.y + radius }, radius, fixtureData);
+	body = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, { (position.x + radius-8)/SCREEN_SIZE, (position.y + radius-8)/SCREEN_SIZE }, radius/SCREEN_SIZE, fixtureData);
 	body->SetType(b2_staticBody);
 	body->GetFixtureList()[0].SetDensity(1);
 	body->GetFixtureList()[0].SetRestitution(restitution);
@@ -23,15 +23,16 @@ OverworldPokemonBumper::OverworldPokemonBumper(ModuleGame* gameAt, b2Vec2 positi
 	gameAt->App->texture->CreateTexture("Assets/pokemons_capture_sprites.png", "Assets/pokemons_capture_sprites.png");
 	pokemonTexture = gameAt->App->texture->GetTexture("Assets/pokemons_capture_sprites.png");
 
-	gameAt->App->texture->CreateTexture("Assets/capture_sprites.png", "Assets/capture_sprites.png");
-	captureTexture = gameAt->App->texture->GetTexture("Assets/capture_sprites.png");
-
 	//bumperAudioId = gameAt->App->audio->LoadFx("");
 
 	animator = new Animator(gameAt->App);
 
 	AnimationData pokemonIdle = AnimationData("PokemonIdle");
+	pokemonIdle.AddSprite(Sprite{ pokemonTexture,{(float)(((pokemonId-1)/20)*3),(float)((pokemonId - 1) % 20)}, {32,32}});
+	pokemonIdle.AddSprite(Sprite{ pokemonTexture,{(float)(((pokemonId-1)/20)*3+1),(float)((pokemonId - 1) % 20)}, {32,32}});
 	AnimationData pokemonHit = AnimationData("PokemonHit");
+	pokemonHit.AddSprite(Sprite{ pokemonTexture,{(float)(((pokemonId - 1) / 20) * 3 + 2),(float)((pokemonId - 1) % 20)}, {32,32} });
+	pokemonHit.AddSprite(Sprite{ pokemonTexture,{(float)(((pokemonId - 1) / 20) * 3 + 2),(float)((pokemonId - 1) % 20)}, {32,32} });
 	AnimationData caughtSmoke = AnimationData("CaughtSmoke");
 	AnimationData pokeballShake = AnimationData("PokeballShake");
 
@@ -50,6 +51,14 @@ OverworldPokemonBumper::~OverworldPokemonBumper()
 update_status OverworldPokemonBumper::Update()
 {
 	Bumper::Update();
+	if (animator->HasAnimationFinished()) {
+		if (gettingHit) {
+			gettingHit = false;
+		}
+		animator->SelectAnimation("PokemonIdle", true);
+	}
+	animator->Update();
+	animator->Animate(gameAt->screen->screenArea.x + gameAt->screen->screenArea.width/2-16, gameAt->screen->screenArea.y + gameAt->screen->screenArea.height / 2-16, false);
 	return UPDATE_CONTINUE;
 }
 
@@ -62,4 +71,7 @@ bool OverworldPokemonBumper::CleanUp()
 void OverworldPokemonBumper::OnHit()
 {
 	Bumper::OnHit();
+	gameAt->screen->CallScreenEvent(0);
+	animator->SelectAnimation("PokemonHit", false);
+	gettingHit = true;
 }

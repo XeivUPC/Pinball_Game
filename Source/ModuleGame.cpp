@@ -108,6 +108,11 @@ void ModuleGame::AddObject(MapObject* object)
 	mapObjects.emplace_back(object);
 }
 
+void ModuleGame::RemoveObject(MapObject* object)
+{
+	ObjectsToRemove.emplace_back(object);
+}
+
 void ModuleGame::FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector)
 {
 	std::stringstream ss(stringData);
@@ -148,4 +153,20 @@ void ModuleGame::RepositionCamera(b2Vec2 positionToTrack)
 		App->renderer->camera.offset.y = 0;
 		isBallInTopSection = true;
 	}
+}
+
+void ModuleGame::RemoveAllPendentObjects()
+{
+	for (size_t i = 0; i < ObjectsToRemove.size(); i++)
+	{
+		MapObject* object = ObjectsToRemove.at(i);
+		object->CleanUp();
+		for (size_t j = 0; j < mapObjects.size(); j++)
+		{
+			if(mapObjects.at(j)==object)
+				mapObjects.erase(mapObjects.begin() + j);
+		}
+		delete object;
+	}
+	ObjectsToRemove.clear();
 }

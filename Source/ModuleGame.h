@@ -34,6 +34,7 @@ public:
 
 	virtual void LoadMap(std::string path) = 0;
 	void AddObject(MapObject* object);
+	void RemoveObject(MapObject* object);
 
 	virtual bool Start();
 	virtual update_status Update();
@@ -58,12 +59,14 @@ public:
 	CentralScreen* screen=nullptr;
 private:
 protected:
+	std::vector<MapObject*> ObjectsToRemove;
 	Texture* map_texture= nullptr;
 	PokeBall* pokeBall=nullptr;
 	MapEnergyBattery* energyBattery=nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);
+	void RemoveAllPendentObjects();
 
 	std::vector<b2Body*> simpoleCollidersBodies;
 	std::vector<MapObject*> mapObjects;

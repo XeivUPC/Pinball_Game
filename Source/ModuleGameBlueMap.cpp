@@ -175,7 +175,7 @@ update_status ModuleGameBlueMap::Update()
 	UI->Update();
 
 	ModuleScene::FadeUpdate();
-
+	ModuleGame::RemoveAllPendentObjects();
 	return UPDATE_CONTINUE;
 }
 

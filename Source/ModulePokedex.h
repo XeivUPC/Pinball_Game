@@ -65,6 +65,7 @@ public:
 	void SaveConfigFile();
 	void LoadPokedex();
 	int GetPokemonListCount();
+	int GetOverworldTexture(int i);
 	std::vector<int> GetBlueMapHabitats(int i);
 	std::vector<int> GetRedMapHabitats(int i);
 	int GetPokemonRarity(int i);

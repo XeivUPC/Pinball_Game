@@ -19,9 +19,9 @@ protected:
 
 private:
 	Texture* pokemonTexture;
-	Texture* captureTexture;
 	Animator* animator;
 	Timer cooldown;
+	bool gettingHit = false;
 	float cooldownTime;
 	int bumperAudioId;
 };
