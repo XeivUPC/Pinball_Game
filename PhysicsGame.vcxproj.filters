@@ -234,12 +234,14 @@
     <ClCompile Include="Source\CenterRedArrowGroup.cpp">
       <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EmptyProgram.cpp" />
     <ClCompile Include="Source\BonusMultiplierSensor.cpp">
       <Filter>Objects\Map Sensors %28Objects%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\BonusMultiplierSensorGroup.cpp">
       <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EmptyProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -479,12 +481,14 @@
     <ClInclude Include="Source\CenterBlueArrowGroup.h">
       <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EmptyProgram.h" />
     <ClInclude Include="Source\BonusMultiplierSensor.h">
       <Filter>Objects\Map Sensors %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\BonusMultiplierSensorGroup.h">
       <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EmptyProgram.h">
+      <Filter>ScreenPrograms</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

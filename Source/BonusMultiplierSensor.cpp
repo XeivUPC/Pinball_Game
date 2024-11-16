@@ -90,7 +90,7 @@ update_status BonusMultiplierSensor::Update()
 		}
 	}
 
-	Rectangle rect = { 8 * thisNum, 16 * variant + 8 * glowing,8,8 };
+	Rectangle rect = { 8.f * thisNum, 16.f * variant + 8 * glowing,8.f,8.f };
 
 	if (variant == 0 && order == 0) {
 		gameAt->App->renderer->Draw(*texture, 34 , 137 , &rect);
@@ -105,7 +105,7 @@ update_status BonusMultiplierSensor::Update()
 		gameAt->App->renderer->Draw(*texture, 119, 135, &rect);
 	}
 
-	Rectangle bumperRect = { 16 * order,0,16,16 };
+	Rectangle bumperRect = { 16.f * order,0.f,16.f,16.f };
 	if (variant == 1 && !gameStart) {
 		if (glowBumperTimer.ReadSec() < glowBumperTime) {
 			if (order == 0) {

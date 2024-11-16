@@ -642,7 +642,7 @@
 		<name value="Oddish" />
 		<height value="0,5" />
 		<weight value="5,4" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="44">
