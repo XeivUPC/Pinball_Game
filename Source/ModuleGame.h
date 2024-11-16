@@ -90,7 +90,8 @@ protected:
 	std::vector<int> mapHabitats;
 	int habitatIndex=-1;
 
-	bool saveBall=true;
+	bool saveBall = true;
+	bool extraBall = true;
 
 	bool isEnergyCharged = false;
 	bool isEnergyUsed = false;

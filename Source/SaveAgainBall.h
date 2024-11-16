@@ -19,8 +19,13 @@ private:
 
 	int selectedLanguage = -1;
 
-	Timer* BallSaverTimer;
-	float BallSaverTime = 60.f;
+	Timer BallSaverTimer;
+	float BallSaverTime = 20.f;
+
+	Timer BallSaverBlinkTimer;
+	float BallSaverBlinkTime = 0.3f;
 
 	int numBallsSaved = 0;
+
+	bool again = false;
 };
