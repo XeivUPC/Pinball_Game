@@ -23,7 +23,11 @@ update_status LapSensorGroup::Update()
 	else if (mapSensors.front()->IsActive() && !mapSensors.back()->IsActive()) {
 		direction = 1;
 	}
-	else if (!mapSensors.front()->IsActive() && !mapSensors.back()->IsActive() || gameAt->GetPokeball()->GetPosition().y > 155.f / SCREEN_SIZE) {
+	else if (!mapSensors.front()->IsActive() && !mapSensors.back()->IsActive()) {
+		direction = 0;
+	}
+	if (gameAt->GetPokeball()->GetPosition().y > 155.f / SCREEN_SIZE) {
+		DesactivateAll();
 		direction = 0;
 	}
 
