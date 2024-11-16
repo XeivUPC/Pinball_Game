@@ -13,7 +13,8 @@ private:
 	Rectangle rect = {0,0,0,0};
 	Bumper* pokemon_bumper = nullptr;
 	Animator* animator = nullptr;
-	float fallingTime = 1.5f;
+	Timer timer;
+	float fallingTime = 0.5f;
 	float offset = 0;
 	float factor = 0;
 

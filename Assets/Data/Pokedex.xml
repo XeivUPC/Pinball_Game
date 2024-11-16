@@ -61,7 +61,7 @@
 		<name value="Charmander" />
 		<height value="0,6" />
 		<weight value="8,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="5">
@@ -158,7 +158,7 @@
 		<height value="0,3" />
 		<weight value="2,9" />
 		<discovered value="true" />
-		<captured value="false" />
+		<captured value="true" />
 	</id>
 	<id value="11">
 		<pre-evolution-index value="10" />
@@ -173,7 +173,7 @@
 		<name value="Metapod" />
 		<height value="0,7" />
 		<weight value="9,9" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="12">
@@ -189,7 +189,7 @@
 		<name value="Butterfree" />
 		<height value="1,1" />
 		<weight value="32" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="13">
@@ -205,8 +205,8 @@
 		<name value="Weedle" />
 		<height value="0,3" />
 		<weight value="3,2" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="14">
 		<pre-evolution-index value="13" />
@@ -221,7 +221,7 @@
 		<name value="Kakuna" />
 		<height value="0,6" />
 		<weight value="10" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="15">
@@ -237,7 +237,7 @@
 		<name value="Beedrill" />
 		<height value="1" />
 		<weight value="29,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="16">
@@ -302,7 +302,7 @@
 		<height value="0,3" />
 		<weight value="3,5" />
 		<discovered value="true" />
-		<captured value="false" />
+		<captured value="true" />
 	</id>
 	<id value="20">
 		<pre-evolution-index value="19" />
@@ -317,7 +317,7 @@
 		<name value="Raticate" />
 		<height value="0,7" />
 		<weight value="18,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="21">
@@ -621,7 +621,7 @@
 		<name value="Jigglypuff" />
 		<height value="0,5" />
 		<weight value="5,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="40">
@@ -686,7 +686,7 @@
 		<height value="0,5" />
 		<weight value="5,4" />
 		<discovered value="true" />
-		<captured value="false" />
+		<captured value="true" />
 	</id>
 	<id value="44">
 		<pre-evolution-index value="43" />
@@ -701,7 +701,7 @@
 		<name value="Gloom" />
 		<height value="0,8" />
 		<weight value="8,6" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="45">
@@ -717,7 +717,7 @@
 		<name value="Vileplume" />
 		<height value="1,2" />
 		<weight value="18,6" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="46">
@@ -925,8 +925,8 @@
 		<name value="Growlithe" />
 		<height value="0,7" />
 		<weight value="19" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="59">
 		<pre-evolution-index value="58" />
@@ -941,7 +941,7 @@
 		<name value="Arcanine" />
 		<height value="1,9" />
 		<weight value="155" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="60">
@@ -957,7 +957,7 @@
 		<name value="Poliwag" />
 		<height value="0,6" />
 		<weight value="12,4" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="61">
@@ -1101,7 +1101,7 @@
 		<name value="Bellsprout" />
 		<height value="0,7" />
 		<weight value="4" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="70">
@@ -1181,8 +1181,8 @@
 		<name value="Geodude" />
 		<height value="0,4" />
 		<weight value="20" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="75">
 		<pre-evolution-index value="74" />
@@ -1197,7 +1197,7 @@
 		<name value="Graveler" />
 		<height value="1" />
 		<weight value="105" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="76">
@@ -1213,7 +1213,7 @@
 		<name value="Golem" />
 		<height value="1,4" />
 		<weight value="300" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="77">
@@ -1261,8 +1261,8 @@
 		<name value="Slowpoke" />
 		<height value="1,2" />
 		<weight value="36" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="80">
 		<pre-evolution-index value="79" />
@@ -1277,7 +1277,7 @@
 		<name value="Slowbro" />
 		<height value="1,6" />
 		<weight value="78,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="81">
@@ -1294,7 +1294,7 @@
 		<height value="0,3" />
 		<weight value="6" />
 		<discovered value="true" />
-		<captured value="false" />
+		<captured value="true" />
 	</id>
 	<id value="82">
 		<pre-evolution-index value="81" />
@@ -1309,7 +1309,7 @@
 		<name value="Magneton" />
 		<height value="1" />
 		<weight value="60" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="83">
@@ -1325,7 +1325,7 @@
 		<name value="Farfetch'd" />
 		<height value="0,8" />
 		<weight value="15" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="84">
@@ -1438,7 +1438,7 @@
 		<height value="0,3" />
 		<weight value="4" />
 		<discovered value="true" />
-		<captured value="false" />
+		<captured value="true" />
 	</id>
 	<id value="91">
 		<pre-evolution-index value="90" />
@@ -1453,7 +1453,7 @@
 		<name value="Cloyster" />
 		<height value="1,5" />
 		<weight value="132,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="92">
@@ -1469,8 +1469,8 @@
 		<name value="Gastly" />
 		<height value="1,3" />
 		<weight value="0,1" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="93">
 		<pre-evolution-index value="92" />
@@ -1485,7 +1485,7 @@
 		<name value="Haunter" />
 		<height value="1,6" />
 		<weight value="0,1" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="94">
@@ -1501,7 +1501,7 @@
 		<name value="Gengar" />
 		<height value="1,5" />
 		<weight value="40,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="95">
@@ -1517,8 +1517,8 @@
 		<name value="Onix" />
 		<height value="8,8" />
 		<weight value="210" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="96">
 		<pre-evolution-index value="-1" />
@@ -1597,8 +1597,8 @@
 		<name value="Voltorb" />
 		<height value="0,5" />
 		<weight value="10,4" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="101">
 		<pre-evolution-index value="100" />
@@ -1613,7 +1613,7 @@
 		<name value="Electrode" />
 		<height value="1,2" />
 		<weight value="66,6" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="102">
@@ -1661,8 +1661,8 @@
 		<name value="Cubone" />
 		<height value="0,4" />
 		<weight value="6,5" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="105">
 		<pre-evolution-index value="104" />
@@ -1677,7 +1677,7 @@
 		<name value="Marowak" />
 		<height value="1" />
 		<weight value="45" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="106">
@@ -1950,7 +1950,7 @@
 		<height value="1,3" />
 		<weight value="54,5" />
 		<discovered value="true" />
-		<captured value="false" />
+		<captured value="true" />
 	</id>
 	<id value="123">
 		<pre-evolution-index value="-1" />
@@ -1997,8 +1997,8 @@
 		<name value="Electabuzz" />
 		<height value="1,1" />
 		<weight value="30" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="126">
 		<pre-evolution-index value="-1" />

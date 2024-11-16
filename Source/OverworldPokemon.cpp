@@ -51,7 +51,6 @@ void OverworldPokemon::StartProgram()
 	pokeballShake.AddSprite(Sprite{ texture, {13, (float)gameAt->GetPokeball()->GetType()}, {16,16}});
 	AnimationData pokeballStatic = AnimationData("PokeballStatic");
 	pokeballStatic.AddSprite(Sprite{ texture, {12, (float)gameAt->GetPokeball()->GetType()}, {16,16}});
-	pokeballStatic.AddSprite(Sprite{ texture, {12, (float)gameAt->GetPokeball()->GetType()}, {16,16}});
 
 	animator->SetSpeed(0.05f);
 	animator->AddAnimation(captureSmoke);
@@ -69,6 +68,9 @@ void OverworldPokemon::Logic()
 		pokemon_bumper = nullptr;
 		animator->SetIfCanDraw(true);
 		animator->SelectAnimation("Smoke", false);
+		gameAt->GetPokeball()->SetIfBlockMovement(true);
+		gameAt->GetPokeball()->SetIfBlockRender(true);
+		gameAt->GetPokeball()->SetPosition({ (gameAt->screen->screenArea.x + gameAt->screen->screenArea.width / 2) / SCREEN_SIZE, (gameAt->screen->screenArea.y + gameAt->screen->screenArea.height / 2) / SCREEN_SIZE });
 	}
 
 	if (animating && factor < fallingTime)
@@ -76,7 +78,7 @@ void OverworldPokemon::Logic()
 		factor += GetFrameTime()/fallingTime;
 		offset = factor - fallingTime / 2;
 	}
-	else if (animating && factor >= fallingTime)
+	else if (animating && factor >= fallingTime && offset != 0)
 	{
 		offset = 0;
 		animator->SelectAnimation("PokeballShake", false);
@@ -84,25 +86,14 @@ void OverworldPokemon::Logic()
 	if (animator->GetCurrentAnimationName() == "Smoke" && animator->HasAnimationFinished())
 	{
 		animating = true;
-		animator->SetSpeed(0.15f);
+		animator->SetSpeed(0.25f);
 		animator->SelectAnimation("PokeballStatic", false);
 		count = 0;
-
-		gameAt->GetPokeball()->SetIfBlockMovement(true);
-		gameAt->GetPokeball()->SetIfBlockRender(true);
-		gameAt->GetPokeball()->SetPosition({ (gameAt->screen->screenArea.x + gameAt->screen->screenArea.width / 2 ) / SCREEN_SIZE, (gameAt->screen->screenArea.y + gameAt->screen->screenArea.height / 2) / SCREEN_SIZE });
-
-		//Quitar bola pinball
 	}
 	if (animator->GetCurrentAnimationName() == "PokeballStatic" && animator->HasAnimationFinished())
 	{
-		animator->SelectAnimation("PokeballShake", false);
-	}
-	if (animator->GetCurrentAnimationName() == "PokeballShake" && animator->HasAnimationFinished())
-	{
-		if (count == 2) {
+		if (timer.ReadSec() >= 5) {
 			gameAt->App->scene_pokedex->CapturePokemon(ID);
-			//Poner bola pinball
 
 			gameAt->GetPokeball()->SetIfBlockMovement(false);
 			gameAt->GetPokeball()->SetIfBlockRender(false);
@@ -110,10 +101,16 @@ void OverworldPokemon::Logic()
 			gameAt->screen->RemoveProgram();
 			return;
 		}
-		animator->SelectAnimation("PokeballStatic", false);
-		count++;
+		if (count < 2)
+			animator->SelectAnimation("PokeballShake", false);
 	}
-	
+	if (animator->GetCurrentAnimationName() == "PokeballShake" && animator->HasAnimationFinished())
+	{
+		if (count == 2)
+			timer.Start();
+		count++;
+		animator->SelectAnimation("PokeballStatic", false);
+	}
 }
 
 void OverworldPokemon::Render()
