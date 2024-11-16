@@ -27,7 +27,7 @@ CircularBumper::CircularBumper(ModuleGame* gameAt, b2Vec2 position, float radius
 	gameAt->App->texture->CreateTexture("Assets/circular_bumpers.png", "circular_bumpers");
 	texture = gameAt->App->texture->GetTexture("circular_bumpers");
 
-	bumperAudioId = gameAt->App->audio->LoadFx("Assets/SFX/Gam_Circular_Bumper.ogg");
+	bumperAudioId = gameAt->App->audio->LoadFx("Assets/SFX/Game_Circular_Bumper.ogg");
 
 	animator = new Animator(gameAt->App);
 
@@ -103,7 +103,6 @@ void CircularBumper::OnHit()
 	if (gameAt->screen->GetActualProgramIdentifier() == "CapturePokemon")
 		gameAt->screen->CallScreenEvent(0);
 	gameAt->App->audio->PlayFx(bumperAudioId);
-
 	gameAt->pointsCounter.Add(5000);
 
 	gettingHit = true;
