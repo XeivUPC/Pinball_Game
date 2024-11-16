@@ -130,7 +130,6 @@ bool BonusMultiplierSensor::CleanUp()
 void BonusMultiplierSensor::Activate()
 {
 	MapSensor::Activate();
-	glowBumperTimer.Start();
 }
 
 void BonusMultiplierSensor::Desactivate()
@@ -173,4 +172,5 @@ void BonusMultiplierSensor::OnTrigger()
 		MapSensor::OnTrigger();
 		gameStart = false;
 	}
+	glowBumperTimer.Start();
 }
