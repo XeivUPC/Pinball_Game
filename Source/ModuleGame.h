@@ -16,6 +16,7 @@ class MapEnergyBattery;
 class GameUI;
 class MapCave;
 class SaveAgainBall;
+class CatchedPokemon;
 
 class ModuleGame : public ModuleScene
 {
@@ -44,8 +45,8 @@ public:
 	virtual bool CleanUp();
 	Counter pointsCounter = Counter(100);
 	PokeBall* GetPokeball();
-
 	GameUI* GetUI();
+	CatchedPokemon* catchedPokemon = nullptr;
 
 	void NextHabitat();
 	void PreviousHabitat();
@@ -64,7 +65,6 @@ public:
 	bool HasExtraBall();
 	bool HasSaveBall();
 	void SetTimeSaveBall(float time);
-
 
 	void OpenCave();
 	void CloseCave();
@@ -114,15 +114,10 @@ protected:
 
 	int bonusSelectionAttempts = 1;
 
-
-
-
 	GameStates state = GameStates::StartGame;
 
 	Timer statesTimer;
 	float statesTime=0;
-
-
 
 };
 

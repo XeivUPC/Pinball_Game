@@ -22,6 +22,7 @@
 #include "MapCave.h"
 #include "SaveAgainBall.h"
 #include "ModuleHighScore.h"
+#include "CatchedPokemon.h"
 
 ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
@@ -67,6 +68,7 @@ bool ModuleGameRedMap::Start()
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 	screen = new CentralScreen(this);
+	catchedPokemon = new CatchedPokemon(this);
 
 
 	caveSensorGroup->Sort();
@@ -105,7 +107,6 @@ bool ModuleGameRedMap::Start()
 update_status ModuleGameRedMap::Update()
 {
 	ModuleGame::Update();
-
 	RepositionCamera(pokeBall->GetPosition());
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {

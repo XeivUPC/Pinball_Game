@@ -8,6 +8,7 @@
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "CentralScreen.h"
+#include "CatchedPokemon.h"
 
 void OverworldPokemon::AddHit()
 {
@@ -102,6 +103,7 @@ void OverworldPokemon::Logic()
 			gameAt->GetPokeball()->SetIfBlockMovement(false);
 			gameAt->GetPokeball()->SetIfBlockRender(false);
 			gameAt->GetPokeball()->SetVelocity({ 5,-2 });
+			gameAt->catchedPokemon->CatchPokemon();
 			gameAt->screen->RemoveProgram();
 			return;
 		}
