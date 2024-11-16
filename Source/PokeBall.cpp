@@ -143,8 +143,16 @@ update_status PokeBall::Update()
 
 	pokeball_animator->SetSpeed(pokeballSpeed);
 
-	pokeball_animator->Update();
-	pokeball_animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE - 8), (int)(body->GetPosition().y * SCREEN_SIZE - 8), true);
+	pokeball_animator->Update();\
+
+
+	if (blockMovement) {
+		body->SetLinearVelocity({0,0});
+		body->SetGravityScale(0);
+	}
+
+	if(!blockRender)
+		pokeball_animator->Animate((int)(body->GetPosition().x * SCREEN_SIZE - 8), (int)(body->GetPosition().y * SCREEN_SIZE - 8), true);
 	return UPDATE_CONTINUE;
 }
 
@@ -227,6 +235,26 @@ void PokeBall::Reset(bool saveBall)
 int PokeBall::GetLivesPokeball() const
 {
 	return lives_pokeball;
+}
+
+void PokeBall::SetIfBlockMovement(bool status)
+{
+	blockMovement = status;
+}
+
+bool PokeBall::IsMovementBlocked()
+{
+	return blockMovement;
+}
+
+void PokeBall::SetIfBlockRender(bool status)
+{
+	blockRender = status;
+}
+
+bool PokeBall::IsRenderBlocked()
+{
+	return blockRender;
 }
 
 float PokeBall::GetMultiplierByType(PokeballType type)
