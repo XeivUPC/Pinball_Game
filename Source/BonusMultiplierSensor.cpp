@@ -66,54 +66,84 @@ BonusMultiplierSensor::~BonusMultiplierSensor()
 
 update_status BonusMultiplierSensor::Update()
 {
-	MapSensor::Update();
+	if (!dualTwinkling) {
+		MapSensor::Update();
 
-	if (active) {
-		glowing = true;
-	}
-	else {
-		if (glowing) {
-			twinkling = true;
+		if (active) {
+			glowing = true;
 		}
 		else {
-			twinkling = false;
-		}
-	}
-
-	if (twinkling && !active) {
-		if (twinkleTimer.ReadSec() >= twinkleTime && twinkleTimer.ReadSec() < twinkleTime*2) {
-			glowing = !glowing;
-		}
-		else if(twinkleTimer.ReadSec() >= twinkleTime*2) {
-			twinkleTimer.Start();
-			glowing = !glowing;
-		}
-	}
-
-	Rectangle rect = { 8.f * thisNum, 16.f * variant + 8 * glowing,8.f,8.f };
-
-	if (variant == 0 && order == 0) {
-		gameAt->App->renderer->Draw(*texture, 34 , 137 , &rect);
-	}
-	else if(variant == 0 && order == 1){
-		gameAt->App->renderer->Draw(*texture, 119, 137, &rect);
-	}
-	else if (variant == 1 && order == 0) {
-		gameAt->App->renderer->Draw(*texture, 34, 135, &rect);
-	}
-	else if (variant == 1 && order == 1) {
-		gameAt->App->renderer->Draw(*texture, 119, 135, &rect);
-	}
-
-	Rectangle bumperRect = { 16.f * order,0.f,16.f,16.f };
-	if (variant == 1 && !gameStart) {
-		if (glowBumperTimer.ReadSec() < glowBumperTime) {
-			if (order == 0) {
-				gameAt->App->renderer->Draw(*bumperTexture, 35, 144, &bumperRect);
+			if (glowing) {
+				twinkling = true;
 			}
-			else if (order == 1) {
-				gameAt->App->renderer->Draw(*bumperTexture, 111, 144, &bumperRect);
+			else {
+				twinkling = false;
 			}
+		}
+
+		if (twinkling && !active) {
+			if (twinkleTimer.ReadSec() >= twinkleTime && twinkleTimer.ReadSec() < twinkleTime*2) {
+				glowing = !glowing;
+			}
+			else if(twinkleTimer.ReadSec() >= twinkleTime*2) {
+				twinkleTimer.Start();
+				glowing = !glowing;
+			}
+		}
+
+		Rectangle rect = { 8.f * thisNum, 16.f * variant + 8 * glowing,8.f,8.f };
+
+		if (variant == 0 && order == 0) {
+			gameAt->App->renderer->Draw(*texture, 34 , 137 , &rect);
+		}
+		else if(variant == 0 && order == 1){
+			gameAt->App->renderer->Draw(*texture, 119, 137, &rect);
+		}
+		else if (variant == 1 && order == 0) {
+			gameAt->App->renderer->Draw(*texture, 34, 135, &rect);
+		}
+		else if (variant == 1 && order == 1) {
+			gameAt->App->renderer->Draw(*texture, 119, 135, &rect);
+		}
+
+		Rectangle bumperRect = { 16.f * order,0.f,16.f,16.f };
+		if (variant == 1 && !gameStart) {
+			if (glowBumperTimer.ReadSec() < glowBumperTime) {
+				if (order == 0) {
+					gameAt->App->renderer->Draw(*bumperTexture, 35, 144, &bumperRect);
+				}
+				else if (order == 1) {
+					gameAt->App->renderer->Draw(*bumperTexture, 111, 144, &bumperRect);
+				}
+			}
+		}
+	}
+	else {
+		if (dualTwinklingTimer.ReadSec() >= dualTwinklingTime && dualTwinklingTimer.ReadSec() < dualTwinklingTime * 2) {
+			glowing = false;
+		} else if (dualTwinklingTimer.ReadSec() >= dualTwinklingTime * 2) {
+			glowing = true;
+			dualTwinklingTimer.Start();
+		}
+
+		if (dualTwinklingTotalTimer.ReadSec() >= dualTwinklingTotalTime) {
+			dualTwinkling = false;
+			justHit = false;
+		}
+
+		Rectangle rect = { 8.f * thisNum, 16.f * variant + 8 * glowing,8.f,8.f };
+
+		if (variant == 0 && order == 0) {
+			gameAt->App->renderer->Draw(*texture, 34, 137, &rect);
+		}
+		else if (variant == 0 && order == 1) {
+			gameAt->App->renderer->Draw(*texture, 119, 137, &rect);
+		}
+		else if (variant == 1 && order == 0) {
+			gameAt->App->renderer->Draw(*texture, 34, 135, &rect);
+		}
+		else if (variant == 1 && order == 1) {
+			gameAt->App->renderer->Draw(*texture, 119, 135, &rect);
 		}
 	}
 
@@ -147,6 +177,23 @@ void BonusMultiplierSensor::SetNotGlowing()
 	glowing = false;
 }
 
+void BonusMultiplierSensor::SetDualTwinkling()
+{
+	dualTwinkling = true;
+	dualTwinklingTimer.Start();
+	dualTwinklingTotalTimer.Start();
+}
+
+bool BonusMultiplierSensor::IsDualTwinkling() const
+{
+	return dualTwinkling;
+}
+
+bool BonusMultiplierSensor::JustGotHit() const
+{
+	return justHit;
+}
+
 void BonusMultiplierSensor::SetNumber(int num)
 {
 	if (thisNum < 10) {
@@ -166,11 +213,12 @@ int BonusMultiplierSensor::GetOrder() const
 
 void BonusMultiplierSensor::OnTrigger()
 {
-	if (glowing) {
+	if (glowing && !dualTwinkling) {
 		SetNotGlowing();
 		Activate();
 		MapSensor::OnTrigger();
 		gameStart = false;
+		justHit = true;
 	}
 	glowBumperTimer.Start();
 }

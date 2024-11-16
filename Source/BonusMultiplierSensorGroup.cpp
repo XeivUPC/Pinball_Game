@@ -19,32 +19,42 @@ update_status BonusMultiplierSensorGroup::Update()
 {
 	BonusMultiplierSensor* frontSensor = static_cast<BonusMultiplierSensor*>(mapSensors.front());
 	BonusMultiplierSensor* backSensor = static_cast<BonusMultiplierSensor*>(mapSensors.back());
-	if (!frontSensor->IsActive()) {
-		frontSensor->SetGlowing();
-		backSensor->SetNotGlowing();
-	}
-	else if (frontSensor->IsActive() && !backSensor->IsActive()) {
-		frontSensor->SetNotGlowing();
-		backSensor->SetGlowing();
-	}
-	else if (frontSensor->IsActive() && backSensor->IsActive()) {
-		totalNum++;
-
-		const char* text = "MULT. BONUS x";
-		std::string textNum = std::to_string(totalNum);
-		std::string result = std::string(text) + textNum;
-
-		gameAt->GetUI()->AddText(result);
-
-
-		if (totalNum >= 100) {
-			totalNum = 99;
+	if (!frontSensor->IsDualTwinkling() && !backSensor->IsDualTwinkling()) {
+		if (!frontSensor->IsActive()) {
+			frontSensor->SetGlowing();
+			backSensor->SetNotGlowing();
 		}
-		frontSensor->SetNumber(totalNum/10);
-		backSensor->SetNumber(totalNum - (totalNum / 10)*10);
+		else if (frontSensor->IsActive() && !backSensor->IsActive()) {
+			if (frontSensor->JustGotHit()) {
+				frontSensor->SetDualTwinkling();
+				backSensor->SetDualTwinkling();
+			}
+			else {
+				frontSensor->SetNotGlowing();
+				backSensor->SetGlowing();
+			}
+		}
+		else if (frontSensor->IsActive() && backSensor->IsActive()) {
+			totalNum++;
 
-		frontSensor->Desactivate();
-		backSensor->Desactivate();
+			const char* text = "MULT. BONUS x";
+			std::string textNum = std::to_string(totalNum);
+			std::string result = std::string(text) + textNum;
+
+			gameAt->GetUI()->AddText(result);
+
+			if (totalNum >= 100) {
+				totalNum = 99;
+			}
+			frontSensor->SetNumber(totalNum/10);
+			backSensor->SetNumber(totalNum - (totalNum / 10)*10);
+
+			frontSensor->Desactivate();
+			backSensor->Desactivate();
+
+			frontSensor->SetDualTwinkling();
+			backSensor->SetDualTwinkling();
+		}
 	}
 
 	return UPDATE_CONTINUE;
