@@ -35,7 +35,7 @@ public:
 	bool IsCaveOpen();
 
 protected:
-	virtual void OnHit();
+	void OnHit();
 
 	CollisionSensor sensor;
 };

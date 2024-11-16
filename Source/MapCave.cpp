@@ -60,12 +60,13 @@ update_status MapCave::Update()
 {
 	animator->Update();
 
+	bool hasBeenTriggered = sensor.OnTriggerEnter();
 	if (isOpen) {
 		if (isBallIn && freeBallTime < freeBallTimer.ReadSec()) {
 			isBallIn = false;
 			CloseCave();
 		}
-		if (sensor.OnTriggerEnter()) {
+		if (hasBeenTriggered) {
 			OnHit();		
 		}	
 	}
@@ -89,8 +90,10 @@ void MapCave::OpenCave()
 
 void MapCave::CloseCave()
 {
+	isBallIn = false;
 	isOpen = false;
 	animator->SelectAnimation("Closed", true);
+
 }
 
 void MapCave::FreeBall()

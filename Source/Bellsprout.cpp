@@ -7,6 +7,7 @@
 #include "Box2DFactory.h"
 #include "Pokeball.h"
 #include "CentralScreen.h"
+#include "MapCave.h"
 
 Bellsprout::Bellsprout(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : MapObject(gameAt)
 {
@@ -64,6 +65,7 @@ update_status Bellsprout::Update()
 
 		if (gameAt->CanCapture() && gameAt->screen->CanProgramBeOverwritten()) {
 			gameAt->screen->SwitchProgram(new CapturePokemon);
+			gameAt->CloseCave();
 		}
 		
 	}
