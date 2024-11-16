@@ -417,7 +417,7 @@ void ModulePokedex::LoadPokedex()
             pokemonIdNode.child("weight").attribute("value").as_string(),
             pokemonIdNode.child("height").attribute("value").as_string(),
             pokemonIdNode.child("pre-evolution-index").attribute("value").as_int(),
-            pokemonIdNode.child("habitat-index").attribute("value").as_int(),
+            pokemonIdNode.child("overworld-index").attribute("value").as_int(),
             pokemonNames,
             pokemonRedMapLocations,
             pokemonBlueMapLocations

@@ -4,6 +4,7 @@
 #include "ModuleRender.h"
 #include "CentralScreen.h"
 #include "ModulePokedex.h"
+#include "OverworldPokemon.h"
 
 void CapturePokemon::AddHit()
 {
@@ -161,5 +162,5 @@ void CapturePokemon::Render()
 void CapturePokemon::EndProgram()
 {
 	gameAt->App->scene_pokedex->DiscoverPokemon(ID);
-	gameAt->screen->QuitProgram();
+	gameAt->screen->SwitchProgram(new OverworldPokemon(ID));
 }

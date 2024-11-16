@@ -7,7 +7,7 @@
 class OverworldPokemonBumper : public Bumper
 {
 public:
-	OverworldPokemonBumper(ModuleGame* gameAt, b2Vec2 position, float radius, float restitution);
+	OverworldPokemonBumper(ModuleGame* gameAt, b2Vec2 position, float radius, float restitution, int pokemonId);
 	~OverworldPokemonBumper();
 
 	update_status Update();
@@ -18,7 +18,8 @@ protected:
 	b2Body* body = nullptr;
 
 private:
-	Texture* texture;
+	Texture* pokemonTexture;
+	Texture* captureTexture;
 	Animator* animator;
 	Timer cooldown;
 	float cooldownTime;
