@@ -2,6 +2,7 @@
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include "ModuleAudio.h"
 
 DiglettBumper::DiglettBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2Vec2> vertices, float restitution, bool flip) : Bumper(gameAt, position, restitution)
 {
@@ -54,6 +55,8 @@ DiglettBumper::DiglettBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2
 	diglett_animator->SetSpeed(0.15f);
 
 	diglett_animator->SelectAnimation("Diglett_Idle", true);
+
+	audioDiggletBumperId = gameAt->App->audio->LoadFx("Assets/SFX/Game_DiggletBumper.ogg");
 }
 
 DiglettBumper::~DiglettBumper()
@@ -116,6 +119,7 @@ void DiglettBumper::OnHit()
 	hidden_timer.Start();
 	diglett_animator->SelectAnimation("Diglett_Hide", false);
 	diglett_animator->SetSpeed(0.07f);
+	gameAt->App->audio->PlayFx(audioDiggletBumperId);
 	if (hitsRecieved == 3) {
 		if (!flip)
 			gameAt->PreviousHabitat();

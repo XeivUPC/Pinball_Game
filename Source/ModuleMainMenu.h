@@ -24,11 +24,11 @@ private:
 	
 	Timer blinkTimer;
 
-	int selectedLanguage=-1;
+	int selectedLanguage = -1;
 
-	int audioSelectId=-1;
-	int audioMoveId=-1;
-	int audioStartGameId=-1;
+	int audioSelectId = -1;
+	int audioMoveId = -1;
+	int audioStartGameId = -1;
 
 
 	Timer scrollMenuTimer;

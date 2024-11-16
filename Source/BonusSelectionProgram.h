@@ -28,6 +28,8 @@ private:
 
 	bool GiveBonus(int type, int subType);
 
+	int audioBonusSwapId = -1;
+
 public:
 	BonusSelectionProgram(int attemptVariant);
 	~BonusSelectionProgram();

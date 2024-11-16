@@ -99,6 +99,8 @@ bool ModuleGameRedMap::Start()
 
 	pointsCounter.AddMultiplier(1);
 
+	audioGameStartId = App->audio->LoadFx("Assets/SFX/Game_BallStart.ogg");
+
 	return true;
 }
 
@@ -132,6 +134,7 @@ update_status ModuleGameRedMap::Update()
 				if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
 					statesTimer.UnlockTimer();
 					statesTimer.Start();
+					App->audio->PlayFx(audioGameStartId);
 				}
 			}
 

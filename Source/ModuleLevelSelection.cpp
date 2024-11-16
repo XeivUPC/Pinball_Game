@@ -40,7 +40,8 @@ bool ModuleLevelSelection::Start()
 
 
 	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
-	audioMoveId = App->audio->LoadFx("Assets/SFX/Level_Selection_Move.ogg");
+	audioMoveRightId = App->audio->LoadFx("Assets/SFX/LevelSelection_Left.ogg");
+	audioMoveLeftId = App->audio->LoadFx("Assets/SFX/LevelSelection_Right.ogg");
 
 	StartFadeOut(WHITE, 0.3f);
 	return true;
@@ -52,13 +53,13 @@ update_status ModuleLevelSelection::Update()
 	if(IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT)))
 	{
 		if(markSelectionPosition.x!=3)
-			App->audio->PlayFx(audioMoveId);
+			App->audio->PlayFx(audioMoveLeftId);
 		markSelectionPosition.x = 3;
 	}
 	else if(IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT)))
 	{
 		if (markSelectionPosition.x != 21)
-			App->audio->PlayFx(audioMoveId);
+			App->audio->PlayFx(audioMoveRightId);
 		markSelectionPosition.x = 21;
 	}
 
