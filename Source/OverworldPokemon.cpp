@@ -49,6 +49,8 @@ void OverworldPokemon::StartProgram()
 	AnimationData pokeballShake = AnimationData("PokeballShake");
 	pokeballShake.AddSprite(Sprite{ texture, {12, (float)gameAt->GetPokeball()->GetType()}, {16,16}});
 	pokeballShake.AddSprite(Sprite{ texture, {13, (float)gameAt->GetPokeball()->GetType()}, {16,16}});
+	pokeballShake.AddSprite(Sprite{ texture, {12, (float)gameAt->GetPokeball()->GetType()}, {16,16}});
+	pokeballShake.AddSprite(Sprite{ texture, {13, (float)gameAt->GetPokeball()->GetType()}, {16,16}});
 	AnimationData pokeballStatic = AnimationData("PokeballStatic");
 	pokeballStatic.AddSprite(Sprite{ texture, {12, (float)gameAt->GetPokeball()->GetType()}, {16,16}});
 
@@ -86,13 +88,13 @@ void OverworldPokemon::Logic()
 	if (animator->GetCurrentAnimationName() == "Smoke" && animator->HasAnimationFinished())
 	{
 		animating = true;
-		animator->SetSpeed(0.25f);
+		animator->SetSpeed(0.15f);
 		animator->SelectAnimation("PokeballStatic", false);
 		count = 0;
 		timer.Start();
 		timerTime = 1;
 	}
-	if (animator->GetCurrentAnimationName() == "PokeballStatic" && timer.ReadSec()>=timerTime)
+	if (animator->GetCurrentAnimationName() == "PokeballStatic" && timer.ReadSec()>=timerTime && animating)
 	{
 		if (count == 3) {
 			gameAt->App->scene_pokedex->CapturePokemon(ID);
@@ -108,7 +110,7 @@ void OverworldPokemon::Logic()
 		animator->SelectAnimation("PokeballShake", false); if (count < 2)			
 		timer.Start();
 	}
-	if (animator->GetCurrentAnimationName() == "PokeballShake" && timer.ReadSec() >= timerTime)
+	if (animator->GetCurrentAnimationName() == "PokeballShake" && timer.ReadSec() >= timerTime && animating)
 	{
 		count++;
 		animator->SelectAnimation("PokeballStatic", false);
@@ -122,8 +124,6 @@ void OverworldPokemon::Logic()
 
 		timer.Start();
 	}
-
-	printf("%d\n", count);
 }
 
 void OverworldPokemon::Render()
