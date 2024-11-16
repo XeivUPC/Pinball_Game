@@ -8,6 +8,7 @@
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "CentralScreen.h"
+#include "GameUI.h"
 
 void OverworldPokemon::AddHit()
 {
@@ -97,6 +98,10 @@ void OverworldPokemon::Logic()
 	if (animator->GetCurrentAnimationName() == "PokeballStatic" && timer.ReadSec()>=timerTime && animating)
 	{
 		if (count == 3) {
+
+			const char* text = "PLACEHOLDER";
+			gameAt->GetUI()->AddText(text);
+
 			gameAt->App->scene_pokedex->CapturePokemon(ID);
 
 			gameAt->GetPokeball()->SetIfBlockMovement(false);

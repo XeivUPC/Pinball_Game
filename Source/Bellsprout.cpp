@@ -8,6 +8,7 @@
 #include "Pokeball.h"
 #include "CentralScreen.h"
 #include "MapCave.h"
+#include "GameUI.h"
 
 Bellsprout::Bellsprout(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : MapObject(gameAt)
 {
@@ -64,6 +65,10 @@ update_status Bellsprout::Update()
 		mouthTimer.Start();
 
 		if (gameAt->CanCapture() && gameAt->screen->CanProgramBeOverwritten()) {
+
+			const char* text = "PLACEHOLDER";
+			gameAt->GetUI()->AddText(text);
+
 			gameAt->screen->SwitchProgram(new CapturePokemon);
 			gameAt->CloseCave();
 		}
