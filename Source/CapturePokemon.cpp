@@ -4,6 +4,7 @@
 #include "ModuleRender.h"
 #include "CentralScreen.h"
 #include "ModulePokedex.h"
+#include "OverworldPokemon.h"
 
 void CapturePokemon::AddHit()
 {
@@ -112,7 +113,7 @@ void CapturePokemon::Logic()
 		count = (int)trunc(factor * 6 + 1);
 	}
 	if (animationStarted == 3)
-		EndProgram();
+		gameAt->screen->SwitchProgram(new OverworldPokemon(ID));
 }
 
 void CapturePokemon::Render()
@@ -161,5 +162,4 @@ void CapturePokemon::Render()
 void CapturePokemon::EndProgram()
 {
 	gameAt->App->scene_pokedex->DiscoverPokemon(ID);
-	gameAt->screen->QuitProgram();
 }

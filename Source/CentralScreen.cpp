@@ -87,13 +87,6 @@ void CentralScreen::RemoveProgram()
 
 }
 
-void CentralScreen::QuitProgram()
-{
-	if (actualProgram == nullptr)
-		return;
-	delete actualProgram;
-	actualProgram = nullptr;
-}
 
 std::string CentralScreen::GetActualProgramIdentifier()
 {

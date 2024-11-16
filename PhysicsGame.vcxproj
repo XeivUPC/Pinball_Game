@@ -252,6 +252,7 @@
     <ClInclude Include="Source\ModuleSettings.h" />
     <ClInclude Include="Source\ModuleText.h" />
     <ClInclude Include="Source\ModuleTexture.h" />
+    <ClInclude Include="Source\OverworldPokemon.h" />
     <ClInclude Include="Source\OverworldPokemonBumper.h" />
     <ClInclude Include="Source\Pikachu.h" />
     <ClInclude Include="Source\PokeBall.h" />
@@ -340,6 +341,7 @@
     <ClCompile Include="Source\ModuleSettings.cpp" />
     <ClCompile Include="Source\ModuleText.cpp" />
     <ClCompile Include="Source\ModuleTexture.cpp" />
+    <ClCompile Include="Source\OverworldPokemon.cpp" />
     <ClCompile Include="Source\OverworldPokemonBumper.cpp" />
     <ClCompile Include="Source\Pikachu.cpp" />
     <ClCompile Include="Source\PokeBall.cpp" />

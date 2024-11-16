@@ -26,7 +26,6 @@ public:
 	Rectangle GetScreenArea();
 	update_status Update();
 	void RemoveProgram();
-	void QuitProgram();
 	std::string GetActualProgramIdentifier();
 	std::string GetDefaultProgramIdentifier();
 	
