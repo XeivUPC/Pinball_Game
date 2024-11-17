@@ -25,7 +25,10 @@ void CatchedPokemon::CatchPokemon()
 update_status CatchedPokemon::Update()
 {
 	if (gameAt->screen->GetActualProgramIdentifier() == "OverworldPokemon") return UPDATE_CONTINUE;
-	for (size_t i = 0; i < counter(); i++)
+	int totalPoints = counter();
+	if (totalPoints > 3)
+		totalPoints = 3;
+	for (size_t i = 0; i < totalPoints; i++)
 	{
 		gameAt->App->renderer->Draw(*texture, (gameAt->screen->screenArea.x + 16 * i), (gameAt->screen->screenArea.y + gameAt->screen->screenArea.height), &rect);
 	}
