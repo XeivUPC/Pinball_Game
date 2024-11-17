@@ -55,10 +55,10 @@ update_status Staryu::Update()
 			map_staryu_animator->SelectAnimation("MapStaryuInactiveAnim", true);
 		}
 	}
-	map_staryu_animator->Animate(position.x, position.y, false);
+	map_staryu_animator->Animate((int)position.x, (int)position.y, false);
 
 	if(gameAt!=nullptr)
-		gameAt->App->renderer->Draw(*map_staryu_mini, miniStaryuPosition.x, miniStaryuPosition.y, &miniStaryuRect);
+		gameAt->App->renderer->Draw(*map_staryu_mini, (int)miniStaryuPosition.x, (int)miniStaryuPosition.y, &miniStaryuRect);
 
 	map_staryu_animator->Update();
 

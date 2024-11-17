@@ -75,6 +75,8 @@ PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 spawn, PokeballType type,float max
 
 
 	SetType(type);
+
+	gameAt->pointsCounter.AddMultiplier(1.f, "PokeballMultiplier");
 }
 
 PokeBall::~PokeBall()
@@ -177,7 +179,6 @@ void PokeBall::SetType(PokeballType type)
 {
 	PokeballType lastType = this->type;
 
-	float lastMultiplier = GetMultiplierByType(lastType);
 	float newMultiplier = GetMultiplierByType(type);
 
 	this->type = type;
@@ -185,24 +186,24 @@ void PokeBall::SetType(PokeballType type)
 	switch (type)
 	{
 	case PokeBall::Pokeball:
-		gameAt->pointsCounter.AddMultiplier(newMultiplier);
+		gameAt->pointsCounter.EditMultiplier(gameAt->pointsCounter.GetMultiplier("PokeballMultiplier"), newMultiplier, "PokeballMultiplier");
 		pokeball_animator->SelectAnimation("Pokeball_Anim", true);
 		break;
 	case PokeBall::SuperBall:
-		gameAt->pointsCounter.EditMultiplier(lastMultiplier, newMultiplier);
+		gameAt->pointsCounter.EditMultiplier(gameAt->pointsCounter.GetMultiplier("PokeballMultiplier"), newMultiplier, "PokeballMultiplier");
 		pokeball_animator->SelectAnimation("Superball_Anim", true);
 		break;
 	case PokeBall::Ultraball:
-		gameAt->pointsCounter.EditMultiplier(lastMultiplier, newMultiplier);
+		gameAt->pointsCounter.EditMultiplier(gameAt->pointsCounter.GetMultiplier("PokeballMultiplier"), newMultiplier, "PokeballMultiplier");
 		pokeball_animator->SelectAnimation("Ultraball_Anim", true);
 
 		break;
 	case PokeBall::MasterBall:
-		gameAt->pointsCounter.EditMultiplier(lastMultiplier, newMultiplier);
+		gameAt->pointsCounter.EditMultiplier(gameAt->pointsCounter.GetMultiplier("PokeballMultiplier"), newMultiplier, "PokeballMultiplier");
 		pokeball_animator->SelectAnimation("Masterball_Anim", true);
 		break;
 	default:
-		gameAt->pointsCounter.AddMultiplier(newMultiplier);
+		gameAt->pointsCounter.AddMultiplier(gameAt->pointsCounter.GetMultiplier("PokeballMultiplier"), "PokeballMultiplier");
 		pokeball_animator->SelectAnimation("Pokeball_Anim", true);
 		break;
 	}
@@ -221,8 +222,7 @@ b2Vec2 PokeBall::GetPosition()
 
 void PokeBall::Reset(bool saveBall)
 {
-	PokeballType lastType = this->type;
-	
+
 	if (saveBall) {
 		int selectedLanguage = gameAt->App->userPreferences->GetLanguage();
 		gameAt->GetUI()->AddText(ballSavedUIText[selectedLanguage]);
@@ -234,7 +234,9 @@ void PokeBall::Reset(bool saveBall)
 	if (saveBall)
 		return;
 	
-	gameAt->pointsCounter.RemoveMultiplier(GetMultiplierByType(lastType));
+	SetType(PokeBall::Pokeball);
+	gameAt->pointsCounter.RemoveMultiplier(gameAt->pointsCounter.GetMultiplier("PokeballMultiplier"), "PokeballMultiplier");
+	gameAt->pointsCounter.AddMultiplier(1, "PokeballMultiplier");
 	lives_pokeball--;
 	if (lives_pokeball < 0)
 		lives_pokeball = 0;

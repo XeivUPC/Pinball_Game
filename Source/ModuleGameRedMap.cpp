@@ -103,7 +103,8 @@ bool ModuleGameRedMap::Start()
 	screen->AddProgram(new HabitatSelectionProgram(habitatsToSelect));
 	screen->SetDefaultProgram(new HabitatSelectedProgram());
 
-	pointsCounter.AddMultiplier(1);
+	pointsCounter.AddMultiplier(1, "MapMultiplier");
+	bonusPointsCounter.AddMultiplier(1, "BonusMultiplier");
 
 	audioGameStartId = App->audio->LoadFx("Assets/SFX/Game_BallStart.ogg");
 
