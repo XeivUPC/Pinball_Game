@@ -128,7 +128,7 @@ protected:
 
 	bool saveBall = false;
 	bool extraBall = false;
-	bool extraPika = true;
+	bool extraPika = false;
 
 	bool isEnergyCharged = false;
 	bool isEnergyUsed = false;
