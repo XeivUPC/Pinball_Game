@@ -9,6 +9,7 @@
 #include "ModuleRender.h"
 #include "CentralScreen.h"
 #include "GameUI.h"
+#include "TimerUI.h"
 #include "CatchedPokemon.h"
 
 void OverworldPokemon::AddHit()
@@ -28,6 +29,11 @@ OverworldPokemon::~OverworldPokemon()
 
 void OverworldPokemon::CallAction(int id)
 {
+	if (gameAt->GetTimerUI()->IsTimerFinished())
+	{
+		return;
+	}
+
 	switch (id)
 	{
 	case 0:
@@ -66,6 +72,23 @@ void OverworldPokemon::StartProgram()
 
 void OverworldPokemon::Logic()
 {
+	if (pokemon_bumper != nullptr) {
+		if (gameAt->GetTimerUI()->IsTimerFinished())
+		{
+			if (failedTimer.ReadSec() > failedTime) {
+				gameAt->GetUI()->AddText("PLACEDHOLDER");
+				gameAt->RemoveObject(pokemon_bumper);
+				pokemon_bumper = nullptr;
+				gameAt->GetTimerUI()->HideTimer();
+				gameAt->screen->RemoveProgram();
+			}
+			return;
+		}
+		else {
+			failedTimer.Start();
+		}
+	}
+
 	if (pokemon_bumper != nullptr && count == 4)
 	{
 		gameAt->RemoveObject(pokemon_bumper);

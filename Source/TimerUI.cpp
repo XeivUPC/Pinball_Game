@@ -39,13 +39,15 @@ update_status TimerUI::Update()
         finished = true;
     }
 
-    if (!finished) {
+    if (active) {
 
         Render();
 
-        if (secondTimer.ReadSec() >= 1) {
-            totalSeconds--;
-            secondTimer.Start();
+        if (!finished) {
+            if (secondTimer.ReadSec() >= 1) {
+                totalSeconds--;
+                secondTimer.Start();
+            }
         }
     }
 
@@ -57,7 +59,13 @@ void TimerUI::AddTimer(int seconds)
 {
     totalSeconds = seconds;
     finished = false;
+    active = true;
     secondTimer.Start();
+}
+
+void TimerUI::HideTimer()
+{
+    active = false;
 }
 
 bool TimerUI::IsTimerFinished() const

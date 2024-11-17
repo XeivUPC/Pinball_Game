@@ -12,6 +12,7 @@ public:
 	update_status Update();
 
 	void AddTimer(int seconds);
+	void HideTimer();
 
 	bool IsTimerFinished() const;
 
@@ -27,5 +28,6 @@ private:
 	Timer secondTimer;
 
 	bool finished = false;
+	bool active = false;
 };
 

@@ -14,6 +14,9 @@ private:
 	int count;
 	int ID;
 
+	Timer failedTimer;
+	float failedTime = 2;
+
 	void AddHit();
 	void SetRandomPokemonByZone(bool zoneID, int rarity = 2);
 public:
