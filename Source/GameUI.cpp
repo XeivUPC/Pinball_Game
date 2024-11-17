@@ -63,14 +63,14 @@ void GameUI::ShowNextText()
         paused = false;
     }
     if (textCurrentPos > (textInitPos - xPos) / 2) {
-        textCurrentPos--;
+        textCurrentPos = textCurrentPos - 40 * GetFrameTime();
     }
     else if (textCurrentPos <= (textInitPos - xPos) / 2 && !paused) {
         textPauseTimer.Start();
         paused = true;
     }
     if (textPauseTimer.ReadSec() >= textPauseTime) {
-        textCurrentPos--;
+        textCurrentPos = textCurrentPos - 120 * GetFrameTime();
     }
     App->text_gameUIText->Write(currentText.c_str(), (int)textCurrentPos, 134);
 }

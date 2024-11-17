@@ -142,12 +142,12 @@ update_status ModuleGameRedMap::Update()
 			if (!statesTimer.IsLocked()) {
 				if (statesTimer.ReadSecEvenLocked() < 0.5f)
 					pokeBall->ApplyForce({ 0,-4000 });
-				if (statesTimer.ReadSec() > statesTime) {
+				if (statesTimer.ReadSec() > statesTime * 16 / 10) {
 					SetState(PlayGame);
 				}
 			}
 			else {
-				if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+				if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
 					statesTimer.UnlockTimer();
 					statesTimer.Start();
 					App->audio->PlayFx(audioGameStartId);
@@ -389,7 +389,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 20.f, flip, 0);
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 0);
 
 			}
 			else if (type == "diglettBumper") {

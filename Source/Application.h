@@ -79,6 +79,8 @@ private:
 	uint32 last_sec_frame_count = 0;
 	uint32 prev_last_sec_frame_count = 0;
 
+	int current_fps = 60;
+
 public:
 
 	Application();
@@ -88,6 +90,7 @@ public:
 	update_status Update();
 	bool CleanUp();
 
+	void ChangeTargetFPS(int fps);
 private:
 
 	void AddModule(Module* module);
