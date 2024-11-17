@@ -32,6 +32,8 @@ private:
 
 	float pointsTime = 0.5f;
 	Timer pointsTimer;
+
+	int audioEnergyChargingId = -1;
 protected:
 };
 

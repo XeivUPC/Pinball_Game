@@ -103,6 +103,8 @@ bool ModuleGameBlueMap::Start()
 	screen->AddProgram(new HabitatSelectionProgram(habitatsToSelect));
 	screen->SetDefaultProgram(new HabitatSelectedProgram());
 
+	audioGameStartId = App->audio->LoadFx("Assets/SFX/Game_BallStart.ogg");
+
 	return true;
 }
 
@@ -134,6 +136,7 @@ update_status ModuleGameBlueMap::Update()
 			if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
 				statesTimer.UnlockTimer();
 				statesTimer.Start();
+				App->audio->PlayFx(audioGameStartId);
 			}
 		}
 

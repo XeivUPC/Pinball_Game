@@ -28,5 +28,7 @@ private:
 
 	Timer remove_timer;
 	float remove_time = 10.f;
+
+	int audioDiggletBumperId = -1;
 };
 

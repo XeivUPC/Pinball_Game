@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
+#include "ModuleAudio.h"
 #include "CentralScreen.h"
 #include "PokeBall.h"
 #include "ModuleUserPreferences.h"
@@ -118,6 +119,8 @@ BonusSelectionProgram::BonusSelectionProgram(int attemptVariant) : ScreenProgram
 
 	
 	std::shuffle(bonusToSelect.begin(), bonusToSelect.end(), g);
+
+	
 }
 
 BonusSelectionProgram::~BonusSelectionProgram()
@@ -176,11 +179,14 @@ void BonusSelectionProgram::StartProgram()
 	animator->SetSpeed(0.1f);
 	animator->SelectAnimation("Select_Animation_BW", true);
 	stopTimer.Start();
+
+	audioBonusSwapId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BonusSwap.ogg");
 }
 
 void BonusSelectionProgram::Logic()
 {
 	animator->Update();
+	gameAt->App->audio->PlayFx(audioBonusSwapId);
 	if (selectedBonus == -1) {
 		speedReduction += speedReduction * GetFrameTime() / 2.f;
 		animator->SetSpeed(animator->GetSpeed() + speedReduction * GetFrameTime());

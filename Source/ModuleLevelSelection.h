@@ -16,7 +16,8 @@ private:
 	Animator* animator = nullptr;
 
 	int audioSelectId=-1;
-	int audioMoveId =-1;
+	int audioMoveRightId = -1;
+	int audioMoveLeftId = -1;
 
 public:
 	ModuleLevelSelection(Application* app, bool start_enabled=true);
