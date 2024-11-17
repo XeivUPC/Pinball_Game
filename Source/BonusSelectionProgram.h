@@ -29,6 +29,7 @@ private:
 	bool GiveBonus(int type, int subType);
 
 	int audioBonusSwapId = -1;
+	int audioBonusSelectedId = -1;
 
 	int previousSprite = 0;
 

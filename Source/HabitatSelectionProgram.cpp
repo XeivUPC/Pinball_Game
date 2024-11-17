@@ -45,6 +45,7 @@ void HabitatSelectionProgram::StartProgram()
 	animator->SelectAnimation("Select_Animation_BW", true);
 
 	audioHabitatSelectionId = gameAt->App->audio->LoadFx("Assets/SFX/Game_MapChanging.ogg");
+	audioHabitatFoundId = gameAt->App->audio->LoadFx("Assets/SFX/Game_MapFound.ogg");
 }
 
 void HabitatSelectionProgram::Logic()

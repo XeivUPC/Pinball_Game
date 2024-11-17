@@ -52,7 +52,7 @@ StaryuBumper::StaryuBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2Ve
 
 	staryu_animator->SelectAnimation("Bumper_Off", true);
 
-	audioStaryuBumperId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BellsproutAbsorb.ogg");
+	audioStaryuBumperId = gameAt->App->audio->LoadFx("Assets/SFX/Game_StaryuBumper.ogg");
 }
 
 StaryuBumper::~StaryuBumper()

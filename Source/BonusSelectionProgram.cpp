@@ -182,6 +182,7 @@ void BonusSelectionProgram::StartProgram()
 	stopTimer.Start();
 
 	audioBonusSwapId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BonusSwap.ogg");
+	audioBonusSelectedId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BonusSelected.ogg");
 }
 
 void BonusSelectionProgram::Logic()
