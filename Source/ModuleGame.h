@@ -82,6 +82,9 @@ public:
 	void CloseCave();
 	void FreeBallCave();
 
+	void PlayFieldMusic();
+	void PlayCatchEvoMusic();
+
 	int GetBonusSelectionAttempts();
 	void AddBonusSelectionAttempts();
 
@@ -111,6 +114,9 @@ protected:
 	std::vector<b2Body*> simpoleCollidersBodies;
 	std::vector<MapObject*> mapObjects;
 	pugi::xml_document mapFileXML;
+
+	std::string musicPath;
+	std::string catchEvoMusicPath;
 
 	b2Vec2 ballSpawn;
 

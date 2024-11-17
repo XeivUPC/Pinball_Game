@@ -56,6 +56,13 @@ bool DittoColliders::CleanUp()
 		gameAt->App->physics->world->DestroyBody(data.second);
 	}
 	dittoData.clear();
+
+	if (ditto_animator != nullptr)
+	{
+		delete ditto_animator;
+		ditto_animator = nullptr;
+	}
+
 	return true;
 }
 

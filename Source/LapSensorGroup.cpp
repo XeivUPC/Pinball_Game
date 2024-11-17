@@ -39,7 +39,7 @@ update_status LapSensorGroup::Update()
 
 bool LapSensorGroup::CleanUp()
 {
-
+	mapSensors.clear();
 	return true;
 }
 

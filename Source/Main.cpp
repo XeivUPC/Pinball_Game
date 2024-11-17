@@ -46,7 +46,6 @@ int main(int argc, char ** argv)
 				state = MAIN_UPDATE;
 				LOG("-------------- Application Update --------------");
 			}
-
 			break;
 
 		case MAIN_UPDATE:
@@ -61,6 +60,7 @@ int main(int argc, char ** argv)
 
 			if (update_return == UPDATE_STOP)
 				state = MAIN_FINISH;
+			
 		}
 			break;
 

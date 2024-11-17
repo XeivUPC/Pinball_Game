@@ -76,4 +76,6 @@ void HabitatSelectionProgram::EndProgram()
 		delete animator;
 		animator = nullptr;
 	}
+
+	habitatsToSelect.clear();
 }

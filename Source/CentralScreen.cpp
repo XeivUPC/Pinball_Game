@@ -102,13 +102,15 @@ std::string CentralScreen::GetDefaultProgramIdentifier()
 
 bool CentralScreen::CleanUp()
 {
-	if (actualProgram != nullptr)
+	if (actualProgram != nullptr) 
 	{
+		actualProgram->EndProgram();
 		delete actualProgram;
 		actualProgram = nullptr;
 	}
 
 	if (defaultProgram != nullptr) {
+		defaultProgram->EndProgram();
 		delete defaultProgram;
 		defaultProgram = nullptr;
 	}

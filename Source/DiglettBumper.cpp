@@ -96,6 +96,11 @@ update_status DiglettBumper::Update()
 
 bool DiglettBumper::CleanUp()
 {
+	if (diglett_animator != nullptr) {
+		delete diglett_animator;
+		diglett_animator = nullptr;
+	}
+
 	gameAt->App->physics->world->DestroyBody(body);
 	return true;
 }

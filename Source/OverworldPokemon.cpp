@@ -68,6 +68,7 @@ void OverworldPokemon::StartProgram()
 	animator->AddAnimation(pokeballStatic);
 	animator->SetIfCanDraw(false);
 	animator->SelectAnimation("PokeballStatic", true);
+
 }
 
 void OverworldPokemon::Logic()
@@ -81,6 +82,7 @@ void OverworldPokemon::Logic()
 				pokemon_bumper = nullptr;
 				gameAt->GetTimerUI()->HideTimer();
 				gameAt->screen->RemoveProgram();
+
 			}
 			return;
 		}
@@ -93,6 +95,7 @@ void OverworldPokemon::Logic()
 	{
 		gameAt->RemoveObject(pokemon_bumper);
 		pokemon_bumper = nullptr;
+		gameAt->GetTimerUI()->HideTimer();
 		animator->SetIfCanDraw(true);
 		animator->SelectAnimation("Smoke", false);
 		gameAt->GetPokeball()->SetIfBlockMovement(true);
@@ -181,4 +184,5 @@ void OverworldPokemon::Render()
 
 void OverworldPokemon::EndProgram()
 {
+	gameAt->PlayFieldMusic();
 }

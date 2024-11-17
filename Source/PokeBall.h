@@ -7,7 +7,7 @@
 #include "MapObject.h"
 #include "AnimationSystem.h"
 
-class PokeBall : public MapObject
+class PokeBall : public MapObject 
 {
 
 	

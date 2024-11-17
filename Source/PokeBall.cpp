@@ -10,7 +10,7 @@ PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 spawn, PokeballType type,float max
 {
 	gameAt->AddObject(this);
 	this->maxSpeed = maxSpeed;
-	this->spawn = spawn;
+	this->spawn = spawn; 
 	
 
 	gameAt->App->texture->CreateTexture("Assets/pokebal_defaultSize.png", "pokebal_defaultSize");
@@ -292,5 +292,11 @@ float PokeBall::GetMultiplierByType(PokeballType type)
 bool PokeBall::CleanUp()
 {
 	gameAt->App->physics->world->DestroyBody(body);
+
+	if (pokeball_animator != nullptr) {
+		delete pokeball_animator;
+		pokeball_animator = nullptr;
+	}
+
 	return true;
 }

@@ -79,6 +79,12 @@ update_status MapCave::Update()
 bool MapCave::CleanUp()
 {
 	gameAt->App->physics->world->DestroyBody(body);
+
+	if (animator != nullptr)
+	{
+		delete animator;
+		animator = nullptr;
+	}
 	return true;
 }
 

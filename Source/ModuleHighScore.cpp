@@ -61,9 +61,10 @@ bool ModuleHighScore::Start()
 
 	textTimer.Start();
 
-	App->audio->PlayMusic("Assets/Music/HighScore_Screen.wav", 0.3f);
+	
 
 	audioSelectId = App->audio->LoadFx("Assets/SFX/Menu_Option_Select.ogg");
+
 
 	score_was_inserted = true;
 
@@ -79,6 +80,14 @@ bool ModuleHighScore::Start()
 	std::string savedName(1, current_char);
 
 	ChangeName(savedName);
+
+
+	if (score_was_inserted) {
+		App->audio->PlayMusic("Assets/Music/High_Score_Name_Entry.wav", 0.3f);
+	}
+	else {
+		App->audio->PlayMusic("Assets/Music/HighScore_Screen.wav", 0.3f);
+	}
 
 	return ret;
 }
@@ -162,8 +171,9 @@ bool ModuleHighScore::CleanUp()
 		delete arrow_animator;
 		arrow_animator = nullptr;
 	}
-	highScoreFile.reset();
 	incoming_score = 0;
+
+	scores.clear();
 	LOG("Unloading High Score scene");
 	return true;
 }

@@ -4,20 +4,20 @@
 #include "Application.h"
 #include <string>
 
-Rectangle* ModuleGamePokedexWorldWide::GetCharRect(char c)
+Rectangle ModuleGamePokedexWorldWide::GetCharRect(char c)
 {
-	Rectangle* rect = new Rectangle{ 0,0,0,0 };
+	Rectangle rect = Rectangle{ 0,0,0,0 };
 	for (size_t i = 0; i < charReferences.size(); i++)
 	{
 		if ((int)c == charReferences[i])
 		{
-			rect->x = i % (int)count.x * size.x;
-			rect->y = i / (int)count.x * size.y;
+			rect.x = i % (int)count.x * size.x;
+			rect.y = i / (int)count.x * size.y;
 			break;
 		}
 	}
-	rect->width = size.x;
-	rect->height = size.y;
+	rect.width = size.x;
+	rect.height = size.y;
 	return rect;
 }
 
@@ -76,16 +76,16 @@ void ModuleGamePokedexWorldWide::Write(const char* text, int x, int y, Color col
 
 	while (text[i] != '\0')
 	{
-		Rectangle* letter = GetCharRect(text[i]);
+		Rectangle letter = GetCharRect(text[i]);
 		if (text[i] > 96 && text[i] < 123)
 			letter = GetCharRect(text[i]-32);
 		if (text[i] == ',')
 		{
 			x -= (int)size.x;
-			App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)(y+1), letter, color);
+			App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)(y+1), &letter, color);
 		}
 		else
-			App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)(y), letter, color);
+			App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)(y), &letter, color);
 		i++;
 	}
 }

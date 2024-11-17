@@ -91,6 +91,10 @@ update_status CircularBumper::Update()
 
 bool CircularBumper::CleanUp()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
 	gameAt->App->physics->world->DestroyBody(body);
 	return true;
 }

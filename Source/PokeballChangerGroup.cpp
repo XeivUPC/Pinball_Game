@@ -71,7 +71,7 @@ update_status PokeballChangerGroup::Update()
 
 bool PokeballChangerGroup::CleanUp()
 {
-	
+	mapSensors.clear();
 	return true;
 }
 

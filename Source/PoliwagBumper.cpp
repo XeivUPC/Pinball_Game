@@ -84,6 +84,10 @@ update_status PoliwagBumper::Update()
 
 bool PoliwagBumper::CleanUp()
 {
+	if (poliwag_animator != nullptr) {
+		delete poliwag_animator;
+		poliwag_animator = nullptr;
+	}
 	gameAt->App->physics->world->DestroyBody(body);
 	return true;
 }

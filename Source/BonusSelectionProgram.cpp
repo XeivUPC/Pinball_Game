@@ -190,6 +190,7 @@ void BonusSelectionProgram::Logic()
 	int currentSprite = animator->GetCurrentAnimationSpriteIndex();
 	if (previousSprite != currentSprite)
 	{
+		printf("%d\n", previousSprite);
 		gameAt->App->audio->PlayFx(audioBonusSwapId);
 	}
 	previousSprite = currentSprite;
@@ -253,4 +254,5 @@ void BonusSelectionProgram::EndProgram()
 		delete animator;
 		animator = nullptr;
 	}
+	bonusToSelect.clear();
 }

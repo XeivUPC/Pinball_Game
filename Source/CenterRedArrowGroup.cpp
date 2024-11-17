@@ -21,6 +21,7 @@ update_status CenterRedArrowGroup::Update()
 
 bool CenterRedArrowGroup::CleanUp()
 {
+	mapArrows.clear();
 
 	return true;
 }
@@ -57,19 +58,19 @@ void CenterRedArrowGroup::TwinkleRight()
 
 void CenterRedArrowGroup::ActivateMid()
 {
-	CenterRedArrow* arrow = static_cast<CenterRedArrow*>(mapArrows.front()+1);
+	CenterRedArrow* arrow = static_cast<CenterRedArrow*>(mapArrows[1]);
 	arrow->Activate();
 }
 
 void CenterRedArrowGroup::DeactivateMid()
 {
-	CenterRedArrow* arrow = static_cast<CenterRedArrow*>(mapArrows.front()+1);
+	CenterRedArrow* arrow = static_cast<CenterRedArrow*>(mapArrows[mapArrows.size() / 2]);
 	arrow->Desactivate();
 }
 
 void CenterRedArrowGroup::TwinkleMid()
 {
-	CenterRedArrow* arrow = static_cast<CenterRedArrow*>(mapArrows.front()+1);
+	CenterRedArrow* arrow = static_cast<CenterRedArrow*>(mapArrows[mapArrows.size() / 2]);
 	arrow->Twinkle();
 }
 

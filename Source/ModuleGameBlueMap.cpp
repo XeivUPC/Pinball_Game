@@ -105,6 +105,10 @@ bool ModuleGameBlueMap::Start()
 
 	audioGameStartId = App->audio->LoadFx("Assets/SFX/Game_BallStart.ogg");
 
+	musicPath = "Assets/Music/Blue_Field.wav";
+	catchEvoMusicPath = "Assets/Music/Catch_Evolution_Mode_Blue_Field.wav";
+	PlayFieldMusic();
+
 	return true;
 }
 
@@ -143,7 +147,7 @@ update_status ModuleGameBlueMap::Update()
 		break;
 	case ModuleGame::PlayGame:
 
-		if (pokeBall->GetPosition().y >= 278 / SCREEN_SIZE) {
+		if (pokeBall->GetPosition().y >= 290 / SCREEN_SIZE) {
 			SetState(RestartGame);
 		}
 
@@ -173,6 +177,14 @@ update_status ModuleGameBlueMap::Update()
 			centerBlueArrowGroup->DeactivateRightTop();
 			canEvolve = false;
 		}
+
+		if (cave->IsCaveOpen()) {
+			centerBlueArrowGroup->ActivateMidTop();
+		}
+		else {
+			centerBlueArrowGroup->DeactivateMidTop();
+		}
+
 		// the top arrow in the center is activated when there is a black hole for events
 
 		// the bottom arrow follows where the air arrow controller in the middle of the top part points
@@ -239,6 +251,15 @@ bool ModuleGameBlueMap::CleanUp()
 	}
 	mapObjects.clear();
 
+	if (timerUI != nullptr) {
+		delete timerUI;
+		timerUI = nullptr;
+	}
+
+	if (UI != nullptr) {
+		delete UI;
+		UI = nullptr;
+	}
 
 	App->renderer->camera.offset = { 0,0 };
 	return true;

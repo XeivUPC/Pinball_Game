@@ -87,6 +87,11 @@ update_status PokeballChangerSensor::Update()
 
 bool PokeballChangerSensor::CleanUp()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
+
 	gameAt->App->physics->world->DestroyBody(body);
 
 	return true;

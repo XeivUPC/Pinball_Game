@@ -21,7 +21,7 @@ update_status CenterBlueArrowGroup::Update()
 
 bool CenterBlueArrowGroup::CleanUp()
 {
-
+	mapArrows.clear();
 	return true;
 }
 
@@ -70,31 +70,31 @@ void CenterBlueArrowGroup::DeactivateRightBot()
 
 void CenterBlueArrowGroup::ActivateMid()
 {
-	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front()+1);
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows[mapArrows.size() / 2]);
 	arrow->Activate();
 }
 
 void CenterBlueArrowGroup::ActivateMidTop()
 {
-	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front()+1);
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows[mapArrows.size() / 2]);
 	arrow->ActivateTop();
 }
 
 void CenterBlueArrowGroup::DeactivateMidTop()
 {
-	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front() + 1);
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows[mapArrows.size() / 2]);
 	arrow->DesactivateTop();
 }
 
 void CenterBlueArrowGroup::ActivateMidBot()
 {
-	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front()+1);
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows[mapArrows.size() / 2]);
 	arrow->ActivateBot();
 }
 
 void CenterBlueArrowGroup::DeactivateMidBot()
 {
-	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows.front() + 1);
+	CenterBlueArrow* arrow = static_cast<CenterBlueArrow*>(mapArrows[mapArrows.size() / 2]);
 	arrow->DesactivateBot();
 }
 

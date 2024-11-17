@@ -98,7 +98,9 @@ void CapturePokemon::StartProgram()
 	animationStarted = 0;
 	animating = false;
 	baseRect = { (float)((ID / 38)*2) * gameAt->screen->screenArea.width, (float)(ID % 38) * gameAt->screen->screenArea.height, gameAt->screen->screenArea.width, gameAt->screen->screenArea.height };
-	gameAt->GetTimerUI()->AddTimer(10 * 2);
+	gameAt->GetTimerUI()->AddTimer(60 * 2);
+
+	gameAt->PlayCatchEvoMusic();
 }
 
 void CapturePokemon::Logic()
@@ -111,6 +113,7 @@ void CapturePokemon::Logic()
 		if (failedTimer.ReadSec() > failedTime) {
 			gameAt->GetUI()->AddText("PLACEDHOLDER");
 			gameAt->GetTimerUI()->HideTimer();
+			gameAt->PlayFieldMusic();
 			gameAt->screen->RemoveProgram();
 		}
 		return;
@@ -188,4 +191,5 @@ void CapturePokemon::Render()
 void CapturePokemon::EndProgram()
 {
 	gameAt->App->scene_pokedex->DiscoverPokemon(ID);
+
 }

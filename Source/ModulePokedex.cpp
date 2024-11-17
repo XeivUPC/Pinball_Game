@@ -10,6 +10,8 @@
 #include <sstream>
 #include <string>
 
+
+
 const std::string ModulePokedex::Text0Format(int number)
 {
     std::string num;
@@ -146,7 +148,7 @@ std::string ModulePokedex::ToInchDecimal(std::string height)
     return str;
 }
 
-ModulePokedex::ModulePokedex(Application* app, bool start_enabled) : ModuleScene(app, start_enabled){}
+ModulePokedex::ModulePokedex(Application* app, bool start_enabled) : ModuleScene(app, start_enabled){  }
 
 ModulePokedex::~ModulePokedex(){}
 
@@ -171,6 +173,8 @@ bool ModulePokedex::Start()
     App->texture->CreateTexture("Assets/pokemons_shadow_and_color.png", "pokemon");
     pokedexPokemon = App->texture->GetTexture("pokemon");
 
+    App->audio->PlayMusic("Assets/Music/Pokedex.wav", 0.3f);
+
     ScrollBarAnimator = new Animator(App);
     AnimationData ScrollBarAnim = AnimationData("ScrollBar");
     ScrollBarAnim.AddSprite(Sprite{ pokedexSpritesheet, {27,72}, { 6, 2}});
@@ -194,6 +198,7 @@ update_status ModulePokedex::Update()
         App->audio->StopMusic();
         App->audio->PlayFx(audioSelectId);
     }
+
     if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP)) || IsKeyPressedRepeat(App->userPreferences->GetKeyValue(ModuleUserPreferences::UP))))
     {
         selectedId--;
@@ -276,6 +281,7 @@ update_status ModulePokedex::Update()
 #pragma endregion
 #pragma region Lerp
     
+
     if (targetOffset!=offset)
     {
         float factor =(float)(lerpTimer.ReadSec() / lerpTime);
@@ -288,6 +294,7 @@ update_status ModulePokedex::Update()
     }
 #pragma endregion
 #pragma region Render
+
     ScrollBarAnimator->Update();
     arrowCurrentTime -= GetFrameTime();
 
@@ -302,19 +309,20 @@ update_status ModulePokedex::Update()
         arrowCurrentTime = arrowAnimSpeed;
     }
         
+
     App->renderer->DrawRect(0, 0, SCREEN_WIDTH , SCREEN_HEIGHT, WHITE);
     Rectangle rect;
     for (size_t i = 0; i < pokemon_list.size(); i++)
     {
         rect = { 0 , 16.f * selectedLanguage, 124 ,16 };
-        App->renderer->Draw(*pokedexSlot, 10, (int)(56 + offset + 16 * i), &rect, WHITE);
+        App->renderer->Draw(*pokedexSlot, 10, (int)(56 + offset + 16 * i), &rect, WHITE); 
         App->text_pokedex_worldwide->Write(Text0Format(i + 1).c_str(), 56, (int)((49 + offset) + (16 * i)), BLACK);
     }
     for (size_t i = 0; i < pokemon_list.size(); i++)
     {
         if (pokemon_list.at(i).discovered)
         {
-            if(selectedLanguage == 0)
+           if(selectedLanguage == 0)
                 App->text_pokedex_japanese->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(60+ 16 * i + offset), BLACK);
             else
                 App->text_pokedex_worldwide->Write(pokemon_list.at(i).Names.at(selectedLanguage).c_str(), 48, (int)(60 + 16 * i + offset), BLACK);
@@ -343,6 +351,11 @@ bool ModulePokedex::CleanUp()
     localSelectedId = 0;
     offset = 0;
     targetOffset = 0;
+
+    if (ScrollBarAnimator != nullptr) {
+        delete ScrollBarAnimator;
+        ScrollBarAnimator = nullptr;
+    }
 
     SaveConfigFile();
     return true;

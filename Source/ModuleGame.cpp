@@ -4,6 +4,7 @@
 #include "ModuleRender.h"
 #include "ModuleMainMenu.h"
 #include "MapObject.h"
+#include "ModuleAudio.h"
 #include "MapEnergyBattery.h"
 #include "MapCave.h"
 #include "SaveAgainBall.h"
@@ -159,6 +160,16 @@ void ModuleGame::CloseCave()
 void ModuleGame::FreeBallCave()
 {
 	cave->FreeBall();
+}
+
+void ModuleGame::PlayFieldMusic()
+{
+	App->audio->PlayMusic(musicPath.c_str(), 0.3f);
+}
+
+void ModuleGame::PlayCatchEvoMusic()
+{
+	App->audio->PlayMusic(catchEvoMusicPath.c_str(), 0.3f);
 }
 
 void ModuleGame::SetSaveBall(bool status)

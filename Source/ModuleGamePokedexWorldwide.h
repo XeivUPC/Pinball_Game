@@ -10,7 +10,7 @@ private:
 	Vector2 size;
 	Vector2 count;
 	std::vector<int> charReferences;
-	Rectangle* GetCharRect(char c);
+	Rectangle GetCharRect(char c);
 public:
 	ModuleGamePokedexWorldWide(Application* app, bool start_enabled = true);
 

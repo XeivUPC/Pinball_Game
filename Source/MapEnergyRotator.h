@@ -12,7 +12,7 @@ public:
 	MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, MapEnergyBattery* battery, float width, float height, int variant);
 	~MapEnergyRotator();
 
-	update_status Update();
+	update_status Update(); 
 	bool CleanUp() override;
 private:
 	b2Body* body = nullptr;
@@ -33,7 +33,6 @@ private:
 	float pointsTime = 0.5f;
 	Timer pointsTimer;
 
-	int audioEnergyChargingId = -1;
 protected:
 };
 

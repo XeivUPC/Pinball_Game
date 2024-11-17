@@ -98,6 +98,10 @@ update_status PsyduckBumper::Update()
 
 bool PsyduckBumper::CleanUp()
 {
+	if (psyduck_animator != nullptr) {
+		delete psyduck_animator;
+		psyduck_animator = nullptr;
+	}
 	gameAt->App->physics->world->DestroyBody(body);
 	return false;
 }

@@ -16,7 +16,7 @@ private:
 
 public:
 	HabitatSelectionProgram(std::vector<int> habitatsToSelect);
-	~HabitatSelectionProgram();
+	~HabitatSelectionProgram(); 
 	void CallAction(int id)override;
 	void StartProgram()override;
 	void Logic()override;

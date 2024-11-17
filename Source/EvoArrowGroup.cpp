@@ -31,7 +31,7 @@ update_status EvoArrowGroup::Update()
 
 bool EvoArrowGroup::CleanUp()
 {
-
+	mapArrows.clear();
 	return true;
 }
 

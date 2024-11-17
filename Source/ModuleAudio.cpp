@@ -121,5 +121,6 @@ bool ModuleAudio::PlayFx(unsigned int id, int repeat)
 	if (id < fx_count) {
 		PlaySound(fx[id]);
 	}
+
 	return ret;
 }

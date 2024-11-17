@@ -8,14 +8,18 @@
 #include "ModuleGameBlueMap.h"
 
 
+
 ModuleLevelSelection::ModuleLevelSelection(Application* app, bool start_enabled) : ModuleScene(app, start_enabled)
-{}
+{
+
+}
 
 ModuleLevelSelection::~ModuleLevelSelection()
 {}
 
 bool ModuleLevelSelection::Start()
 {
+
 	selectedLanguage = App->userPreferences->GetLanguage();
 	animator = new Animator(App);
 

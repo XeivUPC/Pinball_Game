@@ -44,6 +44,10 @@ update_status GetEvoArrow::Update()
 
 bool GetEvoArrow::CleanUp()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
 	return true;
 }
 

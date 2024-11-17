@@ -8,7 +8,7 @@ private:
 	b2Vec2 entryPosition = {0,0};
 	float entryRadius = 0;
 
-	Animator* animator =nullptr;
+	Animator* animator =nullptr; 
 	Texture* texture = nullptr;
 
 	bool isOpen = false;
