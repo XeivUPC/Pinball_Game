@@ -194,6 +194,7 @@
     <ClInclude Include="Source\AnimationSystem.h" />
     <ClInclude Include="Source\Bellsprout.h" />
     <ClInclude Include="Source\BonusFinalBall.h" />
+    <ClInclude Include="Source\BlackHoleEffector.h" />
     <ClInclude Include="Source\BonusMultiplierSensor.h" />
     <ClInclude Include="Source\BonusMultiplierSensorGroup.h" />
     <ClInclude Include="Source\BonusSelectionProgram.h" />
@@ -217,6 +218,7 @@
     <ClInclude Include="Source\DiglettCounter.h" />
     <ClInclude Include="Source\DiglettBumper.h" />
     <ClInclude Include="Source\DittoColliders.h" />
+    <ClInclude Include="Source\Effector.h" />
     <ClInclude Include="Source\EmptyProgram.h" />
     <ClInclude Include="Source\EvoArrowGroup.h" />
     <ClInclude Include="Source\Flipper.h" />
@@ -288,6 +290,7 @@
     <ClCompile Include="Source\AnimationSystem.cpp" />
     <ClCompile Include="Source\Bellsprout.cpp" />
     <ClCompile Include="Source\BonusFinalBall.cpp" />
+    <ClCompile Include="Source\BlackHoleEffector.cpp" />
     <ClCompile Include="Source\BonusMultiplierSensor.cpp" />
     <ClCompile Include="Source\BonusMultiplierSensorGroup.cpp" />
     <ClCompile Include="Source\BonusSelectionProgram.cpp" />
@@ -311,6 +314,7 @@
     <ClCompile Include="Source\DiglettCounter.cpp" />
     <ClCompile Include="Source\DiglettBumper.cpp" />
     <ClCompile Include="Source\DittoColliders.cpp" />
+    <ClCompile Include="Source\Effector.cpp" />
     <ClCompile Include="Source\EmptyProgram.cpp" />
     <ClCompile Include="Source\EvoArrowGroup.cpp" />
     <ClCompile Include="Source\Flipper.cpp" />

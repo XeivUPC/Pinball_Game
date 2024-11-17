@@ -2,18 +2,18 @@
 <highscore>
 	<positions>
 		<blue>
-			<first name="NIN" score="500000000" />
-			<second name="CRE" score="400000000" />
-			<third name="GAM" score="300000000" />
-			<fourth name="HAL" score="200000000" />
-			<fifth name="JUP" score="100000000" />
+			<first name="ADR" score="500000000" />
+			<second name="ANA" score="400000000" />
+			<third name="MAX" score="300000000" />
+			<fourth name="WIL" score="200000000" />
+			<fifth name="PEP" score="100000000" />
 		</blue>
 		<red>
-			<first name="NIN" score="500000000" />
-			<second name="CRE" score="400000000" />
-			<third name="GAM" score="300000000" />
-			<fourth name="HAL" score="200000000" />
-			<fifth name="JUP" score="100000000" />
+			<first name="ADR" score="500000000" />
+			<second name="ANA" score="400000000" />
+			<third name="MAX" score="300000000" />
+			<fourth name="WIL" score="200000000" />
+			<fifth name="PEP" score="100000000" />
 		</red>
 	</positions>
 </highscore>

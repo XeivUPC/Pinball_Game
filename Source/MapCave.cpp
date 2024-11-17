@@ -8,6 +8,7 @@
 #include "ModuleAudio.h"
 #include "PokeBall.h"
 #include "BonusFinalBall.h"
+#include "BlackHoleEffector.h"
 
 MapCave::MapCave(ModuleGame* gameAt, b2Vec2 position, b2Vec2 entryPosition, float entryRadius) : MapObject(gameAt)
 {
@@ -55,6 +56,7 @@ MapCave::MapCave(ModuleGame* gameAt, b2Vec2 position, b2Vec2 entryPosition, floa
 
 	audioVoidAbsorbId = gameAt->App->audio->LoadFx("Assets/SFX/Game_VoidAbsorb.ogg");
 	audioVoidEnterId = gameAt->App->audio->LoadFx("Assets/SFX/Game_VoidEnter.ogg");
+	blackHoleEffector = new BlackHoleEffector(gameAt, this->entryPosition, 4.f);
 }
 
 MapCave::~MapCave()
@@ -65,8 +67,10 @@ update_status MapCave::Update()
 {
 	animator->Update();
 
+
 	bool hasBeenTriggered = sensor.OnTriggerEnter();
 	if (isOpen) {
+
 		if (isBallIn && freeBallTime < freeBallTimer.ReadSec()) {
 			isBallIn = false;
 			CloseCave();
@@ -77,6 +81,7 @@ update_status MapCave::Update()
 		}	
 	}
 
+	blackHoleEffector->Update();
 
 	animator->Animate((int)(position.x * SCREEN_SIZE ), (int)(position.y * SCREEN_SIZE), true);
 	return UPDATE_CONTINUE;
@@ -98,6 +103,7 @@ void MapCave::OpenCave()
 {
 	isOpen = true;
 	animator->SelectAnimation("Opened", true);
+	blackHoleEffector->SetIfEnable(true);
 }
 
 void MapCave::CloseCave()
@@ -105,7 +111,7 @@ void MapCave::CloseCave()
 	isBallIn = false;
 	isOpen = false;
 	animator->SelectAnimation("Closed", true);
-
+	blackHoleEffector->SetIfEnable(false);
 }
 
 void MapCave::FreeBall()
