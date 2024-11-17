@@ -100,7 +100,7 @@ void StaryuBumper::OnHit()
 	recovering = true;
 	gameAt->pointsCounter.Add(50000);
 	body->GetFixtureList()[0].SetSensor(true);
-
+	gameAt->App->audio->PlayFx(audioStaryuBumperId);
 	recover_timer.Start();
 	staryu_animator->SelectAnimation("Bumper_On", true);
 	if (hitsRecieved > 3) {
