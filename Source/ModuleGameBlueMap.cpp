@@ -143,7 +143,7 @@ update_status ModuleGameBlueMap::Update()
 		break;
 	case ModuleGame::PlayGame:
 
-		if (IsKeyPressed(KEY_R)) {
+		if (pokeBall->GetPosition().y >= 278 / SCREEN_SIZE) {
 			SetState(RestartGame);
 		}
 
@@ -181,17 +181,22 @@ update_status ModuleGameBlueMap::Update()
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		StartFadeIn(this, WHITE, statesTime);
 
-		pokeBall->Reset(saveBall);
+		if (statesTimer.ReadSec() >= statesTime) {
+			pokeBall->Reset(saveBall);
 
-		if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
-			//// END
-			SetState(EndGame);
-		}
-		else {
-			if (pokeBall->GetLivesPokeball() == 0)
-				SetExtraBall(false);
-			SetState(StartGame);
+			if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
+				//// END
+				StartFadeOut(WHITE, statesTime);
+				SetState(EndGame);
+			}
+			else {
+				if (pokeBall->GetLivesPokeball() == 0)
+					SetExtraBall(false);
+				StartFadeOut(WHITE, statesTime);
+				SetState(StartGame);
+			}
 		}
 
 		break;
@@ -323,7 +328,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 1);
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 20.f, flip, 1);
 			}
 			else if (type == "poliwagBumper") {
 				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
@@ -496,6 +501,7 @@ void ModuleGameBlueMap::SetState(GameStates stateToChange)
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		statesTime = 0.5f;
 		break;
 	case ModuleGame::EndGame:
 		break;
