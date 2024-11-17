@@ -1,9 +1,10 @@
 # 🌟 **Physiscs Pinball Game** 🌟
 
-Welcome to our **Pinball Game** for the physics assignment! This project is inspired by the iconic **Pokemon Pinball** for GBC.
-![Pokemon Pinball](https://github.com/user-attachments/assets/d71d205c-ea5f-404f-9cf9-11b7a4931c1f)
+Welcome to our **Pinball Game** for the physics assignment! This project is inspired by the iconic **Pokemon Pinball** for GBC ↓
 
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d71d205c-ea5f-404f-9cf9-11b7a4931c1f" alt="Pokemon Pinball">
+</p>
 
 ---
 
@@ -25,7 +26,7 @@ This project was created by this group of students:
 - **Adrià García Almadén**
 - **Guillem Martínez Aparicio**
 - **Max Mateo Ferret**
-- **Tur De Zarandieta José**
+- **José Tur De Zarandieta**
 
 ---
 
@@ -66,12 +67,6 @@ This version of **Pinball Game** includes new features:
 
 - **New Ball Affectors**: Interact with the ball in unique ways for a fresh experience! 🎱
   
----
-
-## 💬 **Enjoy!**
-
-Feel free to explore the game further!
-
 ---
 
 ## 📜 **Credits & Acknowledgments**
