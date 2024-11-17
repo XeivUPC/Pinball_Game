@@ -85,4 +85,5 @@ public:
 	std::string GetCurrentAnimationName();
 	AnimationData GetCurrentAnimation();
 	Sprite GetCurrentAnimationSprite();
+	int GetCurrentAnimationSpriteIndex();
 };

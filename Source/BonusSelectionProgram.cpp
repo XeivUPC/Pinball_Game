@@ -186,11 +186,13 @@ void BonusSelectionProgram::StartProgram()
 void BonusSelectionProgram::Logic()
 {
 	animator->Update();
-	if (/*previousSprite != animator->GetCurrentAnimationSprite()*/true)
+
+	int currentSprite = animator->GetCurrentAnimationSpriteIndex();
+	if (previousSprite != currentSprite)
 	{
 		gameAt->App->audio->PlayFx(audioBonusSwapId);
 	}
-	/*previousSprite = currentSprite;*/
+	previousSprite = currentSprite;
 
 	if (selectedBonus == -1) {
 		speedReduction += speedReduction * GetFrameTime() / 2.f;
@@ -200,7 +202,6 @@ void BonusSelectionProgram::Logic()
 			selectedBonus = animator->GetCurrentAnimationSprite().extraData;
 			animator->SelectAnimation("Select_Animation_" + std::to_string(selectedBonus), true);
 			selectedShowTimer.Start();
-			///// SelectBonus & Play BonusAnimation
 
 			selectedBonusSubType = -1;
 			if (selectedBonus == 0 || selectedBonus == 1)
@@ -217,9 +218,7 @@ void BonusSelectionProgram::Logic()
 				std::uniform_int_distribution<> distrib(1, 5);
 
 				selectedBonusSubType = distrib(gen);
-			}
-
-			////Test			
+			}		
 		}
 	}
 	else {

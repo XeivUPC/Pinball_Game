@@ -256,3 +256,8 @@ Sprite Animator::GetCurrentAnimationSprite()
 {
 	return GetCurrentAnimation().sprites[currentSprite];
 }
+
+int Animator::GetCurrentAnimationSpriteIndex()
+{
+	return currentSprite;
+}
