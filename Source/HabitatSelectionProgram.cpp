@@ -59,7 +59,7 @@ void HabitatSelectionProgram::Logic()
 	previousSprite = currentSprite;
 
 
-	if (IsKeyPressed(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+	if (IsKeyPressed(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
 		CallAction(0);
 	}	
 

@@ -8,7 +8,7 @@
 
 int BonusFinalBall::GetMultiplier()
 {
-    return gameAt->GetMultiplier();
+    return gameAt->bonusPointsCounter.GetMultipliersTotalValue();
 }
 
 std::string BonusFinalBall::FormatNumberWithOnlyComas(long long int number) const
