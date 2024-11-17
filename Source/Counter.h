@@ -21,4 +21,5 @@ public:
     float GetMultiplier(std::string id);
     bool RemoveMultiplier(float multiplier, std::string id);
     bool EditMultiplier(float multiplier, float newMultiplier, std::string id);
+    float GetMultipliersTotalValue();
 };
