@@ -159,6 +159,18 @@ update_status Application::Update()
 		}
 	}
 
+	if (IsKeyPressed(KEY_F4))
+	{
+		if (current_fps == 60) {
+			ChangeTargetFPS(30);
+			current_fps = 30;
+		}
+		else if(current_fps == 30){
+			ChangeTargetFPS(60);
+			current_fps = 60;
+		}
+	}
+
 	if (WindowShouldClose()) ret = UPDATE_STOP;
 
 	return ret;
@@ -174,6 +186,11 @@ bool Application::CleanUp()
 	}
 	
 	return ret;
+}
+
+void Application::ChangeTargetFPS(int fps)
+{
+	SetTargetFPS(fps);
 }
 
 void Application::AddModule(Module* mod)

@@ -14,6 +14,7 @@ class PokeBall;
 class CentralScreen;
 class MapEnergyBattery;
 class GameUI;
+class BonusFinalBall;
 class TimerUI;
 class MapCave;
 class SaveAgainBall;
@@ -55,6 +56,7 @@ public:
 	PokeBall* GetPokeball();
 	GameUI* GetUI();
 	TimerUI* GetTimerUI();
+	BonusFinalBall* finalBallUI = nullptr;
 	CatchedPokemon* catchedPokemon = nullptr;
 
 	void NextHabitat();
@@ -81,6 +83,9 @@ public:
 	void OpenCave();
 	void CloseCave();
 	void FreeBallCave();
+
+	bool HasExtraPika();
+	void SetExtraPika(bool status);
 
 	void PlayFieldMusic();
 	void PlayCatchEvoMusic();
@@ -125,6 +130,7 @@ protected:
 
 	bool saveBall = false;
 	bool extraBall = false;
+	bool extraPika = false;
 
 	bool isEnergyCharged = false;
 	bool isEnergyUsed = false;
@@ -134,6 +140,7 @@ protected:
 	bool canEvolve = false;
 
 	int bonusSelectionAttempts = 1;
+	int bonusMultiplier = 1;
 
 	GameStates state = GameStates::StartGame;
 

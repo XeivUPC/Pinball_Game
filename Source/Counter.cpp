@@ -16,11 +16,7 @@ long long int Counter::operator()() const
 
 void Counter::Add(long long int amount)
 {
-	float totalMultiplierValue = 1;
-
-	for (const auto multiValue : multipliers) {
-		totalMultiplierValue *= multiValue.second;
-	}
+	float totalMultiplierValue = GetMultipliersTotalValue();
 
 	_data += (long long int)(amount * totalMultiplierValue);
 }
@@ -70,6 +66,16 @@ bool Counter::EditMultiplier(float multiplier, float newMultiplier, std::string 
 	}
 
 	return false;
+}
+
+float Counter::GetMultipliersTotalValue()
+{
+	float totalMultiplierValue = 1;
+
+	for (const auto multiValue : multipliers) {
+		totalMultiplierValue *= multiValue.second;
+	}
+	return totalMultiplierValue;
 }
 
 

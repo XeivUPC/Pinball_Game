@@ -162,7 +162,7 @@ update_status PokeBall::Update()
 
 void PokeBall::ApplyForce(b2Vec2 force)
 {
-	body->ApplyLinearImpulseToCenter(force, true);
+	body->ApplyLinearImpulseToCenter({ force.x * 16, force.y * 16 }, true);
 }
 
 void PokeBall::SetPosition(b2Vec2 position)

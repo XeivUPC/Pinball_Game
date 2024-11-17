@@ -23,6 +23,10 @@ private:
 	Timer failedTimer;
 	float failedTime = 2;
 
+	std::vector<std::string> capturedUIText = { "CATCHED","CATCHED","CAUCHETTE", "GEFANGEN", "ATRAPADO", "ACCERTATO" };
+
+	std::vector<std::string> failedUIText = { "THE POKÉMON FLEES","THE POKÉMON FLEES","LE POKÉMON S'ENFUIT", "DAS POKÉMON FLIEHT", "EL POKÉMON HA HUIDO", "IL POKÉMON FUGGE" };
+
 	void AddHit();
 public:
 	OverworldPokemon(int id);

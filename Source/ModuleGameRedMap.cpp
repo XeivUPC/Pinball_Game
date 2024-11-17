@@ -26,6 +26,7 @@
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
 #include "CatchedPokemon.h"
+#include "BonusFinalBall.h"
 
 #include "MemLeaks.h"
 
@@ -59,6 +60,7 @@ bool ModuleGameRedMap::Start()
 	ModuleGame::Start();
 
 	App->texture->CreateTexture("Assets/map_redMap.png", "map_redMap");
+	finalBallUI = new BonusFinalBall(this);
 	map_texture = App->texture->GetTexture("map_redMap");	
 	
 
@@ -142,20 +144,17 @@ update_status ModuleGameRedMap::Update()
 			if (!statesTimer.IsLocked()) {
 				if (statesTimer.ReadSecEvenLocked() < 0.5f)
 					pokeBall->ApplyForce({ 0,-4000 });
-				if (statesTimer.ReadSec() > statesTime) {
+				if (statesTimer.ReadSec() > statesTime * 16 / 10) {
 					SetState(PlayGame);
 				}
 			}
 			else {
-				if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+				if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
 					statesTimer.UnlockTimer();
 					statesTimer.Start();
 					App->audio->PlayFx(audioGameStartId);
 				}
 			}
-
-			
-				
 
 			break;
 		case ModuleGame::PlayGame:
@@ -214,6 +213,8 @@ update_status ModuleGameRedMap::Update()
 			StartFadeIn(this, WHITE, statesTime);
 
 			if (statesTimer.ReadSec() >= statesTime) {
+				if (HasExtraPika())
+					SetExtraPika(false);
 				pokeBall->Reset(saveBall);
 
 				if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
@@ -248,6 +249,7 @@ update_status ModuleGameRedMap::Update()
 	}
 
 	UI->Update();
+	finalBallUI->Update();
 	timerUI->Update();
 
 	ModuleScene::FadeUpdate();
@@ -387,7 +389,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 20.f, flip, 0);
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 0);
 
 			}
 			else if (type == "diglettBumper") {
