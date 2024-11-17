@@ -27,6 +27,7 @@
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
 #include "CatchedPokemon.h"
+#include "BonusFinalBall.h"
 
 ModuleGameBlueMap::ModuleGameBlueMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
@@ -58,6 +59,7 @@ bool ModuleGameBlueMap::Start()
 	
 
 	UI = new GameUI(this);
+	finalBallUI = new BonusFinalBall(this);
 	timerUI = new TimerUI(this);
 
 	StartFadeOut(WHITE, 0.3f);
@@ -134,12 +136,12 @@ update_status ModuleGameBlueMap::Update()
 
 		if (!statesTimer.IsLocked()) {
 			pokeBall->ApplyForce({ 0,-4000 });
-			if (statesTimer.ReadSec() > statesTime) {
+			if (statesTimer.ReadSec() > statesTime * 16 / 10) {
 				SetState(PlayGame);
 			}
 		}
 		else {
-			if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+			if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
 				statesTimer.UnlockTimer();
 				statesTimer.Start();
 				App->audio->PlayFx(audioGameStartId);
@@ -227,6 +229,7 @@ update_status ModuleGameBlueMap::Update()
 		object->Update();
 	}
 	UI->Update();
+	finalBallUI->Update();
 	timerUI->Update();
 
 	ModuleScene::FadeUpdate();
@@ -353,7 +356,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 20.f, flip, 1);
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 1);
 			}
 			else if (type == "poliwagBumper") {
 				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();

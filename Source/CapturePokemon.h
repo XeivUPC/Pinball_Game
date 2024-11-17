@@ -17,7 +17,7 @@ private:
 	Timer failedTimer;
 	float failedTime = 2;
 
-	int audioCaptureId = -1;
+	std::vector<std::string> failedUIText = { "THE POKÉMON FLEES","THE POKÉMON FLEES","LE POKÉMON S'ENFUIT", "DAS POKÉMON FLIEHT", "EL POKÉMON HA HUIDO", "IL POKÉMON FUGGE" };
 
 	void AddHit();
 	void SetRandomPokemonByZone(bool zoneID, int rarity = 2);

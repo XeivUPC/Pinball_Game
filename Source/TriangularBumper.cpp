@@ -10,6 +10,7 @@ TriangularBumper::TriangularBumper(ModuleGame* gameAt, b2Vec2 position, std::vec
 
 	this->variant = variant;
 	this->flip = flip;
+	this->restitution = restitution;
 
 	b2FixtureUserData fixtureData;
 	fixtureData.pointer = (uintptr_t)(&sensor);
@@ -20,7 +21,7 @@ TriangularBumper::TriangularBumper(ModuleGame* gameAt, b2Vec2 position, std::vec
 	b2FixtureDef chainFixtureDef;
 	chainFixtureDef.shape = &chainShape;
 	chainFixtureDef.density = 1.0f;
-	chainFixtureDef.restitution = 0.8f;
+	chainFixtureDef.restitution = restitution;
 	chainFixtureDef.friction = 1.f;
 	chainFixtureDef.userData = fixtureData;
 
@@ -73,6 +74,15 @@ TriangularBumper::~TriangularBumper()
 
 update_status TriangularBumper::Update()
 {
+	if (IsKeyPressed(KEY_F5)) {
+		if (bumperBody->GetFixtureList()[0].GetRestitution() == restitution) {
+			bumperBody->GetFixtureList()[0].SetRestitution(restitution*4);
+		}
+		else {
+			bumperBody->GetFixtureList()[0].SetRestitution(restitution);
+		}
+	}
+
 	if (animator->HasAnimationFinished()) {
 		if (gettingHit) {
 			gettingHit = false;

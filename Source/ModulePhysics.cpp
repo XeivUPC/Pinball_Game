@@ -11,7 +11,7 @@
 
 ModulePhysics::ModulePhysics(Application* app, bool start_enabled) : Module(app, start_enabled)
 {
-	debug = true;
+	debug = false;
 
 	collisionsManager = new CollisionsManager();
 }
@@ -35,7 +35,8 @@ bool ModulePhysics::Start()
 
 update_status ModulePhysics::PreUpdate()
 {
-	world->Step(1.f/60.f,8,3);
+	float dt = GetFrameTime();
+	world->Step(dt, 6, 2);
 	return UPDATE_CONTINUE;
 }
 
@@ -47,6 +48,18 @@ update_status ModulePhysics::PostUpdate()
 	if (IsKeyPressed(KEY_F1))
 	{
 		debug = !debug;
+	}
+
+	if (IsKeyPressed(KEY_F3))
+	{
+		if (world->GetGravity().y == 40) {
+			b2Vec2 gravity = { 0,20 };
+			world->SetGravity(gravity);
+		}
+		else {
+			b2Vec2 gravity = { 0,40 };
+			world->SetGravity(gravity);
+		}
 	}
 
 	if (!debug)

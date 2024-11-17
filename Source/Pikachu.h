@@ -30,6 +30,10 @@ private:
 
 
 	bool ballIn = false;
+	bool isAtLeft = false;
+
+	Timer extraPikaSpeedTimer;
+	float extraPikaSpeedTime = 0.1f;
 
 	int audioPikachuChargeId = -1;
 	int audioPikaId = -1;

@@ -70,8 +70,8 @@ update_status Cloyster::Update()
 		gameAt->App->audio->PlayFx(audioBellsproutAbsorbId);
 		if (gameAt->CanCapture() && gameAt->screen->CanProgramBeOverwritten()) {
 
-			const char* text = "PLACEHOLDER";
-			gameAt->GetUI()->AddText(text);
+			int selectedLanguage = gameAt->App->userPreferences->GetLanguage();
+			gameAt->GetUI()->AddText(catchModeUIText[selectedLanguage]);
 
 			gameAt->screen->SwitchProgram(new CapturePokemon);
 			gameAt->CloseCave();

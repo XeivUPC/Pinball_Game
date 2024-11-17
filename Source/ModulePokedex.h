@@ -71,5 +71,6 @@ public:
 	int GetPokemonRarity(int i);
 
 	void DiscoverPokemon(int id);
+	std::string GetPokemonName(int id, int language);
 	void CapturePokemon(int id);
 };

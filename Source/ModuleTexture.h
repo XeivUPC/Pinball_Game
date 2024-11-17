@@ -14,8 +14,8 @@ public:
     Texture2D* GetTexture(std::string textureID);
     void CreateTexture(std::string path, std::string textureID);
     void DeleteTexture(std::string textureID);
-private:
 
+private:
     bool IsTextureLoaded(std::string textureID);
     std::unordered_map<std::string, Texture2D> textureData;
 
