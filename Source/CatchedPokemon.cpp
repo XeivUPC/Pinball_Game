@@ -15,6 +15,7 @@ CatchedPokemon::CatchedPokemon(ModuleGame* gameAt) : MapObject(gameAt)
 
 CatchedPokemon::~CatchedPokemon()
 {
+
 }
 
 void CatchedPokemon::CatchPokemon()

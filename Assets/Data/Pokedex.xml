@@ -168,8 +168,8 @@
 		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="2,9" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="11">
 		<pre-evolution-index value="10" />
@@ -185,7 +185,7 @@
 		<rarity value="-1" />
 		<height value="0,7" />
 		<weight value="9,9" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="12">
@@ -202,7 +202,7 @@
 		<rarity value="-1" />
 		<height value="1,1" />
 		<weight value="32" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="13">
@@ -219,8 +219,8 @@
 		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="3,2" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="14">
 		<pre-evolution-index value="13" />
@@ -236,7 +236,7 @@
 		<rarity value="-1" />
 		<height value="0,6" />
 		<weight value="10" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="15">
@@ -253,7 +253,7 @@
 		<rarity value="-1" />
 		<height value="1" />
 		<weight value="29,5" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="16">
@@ -270,8 +270,8 @@
 		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="1,8" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="17">
 		<pre-evolution-index value="16" />
@@ -287,7 +287,7 @@
 		<rarity value="-1" />
 		<height value="1,1" />
 		<weight value="30" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="18">
@@ -304,7 +304,7 @@
 		<rarity value="-1" />
 		<height value="1,5" />
 		<weight value="39,5" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="19">
@@ -321,8 +321,8 @@
 		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="3,5" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="20">
 		<pre-evolution-index value="19" />
@@ -338,7 +338,7 @@
 		<rarity value="-1" />
 		<height value="0,7" />
 		<weight value="18,5" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="21">
@@ -355,8 +355,8 @@
 		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="2" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="22">
 		<pre-evolution-index value="21" />
@@ -372,7 +372,7 @@
 		<rarity value="-1" />
 		<height value="1,2" />
 		<weight value="38" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="23">
@@ -542,8 +542,8 @@
 		<rarity value="2" />
 		<height value="0,5" />
 		<weight value="9" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="33">
 		<pre-evolution-index value="32" />
@@ -559,7 +559,7 @@
 		<rarity value="-1" />
 		<height value="0,9" />
 		<weight value="19,5" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="34">
@@ -576,7 +576,7 @@
 		<rarity value="-1" />
 		<height value="1,4" />
 		<weight value="62" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="35">
@@ -1171,8 +1171,8 @@
 		<rarity value="2" />
 		<height value="0,7" />
 		<weight value="4" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="70">
 		<pre-evolution-index value="69" />
@@ -1188,7 +1188,7 @@
 		<rarity value="-1" />
 		<height value="1" />
 		<weight value="6,4" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="71">
@@ -1205,7 +1205,7 @@
 		<rarity value="-1" />
 		<height value="1,7" />
 		<weight value="15,5" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="72">
@@ -1222,8 +1222,8 @@
 		<rarity value="3" />
 		<height value="0,9" />
 		<weight value="45,5" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="73">
 		<pre-evolution-index value="72" />
@@ -1239,7 +1239,7 @@
 		<rarity value="-1" />
 		<height value="1,6" />
 		<weight value="55" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="74">
@@ -1256,8 +1256,8 @@
 		<rarity value="3" />
 		<height value="0,4" />
 		<weight value="20" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="75">
 		<pre-evolution-index value="74" />
@@ -1273,7 +1273,7 @@
 		<rarity value="-1" />
 		<height value="1" />
 		<weight value="105" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="76">
@@ -1290,7 +1290,7 @@
 		<rarity value="-1" />
 		<height value="1,4" />
 		<weight value="300" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="77">
@@ -1375,8 +1375,8 @@
 		<rarity value="3" />
 		<height value="0,3" />
 		<weight value="6" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="82">
 		<pre-evolution-index value="81" />
@@ -1392,7 +1392,7 @@
 		<rarity value="-1" />
 		<height value="1" />
 		<weight value="60" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="83">
@@ -1613,8 +1613,8 @@
 		<rarity value="3" />
 		<height value="8,8" />
 		<weight value="210" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="96">
 		<pre-evolution-index value="-1" />
@@ -1766,8 +1766,8 @@
 		<rarity value="3" />
 		<height value="0,4" />
 		<weight value="6,5" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="105">
 		<pre-evolution-index value="104" />
@@ -1783,7 +1783,7 @@
 		<rarity value="-1" />
 		<height value="1" />
 		<weight value="45" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="106">
@@ -2106,8 +2106,8 @@
 		<rarity value="3" />
 		<height value="1,4" />
 		<weight value="40,6" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="125">
 		<pre-evolution-index value="-1" />
