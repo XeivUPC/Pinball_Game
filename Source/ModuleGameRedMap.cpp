@@ -387,7 +387,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 20.f, flip, 0);
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 0);
 
 			}
 			else if (type == "diglettBumper") {

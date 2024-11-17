@@ -349,7 +349,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 20.f, flip, 1);
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 1);
 			}
 			else if (type == "poliwagBumper") {
 				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
