@@ -214,6 +214,8 @@ update_status ModuleGameRedMap::Update()
 			StartFadeIn(this, WHITE, statesTime);
 
 			if (statesTimer.ReadSec() >= statesTime) {
+				if (HasExtraPika())
+					SetExtraPika(false);
 				pokeBall->Reset(saveBall);
 
 				if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {

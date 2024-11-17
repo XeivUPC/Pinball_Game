@@ -82,6 +82,9 @@ public:
 	void CloseCave();
 	void FreeBallCave();
 
+	bool HasExtraPika();
+	void SetExtraPika(bool status);
+
 	void PlayFieldMusic();
 	void PlayCatchEvoMusic();
 
@@ -125,6 +128,7 @@ protected:
 
 	bool saveBall = false;
 	bool extraBall = false;
+	bool extraPika = true;
 
 	bool isEnergyCharged = false;
 	bool isEnergyUsed = false;

@@ -81,18 +81,6 @@ update_status Pikachu::Update()
 {
 	map_pikachu_animator->SetSpeed(0.3f);
 	//Configure position
-
-	if (!ballIn) {
-		if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
-			position.x = 8.f / SCREEN_SIZE;
-			body->SetTransform({ position.x + width - 0.5f, position.y - height / 2 - 0.7f }, 0);
-		}
-		else if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-			position.x = 139.f / SCREEN_SIZE;
-			body->SetTransform({ position.x + width - 0.2f, position.y - height / 2 - 0.7f }, 0);
-		}
-	}
-	
 	
 	if (sensor.OnTriggerEnter() && gameAt->IsEnergyCharged()) {
 		gameAt->UseEnergy();
@@ -126,6 +114,41 @@ update_status Pikachu::Update()
 
 	map_pikachuEnergy_animator->Animate((int)(position.x * SCREEN_SIZE), (int)((position.y - (32/SCREEN_SIZE)) * SCREEN_SIZE), false);
 	map_pikachuEnergy_animator->Update();
+
+
+	if (!ballIn) {
+
+		if (gameAt->HasExtraPika()) {
+			if (extraPikaSpeedTime < extraPikaSpeedTimer.ReadSec()) {
+				if (!isAtLeft) {
+					isAtLeft = true;
+					position.x = 8.f / SCREEN_SIZE;
+					body->SetTransform({ position.x + width - 0.5f, position.y - height / 2 - 0.7f }, 0);
+				}
+				else if (isAtLeft) {
+					isAtLeft = false;
+					position.x = 139.f / SCREEN_SIZE;
+					body->SetTransform({ position.x + width - 0.2f, position.y - height / 2 - 0.7f }, 0);
+				}
+				extraPikaSpeedTimer.Start();
+			}
+			
+		}
+		else {
+			if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+				isAtLeft = true;
+				position.x = 8.f / SCREEN_SIZE;
+				body->SetTransform({ position.x + width - 0.5f, position.y - height / 2 - 0.7f }, 0);
+			}
+			else if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
+				isAtLeft = false;
+				position.x = 139.f / SCREEN_SIZE;
+				body->SetTransform({ position.x + width - 0.2f, position.y - height / 2 - 0.7f }, 0);
+			}
+		}
+
+	}
+
 
 	return UPDATE_CONTINUE;
 }

@@ -162,6 +162,16 @@ void ModuleGame::FreeBallCave()
 	cave->FreeBall();
 }
 
+bool ModuleGame::HasExtraPika()
+{
+	return extraPika;
+}
+
+void ModuleGame::SetExtraPika(bool status)
+{
+	extraPika = status;
+}
+
 void ModuleGame::PlayFieldMusic()
 {
 	App->audio->PlayMusic(musicPath.c_str(), 0.3f);

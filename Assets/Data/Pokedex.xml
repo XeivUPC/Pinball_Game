@@ -322,7 +322,7 @@
 		<height value="0,3" />
 		<weight value="3,5" />
 		<discovered value="true" />
-		<captured value="false" />
+		<captured value="true" />
 	</id>
 	<id value="20">
 		<pre-evolution-index value="19" />
@@ -338,7 +338,7 @@
 		<rarity value="-1" />
 		<height value="0,7" />
 		<weight value="18,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="21">
