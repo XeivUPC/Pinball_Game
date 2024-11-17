@@ -191,18 +191,23 @@ update_status ModuleGameRedMap::Update()
 			break;
 		case ModuleGame::BlockGame:
 			break;
-		case ModuleGame::RestartGame:
+		case ModuleGame::RestartGame:			
+			StartFadeIn(this, WHITE, statesTime);
 
-			pokeBall->Reset(saveBall);
+			if (statesTimer.ReadSec() >= statesTime) {
+				pokeBall->Reset(saveBall);
 
-			if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
-				//// END
-				SetState(EndGame);
-			}
-			else {
-				if (pokeBall->GetLivesPokeball() == 0)
-					SetExtraBall(false);
-				SetState(StartGame);
+				if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
+					//// END
+					StartFadeOut(WHITE, statesTime);
+					SetState(EndGame);
+				}
+				else {
+					if (pokeBall->GetLivesPokeball() == 0)
+						SetExtraBall(false);
+					StartFadeOut(WHITE, statesTime);
+					SetState(StartGame);
+				}
 			}
 
 			break;
@@ -524,6 +529,7 @@ void ModuleGameRedMap::SetState(GameStates stateToChange)
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		statesTime = 0.5f;
 		break;
 	case ModuleGame::EndGame:
 		break;
