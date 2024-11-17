@@ -3,6 +3,8 @@
 #include "CollisionSensor.h"
 #include "AnimationSystem.h"
 
+class BlackHoleEffector;
+
 class MapCave : public MapObject {
 private:
 	b2Vec2 entryPosition = {0,0};
@@ -38,5 +40,7 @@ protected:
 	void OnHit();
 
 	CollisionSensor sensor;
+
+	BlackHoleEffector* blackHoleEffector;
 };
 

@@ -108,16 +108,16 @@ update_status PokeBall::Update()
 		float speed = 1000 * GetFrameTime();
 		b2Vec2 direction = { 0,0 };
 		
-		if (IsKeyDown(KEY_UP)) {
+		if (IsKeyDown(KEY_W)) {
 			direction.y -= speed;
 		}
-		if (IsKeyDown(KEY_DOWN)) {
+		if (IsKeyDown(KEY_S)) {
 			direction.y += speed;
 		}
-		if (IsKeyDown(KEY_LEFT)) {
+		if (IsKeyDown(KEY_A)) {
 			direction.x -= speed;
 		}
-		if (IsKeyDown(KEY_RIGHT)) {
+		if (IsKeyDown(KEY_D)) {
 			direction.x += speed;
 		}
 		body->SetLinearVelocity(direction);

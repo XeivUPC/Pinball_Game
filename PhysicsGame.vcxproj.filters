@@ -267,6 +267,12 @@
     <ClCompile Include="Source\ModuleTimerUIText.cpp">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Effector.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BlackHoleEffector.cpp">
+      <Filter>Objects\Effectors %28Objects%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -538,6 +544,13 @@
     <ClInclude Include="Source\ModuleTimerUIText.h">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
+    <ClInclude Include="Source\MemLeaks.h" />
+    <ClInclude Include="Source\Effector.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BlackHoleEffector.h">
+      <Filter>Objects\Effectors %28Objects%29</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\resources.rc" />
@@ -590,6 +603,9 @@
     </Filter>
     <Filter Include="ScreenPrograms">
       <UniqueIdentifier>{2923ee15-975c-40eb-9efa-53b891f7f827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Effectors %28Objects%29">
+      <UniqueIdentifier>{2d294c72-dd3a-448f-97eb-b17ed7303c04}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
