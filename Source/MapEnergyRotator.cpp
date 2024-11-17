@@ -3,6 +3,7 @@
 #include "ModulePhysics.h"
 #include "Box2DFactory.h"
 #include "ModuleTexture.h"
+#include "ModuleAudio.h"
 
 MapEnergyRotator::MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, MapEnergyBattery* battery, float width, float height, int variant) : MapObject(gameAt)
 {
@@ -35,6 +36,7 @@ MapEnergyRotator::MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, MapEnerg
 	animator->AddAnimation(rotate);
 	animator->SelectAnimation("Rotator_Rotate", true);
 
+	audioEnergyChargingId = gameAt->App->audio->LoadFx("Assets/SFX/Game_EnergyCharging.ogg");
 }
 
 MapEnergyRotator::~MapEnergyRotator()
@@ -51,6 +53,8 @@ update_status MapEnergyRotator::Update()
 
 		pokeballSpeed = sqrt(xVel * xVel + yVel * yVel);
 		velocity = pokeballSpeed;
+
+		gameAt->App->audio->PlayFx(audioEnergyChargingId);
 	}
 
 
@@ -59,7 +63,7 @@ update_status MapEnergyRotator::Update()
 	float speed = b2_maxFloat;
 
 	if (velocity != 0) {
-
+		
 		velocity -= speedReduction * GetFrameTime();
 		if (abs(velocity) < 0.5f)
 			velocity = 0;
@@ -76,6 +80,7 @@ update_status MapEnergyRotator::Update()
 			gameAt->pointsCounter.Add(100);
 		}
 		battery->AddEnergy(velocity*GetFrameTime()/2);
+		
 	}
 	
 	animator->SetSpeed(speed);

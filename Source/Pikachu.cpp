@@ -4,6 +4,7 @@
 #include "ModulePhysics.h"
 #include "ModuleRender.h"
 #include "ModuleUserPreferences.h"
+#include "ModuleAudio.h"
 #include "Box2DFactory.h"
 #include "Pokeball.h"
 #include "CentralScreen.h"
@@ -68,6 +69,7 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 
 	this->position = position;
 
+	audioPikachuChargeId = gameAt->App->audio->LoadFx("Assets/SFX/Game_PikachuCharge.ogg");
 }
 
 Pikachu::~Pikachu()
@@ -100,6 +102,7 @@ update_status Pikachu::Update()
 
 		energizeTimer.Start();
 		gameAt->GetPokeball()->SetIfBlockMovement(true);
+		gameAt->App->audio->PlayFx(audioPikachuChargeId);
 	}
 	if (ballIn) {
 		map_pikachu_animator->SetSpeed(0.1f);
