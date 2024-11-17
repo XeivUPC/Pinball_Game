@@ -105,6 +105,10 @@ bool ModuleGameBlueMap::Start()
 
 	audioGameStartId = App->audio->LoadFx("Assets/SFX/Game_BallStart.ogg");
 
+	musicPath = "Assets/Music/Blue_Field.wav";
+	catchEvoMusicPath = "Assets/Music/Catch_Evolution_Mode_Blue_Field.wav";
+	PlayFieldMusic();
+
 	return true;
 }
 
@@ -143,7 +147,7 @@ update_status ModuleGameBlueMap::Update()
 		break;
 	case ModuleGame::PlayGame:
 
-		if (IsKeyPressed(KEY_R)) {
+		if (pokeBall->GetPosition().y >= 290 / SCREEN_SIZE) {
 			SetState(RestartGame);
 		}
 
@@ -173,6 +177,14 @@ update_status ModuleGameBlueMap::Update()
 			centerBlueArrowGroup->DeactivateRightTop();
 			canEvolve = false;
 		}
+
+		if (cave->IsCaveOpen()) {
+			centerBlueArrowGroup->ActivateMidTop();
+		}
+		else {
+			centerBlueArrowGroup->DeactivateMidTop();
+		}
+
 		// the top arrow in the center is activated when there is a black hole for events
 
 		// the bottom arrow follows where the air arrow controller in the middle of the top part points
@@ -181,17 +193,22 @@ update_status ModuleGameBlueMap::Update()
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		StartFadeIn(this, WHITE, statesTime);
 
-		pokeBall->Reset(saveBall);
+		if (statesTimer.ReadSec() >= statesTime) {
+			pokeBall->Reset(saveBall);
 
-		if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
-			//// END
-			SetState(EndGame);
-		}
-		else {
-			if (pokeBall->GetLivesPokeball() == 0)
-				SetExtraBall(false);
-			SetState(StartGame);
+			if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
+				//// END
+				StartFadeOut(WHITE, statesTime);
+				SetState(EndGame);
+			}
+			else {
+				if (pokeBall->GetLivesPokeball() == 0)
+					SetExtraBall(false);
+				StartFadeOut(WHITE, statesTime);
+				SetState(StartGame);
+			}
 		}
 
 		break;
@@ -234,6 +251,15 @@ bool ModuleGameBlueMap::CleanUp()
 	}
 	mapObjects.clear();
 
+	if (timerUI != nullptr) {
+		delete timerUI;
+		timerUI = nullptr;
+	}
+
+	if (UI != nullptr) {
+		delete UI;
+		UI = nullptr;
+	}
 
 	App->renderer->camera.offset = { 0,0 };
 	return true;
@@ -323,7 +349,7 @@ void ModuleGameBlueMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 1);
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 20.f, flip, 1);
 			}
 			else if (type == "poliwagBumper") {
 				std::string collisionPolygonPoints = objectNode.child("polygon").attribute("points").as_string();
@@ -496,6 +522,7 @@ void ModuleGameBlueMap::SetState(GameStates stateToChange)
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		statesTime = 0.5f;
 		break;
 	case ModuleGame::EndGame:
 		break;

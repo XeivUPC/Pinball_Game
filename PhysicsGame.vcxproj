@@ -234,6 +234,7 @@
     <ClInclude Include="Source\MapObject.h" />
     <ClInclude Include="Source\MapSensor.h" />
     <ClInclude Include="Source\MapSensorGroup.h" />
+    <ClInclude Include="Source\MemLeaks.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleGame.h" />
     <ClInclude Include="Source\ModuleGameBlueMap.h" />

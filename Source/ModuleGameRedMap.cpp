@@ -27,8 +27,13 @@
 #include "EvoArrowGroup.h"
 #include "CatchedPokemon.h"
 
+#include "MemLeaks.h"
+
+
+
 ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
+	ReportMemoryLeaks();
 	mapHabitats.emplace_back(0);
 	mapHabitats.emplace_back(2);
 	mapHabitats.emplace_back(3);
@@ -108,6 +113,10 @@ bool ModuleGameRedMap::Start()
 
 	audioGameStartId = App->audio->LoadFx("Assets/SFX/Game_BallStart.ogg");
 
+	musicPath = "Assets/Music/Red_Field.wav";
+	catchEvoMusicPath = "Assets/Music/Catch_Evolution_Mode_Red_Field.wav";
+	PlayFieldMusic();
+
 	return true;
 }
 
@@ -117,9 +126,7 @@ update_status ModuleGameRedMap::Update()
 	RepositionCamera(pokeBall->GetPosition());
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
-		App->scene_highScore->SetPlayerPoints(pointsCounter());
-		pointsCounter.Set(0);
-		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
+		SetState(EndGame);
 	}
 
 	Rectangle rectBackground = { (IsTopSideCovered() ? 1 : 0) * 191.f,0,191,278};
@@ -153,7 +160,7 @@ update_status ModuleGameRedMap::Update()
 			break;
 		case ModuleGame::PlayGame:
 
-			if (IsKeyPressed(KEY_R)) {
+			if (pokeBall->GetPosition().y >= 290 / SCREEN_SIZE) {
 				SetState(RestartGame);
 			}
 
@@ -188,6 +195,14 @@ update_status ModuleGameRedMap::Update()
 				canEvolve = false;
 			}
 
+			if (cave->IsCaveOpen()) {
+				centerRedArrowGroup->ActivateMid();
+				centerRedArrowGroup->TwinkleMid();
+			}
+			else {
+				centerRedArrowGroup->DeactivateMid();
+			}
+
 			// the top arrow in the center is activated when there is a black hole for events
 
 			// the bottom arrow follows where the air arrow controller in the middle of the top part points
@@ -195,22 +210,32 @@ update_status ModuleGameRedMap::Update()
 			break;
 		case ModuleGame::BlockGame:
 			break;
-		case ModuleGame::RestartGame:
+		case ModuleGame::RestartGame:			
+			StartFadeIn(this, WHITE, statesTime);
 
-			pokeBall->Reset(saveBall);
+			if (statesTimer.ReadSec() >= statesTime) {
+				pokeBall->Reset(saveBall);
 
-			if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
-				//// END
-				SetState(EndGame);
-			}
-			else {
-				if (pokeBall->GetLivesPokeball() == 0)
-					SetExtraBall(false);
-				SetState(StartGame);
+				if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
+					//// END
+					StartFadeOut(WHITE, statesTime);
+					SetState(EndGame);
+				}
+				else {
+					if (pokeBall->GetLivesPokeball() == 0)
+						SetExtraBall(false);
+					StartFadeOut(WHITE, statesTime);
+					SetState(StartGame);
+				}
 			}
 
 			break;
 		case ModuleGame::EndGame:
+
+			App->scene_highScore->SetPlayerPoints(pointsCounter());
+			pointsCounter.Set(0);
+			StartFadeIn(App->scene_highScore, WHITE, 0.3f);
+
 			break;
 		default:
 			break;
@@ -246,8 +271,18 @@ bool ModuleGameRedMap::CleanUp()
 		}
 	}
 
-	mapObjects.clear();
+	if (timerUI != nullptr) {
+		delete timerUI;
+		timerUI = nullptr;
+	}
 
+	if (UI != nullptr) {
+		delete UI;
+		UI = nullptr;
+	}
+
+
+	mapObjects.clear();
 
 	App->renderer->camera.offset = { 0,0 };
 	return true;
@@ -352,7 +387,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 0);
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 20.f, flip, 0);
 
 			}
 			else if (type == "diglettBumper") {
@@ -399,7 +434,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 
 				x += width / 2;
 				y += heigth / 2;
-				MapEnergyRotator* circularBumper = new MapEnergyRotator(this, { x,y }, energyBattery, width, heigth, 0);
+				MapEnergyRotator* enrgyRotator = new MapEnergyRotator(this, { x,y }, energyBattery, width, heigth, 0);
 			}
 			else if (type == "cave") {
 				b2Vec2 entryPos = { 0,0 };
@@ -528,6 +563,7 @@ void ModuleGameRedMap::SetState(GameStates stateToChange)
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		statesTime = 0.5f;
 		break;
 	case ModuleGame::EndGame:
 		break;

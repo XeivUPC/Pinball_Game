@@ -31,7 +31,7 @@ update_status GetArrowGroup::Update()
 
 bool GetArrowGroup::CleanUp()
 {
-
+	mapArrows.clear();
 	return true;
 }
 

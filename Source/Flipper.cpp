@@ -91,6 +91,11 @@ bool Flipper::CleanUp()
 {
 	gameAt->App->physics->world->DestroyBody(body);
 	gameAt->App->physics->world->DestroyBody(anchorBody);
+
+	if (flipper_animator != nullptr) {
+		delete flipper_animator;
+		flipper_animator = nullptr;
+	}
 	return true;
 }
 

@@ -1,6 +1,8 @@
 #include "MapEnergyBattery.h"
 #include "Application.h"
 #include "ModuleTexture.h"
+#include "ModuleAudio.h"
+#include <string>
 
 MapEnergyBattery::MapEnergyBattery(ModuleGame* gameAt, b2Vec2 position, int variant) : MapObject(gameAt)
 {
@@ -41,6 +43,12 @@ MapEnergyBattery::MapEnergyBattery(ModuleGame* gameAt, b2Vec2 position, int vari
 	animator->AddAnimation(empty);
 	animator->AddAnimation(filled);
 	animator->SelectAnimation("Filling", true);
+
+	for (int i =1; i <=15; i++)
+	{
+		std::string pathName = "Assets/SFX/Map_Energy_" + std::to_string(i) + ".ogg";
+		audiosEnergyIds.emplace_back(gameAt->App->audio->LoadFx(pathName.c_str()));
+	}
 }
 
 MapEnergyBattery::~MapEnergyBattery()
@@ -62,6 +70,14 @@ update_status MapEnergyBattery::Update()
 		animator->SelectAnimation("Filling", true);
 	}
 
+	int currentSprite = animator->GetCurrentAnimationSpriteIndex();
+	if (previousSprite != currentSprite)
+	{
+		if(currentSprite!=0 && currentSprite!=15)
+			gameAt->App->audio->PlayFx(audiosEnergyIds[currentSprite-1]);
+	}
+	previousSprite = currentSprite;
+
 	animator->LerpUpdate(currentEnergy / totalCapacity);
 
 	animator->Animate((int)(position.x * SCREEN_SIZE), (int)(position.y * SCREEN_SIZE), true);
@@ -71,6 +87,12 @@ update_status MapEnergyBattery::Update()
 
 bool MapEnergyBattery::CleanUp()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
+
+	audiosEnergyIds.clear();
 	return false;
 }
 

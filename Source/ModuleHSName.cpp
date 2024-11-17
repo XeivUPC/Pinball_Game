@@ -3,20 +3,20 @@
 #include "ModuleRender.h"
 #include "Application.h"
 
-Rectangle* ModuleHSName::GetCharRect(char c, int color)
+Rectangle ModuleHSName::GetCharRect(char c, int color)
 {
-	Rectangle* rect = new Rectangle{ 0,0,0,0 };
+	Rectangle rect = Rectangle{ 0,0,0,0 };
 	for (size_t i = 0; i < charReferences.size(); i++)
 	{
 		if ((int)c == charReferences[i])
 		{
-			rect->x = i % (int)count.x * size.x;
-			rect->y = i / (int)count.x * size.y + 32 * color;
+			rect.x = i % (int)count.x * size.x;
+			rect.y = i / (int)count.x * size.y + 32 * color;
 			break;
 		}
 	}
-	rect->width = size.x;
-	rect->height = size.y;
+	rect.width = size.x;
+	rect.height = size.y;
 	return rect;
 }
 
@@ -125,8 +125,8 @@ void ModuleHSName::Write(const char* text, int x, int y, int color)
 	int i = 0;
 	while (text[i] != '\0')
 	{
-		Rectangle* letter = GetCharRect(text[i], color);
-		App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)y, letter, WHITE);
+		Rectangle letter = GetCharRect(text[i], color);
+		App->renderer->Draw(*fontTexture, (int)(x + size.x * i), (int)y, &letter, WHITE);
 		i++;
 	}
 }

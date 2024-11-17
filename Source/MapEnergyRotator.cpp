@@ -3,13 +3,12 @@
 #include "ModulePhysics.h"
 #include "Box2DFactory.h"
 #include "ModuleTexture.h"
-#include "ModuleAudio.h"
 
 MapEnergyRotator::MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, MapEnergyBattery* battery, float width, float height, int variant) : MapObject(gameAt)
 {
 	gameAt->AddObject(this);
 
-	this->battery = battery;
+	this->battery = battery; 
 
 	b2FixtureUserData fixtureData;
 	fixtureData.pointer = (uintptr_t)(&sensor);
@@ -36,7 +35,7 @@ MapEnergyRotator::MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, MapEnerg
 	animator->AddAnimation(rotate);
 	animator->SelectAnimation("Rotator_Rotate", true);
 
-	audioEnergyChargingId = gameAt->App->audio->LoadFx("Assets/SFX/Game_EnergyCharging.ogg");
+
 }
 
 MapEnergyRotator::~MapEnergyRotator()
@@ -54,7 +53,7 @@ update_status MapEnergyRotator::Update()
 		pokeballSpeed = sqrt(xVel * xVel + yVel * yVel);
 		velocity = pokeballSpeed;
 
-		gameAt->App->audio->PlayFx(audioEnergyChargingId);
+		
 	}
 
 
@@ -94,6 +93,10 @@ update_status MapEnergyRotator::Update()
 
 bool MapEnergyRotator::CleanUp()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
 	gameAt->App->physics->world->DestroyBody(body);
 	return true;
 }

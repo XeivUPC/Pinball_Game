@@ -66,6 +66,10 @@ update_status CenterBlueArrow::Update()
 
 bool CenterBlueArrow::CleanUp()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
 	return true;
 }
 

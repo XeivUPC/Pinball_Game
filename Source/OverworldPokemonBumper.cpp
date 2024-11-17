@@ -64,6 +64,11 @@ update_status OverworldPokemonBumper::Update()
 
 bool OverworldPokemonBumper::CleanUp()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
+
 	gameAt->App->physics->world->DestroyBody(body);
 	return true;
 }

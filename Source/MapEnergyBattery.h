@@ -25,5 +25,10 @@ private:
 
 	float totalCapacity = 16.f;
 	float currentEnergy = 0.f;
+
+
+	int previousSprite = 0;
+
+	std::vector<int> audiosEnergyIds;
 protected:
 };

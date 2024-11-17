@@ -2,6 +2,7 @@
 #include "PokeBall.h"
 #include "ModuleUserPreferences.h"
 #include "Application.h"
+#include "GameUI.h"
 #include <algorithm>
 
 PokeballChangerGroup::PokeballChangerGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
@@ -70,7 +71,7 @@ update_status PokeballChangerGroup::Update()
 
 bool PokeballChangerGroup::CleanUp()
 {
-	
+	mapSensors.clear();
 	return true;
 }
 
@@ -93,9 +94,16 @@ void PokeballChangerGroup::OnAllActive()
 	if (pokeBall->GetType() != PokeBall::PokeballType::MasterBall) {
 		pokeBall->SetType(PokeBall::PokeballType(pokeBall->GetType() + 1));
 		gameAt->pointsCounter.Add(4000);
+		const char* text = "MULT. BOARD x";
+		std::string textNum = std::to_string(pokeBall->GetType() + 1);
+		if (pokeBall->GetType() == PokeBall::PokeballType::MasterBall) {
+			textNum = std::to_string(5);
+		}
+		std::string result = std::string(text) + textNum;
+
+		gameAt->GetUI()->AddText(result);
 	}
 	else {
-		//give points
 		gameAt->pointsCounter.Take(1000);
 		gameAt->pointsCounter.AddWithoutMultipliers(10000000);
 	}

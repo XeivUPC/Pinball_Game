@@ -88,6 +88,10 @@ update_status TriangularBumper::Update()
 
 bool TriangularBumper::CleanUp()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
 	gameAt->App->physics->world->DestroyBody(body);
 
 	return true;

@@ -82,9 +82,16 @@ void ModuleScene::FadeIn()
 {
 	if (fadeTimer.ReadSec()>= fadeTime) {
 		doingFadeIn = false;
-		if(fadeTarget!=nullptr)
-			fadeTarget->Enable();
-		Disable();
+		
+		if (fadeTarget != nullptr)
+		{
+			if (fadeTarget != this) {
+				fadeTarget->Enable();
+			}
+		}
+		if (fadeTarget != this) {
+			Disable();	
+		}
 	}
 	else {
 		int opacity = (int)(255 * (fadeTimer.ReadSec() / fadeTime));

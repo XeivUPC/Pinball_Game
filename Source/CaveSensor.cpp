@@ -94,6 +94,12 @@ update_status CaveSensor::Update()
 
 bool CaveSensor::CleanUp()
 {
+
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
+
 	gameAt->App->physics->world->DestroyBody(body);
 
 	return true;

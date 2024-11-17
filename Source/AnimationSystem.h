@@ -26,7 +26,7 @@ private:
 	std::vector <Sprite> sprites;
 protected:
 	Texture2D* GetTexture(int spriteIndex);
-public:
+public: 
 	Rectangle GetSpriteRect(int spriteIndex);
 	int GetCount();
 	void AddSprite(Sprite sprite);
@@ -85,4 +85,5 @@ public:
 	std::string GetCurrentAnimationName();
 	AnimationData GetCurrentAnimation();
 	Sprite GetCurrentAnimationSprite();
+	int GetCurrentAnimationSpriteIndex();
 };

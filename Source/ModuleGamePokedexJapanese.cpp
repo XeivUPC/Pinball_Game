@@ -4,13 +4,13 @@
 #include "Application.h"
 
 
-Rectangle* ModuleGamePokedexJapanese::GetCharRect(int index)
+Rectangle ModuleGamePokedexJapanese::GetCharRect(int index)
 {
-	Rectangle* rect = new Rectangle{ 0,0,0,0 };
-	rect->x = (float)((int)((index % (int)count.x)*size.x));
-	rect->y = (float)((int)((index / (int)count.x)*size.y));
-	rect->width = size.x;
-	rect->height = size.y;
+	Rectangle rect = Rectangle{ 0,0,0,0 };
+	rect.x = (float)((int)((index % (int)count.x)*size.x));
+	rect.y = (float)((int)((index / (int)count.x)*size.y));
+	rect.width = size.x;
+	rect.height = size.y;
 	return rect;
 }
 
@@ -60,8 +60,8 @@ void ModuleGamePokedexJapanese::Write(const char* text, int x, int y, Color colo
 			i++;
 		}
 		number /= 10;
-		Rectangle* letter = GetCharRect(number);
-		App->renderer->Draw(*fontTexture, (int)((x + size.x * t)), y+1, letter, color);
+		Rectangle letter = GetCharRect(number);
+		App->renderer->Draw(*fontTexture, (int)((x + size.x * t)), y+1, &letter, color);
 		i++;
 		t++;
 	}

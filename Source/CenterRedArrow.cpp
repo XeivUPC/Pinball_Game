@@ -56,6 +56,10 @@ update_status CenterRedArrow::Update()
 
 bool CenterRedArrow::CleanUp()
 {
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
 	return true;
 }
 

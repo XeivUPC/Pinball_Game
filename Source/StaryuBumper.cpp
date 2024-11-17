@@ -75,6 +75,11 @@ update_status StaryuBumper::Update()
 
 bool StaryuBumper::CleanUp()
 {
+	if (staryu_animator != nullptr) {
+		delete staryu_animator;
+		staryu_animator = nullptr;
+	}
+
 	gameAt->App->physics->world->DestroyBody(body);
 	return true;
 }

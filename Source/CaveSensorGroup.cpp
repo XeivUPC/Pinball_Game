@@ -72,7 +72,7 @@ update_status CaveSensorGroup::Update()
 
 bool CaveSensorGroup::CleanUp()
 {
-
+	mapSensors.clear();
 	return true;
 }
 

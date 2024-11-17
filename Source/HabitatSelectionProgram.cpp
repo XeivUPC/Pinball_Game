@@ -50,11 +50,19 @@ void HabitatSelectionProgram::StartProgram()
 void HabitatSelectionProgram::Logic()
 {
 	animator->Update();
-	if (/*previousSprite != animator->GetCurrentAnimationSprite()*/true)
+
+	int currentSprite = animator->GetCurrentAnimationSpriteIndex();
+	if (previousSprite != currentSprite)
 	{
 		gameAt->App->audio->PlayFx(audioHabitatSelectionId);
 	}
-	/*previousSprite = currentSprite;*/
+	previousSprite = currentSprite;
+
+
+	if (IsKeyPressed(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+		CallAction(0);
+	}	
+
 }
 
 void HabitatSelectionProgram::Render()
@@ -68,4 +76,6 @@ void HabitatSelectionProgram::EndProgram()
 		delete animator;
 		animator = nullptr;
 	}
+
+	habitatsToSelect.clear();
 }

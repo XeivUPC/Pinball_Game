@@ -65,7 +65,7 @@ update_status BonusMultiplierSensorGroup::Update()
 
 bool BonusMultiplierSensorGroup::CleanUp()
 {
-
+	mapSensors.clear();
 	return true;
 }
 
