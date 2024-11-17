@@ -26,6 +26,7 @@
 #include "ModuleHighScore.h"
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
+#include "CatchedPokemon.h"
 
 ModuleGameBlueMap::ModuleGameBlueMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
@@ -67,6 +68,7 @@ bool ModuleGameBlueMap::Start()
 	evoArrowGroup = new EvoArrowGroup(this);
 	centerBlueArrowGroup = new CenterBlueArrowGroup(this);
 	bonusMultiplierSensorGroup = new BonusMultiplierSensorGroup(this);
+	catchedPokemon = new CatchedPokemon(this);
 
 	LoadMap("Assets/MapData/blue_map_data.tmx");
 	screen = new CentralScreen(this);

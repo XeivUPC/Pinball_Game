@@ -200,6 +200,7 @@
     <ClInclude Include="Source\Box2DFactory.h" />
     <ClInclude Include="Source\Bumper.h" />
     <ClInclude Include="Source\CapturePokemon.h" />
+    <ClInclude Include="Source\CatchedPokemon.h" />
     <ClInclude Include="Source\CaveSensor.h" />
     <ClInclude Include="Source\CaveSensorGroup.h" />
     <ClInclude Include="Source\CenterBlueArrow.h" />
@@ -289,6 +290,7 @@
     <ClCompile Include="Source\Box2DFactory.cpp" />
     <ClCompile Include="Source\Bumper.cpp" />
     <ClCompile Include="Source\CapturePokemon.cpp" />
+    <ClCompile Include="Source\CatchedPokemon.cpp" />
     <ClCompile Include="Source\CaveSensor.cpp" />
     <ClCompile Include="Source\CaveSensorGroup.cpp" />
     <ClCompile Include="Source\CenterBlueArrow.cpp" />

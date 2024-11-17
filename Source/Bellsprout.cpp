@@ -91,10 +91,6 @@ update_status Bellsprout::Update()
 		}
 		
 	}
-
-
-
-
 	map_bellsprout_animator->Animate((int)(position.x*SCREEN_SIZE), (int)(position.y *SCREEN_SIZE), false);
 
 	map_bellsprout_animator->Update();
