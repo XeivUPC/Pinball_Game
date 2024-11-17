@@ -7,10 +7,10 @@ class UI
 {
 protected:
 	Application* App;
+	bool enabled = true;
 
 private:
 	Texture* UITexture;
-	bool enabled = true;
 public:
 	UI(Application* App);
 	~UI();

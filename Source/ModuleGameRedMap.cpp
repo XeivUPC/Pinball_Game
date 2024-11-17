@@ -26,6 +26,7 @@
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
 #include "CatchedPokemon.h"
+#include "BonusFinalBall.h"
 
 ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
@@ -54,6 +55,7 @@ bool ModuleGameRedMap::Start()
 	ModuleGame::Start();
 
 	App->texture->CreateTexture("Assets/map_redMap.png", "map_redMap");
+	finalBallUI = new BonusFinalBall(this);
 	map_texture = App->texture->GetTexture("map_redMap");	
 	
 
@@ -115,7 +117,6 @@ update_status ModuleGameRedMap::Update()
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
 		App->scene_highScore->SetPlayerPoints(pointsCounter());
-		pointsCounter.Set(0);
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 	}
 
@@ -142,9 +143,6 @@ update_status ModuleGameRedMap::Update()
 					statesTimer.Start();
 				}
 			}
-
-			
-				
 
 			break;
 		case ModuleGame::PlayGame:
@@ -192,7 +190,6 @@ update_status ModuleGameRedMap::Update()
 		case ModuleGame::BlockGame:
 			break;
 		case ModuleGame::RestartGame:
-
 			pokeBall->Reset(saveBall);
 
 			if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
@@ -219,6 +216,7 @@ update_status ModuleGameRedMap::Update()
 	}
 
 	UI->Update();
+	finalBallUI->Update();
 	timerUI->Update();
 
 	ModuleScene::FadeUpdate();

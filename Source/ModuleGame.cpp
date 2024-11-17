@@ -161,6 +161,11 @@ void ModuleGame::FreeBallCave()
 	cave->FreeBall();
 }
 
+int ModuleGame::GetMultiplier()
+{
+	return bonusMultiplier;
+}
+
 void ModuleGame::SetSaveBall(bool status)
 {
 	saveBall = status;

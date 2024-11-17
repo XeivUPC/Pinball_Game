@@ -193,6 +193,7 @@
     <ClInclude Include="Source/p2Point.h" />
     <ClInclude Include="Source\AnimationSystem.h" />
     <ClInclude Include="Source\Bellsprout.h" />
+    <ClInclude Include="Source\BonusFinalBall.h" />
     <ClInclude Include="Source\BonusMultiplierSensor.h" />
     <ClInclude Include="Source\BonusMultiplierSensorGroup.h" />
     <ClInclude Include="Source\BonusSelectionProgram.h" />
@@ -285,6 +286,7 @@
     <ClCompile Include="Source/ModuleWindow.cpp" />
     <ClCompile Include="Source\AnimationSystem.cpp" />
     <ClCompile Include="Source\Bellsprout.cpp" />
+    <ClCompile Include="Source\BonusFinalBall.cpp" />
     <ClCompile Include="Source\BonusMultiplierSensor.cpp" />
     <ClCompile Include="Source\BonusMultiplierSensorGroup.cpp" />
     <ClCompile Include="Source\BonusSelectionProgram.cpp" />

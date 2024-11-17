@@ -27,6 +27,7 @@
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
 #include "CatchedPokemon.h"
+#include "BonusFinalBall.h"
 
 ModuleGameBlueMap::ModuleGameBlueMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
@@ -58,6 +59,7 @@ bool ModuleGameBlueMap::Start()
 	
 
 	UI = new GameUI(this);
+	finalBallUI = new BonusFinalBall(this);
 	timerUI = new TimerUI(this);
 
 	StartFadeOut(WHITE, 0.3f);
@@ -202,6 +204,7 @@ update_status ModuleGameBlueMap::Update()
 		object->Update();
 	}
 	UI->Update();
+	finalBallUI->Update();
 	timerUI->Update();
 
 	ModuleScene::FadeUpdate();

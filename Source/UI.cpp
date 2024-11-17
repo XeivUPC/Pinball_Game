@@ -23,5 +23,4 @@ void UI::ChangeVisibility()
 void UI::Render() const
 {
 	if (!enabled) return;
-	App->text->Write("HOLA", 0, 0);
 }

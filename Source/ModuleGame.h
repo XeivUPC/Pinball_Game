@@ -14,6 +14,7 @@ class PokeBall;
 class CentralScreen;
 class MapEnergyBattery;
 class GameUI;
+class BonusFinalBall;
 class TimerUI;
 class MapCave;
 class SaveAgainBall;
@@ -52,6 +53,7 @@ public:
 	PokeBall* GetPokeball();
 	GameUI* GetUI();
 	TimerUI* GetTimerUI();
+	BonusFinalBall* finalBallUI = nullptr;
 	CatchedPokemon* catchedPokemon = nullptr;
 
 	void NextHabitat();
@@ -78,6 +80,8 @@ public:
 	void OpenCave();
 	void CloseCave();
 	void FreeBallCave();
+
+	int GetMultiplier();
 
 	int GetBonusSelectionAttempts();
 	void AddBonusSelectionAttempts();
@@ -125,6 +129,7 @@ protected:
 	bool canEvolve = false;
 
 	int bonusSelectionAttempts = 1;
+	int bonusMultiplier = 1;
 
 	GameStates state = GameStates::StartGame;
 
