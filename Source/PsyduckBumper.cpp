@@ -2,6 +2,7 @@
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include "BonusFinalBall.h"
 
 PsyduckBumper::PsyduckBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2Vec2> vertices, float restitution, bool flip) : Bumper(gameAt, position, restitution)
 {
@@ -124,7 +125,7 @@ void PsyduckBumper::OnHit()
 	psyduck_animator->SelectAnimation("Psyduck_Hide", false);
 
 	if (hitsRecieved == 3) {
-
+		gameAt->finalBallUI->AddInBonus(6);
 		if (!flip)
 			gameAt->PreviousHabitat();
 		else

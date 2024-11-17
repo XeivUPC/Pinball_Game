@@ -127,9 +127,7 @@ update_status ModuleGameRedMap::Update()
 	ModuleGame::Update();
 	RepositionCamera(pokeBall->GetPosition());
 
-	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
-		SetState(EndGame);
-	}
+	
 
 	Rectangle rectBackground = { (IsTopSideCovered() ? 1 : 0) * 191.f,0,191,278};
 	staryuCollider->GetFixtureList()[0].SetSensor(!IsTopSideCovered());
@@ -209,24 +207,27 @@ update_status ModuleGameRedMap::Update()
 			break;
 		case ModuleGame::BlockGame:
 			break;
-		case ModuleGame::RestartGame:			
-			StartFadeIn(this, WHITE, statesTime);
+		case ModuleGame::RestartGame:
+			if (saveBall || finalBallUI->IsEnded())
+			{
+				StartFadeIn(this, WHITE, statesTime);
 
-			if (statesTimer.ReadSec() >= statesTime) {
-				if (HasExtraPika())
-					SetExtraPika(false);
-				pokeBall->Reset(saveBall);
+				if (statesTimer.ReadSec() >= statesTime) {
+					if (HasExtraPika())
+						SetExtraPika(false);
+					pokeBall->Reset(saveBall);
 
-				if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
-					//// END
-					StartFadeOut(WHITE, statesTime);
-					SetState(EndGame);
-				}
-				else {
-					if (pokeBall->GetLivesPokeball() == 0)
-						SetExtraBall(false);
-					StartFadeOut(WHITE, statesTime);
-					SetState(StartGame);
+					if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
+						//// END
+						StartFadeOut(WHITE, statesTime);
+						SetState(EndGame);
+					}
+					else {
+						if (pokeBall->GetLivesPokeball() == 0)
+							SetExtraBall(false);
+						StartFadeOut(WHITE, statesTime);
+						SetState(StartGame);
+					}
 				}
 			}
 
@@ -565,6 +566,7 @@ void ModuleGameRedMap::SetState(GameStates stateToChange)
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		if(!saveBall)finalBallUI->Activate();
 		statesTime = 0.5f;
 		break;
 	case ModuleGame::EndGame:

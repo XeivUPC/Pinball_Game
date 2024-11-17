@@ -6,6 +6,7 @@
 #include "Box2DFactory.h"
 #include "Pokeball.h"
 #include "ModulePhysics.h"
+#include "BonusFinalBall.h"
 
 Slowpoke::Slowpoke(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : MapObject(gameAt)
 {
@@ -60,7 +61,7 @@ update_status Slowpoke::Update()
 		map_slowpoke_animator->SelectAnimation("MapSlowpokeEat", false);
 		gameAt->pointsCounter.Add(100000);
 		mouthTimer.Start();
-
+		gameAt->finalBallUI->AddInBonus(3);
 	}
 
 	if (ballIn) {

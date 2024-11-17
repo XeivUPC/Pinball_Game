@@ -2,6 +2,7 @@
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include "BonusFinalBall.h"
 
 PoliwagBumper::PoliwagBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2Vec2> vertices, float restitution, bool flip) : Bumper(gameAt, position, restitution)
 {
@@ -109,6 +110,7 @@ void PoliwagBumper::OnHit()
 	hidden_timer.Start();
 	poliwag_animator->SelectAnimation("Poliwag_Hidden", true);
 	if (hitsRecieved == 3) {
+		gameAt->finalBallUI->AddInBonus(5);
 
 		if (!flip)
 			gameAt->PreviousHabitat();

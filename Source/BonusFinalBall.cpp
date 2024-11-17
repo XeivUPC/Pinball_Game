@@ -8,7 +8,7 @@
 
 int BonusFinalBall::GetMultiplier()
 {
-    return gameAt->GetMultiplier();
+    return gameAt->bonusPointsCounter.GetMultipliersTotalValue();
 }
 
 std::string BonusFinalBall::FormatNumberWithOnlyComas(long long int number) const
@@ -72,7 +72,7 @@ BonusFinalBall::~BonusFinalBall()
 
 bool BonusFinalBall::IsEnded()
 {
-    return false;
+    return ended;
 }
 
 void BonusFinalBall::Activate()
@@ -82,12 +82,16 @@ void BonusFinalBall::Activate()
     ended = false;
     timer.Start();
     index = 0;
+    subtotalPoints = 0;
+    subtotalMultipliedPoints = 0;
+    totalPoints = 0;
+    offset = 0;
 }
 
 void BonusFinalBall::Deactivate()
 {
     enabled = false;
-    gameAt->pointsCounter.Set(0);
+    gameAt->pointsCounter.Set(totalPoints);
     for (size_t i = 0; i < BonusesFinalBall.size(); i++)
     {
         BonusesFinalBall.at(i).count = 0;
@@ -109,8 +113,7 @@ void BonusFinalBall::Render()
     
     if(index < BonusesFinalBall.size())
     {
-        while (BonusesFinalBall.at(index).count == 0 && !BonusesFinalBall.at(index).appearWhenNull)
-            index++;
+       
         std::string line = std::to_string(BonusesFinalBall.at(index).count);
         line += " ";
         line += BonusesFinalBall.at(index).BonusName.at(selectedLanguage);
@@ -156,25 +159,30 @@ update_status BonusFinalBall::Update()
     if ((IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT)) || timer.ReadSec() >= 3))
     {
         timer.Start();
-        if(index < BonusesFinalBall.size())
-            scoreAdded = false;
+        scoreAdded = false;
         index++;
     }
+    while (index < BonusesFinalBall.size()-1 && BonusesFinalBall.at(index).count == 0 && !BonusesFinalBall.at(index).appearWhenNull)
+        index++;
     if (!scoreAdded && index < BonusesFinalBall.size())
     {
         subtotalPoints += BonusesFinalBall.at(index).count * BonusesFinalBall.at(index).points;
         scoreAdded = true;
     }
-    else if (index >= BonusesFinalBall.size())
+    else if (index >= BonusesFinalBall.size() && !scoreAdded)
     {
         subtotalMultipliedPoints = subtotalPoints * GetMultiplier();
         totalPoints = gameAt->pointsCounter() + subtotalMultipliedPoints;
         gameAt->pointsCounter.Set(totalPoints);
+        scoreAdded = true;
     }
     if (index == BonusesFinalBall.size() + 1 && offset < 1)
         offset = 2*timer.ReadSec();
     if (offset > 1)
         offset = 1;
+    BeginMode2D(App->renderer->camera);
     Render();
+    EndMode2D();
+    
     return UPDATE_CONTINUE;
 }

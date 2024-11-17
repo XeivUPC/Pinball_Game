@@ -9,6 +9,8 @@
 #include "ModulePhysics.h"
 #include "MapCave.h"
 #include "GameUI.h"
+#include "BonusFinalBall.h"
+
 
 Cloyster::Cloyster(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : MapObject(gameAt)
 {
@@ -74,7 +76,7 @@ update_status Cloyster::Update()
 
 			gameAt->StartCapture();
 		}
-
+		gameAt->finalBallUI->AddInBonus(2);
 	}
 
 	if (ballIn) {

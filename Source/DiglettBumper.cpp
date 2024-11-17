@@ -3,7 +3,7 @@
 #include "Application.h"
 #include "ModulePhysics.h"
 #include "ModuleAudio.h"
-
+#include "BonusFinalBall.h"
 DiglettBumper::DiglettBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2Vec2> vertices, float restitution, bool flip) : Bumper(gameAt, position, restitution)
 {
 	gameAt->AddObject(this);
@@ -126,6 +126,7 @@ void DiglettBumper::OnHit()
 	diglett_animator->SetSpeed(0.07f);
 	gameAt->App->audio->PlayFx(audioDiggletBumperId);
 	if (hitsRecieved == 3) {
+		gameAt->finalBallUI->AddInBonus(7);
 		if (!flip)
 			gameAt->PreviousHabitat();
 		else
