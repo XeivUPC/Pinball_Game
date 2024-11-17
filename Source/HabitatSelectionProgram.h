@@ -10,6 +10,10 @@ private:
 
 	std::vector<int> habitatsToSelect;
 
+	int audioHabitatSelectionId = -1;
+
+	int previousSprite = 0;
+
 public:
 	HabitatSelectionProgram(std::vector<int> habitatsToSelect);
 	~HabitatSelectionProgram();
