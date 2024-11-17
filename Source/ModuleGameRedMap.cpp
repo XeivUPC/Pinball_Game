@@ -149,7 +149,7 @@ update_status ModuleGameRedMap::Update()
 			break;
 		case ModuleGame::PlayGame:
 
-			if (IsKeyPressed(KEY_R)) {
+			if (pokeBall->GetPosition().y >= 278 / SCREEN_SIZE) {
 				SetState(RestartGame);
 			}
 
@@ -353,7 +353,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 1.f, flip, 0);
+				TriangularBumper* triangularBumper = new TriangularBumper(this, { x,y }, vertices, 20.f, flip, 0);
 
 			}
 			else if (type == "diglettBumper") {
