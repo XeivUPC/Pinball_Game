@@ -62,7 +62,11 @@ CaveSensor::~CaveSensor()
 
 update_status CaveSensor::Update()
 {
+
 	MapSensor::Update();
+
+	if (!enabled)
+		return UPDATE_CONTINUE;
 
 	if (active) {
 		animator->SelectAnimation("Cave_Sensor_Active", true);

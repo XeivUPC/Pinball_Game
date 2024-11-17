@@ -16,7 +16,9 @@ MapSensor::~MapSensor()
 
 update_status MapSensor::Update()
 {
-	if (sensor.OnTriggerEnter()) {
+	
+	if (sensor.OnTriggerEnter() && enabled) {
+
 		OnTrigger();
 	}
 	return UPDATE_CONTINUE;
@@ -79,10 +81,15 @@ void MapSensor::FinishTwinkle()
 	finishedTwinkling = false;
 }
 
+void MapSensor::SetIfEnable(bool status)
+{
+	enabled = status;
+}
+
 void MapSensor::OnTrigger()
 {
 	if (active) {
-		gameAt->pointsCounter.Add(1000);
+		gameAt->pointsCounter.Add(pointsOnTrigger);
 		timesActivated++;
 	}
 }

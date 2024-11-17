@@ -57,6 +57,8 @@ BonusMultiplierSensor::BonusMultiplierSensor(ModuleGame* gameAt, b2Vec2 position
 		bumperTexture = gameAt->App->texture->GetTexture("bonus_multiplier_blue_bumper");
 	}
 
+	pointsOnTrigger = 100;
+
 	twinkleTimer.Start();
 }
 
@@ -66,8 +68,13 @@ BonusMultiplierSensor::~BonusMultiplierSensor()
 
 update_status BonusMultiplierSensor::Update()
 {
+	
+
 	if (!dualTwinkling) {
 		MapSensor::Update();
+
+		if (!enabled)
+			return UPDATE_CONTINUE;
 
 		if (active) {
 			glowing = true;
@@ -119,6 +126,9 @@ update_status BonusMultiplierSensor::Update()
 		}
 	}
 	else {
+		if (!enabled)
+			return UPDATE_CONTINUE;
+
 		if (dualTwinklingTimer.ReadSec() >= dualTwinklingTime && dualTwinklingTimer.ReadSec() < dualTwinklingTime * 2) {
 			glowing = false;
 		} else if (dualTwinklingTimer.ReadSec() >= dualTwinklingTime * 2) {

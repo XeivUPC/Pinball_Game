@@ -31,7 +31,7 @@ void CapturePokemon::SetRandomPokemonByZone(bool zoneID, int rarity)
 		{
 			for (size_t j = 0; j < gameAt->App->scene_pokedex->GetBlueMapHabitats(i).size(); j++)
 			{
-				if (gameAt->App->scene_pokedex->GetBlueMapHabitats(i).at(j) == gameAt->GetHabitat() /*&& gameAt->App->scene_pokedex->GetPokemonRarity(i) == rarity*/)
+				if (gameAt->App->scene_pokedex->GetBlueMapHabitats(i).at(j) == gameAt->GetHabitat() && gameAt->App->scene_pokedex->GetPokemonRarity(i) == rarity)
 				{
 					possiblePokemon.push_back(i);
 					break;
@@ -42,7 +42,7 @@ void CapturePokemon::SetRandomPokemonByZone(bool zoneID, int rarity)
 		{
 			for (size_t j = 0; j < gameAt->App->scene_pokedex->GetRedMapHabitats(i).size(); j++)
 			{
-				if (gameAt->App->scene_pokedex->GetRedMapHabitats(i).at(j) == gameAt->GetHabitat() /*&& gameAt->App->scene_pokedex->GetPokemonRarity(i) == rarity*/)
+				if (gameAt->App->scene_pokedex->GetRedMapHabitats(i).at(j) == gameAt->GetHabitat() && gameAt->App->scene_pokedex->GetPokemonRarity(i) == rarity)
 				{
 					possiblePokemon.push_back(i);
 					break;
@@ -79,7 +79,11 @@ void CapturePokemon::StartProgram()
 	ModuleGameRedMap* redMap = (ModuleGameRedMap*)(gameAt);
 	if (redMap != nullptr)
 		isRedMap = true;
-	SetRandomPokemonByZone(isRedMap);
+
+	int rarityLevel = gameAt->GetCaptureRarityLevel();
+	if (rarityLevel < 2)
+		rarityLevel = 2;
+	SetRandomPokemonByZone(isRedMap, rarityLevel);
 	count = 0;
 	factor = 0;
 	animationTimer.Start();

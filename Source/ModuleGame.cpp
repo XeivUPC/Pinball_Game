@@ -7,6 +7,8 @@
 #include "MapEnergyBattery.h"
 #include "MapCave.h"
 #include "SaveAgainBall.h"
+#include "GetArrowGroup.h"
+#include "EvoArrowGroup.h"
 #include <sstream>
 
 
@@ -120,6 +122,23 @@ bool ModuleGame::CanEvolve()
 bool ModuleGame::CanCapture()
 {
 	return canCapture;
+}
+
+void ModuleGame::StartCapture()
+{
+	getArrowGroup->DesactivateAll();
+	canCapture = false;
+}
+
+void ModuleGame::StartEvolve()
+{
+	evoArrowGroup->DesactivateAll();
+	canEvolve = false;
+}
+
+int ModuleGame::GetCaptureRarityLevel()
+{
+	return getArrowGroup->GetActiveAmount();
 }
 
 void ModuleGame::OpenCave()

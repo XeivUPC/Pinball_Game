@@ -8,6 +8,7 @@
 #include "ModuleKeybinds.h"
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
+#include "PokeBall.h"
 #include "TriangularBumper.h"
 #include "StaryuBumper.h"
 #include "MapEnergyRotator.h"
@@ -22,6 +23,9 @@
 #include "MapCave.h"
 #include "SaveAgainBall.h"
 #include "ModuleHighScore.h"
+#include "GetArrowGroup.h"
+#include "EvoArrowGroup.h"
+#include "CatchedPokemon.h"
 
 ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
@@ -67,6 +71,7 @@ bool ModuleGameRedMap::Start()
 	dittoColliders = new DittoColliders(this, { 0,0 });
 	LoadMap("Assets/MapData/red_map_data.tmx");
 	screen = new CentralScreen(this);
+	catchedPokemon = new CatchedPokemon(this);
 
 
 	caveSensorGroup->Sort();
@@ -88,7 +93,7 @@ bool ModuleGameRedMap::Start()
 	pokeBall = new PokeBall(this, ballSpawn,PokeBall::Pokeball,70);
 
 	Pikachu* pikachu = new Pikachu(this, { 139.f / SCREEN_SIZE ,245.f / SCREEN_SIZE });
-	Staryu* staryu = new Staryu(this, { 0,0 });
+	Staryu* staryu = new Staryu(this, { 0,0 }, {0,0});
 	Bellsprout* bellsprout = new Bellsprout(this, { 104.f/ SCREEN_SIZE,78.f/SCREEN_SIZE },8.f/SCREEN_SIZE);
 
 	SetState(StartGame);
@@ -107,7 +112,6 @@ bool ModuleGameRedMap::Start()
 update_status ModuleGameRedMap::Update()
 {
 	ModuleGame::Update();
-
 	RepositionCamera(pokeBall->GetPosition());
 
 	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
@@ -116,7 +120,10 @@ update_status ModuleGameRedMap::Update()
 		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 	}
 
-	Rectangle rectBackground = { 0,0,191,278 };
+	Rectangle rectBackground = { (IsTopSideCovered() ? 1 : 0) * 191.f,0,191,278};
+	staryuCollider->GetFixtureList()[0].SetSensor(!IsTopSideCovered());
+	pokeballChangerGroup->SetIfEnable(!IsTopSideCovered());
+
 	App->renderer->Draw(*map_texture, 0, 0, &rectBackground, WHITE);
 
 	switch (state)
@@ -138,15 +145,17 @@ update_status ModuleGameRedMap::Update()
 				}
 			}
 
+			
+				
+
 			break;
 		case ModuleGame::PlayGame:
-
-			leftFlipper->Update();
-			rightFlipper->Update();
 
 			if (IsKeyPressed(KEY_R)) {
 				SetState(RestartGame);
 			}
+
+			staryuCollider->GetFixtureList()[0].SetSensor(!staryuBumper->IsActive());
 
 			if (lapSensorGroup->HaveToActivateArrowGet()) {
 				getArrowGroup->ActivateNext();
@@ -163,6 +172,7 @@ update_status ModuleGameRedMap::Update()
 			}
 			else
 			{
+				centerRedArrowGroup->DeactivateRight();
 				canCapture = false;
 			}
 
@@ -172,6 +182,7 @@ update_status ModuleGameRedMap::Update()
 				canEvolve = true;
 			}
 			else {
+				centerRedArrowGroup->DeactivateLeft();
 				canEvolve = false;
 			}
 
@@ -184,12 +195,20 @@ update_status ModuleGameRedMap::Update()
 			break;
 		case ModuleGame::RestartGame:
 
-			////
-
 			pokeBall->Reset(saveBall);
 
-			////
-			SetState(StartGame);
+			if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
+				//// END
+				SetState(EndGame);
+			}
+			else {
+				if (pokeBall->GetLivesPokeball() == 0)
+					SetExtraBall(false);
+				SetState(StartGame);
+			}
+
+			break;
+		case ModuleGame::EndGame:
 			break;
 		default:
 			break;
@@ -229,6 +248,11 @@ bool ModuleGameRedMap::CleanUp()
 
 	App->renderer->camera.offset = { 0,0 };
 	return true;
+}
+
+bool ModuleGameRedMap::IsTopSideCovered()
+{
+	return staryuBumper->IsActive();
 }
 
 void ModuleGameRedMap::LoadMap(std::string path)
@@ -287,6 +311,12 @@ void ModuleGameRedMap::LoadMap(std::string path)
 			else {
 				simpoleCollidersBodies.emplace_back(body);
 			}
+
+			if (name == "StaryuCollider") {
+				staryuCollider = body;
+			}
+
+
 		}
 
 		for (pugi::xml_node objectNode = mapObjectsNode.child("object"); objectNode != NULL; objectNode = objectNode.next_sibling("object"))
@@ -347,7 +377,7 @@ void ModuleGameRedMap::LoadMap(std::string path)
 					flip = true;
 				}
 
-				StaryuBumper* staryuBumper = new StaryuBumper(this, { x,y }, vertices, 1.f, flip);
+				staryuBumper = new StaryuBumper(this, { x,y }, vertices, 1.f, flip);
 			}
 			else if (type == "energyRotator") {
 				float width = objectNode.attribute("width").as_float() / SCREEN_SIZE;
@@ -483,6 +513,8 @@ void ModuleGameRedMap::SetState(GameStates stateToChange)
 	switch (state)
 	{
 	case ModuleGame::StartGame:
+		if(!saveBall)
+			SetTimeSaveBall(24.f);
 		dittoColliders->SetMode(DittoColliders::Small);
 		statesTimer.LockTimer();
 		statesTime = 1.8f;
@@ -493,6 +525,8 @@ void ModuleGameRedMap::SetState(GameStates stateToChange)
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		break;
+	case ModuleGame::EndGame:
 		break;
 	default:
 		break;

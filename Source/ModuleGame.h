@@ -16,6 +16,9 @@ class MapEnergyBattery;
 class GameUI;
 class MapCave;
 class SaveAgainBall;
+class GetArrowGroup;
+class EvoArrowGroup;
+class CatchedPokemon;
 
 class ModuleGame : public ModuleScene
 {
@@ -28,7 +31,9 @@ public:
 
 		BlockGame,
 
-		RestartGame
+		RestartGame,
+
+		EndGame
 	};
 
 
@@ -44,8 +49,8 @@ public:
 	virtual bool CleanUp();
 	Counter pointsCounter = Counter(100);
 	PokeBall* GetPokeball();
-
 	GameUI* GetUI();
+	CatchedPokemon* catchedPokemon = nullptr;
 
 	void NextHabitat();
 	void PreviousHabitat();
@@ -58,13 +63,15 @@ public:
 
 	bool CanEvolve();
 	bool CanCapture();
+	void StartCapture();
+	void StartEvolve();
+	int GetCaptureRarityLevel();
 
 	void SetSaveBall(bool status);
 	void SetExtraBall(bool status);
 	bool HasExtraBall();
 	bool HasSaveBall();
 	void SetTimeSaveBall(float time);
-
 
 	void OpenCave();
 	void CloseCave();
@@ -88,6 +95,8 @@ protected:
 	GameUI* UI = nullptr;
 	MapCave* cave = nullptr;
 	SaveAgainBall* saveAgainBall = nullptr;
+	GetArrowGroup* getArrowGroup = nullptr;
+	EvoArrowGroup* evoArrowGroup = nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);
@@ -114,15 +123,10 @@ protected:
 
 	int bonusSelectionAttempts = 1;
 
-
-
-
 	GameStates state = GameStates::StartGame;
 
 	Timer statesTimer;
 	float statesTime=0;
-
-
 
 };
 

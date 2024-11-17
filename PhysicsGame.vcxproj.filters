@@ -252,6 +252,15 @@
     <ClCompile Include="Source\MapCave.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\OverworldPokemon.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CatchedPokemon.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SaveAgainBall.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -506,6 +515,15 @@
       <Filter>ScreenPrograms</Filter>
     </ClInclude>
     <ClInclude Include="Source\MapCave.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\OverworldPokemon.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CatchedPokemon.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SaveAgainBall.h">
       <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>

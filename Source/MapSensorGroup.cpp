@@ -90,3 +90,12 @@ int MapSensorGroup::GetActiveAmount()
 	}
 	return count;
 }
+
+void MapSensorGroup::SetIfEnable(bool status)
+{
+	for (const auto& sensorPointer : mapSensors)
+	{
+		sensorPointer->SetIfEnable(status);
+	}
+}
+

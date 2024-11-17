@@ -92,7 +92,6 @@ void PokeballChangerGroup::OnAllActive()
 
 	if (pokeBall->GetType() != PokeBall::PokeballType::MasterBall) {
 		pokeBall->SetType(PokeBall::PokeballType(pokeBall->GetType() + 1));
-		gameAt->pointsCounter.Take(1000);
 		gameAt->pointsCounter.Add(4000);
 	}
 	else {

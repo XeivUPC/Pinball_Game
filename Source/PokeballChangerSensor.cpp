@@ -53,7 +53,12 @@ PokeballChangerSensor::~PokeballChangerSensor()
 
 update_status PokeballChangerSensor::Update()
 {
+
+	
+
 	MapSensor::Update();
+	if (!enabled)
+		return UPDATE_CONTINUE;
 
 	if (active) {
 		animator->SelectAnimation("Pokeball_Sensor_Active", true);

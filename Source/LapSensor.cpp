@@ -42,6 +42,9 @@ LapSensor::LapSensor(ModuleGame* gameAt, b2Vec2 position, float width, float hei
 	sensor.SetBodyToTrack(&body->GetFixtureList()[0]);
 
 	sensor.AcceptOnlyTriggers(false);
+
+
+	pointsOnTrigger = 100;
 }
 
 LapSensor::~LapSensor()
@@ -50,7 +53,11 @@ LapSensor::~LapSensor()
 
 update_status LapSensor::Update()
 {
+	
 	MapSensor::Update();
+
+	if (!enabled)
+		return UPDATE_CONTINUE;
 
 	if (cooldownTimer.ReadSec() >= cooldownTime) {
 		Desactivate();

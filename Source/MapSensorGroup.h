@@ -22,6 +22,8 @@ public:
 	bool AllActive();
 	int GetActiveAmount();
 
+	void SetIfEnable(bool status);
+
 protected:
 	virtual void OnAllActive() = 0;
 	std::vector<MapSensor*> mapSensors;

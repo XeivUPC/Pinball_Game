@@ -79,6 +79,11 @@ bool StaryuBumper::CleanUp()
 	return true;
 }
 
+bool StaryuBumper::IsActive()
+{
+	return isActive;
+}
+
 void StaryuBumper::OnHit()
 {
 	if (recovering)
@@ -93,4 +98,6 @@ void StaryuBumper::OnHit()
 	if (hitsRecieved > 3) {
 		hitsRecieved = 3;
 	}
+
+	isActive = !isActive;
 }

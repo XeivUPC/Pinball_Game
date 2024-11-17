@@ -7,6 +7,8 @@
 #include "Pokeball.h"
 #include "CentralScreen.h"
 #include "ModulePhysics.h"
+#include "MapCave.h"
+#include "GameUI.h"
 
 Cloyster::Cloyster(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : MapObject(gameAt)
 {
@@ -63,7 +65,14 @@ update_status Cloyster::Update()
 		mouthTimer.Start();
 
 		if (gameAt->CanCapture() && gameAt->screen->CanProgramBeOverwritten()) {
+
+			const char* text = "PLACEHOLDER";
+			gameAt->GetUI()->AddText(text);
+
 			gameAt->screen->SwitchProgram(new CapturePokemon);
+			gameAt->CloseCave();
+
+			gameAt->StartCapture();
 		}
 
 	}

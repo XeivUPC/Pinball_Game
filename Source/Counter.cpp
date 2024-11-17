@@ -33,8 +33,6 @@ void Counter::AddWithoutMultipliers(long long int amount)
 
 void Counter::Take(long long int amount)
 {
-	
-
 	amount -= (long long int)(amount);
 }
 
