@@ -18,7 +18,6 @@ class ModuleTimerUIText;
 class ModuleGamePokedexJapanese;
 class ModuleGamePokedexWorldWide;
 
-
 class ModuleUserPreferences;
 
 class ModuleLevelSelection;

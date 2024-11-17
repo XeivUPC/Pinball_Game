@@ -26,6 +26,7 @@
 #include "GetArrowGroup.h"
 #include "EvoArrowGroup.h"
 #include "CatchedPokemon.h"
+#include "BonusFinalBall.h"
 
 #include "MemLeaks.h"
 
@@ -59,6 +60,7 @@ bool ModuleGameRedMap::Start()
 	ModuleGame::Start();
 
 	App->texture->CreateTexture("Assets/map_redMap.png", "map_redMap");
+	finalBallUI = new BonusFinalBall(this);
 	map_texture = App->texture->GetTexture("map_redMap");	
 	
 
@@ -154,9 +156,6 @@ update_status ModuleGameRedMap::Update()
 				}
 			}
 
-			
-				
-
 			break;
 		case ModuleGame::PlayGame:
 
@@ -250,6 +249,7 @@ update_status ModuleGameRedMap::Update()
 	}
 
 	UI->Update();
+	finalBallUI->Update();
 	timerUI->Update();
 
 	ModuleScene::FadeUpdate();

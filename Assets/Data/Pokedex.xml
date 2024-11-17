@@ -1562,7 +1562,7 @@
 		<rarity value="2" />
 		<height value="1,3" />
 		<weight value="0,1" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="93">
