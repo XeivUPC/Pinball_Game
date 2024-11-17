@@ -11,6 +11,8 @@
 #include "GameUI.h"
 #include "TimerUI.h"
 #include "CatchedPokemon.h"
+#include <algorithm> 
+#include <cctype>   
 
 void OverworldPokemon::AddHit()
 {
@@ -77,7 +79,8 @@ void OverworldPokemon::Logic()
 		if (gameAt->GetTimerUI()->IsTimerFinished())
 		{
 			if (failedTimer.ReadSec() > failedTime) {
-				gameAt->GetUI()->AddText("PLACEDHOLDER");
+				int selectedLanguage = gameAt->App->userPreferences->GetLanguage();
+				gameAt->GetUI()->AddText(failedUIText[selectedLanguage]);
 				gameAt->RemoveObject(pokemon_bumper);
 				pokemon_bumper = nullptr;
 				gameAt->GetTimerUI()->HideTimer();
@@ -126,8 +129,18 @@ void OverworldPokemon::Logic()
 	{
 		if (count == 3) {
 
-			const char* text = "PLACEHOLDER";
-			gameAt->GetUI()->AddText(text);
+			int selectedLanguage = gameAt->App->userPreferences->GetLanguage();
+			if (selectedLanguage == 0)
+				selectedLanguage++;
+
+			std::string pokemonName = gameAt->App->scene_pokedex->GetPokemonName(ID, selectedLanguage);
+			std::transform(pokemonName.begin(), pokemonName.end(), pokemonName.begin(),
+				[](unsigned char c) { return std::toupper(c); });
+
+			std::string textUIToShow = pokemonName + " " + capturedUIText[selectedLanguage];
+			gameAt->GetUI()->AddText(textUIToShow);
+
+
 
 			gameAt->App->scene_pokedex->CapturePokemon(ID);
 

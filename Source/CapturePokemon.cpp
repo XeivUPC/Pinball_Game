@@ -5,6 +5,7 @@
 #include "CentralScreen.h"
 #include "ModulePokedex.h"
 #include "OverworldPokemon.h"
+#include "ModuleUserPreferences.h"
 #include "TimerUI.h"
 #include "GameUI.h"
 
@@ -111,7 +112,8 @@ void CapturePokemon::Logic()
 	if (gameAt->GetTimerUI()->IsTimerFinished() )
 	{
 		if (failedTimer.ReadSec() > failedTime) {
-			gameAt->GetUI()->AddText("PLACEDHOLDER");
+			int selectedLanguage = gameAt->App->userPreferences->GetLanguage();
+			gameAt->GetUI()->AddText(failedUIText[selectedLanguage]);
 			gameAt->GetTimerUI()->HideTimer();
 			gameAt->PlayFieldMusic();
 			gameAt->screen->RemoveProgram();
