@@ -1,6 +1,7 @@
 #include "CaveSensorGroup.h"
 #include "CaveSensor.h"
 #include "ModuleUserPreferences.h"
+#include "ModuleAudio.h"
 #include "Application.h"
 #include "CentralScreen.h"
 #include <algorithm>
@@ -8,6 +9,7 @@
 CaveSensorGroup::CaveSensorGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
 {
 	this->gameAt = gameAt;
+	audioPokeballSensorAllActiveId = gameAt->App->audio->LoadFx("Assets/SFX/Game_PokeballSensorAllActive.ogg");
 }
 
 CaveSensorGroup::~CaveSensorGroup()
@@ -91,7 +93,7 @@ void CaveSensorGroup::Sort()
 void CaveSensorGroup::OnAllActive()
 {
 	gameAt->pointsCounter.Add(4000);
-
+	gameAt->App->audio->PlayFx(audioPokeballSensorAllActiveId);
 	if(gameAt->screen->CanProgramBeOverwritten()) {
 		gameAt->screen->SwitchProgram(new BonusStartProgram());
 		gameAt->OpenCave();
