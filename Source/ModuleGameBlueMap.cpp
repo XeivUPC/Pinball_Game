@@ -132,7 +132,7 @@ update_status ModuleGameBlueMap::Update()
 
 		if (!statesTimer.IsLocked()) {
 			pokeBall->ApplyForce({ 0,-4000 });
-			if (statesTimer.ReadSec() > statesTime) {
+			if (statesTimer.ReadSec() > statesTime * 16 / 10) {
 				SetState(PlayGame);
 			}
 		}
