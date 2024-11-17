@@ -11,6 +11,7 @@ private:
 	std::vector<int> habitatsToSelect;
 
 	int audioHabitatSelectionId = -1;
+	int audioHabitatFoundId = -1;
 
 	int previousSprite = 0;
 

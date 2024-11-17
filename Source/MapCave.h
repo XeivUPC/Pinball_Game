@@ -20,6 +20,8 @@ private:
 	Timer freeBallTimer;
 	float freeBallTime = 1.f;
 	
+	int audioVoidAbsorbId = -1;
+	int audioVoidEnterId = -1;
 public:
 	MapCave(ModuleGame* gameAt, b2Vec2 position, b2Vec2 entryPosition, float entryRadius);
 	~MapCave();

@@ -7,6 +7,7 @@
 #include "Pokeball.h"
 #include "ModulePhysics.h"
 #include "BonusFinalBall.h"
+#include "ModuleAudio.h"
 
 Slowpoke::Slowpoke(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : MapObject(gameAt)
 {
@@ -46,6 +47,9 @@ Slowpoke::Slowpoke(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : Map
 	map_slowpoke_animator->SelectAnimation("MapSlowpokeIdle", true);
 
 	this->position = position;
+
+	audioBellsproutAbsorbId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BellsproutAbsorb.ogg");
+	audioBellsproutHawkTuahId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BellsproutHawkTuah.ogg");
 }
 
 Slowpoke::~Slowpoke()
@@ -62,6 +66,7 @@ update_status Slowpoke::Update()
 		gameAt->pointsCounter.Add(100000);
 		mouthTimer.Start();
 		gameAt->finalBallUI->AddInBonus(3);
+		gameAt->App->audio->PlayFx(audioBellsproutAbsorbId);
 	}
 
 	if (ballIn) {
@@ -70,6 +75,7 @@ update_status Slowpoke::Update()
 		gameAt->GetPokeball()->SetVelocity({ 0,0 });
 		if (mouthTimer.ReadSec() > mouthTime) {
 			map_slowpoke_animator->SelectAnimation("MapSlowpokeDrop", false);
+			gameAt->App->audio->PlayFx(audioBellsproutHawkTuahId);
 			if (map_slowpoke_animator->HasAnimationFinished()) {
 				gameAt->GetPokeball()->SetVelocity({ 20,0 });
 				ballIn = false;

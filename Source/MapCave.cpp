@@ -3,6 +3,7 @@
 #include "ModuleTexture.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include "ModuleAudio.h"
 #include "CentralScreen.h"
 #include "ModuleAudio.h"
 #include "PokeBall.h"
@@ -51,6 +52,9 @@ MapCave::MapCave(ModuleGame* gameAt, b2Vec2 position, b2Vec2 entryPosition, floa
 	animator->AddAnimation(openedNoEffectAnim);
 	animator->SetSpeed(0.1f);
 	animator->SelectAnimation("Closed", true);
+
+	audioVoidAbsorbId = gameAt->App->audio->LoadFx("Assets/SFX/Game_VoidAbsorb.ogg");
+	audioVoidEnterId = gameAt->App->audio->LoadFx("Assets/SFX/Game_VoidEnter.ogg");
 }
 
 MapCave::~MapCave()
@@ -68,6 +72,7 @@ update_status MapCave::Update()
 			CloseCave();
 		}
 		if (hasBeenTriggered) {
+			gameAt->App->audio->PlayFx(audioVoidEnterId);
 			OnHit();		
 		}	
 	}

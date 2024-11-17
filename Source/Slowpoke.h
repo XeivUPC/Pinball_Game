@@ -25,4 +25,7 @@ private:
 	float mouthTime = 1.f;
 
 	bool ballIn = false;
+
+	int audioBellsproutAbsorbId = -1;
+	int audioBellsproutHawkTuahId = -1;
 };

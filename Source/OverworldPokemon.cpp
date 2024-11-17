@@ -7,6 +7,7 @@
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
+#include "ModuleAudio.h"
 #include "CentralScreen.h"
 #include "GameUI.h"
 #include "TimerUI.h"
@@ -72,6 +73,8 @@ void OverworldPokemon::StartProgram()
 	animator->SetIfCanDraw(false);
 	animator->SelectAnimation("PokeballStatic", true);
 
+	audioCaptureId = gameAt->App->audio->LoadFx("Assets/SFX/Game_Capture.ogg");
+	audioPokeballMovingId = gameAt->App->audio->LoadFx("Assets/SFX/Game_PokeballMoving.ogg");
 }
 
 void OverworldPokemon::Logic()
@@ -116,6 +119,7 @@ void OverworldPokemon::Logic()
 	{
 		offset = 0;
 		animator->SelectAnimation("PokeballShake", false);
+		gameAt->App->audio->PlayFx(audioPokeballMovingId);
 	}
 	if (animator->GetCurrentAnimationName() == "Smoke" && animator->HasAnimationFinished())
 	{
@@ -156,6 +160,7 @@ void OverworldPokemon::Logic()
 		timerTime = 1;
 		animator->SelectAnimation("PokeballShake", false); if (count < 2)			
 		timer.Start();
+		gameAt->App->audio->PlayFx(audioPokeballMovingId);
 	}
 	if (animator->GetCurrentAnimationName() == "PokeballShake" && timer.ReadSec() >= timerTime && animating)
 	{
@@ -164,6 +169,7 @@ void OverworldPokemon::Logic()
 
 		if (count == 3) {
 			timerTime = 2;
+			gameAt->App->audio->PlayFx(audioCaptureId);
 		}
 		else {
 			timerTime = 1;

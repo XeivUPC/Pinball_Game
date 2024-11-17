@@ -112,6 +112,9 @@ bool ModuleGameBlueMap::Start()
 	catchEvoMusicPath = "Assets/Music/Catch_Evolution_Mode_Blue_Field.wav";
 	PlayFieldMusic();
 
+	audioGameRestartId = App->audio->LoadFx("Assets/SFX/Game_Restart.ogg");
+	audioGameOverId = App->audio->LoadFx("Assets/SFX/Game_Over.ogg");
+
 	return true;
 }
 
@@ -129,76 +132,77 @@ update_status ModuleGameBlueMap::Update()
 
 	switch (state)
 	{
-	case ModuleGame::StartGame:
-		RepositionCamera(pokeBall->GetPosition());
+		case ModuleGame::StartGame:
+			RepositionCamera(pokeBall->GetPosition());
 
-		if (!statesTimer.IsLocked()) {
-			pokeBall->ApplyForce({ 0,-4000 });
-			if (statesTimer.ReadSec() > statesTime ) {
-				SetState(PlayGame);
+			if (!statesTimer.IsLocked()) {
+				pokeBall->ApplyForce({ 0,-4000 });
+				if (statesTimer.ReadSec() > statesTime ) {
+					SetState(PlayGame);
+				}
 			}
-		}
-		else {
-			if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
-				statesTimer.UnlockTimer();
-				statesTimer.Start();
-				App->audio->PlayFx(audioGameStartId);
+			else {
+				if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
+					statesTimer.UnlockTimer();
+					statesTimer.Start();
+					App->audio->PlayFx(audioGameStartId);
+				}
 			}
-		}
 
-		break;
-	case ModuleGame::PlayGame:
-		RepositionCamera(pokeBall->GetPosition());
+			break;
+		case ModuleGame::PlayGame:
+			RepositionCamera(pokeBall->GetPosition());
 
-		if (pokeBall->GetPosition().y >= 290 / SCREEN_SIZE) {
-			SetState(RestartGame);
-		}
+			if (pokeBall->GetPosition().y >= 290 / SCREEN_SIZE) {
+				SetState(RestartGame);
+			}
 
-		if (lapSensorGroup->HaveToActivateArrowGet()) {
-			getArrowGroup->ActivateNext();
-		}
-		if (lapSensorGroup->HaveToActivateArrowEvo()) {
-			evoArrowGroup->ActivateNext();
-		}
-		//after catching/failing pokemon capture/evo, deactivate all get/evo arrows 
+			if (lapSensorGroup->HaveToActivateArrowGet()) {
+				getArrowGroup->ActivateNext();
+			}
+			if (lapSensorGroup->HaveToActivateArrowEvo()) {
+				evoArrowGroup->ActivateNext();
+			}
+			//after catching/failing pokemon capture/evo, deactivate all get/evo arrows 
 
-		if (getArrowGroup->GetActiveAmount() >= 2) {
-			centerBlueArrowGroup->ActivateLeftTop();
-			canCapture = true;
-		}
-		else
-		{
-			centerBlueArrowGroup->DeactivateLeftTop();
-			canCapture = false;
-		}
+			if (getArrowGroup->GetActiveAmount() >= 2) {
+				centerBlueArrowGroup->ActivateLeftTop();
+				canCapture = true;
+			}
+			else
+			{
+				centerBlueArrowGroup->DeactivateLeftTop();
+				canCapture = false;
+			}
 
-		if (evoArrowGroup->GetActiveAmount() >= 3) {
-			centerBlueArrowGroup->ActivateRightTop();
-			canEvolve = true;
-		}
-		else {
-			centerBlueArrowGroup->DeactivateRightTop();
-			canEvolve = false;
-		}
+			if (evoArrowGroup->GetActiveAmount() >= 3) {
+				centerBlueArrowGroup->ActivateRightTop();
+				canEvolve = true;
+			}
+			else {
+				centerBlueArrowGroup->DeactivateRightTop();
+				canEvolve = false;
+			}
 
-		if (cave->IsCaveOpen()) {
-			centerBlueArrowGroup->ActivateMidTop();
-		}
-		else {
-			centerBlueArrowGroup->DeactivateMidTop();
-		}
+			if (cave->IsCaveOpen()) {
+				centerBlueArrowGroup->ActivateMidTop();
+			}
+			else {
+				centerBlueArrowGroup->DeactivateMidTop();
+			}
 
-		// the top arrow in the center is activated when there is a black hole for events
+			// the top arrow in the center is activated when there is a black hole for events
 
-		// the bottom arrow follows where the air arrow controller in the middle of the top part points
+			// the bottom arrow follows where the air arrow controller in the middle of the top part points
 
-		break;
+			break;
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
 		if (saveBall || finalBallUI->IsEnded())
 		{
 			StartFadeIn(this, WHITE, statesTime);
+			App->audio->PlayFx(audioGameRestartId);
 
 			if (statesTimer.ReadSec() >= statesTime) {
 				if (HasExtraPika())
@@ -207,6 +211,7 @@ update_status ModuleGameBlueMap::Update()
 
 				if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
 					//// END
+					App->audio->PlayFx(audioGameOverId);
 					StartFadeOut(WHITE, statesTime);
 					SetState(EndGame);
 				}
@@ -243,10 +248,6 @@ update_status ModuleGameBlueMap::Update()
 	ModuleGame::RemoveAllPendentObjects();
 	return UPDATE_CONTINUE;
 }
-
-
-
-
 
 bool ModuleGameBlueMap::CleanUp()
 {

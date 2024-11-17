@@ -49,6 +49,8 @@ MapEnergyBattery::MapEnergyBattery(ModuleGame* gameAt, b2Vec2 position, int vari
 		std::string pathName = "Assets/SFX/Map_Energy_" + std::to_string(i) + ".ogg";
 		audiosEnergyIds.emplace_back(gameAt->App->audio->LoadFx(pathName.c_str()));
 	}
+
+	audioEnergyFullId = gameAt->App->audio->LoadFx("Assets/SFX/Game_EnergyCompleted.ogg");
 }
 
 MapEnergyBattery::~MapEnergyBattery()
@@ -60,7 +62,10 @@ update_status MapEnergyBattery::Update()
 	gameAt->SetEnergyStatus(currentEnergy == totalCapacity);
 
 	if (currentEnergy == totalCapacity) {
-		
+		if (animator->GetCurrentAnimationName() != "Filled")
+		{
+			gameAt->App->audio->PlayFx(audioEnergyFullId);
+		}
 		animator->SelectAnimation("Filled", true);
 	}
 	else if(currentEnergy == 0){

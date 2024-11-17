@@ -120,6 +120,9 @@ bool ModuleGameRedMap::Start()
 	catchEvoMusicPath = "Assets/Music/Catch_Evolution_Mode_Red_Field.wav";
 	PlayFieldMusic();
 
+	audioGameRestartId = App->audio->LoadFx("Assets/SFX/Game_Restart.ogg");
+	audioGameOverId = App->audio->LoadFx("Assets/SFX/Game_Over.ogg");
+
 	return true;
 }
 
@@ -215,15 +218,15 @@ update_status ModuleGameRedMap::Update()
 			if (saveBall || finalBallUI->IsEnded())
 			{
 				StartFadeIn(this, WHITE, statesTime);
+				App->audio->PlayFx(audioGameRestartId);
 
 				if (statesTimer.ReadSec() >= statesTime) {
 					if (HasExtraPika())
 						SetExtraPika(false);
 
-					pokeBall->Reset(saveBall);
-
 					if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
 						//// END
+						App->audio->PlayFx(audioGameOverId);
 						StartFadeOut(WHITE, statesTime);
 						SetState(EndGame);
 					}

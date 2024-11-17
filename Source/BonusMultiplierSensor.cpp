@@ -2,6 +2,7 @@
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include "ModuleAudio.h"
 
 BonusMultiplierSensor::BonusMultiplierSensor(ModuleGame* gameAt, b2Vec2 position, float width, float height, float angle, int order, int variant) : MapSensor(gameAt, position, width, height, angle)
 {
@@ -60,6 +61,8 @@ BonusMultiplierSensor::BonusMultiplierSensor(ModuleGame* gameAt, b2Vec2 position
 	pointsOnTrigger = 100;
 
 	twinkleTimer.Start();
+
+	audioBonusMultiplierId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BonusMultiplier.ogg");
 }
 
 BonusMultiplierSensor::~BonusMultiplierSensor()
@@ -231,4 +234,5 @@ void BonusMultiplierSensor::OnTrigger()
 		justHit = true;
 	}
 	glowBumperTimer.Start();
+	gameAt->App->audio->PlayFx(audioBonusMultiplierId);
 }

@@ -12,6 +12,7 @@ public:
 
 	void Sort();
 
+	int audioPokeballSensorAllActiveId = -1;
 protected:
 	void OnAllActive() override;
 };

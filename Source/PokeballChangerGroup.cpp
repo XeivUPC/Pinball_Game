@@ -1,6 +1,7 @@
 #include "PokeballChangerGroup.h"
 #include "PokeBall.h"
 #include "ModuleUserPreferences.h"
+#include "ModuleAudio.h"
 #include "Application.h"
 #include "GameUI.h"
 #include <algorithm>
@@ -8,6 +9,9 @@
 PokeballChangerGroup::PokeballChangerGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
 {
 	this->gameAt = gameAt;
+
+	audioPokeballSensorAllActiveId = gameAt->App->audio->LoadFx("Assets/SFX/Game_PokeballSensorAllActive.ogg");
+
 }
 
 PokeballChangerGroup::~PokeballChangerGroup()
@@ -90,7 +94,7 @@ void PokeballChangerGroup::Sort()
 void PokeballChangerGroup::OnAllActive()
 {
 	PokeBall* pokeBall = gameAt->GetPokeball();
-
+	gameAt->App->audio->PlayFx(audioPokeballSensorAllActiveId);
 	if (pokeBall->GetType() != PokeBall::PokeballType::MasterBall) {
 		pokeBall->SetType(PokeBall::PokeballType(pokeBall->GetType() + 1));
 		gameAt->pointsCounter.Add(4000);
