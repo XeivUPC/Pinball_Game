@@ -41,31 +41,32 @@ bool ModuleHSName::Start()
 	count.y = fontTexture->height / size.y;
 
 	// A to Z
-	charReferences.push_back('A');
-	charReferences.push_back('B');
-	charReferences.push_back('C');
-	charReferences.push_back('D');
-	charReferences.push_back('E');
-	charReferences.push_back('F');
-	charReferences.push_back('G');
-	charReferences.push_back('H');
-	charReferences.push_back('J');
-	charReferences.push_back('K');
-	charReferences.push_back('L');
-	charReferences.push_back('M');
-	charReferences.push_back('N');
-	charReferences.push_back('O');
-	charReferences.push_back('P');
-	charReferences.push_back('Q');
-	charReferences.push_back('R');
-	charReferences.push_back('S');
-	charReferences.push_back('T');
-	charReferences.push_back('U');
-	charReferences.push_back('V');
-	charReferences.push_back('W');
-	charReferences.push_back('X');
-	charReferences.push_back('Y');
-	charReferences.push_back('Z');
+	charReferences.push_back(65);
+	charReferences.push_back(66);
+	charReferences.push_back(67);
+	charReferences.push_back(68);
+	charReferences.push_back(69);
+	charReferences.push_back(70);
+	charReferences.push_back(71);
+	charReferences.push_back(72);
+	charReferences.push_back(73);
+	charReferences.push_back(74);
+	charReferences.push_back(75);
+	charReferences.push_back(76);
+	charReferences.push_back(77);
+	charReferences.push_back(78);
+	charReferences.push_back(79);
+	charReferences.push_back(80);
+	charReferences.push_back(81);
+	charReferences.push_back(82);
+	charReferences.push_back(83);
+	charReferences.push_back(84);
+	charReferences.push_back(85);
+	charReferences.push_back(86);
+	charReferences.push_back(87);
+	charReferences.push_back(88);
+	charReferences.push_back(89);
+	charReferences.push_back(90);
 
 	// From here on the characters wont match the sprites but this is to make the traversal through all characters easier
 	// 0 to 9
