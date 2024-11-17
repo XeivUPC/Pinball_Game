@@ -2,6 +2,7 @@
 #include "Box2DFactory.h"
 #include "Application.h"
 #include "ModulePhysics.h"
+#include "ModuleAudio.h"
 
 StaryuBumper::StaryuBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2Vec2> vertices, float restitution, bool flip) : Bumper(gameAt, position, restitution)
 {
@@ -50,6 +51,8 @@ StaryuBumper::StaryuBumper(ModuleGame* gameAt, b2Vec2 position, std::vector<b2Ve
 	staryu_animator->SetSpeed(0.25f);
 
 	staryu_animator->SelectAnimation("Bumper_Off", true);
+
+	audioStaryuBumperId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BellsproutAbsorb.ogg");
 }
 
 StaryuBumper::~StaryuBumper()

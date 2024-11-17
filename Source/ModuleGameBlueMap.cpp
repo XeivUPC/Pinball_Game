@@ -111,6 +111,9 @@ bool ModuleGameBlueMap::Start()
 	catchEvoMusicPath = "Assets/Music/Catch_Evolution_Mode_Blue_Field.wav";
 	PlayFieldMusic();
 
+	audioGameRestartId = App->audio->LoadFx("Assets/SFX/Game_Restart.ogg");
+	audioGameOverId = App->audio->LoadFx("Assets/SFX/Game_Over.ogg");
+
 	return true;
 }
 
@@ -195,6 +198,7 @@ update_status ModuleGameBlueMap::Update()
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		App->audio->PlayFx(audioGameRestartId);
 		StartFadeIn(this, WHITE, statesTime);
 
 		if (statesTimer.ReadSec() >= statesTime) {
@@ -202,6 +206,7 @@ update_status ModuleGameBlueMap::Update()
 
 			if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
 				//// END
+				App->audio->PlayFx(audioGameOverId);
 				StartFadeOut(WHITE, statesTime);
 				SetState(EndGame);
 			}

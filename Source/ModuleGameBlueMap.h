@@ -35,7 +35,8 @@ private:
 	std::string mapPath = "Assets/MapData/";
 
 	int audioGameStartId = -1;
-
+	int audioGameRestartId = -1;
+	int audioGameOverId = -1;
 public:
 	ModuleGameBlueMap(Application* app, bool start_enabled = true);
 	~ModuleGameBlueMap();
