@@ -5,6 +5,8 @@
 #include "CentralScreen.h"
 #include "ModulePokedex.h"
 #include "OverworldPokemon.h"
+#include "TimerUI.h"
+#include "GameUI.h"
 
 void CapturePokemon::AddHit()
 {
@@ -62,6 +64,11 @@ void CapturePokemon::SetID(int id)
 
 void CapturePokemon::CallAction(int id)
 {
+	if (gameAt->GetTimerUI()->IsTimerFinished())
+	{
+		return;
+	}
+
 	switch (id)
 	{
 	case 0:
@@ -91,12 +98,27 @@ void CapturePokemon::StartProgram()
 	animationStarted = 0;
 	animating = false;
 	baseRect = { (float)((ID / 38)*2) * gameAt->screen->screenArea.width, (float)(ID % 38) * gameAt->screen->screenArea.height, gameAt->screen->screenArea.width, gameAt->screen->screenArea.height };
+	gameAt->GetTimerUI()->AddTimer(10 * 2);
 }
 
 void CapturePokemon::Logic()
 {
 	if (ID == -1)
 		return;
+
+	if (gameAt->GetTimerUI()->IsTimerFinished() )
+	{
+		if (failedTimer.ReadSec() > failedTime) {
+			gameAt->GetUI()->AddText("PLACEDHOLDER");
+			gameAt->GetTimerUI()->HideTimer();
+			gameAt->screen->RemoveProgram();
+		}
+		return;
+	}
+	else {
+		failedTimer.Start();
+	}
+
 	if (animating)
 		factor += GetFrameTime() / animationTime;
 	if (animationStarted == 0 && count >= 6 && !animating && !gameAt->IsBallInTopSection())

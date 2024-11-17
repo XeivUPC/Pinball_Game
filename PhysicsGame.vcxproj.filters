@@ -261,6 +261,12 @@
     <ClCompile Include="Source\SaveAgainBall.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Source\TimerUI.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleTimerUIText.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -525,6 +531,12 @@
     </ClInclude>
     <ClInclude Include="Source\SaveAgainBall.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\TimerUI.h">
+      <Filter>UIs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleTimerUIText.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

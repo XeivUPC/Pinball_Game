@@ -14,6 +14,7 @@ class PokeBall;
 class CentralScreen;
 class MapEnergyBattery;
 class GameUI;
+class TimerUI;
 class MapCave;
 class SaveAgainBall;
 class GetArrowGroup;
@@ -50,6 +51,7 @@ public:
 	Counter pointsCounter = Counter(100);
 	PokeBall* GetPokeball();
 	GameUI* GetUI();
+	TimerUI* GetTimerUI();
 	CatchedPokemon* catchedPokemon = nullptr;
 
 	void NextHabitat();
@@ -93,6 +95,7 @@ protected:
 	PokeBall* pokeBall=nullptr;
 	MapEnergyBattery* energyBattery=nullptr;
 	GameUI* UI = nullptr;
+	TimerUI* timerUI = nullptr;
 	MapCave* cave = nullptr;
 	SaveAgainBall* saveAgainBall = nullptr;
 	GetArrowGroup* getArrowGroup = nullptr;

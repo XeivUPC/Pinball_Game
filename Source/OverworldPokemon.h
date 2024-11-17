@@ -20,6 +20,9 @@ private:
 	Timer timer;
 	float timerTime = 0;
 
+	Timer failedTimer;
+	float failedTime = 2;
+
 	void AddHit();
 public:
 	OverworldPokemon(int id);

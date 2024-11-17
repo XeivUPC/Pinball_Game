@@ -14,6 +14,7 @@ class ModuleText;
 class ModuleHSNum;
 class ModuleHSName;
 class ModuleGameUIText;
+class ModuleTimerUIText;
 class ModuleGamePokedexJapanese;
 class ModuleGamePokedexWorldWide;
 
@@ -58,6 +59,7 @@ public:
 	ModuleHSNum* text_highScoreNum;
 	ModuleHSName* text_highScoreName;
 	ModuleGameUIText* text_gameUIText;
+	ModuleTimerUIText* text_timerUIText;
 	ModuleGamePokedexJapanese* text_pokedex_japanese;
 	ModuleGamePokedexWorldWide* text_pokedex_worldwide;
 

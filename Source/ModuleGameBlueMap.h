@@ -3,6 +3,7 @@
 #include "AnimationSystem.h"
 #include "ModuleGame.h"
 #include "GameUI.h"
+#include "TimerUI.h"
 #include "Flipper.h"
 #include "PokeballChangerGroup.h"
 #include "CaveSensorGroup.h"
