@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
+#include "ModuleAudio.h"
 #include "CentralScreen.h"
 #include "ModuleUserPreferences.h"
 #include "HabitatSelectedProgram.h"
@@ -9,6 +10,7 @@
 HabitatSelectionProgram::HabitatSelectionProgram(std::vector<int> habitatsToSelect) : ScreenProgram("HabitatSelection")
 {
 	this->habitatsToSelect = habitatsToSelect;
+	
 }
 
 HabitatSelectionProgram::~HabitatSelectionProgram()
@@ -42,15 +44,17 @@ void HabitatSelectionProgram::StartProgram()
 	animator->SetSpeed(0.1f);
 	animator->SelectAnimation("Select_Animation_BW", true);
 
+	audioHabitatSelectionId = gameAt->App->audio->LoadFx("Assets/SFX/Game_MapChanging.ogg");
 }
 
 void HabitatSelectionProgram::Logic()
 {
 	animator->Update();
-	
-	if (IsKeyPressed(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
-		CallAction(0);
+	if (/*previousSprite != animator->GetCurrentAnimationSprite()*/true)
+	{
+		gameAt->App->audio->PlayFx(audioHabitatSelectionId);
 	}
+	/*previousSprite = currentSprite;*/
 }
 
 void HabitatSelectionProgram::Render()

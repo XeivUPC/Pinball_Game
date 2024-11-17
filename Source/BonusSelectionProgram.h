@@ -30,6 +30,8 @@ private:
 
 	int audioBonusSwapId = -1;
 
+	int previousSprite = 0;
+
 public:
 	BonusSelectionProgram(int attemptVariant);
 	~BonusSelectionProgram();

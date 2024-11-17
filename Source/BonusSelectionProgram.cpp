@@ -186,7 +186,12 @@ void BonusSelectionProgram::StartProgram()
 void BonusSelectionProgram::Logic()
 {
 	animator->Update();
-	gameAt->App->audio->PlayFx(audioBonusSwapId);
+	if (/*previousSprite != animator->GetCurrentAnimationSprite()*/true)
+	{
+		gameAt->App->audio->PlayFx(audioBonusSwapId);
+	}
+	/*previousSprite = currentSprite;*/
+
 	if (selectedBonus == -1) {
 		speedReduction += speedReduction * GetFrameTime() / 2.f;
 		animator->SetSpeed(animator->GetSpeed() + speedReduction * GetFrameTime());
@@ -240,6 +245,7 @@ void BonusSelectionProgram::Logic()
 void BonusSelectionProgram::Render()
 {
 	animator->Animate((int)gameAt->screen->screenArea.x, (int)gameAt->screen->screenArea.y, false);
+	gameAt->App->audio->PlayFx(audioBonusSwapId);
 }
 
 void BonusSelectionProgram::EndProgram()
