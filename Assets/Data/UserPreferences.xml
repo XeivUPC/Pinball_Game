@@ -3,10 +3,10 @@
 	<language value="1" />
 	<vibration value="0" />
 	<keyBinds>
-		<left value="65" />
-		<right value="68" />
-		<up value="87" />
-		<down value="83" />
+		<left value="263" />
+		<right value="262" />
+		<up value="265" />
+		<down value="264" />
 		<select value="257" />
 		<return value="259" />
 	</keyBinds>

@@ -147,7 +147,7 @@ update_status ModuleGameRedMap::Update()
 				}
 			}
 			else {
-				if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+				if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::DOWN))) {
 					statesTimer.UnlockTimer();
 					statesTimer.Start();
 					App->audio->PlayFx(audioGameStartId);
