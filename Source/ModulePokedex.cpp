@@ -472,6 +472,11 @@ void ModulePokedex::DiscoverPokemon(int id)
     SavePokemon(pokemon_list.at(id).ID);
 }
 
+std::string ModulePokedex::GetPokemonName(int id, int language)
+{
+    return pokemon_list.at(id).Names[language];
+}
+
 void ModulePokedex::CapturePokemon(int id)
 {
 

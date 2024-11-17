@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config>
-	<language value="1" />
+	<language value="2" />
 	<vibration value="0" />
 	<keyBinds>
 		<left value="65" />

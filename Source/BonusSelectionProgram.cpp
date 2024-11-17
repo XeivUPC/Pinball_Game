@@ -33,6 +33,7 @@ bool BonusSelectionProgram::GiveBonus(int type, int subType)
 			gameAt->SetTimeSaveBall(90);
 			break;
 		case 6:
+			gameAt->SetExtraPika(true);
 			//// DoblePika
 			break;
 		case 7:
@@ -190,7 +191,6 @@ void BonusSelectionProgram::Logic()
 	int currentSprite = animator->GetCurrentAnimationSpriteIndex();
 	if (previousSprite != currentSprite)
 	{
-		printf("%d\n", previousSprite);
 		gameAt->App->audio->PlayFx(audioBonusSwapId);
 	}
 	previousSprite = currentSprite;
