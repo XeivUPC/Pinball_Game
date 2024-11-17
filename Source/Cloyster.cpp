@@ -3,6 +3,7 @@
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "ModuleUserPreferences.h"
+#include "ModuleAudio.h"
 #include "Box2DFactory.h"
 #include "Pokeball.h"
 #include "CentralScreen.h"
@@ -48,6 +49,9 @@ Cloyster::Cloyster(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : Map
 	map_cloyster_animator->SelectAnimation("MapCloysterIdle", true);
 
 	this->position = position;
+
+	audioBellsproutAbsorbId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BellsproutAbsorb.ogg");
+	audioBellsproutHawkTuahId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BellsproutHawkTuah.ogg");
 }
 
 Cloyster::~Cloyster()
@@ -63,6 +67,7 @@ update_status Cloyster::Update()
 		map_cloyster_animator->SelectAnimation("MapCloysterEat", false);
 		gameAt->pointsCounter.Add(100000);
 		mouthTimer.Start();
+		gameAt->App->audio->PlayFx(audioBellsproutAbsorbId);
 
 		if (gameAt->CanCapture() && gameAt->screen->CanProgramBeOverwritten()) {
 
@@ -83,6 +88,7 @@ update_status Cloyster::Update()
 		gameAt->GetPokeball()->SetVelocity({ 0,0 });
 		if (mouthTimer.ReadSec() > mouthTime) {
 			map_cloyster_animator->SelectAnimation("MapCloysterDrop", false);
+			gameAt->App->audio->PlayFx(audioBellsproutHawkTuahId);
 			if (map_cloyster_animator->HasAnimationFinished()) {
 				gameAt->GetPokeball()->SetVelocity({ -20,0 });
 				ballIn = false;
