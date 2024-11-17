@@ -71,6 +71,8 @@ update_status Bellsprout::Update()
 
 			gameAt->screen->SwitchProgram(new CapturePokemon);
 			gameAt->CloseCave();
+
+			gameAt->StartCapture();
 		}
 		
 	}

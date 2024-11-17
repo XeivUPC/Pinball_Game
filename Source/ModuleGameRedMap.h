@@ -2,19 +2,19 @@
 #include "AnimationSystem.h"
 #include "ModuleGame.h"
 #include "GameUI.h"
-#include "PokeBall.h"
 #include "Flipper.h"
 #include "DittoColliders.h"
 #include "DiglettBumper.h"
 #include "PokeballChangerGroup.h"
 #include "CaveSensorGroup.h"
 #include "LapSensorGroup.h"
-#include "GetArrowGroup.h"
-#include "EvoArrowGroup.h"
 #include "CenterRedArrowGroup.h"
 #include "BonusMultiplierSensorGroup.h"
 
 using namespace pugi;
+
+
+class StaryuBumper;
 
 class ModuleGameRedMap : public ModuleGame {
 private:
@@ -23,12 +23,12 @@ private:
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
 	CaveSensorGroup* caveSensorGroup = nullptr;
 	LapSensorGroup* lapSensorGroup = nullptr;
-	GetArrowGroup* getArrowGroup = nullptr;
-	EvoArrowGroup* evoArrowGroup = nullptr;
 	CenterRedArrowGroup* centerRedArrowGroup = nullptr;
 	BonusMultiplierSensorGroup* bonusMultiplierSensorGroup = nullptr;
+	StaryuBumper* staryuBumper = nullptr;
 
 	DittoColliders* dittoColliders=nullptr;
+	b2Body* staryuCollider = nullptr;
 
 	//Create
 	void LoadMap(std::string path) override;
@@ -44,5 +44,7 @@ public:
 	bool Start();
 	update_status Update();
 	bool CleanUp();
+
+	bool IsTopSideCovered();
 };
 

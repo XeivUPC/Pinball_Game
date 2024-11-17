@@ -11,8 +11,10 @@
 		<name value="Bisasam" />
 		<name value="Bulbasaur" />
 		<name value="Bulbasaur" />
+		<rarity value="3" />
 		<height value="0,7" />
 		<weight value="6,9" />
+		<rarity value="6,9" />
 		<discovered value="false" />
 		<captured value="false" />
 	</id>
@@ -27,6 +29,7 @@
 		<name value="Bisaknosp" />
 		<name value="Ivysaur" />
 		<name value="Ivysaur" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="13" />
 		<discovered value="false" />
@@ -43,6 +46,7 @@
 		<name value="Bisaflor" />
 		<name value="Venusaur" />
 		<name value="Venusaur" />
+		<rarity value="-1" />
 		<height value="2" />
 		<weight value="100" />
 		<discovered value="false" />
@@ -59,6 +63,7 @@
 		<name value="Glumanda" />
 		<name value="Charmander" />
 		<name value="Charmander" />
+		<rarity value="3" />
 		<height value="0,6" />
 		<weight value="8,5" />
 		<discovered value="false" />
@@ -75,6 +80,7 @@
 		<name value="Glutexo" />
 		<name value="Charmeleon" />
 		<name value="Charmeleon" />
+		<rarity value="-1" />
 		<height value="1,1" />
 		<weight value="19" />
 		<discovered value="false" />
@@ -91,6 +97,7 @@
 		<name value="Glurak" />
 		<name value="Charizard" />
 		<name value="Charizard" />
+		<rarity value="-1" />
 		<height value="1,7" />
 		<weight value="90,5" />
 		<discovered value="false" />
@@ -107,6 +114,7 @@
 		<name value="Schiggy" />
 		<name value="Squirtle" />
 		<name value="Squirtle" />
+		<rarity value="3" />
 		<height value="0,5" />
 		<weight value="9" />
 		<discovered value="false" />
@@ -123,6 +131,7 @@
 		<name value="Schillok" />
 		<name value="Wartortle" />
 		<name value="Wartortle" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="22,5" />
 		<discovered value="false" />
@@ -139,6 +148,7 @@
 		<name value="Turtok" />
 		<name value="Blastoise" />
 		<name value="Blastoise" />
+		<rarity value="-1" />
 		<height value="1,6" />
 		<weight value="85,5" />
 		<discovered value="false" />
@@ -155,10 +165,11 @@
 		<name value="Raupy" />
 		<name value="Caterpie" />
 		<name value="Caterpie" />
+		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="2,9" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="11">
 		<pre-evolution-index value="10" />
@@ -171,9 +182,10 @@
 		<name value="Safcon" />
 		<name value="Metapod" />
 		<name value="Metapod" />
+		<rarity value="-1" />
 		<height value="0,7" />
 		<weight value="9,9" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="12">
@@ -187,9 +199,10 @@
 		<name value="Smettbo" />
 		<name value="Butterfree" />
 		<name value="Butterfree" />
+		<rarity value="-1" />
 		<height value="1,1" />
 		<weight value="32" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="13">
@@ -203,6 +216,7 @@
 		<name value="Hornliu" />
 		<name value="Weedle" />
 		<name value="Weedle" />
+		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="3,2" />
 		<discovered value="false" />
@@ -219,6 +233,7 @@
 		<name value="Kokuna" />
 		<name value="Kakuna" />
 		<name value="Kakuna" />
+		<rarity value="-1" />
 		<height value="0,6" />
 		<weight value="10" />
 		<discovered value="false" />
@@ -235,6 +250,7 @@
 		<name value="Bibor" />
 		<name value="Beedrill" />
 		<name value="Beedrill" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="29,5" />
 		<discovered value="false" />
@@ -251,10 +267,11 @@
 		<name value="Taubsi" />
 		<name value="Pidgey" />
 		<name value="Pidgey" />
+		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="1,8" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="17">
 		<pre-evolution-index value="16" />
@@ -267,9 +284,10 @@
 		<name value="Tauboga" />
 		<name value="Pidgeotto" />
 		<name value="Pidgeotto" />
+		<rarity value="-1" />
 		<height value="1,1" />
 		<weight value="30" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="18">
@@ -283,9 +301,10 @@
 		<name value="Tauboss" />
 		<name value="Pidgeot" />
 		<name value="Pidgeot" />
+		<rarity value="-1" />
 		<height value="1,5" />
 		<weight value="39,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="19">
@@ -299,10 +318,11 @@
 		<name value="Rattfratz" />
 		<name value="Rattata" />
 		<name value="Rattata" />
+		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="3,5" />
-		<discovered value="true" />
-		<captured value="true" />
+		<discovered value="false" />
+		<captured value="false" />
 	</id>
 	<id value="20">
 		<pre-evolution-index value="19" />
@@ -315,9 +335,10 @@
 		<name value="Rattikarl" />
 		<name value="Raticate" />
 		<name value="Raticate" />
+		<rarity value="-1" />
 		<height value="0,7" />
 		<weight value="18,5" />
-		<discovered value="true" />
+		<discovered value="false" />
 		<captured value="false" />
 	</id>
 	<id value="21">
@@ -331,10 +352,11 @@
 		<name value="Habitak" />
 		<name value="Spearow" />
 		<name value="Spearow" />
+		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="2" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="22">
 		<pre-evolution-index value="21" />
@@ -347,9 +369,10 @@
 		<name value="Ibitak" />
 		<name value="Fearow" />
 		<name value="Fearow" />
+		<rarity value="-1" />
 		<height value="1,2" />
 		<weight value="38" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="23">
@@ -363,6 +386,7 @@
 		<name value="Rettan" />
 		<name value="Ekans" />
 		<name value="Ekans" />
+		<rarity value="2" />
 		<height value="2" />
 		<weight value="6,9" />
 		<discovered value="false" />
@@ -379,6 +403,7 @@
 		<name value="Arbok" />
 		<name value="Arbok" />
 		<name value="Arbok" />
+		<rarity value="-1" />
 		<height value="3,5" />
 		<weight value="65" />
 		<discovered value="false" />
@@ -395,6 +420,7 @@
 		<name value="Pikachu" />
 		<name value="Pikachu" />
 		<name value="Pikachu" />
+		<rarity value="3" />
 		<height value="0,4" />
 		<weight value="6" />
 		<discovered value="false" />
@@ -411,6 +437,7 @@
 		<name value="Raichu" />
 		<name value="Raichu" />
 		<name value="Raichu" />
+		<rarity value="-1" />
 		<height value="0,8" />
 		<weight value="30" />
 		<discovered value="false" />
@@ -427,6 +454,7 @@
 		<name value="Sandan" />
 		<name value="Sandshrew" />
 		<name value="Sandshrew" />
+		<rarity value="2" />
 		<height value="0,6" />
 		<weight value="12" />
 		<discovered value="false" />
@@ -443,6 +471,7 @@
 		<name value="Sandamer" />
 		<name value="Sandslash" />
 		<name value="Sandslash" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="29,5" />
 		<discovered value="false" />
@@ -459,6 +488,7 @@
 		<name value="Nidoran+" />
 		<name value="Nidoran+" />
 		<name value="Nidoran+" />
+		<rarity value="2" />
 		<height value="0,4" />
 		<weight value="7" />
 		<discovered value="false" />
@@ -475,6 +505,7 @@
 		<name value="Nidorina" />
 		<name value="Nidorina" />
 		<name value="Nidorina" />
+		<rarity value="-1" />
 		<height value="0,8" />
 		<weight value="20" />
 		<discovered value="false" />
@@ -491,6 +522,7 @@
 		<name value="Nidoqueen" />
 		<name value="Nidoqueen" />
 		<name value="Nidoqueen" />
+		<rarity value="-1" />
 		<height value="1,3" />
 		<weight value="60" />
 		<discovered value="false" />
@@ -507,6 +539,7 @@
 		<name value="Nidoran-" />
 		<name value="Nidoran-" />
 		<name value="Nidoran-" />
+		<rarity value="2" />
 		<height value="0,5" />
 		<weight value="9" />
 		<discovered value="false" />
@@ -523,6 +556,7 @@
 		<name value="Nidorino" />
 		<name value="Nidorino" />
 		<name value="Nidorino" />
+		<rarity value="-1" />
 		<height value="0,9" />
 		<weight value="19,5" />
 		<discovered value="false" />
@@ -539,6 +573,7 @@
 		<name value="Nidoking" />
 		<name value="Nidoking" />
 		<name value="Nidoking" />
+		<rarity value="-1" />
 		<height value="1,4" />
 		<weight value="62" />
 		<discovered value="false" />
@@ -555,6 +590,7 @@
 		<name value="Piepi" />
 		<name value="Clefairy" />
 		<name value="Clefairy" />
+		<rarity value="3" />
 		<height value="0,6" />
 		<weight value="7,5" />
 		<discovered value="false" />
@@ -571,6 +607,7 @@
 		<name value="Pixi" />
 		<name value="Clefable" />
 		<name value="Clefable" />
+		<rarity value="-1" />
 		<height value="1,3" />
 		<weight value="40" />
 		<discovered value="false" />
@@ -587,6 +624,7 @@
 		<name value="Vulpix" />
 		<name value="Vulpix" />
 		<name value="Vulpix" />
+		<rarity value="2" />
 		<height value="0,6" />
 		<weight value="9,9" />
 		<discovered value="false" />
@@ -603,6 +641,7 @@
 		<name value="Vulnona" />
 		<name value="Ninetales" />
 		<name value="Ninetales" />
+		<rarity value="-1" />
 		<height value="1,1" />
 		<weight value="19,9" />
 		<discovered value="false" />
@@ -619,6 +658,7 @@
 		<name value="Pummeluff" />
 		<name value="Jigglypuff" />
 		<name value="Jigglypuff" />
+		<rarity value="3" />
 		<height value="0,5" />
 		<weight value="5,5" />
 		<discovered value="false" />
@@ -635,6 +675,7 @@
 		<name value="Knuddeluff" />
 		<name value="Wigglytuff" />
 		<name value="Wigglytuff" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="12" />
 		<discovered value="false" />
@@ -651,6 +692,7 @@
 		<name value="Zubat" />
 		<name value="Zubat" />
 		<name value="Zubat" />
+		<rarity value="2" />
 		<height value="0,8" />
 		<weight value="7,5" />
 		<discovered value="false" />
@@ -667,6 +709,7 @@
 		<name value="Golbat" />
 		<name value="Golbat" />
 		<name value="Golbat" />
+		<rarity value="-1" />
 		<height value="1,6" />
 		<weight value="55" />
 		<discovered value="false" />
@@ -683,6 +726,7 @@
 		<name value="Myrapla" />
 		<name value="Oddish" />
 		<name value="Oddish" />
+		<rarity value="2" />
 		<height value="0,5" />
 		<weight value="5,4" />
 		<discovered value="false" />
@@ -699,6 +743,7 @@
 		<name value="Duflor" />
 		<name value="Gloom" />
 		<name value="Gloom" />
+		<rarity value="-1" />
 		<height value="0,8" />
 		<weight value="8,6" />
 		<discovered value="false" />
@@ -715,6 +760,7 @@
 		<name value="Giflor" />
 		<name value="Vileplume" />
 		<name value="Vileplume" />
+		<rarity value="-1" />
 		<height value="1,2" />
 		<weight value="18,6" />
 		<discovered value="false" />
@@ -731,6 +777,7 @@
 		<name value="Paras" />
 		<name value="Paras" />
 		<name value="Paras" />
+		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="5,4" />
 		<discovered value="false" />
@@ -747,6 +794,7 @@
 		<name value="Parasek" />
 		<name value="Parasect" />
 		<name value="Parasect" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="29,5" />
 		<discovered value="false" />
@@ -763,6 +811,7 @@
 		<name value="Bluzuk" />
 		<name value="Venonat" />
 		<name value="Venonat" />
+		<rarity value="3" />
 		<height value="1" />
 		<weight value="30" />
 		<discovered value="false" />
@@ -779,6 +828,7 @@
 		<name value="Omot" />
 		<name value="Venomoth" />
 		<name value="Venomoth" />
+		<rarity value="-1" />
 		<height value="1,5" />
 		<weight value="12,5" />
 		<discovered value="false" />
@@ -795,6 +845,7 @@
 		<name value="Digda" />
 		<name value="Diglett" />
 		<name value="Diglett" />
+		<rarity value="2" />
 		<height value="0,2" />
 		<weight value="0,8" />
 		<discovered value="false" />
@@ -811,6 +862,7 @@
 		<name value="Digdri" />
 		<name value="Dugtrio" />
 		<name value="Dugtrio" />
+		<rarity value="-1" />
 		<height value="0,7" />
 		<weight value="33,3" />
 		<discovered value="false" />
@@ -827,6 +879,7 @@
 		<name value="Mauzi" />
 		<name value="Meowth" />
 		<name value="Meowth" />
+		<rarity value="2" />
 		<height value="0,4" />
 		<weight value="4,2" />
 		<discovered value="false" />
@@ -843,6 +896,7 @@
 		<name value="Snobilikat" />
 		<name value="Persian" />
 		<name value="Persian" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="32" />
 		<discovered value="false" />
@@ -859,6 +913,7 @@
 		<name value="Enton" />
 		<name value="Psyduck" />
 		<name value="Psyduck" />
+		<rarity value="3" />
 		<height value="0,8" />
 		<weight value="19,6" />
 		<discovered value="false" />
@@ -875,6 +930,7 @@
 		<name value="Entoron" />
 		<name value="Golduck" />
 		<name value="Golduck" />
+		<rarity value="-1" />
 		<height value="1,7" />
 		<weight value="76,6" />
 		<discovered value="false" />
@@ -891,6 +947,7 @@
 		<name value="Menki" />
 		<name value="Mankey" />
 		<name value="Mankey" />
+		<rarity value="2" />
 		<height value="0,5" />
 		<weight value="28" />
 		<discovered value="false" />
@@ -907,6 +964,7 @@
 		<name value="Rasaff" />
 		<name value="Primeape" />
 		<name value="Primeape" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="32" />
 		<discovered value="false" />
@@ -923,6 +981,7 @@
 		<name value="Fukano" />
 		<name value="Growlithe" />
 		<name value="Growlithe" />
+		<rarity value="2" />
 		<height value="0,7" />
 		<weight value="19" />
 		<discovered value="false" />
@@ -939,6 +998,7 @@
 		<name value="Arkani" />
 		<name value="Arcanine" />
 		<name value="Arcanine" />
+		<rarity value="-1" />
 		<height value="1,9" />
 		<weight value="155" />
 		<discovered value="false" />
@@ -955,6 +1015,7 @@
 		<name value="Quapsel" />
 		<name value="Poliwag" />
 		<name value="Poliwag" />
+		<rarity value="3" />
 		<height value="0,6" />
 		<weight value="12,4" />
 		<discovered value="false" />
@@ -971,6 +1032,7 @@
 		<name value="Quaputzi" />
 		<name value="Poliwhirl" />
 		<name value="Poliwhirl" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="20" />
 		<discovered value="false" />
@@ -987,6 +1049,7 @@
 		<name value="Quappo" />
 		<name value="Poliwrath" />
 		<name value="Poliwrath" />
+		<rarity value="-1" />
 		<height value="1,3" />
 		<weight value="54" />
 		<discovered value="false" />
@@ -1003,6 +1066,7 @@
 		<name value="Abra" />
 		<name value="Abra" />
 		<name value="Abra" />
+		<rarity value="3" />
 		<height value="0,9" />
 		<weight value="19,5" />
 		<discovered value="false" />
@@ -1019,6 +1083,7 @@
 		<name value="Kadabra" />
 		<name value="Kadabra" />
 		<name value="Kadabra" />
+		<rarity value="-1" />
 		<height value="1,3" />
 		<weight value="56,5" />
 		<discovered value="false" />
@@ -1035,6 +1100,7 @@
 		<name value="Simsala" />
 		<name value="Alakazam" />
 		<name value="Alakazam" />
+		<rarity value="-1" />
 		<height value="1,5" />
 		<weight value="48" />
 		<discovered value="false" />
@@ -1051,6 +1117,7 @@
 		<name value="Machollo" />
 		<name value="Machop" />
 		<name value="Machop" />
+		<rarity value="2" />
 		<height value="0,8" />
 		<weight value="19,5" />
 		<discovered value="false" />
@@ -1067,6 +1134,7 @@
 		<name value="Maschock" />
 		<name value="Machoke" />
 		<name value="Machoke" />
+		<rarity value="-1" />
 		<height value="1,5" />
 		<weight value="70,5" />
 		<discovered value="false" />
@@ -1083,6 +1151,7 @@
 		<name value="Machomei" />
 		<name value="Machamp" />
 		<name value="Machamp" />
+		<rarity value="-1" />
 		<height value="1,6" />
 		<weight value="130" />
 		<discovered value="false" />
@@ -1099,10 +1168,11 @@
 		<name value="Knofensa" />
 		<name value="Bellsprout" />
 		<name value="Bellsprout" />
+		<rarity value="2" />
 		<height value="0,7" />
 		<weight value="4" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="70">
 		<pre-evolution-index value="69" />
@@ -1115,9 +1185,10 @@
 		<name value="Ultrigaria" />
 		<name value="Weepinbell" />
 		<name value="Weepinbell" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="6,4" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="71">
@@ -1131,9 +1202,10 @@
 		<name value="Sarzenia" />
 		<name value="Victreebel" />
 		<name value="Victreebel" />
+		<rarity value="-1" />
 		<height value="1,7" />
 		<weight value="15,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="72">
@@ -1147,6 +1219,7 @@
 		<name value="Tentacha" />
 		<name value="Tentacool" />
 		<name value="Tentacool" />
+		<rarity value="3" />
 		<height value="0,9" />
 		<weight value="45,5" />
 		<discovered value="false" />
@@ -1163,6 +1236,7 @@
 		<name value="Tentoxa" />
 		<name value="Tentacruel" />
 		<name value="Tentacruel" />
+		<rarity value="-1" />
 		<height value="1,6" />
 		<weight value="55" />
 		<discovered value="false" />
@@ -1179,6 +1253,7 @@
 		<name value="Kleinstein" />
 		<name value="Geodude" />
 		<name value="Geodude" />
+		<rarity value="3" />
 		<height value="0,4" />
 		<weight value="20" />
 		<discovered value="false" />
@@ -1195,6 +1270,7 @@
 		<name value="Georok" />
 		<name value="Graveler" />
 		<name value="Graveler" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="105" />
 		<discovered value="false" />
@@ -1211,6 +1287,7 @@
 		<name value="Geowaz" />
 		<name value="Golem" />
 		<name value="Golem" />
+		<rarity value="-1" />
 		<height value="1,4" />
 		<weight value="300" />
 		<discovered value="false" />
@@ -1227,6 +1304,7 @@
 		<name value="Ponita" />
 		<name value="Ponyta" />
 		<name value="Ponyta" />
+		<rarity value="2" />
 		<height value="1" />
 		<weight value="30" />
 		<discovered value="false" />
@@ -1243,6 +1321,7 @@
 		<name value="Gallopa" />
 		<name value="Rapidash" />
 		<name value="Rapidash" />
+		<rarity value="-1" />
 		<height value="1,7" />
 		<weight value="95" />
 		<discovered value="false" />
@@ -1259,6 +1338,7 @@
 		<name value="Flegmon" />
 		<name value="Slowpoke" />
 		<name value="Slowpoke" />
+		<rarity value="3" />
 		<height value="1,2" />
 		<weight value="36" />
 		<discovered value="false" />
@@ -1275,6 +1355,7 @@
 		<name value="Lahmus" />
 		<name value="Slowbro" />
 		<name value="Slowbro" />
+		<rarity value="-1" />
 		<height value="1,6" />
 		<weight value="78,5" />
 		<discovered value="false" />
@@ -1291,10 +1372,11 @@
 		<name value="Magnetilo" />
 		<name value="Magnemite" />
 		<name value="Magnemite" />
+		<rarity value="3" />
 		<height value="0,3" />
 		<weight value="6" />
-		<discovered value="false" />
-		<captured value="false" />
+		<discovered value="true" />
+		<captured value="true" />
 	</id>
 	<id value="82">
 		<pre-evolution-index value="81" />
@@ -1307,9 +1389,10 @@
 		<name value="Magneton" />
 		<name value="Magneton" />
 		<name value="Magneton" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="60" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="83">
@@ -1323,6 +1406,7 @@
 		<name value="Porenta" />
 		<name value="Farfetch'd" />
 		<name value="Farfetch'd" />
+		<rarity value="3" />
 		<height value="0,8" />
 		<weight value="15" />
 		<discovered value="false" />
@@ -1339,6 +1423,7 @@
 		<name value="Dodu" />
 		<name value="Doduo" />
 		<name value="Doduo" />
+		<rarity value="2" />
 		<height value="1,4" />
 		<weight value="39,2" />
 		<discovered value="false" />
@@ -1355,6 +1440,7 @@
 		<name value="Dodri" />
 		<name value="Dodrio" />
 		<name value="Dodrio" />
+		<rarity value="-1" />
 		<height value="1,8" />
 		<weight value="85,2" />
 		<discovered value="false" />
@@ -1371,6 +1457,7 @@
 		<name value="Jurob" />
 		<name value="Seel" />
 		<name value="Seel" />
+		<rarity value="3" />
 		<height value="1,1" />
 		<weight value="90" />
 		<discovered value="false" />
@@ -1387,6 +1474,7 @@
 		<name value="Jugong" />
 		<name value="Dewgong" />
 		<name value="Dewgong" />
+		<rarity value="-1" />
 		<height value="1,7" />
 		<weight value="120" />
 		<discovered value="false" />
@@ -1403,6 +1491,7 @@
 		<name value="Sleima" />
 		<name value="Grimer" />
 		<name value="Grimer" />
+		<rarity value="3" />
 		<height value="0,9" />
 		<weight value="30" />
 		<discovered value="false" />
@@ -1419,6 +1508,7 @@
 		<name value="Sleimok" />
 		<name value="Muk" />
 		<name value="Muk" />
+		<rarity value="-1" />
 		<height value="1,2" />
 		<weight value="30" />
 		<discovered value="false" />
@@ -1435,6 +1525,7 @@
 		<name value="Muschas" />
 		<name value="Shellder" />
 		<name value="Shellder" />
+		<rarity value="2" />
 		<height value="0,3" />
 		<weight value="4" />
 		<discovered value="false" />
@@ -1451,6 +1542,7 @@
 		<name value="Austos" />
 		<name value="Cloyster" />
 		<name value="Cloyster" />
+		<rarity value="-1" />
 		<height value="1,5" />
 		<weight value="132,5" />
 		<discovered value="false" />
@@ -1467,6 +1559,7 @@
 		<name value="Nebulak" />
 		<name value="Gastly" />
 		<name value="Gastly" />
+		<rarity value="2" />
 		<height value="1,3" />
 		<weight value="0,1" />
 		<discovered value="false" />
@@ -1483,6 +1576,7 @@
 		<name value="Alpollo" />
 		<name value="Haunter" />
 		<name value="Haunter" />
+		<rarity value="-1" />
 		<height value="1,6" />
 		<weight value="0,1" />
 		<discovered value="false" />
@@ -1499,6 +1593,7 @@
 		<name value="Gengar" />
 		<name value="Gengar" />
 		<name value="Gengar" />
+		<rarity value="-1" />
 		<height value="1,5" />
 		<weight value="40,5" />
 		<discovered value="false" />
@@ -1515,6 +1610,7 @@
 		<name value="Onix" />
 		<name value="Onix" />
 		<name value="Onix" />
+		<rarity value="3" />
 		<height value="8,8" />
 		<weight value="210" />
 		<discovered value="false" />
@@ -1531,6 +1627,7 @@
 		<name value="Traumato" />
 		<name value="Drowzee" />
 		<name value="Drowzee" />
+		<rarity value="3" />
 		<height value="1" />
 		<weight value="32,4" />
 		<discovered value="false" />
@@ -1547,6 +1644,7 @@
 		<name value="Hypno" />
 		<name value="Hypno" />
 		<name value="Hypno" />
+		<rarity value="-1" />
 		<height value="1,6" />
 		<weight value="75,6" />
 		<discovered value="false" />
@@ -1563,6 +1661,7 @@
 		<name value="Krabby" />
 		<name value="Krabby" />
 		<name value="Krabby" />
+		<rarity value="2" />
 		<height value="0,4" />
 		<weight value="6,5" />
 		<discovered value="false" />
@@ -1579,6 +1678,7 @@
 		<name value="Kingler" />
 		<name value="Kingler" />
 		<name value="Kingler" />
+		<rarity value="-1" />
 		<height value="1,3" />
 		<weight value="60" />
 		<discovered value="false" />
@@ -1595,6 +1695,7 @@
 		<name value="Voltobal" />
 		<name value="Voltorb" />
 		<name value="Voltorb" />
+		<rarity value="2" />
 		<height value="0,5" />
 		<weight value="10,4" />
 		<discovered value="false" />
@@ -1611,6 +1712,7 @@
 		<name value="Lektrobal" />
 		<name value="Electrode" />
 		<name value="Electrode" />
+		<rarity value="-1" />
 		<height value="1,2" />
 		<weight value="66,6" />
 		<discovered value="false" />
@@ -1627,6 +1729,7 @@
 		<name value="Owei" />
 		<name value="Exeggcute" />
 		<name value="Exeggcute" />
+		<rarity value="3" />
 		<height value="0,4" />
 		<weight value="2,5" />
 		<discovered value="false" />
@@ -1643,6 +1746,7 @@
 		<name value="Kokowei" />
 		<name value="Exeggutor" />
 		<name value="Exeggutor" />
+		<rarity value="-1" />
 		<height value="2" />
 		<weight value="120" />
 		<discovered value="false" />
@@ -1659,6 +1763,7 @@
 		<name value="Tragosso" />
 		<name value="Cubone" />
 		<name value="Cubone" />
+		<rarity value="3" />
 		<height value="0,4" />
 		<weight value="6,5" />
 		<discovered value="false" />
@@ -1675,6 +1780,7 @@
 		<name value="Knogga" />
 		<name value="Marowak" />
 		<name value="Marowak" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="45" />
 		<discovered value="false" />
@@ -1691,6 +1797,7 @@
 		<name value="Kicklee" />
 		<name value="Hitmonlee" />
 		<name value="Hitmonlee" />
+		<rarity value="3" />
 		<height value="1,5" />
 		<weight value="49,8" />
 		<discovered value="false" />
@@ -1707,6 +1814,7 @@
 		<name value="Nockchan" />
 		<name value="Hitmonchan" />
 		<name value="Hitmonchan" />
+		<rarity value="3" />
 		<height value="1,4" />
 		<weight value="50,2" />
 		<discovered value="false" />
@@ -1723,6 +1831,7 @@
 		<name value="Schlurp" />
 		<name value="Lickitung" />
 		<name value="Lickitung" />
+		<rarity value="3" />
 		<height value="1,2" />
 		<weight value="65,5" />
 		<discovered value="false" />
@@ -1739,6 +1848,7 @@
 		<name value="Smogon" />
 		<name value="Koffing" />
 		<name value="Koffing" />
+		<rarity value="3" />
 		<height value="0,6" />
 		<weight value="1" />
 		<discovered value="false" />
@@ -1755,6 +1865,7 @@
 		<name value="Smogmog" />
 		<name value="Weezing" />
 		<name value="Weezing" />
+		<rarity value="-1" />
 		<height value="1,2" />
 		<weight value="9,5" />
 		<discovered value="false" />
@@ -1771,6 +1882,7 @@
 		<name value="Rihorn" />
 		<name value="Rhyhorn" />
 		<name value="Rhyhorn" />
+		<rarity value="2" />
 		<height value="1" />
 		<weight value="115" />
 		<discovered value="false" />
@@ -1787,6 +1899,7 @@
 		<name value="Rizeros" />
 		<name value="Rhydon" />
 		<name value="Rhydon" />
+		<rarity value="-1" />
 		<height value="1,9" />
 		<weight value="120" />
 		<discovered value="false" />
@@ -1803,6 +1916,7 @@
 		<name value="Chaneira" />
 		<name value="Chansey" />
 		<name value="Chansey" />
+		<rarity value="3" />
 		<height value="1,1" />
 		<weight value="34,6" />
 		<discovered value="false" />
@@ -1819,6 +1933,7 @@
 		<name value="Tangela" />
 		<name value="Tangela" />
 		<name value="Tangela" />
+		<rarity value="3" />
 		<height value="1" />
 		<weight value="35" />
 		<discovered value="false" />
@@ -1835,6 +1950,7 @@
 		<name value="Kangama" />
 		<name value="Kangaskhan" />
 		<name value="Kangaskhan" />
+		<rarity value="3" />
 		<height value="2,2" />
 		<weight value="80" />
 		<discovered value="false" />
@@ -1851,6 +1967,7 @@
 		<name value="Seeper" />
 		<name value="Horsea" />
 		<name value="Horsea" />
+		<rarity value="3" />
 		<height value="0,4" />
 		<weight value="8" />
 		<discovered value="false" />
@@ -1867,6 +1984,7 @@
 		<name value="Seemon" />
 		<name value="Seadra" />
 		<name value="Seadra" />
+		<rarity value="-1" />
 		<height value="1,2" />
 		<weight value="25" />
 		<discovered value="false" />
@@ -1883,6 +2001,7 @@
 		<name value="Goldini" />
 		<name value="Goldeen" />
 		<name value="Goldeen" />
+		<rarity value="2" />
 		<height value="0,6" />
 		<weight value="15" />
 		<discovered value="false" />
@@ -1899,6 +2018,7 @@
 		<name value="Golking" />
 		<name value="Seaking" />
 		<name value="Seaking" />
+		<rarity value="-1" />
 		<height value="1,3" />
 		<weight value="39" />
 		<discovered value="false" />
@@ -1915,6 +2035,7 @@
 		<name value="Sterndu" />
 		<name value="Staryu" />
 		<name value="Staryu" />
+		<rarity value="3" />
 		<height value="0,8" />
 		<weight value="34,5" />
 		<discovered value="false" />
@@ -1931,6 +2052,7 @@
 		<name value="Starmie" />
 		<name value="Starmie" />
 		<name value="Starmie" />
+		<rarity value="-1" />
 		<height value="1,1" />
 		<weight value="80" />
 		<discovered value="false" />
@@ -1947,6 +2069,7 @@
 		<name value="Pantimos" />
 		<name value="Mr. Mime" />
 		<name value="Mr. Mime" />
+		<rarity value="3" />
 		<height value="1,3" />
 		<weight value="54,5" />
 		<discovered value="false" />
@@ -1963,6 +2086,7 @@
 		<name value="Sichlor" />
 		<name value="Scyther" />
 		<name value="Scyther" />
+		<rarity value="3" />
 		<height value="1,5" />
 		<weight value="56" />
 		<discovered value="false" />
@@ -1979,6 +2103,7 @@
 		<name value="Rossana" />
 		<name value="Jynx" />
 		<name value="Jynx" />
+		<rarity value="3" />
 		<height value="1,4" />
 		<weight value="40,6" />
 		<discovered value="false" />
@@ -1995,6 +2120,7 @@
 		<name value="Elektek" />
 		<name value="Electabuzz" />
 		<name value="Electabuzz" />
+		<rarity value="3" />
 		<height value="1,1" />
 		<weight value="30" />
 		<discovered value="false" />
@@ -2004,13 +2130,14 @@
 		<pre-evolution-index value="-1" />
 		<overworld-index value="62" />
 		<blue-habitat-index value="16" />
-		<red-habitat-index value="16" />
+		<red-habitat-index value="-1" />
 		<name value="150,159,148,159" />
 		<name value="Magmar" />
 		<name value="Magmar" />
 		<name value="Magmar" />
 		<name value="Magmar" />
 		<name value="Magmar" />
+		<rarity value="3" />
 		<height value="1,3" />
 		<weight value="44,5" />
 		<discovered value="false" />
@@ -2027,6 +2154,7 @@
 		<name value="Pinsir" />
 		<name value="Pinsir" />
 		<name value="Pinsir" />
+		<rarity value="3" />
 		<height value="1,5" />
 		<weight value="55" />
 		<discovered value="false" />
@@ -2043,6 +2171,7 @@
 		<name value="Tauros" />
 		<name value="Tauros" />
 		<name value="Tauros" />
+		<rarity value="3" />
 		<height value="1,4" />
 		<weight value="88,4" />
 		<discovered value="false" />
@@ -2059,6 +2188,7 @@
 		<name value="Karpador" />
 		<name value="Magikarp" />
 		<name value="Magikarp" />
+		<rarity value="3" />
 		<height value="0,9" />
 		<weight value="10" />
 		<discovered value="false" />
@@ -2075,6 +2205,7 @@
 		<name value="Garados" />
 		<name value="Gyarados" />
 		<name value="Gyarados" />
+		<rarity value="-1" />
 		<height value="6,5" />
 		<weight value="235" />
 		<discovered value="false" />
@@ -2091,6 +2222,7 @@
 		<name value="Lapras" />
 		<name value="Lapras" />
 		<name value="Lapras" />
+		<rarity value="3" />
 		<height value="2,5" />
 		<weight value="220" />
 		<discovered value="false" />
@@ -2107,6 +2239,7 @@
 		<name value="Ditto" />
 		<name value="Ditto" />
 		<name value="Ditto" />
+		<rarity value="3" />
 		<height value="0,3" />
 		<weight value="4" />
 		<discovered value="false" />
@@ -2123,6 +2256,7 @@
 		<name value="Evoli" />
 		<name value="Eevee" />
 		<name value="Eevee" />
+		<rarity value="3" />
 		<height value="0,3" />
 		<weight value="6,5" />
 		<discovered value="false" />
@@ -2139,6 +2273,7 @@
 		<name value="Aquana" />
 		<name value="Vaporeon" />
 		<name value="Vaporeon" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="29" />
 		<discovered value="false" />
@@ -2155,6 +2290,7 @@
 		<name value="Blitza" />
 		<name value="Jolteon" />
 		<name value="Jolteon" />
+		<rarity value="-1" />
 		<height value="0,8" />
 		<weight value="24,5" />
 		<discovered value="false" />
@@ -2171,6 +2307,7 @@
 		<name value="Flamara" />
 		<name value="Flareon" />
 		<name value="Flareon" />
+		<rarity value="-1" />
 		<height value="0,9" />
 		<weight value="25" />
 		<discovered value="false" />
@@ -2187,6 +2324,7 @@
 		<name value="Porygon" />
 		<name value="Porygon" />
 		<name value="Porygon" />
+		<rarity value="3" />
 		<height value="0,8" />
 		<weight value="36,5" />
 		<discovered value="false" />
@@ -2203,6 +2341,7 @@
 		<name value="Amonitas" />
 		<name value="Omanyte" />
 		<name value="Omanyte" />
+		<rarity value="3" />
 		<height value="0,4" />
 		<weight value="7,5" />
 		<discovered value="false" />
@@ -2219,6 +2358,7 @@
 		<name value="Amoroso" />
 		<name value="Omastar" />
 		<name value="Omastar" />
+		<rarity value="-1" />
 		<height value="1" />
 		<weight value="35" />
 		<discovered value="false" />
@@ -2235,6 +2375,7 @@
 		<name value="Kabuto" />
 		<name value="Kabuto" />
 		<name value="Kabuto" />
+		<rarity value="3" />
 		<height value="0,5" />
 		<weight value="11,5" />
 		<discovered value="false" />
@@ -2251,6 +2392,7 @@
 		<name value="Kabutops" />
 		<name value="Kabutops" />
 		<name value="Kabutops" />
+		<rarity value="-1" />
 		<height value="1,3" />
 		<weight value="40,5" />
 		<discovered value="false" />
@@ -2267,6 +2409,7 @@
 		<name value="Aerodactyl" />
 		<name value="Aerodactyl" />
 		<name value="Aerodactyl" />
+		<rarity value="3" />
 		<height value="1,8" />
 		<weight value="59" />
 		<discovered value="false" />
@@ -2283,6 +2426,7 @@
 		<name value="Relaxo" />
 		<name value="Snorlax" />
 		<name value="Snorlax" />
+		<rarity value="3" />
 		<height value="2,1" />
 		<weight value="460" />
 		<discovered value="false" />
@@ -2299,6 +2443,7 @@
 		<name value="Arktos" />
 		<name value="Articuno" />
 		<name value="Articuno" />
+		<rarity value="3" />
 		<height value="1,7" />
 		<weight value="55,4" />
 		<discovered value="false" />
@@ -2315,6 +2460,7 @@
 		<name value="Zapdos" />
 		<name value="Zapdos" />
 		<name value="Zapdos" />
+		<rarity value="3" />
 		<height value="1,6" />
 		<weight value="52,6" />
 		<discovered value="false" />
@@ -2331,6 +2477,7 @@
 		<name value="Lavados" />
 		<name value="Moltres" />
 		<name value="Moltres" />
+		<rarity value="3" />
 		<height value="2" />
 		<weight value="60" />
 		<discovered value="false" />
@@ -2347,6 +2494,7 @@
 		<name value="Dratini" />
 		<name value="Dratini" />
 		<name value="Dratini" />
+		<rarity value="3" />
 		<height value="1,8" />
 		<weight value="3,3" />
 		<discovered value="false" />
@@ -2363,6 +2511,7 @@
 		<name value="Dragonir" />
 		<name value="Dragonair" />
 		<name value="Dragonair" />
+		<rarity value="-1" />
 		<height value="4" />
 		<weight value="16,5" />
 		<discovered value="false" />
@@ -2379,6 +2528,7 @@
 		<name value="Dragoran" />
 		<name value="Dragonite" />
 		<name value="Dragonite" />
+		<rarity value="-1" />
 		<height value="2,2" />
 		<weight value="210" />
 		<discovered value="false" />
@@ -2395,6 +2545,7 @@
 		<name value="Mewtu" />
 		<name value="Mewtwo" />
 		<name value="Mewtwo" />
+		<rarity value="3" />
 		<height value="2" />
 		<weight value="122" />
 		<discovered value="false" />
@@ -2411,6 +2562,7 @@
 		<name value="Mew" />
 		<name value="Mew" />
 		<name value="Mew" />
+		<rarity value="3" />
 		<height value="0,4" />
 		<weight value="4" />
 		<discovered value="false" />

@@ -12,6 +12,8 @@ public:
 	update_status Update();
 	bool CleanUp() override;
 
+	bool IsActive();
+
 protected:
 	void OnHit()override;
 	b2Body* body = nullptr;
@@ -25,4 +27,7 @@ private:
 
 	Timer recover_timer;
 	float recover_time = 0.25f;
+
+
+	bool isActive = true;
 };

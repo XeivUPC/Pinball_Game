@@ -16,6 +16,8 @@ class MapEnergyBattery;
 class GameUI;
 class MapCave;
 class SaveAgainBall;
+class GetArrowGroup;
+class EvoArrowGroup;
 
 class ModuleGame : public ModuleScene
 {
@@ -28,7 +30,9 @@ public:
 
 		BlockGame,
 
-		RestartGame
+		RestartGame,
+
+		EndGame
 	};
 
 
@@ -58,6 +62,9 @@ public:
 
 	bool CanEvolve();
 	bool CanCapture();
+	void StartCapture();
+	void StartEvolve();
+	int GetCaptureRarityLevel();
 
 	void SetSaveBall(bool status);
 	void SetExtraBall(bool status);
@@ -88,6 +95,8 @@ protected:
 	GameUI* UI = nullptr;
 	MapCave* cave = nullptr;
 	SaveAgainBall* saveAgainBall = nullptr;
+	GetArrowGroup* getArrowGroup = nullptr;
+	EvoArrowGroup* evoArrowGroup = nullptr;
 
 	void FromStringToVertices(std::string stringData, std::vector<b2Vec2>& vector);
 	void RepositionCamera(b2Vec2 positionToTrack);

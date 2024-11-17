@@ -25,8 +25,12 @@ public:
 	bool HasFinishedTwinkling() const;
 	void FinishTwinkle();
 
+	void SetIfEnable(bool status);
+
 protected:
 	virtual void OnTrigger() = 0;
+	int pointsOnTrigger = 1000;
+
 	int timesActivated = 0;
 	bool active = false;
 
@@ -42,6 +46,8 @@ protected:
 	float angle;
 
 	CollisionSensor sensor;
+
+	bool enabled = true;
 };
 
 //// OnTrigger

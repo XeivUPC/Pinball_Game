@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
+#include "ModuleGameRedMap.h"
 #include "ModuleUserPreferences.h"
 
 Staryu::Staryu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
@@ -13,13 +14,18 @@ Staryu::Staryu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 
 	map_staryu_animator = new Animator(gameAt->App);
 
-	AnimationData mapStaryuAnim = AnimationData("MapStaryuAnim");
-	mapStaryuAnim.AddSprite(Sprite{ map_staryu,{0, 0}, {24,24} });
-	mapStaryuAnim.AddSprite(Sprite{ map_staryu,{1, 0}, {24,24} });
+	AnimationData mapStaryuActiveAnim = AnimationData("MapStaryuActiveAnim");
+	mapStaryuActiveAnim.AddSprite(Sprite{ map_staryu,{0, 0}, {24,24} });
+	mapStaryuActiveAnim.AddSprite(Sprite{ map_staryu,{1, 0}, {24,24} });
 
-	map_staryu_animator->AddAnimation(mapStaryuAnim);
+	AnimationData mapStaryuInactiveAnim = AnimationData("MapStaryuInactiveAnim");
+	mapStaryuInactiveAnim.AddSprite(Sprite{ map_staryu,{0, 1}, {24,24} });
+	mapStaryuInactiveAnim.AddSprite(Sprite{ map_staryu,{1, 1}, {24,24} });
+
+	map_staryu_animator->AddAnimation(mapStaryuActiveAnim);
+	map_staryu_animator->AddAnimation(mapStaryuInactiveAnim);
 	map_staryu_animator->SetSpeed(0.3f);
-	map_staryu_animator->SelectAnimation("MapStaryuAnim", true);
+	map_staryu_animator->SelectAnimation("MapStaryuActiveAnim", true);
 }
 
 Staryu::~Staryu()
@@ -29,6 +35,15 @@ Staryu::~Staryu()
 
 update_status Staryu::Update()
 {
+	ModuleGameRedMap* redMap = static_cast<ModuleGameRedMap*>(gameAt);
+	if (redMap != nullptr) {
+		if (redMap->IsTopSideCovered()) {
+			map_staryu_animator->SelectAnimation("MapStaryuActiveAnim", true);
+		}
+		else {
+			map_staryu_animator->SelectAnimation("MapStaryuInactiveAnim", true);
+		}
+	}
 	map_staryu_animator->Animate(43, 105, false);
 
 	map_staryu_animator->Update();

@@ -80,12 +80,12 @@ bool LapSensorGroup::HaveToActivateArrowEvo()
 void LapSensorGroup::OnAllActive()
 {
 	if (direction == -1) {
-		gameAt->pointsCounter.Add(25000);
+		gameAt->pointsCounter.Add(4000);
 		activateNextGetArrow = true;
 		DesactivateAll();
 	}
 	else if (direction == 1) {
-		gameAt->pointsCounter.Add(25000);
+		gameAt->pointsCounter.Add(4000);
 		activateNextEvoArrow = true;
 		DesactivateAll();
 	}

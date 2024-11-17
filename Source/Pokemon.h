@@ -31,11 +31,12 @@ public:
 	std::string weight, height;
 	int preevolutionIndex;
 	int overworldIndex;
+	int rarity;
 	std::vector<std::string> Names;
 	std::vector<int> redMapLocations;
 	std::vector<int> blueMapLocations;
-	Pokemon(int ID, bool discovered, bool captured, std::string weight, std::string height, int preevolutionIndex, int overworldIndex, const std::vector<std::string>& Names, const std::vector<int>& RedMapLocations, const std::vector<int>& BlueMapLocations)
-		: ID(ID), discovered(discovered), captured(captured), weight(weight), height(height), preevolutionIndex(preevolutionIndex), overworldIndex(overworldIndex), Names(Names), redMapLocations(RedMapLocations), blueMapLocations(BlueMapLocations)
+	Pokemon(int ID, bool discovered, bool captured, std::string weight, std::string height, int preevolutionIndex, int overworldIndex, int rarity, const std::vector<std::string>& Names, const std::vector<int>& RedMapLocations, const std::vector<int>& BlueMapLocations)
+		: ID(ID), discovered(discovered), captured(captured), weight(weight), height(height), preevolutionIndex(preevolutionIndex), overworldIndex(overworldIndex), rarity(rarity), Names(Names), redMapLocations(RedMapLocations), blueMapLocations(BlueMapLocations)
 	{
 	}
 };

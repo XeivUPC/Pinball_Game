@@ -9,6 +9,7 @@
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
 #include "TriangularBumper.h"
+#include "PokeBall.h"
 #include "PoliwagBumper.h"
 #include "PsyduckBumper.h"
 #include "MapEnergyRotator.h"
@@ -23,6 +24,8 @@
 #include "MapCave.h"
 #include "SaveAgainBall.h"
 #include "ModuleHighScore.h"
+#include "GetArrowGroup.h"
+#include "EvoArrowGroup.h"
 
 ModuleGameBlueMap::ModuleGameBlueMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
@@ -133,9 +136,6 @@ update_status ModuleGameBlueMap::Update()
 		break;
 	case ModuleGame::PlayGame:
 
-		leftFlipper->Update();
-		rightFlipper->Update();
-
 		if (IsKeyPressed(KEY_R)) {
 			SetState(RestartGame);
 		}
@@ -154,6 +154,7 @@ update_status ModuleGameBlueMap::Update()
 		}
 		else
 		{
+			centerBlueArrowGroup->DeactivateLeftTop();
 			canCapture = false;
 		}
 
@@ -162,6 +163,7 @@ update_status ModuleGameBlueMap::Update()
 			canEvolve = true;
 		}
 		else {
+			centerBlueArrowGroup->DeactivateRightTop();
 			canEvolve = false;
 		}
 		// the top arrow in the center is activated when there is a black hole for events
@@ -173,12 +175,20 @@ update_status ModuleGameBlueMap::Update()
 		break;
 	case ModuleGame::RestartGame:
 
-		////
-
 		pokeBall->Reset(saveBall);
 
-		////
-		SetState(StartGame);
+		if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
+			//// END
+			SetState(EndGame);
+		}
+		else {
+			if (pokeBall->GetLivesPokeball() == 0)
+				SetExtraBall(false);
+			SetState(StartGame);
+		}
+
+		break;
+	case ModuleGame::EndGame:
 		break;
 	default:
 		break;
@@ -466,6 +476,8 @@ void ModuleGameBlueMap::SetState(GameStates stateToChange)
 	switch (state)
 	{
 	case ModuleGame::StartGame:
+		if (!saveBall)
+			SetTimeSaveBall(24.f);
 		entryCollider->GetFixtureList()[0].SetSensor(true);
 		statesTimer.LockTimer();
 		statesTime = 1.1f;
@@ -476,6 +488,8 @@ void ModuleGameBlueMap::SetState(GameStates stateToChange)
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		break;
+	case ModuleGame::EndGame:
 		break;
 	default:
 		break;

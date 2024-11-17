@@ -16,7 +16,7 @@ bool BonusSelectionProgram::GiveBonus(int type, int subType)
 			gameAt->pointsCounter.Add(100 * subType);
 			break;
 		case 1:
-			gameAt->pointsCounter.Add(1000 * subType);
+			gameAt->pointsCounter.Add(1000000 * subType);
 			break;
 		case 2:
 			

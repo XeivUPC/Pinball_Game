@@ -90,8 +90,7 @@ void CaveSensorGroup::Sort()
 
 void CaveSensorGroup::OnAllActive()
 {
-	gameAt->pointsCounter.Take(1000);
-	gameAt->pointsCounter.Add(5000);
+	gameAt->pointsCounter.Add(4000);
 
 	if(gameAt->screen->CanProgramBeOverwritten()) {
 		gameAt->screen->SwitchProgram(new BonusStartProgram());

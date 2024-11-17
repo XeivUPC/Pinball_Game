@@ -3,13 +3,10 @@
 #include "AnimationSystem.h"
 #include "ModuleGame.h"
 #include "GameUI.h"
-#include "PokeBall.h"
 #include "Flipper.h"
 #include "PokeballChangerGroup.h"
 #include "CaveSensorGroup.h"
 #include "LapSensorGroup.h"
-#include "GetArrowGroup.h"
-#include "EvoArrowGroup.h"
 #include "CenterBlueArrowGroup.h"
 #include "BonusMultiplierSensorGroup.h"
 
@@ -22,8 +19,6 @@ private:
 	PokeballChangerGroup* pokeballChangerGroup = nullptr;
 	CaveSensorGroup* caveSensorGroup = nullptr;
 	LapSensorGroup* lapSensorGroup = nullptr;
-	GetArrowGroup* getArrowGroup = nullptr;
-	EvoArrowGroup* evoArrowGroup = nullptr;
 	CenterBlueArrowGroup* centerBlueArrowGroup = nullptr;
 	BonusMultiplierSensorGroup* bonusMultiplierSensorGroup = nullptr;
 

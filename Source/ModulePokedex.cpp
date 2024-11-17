@@ -418,6 +418,7 @@ void ModulePokedex::LoadPokedex()
             pokemonIdNode.child("height").attribute("value").as_string(),
             pokemonIdNode.child("pre-evolution-index").attribute("value").as_int(),
             pokemonIdNode.child("overworld-index").attribute("value").as_int(),
+            pokemonIdNode.child("rarity").attribute("value").as_int(),
             pokemonNames,
             pokemonRedMapLocations,
             pokemonBlueMapLocations
@@ -449,7 +450,7 @@ std::vector<int> ModulePokedex::GetRedMapHabitats(int i)
 
 int ModulePokedex::GetPokemonRarity(int i)
 {
-    return 0;
+    return pokemon_list.at(i).rarity;
 }
 
 void ModulePokedex::DiscoverPokemon(int id)

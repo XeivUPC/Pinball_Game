@@ -224,7 +224,6 @@ void PokeBall::Reset(bool saveBall)
 	PokeballType lastType = this->type;
 	
 	if (saveBall) {
-		const char* text = "BOLA SALVADA";
 		int selectedLanguage = gameAt->App->userPreferences->GetLanguage();
 		gameAt->GetUI()->AddText(ballSavedUIText[selectedLanguage]);
 	}
@@ -237,6 +236,8 @@ void PokeBall::Reset(bool saveBall)
 	
 	gameAt->pointsCounter.RemoveMultiplier(GetMultiplierByType(lastType));
 	lives_pokeball--;
+	if (lives_pokeball < 0)
+		lives_pokeball = 0;
 }
 
 int PokeBall::GetLivesPokeball() const

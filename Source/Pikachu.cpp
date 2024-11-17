@@ -79,14 +79,18 @@ update_status Pikachu::Update()
 {
 	map_pikachu_animator->SetSpeed(0.3f);
 	//Configure position
-	if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
-		position.x = 8.f / SCREEN_SIZE;
-		body->SetTransform({ position.x + width - 0.5f, position.y - height / 2 - 0.7f}, 0);
+
+	if (!ballIn) {
+		if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::LEFT))) {
+			position.x = 8.f / SCREEN_SIZE;
+			body->SetTransform({ position.x + width - 0.5f, position.y - height / 2 - 0.7f }, 0);
+		}
+		else if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
+			position.x = 139.f / SCREEN_SIZE;
+			body->SetTransform({ position.x + width - 0.2f, position.y - height / 2 - 0.7f }, 0);
+		}
 	}
-	else if (IsKeyDown(gameAt->App->userPreferences->GetKeyValue(ModuleUserPreferences::RIGHT))) {
-		position.x = 139.f / SCREEN_SIZE;
-		body->SetTransform({ position.x + width - 0.2f, position.y - height / 2 - 0.7f }, 0);
-	}
+	
 	
 	if (sensor.OnTriggerEnter() && gameAt->IsEnergyCharged()) {
 		gameAt->UseEnergy();
@@ -108,6 +112,8 @@ update_status Pikachu::Update()
 				ballIn = false;
 				map_pikachu_animator->SelectAnimation("MapPikachuAnim", true);
 				map_pikachuEnergy_animator->SelectAnimation("MapPikachuEnergyIdleAnim", true);
+
+				gameAt->pointsCounter.Add(50000);
 			}
 		}
 	}
