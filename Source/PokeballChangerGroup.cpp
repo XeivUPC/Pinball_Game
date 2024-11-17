@@ -1,5 +1,6 @@
 #include "PokeballChangerGroup.h"
 #include "PokeBall.h"
+#include "ModuleAudio.h"
 #include "ModuleUserPreferences.h"
 #include "Application.h"
 #include "GameUI.h"
@@ -8,6 +9,7 @@
 PokeballChangerGroup::PokeballChangerGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
 {
 	this->gameAt = gameAt;
+	audioPokeballSensorId = gameAt->App->audio->LoadFx("Assets/SFX/Game_PokeballSensorAllActive.ogg");
 }
 
 PokeballChangerGroup::~PokeballChangerGroup()
@@ -57,6 +59,7 @@ update_status PokeballChangerGroup::Update()
 		}
 	}
 	if (AllActive() && !areTwinkling)
+		gameAt->App->audio->PlayFx(audioPokeballSensorId);
 		OnAllActive();
 
 	for (const auto& sensorPointer : mapSensors)

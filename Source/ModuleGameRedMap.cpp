@@ -6,6 +6,7 @@
 #include "ModuleAudio.h"
 #include "ModuleUserPreferences.h"
 #include "ModuleKeybinds.h"
+#include "ModuleAudio.h"
 #include "Box2DFactory.h"
 #include "CircularBumper.h"
 #include "PokeBall.h"
@@ -112,6 +113,8 @@ bool ModuleGameRedMap::Start()
 	bonusPointsCounter.AddMultiplier(1, "BonusMultiplier");
 
 	audioGameStartId = App->audio->LoadFx("Assets/SFX/Game_BallStart.ogg");
+	audioRestartId = App->audio->LoadFx("Assets/SFX/Game_Restart.ogg");
+	audioGameOverId = App->audio->LoadFx("Assets/SFX/Game_Over.ogg");
 
 	musicPath = "Assets/Music/Red_Field.wav";
 	catchEvoMusicPath = "Assets/Music/Catch_Evolution_Mode_Red_Field.wav";
@@ -210,14 +213,16 @@ update_status ModuleGameRedMap::Update()
 			break;
 		case ModuleGame::BlockGame:
 			break;
-		case ModuleGame::RestartGame:			
+		case ModuleGame::RestartGame:		
+			App->audio->PlayFx(audioRestartId);
 			StartFadeIn(this, WHITE, statesTime);
-
+			
 			if (statesTimer.ReadSec() >= statesTime) {
 				pokeBall->Reset(saveBall);
 
 				if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
 					//// END
+					App->audio->PlayFx(audioGameOverId);
 					StartFadeOut(WHITE, statesTime);
 					SetState(EndGame);
 				}

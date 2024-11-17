@@ -23,6 +23,9 @@ private:
 	Timer failedTimer;
 	float failedTime = 2;
 
+	int audioCaptureId = -1;
+	int audioPokeballMovingId = -1;
+
 	void AddHit();
 public:
 	OverworldPokemon(int id);

@@ -32,4 +32,5 @@ private:
 	bool ballIn = false;
 
 	int audioPikachuChargeId = -1;
+	int audioPikaId = -1;
 };

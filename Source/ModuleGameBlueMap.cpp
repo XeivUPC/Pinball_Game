@@ -104,6 +104,8 @@ bool ModuleGameBlueMap::Start()
 	screen->SetDefaultProgram(new HabitatSelectedProgram());
 
 	audioGameStartId = App->audio->LoadFx("Assets/SFX/Game_BallStart.ogg");
+	audioRestartId = App->audio->LoadFx("Assets/SFX/Game_Restart.ogg");
+	audioGameOverId = App->audio->LoadFx("Assets/SFX/Game_Over.ogg");
 
 	musicPath = "Assets/Music/Blue_Field.wav";
 	catchEvoMusicPath = "Assets/Music/Catch_Evolution_Mode_Blue_Field.wav";
@@ -193,6 +195,7 @@ update_status ModuleGameBlueMap::Update()
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		App->audio->PlayFx(audioRestartId);
 		StartFadeIn(this, WHITE, statesTime);
 
 		if (statesTimer.ReadSec() >= statesTime) {
@@ -200,6 +203,7 @@ update_status ModuleGameBlueMap::Update()
 
 			if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
 				//// END
+				App->audio->PlayFx(audioGameOverId);
 				StartFadeOut(WHITE, statesTime);
 				SetState(EndGame);
 			}

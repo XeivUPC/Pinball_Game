@@ -27,4 +27,7 @@ private:
 
 	bool ballIn=false;
 
+	int audioBellsproutAbsorbId = -1;
+	int audioBellsproutHawkTuahId = -1;
+
 };

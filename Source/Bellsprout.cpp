@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModulePhysics.h"
+#include "ModuleAudio.h"
 #include "ModuleRender.h"
 #include "ModuleUserPreferences.h"
 #include "Box2DFactory.h"
@@ -48,6 +49,9 @@ Bellsprout::Bellsprout(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) :
 	map_bellsprout_animator->SelectAnimation("MapBellsproutIdle", true);
 
 	this->position = position;
+
+	audioBellsproutAbsorbId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BellsproutAbsorb.ogg");
+	audioBellsproutHawkTuahId = gameAt->App->audio->LoadFx("Assets/SFX/Game_BellsproutHawkTuah.ogg");
 }
 
 Bellsprout::~Bellsprout()
@@ -63,7 +67,7 @@ update_status Bellsprout::Update()
 		map_bellsprout_animator->SelectAnimation("MapBellsproutEat", false);
 		gameAt->pointsCounter.Add(100000);
 		mouthTimer.Start();
-
+		gameAt->App->audio->PlayFx(audioBellsproutAbsorbId);
 		if (gameAt->CanCapture() && gameAt->screen->CanProgramBeOverwritten()) {
 
 			const char* text = "PLACEHOLDER";
@@ -83,6 +87,7 @@ update_status Bellsprout::Update()
 		gameAt->GetPokeball()->SetVelocity({ 0,0 });
 		if (mouthTimer.ReadSec() > mouthTime) {
 			map_bellsprout_animator->SelectAnimation("MapBellsproutDrop", false);
+			gameAt->App->audio->PlayFx(audioBellsproutHawkTuahId);
 			if (map_bellsprout_animator->HasAnimationFinished()) {
 				gameAt->GetPokeball()->SetVelocity({ 0,10 });
 				ballIn = false;

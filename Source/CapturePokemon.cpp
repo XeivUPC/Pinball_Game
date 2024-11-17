@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
+#include "ModuleAudio.h"
 #include "CentralScreen.h"
 #include "ModulePokedex.h"
 #include "OverworldPokemon.h"
@@ -101,6 +102,8 @@ void CapturePokemon::StartProgram()
 	gameAt->GetTimerUI()->AddTimer(60 * 2);
 
 	gameAt->PlayCatchEvoMusic();
+
+	audioCaptureId = gameAt->App->audio->LoadFx("Assets/SFX/Game_Capture.ogg");
 }
 
 void CapturePokemon::Logic()
@@ -141,8 +144,9 @@ void CapturePokemon::Logic()
 	{
 		count = (int)trunc(factor * 6 + 1);
 	}
-	if (animationStarted == 3)
+	if (animationStarted == 3) {
 		gameAt->screen->SwitchProgram(new OverworldPokemon(ID));
+	}
 }
 
 void CapturePokemon::Render()

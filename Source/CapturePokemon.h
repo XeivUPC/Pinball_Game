@@ -17,6 +17,8 @@ private:
 	Timer failedTimer;
 	float failedTime = 2;
 
+	int audioCaptureId = -1;
+
 	void AddHit();
 	void SetRandomPokemonByZone(bool zoneID, int rarity = 2);
 public:

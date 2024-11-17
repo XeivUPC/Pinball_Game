@@ -57,5 +57,7 @@ private:
 	Timer glowBumperTimer;
 	float glowBumperTime = 0.5;
 	bool gameStart = true;
+
+	int audioBonusMutiplierId = -1;
 };
 

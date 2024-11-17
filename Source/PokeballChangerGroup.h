@@ -16,5 +16,7 @@ protected:
 	void OnAllActive() override;
 
 	bool hasToChange = false;
+
+	int audioPokeballSensorId = -1;
 };
 

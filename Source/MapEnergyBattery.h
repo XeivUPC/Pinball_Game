@@ -30,5 +30,7 @@ private:
 	int previousSprite = 0;
 
 	std::vector<int> audiosEnergyIds;
+
+	int audioEnergyFullId = -1;
 protected:
 };

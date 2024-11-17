@@ -70,6 +70,7 @@ Pikachu::Pikachu(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
 	this->position = position;
 
 	audioPikachuChargeId = gameAt->App->audio->LoadFx("Assets/SFX/Game_PikachuCharge.ogg");
+	audioPikaId = gameAt->App->audio->LoadFx("Assets/SFX/Game_Pika.ogg");
 }
 
 Pikachu::~Pikachu()
@@ -102,6 +103,7 @@ update_status Pikachu::Update()
 
 		energizeTimer.Start();
 		gameAt->GetPokeball()->SetIfBlockMovement(true);
+		gameAt->App->audio->PlayFx(audioPikaId);
 		gameAt->App->audio->PlayFx(audioPikachuChargeId);
 	}
 	if (ballIn) {

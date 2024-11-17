@@ -30,4 +30,6 @@ private:
 
 
 	bool isActive = true;
+
+	int audioStaryuBumperId = -1;
 };
