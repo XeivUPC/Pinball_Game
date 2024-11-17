@@ -96,7 +96,8 @@ bool ModuleGameBlueMap::Start()
 
 	SetState(StartGame);
 
-	pointsCounter.AddMultiplier(1);
+	pointsCounter.AddMultiplier(1, "MapMultiplier");
+	bonusPointsCounter.AddMultiplier(1, "BonusMultiplier");
 
 	std::vector<int> habitatsToSelect(mapHabitats.begin(), mapHabitats.begin() + 7);
 	screen->AddProgram(new HabitatSelectionProgram(habitatsToSelect));

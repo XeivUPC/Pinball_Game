@@ -3,6 +3,7 @@
 #include "ModuleTexture.h"
 #include "ModuleRender.h"
 #include "CentralScreen.h"
+#include "PokeBall.h"
 #include "ModuleUserPreferences.h"
 #include <algorithm> 
 #include <random>
@@ -19,7 +20,7 @@ bool BonusSelectionProgram::GiveBonus(int type, int subType)
 			gameAt->pointsCounter.Add(1000000 * subType);
 			break;
 		case 2:
-			
+			gameAt->bonusPointsCounter.EditMultiplier(gameAt->bonusPointsCounter.GetMultiplier("BonusMultiplier"), (float)subType, "BonusMultiplier");
 			break;
 		case 3:
 			gameAt->SetTimeSaveBall(30);
@@ -31,10 +32,19 @@ bool BonusSelectionProgram::GiveBonus(int type, int subType)
 			gameAt->SetTimeSaveBall(90);
 			break;
 		case 6:
-
+			//// DoblePika
 			break;
 		case 7:
-
+			if(gameAt->GetPokeball()->GetType() < PokeBall::SuperBall)
+				gameAt->GetPokeball()->SetType(PokeBall::SuperBall);
+			break;
+		case 8:
+			if (gameAt->GetPokeball()->GetType() < PokeBall::Ultraball)
+				gameAt->GetPokeball()->SetType(PokeBall::Ultraball);
+			break;
+		case 9:
+			if (gameAt->GetPokeball()->GetType() < PokeBall::MasterBall)
+				gameAt->GetPokeball()->SetType(PokeBall::MasterBall);
 			break;
 		case 10:
 			gameAt->SetExtraBall(true);
@@ -44,7 +54,7 @@ bool BonusSelectionProgram::GiveBonus(int type, int subType)
 			return true;
 			break;
 		case 12:
-
+			//// CaptureMode
 			break;
 
 		default:
@@ -56,6 +66,12 @@ bool BonusSelectionProgram::GiveBonus(int type, int subType)
 BonusSelectionProgram::BonusSelectionProgram(int attemptVariant) : ScreenProgram("BonusSelection")
 {
 	this->attemptVariant = attemptVariant;
+
+	std::random_device rd;
+	std::mt19937 g(rd());
+
+	std::uniform_int_distribution<int> pokeballUpgradeType(0, 2);
+	int randomPokeUpgrade = 0;
 
 	switch (this->attemptVariant)
 	{
@@ -89,7 +105,10 @@ BonusSelectionProgram::BonusSelectionProgram(int attemptVariant) : ScreenProgram
 			bonusToSelect.emplace_back(5);
 			bonusToSelect.emplace_back(1);
 			///bonusToSelect.emplace_back(1);//// Area Bonus
-			bonusToSelect.emplace_back(7);
+
+			
+			randomPokeUpgrade = pokeballUpgradeType(g);
+			bonusToSelect.emplace_back(7+randomPokeUpgrade);
 			bonusToSelect.emplace_back(10);
 			break;
 
@@ -97,8 +116,7 @@ BonusSelectionProgram::BonusSelectionProgram(int attemptVariant) : ScreenProgram
 			break;
 	}
 
-	std::random_device rd;
-	std::mt19937 g(rd());
+	
 	std::shuffle(bonusToSelect.begin(), bonusToSelect.end(), g);
 }
 

@@ -29,9 +29,9 @@ update_status CatchedPokemon::Update()
 	int totalPoints = counter();
 	if (totalPoints > 3)
 		totalPoints = 3;
-	for (size_t i = 0; i < totalPoints; i++)
+	for (int i = 0; i < totalPoints; i++)
 	{
-		gameAt->App->renderer->Draw(*texture, (gameAt->screen->screenArea.x + 16 * i), (gameAt->screen->screenArea.y + gameAt->screen->screenArea.height), &rect);
+		gameAt->App->renderer->Draw(*texture, (int)(gameAt->screen->screenArea.x + 16 * i), (int)(gameAt->screen->screenArea.y + gameAt->screen->screenArea.height), &rect);
 	}
 	return UPDATE_CONTINUE;
 }

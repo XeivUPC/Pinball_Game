@@ -49,6 +49,9 @@ public:
 	virtual update_status Update();
 	virtual bool CleanUp();
 	Counter pointsCounter = Counter(100);
+
+	Counter bonusPointsCounter = Counter(0);
+
 	PokeBall* GetPokeball();
 	GameUI* GetUI();
 	TimerUI* GetTimerUI();

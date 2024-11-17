@@ -8,6 +8,7 @@
 BonusMultiplierSensorGroup::BonusMultiplierSensorGroup(ModuleGame* gameAt) : MapSensorGroup(gameAt)
 {
 	this->gameAt = gameAt;
+	gameAt->bonusPointsCounter.AddMultiplier(1.f, "BonusBumperMultiplier");
 }
 
 BonusMultiplierSensorGroup::~BonusMultiplierSensorGroup()
@@ -40,6 +41,8 @@ update_status BonusMultiplierSensorGroup::Update()
 			const char* text = "MULT. BONUS x";
 			std::string textNum = std::to_string(totalNum);
 			std::string result = std::string(text) + textNum;
+
+			gameAt->bonusPointsCounter.EditMultiplier(gameAt->bonusPointsCounter.GetMultiplier("BonusBumperMultiplier"), (float)totalNum, "BonusBumperMultiplier");
 
 			gameAt->GetUI()->AddText(result);
 
