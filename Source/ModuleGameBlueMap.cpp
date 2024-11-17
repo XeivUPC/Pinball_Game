@@ -58,6 +58,7 @@ bool ModuleGameBlueMap::Start()
 	
 
 	UI = new GameUI(this);
+	timerUI = new TimerUI(this);
 
 	StartFadeOut(WHITE, 0.3f);
 
@@ -201,6 +202,7 @@ update_status ModuleGameBlueMap::Update()
 		object->Update();
 	}
 	UI->Update();
+	timerUI->Update();
 
 	ModuleScene::FadeUpdate();
 	ModuleGame::RemoveAllPendentObjects();

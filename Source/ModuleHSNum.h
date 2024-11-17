@@ -29,11 +29,5 @@ public:
 	/// <summary>
 	/// For color: Red = 0, Blue 1 \ For position: 1 to 5
 	/// </summary>
-	/// <param name="text"></param>
-	/// <param name="x"></param>
-	/// <param name="y"></param>
-	/// <param name="color"></param>
-	/// <param name="position"></param>
-	/// <param name="coma"></param>
 	void Write(const char* text, int x, int y, int color, int position);
 };

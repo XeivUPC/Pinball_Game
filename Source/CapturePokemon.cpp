@@ -5,6 +5,7 @@
 #include "CentralScreen.h"
 #include "ModulePokedex.h"
 #include "OverworldPokemon.h"
+#include "TimerUI.h"
 
 void CapturePokemon::AddHit()
 {
@@ -91,6 +92,7 @@ void CapturePokemon::StartProgram()
 	animationStarted = 0;
 	animating = false;
 	baseRect = { (float)((ID / 38)*2) * gameAt->screen->screenArea.width, (float)(ID % 38) * gameAt->screen->screenArea.height, gameAt->screen->screenArea.width, gameAt->screen->screenArea.height };
+	gameAt->GetTimerUI()->AddTimer(60 * 2);
 }
 
 void CapturePokemon::Logic()

@@ -63,6 +63,11 @@ GameUI* ModuleGame::GetUI()
 	return UI;
 }
 
+TimerUI* ModuleGame::GetTimerUI()
+{
+	return timerUI;
+}
+
 void ModuleGame::NextHabitat()
 {
 	habitatIndex++;
