@@ -198,5 +198,12 @@ void OverworldPokemon::Render()
 
 void OverworldPokemon::EndProgram()
 {
+	if (pokemon_bumper!=nullptr) {
+		gameAt->RemoveObject(pokemon_bumper);
+	}
+
 	gameAt->PlayFieldMusic();
+
+	failedUIText.clear();
+	capturedUIText.clear();
 }

@@ -26,7 +26,7 @@ void CatchedPokemon::CatchPokemon()
 update_status CatchedPokemon::Update()
 {
 	if (gameAt->screen->GetActualProgramIdentifier() == "OverworldPokemon") return UPDATE_CONTINUE;
-	int totalPoints = counter();
+	int totalPoints = (int)counter();
 	if (totalPoints > 3)
 		totalPoints = 3;
 	for (int i = 0; i < totalPoints; i++)

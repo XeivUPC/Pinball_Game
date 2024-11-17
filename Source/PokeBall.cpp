@@ -77,6 +77,8 @@ PokeBall::PokeBall(ModuleGame* gameAt, b2Vec2 spawn, PokeballType type,float max
 	SetType(type);
 
 	gameAt->pointsCounter.AddMultiplier(1.f, "PokeballMultiplier");
+
+	ballSavedUIText = { "BALL SAVED","BALL SAVED","BILLE SAUVEE", "BALL GERETTET", "BOLA SALVADA", "PALLA SALVATA" };
 }
 
 PokeBall::~PokeBall()
@@ -162,7 +164,7 @@ update_status PokeBall::Update()
 
 void PokeBall::ApplyForce(b2Vec2 force)
 {
-	body->ApplyLinearImpulseToCenter({ force.x * 16, force.y * 16 }, true);
+	body->ApplyLinearImpulseToCenter(force, true);
 }
 
 void PokeBall::SetPosition(b2Vec2 position)
@@ -297,6 +299,8 @@ bool PokeBall::CleanUp()
 		delete pokeball_animator;
 		pokeball_animator = nullptr;
 	}
+
+	ballSavedUIText.clear();
 
 	return true;
 }

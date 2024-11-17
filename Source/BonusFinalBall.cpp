@@ -8,7 +8,7 @@
 
 int BonusFinalBall::GetMultiplier()
 {
-    return gameAt->bonusPointsCounter.GetMultipliersTotalValue();
+    return (int)gameAt->bonusPointsCounter.GetMultipliersTotalValue();
 }
 
 std::string BonusFinalBall::FormatNumberWithOnlyComas(long long int number) const
@@ -68,6 +68,7 @@ BonusFinalBall::BonusFinalBall(ModuleGame* gameAt) : UI(gameAt->App)
 
 BonusFinalBall::~BonusFinalBall()
 {
+    BonusesFinalBall.clear();
 }
 
 bool BonusFinalBall::IsEnded()
@@ -111,7 +112,7 @@ void BonusFinalBall::Render()
     if(!enabled) return;
     gameAt->App->renderer->DrawRect(0, 232, 160, 48, BLACK);
     
-    if(index < BonusesFinalBall.size())
+    if(index < (int)BonusesFinalBall.size())
     {
        
         std::string line = std::to_string(BonusesFinalBall.at(index).count);
@@ -139,17 +140,17 @@ void BonusFinalBall::Render()
             gameAt->App->text_gameUIText->Write(std::to_string(subtotalPoints).c_str(), anchorAtRight(std::to_string(subtotalPoints), 152), SCREEN_HEIGHT * 2 - 56);
         }
 
-        gameAt->App->text_gameUIText->Write("MULTIPLIER", 16, SCREEN_HEIGHT * 2 - 40 - 16 * offset);
-        gameAt->App->text_gameUIText->Write(FormatNumberWithOnlyComas(GetMultiplier()).c_str(), anchorAtRight(FormatNumberWithOnlyComas(GetMultiplier()), 144), SCREEN_HEIGHT * 2 - 32 - 16 * offset);
-        gameAt->App->text_gameUIText->Write(std::to_string(GetMultiplier()).c_str(), anchorAtRight(std::to_string(GetMultiplier()), 152), SCREEN_HEIGHT * 2 - 40 - 16 * offset);
+        gameAt->App->text_gameUIText->Write("MULTIPLIER", 16, (int)(SCREEN_HEIGHT * 2 - 40 - 16 * offset));
+        gameAt->App->text_gameUIText->Write(FormatNumberWithOnlyComas(GetMultiplier()).c_str(), anchorAtRight(FormatNumberWithOnlyComas(GetMultiplier()), 144), (int)(SCREEN_HEIGHT * 2 - 32 - 16 * offset));
+        gameAt->App->text_gameUIText->Write(std::to_string(GetMultiplier()).c_str(), anchorAtRight(std::to_string(GetMultiplier()), 152), (int)(SCREEN_HEIGHT * 2 - 40 - 16 * offset));
 
-        gameAt->App->text_gameUIText->Write("SUBTOTAL", 16, SCREEN_HEIGHT * 2 - 24 - 16 * offset);
-        gameAt->App->text_gameUIText->Write(FormatNumberWithOnlyComas(subtotalMultipliedPoints).c_str(), anchorAtRight(FormatNumberWithOnlyComas(subtotalMultipliedPoints), 144), SCREEN_HEIGHT * 2 - 16 - 16 * offset);
-        gameAt->App->text_gameUIText->Write(std::to_string(subtotalMultipliedPoints).c_str(), anchorAtRight(std::to_string(subtotalMultipliedPoints), 152), SCREEN_HEIGHT * 2 - 24 - 16 * offset);
+        gameAt->App->text_gameUIText->Write("SUBTOTAL", 16, (int)(SCREEN_HEIGHT * 2 - 24 - 16 * offset));
+        gameAt->App->text_gameUIText->Write(FormatNumberWithOnlyComas(subtotalMultipliedPoints).c_str(), anchorAtRight(FormatNumberWithOnlyComas(subtotalMultipliedPoints), 144), (int)(SCREEN_HEIGHT * 2 - 16 - 16 * offset));
+        gameAt->App->text_gameUIText->Write(std::to_string(subtotalMultipliedPoints).c_str(), anchorAtRight(std::to_string(subtotalMultipliedPoints), 152), (int)(SCREEN_HEIGHT * 2 - 24 - 16 * offset));
 
-        gameAt->App->text_gameUIText->Write("TOTAL", 16, SCREEN_HEIGHT * 2 - 8 - 16 * offset);
-        gameAt->App->text_gameUIText->Write(FormatNumberWithOnlyComas(totalPoints).c_str(), anchorAtRight(FormatNumberWithOnlyComas(totalPoints), 144), SCREEN_HEIGHT * 2 - 16 * offset);
-        gameAt->App->text_gameUIText->Write(std::to_string(totalPoints).c_str(), anchorAtRight(std::to_string(totalPoints), 152), SCREEN_HEIGHT * 2 - 8 - 16 * offset);
+        gameAt->App->text_gameUIText->Write("TOTAL", 16, (int)(SCREEN_HEIGHT * 2 - 8 - 16 * offset));
+        gameAt->App->text_gameUIText->Write(FormatNumberWithOnlyComas(totalPoints).c_str(), anchorAtRight(FormatNumberWithOnlyComas(totalPoints), 144), (int)(SCREEN_HEIGHT * 2 - 16 * offset));
+        gameAt->App->text_gameUIText->Write(std::to_string(totalPoints).c_str(), anchorAtRight(std::to_string(totalPoints), 152), (int)(SCREEN_HEIGHT * 2 - 8 - 16 * offset));
     }
 }
 
@@ -162,14 +163,14 @@ update_status BonusFinalBall::Update()
         scoreAdded = false;
         index++;
     }
-    while (index < BonusesFinalBall.size()-1 && BonusesFinalBall.at(index).count == 0 && !BonusesFinalBall.at(index).appearWhenNull)
+    while (index < (int)BonusesFinalBall.size()-1 && BonusesFinalBall.at(index).count == 0 && !BonusesFinalBall.at(index).appearWhenNull)
         index++;
-    if (!scoreAdded && index < BonusesFinalBall.size())
+    if (!scoreAdded && index < (int)BonusesFinalBall.size())
     {
         subtotalPoints += BonusesFinalBall.at(index).count * BonusesFinalBall.at(index).points;
         scoreAdded = true;
     }
-    else if (index >= BonusesFinalBall.size() && !scoreAdded)
+    else if (index >= (int)BonusesFinalBall.size() && !scoreAdded)
     {
         subtotalMultipliedPoints = subtotalPoints * GetMultiplier();
         totalPoints = gameAt->pointsCounter() + subtotalMultipliedPoints;
@@ -177,12 +178,10 @@ update_status BonusFinalBall::Update()
         scoreAdded = true;
     }
     if (index == BonusesFinalBall.size() + 1 && offset < 1)
-        offset = 2*timer.ReadSec();
+        offset = (float)(2*timer.ReadSec());
     if (offset > 1)
         offset = 1;
-    BeginMode2D(App->renderer->camera);
     Render();
-    EndMode2D();
     
     return UPDATE_CONTINUE;
 }

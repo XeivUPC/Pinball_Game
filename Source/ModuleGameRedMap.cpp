@@ -1,4 +1,5 @@
 #include "ModuleGameRedMap.h"
+#include "ModuleLevelSelection.h"
 #include "ModulePhysics.h"
 #include "Application.h"
 #include "ModuleRender.h"
@@ -125,9 +126,12 @@ bool ModuleGameRedMap::Start()
 update_status ModuleGameRedMap::Update()
 {
 	ModuleGame::Update();
-	RepositionCamera(pokeBall->GetPosition());
-
 	
+
+	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN))) {
+		StartFadeIn(App->scene_levelSelection, WHITE, 0.3f);
+		App->audio->StopMusic();
+	}
 
 	Rectangle rectBackground = { (IsTopSideCovered() ? 1 : 0) * 191.f,0,191,278};
 	staryuCollider->GetFixtureList()[0].SetSensor(!IsTopSideCovered());
@@ -138,11 +142,11 @@ update_status ModuleGameRedMap::Update()
 	switch (state)
 	{
 		case ModuleGame::StartGame:
-			
+			RepositionCamera(pokeBall->GetPosition());
 			if (!statesTimer.IsLocked()) {
 				if (statesTimer.ReadSecEvenLocked() < 0.5f)
 					pokeBall->ApplyForce({ 0,-4000 });
-				if (statesTimer.ReadSec() > statesTime * 16 / 10) {
+				if (statesTimer.ReadSec() > statesTime ) {
 					SetState(PlayGame);
 				}
 			}
@@ -156,7 +160,7 @@ update_status ModuleGameRedMap::Update()
 
 			break;
 		case ModuleGame::PlayGame:
-
+			RepositionCamera(pokeBall->GetPosition());
 			if (pokeBall->GetPosition().y >= 290 / SCREEN_SIZE) {
 				SetState(RestartGame);
 			}
@@ -215,6 +219,7 @@ update_status ModuleGameRedMap::Update()
 				if (statesTimer.ReadSec() >= statesTime) {
 					if (HasExtraPika())
 						SetExtraPika(false);
+
 					pokeBall->Reset(saveBall);
 
 					if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
@@ -282,6 +287,11 @@ bool ModuleGameRedMap::CleanUp()
 	if (UI != nullptr) {
 		delete UI;
 		UI = nullptr;
+	}
+
+	if (finalBallUI != nullptr) {
+		delete finalBallUI;
+		finalBallUI = nullptr;
 	}
 
 
@@ -566,7 +576,11 @@ void ModuleGameRedMap::SetState(GameStates stateToChange)
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
-		if(!saveBall)finalBallUI->Activate();
+		if (!saveBall) {
+			timerUI->HideTimer();
+			screen->RemoveProgram();
+			finalBallUI->Activate();
+		}
 		statesTime = 0.5f;
 		break;
 	case ModuleGame::EndGame:

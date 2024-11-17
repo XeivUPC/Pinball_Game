@@ -194,4 +194,6 @@ void CapturePokemon::EndProgram()
 {
 	gameAt->App->scene_pokedex->DiscoverPokemon(ID);
 
+	failedUIText.clear();
+
 }

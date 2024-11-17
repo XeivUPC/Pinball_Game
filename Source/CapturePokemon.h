@@ -3,16 +3,16 @@
 class CapturePokemon : public ScreenProgram
 {
 private:
-	Texture* texture;
-	int animationStarted;
-	float factor;
-	float animationTime;
+	Texture* texture= nullptr;
+	int animationStarted= -1;
+	float factor = -1;
+	float animationTime = -1;
 	Timer animationTimer;
 	Rectangle rect;
-	Rectangle baseRect;
-	bool animating;
-	int count;
-	int ID;
+	Rectangle baseRect = {0,0,0,0};
+	bool animating = -1;
+	int count = -1;
+	int ID = -1;
 
 	Timer failedTimer;
 	float failedTime = 2;

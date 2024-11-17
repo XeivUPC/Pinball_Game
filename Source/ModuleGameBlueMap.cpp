@@ -1,4 +1,5 @@
 #include "ModuleGameBlueMap.h"
+#include "ModuleLevelSelection.h"
 #include "ModulePhysics.h"
 #include "Application.h"
 #include "ModuleRender.h"
@@ -117,12 +118,10 @@ bool ModuleGameBlueMap::Start()
 update_status ModuleGameBlueMap::Update()
 {
 	ModuleGame::Update();
-	RepositionCamera(pokeBall->GetPosition());
 
-	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::SELECT))) {
-		App->scene_highScore->SetPlayerPoints(pointsCounter());
-		pointsCounter.Set(0);
-		StartFadeIn(App->scene_highScore, WHITE, 0.3f);
+	if (IsKeyPressed(App->userPreferences->GetKeyValue(ModuleUserPreferences::RETURN))) {
+		StartFadeIn(App->scene_levelSelection, WHITE, 0.3f);
+		App->audio->StopMusic();
 	}
 
 	Rectangle rectBackground = { 0,0,191,278 };
@@ -131,10 +130,11 @@ update_status ModuleGameBlueMap::Update()
 	switch (state)
 	{
 	case ModuleGame::StartGame:
+		RepositionCamera(pokeBall->GetPosition());
 
 		if (!statesTimer.IsLocked()) {
 			pokeBall->ApplyForce({ 0,-4000 });
-			if (statesTimer.ReadSec() > statesTime * 16 / 10) {
+			if (statesTimer.ReadSec() > statesTime ) {
 				SetState(PlayGame);
 			}
 		}
@@ -148,6 +148,7 @@ update_status ModuleGameBlueMap::Update()
 
 		break;
 	case ModuleGame::PlayGame:
+		RepositionCamera(pokeBall->GetPosition());
 
 		if (pokeBall->GetPosition().y >= 290 / SCREEN_SIZE) {
 			SetState(RestartGame);
@@ -195,26 +196,36 @@ update_status ModuleGameBlueMap::Update()
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
-		StartFadeIn(this, WHITE, statesTime);
+		if (saveBall || finalBallUI->IsEnded())
+		{
+			StartFadeIn(this, WHITE, statesTime);
 
-		if (statesTimer.ReadSec() >= statesTime) {
-			pokeBall->Reset(saveBall);
+			if (statesTimer.ReadSec() >= statesTime) {
+				if (HasExtraPika())
+					SetExtraPika(false);
+				pokeBall->Reset(saveBall);
 
-			if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
-				//// END
-				StartFadeOut(WHITE, statesTime);
-				SetState(EndGame);
-			}
-			else {
-				if (pokeBall->GetLivesPokeball() == 0)
-					SetExtraBall(false);
-				StartFadeOut(WHITE, statesTime);
-				SetState(StartGame);
+				if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
+					//// END
+					StartFadeOut(WHITE, statesTime);
+					SetState(EndGame);
+				}
+				else {
+					if (pokeBall->GetLivesPokeball() == 0)
+						SetExtraBall(false);
+					StartFadeOut(WHITE, statesTime);
+					SetState(StartGame);
+				}
 			}
 		}
 
 		break;
 	case ModuleGame::EndGame:
+		if (statesTime < statesTimer.ReadSec()) {
+			App->scene_highScore->SetPlayerPoints(pointsCounter());
+			pointsCounter.Set(0);
+			StartFadeIn(App->scene_highScore, WHITE, 0.3f);
+		}
 		break;
 	default:
 		break;
@@ -262,6 +273,11 @@ bool ModuleGameBlueMap::CleanUp()
 	if (UI != nullptr) {
 		delete UI;
 		UI = nullptr;
+	}
+
+	if (finalBallUI != nullptr) {
+		delete finalBallUI;
+		finalBallUI = nullptr;
 	}
 
 	App->renderer->camera.offset = { 0,0 };
@@ -515,6 +531,8 @@ void ModuleGameBlueMap::SetState(GameStates stateToChange)
 	case ModuleGame::StartGame:
 		if (!saveBall)
 			SetTimeSaveBall(24.f);
+		pokeBall->SetIfBlockMovement(false);
+
 		entryCollider->GetFixtureList()[0].SetSensor(true);
 		statesTimer.LockTimer();
 		statesTime = 1.1f;
@@ -525,9 +543,12 @@ void ModuleGameBlueMap::SetState(GameStates stateToChange)
 	case ModuleGame::BlockGame:
 		break;
 	case ModuleGame::RestartGame:
+		pokeBall->SetIfBlockMovement(true);
+		if (!saveBall)finalBallUI->Activate();
 		statesTime = 0.5f;
 		break;
 	case ModuleGame::EndGame:
+		statesTime = 1.f;
 		break;
 	default:
 		break;
