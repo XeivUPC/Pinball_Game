@@ -12,6 +12,7 @@
 #include "TimerUI.h"
 #include "CatchedPokemon.h"
 #include <algorithm> 
+#include "BonusFinalBall.h"
 #include <cctype>   
 
 void OverworldPokemon::AddHit()
@@ -84,8 +85,8 @@ void OverworldPokemon::Logic()
 				gameAt->RemoveObject(pokemon_bumper);
 				pokemon_bumper = nullptr;
 				gameAt->GetTimerUI()->HideTimer();
+				gameAt->finalBallUI->AddInBonus(0);
 				gameAt->screen->RemoveProgram();
-
 			}
 			return;
 		}

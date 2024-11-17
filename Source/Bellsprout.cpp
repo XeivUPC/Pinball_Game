@@ -9,6 +9,7 @@
 #include "CentralScreen.h"
 #include "MapCave.h"
 #include "GameUI.h"
+#include "BonusFinalBall.h"
 
 Bellsprout::Bellsprout(ModuleGame* gameAt, b2Vec2 position, float mouthRadius) : MapObject(gameAt)
 {
@@ -74,7 +75,7 @@ update_status Bellsprout::Update()
 
 			gameAt->StartCapture();
 		}
-		
+		gameAt->finalBallUI->AddInBonus(4);
 	}
 
 	if (ballIn) {

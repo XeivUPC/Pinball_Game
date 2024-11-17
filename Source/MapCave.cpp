@@ -6,6 +6,7 @@
 #include "CentralScreen.h"
 #include "ModuleAudio.h"
 #include "PokeBall.h"
+#include "BonusFinalBall.h"
 
 MapCave::MapCave(ModuleGame* gameAt, b2Vec2 position, b2Vec2 entryPosition, float entryRadius) : MapObject(gameAt)
 {
@@ -127,5 +128,6 @@ void MapCave::OnHit()
 		gameAt->GetPokeball()->SetIfBlockRender(true);
 		gameAt->GetPokeball()->SetPosition(entryPosition);
 		isBallIn = true;
+		gameAt->finalBallUI->AddInBonus(8);
 	}
 }

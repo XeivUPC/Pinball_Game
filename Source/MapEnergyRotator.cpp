@@ -3,6 +3,7 @@
 #include "ModulePhysics.h"
 #include "Box2DFactory.h"
 #include "ModuleTexture.h"
+#include "BonusFinalBall.h"
 
 MapEnergyRotator::MapEnergyRotator(ModuleGame* gameAt, b2Vec2 position, MapEnergyBattery* battery, float width, float height, int variant) : MapObject(gameAt)
 {
@@ -77,6 +78,7 @@ update_status MapEnergyRotator::Update()
 		if (pointsTime <= pointsTimer.ReadSec()) {
 			pointsTimer.Start();
 			gameAt->pointsCounter.Add(100);
+			gameAt->finalBallUI->AddInBonus(9);
 		}
 		battery->AddEnergy(velocity*GetFrameTime()/2);
 		
