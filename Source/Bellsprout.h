@@ -30,4 +30,6 @@ private:
 
 	std::vector<std::string> catchModeUIText = { "LET'S GET POKÉMON","LET'S GET POKÉMON","ATTRAPEZ LE POKÉMON", "FANGE DAS POKÉMON", "ATRAPA AL POKEMON", "CATTURA I POKEMON" };
 
+	int audioBellsproutAbsorbId = -1; 
+	int audioBellsproutHawkTuahId = -1;
 };

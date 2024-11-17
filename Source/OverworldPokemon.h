@@ -27,6 +27,9 @@ private:
 
 	std::vector<std::string> failedUIText = { "THE POKÉMON FLEES","THE POKÉMON FLEES","LE POKÉMON S'ENFUIT", "DAS POKÉMON FLIEHT", "EL POKÉMON HA HUIDO", "IL POKÉMON FUGGE" };
 
+	int audioCaptureId = -1;
+	int audioPokeballMovingId = -1;
+
 	void AddHit();
 public:
 	OverworldPokemon(int id);
