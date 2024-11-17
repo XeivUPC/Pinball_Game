@@ -29,13 +29,12 @@
 #include "CatchedPokemon.h"
 #include "BonusFinalBall.h"
 
-#include "MemLeaks.h"
 
 
 
 ModuleGameRedMap::ModuleGameRedMap(Application* app, bool start_enabled) : ModuleGame(app, start_enabled)
 {
-	ReportMemoryLeaks();
+
 	mapHabitats.emplace_back(0);
 	mapHabitats.emplace_back(2);
 	mapHabitats.emplace_back(3);
@@ -223,6 +222,8 @@ update_status ModuleGameRedMap::Update()
 				if (statesTimer.ReadSec() >= statesTime) {
 					if (HasExtraPika())
 						SetExtraPika(false);
+
+					pokeBall->Reset(saveBall);
 
 					if (pokeBall->GetLivesPokeball() == 0 && !extraBall) {
 						//// END

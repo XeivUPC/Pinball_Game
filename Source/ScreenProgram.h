@@ -6,7 +6,7 @@ class ScreenProgram
 {
 protected:
 	ModuleGame* gameAt=nullptr;
-	std::string identifier;
+	std::string identifier="";
 	bool canBeOverwritten=false;
 
 public:

@@ -26,11 +26,11 @@
 #include "ModuleGameBlueMap.h"
 
 #include "Application.h"
-//#include "MemLeaks.h"
+#include "MemLeaks.h"
 
 Application::Application()
 {
-	//ReportMemoryLeaks();
+	ReportMemoryLeaks();
 	window = new ModuleWindow(this);
 	renderer = new ModuleRender(this);
 	audio = new ModuleAudio(this, true);

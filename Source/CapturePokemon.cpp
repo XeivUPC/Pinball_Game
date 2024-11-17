@@ -17,7 +17,7 @@ void CapturePokemon::AddHit()
 
 CapturePokemon::CapturePokemon() : ScreenProgram("CapturePokemon")
 {
-
+	
 }
 
 CapturePokemon::~CapturePokemon()

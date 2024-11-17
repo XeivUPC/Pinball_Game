@@ -20,7 +20,7 @@ private:
 	Texture2D* pokedexSpritesheet = nullptr;
 	Texture2D* pokedexPokemon = nullptr;
 	Texture2D* pokedexSlot = nullptr;
-	Animator* ScrollBarAnimator;
+	Animator* ScrollBarAnimator=nullptr;
 	bool arrowAppeared = true;
 	float arrowCurrentTime;
 	float arrowAnimSpeed = 0.2f;

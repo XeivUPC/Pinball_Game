@@ -18,6 +18,7 @@ GameUI::GameUI(ModuleGame* gameAt) : UI(gameAt->App)
 
 GameUI::~GameUI()
 {
+    textQueue.clear();
 }
 
 void GameUI::Render()

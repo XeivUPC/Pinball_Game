@@ -10,7 +10,7 @@ private:
 	Timer animationTimer;
 	Rectangle rect;
 	Rectangle baseRect = {0,0,0,0};
-	bool animating = -1;
+	bool animating = false;
 	int count = -1;
 	int ID = -1;
 
