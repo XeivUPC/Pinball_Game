@@ -44,9 +44,9 @@ Application::Application()
 	text_pokedex_japanese = new ModuleGamePokedexJapanese(this);
 	text_pokedex_worldwide = new ModuleGamePokedexWorldWide(this);
 
-	scene_languageSelect = new ModuleLanguageSelect(this,false);
+	scene_languageSelect = new ModuleLanguageSelect(this);
 	scene_credits = new ModuleCredits(this, false);
-	scene_levelSelection = new ModuleLevelSelection(this);
+	scene_levelSelection = new ModuleLevelSelection(this,false);
 	scene_mainMenu = new ModuleMainMenu(this, false);
 	scene_pokedex = new ModulePokedex(this, false);
 	scene_settings = new ModuleSettings(this, false);

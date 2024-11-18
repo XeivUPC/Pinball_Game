@@ -170,6 +170,16 @@ update_status ModuleGameRedMap::Update()
 				SetState(RestartGame);
 			}
 
+			if (IsKeyPressed(KEY_F6)) {
+				pointsCounter.Add(100000000);
+			}
+
+			if (IsKeyPressed(KEY_F7)) {
+				App->audio->PlayFx(audioGameOverId);
+				StartFadeOut(WHITE, statesTime);
+				SetState(EndGame);
+			}
+
 			staryuCollider->GetFixtureList()[0].SetSensor(!staryuBumper->IsActive());
 
 			if (lapSensorGroup->HaveToActivateArrowGet()) {
@@ -247,7 +257,6 @@ update_status ModuleGameRedMap::Update()
 		case ModuleGame::EndGame:
 
 			App->scene_highScore->SetPlayerPoints(pointsCounter());
-			pointsCounter.Set(0);
 			StartFadeIn(App->scene_highScore, WHITE, 0.3f);
 
 			break;

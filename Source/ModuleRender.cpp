@@ -55,7 +55,7 @@ update_status ModuleRender::PostUpdate()
     // Draw everything in our batch!
 
     EndMode2D();
-    DrawFPS(10, 10);
+    //DrawFPS(10, 10);
     EndDrawing();
 
 	return UPDATE_CONTINUE;
