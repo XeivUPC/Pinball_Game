@@ -41,16 +41,16 @@ int BonusFinalBall::anchorAtRight(std::string line, int x)
 BonusFinalBall::BonusFinalBall(ModuleGame* gameAt) : UI(gameAt->App)
 {
     this->gameAt = gameAt;
-    Bonus captures = Bonus{ {"POKEMON CAPTURED", "POKEMON CAPTURED", "POKEMON CAPTURED", "POKEMON CAPTURED", "POKEMON CAPTURED", "POKEMON CAPTURED"}, 0, 500000, true };
-    Bonus evolutions = Bonus{ {"POKEMON EVOLVED", "POKEMON EVOLVED", "POKEMON EVOLVED", "POKEMON EVOLVED", "POKEMON EVOLVED", "POKEMON EVOLVED"}, 0, 750000, true };
+    Bonus captures = Bonus{ {"POKEMON CAUGHT", "POKEMON CAUGHT", "POKEMON CAPTURÉ", "POKEMON GEFANGEN", "POKEMONS CAPTURADOS", "POKEMON CATTURATI"}, 0, 500000, true };
+    Bonus evolutions = Bonus{ {"POKEMON EVOLVED", "POKEMON EVOLVED", "POKEMON ÉVOLUÉS", "ENTWICKELTE POKEMON", "POKEMON EVOLUCIONADOS", "POKEMON EVOLUTI"}, 0, 750000, true };
     Bonus cloyster = Bonus{ {"CLOYSTER", "CLOYSTER", "CLOYSTER", "CLOYSTER", "CLOYSTER", "CLOYSTER"}, 0, 75000, false };
     Bonus slowpoke = Bonus{ {"SLOWPOKE", "SLOWPOKE", "SLOWPOKE", "SLOWPOKE", "SLOWPOKE", "SLOWPOKE"}, 0, 75000, false };
     Bonus bellsprout = Bonus{ {"BELLSPROUT", "BELLSPROUT", "BELLSPROUT", "BELLSPROUT", "BELLSPROUT", "BELLSPROUT"}, 0, 75000, false };
     Bonus poliwag = Bonus{ {"POLIWAG", "POLIWAG", "POLIWAG", "POLIWAG", "POLIWAG", "POLIWAG"}, 0, 50000, false };
     Bonus psyduck = Bonus{ {"PSYDUCK", "PSYDUCK", "PSYDUCK", "PSYDUCK", "PSYDUCK", "PSYDUCK"}, 0, 50000, false };
     Bonus dugtrio = Bonus{ {"DUGTRIO", "DUGTRIO", "DUGTRIO", "DUGTRIO", "DUGTRIO", "DUGTRIO"}, 0, 50000, false };
-    Bonus caves = Bonus{ {"CAVE SHOTS", "CAVE SHOTS", "CAVE SHOTS", "CAVE SHOTS", "CAVE SHOTS", "CAVE SHOTS"}, 0, 25000, true };
-    Bonus spinner = Bonus{ {"SPINNER TURNS", "SPINNER TURNS", "SPINNER TURNS", "SPINNER TURNS", "SPINNER TURNS", "SPINNER TURNS"}, 0, 100, true };
+    Bonus caves = Bonus{ {"CAVE SHOTS", "CAVE SHOTS", "PHOTOS DE GROTTES", "HOHLENAUFNAHMEN", "TIROS DE CUEVA", "SCATTI IN GROTTA"}, 0, 25000, true };
+    Bonus spinner = Bonus{ {"SPINNER TURNS", "SPINNER TURNS", "ROULETTE TURNS", "SPINNER DREHT SICH", "GIROS SPINNER", "FILATORE GIRI"}, 0, 100, true };
     BonusesFinalBall.emplace_back(captures);
     BonusesFinalBall.emplace_back(evolutions);
     BonusesFinalBall.emplace_back(cloyster);
@@ -92,6 +92,7 @@ void BonusFinalBall::Activate()
 void BonusFinalBall::Deactivate()
 {
     enabled = false;
+    gameAt->pointsCounter.Set(0);
     gameAt->pointsCounter.Set(totalPoints);
     for (size_t i = 0; i < BonusesFinalBall.size(); i++)
     {
@@ -114,7 +115,6 @@ void BonusFinalBall::Render()
     
     if(index < (int)BonusesFinalBall.size())
     {
-       
         std::string line = std::to_string(BonusesFinalBall.at(index).count);
         line += " ";
         line += BonusesFinalBall.at(index).BonusName.at(selectedLanguage);
