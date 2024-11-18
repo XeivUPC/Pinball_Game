@@ -58,7 +58,8 @@ Here’s a quick guide to help you control the game and use the special modes:
 - **F3:** 🌍 **Gravity Mode** – Toggle gravity strength (half vs. original)
 - **F4:** 🎞️ **FPS Control** – Toggle between 30 FPS and 60 FPS
 - **F5:** 💥 **Bumper Restitution** – Toggle triangular bumper rebound (original vs. 4x restitution)
-
+- **F6:** 🔝 **100,000,000 points** – Adds 100,000,000 points to your current score
+- **F6:** 🏁 **End Game** – Skip right to the HighScore in the game
 ---
 
 ## ⚡ **Differences from the Original Game**
