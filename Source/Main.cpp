@@ -1,9 +1,11 @@
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 #include "Application.h"
 #include "Globals.h"
 
 #include "raylib.h"
 
 #include <stdlib.h>
+
 
 enum main_states
 {
