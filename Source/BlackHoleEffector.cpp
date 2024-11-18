@@ -11,7 +11,7 @@ BlackHoleEffector::BlackHoleEffector(ModuleGame* gameAt, b2Vec2 position, float 
 	fixtureData.pointer = (uintptr_t)(&sensor);
 
 	body = Box2DFactory::GetInstance().CreateCircle(gameAt->App->physics->world, { position.x, position.y }, radius, fixtureData);
-	body->SetType(b2_staticBody);
+	body->SetType(b2_kinematicBody);
 
 	body->GetFixtureList()[0].SetSensor(true);
 
@@ -51,4 +51,9 @@ bool BlackHoleEffector::CleanUp()
 {
 	Effector::CleanUp();
 	return true;
+}
+
+void BlackHoleEffector::SetPosition(b2Vec2 pos)
+{
+	body->SetTransform(pos, 0);
 }

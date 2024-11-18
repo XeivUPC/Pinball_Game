@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="145">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="192" height="278" tilewidth="1" tileheight="1" infinite="0" nextlayerid="5" nextobjectid="145">
  <tileset firstgid="1" name="map_redMap" tilewidth="192" tileheight="278" tilecount="2" columns="2">
   <image source="../map_blueMap.png" width="384" height="278"/>
  </tileset>
@@ -537,7 +537,7 @@
     <property name="type" value="cave"/>
    </properties>
   </object>
-  <object id="144" x="76" y="137" width="9" height="9">
+  <object id="144" x="78" y="139" width="5" height="5">
    <ellipse/>
   </object>
  </objectgroup>

@@ -273,6 +273,10 @@
     <ClCompile Include="Source\BlackHoleEffector.cpp">
       <Filter>Objects\Effectors %28Objects%29</Filter>
     </ClCompile>
+    <ClCompile Include="Source\BonusFinalBall.cpp" />
+    <ClCompile Include="Source\TornadoThrower.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source/Application.h" />
@@ -550,6 +554,10 @@
     </ClInclude>
     <ClInclude Include="Source\BlackHoleEffector.h">
       <Filter>Objects\Effectors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BonusFinalBall.h" />
+    <ClInclude Include="Source\TornadoThrower.h">
+      <Filter>Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

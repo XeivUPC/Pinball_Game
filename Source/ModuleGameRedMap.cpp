@@ -28,6 +28,7 @@
 #include "EvoArrowGroup.h"
 #include "CatchedPokemon.h"
 #include "BonusFinalBall.h"
+#include "TornadoThrower.h"
 
 
 
@@ -103,6 +104,9 @@ bool ModuleGameRedMap::Start()
 	Pikachu* pikachu = new Pikachu(this, { 139.f / SCREEN_SIZE ,245.f / SCREEN_SIZE });
 	Staryu* staryu = new Staryu(this, { 0,0 }, {0,0});
 	Bellsprout* bellsprout = new Bellsprout(this, { 104.f/ SCREEN_SIZE,78.f/SCREEN_SIZE },8.f/SCREEN_SIZE);
+
+	TornadoThrower* tornadoThrower = new TornadoThrower(this, { 80.f / SCREEN_SIZE, 180.f / SCREEN_SIZE });
+	tornadoThrower->SetIfEnable(true);
 
 	SetState(StartGame);
 

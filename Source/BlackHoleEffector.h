@@ -11,6 +11,8 @@ public:
 	update_status Update();
 	bool CleanUp() override;
 
+	void SetPosition(b2Vec2 pos);
+
 protected:
 
 };
