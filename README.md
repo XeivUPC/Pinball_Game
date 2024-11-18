@@ -84,6 +84,8 @@ Open the Visual Studio project and open the terminal. Write the following line:
 vcpkg integrate install
 ```
 
+You **must** also set the platform to Win32
+
 Now you are ready to compile!
 
 ---
