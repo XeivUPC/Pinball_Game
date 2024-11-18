@@ -3,10 +3,10 @@
 #include "ModulePhysics.h"
 #include "Box2DFactory.h"
 
-BlackHoleEffector::BlackHoleEffector(ModuleGame* gameAt, b2Vec2 position, float radius) : Effector (gameAt, position)
+BlackHoleEffector::BlackHoleEffector(ModuleGame* gameAt, b2Vec2 position, float radius, float force) : Effector (gameAt, position)
 {
 	gameAt->AddObject(this);
-
+	this->force = force;
 	b2FixtureUserData fixtureData;
 	fixtureData.pointer = (uintptr_t)(&sensor);
 
@@ -37,7 +37,7 @@ update_status BlackHoleEffector::Update()
 			direction.Normalize();
 
 			float distance = direction.Length();
-			float strength = 50.0f / (distance * distance);
+			float strength = force / (distance * distance);
 
 			b2Vec2 finalDirection = { direction.x * strength, direction.y * strength };
 			bodyPointer->ApplyLinearImpulseToCenter(finalDirection, true);

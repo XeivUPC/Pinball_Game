@@ -105,8 +105,7 @@ bool ModuleGameRedMap::Start()
 	Staryu* staryu = new Staryu(this, { 0,0 }, {0,0});
 	Bellsprout* bellsprout = new Bellsprout(this, { 104.f/ SCREEN_SIZE,78.f/SCREEN_SIZE },8.f/SCREEN_SIZE);
 
-	TornadoThrower* tornadoThrower = new TornadoThrower(this, { 80.f / SCREEN_SIZE, 180.f / SCREEN_SIZE });
-	tornadoThrower->SetIfEnable(true);
+	
 
 	SetState(StartGame);
 

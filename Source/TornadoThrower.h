@@ -4,18 +4,16 @@
 #include "MapSensor.h"
 #include "Box2DFactory.h"
 
-class BlackHoleEffector;
-
 class TornadoThrower : public MapObject {
 private:
+	Timer throwTimer;
+	float throwSpeed = 5.f;
 public:
 	TornadoThrower(ModuleGame* gameAt, b2Vec2 position);
 	~TornadoThrower();
 
 	update_status Update();
 	bool CleanUp() override;
-
-	void SetIfEnable(bool status);
 
 protected:
 	b2Body* body = nullptr;
@@ -24,11 +22,7 @@ protected:
 	float radius = 0;
 
 	Texture* texture = nullptr;
-	Animator* animator = nullptr;;
-
-	bool enabled = false;
-
-	BlackHoleEffector* blackHoleEffector = nullptr;
+	Animator* animator = nullptr;
 
 	Timer destroyTimer;
 	int destroyTime = 30;

@@ -276,6 +276,7 @@
     <ClInclude Include="Source\Timer.h" />
     <ClInclude Include="Source\ModuleUserPreferences.h" />
     <ClInclude Include="Source\TimerUI.h" />
+    <ClInclude Include="Source\Tornado.h" />
     <ClInclude Include="Source\TornadoThrower.h" />
     <ClInclude Include="Source\TriangularBumper.h" />
     <ClInclude Include="Source\UI.h" />
@@ -372,6 +373,7 @@
     <ClCompile Include="Source\Timer.cpp" />
     <ClCompile Include="Source\ModuleUserPreferences.cpp" />
     <ClCompile Include="Source\TimerUI.cpp" />
+    <ClCompile Include="Source\Tornado.cpp" />
     <ClCompile Include="Source\TornadoThrower.cpp" />
     <ClCompile Include="Source\TriangularBumper.cpp" />
     <ClCompile Include="Source\UI.cpp" />

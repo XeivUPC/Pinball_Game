@@ -6,12 +6,14 @@
 #include "CentralScreen.h"
 #include "PokeBall.h"
 #include "ModuleUserPreferences.h"
+#include "TornadoThrower.h"
 #include <algorithm> 
 #include <random>
 
 
 bool BonusSelectionProgram::GiveBonus(int type, int subType)
 {
+	TornadoThrower* tornadoThrower = nullptr;
 	switch (type)
 	{
 		case 0:
@@ -58,7 +60,11 @@ bool BonusSelectionProgram::GiveBonus(int type, int subType)
 		case 12:
 			//// CaptureMode
 			break;
+		case 18:
 
+			tornadoThrower = new TornadoThrower(gameAt, {(gameAt->screen->screenArea.x + gameAt->screen->screenArea.width/2) /SCREEN_SIZE, (gameAt->screen->screenArea.y + gameAt->screen->screenArea.height / 2) / SCREEN_SIZE });
+			//// Pidgey
+			break;
 		default:
 			break;
 	}
@@ -82,12 +88,14 @@ BonusSelectionProgram::BonusSelectionProgram(int attemptVariant) : ScreenProgram
 			bonusToSelect.emplace_back(6);
 			bonusToSelect.emplace_back(2);
 			bonusToSelect.emplace_back(0);
+			bonusToSelect.emplace_back(18);
 			break;
 		case 2:
 			bonusToSelect.emplace_back(3);
 			bonusToSelect.emplace_back(0);
 			bonusToSelect.emplace_back(2);
 			bonusToSelect.emplace_back(11);
+			bonusToSelect.emplace_back(18);
 			break;
 		case 3:
 			bonusToSelect.emplace_back(3);

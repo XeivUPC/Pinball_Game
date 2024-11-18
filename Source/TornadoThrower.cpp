@@ -1,9 +1,9 @@
 #include "TornadoThrower.h"
-#include "BlackHoleEffector.h"
 #include "ModuleTexture.h"
 #include "Application.h"
 #include "ModulePhysics.h"
 #include "Box2DFactory.h"
+#include "Tornado.h"
 
 
 TornadoThrower::TornadoThrower(ModuleGame* gameAt, b2Vec2 position) : MapObject(gameAt)
@@ -20,6 +20,7 @@ TornadoThrower::TornadoThrower(ModuleGame* gameAt, b2Vec2 position) : MapObject(
 	body->SetType(b2_staticBody);
 
 	sensor.SetBodyToTrack(&body->GetFixtureList()[0]);
+	body->GetFixtureList()[0].SetSensor(true);
 
 	gameAt->App->texture->CreateTexture("Assets/tornado_pidgey.png", "tornado_pidgey");
 	texture = gameAt->App->texture->GetTexture("tornado_pidgey");
@@ -34,27 +35,32 @@ TornadoThrower::TornadoThrower(ModuleGame* gameAt, b2Vec2 position) : MapObject(
 	animator->SetSpeed(0.15f);
 	animator->SelectAnimation("Idle", true);
 
-	blackHoleEffector = new BlackHoleEffector(gameAt, position, 5.f);
 	destroyTimer.Start();
 }
 
 TornadoThrower::~TornadoThrower()
 {
+
 }
 
 update_status TornadoThrower::Update()
 {
+	if (throwSpeed < throwTimer.ReadSec()) {
+		throwTimer.Start();
+		
+		Tornado* tornado = new Tornado(gameAt, body->GetPosition(), {1,-0.5},5);
+		tornado = new Tornado(gameAt, body->GetPosition(), {-1,-0.5},5);
+		//// Do Throw
+	}
+
 	if (position.y <= 216 / SCREEN_SIZE) {
 		position.y = position.y + 0.5 * GetFrameTime();
 		body->SetTransform(position, 0);
-		blackHoleEffector->SetPosition(position);
 	}
 	if (destroyTimer.ReadSec() >= destroyTime) {
-		gameAt->RemoveObject(blackHoleEffector);
 		gameAt->RemoveObject(this);
 	}
 	else {
-		blackHoleEffector->Update();
 		animator->Update();
 		animator->Animate((int)((position.x) * SCREEN_SIZE)-16, (int)((position.y) * SCREEN_SIZE)-16, true);
 	}
@@ -62,13 +68,14 @@ update_status TornadoThrower::Update()
 }
 
 bool TornadoThrower::CleanUp()
-{
+{	
 	gameAt->App->physics->world->DestroyBody(body);
+	
+	if (animator != nullptr) {
+		delete animator;
+		animator = nullptr;
+	}
+
 	return true;
 }
 
-void TornadoThrower::SetIfEnable(bool status)
-{
-	enabled = status;
-	blackHoleEffector->SetIfEnable(enabled);
-}
