@@ -1222,7 +1222,7 @@
 		<rarity value="3" />
 		<height value="0,9" />
 		<weight value="45,5" />
-		<discovered value="false" />
+		<discovered value="true" />
 		<captured value="false" />
 	</id>
 	<id value="73">
