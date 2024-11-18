@@ -1,4 +1,4 @@
-# 🌟 **Physics Pinball Game** 🌟
+# 🌟 **Physiscs Pinball Game** 🌟
 
 Welcome to our **Pinball Game** for the physics assignment! This project is inspired by the iconic **Pokemon Pinball** for GBC ↓
 
@@ -73,6 +73,18 @@ This version of **Pinball Game** includes new features:
 ## 📜 **Credits & Acknowledgments**
 
 Thanks to the original creators of **Pokemon Pinball** for the inspiration!
+
+---
+
+## ⚙️ **Compilation**
+
+Open the Visual Studio project and open the terminal. Write the following line:
+
+```bash
+vcpkg integrate install
+```
+
+Now you are ready to compile!
 
 ---
 
