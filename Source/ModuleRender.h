@@ -24,6 +24,7 @@ public:
 	bool DrawRect(int x, int y, int width, int height, Color color = WHITE);
 
 public:
+	bool debug = false;
 
 	Color background;
     Camera2D camera;

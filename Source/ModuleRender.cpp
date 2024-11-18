@@ -44,7 +44,9 @@ update_status ModuleRender::PreUpdate()
 // Update: debug camera
 update_status ModuleRender::Update()
 {
-    
+    if (IsKeyPressed(KEY_F1)) {
+        debug = !debug;
+    }
 
 	return UPDATE_CONTINUE;
 }
@@ -55,7 +57,9 @@ update_status ModuleRender::PostUpdate()
     // Draw everything in our batch!
 
     EndMode2D();
-    DrawFPS(10, 10);
+    if (debug) {
+        DrawFPS(10, 10);
+    }
     EndDrawing();
 
 	return UPDATE_CONTINUE;

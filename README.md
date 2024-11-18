@@ -66,7 +66,7 @@ Here’s a quick guide to help you control the game and use the special modes:
 
 This version of **Pinball Game** includes new features:
 
-- **New Ball Affectors**: Interact with the ball in unique ways for a fresh experience! 🎱
+- **New Boss Fight**: There is a new bonus that will spawn a furious Pidgey which will attack you with tornados! 🌪️
   
 ---
 
