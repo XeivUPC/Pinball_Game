@@ -1,4 +1,4 @@
-# 🌟 **Physiscs Pinball Game** 🌟
+# 🌟 **Physics Pinball Game** 🌟
 
 Welcome to our **Pinball Game** for the physics assignment! This project is inspired by the iconic **Pokemon Pinball** for GBC ↓
 
