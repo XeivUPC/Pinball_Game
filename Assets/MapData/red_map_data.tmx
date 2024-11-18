@@ -366,7 +366,7 @@
    </properties>
    <ellipse/>
   </object>
-  <object id="62" name="BallSpawn" x="167.553" y="259.632">
+  <object id="62" name="BallSpawn" x="166.959" y="267.975">
    <properties>
     <property name="type" value="ballSpawn"/>
    </properties>
