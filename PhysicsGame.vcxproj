@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{746CC4C3-787F-4B0E-AA66-E388FE3FF4F6}</ProjectGuid>
-    <RootNamespace>PokemonPinball</RootNamespace>
-    <ProjectName>PokemonPinball</ProjectName>
+    <RootNamespace>PhysicsGame</RootNamespace>
+    <ProjectName>PhysicsGame</ProjectName>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -93,9 +93,6 @@
     <LocalDebuggerWorkingDirectory>$(SolutionDir)</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
-  <PropertyGroup Label="Vcpkg">
-    <VcpkgEnableManifest>true</VcpkgEnableManifest>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -105,7 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ShowIncludes>false</ShowIncludes>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)Source\external\box2d\include;$(SolutionDir)Source\external\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -125,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ShowIncludes>false</ShowIncludes>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)Source\external\box2d\include;$(SolutionDir)Source\external\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -148,7 +145,7 @@
       <UseFullPaths>false</UseFullPaths>
       <ShowIncludes>false</ShowIncludes>
       <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)\Source\external\pugixml-1.14\src;$(SolutionDir)\Source\external\box2d\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)Source\external\box2d\include;$(SolutionDir)Source\external\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -170,7 +167,7 @@
       <UseFullPaths>false</UseFullPaths>
       <ShowIncludes>false</ShowIncludes>
       <PreprocessorDefinitions>WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)Source\external\box2d\include%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Source\external\raylib\src;$(SolutionDir)Source\external\box2d\include;$(SolutionDir)Source\external\pugi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
@@ -183,18 +180,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source/Application.h" />
-    <ClInclude Include="Source/Globals.h" />
-    <ClInclude Include="Source/ModulePhysics.h" />
-    <ClInclude Include="Source/Module.h" />
-    <ClInclude Include="Source/ModuleAudio.h" />
-    <ClInclude Include="Source/ModuleRender.h" />
-    <ClInclude Include="Source/ModuleWindow.h" />
-    <ClInclude Include="Source/p2Point.h" />
     <ClInclude Include="Source\AnimationSystem.h" />
+    <ClInclude Include="Source\Application.h" />
     <ClInclude Include="Source\Bellsprout.h" />
-    <ClInclude Include="Source\BonusFinalBall.h" />
     <ClInclude Include="Source\BlackHoleEffector.h" />
+    <ClInclude Include="Source\BonusFinalBall.h" />
     <ClInclude Include="Source\BonusMultiplierSensor.h" />
     <ClInclude Include="Source\BonusMultiplierSensorGroup.h" />
     <ClInclude Include="Source\BonusSelectionProgram.h" />
@@ -215,21 +205,24 @@
     <ClInclude Include="Source\CollisionSensor.h" />
     <ClInclude Include="Source\CollisionsManager.h" />
     <ClInclude Include="Source\Counter.h" />
-    <ClInclude Include="Source\DiglettCounter.h" />
     <ClInclude Include="Source\DiglettBumper.h" />
+    <ClInclude Include="Source\DiglettCounter.h" />
     <ClInclude Include="Source\DittoColliders.h" />
     <ClInclude Include="Source\Effector.h" />
     <ClInclude Include="Source\EmptyProgram.h" />
     <ClInclude Include="Source\EvoArrowGroup.h" />
+    <ClInclude Include="Source\external\pugixml.hpp" />
+    <ClInclude Include="Source\external\pugi\pugiconfig.hpp" />
     <ClInclude Include="Source\Flipper.h" />
     <ClInclude Include="Source\GameUI.h" />
-    <ClInclude Include="Source\GetEvoArrow.h" />
     <ClInclude Include="Source\GetArrowGroup.h" />
+    <ClInclude Include="Source\GetEvoArrow.h" />
+    <ClInclude Include="Source\Globals.h" />
     <ClInclude Include="Source\HabitatSelectedProgram.h" />
     <ClInclude Include="Source\HabitatSelectionProgram.h" />
     <ClInclude Include="Source\LapSensor.h" />
     <ClInclude Include="Source\LapSensorGroup.h" />
-    <ClInclude Include="Source\MapArrow.h" />
+    <ClInclude Include="Source\mapArrow.h" />
     <ClInclude Include="Source\MapArrowGroup.h" />
     <ClInclude Include="Source\MapCave.h" />
     <ClInclude Include="Source\MapEnergyBattery.h" />
@@ -238,6 +231,8 @@
     <ClInclude Include="Source\MapSensor.h" />
     <ClInclude Include="Source\MapSensorGroup.h" />
     <ClInclude Include="Source\MemLeaks.h" />
+    <ClInclude Include="Source\Module.h" />
+    <ClInclude Include="Source\ModuleAudio.h" />
     <ClInclude Include="Source\ModuleCredits.h" />
     <ClInclude Include="Source\ModuleGame.h" />
     <ClInclude Include="Source\ModuleGameBlueMap.h" />
@@ -251,20 +246,24 @@
     <ClInclude Include="Source\ModuleKeybinds.h" />
     <ClInclude Include="Source\ModuleLanguageSelect.h" />
     <ClInclude Include="Source\ModuleLevelSelection.h" />
-    <ClInclude Include="Source\ModulePokedex.h" />
-    <ClInclude Include="Source\ModuleScene.h" />
     <ClInclude Include="Source\ModuleMainMenu.h" />
+    <ClInclude Include="Source\ModulePhysics.h" />
+    <ClInclude Include="Source\ModulePokedex.h" />
+    <ClInclude Include="Source\ModuleRender.h" />
+    <ClInclude Include="Source\ModuleScene.h" />
     <ClInclude Include="Source\ModuleSettings.h" />
     <ClInclude Include="Source\ModuleText.h" />
     <ClInclude Include="Source\ModuleTexture.h" />
     <ClInclude Include="Source\ModuleTimerUIText.h" />
+    <ClInclude Include="Source\ModuleUserPreferences.h" />
+    <ClInclude Include="Source\ModuleWindow.h" />
     <ClInclude Include="Source\OverworldPokemon.h" />
     <ClInclude Include="Source\OverworldPokemonBumper.h" />
+    <ClInclude Include="Source\p2Point.h" />
     <ClInclude Include="Source\Pikachu.h" />
     <ClInclude Include="Source\PokeBall.h" />
     <ClInclude Include="Source\PokeballChangerGroup.h" />
     <ClInclude Include="Source\PokeballChangerSensor.h" />
-    <ClInclude Include="Source\PokemonRevealer.h" />
     <ClInclude Include="Source\PoliwagBumper.h" />
     <ClInclude Include="Source\PoliwagPsyduckCounter.h" />
     <ClInclude Include="Source\PsyduckBumper.h" />
@@ -274,7 +273,6 @@
     <ClInclude Include="Source\Staryu.h" />
     <ClInclude Include="Source\StaryuBumper.h" />
     <ClInclude Include="Source\Timer.h" />
-    <ClInclude Include="Source\ModuleUserPreferences.h" />
     <ClInclude Include="Source\TimerUI.h" />
     <ClInclude Include="Source\Tornado.h" />
     <ClInclude Include="Source\TornadoThrower.h" />
@@ -282,17 +280,11 @@
     <ClInclude Include="Source\UI.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source/Application.cpp" />
-    <ClCompile Include="Source/Log.cpp" />
-    <ClCompile Include="Source/Main.cpp" />
-    <ClCompile Include="Source/ModuleAudio.cpp" />
-    <ClCompile Include="Source/ModulePhysics.cpp" />
-    <ClCompile Include="Source/ModuleRender.cpp" />
-    <ClCompile Include="Source/ModuleWindow.cpp" />
     <ClCompile Include="Source\AnimationSystem.cpp" />
+    <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Bellsprout.cpp" />
-    <ClCompile Include="Source\BonusFinalBall.cpp" />
     <ClCompile Include="Source\BlackHoleEffector.cpp" />
+    <ClCompile Include="Source\BonusFinalBall.cpp" />
     <ClCompile Include="Source\BonusMultiplierSensor.cpp" />
     <ClCompile Include="Source\BonusMultiplierSensorGroup.cpp" />
     <ClCompile Include="Source\BonusSelectionProgram.cpp" />
@@ -313,21 +305,24 @@
     <ClCompile Include="Source\CollisionSensor.cpp" />
     <ClCompile Include="Source\CollisionsManager.cpp" />
     <ClCompile Include="Source\Counter.cpp" />
-    <ClCompile Include="Source\DiglettCounter.cpp" />
     <ClCompile Include="Source\DiglettBumper.cpp" />
+    <ClCompile Include="Source\DiglettCounter.cpp" />
     <ClCompile Include="Source\DittoColliders.cpp" />
     <ClCompile Include="Source\Effector.cpp" />
     <ClCompile Include="Source\EmptyProgram.cpp" />
     <ClCompile Include="Source\EvoArrowGroup.cpp" />
+    <ClCompile Include="Source\external\pugi\pugixml.cpp" />
     <ClCompile Include="Source\Flipper.cpp" />
     <ClCompile Include="Source\GameUI.cpp" />
-    <ClCompile Include="Source\GetEvoArrow.cpp" />
     <ClCompile Include="Source\GetArrowGroup.cpp" />
+    <ClCompile Include="Source\GetEvoArrow.cpp" />
     <ClCompile Include="Source\HabitatSelectedProgram.cpp" />
     <ClCompile Include="Source\HabitatSelectionProgram.cpp" />
     <ClCompile Include="Source\LapSensor.cpp" />
     <ClCompile Include="Source\LapSensorGroup.cpp" />
-    <ClCompile Include="Source\MapArrow.cpp" />
+    <ClCompile Include="Source\Log.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\mapArrow.cpp" />
     <ClCompile Include="Source\MapArrowGroup.cpp" />
     <ClCompile Include="Source\MapCave.cpp" />
     <ClCompile Include="Source\MapEnergyBattery.cpp" />
@@ -335,6 +330,7 @@
     <ClCompile Include="Source\MapObject.cpp" />
     <ClCompile Include="Source\MapSensor.cpp" />
     <ClCompile Include="Source\MapSensorGroup.cpp" />
+    <ClCompile Include="Source\ModuleAudio.cpp" />
     <ClCompile Include="Source\ModuleCredits.cpp" />
     <ClCompile Include="Source\ModuleGame.cpp" />
     <ClCompile Include="Source\ModuleGameBlueMap.cpp" />
@@ -348,20 +344,23 @@
     <ClCompile Include="Source\ModuleKeybinds.cpp" />
     <ClCompile Include="Source\ModuleLanguageSelect.cpp" />
     <ClCompile Include="Source\ModuleLevelSelection.cpp" />
-    <ClCompile Include="Source\ModulePokedex.cpp" />
-    <ClCompile Include="Source\ModuleScene.cpp" />
     <ClCompile Include="Source\ModuleMainMenu.cpp" />
+    <ClCompile Include="Source\ModulePhysics.cpp" />
+    <ClCompile Include="Source\ModulePokedex.cpp" />
+    <ClCompile Include="Source\ModuleRender.cpp" />
+    <ClCompile Include="Source\ModuleScene.cpp" />
     <ClCompile Include="Source\ModuleSettings.cpp" />
     <ClCompile Include="Source\ModuleText.cpp" />
     <ClCompile Include="Source\ModuleTexture.cpp" />
     <ClCompile Include="Source\ModuleTimerUIText.cpp" />
+    <ClCompile Include="Source\ModuleUserPreferences.cpp" />
+    <ClCompile Include="Source\ModuleWindow.cpp" />
     <ClCompile Include="Source\OverworldPokemon.cpp" />
     <ClCompile Include="Source\OverworldPokemonBumper.cpp" />
     <ClCompile Include="Source\Pikachu.cpp" />
     <ClCompile Include="Source\PokeBall.cpp" />
     <ClCompile Include="Source\PokeballChangerGroup.cpp" />
     <ClCompile Include="Source\PokeballChangerSensor.cpp" />
-    <ClCompile Include="Source\PokemonRevealer.cpp" />
     <ClCompile Include="Source\PoliwagBumper.cpp" />
     <ClCompile Include="Source\PoliwagPsyduckCounter.cpp" />
     <ClCompile Include="Source\PsyduckBumper.cpp" />
@@ -371,7 +370,6 @@
     <ClCompile Include="Source\Staryu.cpp" />
     <ClCompile Include="Source\StaryuBumper.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
-    <ClCompile Include="Source\ModuleUserPreferences.cpp" />
     <ClCompile Include="Source\TimerUI.cpp" />
     <ClCompile Include="Source\Tornado.cpp" />
     <ClCompile Include="Source\TornadoThrower.cpp" />
@@ -379,12 +377,20 @@
     <ClCompile Include="Source\UI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Source\resources.rc" />
+    <ProjectReference Include="$(SolutionDir)raylib.vcxproj">
+      <Project>{e89d61ac-55de-4482-afd4-df7242ebc859}</Project>
+    </ProjectReference>
+    <ProjectReference Include="box2d.vcxproj">
+      <Project>{920f0b3f-ef11-4e35-b122-add482acdf15}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="Assets\Data\HighScore.xml" />
     <Xml Include="Assets\Data\Pokedex.xml" />
     <Xml Include="Assets\Data\UserPreferences.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\resources.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

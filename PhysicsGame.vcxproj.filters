@@ -1,70 +1,250 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Source/Application.cpp" />
-    <ClCompile Include="Source/Main.cpp" />
-    <ClCompile Include="Source\ModuleLevelSelection.cpp">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    <ClCompile Include="Source\external\pugi\pugixml.cpp">
+      <Filter>_Lib\Pugixml</Filter>
     </ClCompile>
-    <ClCompile Include="Source/ModuleAudio.cpp">
-      <Filter>Modules</Filter>
+    <ClCompile Include="Source\CircularBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleScene.cpp">
-      <Filter>Modules</Filter>
+    <ClCompile Include="Source\DiglettBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source/ModulePhysics.cpp">
-      <Filter>Modules</Filter>
+    <ClCompile Include="Source\OverworldPokemonBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source/ModuleRender.cpp">
-      <Filter>Modules</Filter>
+    <ClCompile Include="Source\PoliwagBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleTexture.cpp">
-      <Filter>Modules</Filter>
+    <ClCompile Include="Source\PsyduckBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source/ModuleWindow.cpp">
-      <Filter>Modules</Filter>
+    <ClCompile Include="Source\TriangularBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\AnimationSystem.cpp">
-      <Filter>Utils</Filter>
+    <ClCompile Include="Source\StaryuBumper.cpp">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleCredits.cpp">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    <ClCompile Include="Source\BlackHoleEffector.cpp">
+      <Filter>Objects\Effectors %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source/Log.cpp">
+    <ClCompile Include="Source\CenterBlueArrowGroup.cpp">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CenterRedArrowGroup.cpp">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GetArrowGroup.cpp">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EvoArrowGroup.cpp">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CenterBlueArrow.cpp">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CenterRedArrow.cpp">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BonusMultiplierSensorGroup.cpp">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CaveSensorGroup.cpp">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LapSensorGroup.cpp">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PokeballChangerGroup.cpp">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BonusMultiplierSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CaveSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LapSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PokeballChangerSensor.cpp">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Bellsprout.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Bumper.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CatchedPokemon.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CentralScreen.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Cloyster.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DiglettCounter.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DittoColliders.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Effector.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Flipper.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\mapArrow.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapArrowGroup.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapCave.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapEnergyBattery.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapEnergyRotator.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapObject.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapSensor.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MapSensorGroup.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Pikachu.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PokeBall.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\PoliwagPsyduckCounter.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SaveAgainBall.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Slowpoke.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Staryu.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Tornado.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TornadoThrower.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ScreenProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BonusSelectionProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BonusStartProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CapturePokemon.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EmptyProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\HabitatSelectedProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\HabitatSelectionProgram.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\OverworldPokemon.cpp">
+      <Filter>ScreenPrograms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CollisionSensor.cpp">
+      <Filter>Systems\CollisionDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CollisionsManager.cpp">
+      <Filter>Systems\CollisionDetection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGameBlueMap.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGameRedMap.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BonusFinalBall.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameUI.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TimerUI.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UI.cpp">
+      <Filter>UIs</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Log.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Source\Timer.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleUserPreferences.cpp">
-      <Filter>Modules</Filter>
+    <ClCompile Include="Source\AnimationSystem.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleMainMenu.cpp">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModuleLanguageSelect.cpp">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    <ClCompile Include="Source\Box2DFactory.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Source\Counter.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\ModuleSettings.cpp">
       <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleKeybinds.cpp">
+    <ClCompile Include="Source\ModuleCredits.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGame.cpp">
       <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleHighScore.cpp">
       <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleText.cpp">
-      <Filter>Modules</Filter>
+    <ClCompile Include="Source\ModuleKeybinds.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\UI.cpp">
-      <Filter>Utils</Filter>
+    <ClCompile Include="Source\ModuleLanguageSelect.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\GameUI.cpp">
-      <Filter>UIs</Filter>
+    <ClCompile Include="Source\ModuleLevelSelection.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleMainMenu.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModulePokedex.cpp">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleTimerUIText.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGamePokedexJapanese.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\ModuleGamePokedexWorldwide.cpp">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClCompile>
     <ClCompile Include="Source\ModuleGameUIText.cpp">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
@@ -75,333 +255,48 @@
     <ClCompile Include="Source\ModuleHSNum.cpp">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CollisionsManager.cpp">
-      <Filter>Systems\CollisionDetection</Filter>
+    <ClCompile Include="Source\ModuleAudio.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CollisionSensor.cpp">
-      <Filter>Systems\CollisionDetection</Filter>
+    <ClCompile Include="Source\ModulePhysics.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Box2DFactory.cpp">
-      <Filter>Utils</Filter>
+    <ClCompile Include="Source\ModuleRender.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Source\PokeBall.cpp">
-      <Filter>Objects</Filter>
+    <ClCompile Include="Source\ModuleScene.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Bumper.cpp">
-      <Filter>Objects</Filter>
+    <ClCompile Include="Source\ModuleText.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Flipper.cpp">
-      <Filter>Objects</Filter>
+    <ClCompile Include="Source\ModuleTexture.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleGame.cpp">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    <ClCompile Include="Source\ModuleUserPreferences.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Source\ModuleGameRedMap.cpp">
-      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MapObject.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModuleGameBlueMap.cpp">
-      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CircularBumper.cpp">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\TriangularBumper.cpp">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MapSensor.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PokeballChangerSensor.cpp">
-      <Filter>Objects\Map Sensors %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\DittoColliders.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\DiglettBumper.cpp">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PoliwagBumper.cpp">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PsyduckBumper.cpp">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MapEnergyRotator.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MapSensorGroup.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PokeballChangerGroup.cpp">
-      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\StaryuBumper.cpp">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModuleGamePokedexJapanese.cpp">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModuleGamePokedexWorldwide.cpp">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModulePokedex.cpp">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Pikachu.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\OverworldPokemonBumper.cpp">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PokemonRevealer.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Bellsprout.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Slowpoke.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Cloyster.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Staryu.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CaveSensorGroup.cpp">
-      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CaveSensor.cpp">
-      <Filter>Objects\Map Sensors %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\LapSensor.cpp">
-      <Filter>Objects\Map Sensors %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\LapSensorGroup.cpp">
-      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\mapArrow.cpp">
-      <Filter>Objects</Filter>
+    <ClCompile Include="Source\ModuleWindow.cpp">
+      <Filter>Modules</Filter>
     </ClCompile>
     <ClCompile Include="Source\GetEvoArrow.cpp">
       <Filter>Objects\Map Arrows %28Objects%29</Filter>
     </ClCompile>
-    <ClCompile Include="Source\GetArrowGroup.cpp">
-      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MapArrowGroup.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EvoArrowGroup.cpp">
-      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\DiglettCounter.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\PoliwagPsyduckCounter.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CentralScreen.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ScreenProgram.cpp">
-      <Filter>ScreenPrograms</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CapturePokemon.cpp">
-      <Filter>ScreenPrograms</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MapEnergyBattery.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\HabitatSelectionProgram.cpp">
-      <Filter>ScreenPrograms</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\HabitatSelectedProgram.cpp">
-      <Filter>ScreenPrograms</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CenterRedArrow.cpp">
-      <Filter>Objects\Map Arrows %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CenterBlueArrow.cpp">
-      <Filter>Objects\Map Arrows %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CenterBlueArrowGroup.cpp">
-      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CenterRedArrowGroup.cpp">
-      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BonusMultiplierSensor.cpp">
-      <Filter>Objects\Map Sensors %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BonusMultiplierSensorGroup.cpp">
-      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EmptyProgram.cpp">
-      <Filter>ScreenPrograms</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BonusSelectionProgram.cpp">
-      <Filter>ScreenPrograms</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BonusStartProgram.cpp">
-      <Filter>ScreenPrograms</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\MapCave.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\OverworldPokemon.cpp">
-      <Filter>ScreenPrograms</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CatchedPokemon.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\SaveAgainBall.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\TimerUI.cpp">
-      <Filter>UIs</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ModuleTimerUIText.cpp">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Effector.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BlackHoleEffector.cpp">
-      <Filter>Objects\Effectors %28Objects%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\BonusFinalBall.cpp" />
-    <ClCompile Include="Source\TornadoThrower.cpp">
-      <Filter>Objects</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source/Application.h" />
-    <ClInclude Include="Source/Globals.h" />
-    <ClInclude Include="Source\ModuleLevelSelection.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    <ClInclude Include="Source\external\pugixml.hpp">
+      <Filter>_Lib\Pugixml</Filter>
     </ClInclude>
-    <ClInclude Include="Source/Module.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/ModuleAudio.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleScene.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/ModulePhysics.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/ModuleRender.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleTexture.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/ModuleWindow.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\AnimationSystem.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleCredits.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Timer.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Source/p2Point.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleUserPreferences.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleMainMenu.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleLanguageSelect.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Counter.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleSettings.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleKeybinds.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleHighScore.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleText.h">
-      <Filter>Modules</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\UI.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GameUI.h">
-      <Filter>UIs</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleHSNum.h">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleGameUIText.h">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleHSName.h">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CollisionsManager.h">
-      <Filter>Systems\CollisionDetection</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CollisionSensor.h">
-      <Filter>Systems\CollisionDetection</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Box2DFactory.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\PokeBall.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Bumper.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Flipper.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleGameRedMap.h">
-      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleGame.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\MapObject.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleGameBlueMap.h">
-      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
+    <ClInclude Include="Source\external\pugi\pugiconfig.hpp">
+      <Filter>_Lib\Pugixml</Filter>
     </ClInclude>
     <ClInclude Include="Source\CircularBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\TriangularBumper.h">
+    <ClInclude Include="Source\DiglettBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MapSensor.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\PokeballChangerSensor.h">
-      <Filter>Objects\Map Sensors %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\DittoColliders.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\DiglettBumper.h">
+    <ClInclude Include="Source\OverworldPokemonBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\PoliwagBumper.h">
@@ -410,104 +305,14 @@
     <ClInclude Include="Source\PsyduckBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MapEnergyRotator.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\MapSensorGroup.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\PokeballChangerGroup.h">
-      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    <ClInclude Include="Source\TriangularBumper.h">
+      <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\StaryuBumper.h">
       <Filter>Objects\Bumpers %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\ModuleGamePokedexJapanese.h">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModuleGamePokedexWorldwide.h">
-      <Filter>Modules\Texts %28ModuleText%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ModulePokedex.h">
-      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Pikachu.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\OverworldPokemonBumper.h">
-      <Filter>Objects\Bumpers %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\PokemonRevealer.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Bellsprout.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Slowpoke.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Cloyster.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Staryu.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CaveSensorGroup.h">
-      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CaveSensor.h">
-      <Filter>Objects\Map Sensors %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\LapSensor.h">
-      <Filter>Objects\Map Sensors %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\LapSensorGroup.h">
-      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\mapArrow.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GetEvoArrow.h">
-      <Filter>Objects\Map Arrows %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GetArrowGroup.h">
-      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\MapArrowGroup.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EvoArrowGroup.h">
-      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\DiglettCounter.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\PoliwagPsyduckCounter.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CentralScreen.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ScreenProgram.h">
-      <Filter>ScreenPrograms</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CapturePokemon.h">
-      <Filter>ScreenPrograms</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\MapEnergyBattery.h">
-      <Filter>Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\HabitatSelectionProgram.h">
-      <Filter>ScreenPrograms</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\HabitatSelectedProgram.h">
-      <Filter>ScreenPrograms</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CenterRedArrow.h">
-      <Filter>Objects\Map Arrows %28Objects%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CenterBlueArrow.h">
-      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    <ClInclude Include="Source\BlackHoleEffector.h">
+      <Filter>Objects\Effectors %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\CenterRedArrowGroup.h">
       <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
@@ -515,13 +320,118 @@
     <ClInclude Include="Source\CenterBlueArrowGroup.h">
       <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\BonusMultiplierSensor.h">
-      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    <ClInclude Include="Source\EvoArrowGroup.h">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GetArrowGroup.h">
+      <Filter>Objects\Map Arrow Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CenterBlueArrow.h">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CenterRedArrow.h">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
     </ClInclude>
     <ClInclude Include="Source\BonusMultiplierSensorGroup.h">
       <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EmptyProgram.h">
+    <ClInclude Include="Source\CaveSensorGroup.h">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LapSensorGroup.h">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PokeballChangerGroup.h">
+      <Filter>Objects\Map Sensor Group %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BonusMultiplierSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CaveSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LapSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PokeballChangerSensor.h">
+      <Filter>Objects\Map Sensors %28Objects%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Bellsprout.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Bumper.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CatchedPokemon.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CentralScreen.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Cloyster.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DiglettCounter.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DittoColliders.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Effector.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Flipper.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\mapArrow.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapArrowGroup.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapCave.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapEnergyBattery.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapEnergyRotator.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapObject.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapSensor.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MapSensorGroup.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Pikachu.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PokeBall.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\PoliwagPsyduckCounter.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SaveAgainBall.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Slowpoke.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Staryu.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Tornado.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\TornadoThrower.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ScreenProgram.h">
       <Filter>ScreenPrograms</Filter>
     </ClInclude>
     <ClInclude Include="Source\BonusSelectionProgram.h">
@@ -530,101 +440,210 @@
     <ClInclude Include="Source\BonusStartProgram.h">
       <Filter>ScreenPrograms</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MapCave.h">
-      <Filter>Objects</Filter>
+    <ClInclude Include="Source\CapturePokemon.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EmptyProgram.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HabitatSelectedProgram.h">
+      <Filter>ScreenPrograms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\HabitatSelectionProgram.h">
+      <Filter>ScreenPrograms</Filter>
     </ClInclude>
     <ClInclude Include="Source\OverworldPokemon.h">
       <Filter>ScreenPrograms</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CatchedPokemon.h">
-      <Filter>Objects</Filter>
+    <ClInclude Include="Source\CollisionSensor.h">
+      <Filter>Systems\CollisionDetection</Filter>
     </ClInclude>
-    <ClInclude Include="Source\SaveAgainBall.h">
-      <Filter>Objects</Filter>
+    <ClInclude Include="Source\CollisionsManager.h">
+      <Filter>Systems\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleGameBlueMap.h">
+      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleGameRedMap.h">
+      <Filter>Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BonusFinalBall.h">
+      <Filter>UIs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameUI.h">
+      <Filter>UIs</Filter>
     </ClInclude>
     <ClInclude Include="Source\TimerUI.h">
       <Filter>UIs</Filter>
     </ClInclude>
+    <ClInclude Include="Source\UI.h">
+      <Filter>UIs</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Timer.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\AnimationSystem.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Box2DFactory.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Counter.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\p2Point.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MemLeaks.h" />
+    <ClInclude Include="Source\Application.h" />
+    <ClInclude Include="Source\Globals.h" />
+    <ClInclude Include="Source\ModuleSettings.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleCredits.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleGame.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHighScore.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleKeybinds.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleLanguageSelect.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleLevelSelection.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleMainMenu.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModulePokedex.h">
+      <Filter>Modules\Scenes %28ModuleScene%29</Filter>
+    </ClInclude>
     <ClInclude Include="Source\ModuleTimerUIText.h">
       <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\MemLeaks.h" />
-    <ClInclude Include="Source\Effector.h">
-      <Filter>Objects</Filter>
+    <ClInclude Include="Source\ModuleGamePokedexJapanese.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\BlackHoleEffector.h">
-      <Filter>Objects\Effectors %28Objects%29</Filter>
+    <ClInclude Include="Source\ModuleGamePokedexWorldwide.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
     </ClInclude>
-    <ClInclude Include="Source\BonusFinalBall.h" />
-    <ClInclude Include="Source\TornadoThrower.h">
-      <Filter>Objects</Filter>
+    <ClInclude Include="Source\ModuleGameUIText.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHSName.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleHSNum.h">
+      <Filter>Modules\Texts %28ModuleText%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleWindow.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Module.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleAudio.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModulePhysics.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleRender.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleScene.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleText.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleTexture.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\ModuleUserPreferences.h">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GetEvoArrow.h">
+      <Filter>Objects\Map Arrows %28Objects%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Source\resources.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Modules">
-      <UniqueIdentifier>{356ac984-0a85-4ac1-b9ff-e4840aff66b1}</UniqueIdentifier>
+    <Filter Include="_Lib">
+      <UniqueIdentifier>{8e5fa1cd-bbbb-43dc-84e8-ce6834485e56}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utils">
-      <UniqueIdentifier>{7ff14ab1-7b05-465f-8926-685df6f9b282}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="UIs">
-      <UniqueIdentifier>{28ee3c68-574a-47a4-b59d-e59b83ad5827}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Modules\Texts %28ModuleText%29">
-      <UniqueIdentifier>{82bcc1a0-42ae-4ca8-8bb8-9b85a7332a86}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Objects">
-      <UniqueIdentifier>{ddb2548e-c802-431c-aaed-079d9b98c3b2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Systems">
-      <UniqueIdentifier>{aecd7db6-b9e2-4734-ad3a-ca6e60936bca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Systems\CollisionDetection">
-      <UniqueIdentifier>{82404a92-0a2c-4f3b-a8da-45bf449f7211}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Modules\Scenes %28ModuleScene%29">
-      <UniqueIdentifier>{6efed187-946c-4a1a-9719-ba0a4d78149c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29">
-      <UniqueIdentifier>{4d301850-cc45-4254-852d-232089800dd6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Objects\Bumpers %28Objects%29">
-      <UniqueIdentifier>{f482764a-2278-486a-8dad-efc9aaf69e16}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Objects\Map Sensors %28Objects%29">
-      <UniqueIdentifier>{c94fe65c-c863-4377-be2b-4e9fc37ee607}</UniqueIdentifier>
+    <Filter Include="_Lib\Pugixml">
+      <UniqueIdentifier>{df942bd4-ac43-466b-a5f5-4fac4feaee9d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Data">
-      <UniqueIdentifier>{c76f2fff-4b22-4639-abc5-e1d97d2b3b85}</UniqueIdentifier>
+      <UniqueIdentifier>{9ee5b1b0-e3c1-426e-8e91-7b91650513bf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Objects\Map Sensor Group %28Objects%29">
-      <UniqueIdentifier>{05cce2c1-f9b7-432b-8b75-643ed68455c7}</UniqueIdentifier>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{6afa21a7-ebad-45a5-b20d-f77dbe96f933}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Objects\Map Arrows %28Objects%29">
-      <UniqueIdentifier>{4320cf60-7027-404a-a4d6-6fbd17362c84}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Objects\Map Arrow Group %28Objects%29">
-      <UniqueIdentifier>{6b1e2c4d-3b62-4a28-993d-7df0a77e8a41}</UniqueIdentifier>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{8a410d89-0a04-47d9-afbe-04c7620e4c13}</UniqueIdentifier>
     </Filter>
     <Filter Include="ScreenPrograms">
-      <UniqueIdentifier>{2923ee15-975c-40eb-9efa-53b891f7f827}</UniqueIdentifier>
+      <UniqueIdentifier>{a1575089-865b-41ea-a18a-28b3235dcabf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{0c3c112e-d310-45c7-9c42-e5a537fc4aa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UIs">
+      <UniqueIdentifier>{1e47f472-8f5b-4006-9691-20deab136ed5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{088fccc4-fb1d-4860-9b1d-357163d3f685}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Systems\CollisionDetection">
+      <UniqueIdentifier>{2dfa3b6f-d0e9-4b01-9147-3b0a4368481a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Arrow Group %28Objects%29">
+      <UniqueIdentifier>{83d09695-1413-4f7a-ae93-6c615d4086fa}</UniqueIdentifier>
     </Filter>
     <Filter Include="Objects\Effectors %28Objects%29">
-      <UniqueIdentifier>{2d294c72-dd3a-448f-97eb-b17ed7303c04}</UniqueIdentifier>
+      <UniqueIdentifier>{6de1bcb9-f285-4d9b-b58b-4551fb10cf02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Bumpers %28Objects%29">
+      <UniqueIdentifier>{0fb19966-4860-4021-b640-8f4a3a10af8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Arrows %28Objects%29">
+      <UniqueIdentifier>{66ccd502-56cf-47ca-8c1d-7a4b03cfa319}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Sensor Group %28Objects%29">
+      <UniqueIdentifier>{475f6611-70d6-4ab2-9480-c06e6e9dd7f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects\Map Sensors %28Objects%29">
+      <UniqueIdentifier>{48312e8e-5956-4f51-ace1-6587a48048ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Scenes %28ModuleScene%29">
+      <UniqueIdentifier>{47778623-24e1-4ea2-8059-f66abc0eeda8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Texts %28ModuleText%29">
+      <UniqueIdentifier>{a57e5f9a-521e-4ea5-8519-657be20e09a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Scenes %28ModuleScene%29\GameMaps %28ModuleGame%29">
+      <UniqueIdentifier>{0c86329e-c503-42c1-9b4e-7520fa3543f5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="Assets\Data\Pokedex.xml">
+    <Xml Include="Assets\Data\UserPreferences.xml">
       <Filter>Data</Filter>
     </Xml>
     <Xml Include="Assets\Data\HighScore.xml">
       <Filter>Data</Filter>
     </Xml>
-    <Xml Include="Assets\Data\UserPreferences.xml">
+    <Xml Include="Assets\Data\Pokedex.xml">
       <Filter>Data</Filter>
     </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Source\resources.rc" />
   </ItemGroup>
 </Project>

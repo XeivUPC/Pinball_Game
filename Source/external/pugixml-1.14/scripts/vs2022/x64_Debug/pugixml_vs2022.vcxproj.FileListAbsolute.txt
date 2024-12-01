@@ -1,1 +1,0 @@
-C:\Users\maxpo\OneDrive\Documents\GitHub\Pinball_Game\Source\external\pugixml-1.14\scripts\vs2022\x64_Debug\pugixml.lib

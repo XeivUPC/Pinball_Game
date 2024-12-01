@@ -1,8 +1,0 @@
-Package: pugixml
-Version: 1.14
-Depends: vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-windows
-Multi-Arch: same
-Abi: 3f51a6850269011ba7190e2b2f61509de34f6c8f51e57cb7312976bf83ee598a
-Description: Light-weight, simple and fast XML parser for C++ with XPath support
-Status: install ok installed
